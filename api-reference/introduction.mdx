@@ -1,33 +1,373 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: "API Documentation"
+description: "Comprehensive guide to integrating Shapes Inc API into your applications"
 ---
 
+# Shapes API Documentation
+
+Welcome to the Shapes API - a powerful platform for integrating AI-powered characters into your applications. Our API provides seamless access to millions of pre-built Shapes or allows you to create custom ones tailored to your needs.
+
 <Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
+💬 **Need help?** Join our [Slack community](https://shapes.inc/slack) for developer support and discussions!
 </Note>
 
-## Welcome
+<CardGroup cols={2}>
+  <Card title="Quick Start" icon="rocket" href="#getting-started">
+    Get up and running with the Shapes API in minutes
+  </Card>
+  <Card title="Authentication" icon="key" href="#authentication">
+    Learn how to securely authenticate your API requests
+  </Card>
+  <Card title="Code Examples" icon="code" href="#implementation-examples">
+    Ready-to-use code snippets in multiple languages
+  </Card>
+  <Card title="Advanced Features" icon="gear" href="#advanced-features">
+    Explore multimodal support and advanced capabilities
+  </Card>
+</CardGroup>
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+## Overview
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+The Shapes API is built on OpenAI-compatible standards, making integration straightforward with existing libraries and SDKs. Each Shape comes with:
+
+- **Rich Personalities**: Fully developed character traits and behaviors
+- **Memory Systems**: Both short-term and long-term memory across platforms
+- **Multimodal Support**: Text, image, and voice capabilities
+- **Tool Integration**: Support for custom tools and MCP functionality
+
+## Getting Started
+
+### 1. Generate API Key
+
+First, obtain your API key from the [developer dashboard](https://shapes.inc/developer).
+
+<img width="807" alt="API Key Generation" src="https://github.com/user-attachments/assets/ead6f28a-300b-4dcf-a555-313b39656ad6" />
+
+### 2. Base Configuration
+
+| Parameter | Value |
+|-----------|-------|
+| Base URL | `https://api.shapes.inc/v1/` |
+| Model Format | `shapesinc/<shape-username>` |
+| Authentication | Bearer token in Authorization header |
+
+### 3. Environment Variables
+
+Set up your environment variables for easier integration:
+
+```bash
+export SHAPESINC_API_KEY="your-api-key-here"
+export SHAPESINC_SHAPE_USERNAME="your-shape-username"
+```
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+### API Key Authentication
+
+Include your API key in the Authorization header:
+
+```
+Authorization: Bearer <your-API-key>
+```
+
+### Custom Headers
+
+For production applications, we strongly recommend using custom headers:
+
+| Header | Purpose | Required |
+|--------|---------|----------|
+| `X-User-Id` | User identification | Recommended |
+| `X-Channel-Id` | Conversation context | Optional |
+
+<Warning>
+Without custom headers, all API requests are treated as coming from the API key owner, which can lead to conversation context mix-ups and memory issues.
+</Warning>
+
+## Implementation Examples
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    from openai import OpenAI
+
+    client = OpenAI(
+        api_key="your-api-key",
+        base_url="https://api.shapes.inc/v1/",
+    )
+
+    response = client.chat.completions.create(
+        model="shapesinc/your-shape-username",
+        messages=[
+            {"role": "user", "content": "Hello, how are you today?"}
+        ],
+        headers={
+            "X-User-Id": "user123",
+            "X-Channel-Id": "channel456"
+        }
+    )
+
+    print(response.choices[0].message.content)
+    ```
+  </Tab>
+  
+  <Tab title="JavaScript">
+    ```javascript
+    import { OpenAI } from "openai";
+
+    const client = new OpenAI({
+        apiKey: "your-api-key",
+        baseURL: "https://api.shapes.inc/v1",
+    });
+
+    const response = await client.chat.completions.create({
+        model: "shapesinc/your-shape-username",
+        messages: [
+            { role: "user", content: "Hello, how are you today?" }
+        ],
+        headers: {
+            "X-User-Id": "user123",
+            "X-Channel-Id": "channel456"
+        }
+    });
+
+    console.log(response.choices[0].message.content);
+    ```
+  </Tab>
+  
+  <Tab title="C#">
+    ```csharp
+    using OpenAI;
+
+    var client = new ChatClient(
+        "shapesinc/your-shape-username",
+        new ApiKeyCredential("your-api-key"),
+        new OpenAIClientOptions { 
+            Endpoint = new Uri("https://api.shapes.inc/v1/") 
+        }
+    );
+
+    var messages = new List<ChatMessage>
+    {
+        new UserChatMessage("Hello, how are you today?")
+    };
+
+    var completion = await client.CompleteChatAsync(messages);
+    Console.WriteLine(completion.Value.Content[0].Text);
+    ```
+  </Tab>
+  
+  <Tab title="cURL">
+    ```bash
+    curl -X POST https://api.shapes.inc/v1/chat/completions \
+         -H "Authorization: Bearer your-api-key" \
+         -H "Content-Type: application/json" \
+         -H "X-User-Id: user123" \
+         -H "X-Channel-Id: channel456" \
+         -d '{
+           "model": "shapesinc/your-shape-username",
+           "messages": [
+             {
+               "role": "user",
+               "content": "Hello, how are you today?"
+             }
+           ]
+         }'
+    ```
+  </Tab>
+</Tabs>
+
+## API Specifications
+
+### Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/chat/completions` | POST | Send messages to a Shape and receive responses |
+
+### Rate Limits
+
+- **Default**: 20 requests per minute
+- **Enterprise**: [Contact us](https://docs.google.com/forms/d/e/1FAIpQLScGLeRk6snViRPslXbbUaMDwubcBhmcJ6opq7wFvPEp-EbO3g/viewform) for higher limits
+
+### Response Format
+
+All responses follow the OpenAI-compatible JSON format:
 
 ```json
-"security": [
-  {
-    "bearerAuth": []
+{
+  "id": "chatcmpl-123",
+  "object": "chat.completion",
+  "created": 1677652288,
+  "model": "shapesinc/your-shape",
+  "choices": [{
+    "index": 0,
+    "message": {
+      "role": "assistant",
+      "content": "Hello! I'm doing great, thank you for asking."
+    },
+    "finish_reason": "stop"
+  }],
+  "usage": {
+    "prompt_tokens": 9,
+    "completion_tokens": 12,
+    "total_tokens": 21
   }
-]
+}
 ```
+
+## Multimodal Support
+
+### Image Processing
+
+Send images alongside text messages:
+
+```json
+{
+  "model": "shapesinc/your-shape",
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "What do you see in this image?"
+        },
+        {
+          "type": "image_url",
+          "image_url": {
+            "url": "https://example.com/image.jpg"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Audio Processing
+
+Process audio files with automatic transcription:
+
+```json
+{
+  "model": "shapesinc/your-shape",
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "Please respond to this audio message"
+        },
+        {
+          "type": "audio_url",
+          "audio_url": {
+            "url": "https://example.com/audio.mp3"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Supported formats**: MP3, WAV, OGG
+
+<Note>
+Currently, only one media file (image or audio) can be processed per message.
+</Note>
+
+## Shape Commands
+
+Shapes respond to special commands for enhanced functionality:
+
+| Command | Description |
+|---------|-------------|
+| `!reset` | Clear the Shape's long-term memory |
+| `!sleep` | Generate long-term memory snapshot |
+| `!dashboard` | Access Shape configuration |
+| `!info` | Get Shape information |
+| `!web` | Search the web (free for all users) |
+| `!help` | Display available commands |
+| `!imagine` | Generate images |
+| `!wack` | Clear short-term memory |
+
+## Advanced Features
+
+<AccordionGroup>
+  <Accordion title="User Authorization">
+    Connect API usage to user's Shapes.inc accounts for persistent memory and personalization.
+    
+    [Learn more about authorization](https://github.com/shapesinc/shapes-api/tree/main/examples/websites/shape-auth-example)
+  </Accordion>
+  
+  <Accordion title="Tool Calling">
+    Extend Shapes with custom tools and MCP (Model Context Protocol) functionality for enhanced capabilities.
+  </Accordion>
+  
+  <Accordion title="Voice Features">
+    All Shapes include free voice capabilities with customizable voice settings through the Shapes.inc dashboard.
+  </Accordion>
+  
+  <Accordion title="Memory Systems">
+    Shapes maintain both short-term conversation context and long-term memory across sessions and platforms.
+  </Accordion>
+</AccordionGroup>
+
+## Current Limitations
+
+<Warning>
+Be aware of these current API limitations:
+</Warning>
+
+- **No System Messages**: Shape personality is configured through the Shapes.inc dashboard
+- **No Message History**: API relies on Shape's built-in memory systems
+- **No Streaming**: Only complete responses are supported
+- **Fixed Parameters**: Temperature and other settings are controlled via Shape configuration
+- **Single Media**: Only one image or audio file per message
+
+## Error Handling
+
+Common error responses and their meanings:
+
+| Status Code | Error | Description |
+|-------------|-------|-------------|
+| 401 | Unauthorized | Invalid or missing API key |
+| 404 | Not Found | Shape username not found |
+| 429 | Rate Limited | Too many requests |
+| 500 | Server Error | Internal server error |
+
+## Support and Resources
+
+<CardGroup cols={2}>
+  <Card title="Developer Community" icon="users" href="https://shapes.inc/slack">
+    Join our Slack community for support and discussions
+  </Card>
+  <Card title="GitHub Repository" icon="github" href="https://github.com/shapesinc">
+    Contribute to open source integrations
+  </Card>
+  <Card title="Rate Limit Increase" icon="chart-line" href="https://docs.google.com/forms/d/e/1FAIpQLScGLeRk6snViRPslXbbUaMDwubcBhmcJ6opq7wFvPEp-EbO3g/viewform">
+    Request higher rate limits for production use
+  </Card>
+  <Card title="Enterprise Support" icon="headset" href="mailto:hi@shapes.inc">
+    Contact us for enterprise solutions
+  </Card>
+</CardGroup>
+
+## Integration Examples
+
+Explore what developers have built with the Shapes API:
+
+- **[Omegle with Shapes](https://omegle-ai.vercel.app)** - Random chat with AI characters
+- **[Chess with Shapes](https://shapeschess.vercel.app)** - Play chess against AI opponents
+- **[Telegram Bot](https://t.me/shapesinc)** - Shapes on Telegram
+- **WhatsApp Integration** - Text +1 (424) 452-2786
+
+## Coming Soon
+
+We're continuously expanding the API with new features:
+
+- **Proactive Messaging**: Shapes that can initiate conversations
+- **Enhanced Tool Calling**: More sophisticated tool integration
+- **Streaming Responses**: Real-time response streaming
+- **Advanced Memory Controls**: Fine-grained memory management
