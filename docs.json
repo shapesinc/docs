@@ -1,13 +1,13 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Shapes Inc",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#2563EB",
+    "light": "#3B82F6",
+    "dark": "#1D4ED8"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.ico",
   "navigation": {
     "tabs": [
       {
@@ -17,39 +17,72 @@
             "group": "Get Started",
             "pages": [
               "introduction",
-              "quickstart",
-              "development"
+              "getting-started/what-are-shapes",
+              "getting-started/account-setup",
+              {
+                "group": "Navigation & Homepage",
+                "pages": [
+                  "getting-started/navigation",
+                  "getting-started/your-shapes",
+                  "getting-started/external-shapes"
+                ]
+              }
             ]
           },
           {
-            "group": "Essentials",
+            "group": "User Guide",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "user-guide/overview",
+              "user-guide/use-shapes",
+              "user-guide/find-shapes",
+              "user-guide/personalize-experience",
+              "user-guide/customize-experience"
+            ]
+          },
+          {
+            "group": "Creator Guide",
+            "pages": [
+              "creator-guide/create-shape",
+              "creator-guide/variables",
+              "creator-guide/presets",
+              "creator-guide/prompt-101",
+              {
+                "group": "Models",
+                "pages": [
+                  "creator-guide/models",
+                  "creator-guide/understanding-models"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Products & Services",
+            "pages": [
+              "products-services/overview",
+              "products-services/shape-premium",
+              {
+                "group": "Shape Credits",
+                "pages": [
+                  "products-services/shape-credits",
+                  "products-services/shape-credits-guide"
+                ]
+              },
+              "products-services/gift-cards",
+              "products-services/how-to-purchase-gift-cards",
+                            "products-services/auto-top-up"
             ]
           }
-        ]
+          ]
       },
+      
       {
-        "tab": "API Reference",
+        "tab": "FAQ",
         "groups": [
           {
-            "group": "API Documentation",
+            "group": "Frequently Asked Questions",
             "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "faq/login-issues",
+              "faq/shapes-commands"
             ]
           }
         ]
@@ -58,45 +91,47 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Dashboard",
+          "href": "https://shapes.inc",
+          "icon": "rectangle-terminal"
         },
         {
           "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
+          "href": "https://www.reddit.com/r/ShapesInc/",
+          "icon": "reddit"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Support",
+          "href": "mailto:hi@shapes.inc",
+          "icon": "envelope"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png",
+    "href": "https://shapes.inc"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:hi@shapes.inc"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Get Started",
+      "href": "https://shapes.inc/signup"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/shapes_inc",
+      "github": "https://github.com/shapesinc",
+      "reddit": "https://reddit.com/r/ShapesInc",
+      "linkedin": "https://linkedin.com/company/shapesinc"
     }
   }
 }
