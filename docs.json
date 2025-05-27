@@ -122,7 +122,7 @@
     "primary": {
       "type": "button",
       "label": "Get Started",
-      "href": "https://shapes.inc/signup"
+      "href": "https://shapes.inc/login"
     }
   },
   "footer": {
