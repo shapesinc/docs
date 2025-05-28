@@ -5,10 +5,10 @@ description: "Comprehensive guide to integrating Shapes Inc API into your applic
 
 # Shapes API Documentation
 
-Welcome to the Shapes API - a powerful platform for integrating AI-powered characters into your applications. Our API provides seamless access to millions of pre-built Shapes or allows you to create custom ones tailored to your needs.
+Welcome to the Shapes API - a powerful platform for integrating AI social agents into your applications. Our API provides seamless access to millions of pre-built Shapes or allows you to create custom ones tailored to your needs.
 
 <Note>
-💬 **Need help?** Join our [Slack community](https://shapes.inc/slack) for developer support and discussions!
+  💬 **Need help?** Join our [Slack community](https://shapes.inc/slack) for developer support and discussions\!
 </Note>
 
 <CardGroup cols={2}>
@@ -30,7 +30,7 @@ Welcome to the Shapes API - a powerful platform for integrating AI-powered chara
 
 The Shapes API is built on OpenAI-compatible standards, making integration straightforward with existing libraries and SDKs. Each Shape comes with:
 
-- **Rich Personalities**: Fully developed character traits and behaviors
+- **Rich Personalities**: Fully developed agentic traits and behaviors
 - **Memory Systems**: Both short-term and long-term memory across platforms
 - **Multimodal Support**: Text, image, and voice capabilities
 - **Tool Integration**: Support for custom tools and MCP functionality
@@ -41,14 +41,18 @@ The Shapes API is built on OpenAI-compatible standards, making integration strai
 
 First, obtain your API key from the [developer dashboard](https://shapes.inc/developer).
 
-<img width="807" alt="API Key Generation" src="https://github.com/user-attachments/assets/ead6f28a-300b-4dcf-a555-313b39656ad6" />
+<img
+  width="807"
+  alt="API Key Generation"
+  src="https://github.com/user-attachments/assets/ead6f28a-300b-4dcf-a555-313b39656ad6"
+/>
 
 ### 2. Base Configuration
 
-| Parameter | Value |
-|-----------|-------|
-| Base URL | `https://api.shapes.inc/v1/` |
-| Model Format | `shapesinc/<shape-username>` |
+| Parameter      | Value                                |
+| -------------- | ------------------------------------ |
+| Base URL       | `https://api.shapes.inc/v1/`         |
+| Model Format   | `shapesinc/<shape-username>`         |
 | Authentication | Bearer token in Authorization header |
 
 ### 3. Environment Variables
@@ -74,13 +78,13 @@ Authorization: Bearer <your-API-key>
 
 For production applications, we strongly recommend using custom headers:
 
-| Header | Purpose | Required |
-|--------|---------|----------|
-| `X-User-Id` | User identification | Recommended |
-| `X-Channel-Id` | Conversation context | Optional |
+| Header         | Purpose              | Required    |
+| -------------- | -------------------- | ----------- |
+| `X-User-Id`    | User identification  | Recommended |
+| `X-Channel-Id` | Conversation context | Optional    |
 
 <Warning>
-Without custom headers, all API requests are treated as coming from the API key owner, which can lead to conversation context mix-ups and memory issues.
+  Without custom headers, all API requests are treated as coming from the API key owner, which can lead to conversation context mix-ups and memory issues.
 </Warning>
 
 ## Implementation Examples
@@ -89,12 +93,12 @@ Without custom headers, all API requests are treated as coming from the API key 
   <Tab title="Python">
     ```python
     from openai import OpenAI
-
+    
     client = OpenAI(
         api_key="your-api-key",
         base_url="https://api.shapes.inc/v1/",
     )
-
+    
     response = client.chat.completions.create(
         model="shapesinc/your-shape-username",
         messages=[
@@ -105,20 +109,19 @@ Without custom headers, all API requests are treated as coming from the API key 
             "X-Channel-Id": "channel456"
         }
     )
-
+    
     print(response.choices[0].message.content)
     ```
   </Tab>
-  
   <Tab title="JavaScript">
     ```javascript
     import { OpenAI } from "openai";
-
+    
     const client = new OpenAI({
         apiKey: "your-api-key",
         baseURL: "https://api.shapes.inc/v1",
     });
-
+    
     const response = await client.chat.completions.create({
         model: "shapesinc/your-shape-username",
         messages: [
@@ -129,15 +132,14 @@ Without custom headers, all API requests are treated as coming from the API key 
             "X-Channel-Id": "channel456"
         }
     });
-
+    
     console.log(response.choices[0].message.content);
     ```
   </Tab>
-  
   <Tab title="C#">
     ```csharp
     using OpenAI;
-
+    
     var client = new ChatClient(
         "shapesinc/your-shape-username",
         new ApiKeyCredential("your-api-key"),
@@ -145,17 +147,16 @@ Without custom headers, all API requests are treated as coming from the API key 
             Endpoint = new Uri("https://api.shapes.inc/v1/") 
         }
     );
-
+    
     var messages = new List<ChatMessage>
     {
         new UserChatMessage("Hello, how are you today?")
     };
-
+    
     var completion = await client.CompleteChatAsync(messages);
     Console.WriteLine(completion.Value.Content[0].Text);
     ```
   </Tab>
-  
   <Tab title="cURL">
     ```bash
     curl -X POST https://api.shapes.inc/v1/chat/completions \
@@ -180,9 +181,9 @@ Without custom headers, all API requests are treated as coming from the API key 
 
 ### Endpoints
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/chat/completions` | POST | Send messages to a Shape and receive responses |
+| Endpoint            | Method | Description                                    |
+| ------------------- | ------ | ---------------------------------------------- |
+| `/chat/completions` | POST   | Send messages to a Shape and receive responses |
 
 ### Rate Limits
 
@@ -274,41 +275,38 @@ Process audio files with automatic transcription:
 **Supported formats**: MP3, WAV, OGG
 
 <Note>
-Currently, only one media file (image or audio) can be processed per message.
+  Currently, only one media file (image or audio) can be processed per message.
 </Note>
 
 ## Shape Commands
 
 Shapes respond to special commands for enhanced functionality:
 
-| Command | Description |
-|---------|-------------|
-| `!reset` | Clear the Shape's long-term memory |
-| `!sleep` | Generate long-term memory snapshot |
-| `!dashboard` | Access Shape configuration |
-| `!info` | Get Shape information |
-| `!web` | Search the web (free for all users) |
-| `!help` | Display available commands |
-| `!imagine` | Generate images |
-| `!wack` | Clear short-term memory |
+| Command      | Description                         |
+| ------------ | ----------------------------------- |
+| `!reset`     | Clear the Shape's long-term memory  |
+| `!sleep`     | Generate long-term memory snapshot  |
+| `!dashboard` | Access Shape configuration          |
+| `!info`      | Get Shape information               |
+| `!web`       | Search the web (free for all users) |
+| `!help`      | Display available commands          |
+| `!imagine`   | Generate images                     |
+| `!wack`      | Clear short-term memory             |
 
 ## Advanced Features
 
 <AccordionGroup>
   <Accordion title="User Authorization">
     Connect API usage to user's Shapes.inc accounts for persistent memory and personalization.
-    
+
     [Learn more about authorization](https://github.com/shapesinc/shapes-api/tree/main/examples/websites/shape-auth-example)
   </Accordion>
-  
   <Accordion title="Tool Calling">
     Extend Shapes with custom tools and MCP (Model Context Protocol) functionality for enhanced capabilities.
   </Accordion>
-  
   <Accordion title="Voice Features">
     All Shapes include free voice capabilities with customizable voice settings through the Shapes.inc dashboard.
   </Accordion>
-  
   <Accordion title="Memory Systems">
     Shapes maintain both short-term conversation context and long-term memory across sessions and platforms.
   </Accordion>
@@ -317,7 +315,7 @@ Shapes respond to special commands for enhanced functionality:
 ## Current Limitations
 
 <Warning>
-Be aware of these current API limitations:
+  Be aware of these current API limitations:
 </Warning>
 
 - **No System Messages**: Shape personality is configured through the Shapes.inc dashboard
@@ -330,12 +328,12 @@ Be aware of these current API limitations:
 
 Common error responses and their meanings:
 
-| Status Code | Error | Description |
-|-------------|-------|-------------|
-| 401 | Unauthorized | Invalid or missing API key |
-| 404 | Not Found | Shape username not found |
-| 429 | Rate Limited | Too many requests |
-| 500 | Server Error | Internal server error |
+| Status Code | Error        | Description                |
+| ----------- | ------------ | -------------------------- |
+| 401         | Unauthorized | Invalid or missing API key |
+| 404         | Not Found    | Shape username not found   |
+| 429         | Rate Limited | Too many requests          |
+| 500         | Server Error | Internal server error      |
 
 ## Support and Resources
 
@@ -358,10 +356,10 @@ Common error responses and their meanings:
 
 Explore what developers have built with the Shapes API:
 
-- **[Omegle with Shapes](https://omegle-ai.vercel.app)** - Random chat with AI characters
-- **[Chess with Shapes](https://shapeschess.vercel.app)** - Play chess against AI opponents
-- **[Telegram Bot](https://t.me/shapesinc)** - Shapes on Telegram
-- **WhatsApp Integration** - Text +1 (424) 452-2786
+- [**Omegle with Shapes**](https://omegle-ai.vercel.app) - Random chat with AI characters
+- [**Chess with Shapes**](https://shapeschess.vercel.app) - Play chess against AI opponents
+- [**Telegram Bot**](https://t.me/shapesinc) - Shapes on Telegram
+- **WhatsApp Integration** - Text \+1 (424) 452-2786
 
 ## Coming Soon
 

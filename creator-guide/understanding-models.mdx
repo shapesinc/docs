@@ -3,27 +3,27 @@ title: "Understanding AI Models"
 description: "Learn how to decode AI model names and understand the differences between various AI engines to make informed choices"
 ---
 
-# Understanding AI Models
-
 Ever wonder what the differences between ChatGPT-3, Sonnet 3.7, Large, Small, or 70B mean? AI engine names vary between developers but follow common patterns that reveal key information about their capabilities.
 
 ## Model Naming Convention
 
-<img src="/images/ai-naming-convention.png" alt="AI Model Naming Convention" />
-
 AI model names contain several important pieces of information:
 
 ### Base Model Name
+
 Identifies the company or model family:
+
 - **GPT** from OpenAI
-- **Claude** from Anthropic  
+- **Claude** from Anthropic
 - **Llama** from Meta
 - **Gemini** from Google
 
 ### Version Number
+
 Shows which generation the model belongs to (GPT-3 vs GPT-4, Claude 2 vs Claude 3). Higher numbers usually mean newer and more advanced versions.
 
 ### Size Indicator
+
 Measured in billions of parameters (B), with larger models generally being more capable than smaller ones.
 
 ## Model Sizes and Capabilities
@@ -31,33 +31,30 @@ Measured in billions of parameters (B), with larger models generally being more 
 <Tabs>
   <Tab title="Small Models (1B-10B)">
     **Characteristics**: Faster response times, great for chit chatting and simple conversations
-    
+
     **Best for**: Simple tasks where speed matters more than perfect accuracy
-    
+
     **Trade-offs**: Less knowledge, more limited reasoning abilities, smaller context windows
   </Tab>
-  
   <Tab title="Medium Models (10B-30B)">
     **Characteristics**: Good balance of performance and efficiency
-    
+
     **Best for**: General-purpose applications where resource constraints still matter
-    
+
     **Trade-offs**: Better than small models but still limited compared to large ones
   </Tab>
-  
   <Tab title="Large Models (30-100B)">
     **Characteristics**: Strong general knowledge, good reasoning abilities, handle complex tasks well
-    
+
     **Best for**: Advanced applications requiring deep understanding and nuanced responses
-    
+
     **Trade-offs**: Require significant computing resources, more expensive to run
   </Tab>
-  
   <Tab title="Extra Large Models (100B+)">
     **Characteristics**: State-of-the-art performance, extensive knowledge, sophisticated reasoning
-    
+
     **Best for**: The most demanding applications requiring the highest quality outputs
-    
+
     **Trade-offs**: Very resource-intensive, highest operating costs, slower inference times
   </Tab>
 </Tabs>
@@ -70,47 +67,36 @@ Different models are optimized for specific tasks. Here are the most common spec
   <Accordion title="Instruct">
     Optimized for following specific instructions and commands accurately. These models are trained to understand and execute directions well.
   </Accordion>
-  
   <Accordion title="Chat">
     Designed for natural, flowing conversations. These models excel at back-and-forth dialogue rather than one-off questions or commands.
   </Accordion>
-  
   <Accordion title="Vision">
     Capable of understanding and processing images along with text. These can "see" pictures you share and discuss their contents.
   </Accordion>
-  
   <Accordion title="Code">
     Specialized for programming tasks, including writing, explaining, and debugging code across various programming languages.
   </Accordion>
-  
   <Accordion title="Multimodal">
     Can work with multiple types of information (text, images, sometimes audio) in a single interaction.
   </Accordion>
-  
   <Accordion title="Reasoning">
     Enhanced ability to work through problems step-by-step, often showing their thinking process rather than just providing answers.
   </Accordion>
-  
   <Accordion title="Embeddings">
     Specialized for converting text into numerical representations (vectors) for use in search, recommendations, and other applications.
   </Accordion>
-  
   <Accordion title="Medical/Med">
     Optimized with healthcare knowledge for medical applications and questions.
   </Accordion>
-  
   <Accordion title="Legal">
     Fine-tuned with legal knowledge and precedents for law-related tasks.
   </Accordion>
-  
   <Accordion title="Research">
     Built for scientific research applications, often with stronger citation capabilities and academic knowledge.
   </Accordion>
-  
   <Accordion title="Turbo">
     Optimized for faster response times and improved efficiency, possibly at a small trade-off in quality.
   </Accordion>
-  
   <Accordion title="Long-Context">
     Specifically designed to handle very long inputs and maintain understanding across extensive text (documents, books, or long conversations).
   </Accordion>
@@ -119,9 +105,11 @@ Different models are optimized for specific tasks. Here are the most common spec
 ## Additional Model Information
 
 ### Release Date
+
 A date code in the model name (like 20240229) shows when the model was created or released, indicating how up-to-date its knowledge is.
 
 ### Sub-version
+
 Smaller updates that make minor improvements without changing the main structure. These appear as decimal points or point releases (like v0.1, v1.2) after the main version number and represent fine-tuning rather than major changes.
 
 ## How This Applies to You
@@ -135,7 +123,7 @@ Since you can override AI engines in your preferences, understanding these diffe
     Choose smaller models (1B-10B) or "Turbo" variants when you need quick responses for simple tasks
   </Card>
   <Card title="For Quality" icon="star">
-    Select larger models (100B+) when you need the highest quality outputs for complex tasks
+    Select larger models (100B\+) when you need the highest quality outputs for complex tasks
   </Card>
   <Card title="For Specific Tasks" icon="target">
     Pick specialized models (Code, Vision, Medical) when working in specific domains
@@ -148,19 +136,19 @@ Since you can override AI engines in your preferences, understanding these diffe
 ### Key Considerations
 
 <Tip>
-**Balance Performance and Speed**: Larger models provide better results but take longer to respond. Choose based on your specific needs.
+  **Balance Performance and Speed**: Larger models provide better results but take longer to respond. Choose based on your specific needs.
 </Tip>
 
 <Tip>
-**Check Knowledge Cutoff**: Newer models have more recent training data. Look for recent release dates if you need current information.
+  **Check Knowledge Cutoff**: Newer models have more recent training data. Look for recent release dates if you need current information.
 </Tip>
 
 <Tip>
-**Consider Context Length**: Long-context models can handle much longer inputs, perfect for analyzing documents or maintaining long conversations.
+  **Consider Context Length**: Long-context models can handle much longer inputs, perfect for analyzing documents or maintaining long conversations.
 </Tip>
 
 <Warning>
-Some specialized models may have different safety filters or content policies. Always review model capabilities before use.
+  Some specialized models may have different safety filters or content policies. Always review model capabilities before use.
 </Warning>
 
-This knowledge helps you select the right model for specific tasks based on capabilities, performance, and how recent its training data is. Understanding these patterns will make you a more effective Shape creator! 
+This knowledge helps you select the right model for specific tasks based on capabilities, performance, and how recent its training data is. Understanding these patterns will make you a more effective Shape creator\!
