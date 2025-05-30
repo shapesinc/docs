@@ -41,14 +41,15 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Visit Shapes",
+      "label": "visit shapes.inc",
       "href": "https://shapes.inc"
     }
   },
   "footer": {
     "socials": {
       "x": "https://x.com/shapes_inc",
-      "github": "https://github.com/shapesinc"
+      "github": "https://github.com/shapesinc",
+      "reddit": "https://reddit.com/r/ShapesInc"
     }
   }
 }
