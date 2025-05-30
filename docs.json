@@ -23,22 +23,7 @@
         "pages": [
           "user-guide",
           "how-to-make-a-shape",
-          "how-to-make-high-quality-shape",
-          "how-to-find-shapes",
-          "how-to-use-shapes"
-        ]
-      },
-      {
-        "group": "Customization",
-        "pages": [
-          "personalize-experience",
-          "customize-experience"
-        ]
-      },
-      {
-        "group": "About",
-        "pages": [
-          "products-and-services"
+          "how-to-make-high-quality-shape"
         ]
       }
     ]
