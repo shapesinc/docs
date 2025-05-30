@@ -9,33 +9,53 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "Getting Started": [
-      "introduction",
-      "welcome-to-shapes",
-      "make-or-recover-account"
-    ],
-    "User Guides": [
-      "user-guide",
-      "how-to-make-a-shape",
-      "how-to-make-high-quality-shape",
-      "how-to-find-shapes",
-      "how-to-use-shapes"
-    ],
-    "Customization": [
-      "personalize-experience",
-      "customize-experience"
-    ],
-    "About": [
-      "products-and-services"
-    ],
-    "API Reference": [
-      "api-reference/introduction"
-    ],
-    "Endpoint Examples": [
-      "api-reference/endpoint/get",
-      "api-reference/endpoint/create",
-      "api-reference/endpoint/delete",
-      "api-reference/endpoint/webhook"
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "introduction",
+          "welcome-to-shapes",
+          "make-or-recover-account"
+        ]
+      },
+      {
+        "group": "User Guides",
+        "pages": [
+          "user-guide",
+          "how-to-make-a-shape",
+          "how-to-make-high-quality-shape",
+          "how-to-find-shapes",
+          "how-to-use-shapes"
+        ]
+      },
+      {
+        "group": "Customization",
+        "pages": [
+          "personalize-experience",
+          "customize-experience"
+        ]
+      },
+      {
+        "group": "About",
+        "pages": [
+          "products-and-services"
+        ]
+      },
+      {
+        "group": "API Reference",
+        "pages": [
+          "api-reference/introduction"
+        ]
+      },
+      {
+        "group": "Endpoint Examples",
+        "pages": [
+          "api-reference/endpoint/get",
+          "api-reference/endpoint/create",
+          "api-reference/endpoint/delete",
+          "api-reference/endpoint/webhook"
+        ]
+      }
     ]
   },
   "logo": {
