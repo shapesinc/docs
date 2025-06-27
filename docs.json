@@ -15,7 +15,9 @@
         "pages": [
           "introduction",
           "welcome-to-shapes",
-          "make-or-recover-account"
+          "make-or-recover-account",
+          "homepage-overview" 
+
         ]
       },
       {
@@ -23,9 +25,7 @@
         "pages": [
           "user-guide",
           "how-to-make-a-shape",
-          "how-to-make-high-quality-shape",
-          "homepage-overview" 
-        ]
+          "how-to-make-high-quality-shape"        ]
       }
     ]
   },
