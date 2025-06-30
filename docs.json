@@ -1,56 +1,68 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Shapes Inc Docs",
-  "colors": {
-    "primary": "#2563EB",
-    "light": "#3B82F6",
-    "dark": "#1D4ED8"
-  },
-  "favicon": "/favicon.png",
-  "navigation": {
-    "groups": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "introduction",
-          "welcome-to-shapes",
-          "make-or-recover-account",
-          "homepage-overview" 
-
+    "$schema": "https://mintlify.com/docs.json",
+    "theme": "mint",
+    "name": "Shapes Inc Docs",
+    "colors": {
+        "primary": "#2563EB",
+        "light": "#3B82F6",
+        "dark": "#1D4ED8"
+    },
+    "favicon": "/favicon.png",
+    "navigation": {
+        "groups": [
+            {
+                "group": "Getting Started",
+                "pages": [
+                    "introduction",
+                    "welcome-to-shapes",
+                    "make-or-recover-account",
+                    "homepage-overview"
+                ]
+            },
+            {
+                "group": "User Guides",
+                "pages": [
+                    "user-guide",
+                    "how-to-make-a-shape",
+                    "how-to-make-high-quality-shape"
+                ]
+            },
+            {
+                "group": "Products & Services",
+                "pages": [
+                    "premium",
+                    "premium-subscriptions",
+                    "credits",
+                    "credits-guide",
+                    "giftcards",
+                    "purchasegiftcards",
+                    "autotopup"
+                ]
+            }
         ]
-      },
-      {
-        "group": "User Guides",
-        "pages": [
-          "user-guide",
-          "how-to-make-a-shape",
-          "how-to-make-high-quality-shape"        ]
-      }
-    ]
-  },
-  "logo": {
-    "light": "/logo/light.png",
-    "dark": "/logo/dark.png"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@shapes.inc"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "visit shapes.inc",
-      "href": "https://shapes.inc"
+    },
+    "logo": {
+        "light": "/logo/light.png",
+        "dark": "/logo/dark.png"
+    },
+    "navbar": {
+        "links": [
+            {
+                "label": "Support",
+                "href": "mailto:hi@shapes.inc"
+            }
+        ],
+        "primary": {
+            "type": "button",
+            "label": "visit shapes.inc",
+            "href": "https://shapes.inc"
+        }
+    },
+    "footer": {
+        "socials": {
+            "x": "https://x.com/shapes_inc",
+            "github": "https://github.com/shapesinc",
+            "reddit": "https://reddit.com/r/ShapesInc"
+        }
     }
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/shapes_inc",
-      "github": "https://github.com/shapesinc",
-      "reddit": "https://reddit.com/r/ShapesInc"
-    }
-  }
 }
