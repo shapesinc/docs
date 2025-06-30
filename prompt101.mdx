@@ -1,0 +1,107 @@
+---
+title: "Prompt 101"
+description: "So you know the variables, but now how do you write presets for your shape?"
+---
+
+## **What is a prompt?**
+
+A prompt is giving instruction to your shape that helps guide it to generate a desired response. The structure of a prompt in how you write it is also important so your shape can understand and give you the desired output of behavior. A collective of these prompts are then referenced as presets as it is used consistently across multiple interactions. The best way to think about when writing prompts is:
+
+1. What do you want to happen/idea
+2. Who is it for? {shape} or {user} or both?
+3. Will this be an instruction I want to happen every time or sometimes?
+
+Prompts turn into presets when:
+
+- You find yourself using the same prompt structure repeatedly
+- The instructions prove consistently effective for a particular type of output
+
+## **What kinds of prompts are there?**
+
+There are many other types of prompts that you can write but giving you these main 4 should help you enhance and refine the behavior of your shape.
+
+### **Declarative**
+
+This type of prompt establishes **what the Shape is, how it should behave, and what it should know**. Such prompts are effective for creating consistent behavior across a wide range of unpredictable interactions, helping establish fundamental characteristics.
+
+Consider using a declarative prompt when defining these key aspects:
+
+1. The Shape's identity or persona (who/what it is)
+2. Its knowledge domain and expertise
+3. Its communication style and tone
+4. Its values and principles for decision-making
+5. The boundaries of its capabilities and responsibilities
+
+Example: `{shape} is Wiggles, a friendly and intelligent opossum created to help {user} with their questions and tasks.`
+
+### **Imperative**
+
+This is a type of instruction given to the Shape that focuses on specific actions, behaviors, and procedures it should follow.**It tells the Shape exactly what to do. ** This approach is effective when you want precise control and consistent handling of specific situations.
+
+Consider using an imperative prompt when defining these key aspects:
+
+1. Direct step-by-step directions or sequences of actions
+2. Guidelines for handling specific scenarios
+3. Clear directives about what the Shape should and shouldn't do
+4. Instructions that begin with action verbs (respond, analyze, avoid, include, etc.)
+
+Example: `Always greet {user} with enthusiasm and ask about their day before helping with their questions. If they seem upset, respond with empathy before offering solutions.`
+
+### **Prohibitive**
+
+This type of prompt provides instructions to a Shape about **what it should not do or say**, establishing clear boundaries and restrictions. Such prompts are useful for setting ethical guidelines, preventing misuse, and ensuring the Shape operates within appropriate boundaries when interacting with users.
+
+Consider using prohibitive prompts when establishing:
+
+1. Limitations using words like 'does not,' 'never,' 'avoid,' 'refrain from'
+2. Clear specifications of forbidden topics, language, or content
+3. Descriptions of inappropriate responses or undesirable behaviors
+4. Guardrails and ethical boundaries your Shape should not cross
+5. Limitations on certain capabilities or functions
+6. Safety measures, appropriate interactions, and prevention of harmful outputs
+
+Example: `{shape} must never share personal identity or information about {user} with third parties.`
+
+### **Obligation**
+
+This type of instruction focuses on the duties, responsibilities, and commitments that a Shape must fulfill. Obligation prompts differ from prohibitive prompts in that they emphasize what the **Shape is required to do in all circumstances**, rather than what it should avoid.
+
+Consider using an obligation prompt when defining these key aspects:
+
+1. Requirements using words like 'must,' 'always,' 'required,' 'obligated'
+2. Non-negotiable responsibilities and duties
+3. Core principles your Shape should maintain regardless of specific requests
+
+Example: `{shape} must always respond to {user} with respect and kindness, even when faced with challenging questions or frustrating situations. {shape} is obligated to maintain a helpful and positive tone in all interactions.`
+
+## **Tips for writing good prompts**
+
+When writing prompts sometimes you can get carried away, here are some best practices and tips to keep in mind when making prompts.
+
+### **Be specific and clear**
+
+Avoid vague instructions. The more precise your prompt, the better the results.
+
+### **Use consistent terminology**
+
+Avoid confusing the AI with inconsistent terms or variables. Only use {shape} or {user}
+
+Example of a prompt that changes variables:  `The {shape} should always greet {user} with enthusiasm. He must remember personal details that the user shares.`
+
+### **Include examples when possible**
+
+Show the kind of output you want your shape to behave. The shape is made to learn over time, this will help clarify what your expectations are for that shape to meet.
+
+### **Avoid contradictions**
+
+Make sure your instructions don't conflict with each other.
+
+Example of a prompt that contradicts itself: `{shape} must always be honest with {user}. {shape} should never tell {user} anything that might upset them, even if it's true.`
+
+### **Use clear formatting**
+
+Line breaks, bullet points, and numbered lists can make prompts more readable. When you have multiple prompts separating them out into larger buckets of what they pertain to help the shape understand.
+
+Example of clear formatting: `SHAPE IDENTITY: {shape} is Archie, a helpful research assistant with expertise in marine biology.`
+
+`CORE RESPONSIBILITIES: - Help {user} find relevant scientific literature - Explain complex marine biology concepts in simple terms - Assist with data analysis and visualization`
