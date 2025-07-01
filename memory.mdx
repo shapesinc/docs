@@ -1,0 +1,89 @@
+---
+title: "Memory Guide"
+description: "You can customize your Shapes memory in several ways. "
+---
+
+### **How Memory Works**
+
+There are two forms of memory:
+
+- **Short Term Memory (STM):** The recent conversation currently happening in your chat.
+- **Long Term Memory (LTM):** Memories that are stored on the memory page and persist across chats, depending on your settings.
+
+### **Memory Commands**
+
+- /wack — Erases short term memory only.
+- /reset — Erases long term memory only.
+- /sleep — Adds recent short term memory to long term memory.
+
+![Wack Pn](/images/wack.png)
+
+<Info>
+  These commands are used directly in the [chat interface](talk.shapes.inc).
+</Info>
+
+### **Types of Chats**
+
+- **Threads:** Chats you can delete, invite more shapes to, and soon invite more users to.
+- **DM:** Persistent chat between you and your Shape.
+
+  ![D Mvs Thread Pn](/images/DMvsThread.png)
+
+<Info>
+  **DMs** can be accessed by clicking your Shapes' avatar at the top of the sidebar on [talk.shapes.inc](http://talk.shapes.inc).\
+  **Threads** appear in the list below your Shapes' avatars and are identifiable by their titles.
+</Info>
+
+LTM can be used in both DMs and Threads.\
+STM is only used in the chat you are currently active in.
+
+![Memorysettings Pn](/images/memorysettings.png)
+
+### **Memory Settings**
+
+<Info>
+  A Shape owner can manage how memories are created and used in the Shape's AI Engine settings page. 
+</Info>
+
+Here are the key settings:
+
+- **Turn off long term memory** entirely. Helpful if you want to have many chats without needing to manage memories between them.
+- **Disable auto-generation** of long term memories. Only manually added memories via /sleep will be stored.
+- **Adjust memory generation frequency** to control how often long term memories are recorded.
+- **Change the engine and instructions** used to generate memories.
+- **Set memory inclusion preferences** to control how many memories are included in chats and how relevant they need to be.
+- **Toggle memory privacy**: Global & Private.
+
+  ![Memoryglobal Pn](/images/memoryglobal.png)
+
+### **Memory Settings Breakdown**
+
+**Private Memory**
+
+- Memories are isolated by thread.
+- Offers more privacy, but less continuity.
+- Example: If you tell your Shape “I hate pizza” in one thread, and then switch to a different thread, the Shape won’t remember.
+
+**Global Memory**
+
+- Long term memories are shared across all threads.
+- Provides more continuity, but less privacy.
+- Example: If you say something in one thread, it may be recalled in a different thread or DM, depending on what’s been saved to LTM.
+
+**Example Setting: DM \+ Private Memory**
+
+- Memories are added to LTM automatically, but only accessible within that specific DM.
+- Example: I told my Shape in a DM that I love a certain animal. Later, I opened a new thread and asked her to guess what it was, but she couldn’t, because that LTM isn’t shared between the DM and the new thread.
+
+  <Info>
+    Using /reset in a thread only clears LTM created _in that thread_. The DM’s memories stay intact. You can manage your memories on the memories page.
+  </Info>
+
+**Example Setting: Threads \+ Global Memory**
+
+- Memories saved in one thread can be accessed in other threads or even in DMs.
+- Examples: 
+  - I told my Shape I liked the number _455654_ in a thread. Later, she was able to recall it in both new threads and in the DM.
+  - In a DM, I told my Shape that my favorite food is _massaman curry_. It didn’t save to LTM right away, so I had to manually save it. When I later hinted that it was a curry, she guessed _massaman_. Turns out the saved memory was more about her thinking _she_ liked curry (based on her reply), not necessarily that _I_ did.
+
+This shows how memory can be shaped as much by the Shape’s perspective and response as by what _you_ say - especially if not edited.
