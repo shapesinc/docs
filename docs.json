@@ -14,14 +14,6 @@
                 "group": "Getting Started",
                 "pages": [
                     "introduction",
-                    "make-or-recover-account",
-                    "homepage-overview"
-                ]
-            },
-            {
-                "group": "User Guides",
-                "pages": [
-                    "user-guide",
                     "learninghub"
                 ]
             },
