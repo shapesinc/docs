@@ -1,0 +1,43 @@
+---
+title: "Deep dive into model descriptions"
+description: "Here we'll give you a brief overview to understand the differences between different AI Engines."
+---
+
+![Deepdiveaiengines Pn](/images/deepdiveaiengines.png)
+
+Chat GPT-3, Sonnet 3.7, Large, Small, 70B - ever wonder what these differences mean? AI Engine names vary between developers but follow common patterns that reveal key information:
+
+- **Base Model Name:** Identifies the company or model family (GPT from OpenAI, Claude from Anthropic, Llama from Meta, Gemini from Google)
+- **Version Number:** Shows which generation the model belongs to (GPT-3 vs GPT-4, Claude 2 vs Claude 3) Higher numbers usually mean newer and more advanced versions.
+- **Size Indicator:** Measured in billions of parameters (B), with larger models (70B) generally being more capable than smaller ones (7B). There are 4 main sizes that you'll see frequently in which we've created a table that highlights additional details of each size.
+
+To pick up a draggable item, press the space bar. While dragging, use the arrow keys to move the item. Press space again to drop the item in its new position, or press escape to cancel.
+
+ To pick up a draggable item, press the space bar. While dragging, use the arrow keys to move the item. Press space again to drop the item in its new position, or press escape to cancel.
+
+|                                                                                           |                                                                                    |                                                                                                    |                                                                                                 |
+| :---------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------- |
+| **Characteristics: **Faster response times, chit chatting, simple conversations           | **Characteristics: **Good balance of performance and efficiency                    | **Characteristics: **Strong general knowledge, good reasoning abilities, handle complex tasks well | **Characteristics: **State-of-the-art performance, extensive knowledge, sophisticated reasoning |
+| **Best for:** Simple tasks, situations where speed matters more than perfect accuracy     | **Best for:** General-purpose applications where resource constraints still matter | **Best for: **Advanced applications requiring deep understanding and nuanced responses             | **Best for:** The most demanding applications requiring the highest quality outputs             |
+| **Trade-offs: **Less knowledge, more limited reasoning abilities, smaller context windows | **Trade-offs: **Better than small models but still limited compared to large ones  | **Trade-offs:** Require significant computing resources, more expensive to run                     | **Trade-offs:** Very resource-intensive, highest operating costs, slower inference times        |
+
+**Specialization:** Tells you what the model is designed to do best, such as "Instruct" (following directions), "Chat" (conversation), "Vision" (working with images), or "Code" (programming help). Below is a reference chart that has the most common specializations that AI models will use.
+
+| Instruct                                                                                                                                   | Chat                                                                                                                                  | Vision                                                                                                                         | Code                                                                                                                       |
+| :----------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| Optimized for following specific instructions and commands accurately. These models are trained to understand and execute directions well. | Designed for natural, flowing conversations. These models excel at back-and-forth dialogue rather than one-off questions or commands. | Capable of understanding and processing images along with text. These can "see" pictures you share and discuss their contents. | Specialized for programming tasks, including writing, explaining, and debugging code across various programming languages. |
+
+| Multimodal                                                                                           | Reasoning                                                                                                                        | Embeddings                                                                                                                           | Medical/Med                                                                 |
+| :--------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- |
+| Can work with multiple types of information (text, images, sometimes audio) in a single interaction. | Enhanced ability to work through problems step-by-step, often showing their thinking process rather than just providing answers. | Specialized for converting text into numerical representations (vectors) for use in search, recommendations, and other applications. | Optimized with healthcare knowledge for medical applications and questions. |
+
+| Legal                                                                 | Reasearch                                                                                                     | Turbo                                                                                                  | Long-Context                                                                                                                                 |
+| :-------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| Fine-tuned with legal knowledge and precedents for law-related tasks. | Built for scientific research applications, often with stronger citation capabilities and academic knowledge. | Optimized for faster response times and improved efficiency, possibly at a small trade-off in quality. | Specifically designed to handle very long inputs and maintain understanding across extensive text (documents, books, or long conversations). |
+
+- **Release Date:** A date code in the model name (like 20240229) that shows when the model was created or released, indicating how up-to-date its knowledge is.
+- **Sub-version:** A smaller update that makes minor improvements without changing the main structure. These appear as decimal points or point releases (like v0.1, v1.2) after the main version number and represent fine-tuning rather than major changes.
+
+### How does this apply to me as a user?
+
+Since you can override AI Engines in your preferences, understanding these differences helps you make informed choices. As you become more familiar with AI, you'll develop preferences for certain models. This knowledge helps you select the right model for specific tasks based on capabilities, performance, and how recent its training data is.
