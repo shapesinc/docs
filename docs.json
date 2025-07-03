@@ -1,14 +1,12 @@
 {
-  "seo": {
-    "metatags": {
-      "og:title": "Shapes.Inc Docs",
-      "og:description": "Comprehensive Information for Shapes.Inc",
-      "og:image": "/logo/dark.png",
-      "og:url": "https://docs.shapes.inc"
-    }
-  }
-}
-{
+    "seo": {
+        "metatags": {
+            "og:title": "Shapes.Inc Docs",
+            "og:description": "Comprehensive Information for Shapes.Inc",
+            "og:image": "/logo/dark.png",
+            "og:url": "https://docs.shapes.inc"
+        }
+    },
     "$schema": "https://mintlify.com/docs.json",
     "theme": "mint",
     "name": "Shapes Inc Docs",
