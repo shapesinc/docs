@@ -23,11 +23,25 @@
                 "group": "Getting Started",
                 "pages": [
                     "introduction",
-                    "learninghub"
+                    "learninghub",
+                    "what-are-shapes",
+                   "homepage-overview",
+                    "how-to-talk-to-shapes",
+                    "how-to-make-a-shape"
                 ]
             },
-            {
-                "group": "Products & Services",
+            { 
+                "group": "Advanced Guides",
+                "pages": [
+                    "prompt101",
+                    "ai-engines",
+                    "presets",
+                    "variables",
+                    "memory",
+                    "ai-engines2"
+                  },
+          
+          {  "group": "Products & Services",
                 "pages": [
                     "premium",
                     "premium-subscriptions",
@@ -35,7 +49,7 @@
                     "credits-guide",
                     "giftcards",
                     "purchasegiftcards",
-                    "auto-top-up"
+                    "auto-top-up"}
                 ]
             }
         ]
