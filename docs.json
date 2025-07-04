@@ -17,58 +17,25 @@
     },
     "favicon": "/favicon.png",
     "navigation": {
-        "dropdowns": [
+      
+        "groups": [
             {
-                "dropdown": "Getting Started",
-                "icon": "book",
-                "description": "Everything from getting started with Shapes.inc to advanced preset guides for creators.",
-                "groups": [
-                    {
-                        "group": "Basics",
-                        "pages": [
-                            "introduction",
-                            "learninghub",
-                            "premium"
-                        ]
-                    },
-                    {
-                        "group": "Guides",
-                        "pages": [
-                            "homepage-overview",
-                            "how-to-talk-to-shapes",
-                            "how-to-make-a-shape",
-                            "prompt101",
-                            "presets",
-                            "variables",
-                            "memory",
-                            "ai-engines",
-                            "ai-engines2"
-                        ]
-                    }
+                "group": "Getting Started",
+                "pages": [
+                    "introduction",
+                    "learninghub"
                 ]
             },
             {
-                "dropdown": "Products & Services",
-                "icon": "box",
-                "description": "Premium plans and credit purchasing options",
-                "groups": [
-                    {
-                        "group": "Plans & Credits",
-                        "pages": [
-                            "premium",
-                            "premium-subscriptions",
-                            "credits-guide",
-                            "credits",
-                            "auto-top-up"
-                        ]
-                    },
-                    {
-                        "group": "Gift Cards",
-                        "pages": [
-                            "giftcards",
-                            "purchasegiftcards"
-                        ]
-                    }
+                "group": "Products & Services",
+                "pages": [
+                    "premium",
+                    "premium-subscriptions",
+                    "credits",
+                    "credits-guide",
+                    "giftcards",
+                    "purchasegiftcards",
+                    "auto-top-up"
                 ]
             }
         ]
@@ -98,3 +65,4 @@
         }
     }
 }
+
