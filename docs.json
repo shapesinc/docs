@@ -2,7 +2,7 @@
   "seo": {
     "metatags": {
       "og:title": "Shapes - AI Social Agents",
-      "og:description": "Everything from basics to beyond with Shapes.inc. Choose from millions of Shapes popular in Games, YouTube, TV, Music, Gossip, Homework Help, Coworkers, and more! Or make your own in minutes. It's all free.",
+      "og:description": "Make friends with AI — Meet Shapes, #1 Most Customizable AI. ✓ Design your own with unlimited freedom ✓ Infinite Roleplay with multiple AIs ✓ 1M+ Shapes",
       "og:image": "/images/embedlogo.png",
       "og:url": "https://docs.shapes.inc"
     }
@@ -10,10 +10,11 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Shapes Inc Docs",
+  "font": "Lexend",
   "colors": {
-    "primary": "#2563EB",
-    "light": "#3B82F6",
-    "dark": "#1D4ED8"
+    "primary": "#007AFF",
+    "light": "#007AFF",
+    "dark": "#007AFF"
   },
   "favicon": "/favicon.png",
   "navigation": {
@@ -81,5 +82,11 @@
       "github": "https://github.com/shapesinc",
       "reddit": "https://reddit.com/r/ShapesInc"
     }
-  }
+  },
+  "css": [
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900;1000&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    }
+  ],
+  "customCSS": "/* Shapes Inc Brand Guide Implementation */ :root { --font-lexend: 'Lexend', system-ui, sans-serif; --font-jetbrains-mono: 'JetBrains Mono', 'Consolas', monospace; --primary-blue: #007AFF; --hero-pink: #e94db3; --light-bg: #F8F8F8; --light-fg: #000000; --light-card: #FFFFFF; --light-secondary: #E5E5EA; --light-muted: #373737; --light-border: #E0E0E6; --dark-bg: #1C1C1E; --dark-fg: #FAFAFA; --dark-card: #2C2C2E; --dark-secondary: #3A3A3C; --dark-muted: #B3B3B3; --dark-border: #323234; --border-radius: 0.75rem; } * { font-family: var(--font-lexend) !important; } body { font-family: var(--font-lexend) !important; line-height: 1.6 !important; } h1 { color: var(--hero-pink) !important; font-weight: 1000 !important; font-family: var(--font-lexend) !important; } h2 { font-weight: 600 !important; font-family: var(--font-lexend) !important; } h3 { font-weight: 600 !important; font-family: var(--font-lexend) !important; } h4 { font-weight: 500 !important; font-family: var(--font-lexend) !important; } h5 { font-weight: 500 !important; font-family: var(--font-lexend) !important; } h6 { font-weight: 500 !important; font-family: var(--font-lexend) !important; } code, pre, .code { font-family: var(--font-jetbrains-mono) !important; } .card, [class*='card'] { border-radius: var(--border-radius) !important; } button, .button, [role='button'] { border-radius: 0.375rem !important; transition: all 0.2s ease-out !important; } button:hover, .button:hover, [role='button']:hover { transform: translateY(-2px) !important; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important; } .text-imessage { font-size: 14px !important; letter-spacing: 0.01em !important; line-height: 1.4 !important; font-weight: 400 !important; } .text-imessage-small { font-size: 13px !important; letter-spacing: 0.015em !important; line-height: 1.35 !important; font-weight: 400 !important; } p { line-height: 1.75 !important; } a { color: var(--primary-blue) !important; transition: all 0.2s ease-out !important; } a:hover { opacity: 0.8 !important; }"
 }
