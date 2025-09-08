@@ -1,0 +1,53 @@
+---
+title: "Message Regeneration: How It Creates Variety"
+description: "When you click regenerate, you’re not asking the AI to “reword” what it already said, you’re giving it another chance to generate a brand-new response from scratch."
+---
+
+<Tip>
+  To regenerate a message, select the three dot menu next to the Shape's message.
+
+  ![Messagemenu Jpe](/images/messagemenu.jpeg)
+</Tip>
+
+## **What Happens Each Regeneration**
+
+Every regeneration runs the full pipeline again:
+
+1. **Inputs gathered**
+   - Your Shape’s personality inputs
+   - Relevant knowledge (based on your Shape’s knowledge settings)
+   - Short- and long-term memories (based on your Shape’s memory settings)
+   - Training (based on your Shape’s training information)
+   - Conversation history
+2. **Prompt built**\
+    All of the above is combined into a single input for the model.
+3. **Fresh generation**\
+    The LLM calculates a new answer token by token, using randomness and probabilities.
+
+   <Tip>
+     Premium user tip: This is why regenerations cost the same as a new message, it’s the same full process each time.
+   </Tip>
+
+## **Why Responses Differ**
+
+Each run is like rolling a weighted set of dice. The outcome can vary depending on:
+
+- **Randomness settings**: Higher temperature/top-p means more creative and unexpected responses; lower settings mean more focused, consistent ones.
+- **Prompt wording**: The way you phrase your request guides the model toward different directions.
+- **Context richness**: Adding more detail in your instructions or conversation opens up more possible paths.
+- **Chance**: Even with the same setup, probability can land on a different “branch” of the answer space.
+
+## **Tips for Maximizing Variety**
+
+If you want regenerations that explore different angles, try:
+
+- Raising **temperature/top-p** to encourage creativity.
+- Rephrasing your question to push for new perspectives.
+- Providing more context or constraints to steer variety.
+- Changing your AI Engine or Shape prompting if the responses aren't what you're looking for. 
+
+## **Key Takeaway**
+
+Regeneration isn’t about tweaking an answer, it’s about giving the AI a fresh roll of the dice with the same setup. Sometimes you’ll get a similar answer, sometimes something totally new, and often something in between.
+
+Think of it as exploring multiple “what ifs” with the same starting conditions.
