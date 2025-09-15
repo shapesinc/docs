@@ -25,16 +25,25 @@
                     "learninghub",
                     "what-are-shapes",
                     "homepage-overview",
-                    "how-to-talk-to-shapes",
+                    "how-to-talk-to-shapes"
+                  
+                ]
+            },
+           {
+                "group": "Creation & Customization",
+                "pages": [
+                  "initialmessages",
                     "how-to-make-a-shape",
                     "create-a-room",
                     "room-appearance",
                     "how-to-give-your-shape-a-voice",
-                    "how-to-receive-voice-messages"
+                    "how-to-receive-voice-messages",
+                                      "css"
+
                 ]
             },
             {
-                "group": "Advanced Guides",
+                "group": "Prompts, Engines, & Beyond",
                 "pages": [
                     "prompt101",
                     "ai-engines",
@@ -44,7 +53,6 @@
                     "regeneration",
                     "shortguide",
                     "contextwindows",
-                    "css",
                     "ai-engines2"
                 ]
             },
