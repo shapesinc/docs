@@ -81,6 +81,12 @@
     }
   },
   "footer": {
+      "links": [
+    {
+      "label": "shapes.inc",
+      "href": "https://shapes.inc"
+    }
+  ],
     "socials": {
       "x": "https://x.com/shapes_inc",
       "github": "https://github.com/shapesinc",
