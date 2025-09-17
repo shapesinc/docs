@@ -22,11 +22,11 @@
                 "group": "Getting Started",
                 "pages": [
                     "introduction",
-                    "learninghub",
                     "what-are-shapes",
                     "homepage-overview",
                     "how-to-talk-to-shapes",
-                  "notifications"
+                  "notifications",
+                    "learninghub"
                   
                 ]
             },
@@ -48,10 +48,10 @@
             {
                 "group": "Prompts, Engines, & Beyond",
                 "pages": [
+                    "variables",
                     "prompt101",
                     "ai-engines",
                     "presets",
-                    "variables",
                     "memory",
                     "regeneration",
                     "shortguide",
