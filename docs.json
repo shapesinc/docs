@@ -25,19 +25,22 @@
                     "learninghub",
                     "what-are-shapes",
                     "homepage-overview",
-                    "how-to-talk-to-shapes"
+                    "how-to-talk-to-shapes",
+                  "notifications"
                   
                 ]
             },
            {
                 "group": "Creation & Customization",
                 "pages": [
-                  "initialmessages",
                     "how-to-make-a-shape",
                     "create-a-room",
                     "room-appearance",
+                    "custominstructions-room",
                     "how-to-give-your-shape-a-voice",
                     "how-to-receive-voice-messages",
+                  "initialmessages",
+                  "multimessages",
                                       "css"
 
                 ]
