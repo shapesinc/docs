@@ -106,10 +106,10 @@ You can mark any room as a favorite to keep it easy to find. Open your side navi
 # Homepage: placeholder
 
 - where to find dashboard,
--  using search, 
-- opening the sidenav, 
-- directories, 
-- finding rooms, 
+- using search,
+- opening the sidenav,
+- directories,
+- finding rooms,
 - scenes,
 
 # Creator's Dashboard
@@ -221,8 +221,81 @@ The **Settings** page lets you manage key controls for your Shape. Here, you can
 - **Duplicate the Shape** — quickly create a copy with all the same settings
 - **Delete the Shape** — permanently remove it from your account (found in the **Danger Zone**)
 
-### AI Engine
+## **AI Engine**
 
-placeholder
+This is one of the most important tabs on your shape's dashboard. On this tab, you can:
+
+- Update your shape's:
+  - Primary model
+  - Fallback model
+  - Freewill model (currently unavailable)
+- Enable/disable internal monologging
+- Toggle options like:
+  - Inform User When Fallback Engine is Used
+  - Inform Users When They Are Out of Shape Engine Credits
+  - Let Users Override AI Engine
+- Select the general language your shape will use by choosing a **Language Preset**
+- Write a **Base Preset** for your shape
+  - Presets highly impact your shape's character
+
+#### **Advanced Engine Parameters**
+
+You can also edit:
+
+- Temperature
+- Top P
+- Repetition Penalty
+- Top K
+- Frequency Penalty
+- Presence Penalty
+- Min P
+- Top A
+
+<Warning>
+  **!! It is not suggested to edit these settings unless you know what you're doing.**
+</Warning>
+
+#### **Timezone**
+
+You can define a timezone for your shape here.
+
+#### **Short-Term Memory (STM)**
+
+Enable STM and manage its frequency:
+
+- STM is the number of recent messages (user and shape) the shape will take into context.
+
+#### **Long-Term Memory**
+
+Enable or disable long-term memory and automatic memory generation. You can also:
+
+- Edit generation frequency
+- Select a model to generate long-term memories
+- Set instructions for the model
+- Configure memory recall settings:
+  - **Memory Relevance**:
+    - Lower values (0.1) recall more memories but may be less relevant
+    - Higher values (1.0) recall fewer but more relevant memories
+- Configure:
+  - Memory Sharing
+  - Memory Privacy
+    - **Private mode**: memories aren't shared at any point
+    - **Global mode**: memories are shared across all contexts
+
+#### **Training Settings**
+
+- Jump to the training tab using a button
+- Adjust **Training Context Size**: number of relevant training examples to include in conversations
+- Adjust **Training Relevance**:
+  - Lower values recall more examples but may be less relevant
+  - Higher values recall fewer but more matched examples
+
+#### **Knowledge Settings**
+
+- Jump to the knowledge tab using a button
+- Adjust **Knowledge Context Size**: number of relevant knowledge entries to include in conversations
+- Adjust **Knowledge Relevance**:
+  - Lower values recall more entries but may be less relevant
+  - Higher values recall fewer but more relevant entries
 
 [shapes.inc](shapes.inc)
