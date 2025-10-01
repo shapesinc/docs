@@ -105,7 +105,5 @@
         "socials": {
             "reddit": "https://reddit.com/r/ShapesInc"
         }
-    }, "components": {
-    "EngineFilterList": "./components/EngineFilterList.js"
-  }
+    }
 }
