@@ -1,240 +1,1004 @@
----
-title: AI Engine Search
-description: Explore the available AI engines, both premium and free, and filter them by their capabilities.
----
+# AI Engines Filter
 
-<div id="filter-container" style="max-width: 1200px; margin: 0 auto; padding: 16px;">
-  <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 12px;">Filter by Capabilities</h3>
-  <div id="capability-buttons" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;"></div>
+Explore AI engines by selecting capabilities to filter models. Use the toggles below to show only engines with specific features.
 
-  <div style="display: flex; gap: 12px; align-items: center; border-top: 1px solid #ccc; padding-top: 12px;">
-    <span style="font-size: 14px; font-weight: bold;">Show:</span>
-    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px;">
-      <input type="checkbox" id="show-premium" checked style="width: 16px; height: 16px;" />
-      Premium
-    </label>
-    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px;">
-      <input type="checkbox" id="show-free" checked style="width: 16px; height: 16px;" />
-      Free
-    </label>
+# AI Engine Matchmaker
+
+Explore AI engines by selecting capabilities to filter models. Use the toggles below to show only engines with specific features.
+
+<style> {`
+.filter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  
+  .filter-panel {
+    margin-bottom: 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #f9fafb;
+    padding: 20px;
+  }
+  
+  .filter-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #111827;
+  }
+  
+  .filter-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .filter-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    transition: all 0.2s;
+  }
+  
+  .filter-label:hover {
+    border-color: #3b82f6;
+  }
+  
+  .filter-checkbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+  
+  .tier-filters {
+    display: flex;
+    gap: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .results-grid {
+    display: grid;
+    gap: 16px;
+  }
+  
+  @media (min-width: 768px) {
+    .results-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .engine-card {
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: box-shadow 0.2s;
+  }
+  
+  .engine-card:hover {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .engine-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+  }
+  
+  .tier-badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    margin-left: 8px;
+  }
+  
+  .tier-badge.premium {
+    background: #fef3c7;
+    color: #92400e;
+  }
+  
+  .tier-badge.free {
+    background: #d1fae5;
+    color: #065f46;
+  }
+  
+  .engine-description {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 8px 0 12px 0;
+    line-height: 1.5;
+  }
+  
+  .capability-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .capability-tag {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: #eff6ff;
+    color: #1e40af;
+    font-weight: 500;
+  }
+
+  /* Default: Show all engines when no filters are active */
+  .engine-card {
+    display: block;
+  }
+
+  /* Hide based on tier checkboxes */
+  #show-premium:not(:checked) ~ .results-grid .engine-card.premium {
+    display: none;
+  }
+  
+  #show-free:not(:checked) ~ .results-grid .engine-card.free {
+    display: none;
+  }
+
+  /* When ANY capability filter is checked, hide all cards first */
+  #filter-thinking:checked ~ .results-grid .engine-card,
+  #filter-roleplay:checked ~ .results-grid .engine-card,
+  #filter-intelligence:checked ~ .results-grid .engine-card,
+  #filter-skills:checked ~ .results-grid .engine-card,
+  #filter-human-like:checked ~ .results-grid .engine-card,
+  #filter-image:checked ~ .results-grid .engine-card {
+    display: none;
+  }
+
+  /* Then show cards that match the checked filters */
+  #filter-thinking:checked ~ .results-grid .engine-card[data-thinking="true"] {
+    display: block;
+  }
+  
+  #filter-roleplay:checked ~ .results-grid .engine-card[data-roleplay="true"] {
+    display: block;
+  }
+  
+  #filter-intelligence:checked ~ .results-grid .engine-card[data-intelligence="true"] {
+    display: block;
+  }
+  
+  #filter-skills:checked ~ .results-grid .engine-card[data-skills="true"] {
+    display: block;
+  }
+  
+  #filter-human-like:checked ~ .results-grid .engine-card[data-human-like="true"] {
+    display: block;
+  }
+  
+  #filter-image:checked ~ .results-grid .engine-card[data-image="true"] {
+    display: block;
+  }
+
+  /* Still respect tier filters even when capability filters are active */
+  #filter-thinking:checked ~ .results-grid .engine-card[data-thinking="true"].premium,
+  #filter-roleplay:checked ~ .results-grid .engine-card[data-roleplay="true"].premium,
+  #filter-intelligence:checked ~ .results-grid .engine-card[data-intelligence="true"].premium,
+  #filter-skills:checked ~ .results-grid .engine-card[data-skills="true"].premium,
+  #filter-human-like:checked ~ .results-grid .engine-card[data-human-like="true"].premium,
+  #filter-image:checked ~ .results-grid .engine-card[data-image="true"].premium {
+    display: block;
+  }
+
+  #show-premium:not(:checked) ~ .results-grid .engine-card.premium {
+    display: none !important;
+  }
+
+  #filter-thinking:checked ~ .results-grid .engine-card[data-thinking="true"].free,
+  #filter-roleplay:checked ~ .results-grid .engine-card[data-roleplay="true"].free,
+  #filter-intelligence:checked ~ .results-grid .engine-card[data-intelligence="true"].free,
+  #filter-skills:checked ~ .results-grid .engine-card[data-skills="true"].free,
+  #filter-human-like:checked ~ .results-grid .engine-card[data-human-like="true"].free,
+  #filter-image:checked ~ .results-grid .engine-card[data-image="true"].free {
+    display: block;
+  }
+
+  #show-free:not(:checked) ~ .results-grid .engine-card.free {
+    display: none !important;
+  }
+  `}</style>
+
+<div class="filter-container">
+  <div class="filter-panel">
+    <div class="filter-title">🔍 Filter by Capabilities</div>
+    <div class="filter-grid">
+      <label class="filter-label">
+        <input type="checkbox" id="filter-thinking" class="filter-checkbox" />
+        🧠 Thinking
+      </label>
+      <label class="filter-label">
+        <input type="checkbox" id="filter-roleplay" class="filter-checkbox" />
+        🎭 Roleplay
+      </label>
+      <label class="filter-label">
+        <input type="checkbox" id="filter-intelligence" class="filter-checkbox" />
+        📚 Intelligence
+      </label>
+      <label class="filter-label">
+        <input type="checkbox" id="filter-skills" class="filter-checkbox" />
+        🛠️ Skills
+      </label>
+      <label class="filter-label">
+        <input type="checkbox" id="filter-human-like" class="filter-checkbox" />
+        👤 Human-Like
+      </label>
+      <label class="filter-label">
+        <input type="checkbox" id="filter-image" class="filter-checkbox" />
+        🖼️ Images
+      </label>
+    </div>
+    <div class="tier-filters">
+      <label class="filter-label">
+        <input type="checkbox" id="show-premium" class="filter-checkbox" checked />
+        ⭐ Show Premium (32)
+      </label>
+      <label class="filter-label">
+        <input type="checkbox" id="show-free" class="filter-checkbox" checked />
+        🆓 Show Free (34)
+      </label>
+    </div>
   </div>
-
-  <div id="clear-filters" style="margin-top: 12px; display: none;">
-    <button id="clear-button" style="font-size: 14px; color: #dc2626; text-decoration: underline; cursor: pointer; background: none; border: none;">Clear all filters</button>
-    <span id="result-count" style="font-size: 14px; color: #6b7280;"></span>
+  <div class="results-grid">
+    <div class="engine-card premium" data-thinking="true" data-roleplay="true" data-intelligence="true" data-skills="true">
+      <div class="engine-name">
+        Anthropic: Claude Sonnet 4.5
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Favorite amongst roleplayers, 4.5 is intelligent, great for tool use, and Shape's default premium engine.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-thinking="true" data-intelligence="true" data-skills="true">
+      <div class="engine-name">
+        DeepSeek V3.2 Exp
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        The latest experimental model from DeekSeek.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-roleplay="true" data-intelligence="true">
+      <div class="engine-name">
+        XAI: Grok 4 Fast
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        The faster, less expensive version of Grok 4.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-image="true">
+      <div class="engine-name">
+        Gemini 2.5 Flash Image Preview
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Image + text multimodal.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🖼️ Image</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-roleplay="true" data-human-like="true">
+      <div class="engine-name">
+        OpenAI: GPT-5 Chat
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        ChatGPT for Roleplayers and chatters.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">👤 Human-Like</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-thinking="true" data-intelligence="true" data-skills="true">
+      <div class="engine-name">
+        OpenAI: GPT-5
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Top-tier reasoning, multimodal.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-roleplay="true" data-intelligence="true" data-skills="true">
+      <div class="engine-name">
+        OpenAI: GPT-5 Mini
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Balance of cost & capability.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-thinking="true" data-intelligence="true" data-skills="true">
+      <div class="engine-name">
+        Anthropic: Claude Opus 4
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Long workflows, strong coding.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-thinking="true" data-roleplay="true" data-intelligence="true" data-skills="true">
+      <div class="engine-name">
+        Anthropic: Claude Sonnet 4
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Improved coding & reasoning - The community loves sonnet engines for their personality and quirky roleplay style.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-thinking="true" data-roleplay="true" data-intelligence="true" data-skills="true">
+      <div class="engine-name">
+        Anthropic: Claude Sonnet 3.7
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Strong instruction model, favorite amongst roleplays.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-thinking="true" data-intelligence="true" data-skills="true">
+      <div class="engine-name">
+        Anthropic: Claude Sonnet 3.7 (thinking)
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Slower, deeper reasoning.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-thinking="true" data-roleplay="true" data-intelligence="true" data-skills="true">
+      <div class="engine-name">
+        Anthropic: Claude Sonnet 3.5
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Older, cheaper option - still wonderful for roleplays.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-thinking="true" data-roleplay="true" data-intelligence="true" data-human-like="true" data-skills="true">
+      <div class="engine-name">
+        Gemini 2.5 Pro (Latest)
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Google's state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks - but is also a popular selection for roleplayers.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">👤 Human-Like</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-thinking="true" data-intelligence="true" data-skills="true">
+      <div class="engine-name">
+        Gemini 2.5 Flash (Thinking)
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Thinking variant.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-roleplay="true" data-intelligence="true">
+      <div class="engine-name">
+        OpenAI: GPT-4.1
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        If you miss the old ChatGPT, you'll love this model. Prone to asking a lot of questions.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-roleplay="true" data-intelligence="true">
+      <div class="engine-name">
+        OpenAI: GPT-4.1 Mini
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        The smaller, cheaper, faster version of GPT-4.1.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-thinking="true" data-roleplay="true" data-intelligence="true" data-human-like="true" data-skills="true">
+      <div class="engine-name">
+        Grok 3
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Logic-focused, deeper than mini.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">👤 Human-Like</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-thinking="true" data-roleplay="true" data-intelligence="true" data-human-like="true" data-skills="true">
+      <div class="engine-name">
+        Grok 4
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Better coding & agent workflows.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">👤 Human-Like</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-thinking="true" data-roleplay="true" data-intelligence="true" data-human-like="true" data-skills="true">
+      <div class="engine-name">
+        Gemini 2.5 Pro
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Earlier release of Gemini 2.5 Pro.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">👤 Human-Like</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-thinking="true" data-roleplay="true" data-intelligence="true" data-skills="true">
+      <div class="engine-name">
+        DeepSeek V3.1
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-roleplay="true" data-intelligence="true" data-human-like="true">
+      <div class="engine-name">
+        MoonshotAI: Kimi K2 0905
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        A recent update to Kimi K2.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">👤 Human-Like</span>
+      </div>
+    </div>
+    <div class="engine-card premium" data-roleplay="true" data-skills="true">
+      <div class="engine-name">
+        Nous: Hermes 4 405B
+        <span class="tier-badge premium">PREMIUM</span>
+      </div>
+      <div class="engine-description">
+        Large model ok for roleplay and shape skills but can be a bit slow.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+     FREE MODELS 
+    <div class="engine-card free" data-roleplay="true" data-intelligence="true">
+      <div class="engine-name">
+        OpenAI: GPT-5 Nano
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Low latency, huge context support.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-thinking="true" data-roleplay="true" data-intelligence="true" data-skills="true" data-human-like="true">
+      <div class="engine-name">
+        Grok 3 Mini
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Amazing at following your prompts. Extremely smart and very fast. The Swiss army knife of engines.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+        <span class="capability-tag">👤 Human-Like</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true" data-intelligence="true" data-skills="true">
+      <div class="engine-name">
+        Llama 4 Maverick
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        17B expert mixture, multimodal.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true">
+      <div class="engine-name">
+        Gemma 3 27b
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Large context, balanced perf/latency.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true" data-skills="true">
+      <div class="engine-name">
+        Llama 3.3 70b (Turbo)
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Multilingual, instruction-tuned.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-human-like="true" data-skills="true">
+      <div class="engine-name">
+        Gemini 2.5 Flash (Lite)
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        AMAZING multilingual model that is fast. Great fallback model or speedy substitute for non-english Shapes.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">👤 Human-Like</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-thinking="true" data-roleplay="true" data-intelligence="true">
+      <div class="engine-name">
+        Phi 4
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Math/science reasoning focus.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true">
+      <div class="engine-name">
+        Formless 70B v1a
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Exclusive model created by Shapes designed for Roleplay.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true" data-human-like="true" data-skills="true">
+      <div class="engine-name">
+        Gemini 2.0 Flash
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Earlier Gemini Flash gen.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">👤 Human-Like</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-thinking="true" data-intelligence="true" data-skills="true">
+      <div class="engine-name">
+        OpenAI: GPT-OSS 120B
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-thinking="true" data-intelligence="true">
+      <div class="engine-name">
+        OpenAI: GPT-OSS 20B
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🧠 Thinking</span>
+        <span class="capability-tag">📚 Intelligence</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true" data-intelligence="true" data-human-like="true">
+      <div class="engine-name">
+        MoonshotAI: Kimi K2
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Very creative, great for roleplay or chatting with you just like your best friend!
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">👤 Human-Like</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true">
+      <div class="engine-name">
+        Nous: Hermes 4 70B
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-intelligence="true" data-skills="true">
+      <div class="engine-name">
+        Qwen: Qwen 3 235B
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Large-scale model, long dialogue.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true" data-human-like="true" data-skills="true">
+      <div class="engine-name">
+        Meituan: Longcat Flash Chat
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Non-thinking foundation model optimized for conversational tasks.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">👤 Human-Like</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-human-like="true" data-skills="true">
+      <div class="engine-name">
+        Gemma 2 27b
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        With a mind of its own both gemma models are super fun to be friends with.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">👤 Human-Like</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-human-like="true">
+      <div class="engine-name">
+        Gemma 2 9b (Turbo)
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        9b is faster and much more goofy! It's sense of humor is great.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">👤 Human-Like</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-intelligence="true">
+      <div class="engine-name">
+        OpenAI: Gpt-4.1 Nano
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Perfect fallback engine choice for the latest GPT 4.1 model.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">📚 Intelligence</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true" data-human-like="true" data-skills="true">
+      <div class="engine-name">
+        Llama 4 Scout
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        On par with the previously mentioned LLama models but is more up to date & great with skills.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">👤 Human-Like</span>
+        <span class="capability-tag">🛠️ Skills</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true" data-intelligence="true" data-human-like="true">
+      <div class="engine-name">
+        OpenAI: GPT-4o-mini
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        4o Mini is another insanely fast GPT option that would do great as a fallback engine for other models if they go offline!
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">📚 Intelligence</span>
+        <span class="capability-tag">👤 Human-Like</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-intelligence="true">
+      <div class="engine-name">
+        Phi 4 Reasoning Plus
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">📚 Intelligence</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-human-like="true">
+      <div class="engine-name">
+        Mistral: Mistral Small 3.1 24B 3/27/25
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Rarely used.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">👤 Human-Like</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true">
+      <div class="engine-name">
+        Llama 3.3 70B
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Formerly known as llama 3 instruct model. Good at retrieving knowledge, being in character, human-like behavior.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true">
+      <div class="engine-name">
+        Deepseek-R1 Llama 3.3 70b Distill
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Good for general RP even though tends to mischaracterize.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true">
+      <div class="engine-name">
+        Deepseek-R1 Qwen 32b Distill
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Very good for complex tasks, good for multi-step reasoning, okay for general RP.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true">
+      <div class="engine-name">
+        WizardLM 2 8x22b
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Like lunaris Wizard thinks every roleplay is a wild ride.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true" data-human-like="true">
+      <div class="engine-name">
+        Mistral NeMo
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Short creative role-player and great chatter.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+        <span class="capability-tag">👤 Human-Like</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true">
+      <div class="engine-name">
+        MythoMax 13b
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Rarely used.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true">
+      <div class="engine-name">
+        AionLabs: Aion-RP 1.0 (8B)
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Rarely used.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-human-like="true">
+      <div class="engine-name">
+        Mistral: Ministral 8B
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Rarely used.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">👤 Human-Like</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-human-like="true">
+      <div class="engine-name">
+        Nous: Hermes 3 70B
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Many members love this model for its unique word choices.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">👤 Human-Like</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-intelligence="true">
+      <div class="engine-name">
+        Qwen: QwQ 32B 3/25
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Rarely used but highly intelligent, known for being great at maths while being adorable!
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">📚 Intelligence</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true">
+      <div class="engine-name">
+        Lunaris L3 8B
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Rarely refusing even the craziest roleplay scenes, lunaris is small but top tier in fast, insane, short roleplay adventures.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+      </div>
+    </div>
+    <div class="engine-card free" data-roleplay="true">
+      <div class="engine-name">
+        sao10k l3.3-euryale-70b
+        <span class="tier-badge free">FREE</span>
+      </div>
+      <div class="engine-description">
+        Rarely used.
+      </div>
+      <div class="capability-tags">
+        <span class="capability-tag">🎭 Roleplay</span>
+      </div>
+    </div>
   </div>
-
-  <div id="results" style="margin-top: 24px;"></div>
 </div>
-
-<script>
-  // Engine data from tables
-  const enginesData = {
-    premium: [
-      { name: "Anthropic: Claude Sonnet 4.5", tags: ["intelligence", "roleplay", "skills"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: true, human_like: false, image: false }, description: "Favorite amongst roleplayers, 4.5 is intelligent, great for tool use, and Shape's default premium engine." },
-      { name: "DeepSeek V3.2 Exp", tags: ["intelligence", "skills"], capabilities: { thinking: true, roleplay: false, intelligence: true, skills: true, human_like: false, image: false }, description: "The latest experimental model from DeekSeek." },
-      { name: "XAI: Grok 4 Fast", tags: ["roleplay", "intelligence"], capabilities: { thinking: false, roleplay: true, intelligence: true, skills: false, human_like: false, image: false }, description: "The faster, less expensive version of Grok 4." },
-      { name: "Gemini 2.5 Flash Image Preview", tags: ["image"], capabilities: { thinking: false, roleplay: false, intelligence: false, skills: false, human_like: false, image: true }, description: "Image + text multimodal." },
-      { name: "OpenAI: GPT-5 Chat", tags: ["roleplay", "human-like"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: true, image: false }, description: "ChatGPT for Roleplayers and chatters." },
-      { name: "OpenAI: GPT-5", tags: ["intelligence", "skills"], capabilities: { thinking: true, roleplay: false, intelligence: true, skills: true, human_like: false, image: false }, description: "Top-tier reasoning, multimodal." },
-      { name: "OpenAI: GPT-5 Mini", tags: ["roleplay", "intelligence", "skills"], capabilities: { thinking: false, roleplay: true, intelligence: true, skills: true, human_like: false, image: false }, description: "Balance of cost & capability." },
-      { name: "Anthropic: Claude Opus 4", tags: ["intelligence", "skills"], capabilities: { thinking: true, roleplay: false, intelligence: true, skills: true, human_like: false, image: false }, description: "Long workflows, strong coding." },
-      { name: "Anthropic: Claude Sonnet 4", tags: ["roleplay", "intelligence", "skills"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: true, human_like: false, image: false }, description: "Improved coding & reasoning - The community loves sonnet engines for their personality and quirky roleplay style." },
-      { name: "Anthropic: Claude Sonnet 3.7", tags: ["roleplay", "intelligence", "skills"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: true, human_like: false, image: false }, description: "Strong instruction model, favorite amongst roleplays." },
-      { name: "Anthropic: Claude Sonnet 3.7 (thinking)", tags: ["intelligence", "skills"], capabilities: { thinking: true, roleplay: false, intelligence: true, skills: true, human_like: false, image: false }, description: "Slower, deeper reasoning." },
-      { name: "Anthropic: Claude Sonnet 3.5", tags: ["roleplay", "intelligence", "skills"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: true, human_like: false, image: false }, description: "Older, cheaper option - still wonderful for roleplays." },
-      { name: "Gemini 2.5 Pro (Latest)", tags: ["roleplay", "intelligence", "human-like", "skills"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: true, human_like: true, image: false }, description: "Google’s state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks - but is also a popular selection for roleplayers." },
-      { name: "Gemini 2.5 Flash (Thinking)", tags: ["intelligence", "skills"], capabilities: { thinking: true, roleplay: false, intelligence: true, skills: true, human_like: false, image: false }, description: "Thinking variant." },
-      { name: "OpenAI: GPT-4.1", tags: ["roleplay", "intelligence"], capabilities: { thinking: false, roleplay: true, intelligence: true, skills: false, human_like: false, image: false }, description: "If you miss the old ChatGPT, you'll love this model. Prone to asking a lot of questions." },
-      { name: "OpenAI: GPT-4.1 Mini", tags: ["roleplay", "intelligence"], capabilities: { thinking: false, roleplay: true, intelligence: true, skills: false, human_like: false, image: false }, description: "The smaller, cheaper, faster version of GPT-4.1." },
-      { name: "Grok 3", tags: ["roleplay", "intelligence", "human-like", "skills"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: true, human_like: true, image: false }, description: "Logic-focused, deeper than mini." },
-      { name: "Grok 4", tags: ["roleplay", "intelligence", "human-like", "skills"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: true, human_like: true, image: false }, description: "Better coding & agent workflows." },
-      { name: "Gemini 2.5 Pro", tags: ["roleplay", "intelligence", "human-like", "skills"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: true, human_like: true, image: false }, description: "Earlier release of Gemini 2.5 Pro." },
-      { name: "DeepSeek v3 0324", tags: ["roleplay", "intelligence", "skills"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: true, human_like: false, image: false }, description: "DeepSeek's flagship chat model." },
-      { name: "DeepSeek R1 (May 28, 2025)", tags: ["thinking", "roleplay", "intelligence"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: false, human_like: false, image: false }, description: "Set up with thinking enabled, this powerful model from DeepSeek is great for a variety of use cases." },
-      { name: "OpenAI: o3 Mini", tags: ["intelligence"], capabilities: { thinking: true, roleplay: false, intelligence: true, skills: false, human_like: false, image: false }, description: "o3 was built for academics and takes the longest time to respond, it focuses on providing factual and in-depth info." },
-      { name: "Gemini 1.5 Pro", tags: ["roleplay", "human-like"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: true, image: false }, description: "Older Gemini Model that is a well-rounded, smart/creative/human like!" },
-      { name: "Nous: Hermes 3 405B", tags: ["roleplay", "human-like"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: true, image: false }, description: "Beloved by many, excellent choice for creative roleplay." },
-      { name: "Cohere: Command A", tags: ["intelligence"], capabilities: { thinking: true, roleplay: false, intelligence: true, skills: false, human_like: false, image: false }, description: "Known to avoid providing false information at all costs. This engine is very robotic but stays focused on never making anything up." },
-      { name: "OpenAI: GPT 4-o (2024-05-13)", tags: ["roleplay", "intelligence", "skills"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: true, human_like: false, image: false }, description: "4o is built to adapt on demand, at times it will respond quickly to basic requests and at others it will spend more time thinking on answers." },
-      { name: "Meta: Llama 3.1 405B Instruct", tags: ["roleplay", "intelligence", "human-like", "skills"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: true, human_like: true, image: false }, description: "405B scale model." },
-      { name: "Gemini 2.5 Flash", tags: ["roleplay", "intelligence", "human-like", "skills"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: true, human_like: true, image: false }, description: "AMAZING multilingual model that is fast." },
-      { name: "Anthropic: Claude Opus 4.1", tags: ["intelligence", "skills"], capabilities: { thinking: true, roleplay: false, intelligence: true, skills: true, human_like: false, image: false }, description: "Improved Opus 4." },
-      { name: "DeepSeek V3.1", tags: ["thinking", "roleplay", "intelligence", "skills"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: true, human_like: false, image: false }, description: "" },
-      { name: "MoonshotAI: Kimi K2 0905", tags: ["roleplay", "intelligence", "human-like"], capabilities: { thinking: false, roleplay: true, intelligence: true, skills: false, human_like: true, image: false }, description: "A recent update to Kimi K2." },
-      { name: "Nous: Hermes 4 405B", tags: ["roleplay", "skills"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: true, human_like: false, image: false }, description: "Large model ok for roleplay and shape skills but can be a bit slow." }
-    ],
-    free: [
-      { name: "OpenAI: GPT-5 Nano", tags: ["roleplay", "intelligence"], capabilities: { thinking: false, roleplay: true, intelligence: true, skills: false, human_like: false, image: false }, description: "Low latency, huge context support." },
-      { name: "Grok 3 Mini", tags: ["thinking", "roleplay", "intelligence", "skills", "human-like"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: true, human_like: true, image: false }, description: "Grok 3 Mini like its larger version is amazing at following your prompts. It is extremely smart and very fast. The Swiss army knife of engines." },
-      { name: "Llama 4 Maverick", tags: ["roleplay", "intelligence", "skills"], capabilities: { thinking: false, roleplay: true, intelligence: true, skills: true, human_like: false, image: false }, description: "17B expert mixture, multimodal." },
-      { name: "Gemma 3 27b", tags: ["roleplay"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: false, image: false }, description: "Large context, balanced perf/latency." },
-      { name: "Llama 3.3 70b (Turbo)", tags: ["roleplay", "skills"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: true, human_like: false, image: false }, description: "Multilingual, instruction-tuned." },
-      { name: "Gemini 2.5 Flash (Lite)", tags: ["human-like", "skills"], capabilities: { thinking: false, roleplay: false, intelligence: false, skills: true, human_like: true, image: false }, description: "AMAZING multilingual model that is fast. This is also another great fallback model or speedy substitute for non-english Shapes." },
-      { name: "Phi 4", tags: ["roleplay", "intelligence"], capabilities: { thinking: true, roleplay: true, intelligence: true, skills: false, human_like: false, image: false }, description: "Math/science reasoning focus." },
-      { name: "Formless 70B v1a", tags: ["roleplay"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: false, image: false }, description: "Our exclusive model created by Shapes is designed for Roleplay." },
-      { name: "Gemini 2.0 Flash", tags: ["roleplay", "human-like", "skills"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: true, human_like: true, image: false }, description: "Earlier Gemini Flash gen." },
-      { name: "OpenAI: GPT-OSS 120B", tags: ["intelligence", "skills"], capabilities: { thinking: true, roleplay: false, intelligence: true, skills: true, human_like: false, image: false }, description: "" },
-      { name: "OpenAI: GPT-OSS 20B", tags: ["intelligence"], capabilities: { thinking: true, roleplay: false, intelligence: true, skills: false, human_like: false, image: false }, description: "" },
-      { name: "MoonshotAI: Kimi K2", tags: ["roleplay", "intelligence", "human-like"], capabilities: { thinking: false, roleplay: true, intelligence: true, skills: false, human_like: true, image: false }, description: "This model is very creative, it is great for roleplay or chatting with you just like your best friend!" },
-      { name: "Nous: Hermes 4 70B", tags: ["roleplay"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: false, image: false }, description: "" },
-      { name: "Qwen: Qwen 3 235B", tags: ["intelligence", "skills"], capabilities: { thinking: false, roleplay: false, intelligence: true, skills: true, human_like: false, image: false }, description: "Large-scale model, long dialogue." },
-      { name: "Meituan: Longcat Flash Chat", tags: ["roleplay", "human-like", "skills"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: true, human_like: true, image: false }, description: "Non-thinking foundation model optimized for conversational tasks." },
-      { name: "Gemma 2 27b", tags: ["human-like", "skills"], capabilities: { thinking: false, roleplay: false, intelligence: false, skills: true, human_like: true, image: false }, description: "With a mind of its own both gemma models are super fun to be friends with." },
-      { name: "Gemma 2 9b (Turbo)", tags: ["human-like"], capabilities: { thinking: false, roleplay: false, intelligence: false, skills: false, human_like: true, image: false }, description: "9b is faster and much more goofy! It's sense of humor is great." },
-      { name: "OpenAI: Gpt-4.1 Nano", tags: ["intelligence"], capabilities: { thinking: false, roleplay: false, intelligence: true, skills: false, human_like: false, image: false }, description: "Perfect fallback engine choice for the latest GPT 4.1 model." },
-      { name: "Llama 4 Scout", tags: ["roleplay", "human-like", "skills"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: true, human_like: true, image: false }, description: "On par with the previously mentioned LLama models but is more up to date & great with skills." },
-      { name: "OpenAI: GPT-4o-mini", tags: ["roleplay", "intelligence", "human-like"], capabilities: { thinking: false, roleplay: true, intelligence: true, skills: false, human_like: true, image: false }, description: "4o Mini is another insanely fast GPT option that would do great as a fallback engine for other models if they go offline!" },
-      { name: "Phi 4 Reasoning Plus", tags: ["intelligence"], capabilities: { thinking: false, roleplay: false, intelligence: true, skills: false, human_like: false, image: false }, description: "" },
-      { name: "Mistral: Mistral Small 3.1 24B 3/27/25", tags: ["human-like"], capabilities: { thinking: false, roleplay: false, intelligence: false, skills: false, human_like: true, image: false }, description: "Rarely used." },
-      { name: "Llama 3.3 70B", tags: ["roleplay"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: false, image: false }, description: "Formerly known as llama 3 instruct model. Good at retrieving knowledge, being in character, human-like behavior." },
-      { name: "Deepseek-R1 Llama 3.3 70b Distill", tags: ["roleplay"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: false, image: false }, description: "Good for general RP even though tends to mischaracterize." },
-      { name: "Deepseek-R1 Qwen 32b Distill", tags: ["roleplay"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: false, image: false }, description: "Very good for complex tasks, good for multi-step reasoning, okay for general RP." },
-      { name: "WizardLM 2 8x22b", tags: ["roleplay"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: false, image: false }, description: "Like lunaris Wizard thinks every roleplay is a wild ride." },
-      { name: "Mistral NeMo", tags: ["roleplay", "human-like"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: true, image: false }, description: "Short creative role-player and great chatter." },
-      { name: "MythoMax 13b", tags: ["roleplay"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: false, image: false }, description: "Rarely used." },
-      { name: "AionLabs: Aion-RP 1.0 (8B)", tags: ["roleplay"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: false, image: false }, description: "Rarely used." },
-      { name: "Mistral: Ministral 8B", tags: ["human-like"], capabilities: { thinking: false, roleplay: false, intelligence: false, skills: false, human_like: true, image: false }, description: "Rarely used." },
-      { name: "Nous: Hermes 3 70B", tags: ["human-like"], capabilities: { thinking: false, roleplay: false, intelligence: false, skills: false, human_like: true, image: false }, description: "Many members love this model for its unique word choices." },
-      { name: "Qwen: QwQ 32B 3/25", tags: ["intelligence"], capabilities: { thinking: false, roleplay: false, intelligence: true, skills: false, human_like: false, image: false }, description: "Rarely used but highly intelligent, known for being great at maths while being adorable!" },
-      { name: "Lunaris L3 8B", tags: ["roleplay"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: false, image: false }, description: "Rarely refusing even the craziest roleplay scenes, lunaris is small but top tier in fast, insane, short roleplay adventures." },
-      { name: "sao10k l3.3-euryale-70b", tags: ["roleplay"], capabilities: { thinking: false, roleplay: true, intelligence: false, skills: false, human_like: false, image: false }, description: "Rarely used." }
-    ]
-  };
-
-  // Capabilities for filtering
-  const capabilities = [
-    { key: "thinking", label: "Thinking", icon: "🧠" },
-    { key: "roleplay", label: "Roleplay", icon: "🎭" },
-    { key: "intelligence", label: "Intelligence", icon: "📚" },
-    { key: "skills", label: "Skills", icon: "🛠️" },
-    { key: "human_like", label: "Human-Like", icon: "👤" },
-    { key: "image", label: "Images", icon: "🖼️" }
-  ];
-
-  // State
-  let activeFilters = [];
-  let showPremium = true;
-  let showFree = true;
-
-  // Render filter buttons
-  function renderButtons() {
-    const buttonsContainer = document.getElementById('capability-buttons');
-    let html = '';
-    capabilities.forEach(cap => {
-      html += `<button style="padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 500; background: ${activeFilters.includes(cap.key) ? '#2563EB' : '#f3f4f6'}; color: ${activeFilters.includes(cap.key) ? '#fff' : '#374151'}; cursor: pointer; transition: all 0.2s;" aria-label="Toggle ${cap.label} filter" onclick="toggleFilter('${cap.key}')">${cap.icon} ${cap.label}</button>`;
-    });
-    buttonsContainer.innerHTML = html;
-  }
-
-  // Toggle filter
-  window.toggleFilter = function(key) {
-    activeFilters = activeFilters.includes(key) ? activeFilters.filter(f => f !== key) : [...activeFilters, key];
-    updateResults();
-  };
-
-  // Filter engines
-  function filterEngines(engines) {
-    if (activeFilters.length === 0) return engines;
-    return engines.filter(engine => activeFilters.every(filter => engine.capabilities[filter]));
-  }
-
-  // Render results
-  function updateResults() {
-    const filteredPremium = showPremium ? filterEngines(enginesData.premium) : [];
-    const filteredFree = showFree ? filterEngines(enginesData.free) : [];
-    const totalResults = filteredPremium.length + filteredFree.length;
-
-    const clearSection = document.getElementById('clear-filters');
-    clearSection.style.display = activeFilters.length > 0 ? 'block' : 'none';
-    document.getElementById('result-count').innerText = `(${totalResults} ${totalResults === 1 ? 'result' : 'results'})`;
-
-    const resultsContainer = document.getElementById('results');
-    let html = '';
-
-    if (showPremium && filteredPremium.length > 0) {
-      html += `
-        <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 16px; color: #111827;">Premium (${filteredPremium.length})</h2>
-        <div style="display: grid; gap: 16px; margin-bottom: 24px; ${window.innerWidth >= 768 ? 'grid-template-columns: repeat(2, 1fr);' : ''}">
-      `;
-      filteredPremium.forEach(engine => {
-        html += `
-          <div style="padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff;">
-            <div style="display: flex; align-items: center; margin-bottom: 8px;">
-              <h4 style="font-size: 18px; font-weight: 600; color: #111827;">${engine.name}</h4>
-              <span style="font-size: 12px; background: #fef9c3; color: #854d0e; padding: 4px 8px; border-radius: 9999px; margin-left: 8px;">Premium</span>
-            </div>
-            <p style="font-size: 14px; color: #6b7280; margin-bottom: 12px;">${engine.description || 'No description available.'}</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-              ${Object.keys(engine.capabilities).map(key => engine.capabilities[key] ? `<span style="font-size: 12px; background: #eff6ff; color: #1D4ED8; padding: 4px 8px; border-radius: 9999px;">${capabilities.find(c => c.key === key).icon} ${capabilities.find(c => c.key === key).label}</span>` : '').join('')}
-            </div>
-          </div>
-        `;
-      });
-      html += '</div>';
-    }
-
-    if (showFree && filteredFree.length > 0) {
-      html += `
-        <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 16px; color: #111827;">Free (${filteredFree.length})</h2>
-        <div style="display: grid; gap: 16px; ${window.innerWidth >= 768 ? 'grid-template-columns: repeat(2, 1fr);' : ''}">
-      `;
-      filteredFree.forEach(engine => {
-        html += `
-          <div style="padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff;">
-            <div style="display: flex; align-items: center; margin-bottom: 8px;">
-              <h4 style="font-size: 18px; font-weight: 600; color: #111827;">${engine.name}</h4>
-            </div>
-            <p style="font-size: 14px; color: #6b7280; margin-bottom: 12px;">${engine.description || 'No description available.'}</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-              ${Object.keys(engine.capabilities).map(key => engine.capabilities[key] ? `<span style="font-size: 12px; background: #eff6ff; color: #1D4ED8; padding: 4px 8px; border-radius: 9999px;">${capabilities.find(c => c.key === key).icon} ${capabilities.find(c => c.key === key).label}</span>` : '').join('')}
-            </div>
-          </div>
-        `;
-      });
-      html += '</div>';
-    }
-
-    if (totalResults === 0) {
-      html += `
-        <div style="text-align: center; padding: 48px 0;">
-          <p style="font-size: 18px; color: #6b7280;">No engines match your selected filters.</p>
-          <button style="font-size: 14px; color: #3B82F6; text-decoration: underline; cursor: pointer; background: none; border: none; margin-top: 12px;" onclick="clearFilters()">Clear filters to see all engines</button>
-        </div>
-      `;
-    }
-
-    resultsContainer.innerHTML = html;
-    renderButtons();
-  }
-
-  // Clear filters
-  window.clearFilters = function() {
-    activeFilters = [];
-    updateResults();
-  };
-
-  // Initialize
-  document.getElementById('show-premium').addEventListener('change', function(e) {
-    showPremium = e.target.checked;
-    updateResults();
-  });
-  document.getElementById('show-free').addEventListener('change', function(e) {
-    showFree = e.target.checked;
-    updateResults();
-  });
-  document.getElementById('clear-button').addEventListener('click', function() {
-    activeFilters = [];
-    updateResults();
-  });
-  renderButtons();
-  updateResults();
-</script>
-
-## Key
-- 🧠 **Thinking**: Supports advanced reasoning or slower, deeper processing.
-- 🎭 **Roleplay**: Great for creative, character-driven interactions.
-- 📚 **Intelligence**: High knowledge retrieval and factual accuracy.
-- 🛠️ **Skills**: Enabled for tool use or specialized tasks (e.g., coding, math).
-- 👤 **Human-Like**: Conversational, friendly, or mimics human behavior.
-- 🖼️ **Images**: Supports image processing or multimodal tasks.
