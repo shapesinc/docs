@@ -52,6 +52,7 @@
                 "pages": [
                     "variables",
                     "prompt101",
+                  "engineslist",
                     "ai-engines",
                     "presets",
                     "memory",
