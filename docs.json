@@ -1,110 +1,107 @@
 {
-    "seo": {
-        "metatags": {
-            "og:title": "Shapes - AI Social Agents",
-            "og:description": "Everything from basics to beyond with Shapes.inc. Choose from millions of Shapes popular in Games, YouTube, TV, Music, Gossip, Homework Help, Coworkers, and more! Or make your own in minutes. It's all free.",
-            "og:image": "/images/embedlogo.png",
-            "og:url": "https://docs.shapes.inc"
-        }
-    },
-    "$schema": "https://mintlify.com/docs.json",
-    "theme": "mint",
-    "name": "Shapes Inc Docs",
-    "colors": {
-        "primary": "#2563EB",
-        "light": "#3B82F6",
-        "dark": "#1D4ED8"
-    },
-    "favicon": "/favicon.png",
-    "navigation": {
-        "groups": [
-            {
-                "group": "Getting Started",
-                "pages": [
-                    "introduction",
-                    "what-are-shapes",
-                  "faq",
-                  "make-or-recover-account",
-                    "how-to-talk-to-shapes",
-                  "notifications",
-                    "learninghub"
-                  
-                ]
-            },
-           {
-                "group": "Creation & Customization",
-                "pages": [
-                    "how-to-make-a-shape",
-                    "create-a-room",
-                    "room-appearance",
-                    "custominstructions-rooms",
-                    "how-to-give-your-shape-a-voice",
-                    "how-to-receive-voice-messages",
-                  "initialmessages",
-                  "multimessages",
-                  "shapeskills",
-                                      "css"
-
-                ]
-            },
-            {
-                "group": "Prompts, Engines, & Beyond",
-                "pages": [
-                    "variables",
-                    "prompt101",
-                  "engineslist",
-                    "ai-engines",
-                    "presets",
-                    "memory",
-                    "regeneration",
-                    "shortguide",
-                    "contextwindows",
-                    "ai-engines2"
-                ]
-            },
-            {
-                "group": "Products & Services",
-                "pages": [
-                    "credits",
-                    "credits-guide",
-                    "giftcards",
-                    "how-to-purchase-credits-for-a-room",
-                    "purchasegiftcards",
-                    "auto-top-up"
-                ]
-            }
-        ]
-    },
-    "logo": {
-        "light": "/logo/light.png",
-        "dark": "/logo/dark.png"
-    },
-    "navbar": {
-        "links": [
-            {
-                "label": "Support",
-                "href": "https://talk.shapes.inc/support"
-            }
-        ],
-        "primary": {
-            "type": "button",
-            "label": "visit shapes.inc",
-            "href": "https://shapes.inc"
-        }
-    },
-    "footer": {
-        "links": [
-            {
-                "items": [
-                    {
-                        "label": "shapes.inc",
-                        "href": "https://shapes.inc"
-                    }
-                ]
-            }
-        ],
-        "socials": {
-            "reddit": "https://reddit.com/r/ShapesInc"
-        }
+  "seo": {
+    "metatags": {
+      "og:title": "Shapes - AI Social Agents",
+      "og:description": "Everything from basics to beyond with Shapes.inc. Choose from millions of Shapes popular in Games, YouTube, TV, Music, Gossip, Homework Help, Coworkers, and more! Or make your own in minutes. It's all free.",
+      "og:image": "/images/embedlogo.png",
+      "og:url": "https://docs.shapes.inc"
     }
+  },
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Shapes Inc Docs",
+  "colors": {
+    "primary": "#2563EB",
+    "light": "#3B82F6",
+    "dark": "#1D4ED8"
+  },
+  "favicon": "/favicon.png",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "introduction",
+          "what-are-shapes",
+          "faq",
+          "make-or-recover-account",
+          "how-to-talk-to-shapes",
+          "notifications",
+          "learninghub"
+        ]
+      },
+      {
+        "group": "Creation & Customization",
+        "pages": [
+          "how-to-make-a-shape",
+          "create-a-room",
+          "room-appearance",
+          "custominstructions-rooms",
+          "how-to-give-your-shape-a-voice",
+          "how-to-receive-voice-messages",
+          "initialmessages",
+          "multimessages",
+          "shapeskills",
+          "css"
+        ]
+      },
+      {
+        "group": "Prompts, Engines, & Beyond",
+        "pages": [
+          "variables",
+          "prompt101",
+          "ai-engines",
+          "presets",
+          "memory",
+          "regeneration",
+          "shortguide",
+          "contextwindows",
+          "ai-engines2"
+        ]
+      },
+      {
+        "group": "Products & Services",
+        "pages": [
+          "credits",
+          "credits-guide",
+          "giftcards",
+          "how-to-purchase-credits-for-a-room",
+          "purchasegiftcards",
+          "auto-top-up"
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "https://talk.shapes.inc/support"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "visit shapes.inc",
+      "href": "https://shapes.inc"
+    }
+  },
+  "footer": {
+    "links": [
+      {
+        "items": [
+          {
+            "label": "shapes.inc",
+            "href": "https://shapes.inc"
+          }
+        ]
+      }
+    ],
+    "socials": {
+      "reddit": "https://reddit.com/r/ShapesInc"
+    }
+  }
 }
