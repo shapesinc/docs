@@ -1,0 +1,11 @@
+// data/engines.json
+{
+  "premium": [
+    {"name": "Anthropic: Claude Sonnet 4.5", "tags": ["intelligence", "roleplay", "skills"], "capabilities": {"thinking": true, "roleplay": true, "intelligence": true, "skills": true, "human_like": false, "image": false}, "description": "Favorite amongst roleplayers, 4.5 is intelligent, great for tool use, and Shape's default premium engine."},
+    // ... (rest of the premium engines)
+  ],
+  "free": [
+    {"name": "OpenAI: GPT-5 Nano", "tags": ["roleplay", "intelligence"], "capabilities": {"thinking": false, "roleplay": true, "intelligence": true, "skills": false, "human_like": false, "image": false}, "description": "Low latency, huge context support."},
+    // ... (rest of the free engines)
+  ]
+}
