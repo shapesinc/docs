@@ -94,7 +94,7 @@ export const EngineFilter = () => {
   };
 
 const filtered = selectedTag.length
-  ? engines.filter(e => selectedTag.some(tag => e.tags.includes(tag)))
+  ? engines.filter(e => selectedTag.every(tag => e.tags.includes(tag)))
   : engines;
 
   return (
@@ -117,8 +117,6 @@ const filtered = selectedTag.length
     cursor: "pointer",
     textAlign: "center",
     textAlignLast: "center",
-    minWidth: "200px",
-    height: "120px", // shows multiple options
   }}
 >
   {allTags.map(tag => (
