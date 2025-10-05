@@ -1,3 +1,7 @@
+like this?
+
+
+
 ---
 title: "AI Engine Matchmaker"
 description: "At Shapes.inc, we offer a variety of models for running your Shapes. We regularly update the availability of models. Each model has its own strengths and characteristics. Let's break down the options!"
@@ -86,47 +90,47 @@ export const EngineFilter = () => {
 
   return (
     <div>
-      {/* Multi-select dropdown */}
       <div style={{ marginBottom: "15px" }}>
-        <select
-          multiple
-          value={selectedTags}
-          onChange={e => setSelectedTags([...e.target.selectedOptions].map(o => o.value))}
-          style={{
-            padding: "5px 12px",
-            border: "1px solid #007bff",
-            borderRadius: "5px",
-            cursor: "pointer",
-            textAlign: "center",
-            textAlignLast: "center",
-            minWidth: "150px"
-          }}
-        >
-          {allTags.map(tag => (
-            <option key={tag} value={tag}>{tag}</option>
-          ))}
-        </select>
+<select
+  multiple
+  value={selectedTags}
+  onChange={e => setSelectedTags([...e.target.selectedOptions].map(o => o.value))}
+  style={{
+    padding: "5px 12px",
+    border: "1px solid #007bff",
+    borderRadius: "5px",
+    cursor: "pointer",
+    textAlign: "center",
+    textAlignLast: "center"
+  }}
+>
+  {allTags.map(tag => (
+    <option key={tag} value={tag}>{tag}</option>
+  ))}
+</select>
+
       </div>
 
-      {/* Engine list */}
-      <ul>
-        {filtered.map(engine => (
-          <li
-            key={engine.name}
-            style={{
-              marginBottom: "10px",
-              padding: "10px",
-              borderRadius: "5px",
-              transition: "background 0.2s",
-              cursor: "pointer"
-            }}
-            onMouseLeave={e => e.currentTarget.style.background = "transparent"}
-          >
-            <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
-            {engine.description}
-          </li>
-        ))}
-      </ul>
+<ul>
+  {filtered.map(engine => (
+    <li
+      key={engine.name}
+      style={{
+        marginBottom: "10px",
+        padding: "10px",
+        borderRadius: "5px",
+        transition: "background 0.2s",
+      }}
+      onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+    >
+      <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
+      {engine.description}
+    </li>
+  ))}
+</ul>
+
+
+
     </div>
   );
 };
