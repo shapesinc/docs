@@ -99,29 +99,34 @@ const filtered = selectedTag.length
 
   return (
     <div>
- <div style={{ marginBottom: "15px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
+<select
+  multiple
+  value={selectedTag}
+  onChange={e => {
+    const selectedOptions = Array.from(
+      e.target.selectedOptions,
+      option => option.value
+    );
+    setSelectedTag(selectedOptions);
+  }}
+  style={{
+    padding: "5px 30px",
+    border: "1px solid #007bff",
+    borderRadius: "5px",
+    cursor: "pointer",
+    textAlign: "center",
+    textAlignLast: "center",
+    minWidth: "200px",
+    height: "120px", // shows multiple options
+  }}
+>
   {allTags.map(tag => (
-    <button
-      key={tag}
-      onClick={() => {
-        // toggle tag in selectedTag array
-        setSelectedTag(prev =>
-          prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
-        );
-      }}
-      style={{
-        padding: "5px 10px",
-        border: selectedTag.includes(tag) ? "2px solid #007bff" : "1px solid #ccc",
-        borderRadius: "5px",
-        background: selectedTag.includes(tag) ? "#007bff" : "#f9f9f9",
-        color: selectedTag.includes(tag) ? "#fff" : "#000",
-        cursor: "pointer",
-      }}
-    >
+    <option key={tag} value={tag}>
       {tag}
-    </button>
+    </option>
   ))}
-</div>
+</select>
+
 
 
 
