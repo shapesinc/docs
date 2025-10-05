@@ -78,40 +78,46 @@ export const EngineFilter = () => {
   ];
 
   const allTags = [...new Set(engines.flatMap(e => e.tags))];
-  const [selectedTag, setSelectedTag] = useState("");
+const [selectedTags, setSelectedTags] = useState([]);
 
-  const filtered = selectedTag === ""
-    ? engines
-    : engines.filter(engine => engine.tags.includes(selectedTag));
-
-  return (
-    <div>
-      <div style={{ marginBottom: "15px" }}>
-        <select
-          value={selectedTag}
-          onChange={e => setSelectedTag(e.target.value)}
-          style={{
-            padding: "5px 12px",
-            border: "1px solid #007bff",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-        >
-          <option value="">All Tags</option>
-          {allTags.map(tag => (
-            <option key={tag} value={tag}>{tag}</option>
-          ))}
-        </select>
-      </div>
-
-      <ul>
-        {filtered.map(engine => (
-          <li key={engine.name} style={{ marginBottom: "10px" }}>
-            <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
-            {engine.description}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+const handleSelectChange = (e) => {
+  const options = Array.from(e.target.selectedOptions);
+  setSelectedTags(options.map(o => o.value));
 };
+
+const filtered = selectedTags.length === 0
+  ? engines
+  : engines.filter(engine =>
+      engine.tags.some(tag => selectedTags.includes(tag))
+    );
+
+return (
+  <div>
+    <div style={{ marginBottom: "15px" }}>
+      <select
+        multiple
+        value={selectedTags}
+        onChange={handleSelectChange}
+        style={{
+          padding: "5px 12px",
+          border: "1px solid #007bff",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        {allTags.map(tag => (
+          <option key={tag} value={tag}>{tag}</option>
+        ))}
+      </select>
+    </div>
+
+    <ul>
+      {filtered.map(engine => (
+        <li key={engine.name} style={{ marginBottom: "10px" }}>
+          <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
+          {engine.description}
+        </li>
+      ))}
+    </ul>
+  </div>
+);
