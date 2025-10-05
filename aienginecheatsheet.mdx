@@ -5,8 +5,6 @@ description: "At Shapes.inc, we offer a variety of models for running your Shape
 
 import { useState } from "react";
 
-<EngineFilter />
-
 export const EngineFilter = () => {
   const engines = [
     { name: "Anthropic: Claude Sonnet 4.5", tags: ["🧠","🎭","📚","🛠️"], category: "Premium", description: "Favorite amongst roleplayers, 4.5 is intelligent, great for tool use, and Shape's default premium engine." },
@@ -14,21 +12,20 @@ export const EngineFilter = () => {
     { name: "XAI: Grok 4 Fast", tags: ["🎭","📚"], category: "Free", description: "The faster, less expensive version of Grok 4." },
     { name: "Gemini 2.5 Flash Image Preview", tags: ["🖼️"], category: "Premium", description: "Image + text multimodal." },
     { name: "OpenAI: GPT-5 Chat", tags: ["🎭","👤"], category: "Premium", description: "ChatGPT for Roleplayers and chatters." },
-    { name: "OpenAI: GPT-5 Mini", tags: ["🎭","📚","🛠️"], category: "Free", description: "Balance of cost & capability." },
-    // ...keep all other engines exactly the same, just add category: "Premium" or "Free" as appropriate
+    { name: "OpenAI: GPT-5 Mini", tags: ["🎭","📚","🛠️"], category: "Free", description: "Balance of cost & capability." }
+    // add the rest of your engines here
   ];
 
   const allTags = [...new Set(engines.flatMap(e => e.tags))];
   const [selectedTag, setSelectedTag] = useState("");
 
-  const filtered = selectedTag === ""
-    ? engines
-    : engines.filter(engine => engine.tags.includes(selectedTag));
+  const filtered = selectedTag === "" ? engines : engines.filter(e => e.tags.includes(selectedTag));
 
-  // Group engines by category
+  // Mintlify prefers explicit object literals in reduce
   const grouped = filtered.reduce((acc, engine) => {
-    if (!acc[engine.category]) acc[engine.category] = [];
-    acc[engine.category].push(engine);
+    const cat = engine.category || "Other";
+    if (!acc[cat]) acc[cat] = [];
+    acc[cat].push(engine);
     return acc;
   }, {});
 
@@ -42,30 +39,23 @@ export const EngineFilter = () => {
             padding: "5px 12px",
             border: "1px solid #007bff",
             borderRadius: "5px",
-            cursor: "pointer",
+            cursor: "pointer"
           }}
         >
           <option value="">All</option>
-          {allTags.map(tag => (
-            <option key={tag} value={tag}>{tag}</option>
-          ))}
+          {allTags.map(tag => <option key={tag} value={tag}>{tag}</option>)}
         </select>
       </div>
 
-      {Object.keys(grouped).map(category => (
-        <div key={category} style={{ marginBottom: "20px" }}>
-          <h3>{category}</h3>
+      {Object.keys(grouped).map(cat => (
+        <div key={cat} style={{ marginBottom: "20px" }}>
+          <h3>{cat}</h3>
           <ul>
-            {grouped[category].map(engine => (
+            {grouped[cat].map(engine => (
               <li
                 key={engine.name}
-                style={{
-                  marginBottom: "10px",
-                  padding: "10px",
-                  borderRadius: "5px",
-                  transition: "background 0.2s"
-                }}
-                onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+                style={{ marginBottom: "10px", padding: "10px", borderRadius: "5px", transition: "background 0.2s" }}
+                onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
               >
                 <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
                 {engine.description}
@@ -74,7 +64,9 @@ export const EngineFilter = () => {
           </ul>
         </div>
       ))}
-
     </div>
   );
 };
+
+// Use it inside a Mintlify page like this:
+<EngineFilter />
