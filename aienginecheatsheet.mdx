@@ -120,7 +120,6 @@ export const EngineFilter = () => {
               transition: "background 0.2s",
               cursor: "pointer"
             }}
-            onMouseEnter={e => e.currentTarget.style.background = "rgba(0,0,0,0.05)"}
             onMouseLeave={e => e.currentTarget.style.background = "transparent"}
           >
             <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
