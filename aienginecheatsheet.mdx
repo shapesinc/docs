@@ -1,7 +1,78 @@
 ---
 title: "AI Engine Matchmaker"
-description: "At Shapes.inc, we offer a variety of models for running your Shapes. We regularly update the availability of models. Each model has its own strengths and characteristics. Let's break down the options! "
+description: "At Shapes.inc, we offer a variety of models for running your Shapes. We regularly update the availability of models. Each model has its own strengths and characteristics."
 ---
+
+import { useState } from "react";
+
+<div className="filter-container">
+<FilterButtons />
+
+</div>
+
+<style jsx>
+  {`
+  .filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1em;
+  }
+  .filter-container button {
+    background: #f3f4f6;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .filter-container button.active {
+    background: #2563eb;
+    color: white;
+  }
+  tr.hidden {
+    display: none;
+  }
+  `}
+</style>
+
+{/* --- React component for filter buttons --- */}
+
+export function FilterButtons() {
+  const [active, setActive] = useState([]);
+
+  const tags = ["🎭", "👤", "📚", "🛠️", "🧠", "🖼️"];
+
+  function toggle(tag) {
+    setActive(prev =>
+      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+    );
+  }
+
+  // Update rows after every state change
+  if (typeof window !== "undefined") {
+    const rows = document.querySelectorAll("tbody tr");
+    rows.forEach(row => {
+      const tagsText = row.children[1]?.innerText || "";
+      const match = active.every(t => tagsText.includes(t));
+      row.classList.toggle("hidden", active.length && !match);
+    });
+  }
+
+  return (
+    <>
+      {tags.map(tag => (
+        <button
+          key={tag}
+          className={active.includes(tag) ? "active" : ""}
+          onClick={() => toggle(tag)}
+        >
+          {tag}
+        </button>
+      ))}
+    </>
+  );
+}
 
 ## Premium Engines
 
