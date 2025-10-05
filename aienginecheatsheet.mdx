@@ -100,32 +100,31 @@ const filtered = selectedTag.length
   return (
     <div>
       <div style={{ marginBottom: "15px" }}>
-<select
-  multiple
-  value={selectedTag}
-  onChange={e => {
-    const selectedOptions = Array.from(
-      e.target.selectedOptions,
-      option => option.value
-    );
-    setSelectedTag(selectedOptions);
-  }}
-  style={{
-    padding: "5px 30px",
-    border: "1px solid #007bff",
-    borderRadius: "5px",
-    cursor: "pointer",
-    textAlign: "center",
-    textAlignLast: "center",
-    height: "145px",
-  }}
->
+<div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "15px" }}>
   {allTags.map(tag => (
-    <option key={tag} value={tag}>
+    <button
+      key={tag}
+      onClick={() => {
+        if (selectedTag.includes(tag)) {
+          setSelectedTag(selectedTag.filter(t => t !== tag)); // deselect
+        } else {
+          setSelectedTag([...selectedTag, tag]); // select
+        }
+      }}
+      style={{
+        padding: "5px 10px",
+        borderRadius: "5px",
+        border: "1px solid #007bff",
+        cursor: "pointer",
+        background: selectedTag.includes(tag) ? "#007bff" : "#fff",
+        color: selectedTag.includes(tag) ? "#fff" : "#000",
+      }}
+    >
       {tag}
-    </option>
+    </button>
   ))}
-</select>
+</div>
+
 
 
       </div>
