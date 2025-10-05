@@ -100,22 +100,29 @@ const filtered = selectedTag.length
  return (
     <div>
       <div style={{ marginBottom: "15px" }}>
-        {allTags.map(tag => (
-          <button
-            key={tag}
-            onClick={() => toggleTag(tag)}
-            style={{
-              margin: "3px",
-              padding: "5px 10px",
-              borderRadius: "5px",
-              border: "1px solid #007bff",
-              cursor: "pointer",
-            }}
-          >
-            {tag}
-          </button>
-        ))}
-      </div>
+  {allTags.map(tag => (
+    <button
+      key={tag}
+      onClick={() => {
+        setSelectedTag(prev =>
+          prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+        );
+      }}
+      style={{
+        margin: "3px",
+        padding: "5px 10px",
+        borderRadius: "5px",
+        border: "1px solid #007bff",
+        cursor: "pointer",
+        backgroundColor: selectedTag.includes(tag) ? "#007bff" : "#fff",
+        color: selectedTag.includes(tag) ? "#fff" : "#000",
+      }}
+    >
+      {tag}
+    </button>
+  ))}
+</div>
+
 
       {tiers.map(tier => {
         const group = filtered.filter(e => e.tier === tier);
