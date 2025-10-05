@@ -9,32 +9,82 @@ import { useState } from "react";
 
 export const EngineFilter = () => {
   const engines = [
-    { name: "Anthropic: Claude Sonnet 4.5", tier: "premium", tags: ["🧠","🎭","📚","🛠️"], description: "Favorite amongst roleplayers, intelligent and great for tool use." },
+    // 🌟 PREMIUM ENGINES
+    { name: "Anthropic: Claude Sonnet 4.5", tier: "premium", tags: ["🧠","🎭","📚","🛠️"], description: "Favorite amongst roleplayers, 4.5 is intelligent, great for tool use, and Shape's default premium engine." },
+    { name: "DeepSeek V3.2 Exp", tier: "premium", tags: ["🧠","📚","🛠️"], description: "The latest experimental model from DeepSeek." },
+    { name: "XAI: Grok 4 Fast", tier: "premium", tags: ["🎭","📚"], description: "The faster, less expensive version of Grok 4." },
+    { name: "Gemini 2.5 Flash Image Preview", tier: "premium", tags: ["🖼️"], description: "Image + text multimodal." },
+    { name: "OpenAI: GPT-5 Chat", tier: "premium", tags: ["🎭","👤"], description: "ChatGPT for Roleplayers and chatters." },
     { name: "OpenAI: GPT-5", tier: "premium", tags: ["📚","🛠️"], description: "Top-tier reasoning, multimodal." },
-    { name: "Gemini 2.5 Pro (Latest)", tier: "premium", tags: ["🎭","📚","👤","🛠️"], description: "Google’s state-of-the-art AI model." },
-    { name: "OpenAI: GPT-5 Mini", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Balanced cost and capability." },
-    { name: "Anthropic: Claude Sonnet 3.5", tier: "free", tags: ["🎭","📚","🛠️"], description: "Older, cheaper option — still great for roleplays." },
-    { name: "OpenAI: GPT-4o-mini", tier: "free", tags: ["🎭","📚","👤"], description: "Fast GPT option, fallback for offline models." },
-    { name: "Gemini 2.5 Flash", tier: "free", tags: ["🎭","📚","👤","🛠️"], description: "Fast, multilingual, high performance." },
-    { name: "DeepSeek v3 0324", tier: "free", tags: ["🎭","📚","🛠️"], description: "DeepSeek's flagship chat model." }
+    { name: "OpenAI: GPT-5 Mini", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Balance of cost & capability." },
+    { name: "Anthropic: Claude Opus 4", tier: "premium", tags: ["📚","🛠️"], description: "Long workflows, strong coding." },
+    { name: "Anthropic: Claude Sonnet 4", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Improved coding & reasoning; community favorite for personality and roleplay." },
+    { name: "Anthropic: Claude Sonnet 3.7", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Strong instruction model, favorite amongst roleplayers." },
+    { name: "Anthropic: Claude Sonnet 3.7 (thinking)", tier: "premium", tags: ["📚","🛠️"], description: "Slower, deeper reasoning." },
+    { name: "Anthropic: Claude Sonnet 3.5", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Older, cheaper option - still wonderful for roleplays." },
+    { name: "Gemini 2.5 Pro (Latest)", tier: "premium", tags: ["🎭","📚","👤","🛠️"], description: "Google’s state-of-the-art AI model for advanced reasoning, coding, and scientific tasks." },
+    { name: "Gemini 2.5 Flash (Thinking)", tier: "premium", tags: ["📚","🛠️"], description: "Thinking variant." },
+    { name: "OpenAI: GPT-4.1", tier: "premium", tags: ["🎭","📚"], description: "If you miss the old ChatGPT, you'll love this model. Prone to asking questions." },
+    { name: "OpenAI: GPT-4.1 Mini", tier: "premium", tags: ["🎭","📚"], description: "The smaller, cheaper, faster version of GPT-4.1." },
+    { name: "Grok 3", tier: "premium", tags: ["🎭","📚","👤","🛠️"], description: "Logic-focused, deeper than mini." },
+    { name: "Grok 4", tier: "premium", tags: ["🎭","📚","👤","🛠️"], description: "Better coding & agent workflows." },
+    { name: "Gemini 2.5 Pro", tier: "premium", tags: ["🎭","📚","👤","🛠️"], description: "Earlier release of Gemini 2.5 Pro." },
+    { name: "DeepSeek v3 0324", tier: "premium", tags: ["🎭","📚","🛠️"], description: "DeepSeek’s flagship chat model." },
+    { name: "DeepSeek R1 (May 28, 2025)", tier: "premium", tags: ["🧠","🎭","📚"], description: "Thinking-enabled model, great for reasoning." },
+    { name: "OpenAI: o3 Mini", tier: "premium", tags: ["📚"], description: "Built for academics, very thorough and slow." },
+    { name: "Gemini 1.5 Pro", tier: "premium", tags: ["🎭","👤"], description: "Older Gemini model that’s smart, creative, and human-like." },
+    { name: "Nous: Hermes 3 405B", tier: "premium", tags: ["🎭","👤"], description: "Excellent choice for creative roleplay." },
+    { name: "Cohere: Command A", tier: "premium", tags: ["📚"], description: "Extremely factual and robotic; avoids false info at all costs." },
+    { name: "OpenAI: GPT 4-o (2024-05-13)", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Adaptive model, varies response speed depending on task." },
+    { name: "Meta: Llama 3.1 405B Instruct", tier: "premium", tags: ["🎭","📚","👤","🛠️"], description: "405B-scale model for advanced tasks." },
+    { name: "Gemini 2.5 Flash", tier: "premium", tags: ["🎭","📚","👤","🛠️"], description: "AMAZING multilingual model that is fast." },
+    { name: "Anthropic: Claude Opus 4.1", tier: "premium", tags: ["📚","🛠️"], description: "Improved Opus 4." },
+    { name: "DeepSeek V3.1", tier: "premium", tags: ["🧠","🎭","📚","🛠️"], description: "" },
+    { name: "MoonshotAI: Kimi K2 0905", tier: "premium", tags: ["🎭","📚","👤"], description: "Recent update to Kimi K2." },
+    { name: "Nous: Hermes 4 405B", tier: "premium", tags: ["🎭","🛠️"], description: "Large model for roleplay and skills, a bit slow." },
+
+    // 💬 FREE ENGINES
+    { name: "OpenAI: GPT-5 Nano", tier: "free", tags: ["🎭","📚"], description: "Low latency, huge context support." },
+    { name: "Grok 3 Mini", tier: "free", tags: ["🧠","🎭","📚","🛠️","👤"], description: "Fast, smart, and versatile — the Swiss army knife of engines." },
+    { name: "Llama 4 Maverick", tier: "free", tags: ["🎭","📚","🛠️"], description: "17B expert mixture, multimodal." },
+    { name: "Gemma 3 27b", tier: "free", tags: ["🎭"], description: "Large context, balanced performance/latency." },
+    { name: "Llama 3.3 70b (Turbo)", tier: "free", tags: ["🎭","🛠️"], description: "Multilingual, instruction-tuned." },
+    { name: "Gemini 2.5 Flash (Lite)", tier: "free", tags: ["👤","🛠️"], description: "AMAZING multilingual model; great fallback for non-English Shapes." },
+    { name: "Phi 4", tier: "free", tags: ["🎭","📚"], description: "Math/science reasoning focus." },
+    { name: "Formless 70B v1a", tier: "free", tags: ["🎭"], description: "Exclusive Shapes model designed for roleplay." },
+    { name: "Gemini 2.0 Flash", tier: "free", tags: ["🎭","👤","🛠️"], description: "Earlier Gemini Flash gen." },
+    { name: "OpenAI: GPT-OSS 120B", tier: "free", tags: ["📚","🛠️"], description: "" },
+    { name: "OpenAI: GPT-OSS 20B", tier: "free", tags: ["📚"], description: "" },
+    { name: "MoonshotAI: Kimi K2", tier: "free", tags: ["🎭","📚","👤"], description: "Creative, friendly roleplay/chat model." },
+    { name: "Nous: Hermes 4 70B", tier: "free", tags: ["🎭"], description: "" },
+    { name: "Qwen: Qwen 3 235B", tier: "free", tags: ["📚","🛠️"], description: "Large-scale model, long dialogue." },
+    { name: "Meituan: Longcat Flash Chat", tier: "free", tags: ["🎭","👤","🛠️"], description: "Optimized for conversational tasks." },
+    { name: "Gemma 2 27b", tier: "free", tags: ["👤","🛠️"], description: "Fun and friendly personality." },
+    { name: "Gemma 2 9b (Turbo)", tier: "free", tags: ["👤"], description: "Fast and humorous." },
+    { name: "OpenAI: GPT-4.1 Nano", tier: "free", tags: ["📚"], description: "Perfect fallback engine for GPT 4.1." },
+    { name: "Llama 4 Scout", tier: "free", tags: ["🎭","👤","🛠️"], description: "Updated, skill-friendly Llama variant." },
+    { name: "OpenAI: GPT-4o-mini", tier: "free", tags: ["🎭","📚","👤"], description: "Fast GPT option — great fallback engine." },
+    { name: "Phi 4 Reasoning Plus", tier: "free", tags: ["📚"], description: "" },
+    { name: "Mistral: Mistral Small 3.1 24B 3/27/25", tier: "free", tags: ["👤"], description: "Rarely used." },
+    { name: "Llama 3.3 70B", tier: "free", tags: ["🎭"], description: "Good at retrieving knowledge and being in character." },
+    { name: "Deepseek-R1 Llama 3.3 70b Distill", tier: "free", tags: ["🎭"], description: "Good for general RP, sometimes mischaracterizes." },
+    { name: "Deepseek-R1 Qwen 32b Distill", tier: "free", tags: ["🎭"], description: "Strong reasoning, okay for multi-step RP." },
+    { name: "WizardLM 2 8x22b", tier: "free", tags: ["🎭"], description: "Wild and creative roleplayer." },
+    { name: "Mistral NeMo", tier: "free", tags: ["🎭","👤"], description: "Short, creative role-player and chatter." },
+    { name: "MythoMax 13b", tier: "free", tags: ["🎭"], description: "Rarely used." },
+    { name: "AionLabs: Aion-RP 1.0 (8B)", tier: "free", tags: ["🎭"], description: "Rarely used." },
+    { name: "Mistral: Ministral 8B", tier: "free", tags: ["👤"], description: "Rarely used." },
+    { name: "Nous: Hermes 3 70B", tier: "free", tags: ["👤"], description: "Loved for unique word choices." },
+    { name: "Qwen: QwQ 32B 3/25", tier: "free", tags: ["📚"], description: "Highly intelligent and adorable." },
+    { name: "Lunaris L3 8B", tier: "free", tags: ["🎭"], description: "Fast, wild, short-form roleplay model." },
+    { name: "sao10k l3.3-euryale-70b", tier: "free", tags: ["🎭"], description: "Rarely used." },
   ];
 
   const allTags = [...new Set(engines.flatMap(e => e.tags))];
   const [selectedTag, setSelectedTag] = useState("");
 
   const tiers = ["premium", "free"];
-  const sectionTitle = {
-    premium: "🌟 Premium Engines",
-    free: "💬 Free Engines"
-  };
-
-  const sectionStyle = { marginBottom: "30px" };
-  const listItemStyle = {
-    marginBottom: "10px",
-    padding: "10px",
-    borderRadius: "5px",
-    transition: "background 0.2s",
-  };
+  const sectionTitle = { premium: "🌟 Premium Engines", free: "💬 Free Engines" };
 
   const filtered = selectedTag
     ? engines.filter(e => e.tags.includes(selectedTag))
@@ -46,40 +96,27 @@ export const EngineFilter = () => {
         <select
           value={selectedTag}
           onChange={e => setSelectedTag(e.target.value)}
-          style={{
-            padding: "5px 12px",
-            border: "1px solid #007bff",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
+          style={{ padding: "5px 12px", border: "1px solid #007bff", borderRadius: "5px" }}
         >
           <option value="">All Tags</option>
-          {allTags.map(tag => (
-            <option key={tag} value={tag}>{tag}</option>
-          ))}
+          {allTags.map(tag => <option key={tag} value={tag}>{tag}</option>)}
         </select>
       </div>
 
       {tiers.map(tier => {
         const group = filtered.filter(e => e.tier === tier);
-        if (group.length === 0) return null;
-
+        if (!group.length) return null;
         return (
-          <section key={tier} style={sectionStyle}>
-            <h3 style={{
-              marginBottom: "10px",
-              color: tier === "premium" ? "#007bff" : "#444",
-            }}>
+          <section key={tier} style={{ marginBottom: "30px" }}>
+            <h3 style={{ marginBottom: "10px", color: tier === "premium" ? "#007bff" : "#444" }}>
               {sectionTitle[tier]}
             </h3>
             <ul style={{ listStyle: "none", paddingLeft: 0 }}>
               {group.map(engine => (
-                <li
-                  key={engine.name}
-                  style={listItemStyle}
-                  onMouseLeave={(e) => e.currentTarget.style.background = "#f9f9f9"}
-                >
-                  <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
+                <li key={engine.name} style={{
+                  marginBottom: "10px", padding: "10px", borderRadius: "5px", background: "#f9f9f9",
+                }}>
+                  <strong>{engine.name}</strong> [{engine.tags.join(" ")}]<br />
                   {engine.description || <em style={{ color: "#777" }}>No description available.</em>}
                 </li>
               ))}
