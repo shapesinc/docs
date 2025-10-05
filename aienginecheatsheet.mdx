@@ -104,14 +104,24 @@ export const EngineFilter = () => {
         </select>
       </div>
 
-      <ul>
-        {filtered.map(engine => (
-          <li key={engine.name} style={{ marginBottom: "10px" }}>
-            <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
-            {engine.description}
-          </li>
-        ))}
-      </ul>
+<ul>
+  {filtered.map(engine => (
+    <li
+      key={engine.name}
+      style={{
+        marginBottom: "10px",
+        padding: "10px",
+        borderRadius: "5px",
+        transition: "background 0.2s"
+      }}
+      onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+    >
+      <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
+      {engine.description}
+    </li>
+  ))}
+</ul>
+
     </div>
   );
 };
