@@ -15,7 +15,6 @@ export const EngineFilter = () => {
     { name: "OpenAI: GPT-5 Mini", category: "Free", tags: ["🎭","📚","🛠️"], description: "Balance of cost & capability." },
     { name: "OpenAI: GPT-4.1 Mini", category: "Free", tags: ["🎭","📚"], description: "Smaller, cheaper, faster version of GPT-4.1." },
     { name: "Grok 3 Mini", category: "Free", tags: ["🧠","🎭","📚","🛠️","👤"], description: "Amazing at following prompts, very fast, Swiss army knife of engines." },
-    // ... add all other engines, marking category as "Premium" or "Free"
   ];
 
   const allTags = [...new Set(engines.flatMap(e => e.tags))];
