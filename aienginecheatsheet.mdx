@@ -93,59 +93,52 @@ export const EngineFilter = () => {
     borderRadius: "5px",
   };
 
-const filtered = selectedTag.length
-  ? engines.filter(e => selectedTag.every(tag => e.tags.includes(tag)))
-  : engines;
+  const toggleTag = (tag) => {
+    setSelectedTag(prev =>
+      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+    );
+  };
+
+  const filtered = selectedTag.length
+    ? engines.filter(e => selectedTag.every(tag => e.tags.includes(tag)))
+    : engines;
 
   return (
     <div>
-      <div style={{ marginBottom: "15px" }}>
-<select
-  multiple
-  value={selectedTag}
-  onChange={e => {
-    const selectedOptions = Array.from(
-      e.target.selectedOptions,
-      option => option.value
-    );
-    setSelectedTag(selectedOptions);
-  }}
-  style={{
-    padding: "5px 30px",
-    border: "1px solid #007bff",
-    borderRadius: "5px",
-    cursor: "pointer",
-    textAlign: "center",
-    textAlignLast: "center",
-  }}
->
-  {allTags.map(tag => (
-    <option key={tag} value={tag}>
-      {tag}
-    </option>
-  ))}
-</select>
-
-
+      {/* Tag Buttons */}
+      <div style={{ marginBottom: "15px", textAlign: "center" }}>
+        {allTags.map(tag => (
+          <button
+            key={tag}
+            onClick={() => toggleTag(tag)}
+            style={{
+              margin: "3px",
+              padding: "5px 10px",
+              borderRadius: "5px",
+              border: "1px solid #007bff",
+              cursor: "pointer",
+              backgroundColor: selectedTag.includes(tag) ? "#007bff" : "#fff",
+              color: selectedTag.includes(tag) ? "#fff" : "#007bff",
+            }}
+          >
+            {tag}
+          </button>
+        ))}
       </div>
 
+      {/* Engine Sections */}
       {tiers.map(tier => {
         const group = filtered.filter(e => e.tier === tier);
         if (group.length === 0) return null;
 
         return (
           <section key={tier} style={sectionStyle}>
-            <h3 style={{
-              marginBottom: "28px",
-            }}>
+            <h3 style={{ marginBottom: "28px" }}>
               {sectionTitle[tier]}
             </h3>
             <ul style={{ listStyle: "none", paddingLeft: 0 }}>
               {group.map(engine => (
-                <li
-                  key={engine.name}
-                  style={listItemStyle}
-                >
+                <li key={engine.name} style={listItemStyle}>
                   <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
                   {engine.description || <em style={{ color: "#777" }}>No description available.</em>}
                 </li>
@@ -157,6 +150,5 @@ const filtered = selectedTag.length
     </div>
   );
 };
-
 
 [Return to App](https://shapes.inc)
