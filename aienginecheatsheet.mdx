@@ -87,48 +87,34 @@ export const EngineFilter = () => {
   return (
     <div>
       <div style={{ marginBottom: "15px" }}>
-<select
-  value={selectedTag}
-  onChange={e => setSelectedTag(e.target.value)}
-  style={{
-    padding: "5px 12px",
-    border: "1px solid #007bff",
-    borderRadius: "5px",
-    cursor: "pointer",
-    textAlign: "center",        // Center text including emojis
-    textAlignLast: "center"     // Important for some browsers
-  }}
->
-  <option value="">All</option>
-  {allTags.map(tag => (
-    <option key={tag} value={tag}>{tag}</option>
-  ))}
-</select>
-
+        <select
+          value={selectedTag}
+          onChange={e => setSelectedTag(e.target.value)}
+          style={{
+            padding: "5px 12px",
+            border: "1px solid #007bff",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
+        >
+          <option value="">All</option>
+          {allTags.map(tag => (
+            <option key={tag} value={tag}>{tag}</option>
+          ))}
+        </select>
       </div>
 
-<ul>
-  {filtered.map(engine => (
-    <li
-      key={engine.name}
-      style={{
-        marginBottom: "10px",
-        padding: "10px",
-        borderRadius: "5px",
-        transition: "background 0.2s",
-        cursor: "pointer"
-      }}
-      onMouseLeave={e => e.currentTarget.style.background = "transparent"}
-    >
-      <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
-      {engine.description}
-    </li>
-  ))}
-</ul>
-
+      <ul>
+        {filtered.map(engine => (
+          <li key={engine.name} style={{ marginBottom: "10px" }}>
+            <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
+            {engine.description}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
 
 
-[Return to App](https://shapes.inc)
+
