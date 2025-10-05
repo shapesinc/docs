@@ -104,24 +104,30 @@ const filtered = selectedTag.length
   multiple
   value={selectedTag}
   onChange={e => {
-    const selectedOptions = Array.from(e.target.selectedOptions, option => option.value);
+    const selectedOptions = Array.from(
+      e.target.selectedOptions,
+      option => option.value
+    );
     setSelectedTag(selectedOptions);
   }}
   style={{
-    padding: "5px 30px 5px 30px",
+    padding: "5px 30px",
     border: "1px solid #007bff",
     borderRadius: "5px",
     cursor: "pointer",
     textAlign: "center",
     textAlignLast: "center",
     minWidth: "200px",
-    height: "120px", // to show multiple options at once
+    height: "120px",
   }}
 >
   {allTags.map(tag => (
-    <option key={tag} value={tag}>{tag}</option>
+    <option key={tag} value={tag}>
+      {tag}
+    </option>
   ))}
 </select>
+
 
       </div>
 
