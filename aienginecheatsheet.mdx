@@ -5,6 +5,8 @@ description: "At Shapes.inc, we offer a variety of models for running your Shape
 
 import { useState } from "react";
 
+<EngineFilter />
+
 export const EngineFilter = () => {
   const engines = [
     { name: "Anthropic: Claude Sonnet 4.5", tier: "premium", tags: ["🧠","🎭","📚","🛠️"], description: "Favorite amongst roleplayers, intelligent and great for tool use." },
@@ -18,7 +20,7 @@ export const EngineFilter = () => {
   ];
 
   const allTags = [...new Set(engines.flatMap(e => e.tags))];
-  const [selectedTag, setSelectedTag] = React.useState("");
+  const [selectedTag, setSelectedTag] = useState("");
 
   const tiers = ["premium", "free"];
   const sectionTitle = {
