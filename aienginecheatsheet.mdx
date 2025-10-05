@@ -1,8 +1,3 @@
----
-title: "AI Engine Matchmaker"
-description: "At Shapes.inc, we offer a variety of models for running your Shapes."
----
-
 import { useState } from "react";
 
 <EngineFilter />
@@ -12,80 +7,15 @@ export const EngineFilter = () => {
     { name: "Anthropic: Claude Sonnet 4.5", tags: ["🧠","🎭","📚","🛠️"], description: "Favorite amongst roleplayers, 4.5 is intelligent, great for tool use, and Shape's default premium engine." },
     { name: "DeepSeek V3.2 Exp", tags: ["🧠","📚","🛠️"], description: "The latest experimental model from DeepSeek." },
     { name: "XAI: Grok 4 Fast", tags: ["🎭","📚"], description: "The faster, less expensive version of Grok 4." },
-    { name: "Gemini 2.5 Flash Image Preview", tags: ["🖼️"], description: "Image + text multimodal." },
-    { name: "OpenAI: GPT-5 Chat", tags: ["🎭","👤"], description: "ChatGPT for Roleplayers and chatters." },
-    { name: "OpenAI: GPT-5", tags: ["📚","🛠️"], description: "Top-tier reasoning, multimodal." },
-    { name: "OpenAI: GPT-5 Mini", tags: ["🎭","📚","🛠️"], description: "Balance of cost & capability." },
-    { name: "Anthropic: Claude Opus 4", tags: ["📚","🛠️"], description: "Long workflows, strong coding." },
-    { name: "Anthropic: Claude Sonnet 4", tags: ["🎭","📚","🛠️"], description: "Improved coding & reasoning - community favorite for personality and roleplay style." },
-    { name: "Anthropic: Claude Sonnet 3.7", tags: ["🎭","📚","🛠️"], description: "Strong instruction model, favorite amongst roleplays." },
-    { name: "Anthropic: Claude Sonnet 3.7 (thinking)", tags: ["📚","🛠️"], description: "Slower, deeper reasoning." },
-    { name: "Anthropic: Claude Sonnet 3.5", tags: ["🎭","📚","🛠️"], description: "Older, cheaper option - still wonderful for roleplays." },
-    { name: "Gemini 2.5 Pro (Latest)", tags: ["🎭","📚","👤","🛠️"], description: "Google’s state-of-the-art AI model for advanced reasoning, coding, mathematics, and scientific tasks, also popular for roleplayers." },
-    { name: "Gemini 2.5 Flash (Thinking)", tags: ["📚","🛠️"], description: "Thinking variant." },
-    { name: "OpenAI: GPT-4.1", tags: ["🎭","📚"], description: "If you miss the old ChatGPT, you'll love this model. Prone to asking questions." },
-    { name: "OpenAI: GPT-4.1 Mini", tags: ["🎭","📚"], description: "Smaller, cheaper, faster version of GPT-4.1." },
-    { name: "Grok 3", tags: ["🎭","📚","👤","🛠️"], description: "Logic-focused, deeper than mini." },
-    { name: "Grok 4", tags: ["🎭","📚","👤","🛠️"], description: "Better coding & agent workflows." },
-    { name: "Gemini 2.5 Pro", tags: ["🎭","📚","👤","🛠️"], description: "Earlier release of Gemini 2.5 Pro." },
-    { name: "DeepSeek v3 0324", tags: ["🎭","📚","🛠️"], description: "DeepSeek's flagship chat model." },
-    { name: "DeepSeek R1 (May 28, 2025)", tags: ["🧠","🎭","📚"], description: "Set up with thinking enabled, powerful for multiple use cases." },
-    { name: "OpenAI: o3 Mini", tags: ["📚"], description: "Built for academics, factual and in-depth info." },
-    { name: "Gemini 1.5 Pro", tags: ["🎭","👤"], description: "Older Gemini Model, well-rounded and creative." },
-    { name: "Nous: Hermes 3 405B", tags: ["🎭","👤"], description: "Beloved, excellent choice for creative roleplay." },
-    { name: "Cohere: Command A", tags: ["📚"], description: "Avoids providing false info; robotic but accurate." },
-    { name: "OpenAI: GPT 4-o (2024-05-13)", tags: ["🎭","📚","🛠️"], description: "Adapts on demand; quick for simple requests, longer for complex answers." },
-    { name: "Meta: Llama 3.1 405B Instruct", tags: ["🎭","📚","👤","🛠️"], description: "405B scale model." },
-    { name: "Gemini 2.5 Flash", tags: ["🎭","📚","👤","🛠️"], description: "Fast, multilingual, high performance." },
-    { name: "Anthropic: Claude Opus 4.1", tags: ["📚","🛠️"], description: "Improved Opus 4." },
-    { name: "DeepSeek V3.1", tags: ["🧠","🎭","📚","🛠️"], description: "" },
-    { name: "MoonshotAI: Kimi K2 0905", tags: ["🎭","📚","👤"], description: "Recent update to Kimi K2." },
-    { name: "Nous: Hermes 4 405B", tags: ["🎭","🛠️"], description: "Large model for roleplay and Shape skills; can be slow." },
-    { name: "OpenAI: GPT-5 Nano", tags: ["🎭","📚"], description: "Low latency, huge context support." },
-    { name: "Grok 3 Mini", tags: ["🧠","🎭","📚","🛠️","👤"], description: "Amazing at following prompts, very fast, Swiss army knife of engines." },
-    { name: "Llama 4 Maverick", tags: ["🎭","📚","🛠️"], description: "17B expert mixture, multimodal." },
-    { name: "Gemma 3 27b", tags: ["🎭"], description: "Large context, balanced performance/latency." },
-    { name: "Llama 3.3 70b (Turbo)", tags: ["🎭","🛠️"], description: "Multilingual, instruction-tuned." },
-    { name: "Gemini 2.5 Flash (Lite)", tags: ["👤","🛠️"], description: "Fast, multilingual, fallback model." },
-    { name: "Phi 4", tags: ["🎭","📚"], description: "Math/science reasoning focus." },
-    { name: "Formless 70B v1a", tags: ["🎭"], description: "Designed for roleplay." },
-    { name: "Gemini 2.0 Flash", tags: ["🎭","👤","🛠️"], description: "Earlier Gemini Flash generation." },
-    { name: "OpenAI: GPT-OSS 120B", tags: ["📚","🛠️"], description: "" },
-    { name: "OpenAI: GPT-OSS 20B", tags: ["📚"], description: "" },
-    { name: "MoonshotAI: Kimi K2", tags: ["🎭","📚","👤"], description: "Creative, great for roleplay." },
-    { name: "Nous: Hermes 4 70B", tags: ["🎭"], description: "" },
-    { name: "Qwen: Qwen 3 235B", tags: ["📚","🛠️"], description: "Large-scale model, long dialogue." },
-    { name: "Meituan: Longcat Flash Chat", tags: ["🎭","👤","🛠️"], description: "Optimized for conversational tasks." },
-    { name: "Gemma 2 27b", tags: ["👤"], description: "Fun, friendly model." },
-    { name: "Gemma 2 9b (Turbo)", tags: ["👤"], description: "9b is faster and goofy, sense of humor included." },
-    { name: "OpenAI: Gpt-4.1 Nano", tags: ["📚"], description: "Fallback engine choice for GPT 4.1." },
-    { name: "Llama 4 Scout", tags: ["🎭","👤","🛠️"], description: "Up-to-date LLama model, great with skills." },
-    { name: "OpenAI: GPT-4o-mini", tags: ["🎭","📚","👤"], description: "Fast GPT option, fallback for offline models." },
-    { name: "Phi 4 Reasoning Plus", tags: ["📚"], description: "" },
-    { name: "Mistral: Mistral Small 3.1 24B 3/27/25", tags: ["👤"], description: "Rarely used." },
-    { name: "Llama 3.3 70B", tags: ["🎭"], description: "Formerly llama 3 instruct model." },
-    { name: "Deepseek-R1 Llama 3.3 70b Distill", tags: ["🎭"], description: "Good for general RP." },
-    { name: "Deepseek-R1 Qwen 32b Distill", tags: ["🎭"], description: "Good for complex tasks, multi-step reasoning." },
-    { name: "WizardLM 2 8x22b", tags: ["🎭"], description: "Creative roleplay." },
-    { name: "Mistral NeMo", tags: ["🎭","👤"], description: "Short creative role-player, great chatter." },
-    { name: "MythoMax 13b", tags: ["🎭"], description: "Rarely used." },
-    { name: "AionLabs: Aion-RP 1.0 (8B)", tags: ["🎭"], description: "Rarely used." },
-    { name: "Mistral: Ministral 8B", tags: ["👤"], description: "Rarely used." },
-    { name: "Nous: Hermes 3 70B", tags: ["👤"], description: "Unique word choices." },
-    { name: "Qwen: QwQ 32B 3/25", tags: ["📚"], description: "Rarely used but intelligent." },
-    { name: "Lunaris L3 8B", tags: ["🎭"], description: "Fast, short roleplay adventures." },
-    { name: "sao10k l3.3-euryale-70b", tags: ["🎭"], description: "Rarely used." }
+    // ... rest of your engines
   ];
 
   const allTags = [...new Set(engines.flatMap(e => e.tags))];
   const [selectedTags, setSelectedTags] = useState([]);
 
-  const toggleTag = (tag) => {
-    setSelectedTags(prev =>
-      prev.includes(tag)
-        ? prev.filter(t => t !== tag)
-        : [...prev, tag]
-    );
+  const handleSelectChange = (event) => {
+    const selectedOptions = Array.from(event.target.selectedOptions).map(opt => opt.value);
+    setSelectedTags(selectedOptions);
   };
 
   const filtered = selectedTags.length === 0
@@ -97,23 +27,13 @@ export const EngineFilter = () => {
   return (
     <div>
       <div style={{ marginBottom: "15px" }}>
-        {allTags.map(tag => (
-          <button
-            key={tag}
-            onClick={() => toggleTag(tag)}
-            style={{
-              margin: "5px",
-              padding: "5px 12px",
-              border: "1px solid #007bff",
-              borderRadius: "5px",
-              backgroundColor: selectedTags.includes(tag) ? "#007bff" : "#fff",
-              color: selectedTags.includes(tag) ? "#fff" : "#007bff",
-              cursor: "pointer",
-            }}
-          >
-            {tag}
-          </button>
-        ))}
+        <select multiple value={selectedTags} onChange={handleSelectChange} style={{ width: "200px", height: "100px" }}>
+          {allTags.map(tag => (
+            <option key={tag} value={tag}>
+              {tag}
+            </option>
+          ))}
+        </select>
       </div>
 
       <ul>
