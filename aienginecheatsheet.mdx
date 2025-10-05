@@ -116,7 +116,6 @@ export const EngineFilter = () => {
   textAlign: "center",       // center text
   textAlignLast: "center"    // ensure center in all browsers
 }}
-      onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
       onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
     >
       <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
