@@ -80,9 +80,9 @@ export const EngineFilter = () => {
   const allTags = [...new Set(engines.flatMap(e => e.tags))];
   const [selectedTags, setSelectedTags] = useState([]);
 
-  const filtered = selectedTag === ""
-    ? engines
-    : engines.filter(engine => engine.tags.includes(selectedTag));
+  const filtered = selectedTags.length === 0
+  ? engines
+  : engines.filter(engine => selectedTags.some(tag => engine.tags.includes(tag)));
 
   return (
     <div>
