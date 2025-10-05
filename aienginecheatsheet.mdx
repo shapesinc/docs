@@ -77,67 +77,58 @@ export const EngineFilter = () => {
     { name: "sao10k l3.3-euryale-70b", tags: ["🎭"], description: "Rarely used." }
   ];
 
-   const allTags = [...new Set(engines.flatMap(e => e.tags))];
-  const [selectedTags, setSelectedTags] = useState([]);
+  const allTags = [...new Set(engines.flatMap(e => e.tags))];
+  const [selectedTag, setSelectedTag] = useState("");
 
-  const toggleTag = (tag) => {
-    setSelectedTags(prev => 
-      prev.includes(tag) 
-        ? prev.filter(t => t !== tag) 
-        : [...prev, tag]
-    );
-  };
-
-  const filtered = selectedTags.length === 0
+  const filtered = selectedTag === ""
     ? engines
-    : engines.filter(engine => selectedTags.some(tag => engine.tags.includes(tag)));
+    : engines.filter(engine => engine.tags.includes(selectedTag));
 
   return (
     <div>
-      {/* Tag Selector */}
-      <div style={{ marginBottom: "15px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
-        {allTags.map(tag => (
-          <label 
-            key={tag} 
-            style={{
-              cursor: "pointer",
-              border: "1px solid #007bff",
-              borderRadius: "5px",
-              padding: "5px 10px",
-              background: selectedTags.includes(tag) ? "#007bff" : "transparent",
-              color: selectedTags.includes(tag) ? "#fff" : "#000",
-              userSelect: "none"
-            }}
-          >
-            <input
-              type="checkbox"
-              checked={selectedTags.includes(tag)}
-              onChange={() => toggleTag(tag)}
-              style={{ display: "none" }}
-            />
-            {tag}
-          </label>
-        ))}
+      <div style={{ marginBottom: "15px" }}>
+<select
+  value={selectedTag}
+  onChange={e => setSelectedTag(e.target.value)}
+  style={{
+    padding: "5px 12px",
+    border: "1px solid #007bff",
+    borderRadius: "5px",
+    cursor: "pointer",
+    textAlign: "center",        // Center text including emojis
+    textAlignLast: "center"     // Important for some browsers
+  }}
+>
+  <option value="">All</option>
+  {allTags.map(tag => (
+    <option key={tag} value={tag}>{tag}</option>
+  ))}
+</select>
+
       </div>
 
-      {/* Engine List */}
-      <ul>
-        {filtered.map(engine => (
-          <li
-            key={engine.name}
-            style={{
-              marginBottom: "10px",
-              padding: "10px",
-              borderRadius: "5px",
-              transition: "background 0.2s",
-            }}
-            onMouseLeave={e => e.currentTarget.style.background = "transparent"}
-          >
-            <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
-            {engine.description}
-          </li>
-        ))}
-      </ul>
+<ul>
+  {filtered.map(engine => (
+    <li
+      key={engine.name}
+      style={{
+        marginBottom: "10px",
+        padding: "10px",
+        borderRadius: "5px",
+        transition: "background 0.2s",
+        cursor: "pointer"
+      }}
+      onMouseEnter={e => e.currentTarget.style.background = "#f0f0f0"}
+      onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+    >
+      <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
+      {engine.description}
+    </li>
+  ))}
+</ul>
+
     </div>
   );
 };
+
+
