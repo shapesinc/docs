@@ -5,45 +5,70 @@ description: "At Shapes.inc, we offer a variety of models for running your Shape
 
 import { useState } from "react";
 
-<EngineFilter />
-
 export const EngineFilter = () => {
   const engines = [
-    { name: "Anthropic: Claude Sonnet 4.5", tier: "premium", tags: ["🧠","🎭","📚","🛠️"], description: "Favorite amongst roleplayers, 4.5 is intelligent, great for tool use, and Shape's default premium engine." },
+    { name: "Anthropic: Claude Sonnet 4.5", tier: "premium", tags: ["🧠","🎭","📚","🛠️"], description: "Favorite amongst roleplayers, intelligent and great for tool use." },
     { name: "OpenAI: GPT-5", tier: "premium", tags: ["📚","🛠️"], description: "Top-tier reasoning, multimodal." },
-    { name: "Gemini 2.5 Pro (Latest)", tier: "premium", tags: ["🎭","📚","👤","🛠️"], description: "Google’s state-of-the-art AI model for advanced reasoning and creativity." },
-    { name: "OpenAI: GPT-5 Mini", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Balance of cost & capability." },
-    { name: "Anthropic: Claude Sonnet 3.5", tier: "free", tags: ["🎭","📚","🛠️"], description: "Older, cheaper option — still wonderful for roleplays." },
+    { name: "Gemini 2.5 Pro (Latest)", tier: "premium", tags: ["🎭","📚","👤","🛠️"], description: "Google’s state-of-the-art AI model." },
+    { name: "OpenAI: GPT-5 Mini", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Balanced cost and capability." },
+    { name: "Anthropic: Claude Sonnet 3.5", tier: "free", tags: ["🎭","📚","🛠️"], description: "Older, cheaper option — still great for roleplays." },
     { name: "OpenAI: GPT-4o-mini", tier: "free", tags: ["🎭","📚","👤"], description: "Fast GPT option, fallback for offline models." },
     { name: "Gemini 2.5 Flash", tier: "free", tags: ["🎭","📚","👤","🛠️"], description: "Fast, multilingual, high performance." },
     { name: "DeepSeek v3 0324", tier: "free", tags: ["🎭","📚","🛠️"], description: "DeepSeek's flagship chat model." }
   ];
 
-  const tiers = ["premium", "free"];
+  const allTags = [...new Set(engines.flatMap(e => e.tags))];
+  const [selectedTag, setSelectedTag] = React.useState("");
 
+  const tiers = ["premium", "free"];
   const sectionTitle = {
     premium: "🌟 Premium Engines",
     free: "💬 Free Engines"
   };
 
-  const sectionStyle = {
-    marginBottom: "30px",
-  };
-
+  const sectionStyle = { marginBottom: "30px" };
   const listItemStyle = {
     marginBottom: "10px",
     padding: "10px",
     borderRadius: "5px",
+    background: "#f9f9f9",
     transition: "background 0.2s",
   };
 
+  const filtered = selectedTag
+    ? engines.filter(e => e.tags.includes(selectedTag))
+    : engines;
+
   return (
     <div>
+      <div style={{ marginBottom: "15px" }}>
+        <select
+          value={selectedTag}
+          onChange={e => setSelectedTag(e.target.value)}
+          style={{
+            padding: "5px 12px",
+            border: "1px solid #007bff",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
+        >
+          <option value="">All Tags</option>
+          {allTags.map(tag => (
+            <option key={tag} value={tag}>{tag}</option>
+          ))}
+        </select>
+      </div>
+
       {tiers.map(tier => {
-        const group = engines.filter(e => e.tier === tier);
+        const group = filtered.filter(e => e.tier === tier);
+        if (group.length === 0) return null;
+
         return (
           <section key={tier} style={sectionStyle}>
-            <h3 style={{ marginBottom: "10px", color: tier === "premium" ? "#007bff" : "#555" }}>
+            <h3 style={{
+              marginBottom: "10px",
+              color: tier === "premium" ? "#007bff" : "#444",
+            }}>
               {sectionTitle[tier]}
             </h3>
             <ul style={{ listStyle: "none", paddingLeft: 0 }}>
