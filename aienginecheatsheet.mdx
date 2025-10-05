@@ -100,30 +100,30 @@ const filtered = selectedTag.length
   return (
     <div>
       <div style={{ marginBottom: "15px" }}>
-<div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "15px" }}>
+ <div style={{ marginBottom: "15px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
   {allTags.map(tag => (
     <button
       key={tag}
       onClick={() => {
-        if (selectedTag.includes(tag)) {
-          setSelectedTag(selectedTag.filter(t => t !== tag)); // deselect
-        } else {
-          setSelectedTag([...selectedTag, tag]); // select
-        }
+        // toggle tag in selectedTag array
+        setSelectedTag(prev =>
+          prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+        );
       }}
       style={{
         padding: "5px 10px",
+        border: selectedTag.includes(tag) ? "2px solid #007bff" : "1px solid #ccc",
         borderRadius: "5px",
-        border: "1px solid #007bff",
-        cursor: "pointer",
-        background: selectedTag.includes(tag) ? "#007bff" : "#fff",
+        background: selectedTag.includes(tag) ? "#007bff" : "#f9f9f9",
         color: selectedTag.includes(tag) ? "#fff" : "#000",
+        cursor: "pointer",
       }}
     >
       {tag}
     </button>
   ))}
 </div>
+
 
 
 
