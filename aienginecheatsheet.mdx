@@ -94,7 +94,7 @@ export const EngineFilter = () => {
   };
 
 const filtered = selectedTag.length
-  ? engines.filter(e => selectedTag.some(tag => e.tags.includes(tag)))
+  ? engines.filter(e => selectedTag.every(tag => e.tags.includes(tag)))
   : engines;
 
   return (
