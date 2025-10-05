@@ -78,7 +78,7 @@ export const EngineFilter = () => {
   ];
 
   const allTags = [...new Set(engines.flatMap(e => e.tags))];
-  const [selectedTag, setSelectedTag] = useState("");
+  const [selectedTags, setSelectedTags] = useState([]);
 
   const filtered = selectedTag === ""
     ? engines
