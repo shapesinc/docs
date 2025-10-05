@@ -87,6 +87,8 @@ export const EngineFilter = () => {
 
 
 
+
+
 const isDark = typeof document !== "undefined" && document.body.dataset.theme === "dark";
 
 return (
@@ -97,7 +99,7 @@ return (
       style={{
         padding: "8px 14px",
         minWidth: "160px",
-        border: "1px solid #007bff",
+        border: `1px solid ${isDark ? "#1D4ED8" : "#3B82F6"}`, // dark/light border
         borderRadius: "6px",
         cursor: "pointer",
         boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
@@ -112,7 +114,6 @@ return (
         <option key={tag} value={tag}>{tag}</option>
       ))}
     </select>
-  </div>
 );
 
 
