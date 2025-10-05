@@ -32,72 +32,73 @@ export const EngineFilter = () => {
 
   return (
     <div>
-      {/* Tag Dropdown */}
-      <div style={{ marginBottom: "15px" }}>
-        <select
-          value={selectedTag}
-          onChange={e => setSelectedTag(e.target.value)}
-          style={{
-            padding: "5px 12px",
-            border: "1px solid #007bff",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-        >
-          <option value="">All</option>
-          {allTags.map(tag => (
-            <option key={tag} value={tag}>{tag}</option>
-          ))}
-        </select>
-      </div>
+  {/* Tag Dropdown */}
+  <div style={{ marginBottom: "15px" }}>
+    <select
+      value={selectedTag}
+      onChange={e => setSelectedTag(e.target.value)}
+      style={{
+        padding: "5px 12px",
+        border: "1px solid #007bff",
+        borderRadius: "5px",
+        cursor: "pointer",
+      }}
+    >
+      <option value="">All</option>
+      {allTags.map(tag => (
+        <option key={tag} value={tag}>{tag}</option>
+      ))}
+    </select>
+  </div>
 
-      {/* Premium Engines Section */}
-      {premiumEngines.length > 0 && (
-        <>
-          <h2>Premium Engines</h2>
-          <ul>
-            {premiumEngines.map(engine => (
-              <li
-                key={engine.name}
-                style={{
-                  marginBottom: "10px",
-                  padding: "10px",
-                  borderRadius: "5px",
-                  transition: "background 0.2s",
-                  border: "1px solid #f59e0b" // optional: highlight premium
-                }}
-              >
-                <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
-                {engine.description}
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
-
-      {/* Free Engines Section */}
-      {freeEngines.length > 0 && (
-        <>
-          <h2>Free Engines</h2>
-          <ul>
-            {freeEngines.map(engine => (
-              <li
-                key={engine.name}
-                style={{
-                  marginBottom: "10px",
-                  padding: "10px",
-                  borderRadius: "5px",
-                  transition: "background 0.2s",
-                  border: "1px solid #10b981" // optional: highlight free
-                }}
-              >
-                <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
-                {engine.description}
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
+  {/* Premium Engines Section */}
+  {filtered.some(e => e.category === "Premium") && (
+    <div>
+      <h2>Premium Engines</h2>
+      <ul>
+        {filtered.filter(e => e.category === "Premium").map(engine => (
+          <li
+            key={engine.name}
+            style={{
+              marginBottom: "10px",
+              padding: "10px",
+              borderRadius: "5px",
+              transition: "background 0.2s",
+              border: "1px solid #f59e0b"
+            }}
+          >
+            <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
+            {engine.description}
+          </li>
+        ))}
+      </ul>
     </div>
+  )}
+
+  {/* Free Engines Section */}
+  {filtered.some(e => e.category === "Free") && (
+    <div>
+      <h2>Free Engines</h2>
+      <ul>
+        {filtered.filter(e => e.category === "Free").map(engine => (
+          <li
+            key={engine.name}
+            style={{
+              marginBottom: "10px",
+              padding: "10px",
+              borderRadius: "5px",
+              transition: "background 0.2s",
+              border: "1px solid #10b981"
+            }}
+          >
+            <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
+            {engine.description}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+</div>
+
   );
 };
