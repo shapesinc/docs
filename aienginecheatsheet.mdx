@@ -12,15 +12,17 @@ export const EngineFilter = () => {
     { name: "OpenAI: GPT-5", tags: ["📚","🛠️"], description: "Top-tier reasoning, multimodal." },
     { name: "OpenAI: GPT-5 Mini", tags: ["🎭","📚","🛠️"], description: "Balance of cost & capability." },
     { name: "Anthropic: Claude Opus 4", tags: ["📚","🛠️"], description: "Long workflows, strong coding." },
-    // ... keep all your engines here
+    // ... add the rest of your engines
   ];
 
   const allTags = [...new Set(engines.flatMap(e => e.tags))];
   const [selectedTags, setSelectedTags] = useState([]);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const handleSelectChange = (event) => {
-    const selectedOptions = Array.from(event.target.selectedOptions).map(opt => opt.value);
-    setSelectedTags(selectedOptions);
+  const toggleTag = (tag) => {
+    setSelectedTags(prev =>
+      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+    );
   };
 
   const filtered = selectedTags.length === 0
@@ -30,23 +32,51 @@ export const EngineFilter = () => {
       );
 
   return (
-    <div>
-      <div style={{ marginBottom: "15px" }}>
-        <select 
-          multiple 
-          value={selectedTags} 
-          onChange={handleSelectChange} 
-          style={{ width: "200px", height: "100px", padding: "5px", borderRadius: "5px", border: "1px solid #007bff" }}
-        >
-          {allTags.map(tag => (
-            <option key={tag} value={tag}>
-              {tag}
-            </option>
-          ))}
-        </select>
+    <div style={{ position: "relative", width: "250px" }}>
+      <div 
+        onClick={() => setDropdownOpen(!dropdownOpen)}
+        style={{
+          border: "1px solid #007bff",
+          borderRadius: "5px",
+          padding: "8px",
+          cursor: "pointer",
+          backgroundColor: "#fff"
+        }}
+      >
+        {selectedTags.length > 0 ? selectedTags.join(", ") : "Select tags..."}
       </div>
 
-      <ul>
+      {dropdownOpen && (
+        <div 
+          style={{
+            position: "absolute",
+            top: "40px",
+            left: 0,
+            width: "100%",
+            maxHeight: "150px",
+            overflowY: "auto",
+            border: "1px solid #007bff",
+            borderRadius: "5px",
+            backgroundColor: "#fff",
+            zIndex: 1000,
+            padding: "5px"
+          }}
+        >
+          {allTags.map(tag => (
+            <label key={tag} style={{ display: "block", marginBottom: "5px", cursor: "pointer" }}>
+              <input 
+                type="checkbox" 
+                checked={selectedTags.includes(tag)} 
+                onChange={() => toggleTag(tag)} 
+                style={{ marginRight: "8px" }}
+              />
+              {tag}
+            </label>
+          ))}
+        </div>
+      )}
+
+      <ul style={{ marginTop: "20px" }}>
         {filtered.map(engine => (
           <li key={engine.name} style={{ marginBottom: "10px" }}>
             <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
