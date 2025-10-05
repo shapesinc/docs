@@ -7,7 +7,12 @@ export const EngineFilter = () => {
     { name: "Anthropic: Claude Sonnet 4.5", tags: ["🧠","🎭","📚","🛠️"], description: "Favorite amongst roleplayers, 4.5 is intelligent, great for tool use, and Shape's default premium engine." },
     { name: "DeepSeek V3.2 Exp", tags: ["🧠","📚","🛠️"], description: "The latest experimental model from DeepSeek." },
     { name: "XAI: Grok 4 Fast", tags: ["🎭","📚"], description: "The faster, less expensive version of Grok 4." },
-    // ... rest of your engines
+    { name: "Gemini 2.5 Flash Image Preview", tags: ["🖼️"], description: "Image + text multimodal." },
+    { name: "OpenAI: GPT-5 Chat", tags: ["🎭","👤"], description: "ChatGPT for Roleplayers and chatters." },
+    { name: "OpenAI: GPT-5", tags: ["📚","🛠️"], description: "Top-tier reasoning, multimodal." },
+    { name: "OpenAI: GPT-5 Mini", tags: ["🎭","📚","🛠️"], description: "Balance of cost & capability." },
+    { name: "Anthropic: Claude Opus 4", tags: ["📚","🛠️"], description: "Long workflows, strong coding." },
+    // ... keep all your engines here
   ];
 
   const allTags = [...new Set(engines.flatMap(e => e.tags))];
@@ -27,7 +32,12 @@ export const EngineFilter = () => {
   return (
     <div>
       <div style={{ marginBottom: "15px" }}>
-        <select multiple value={selectedTags} onChange={handleSelectChange} style={{ width: "200px", height: "100px" }}>
+        <select 
+          multiple 
+          value={selectedTags} 
+          onChange={handleSelectChange} 
+          style={{ width: "200px", height: "100px", padding: "5px", borderRadius: "5px", border: "1px solid #007bff" }}
+        >
           {allTags.map(tag => (
             <option key={tag} value={tag}>
               {tag}
