@@ -78,7 +78,7 @@ export const EngineFilter = () => {
   ];
 
   const allTags = [...new Set(engines.flatMap(e => e.tags))];
-  const [selectedTag, setSelectedTag] = useState("");
+  const [selectedTag, setSelectedTag] = useState([]);
 
   const tiers = ["premium", "free"];
   const sectionTitle = {
@@ -93,9 +93,9 @@ export const EngineFilter = () => {
     borderRadius: "5px",
   };
 
-  const filtered = selectedTag
-    ? engines.filter(e => e.tags.includes(selectedTag))
-    : engines;
+const filtered = selectedTag.length
+  ? engines.filter(e => selectedTag.some(tag => e.tags.includes(tag)))
+  : engines;
 
   return (
     <div>
