@@ -115,7 +115,15 @@ export const EngineFilter = () => {
         transition: "background 0.2s",
         cursor: "pointer"
       }}
-        onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.1)"}
+      onMouseEnter={e => {
+        // Detect background brightness
+        const bg = window.getComputedStyle(e.currentTarget).backgroundColor;
+        // Use subtle light or dark overlay
+        e.currentTarget.style.backgroundColor =
+          bg.includes("rgb(0, 0, 0)") || bg.includes("rgb(18, 18, 18)")
+            ? "rgba(255,255,255,0.1)" // dark mode
+            : "rgba(0,0,0,0.05)";    // light mode
+      }}
       onMouseLeave={e => e.currentTarget.style.background = "transparent"}
     >
       <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
