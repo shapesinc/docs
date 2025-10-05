@@ -77,56 +77,67 @@ export const EngineFilter = () => {
     { name: "sao10k l3.3-euryale-70b", tags: ["🎭"], description: "Rarely used." }
   ];
 
-  const allTags = [...new Set(engines.flatMap(e => e.tags))];
+   const allTags = [...new Set(engines.flatMap(e => e.tags))];
   const [selectedTags, setSelectedTags] = useState([]);
 
+  const toggleTag = (tag) => {
+    setSelectedTags(prev => 
+      prev.includes(tag) 
+        ? prev.filter(t => t !== tag) 
+        : [...prev, tag]
+    );
+  };
+
   const filtered = selectedTags.length === 0
-  ? engines
-  : engines.filter(engine => selectedTags.some(tag => engine.tags.includes(tag)));
+    ? engines
+    : engines.filter(engine => selectedTags.some(tag => engine.tags.includes(tag)));
 
   return (
     <div>
-      <div style={{ marginBottom: "15px" }}>
-<select
-  multiple
-  value={selectedTags}
-  onChange={e => setSelectedTags([...e.target.selectedOptions].map(o => o.value))}
-  style={{
-    padding: "5px 12px",
-    border: "1px solid #007bff",
-    borderRadius: "5px",
-    cursor: "pointer",
-    textAlign: "center",
-    textAlignLast: "center"
-  }}
->
-  {allTags.map(tag => (
-    <option key={tag} value={tag}>{tag}</option>
-  ))}
-</select>
-
+      {/* Tag Selector */}
+      <div style={{ marginBottom: "15px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
+        {allTags.map(tag => (
+          <label 
+            key={tag} 
+            style={{
+              cursor: "pointer",
+              border: "1px solid #007bff",
+              borderRadius: "5px",
+              padding: "5px 10px",
+              background: selectedTags.includes(tag) ? "#007bff" : "transparent",
+              color: selectedTags.includes(tag) ? "#fff" : "#000",
+              userSelect: "none"
+            }}
+          >
+            <input
+              type="checkbox"
+              checked={selectedTags.includes(tag)}
+              onChange={() => toggleTag(tag)}
+              style={{ display: "none" }}
+            />
+            {tag}
+          </label>
+        ))}
       </div>
 
-<ul>
-  {filtered.map(engine => (
-    <li
-      key={engine.name}
-      style={{
-        marginBottom: "10px",
-        padding: "10px",
-        borderRadius: "5px",
-        transition: "background 0.2s",
-      }}
-      onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
-    >
-      <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
-      {engine.description}
-    </li>
-  ))}
-</ul>
-
-
-
+      {/* Engine List */}
+      <ul>
+        {filtered.map(engine => (
+          <li
+            key={engine.name}
+            style={{
+              marginBottom: "10px",
+              padding: "10px",
+              borderRadius: "5px",
+              transition: "background 0.2s",
+            }}
+            onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+          >
+            <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
+            {engine.description}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
