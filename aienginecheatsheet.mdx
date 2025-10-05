@@ -1,27 +1,14 @@
----
-title: "AI Engine Matchmaker"
-description: "At Shapes.inc, we offer a variety of models for running your Shapes. We regularly update the availability of models."
----
-
 import { useState } from "react";
 
 <EngineFilter />
 
 export const EngineFilter = () => {
   const engines = [
-    // Premium Engines
-    { name: "Anthropic: Claude Sonnet 4.5", tags: ["🧠","🎭","📚","🛠️"], description: "Favorite amongst roleplayers, 4.5 is intelligent, great for tool use, and Shape's default premium engine.", category: "Premium" },
-    { name: "DeepSeek V3.2 Exp", tags: ["🧠","📚","🛠️"], description: "The latest experimental model from DeepSeek.", category: "Premium" },
-    { name: "XAI: Grok 4 Fast", tags: ["🎭","📚"], description: "The faster, less expensive version of Grok 4.", category: "Premium" },
-    { name: "Gemini 2.5 Flash Image Preview", tags: ["🖼️"], description: "Image + text multimodal.", category: "Premium" },
-    { name: "OpenAI: GPT-5 Chat", tags: ["🎭","👤"], description: "ChatGPT for Roleplayers and chatters.", category: "Premium" },
-    // ... include all other Premium engines here, category: "Premium"
-    
-    // Free Engines
+    { name: "Anthropic: Claude Sonnet 4.5", tags: ["🧠","🎭","📚","🛠️"], description: "Favorite amongst roleplayers...", category: "Premium" },
+    { name: "DeepSeek V3.2 Exp", tags: ["🧠","📚","🛠️"], description: "Latest experimental model...", category: "Premium" },
     { name: "OpenAI: GPT-5 Nano", tags: ["🎭","📚"], description: "Low latency, huge context support.", category: "Free" },
-    { name: "Grok 3 Mini", tags: ["🧠","🎭","📚","🛠️","👤"], description: "Extremely smart and fast, Swiss army knife of engines.", category: "Free" },
-    { name: "Llama 4 Maverick", tags: ["🎭","📚","🛠️"], description: "17B expert mixture, multimodal.", category: "Free" },
-    // ... include all other Free engines here, category: "Free"
+    { name: "Grok 3 Mini", tags: ["🧠","🎭","📚","🛠️","👤"], description: "Extremely smart and fast...", category: "Free" },
+    // add all other engines here with category: "Premium" or "Free"
   ];
 
   const allTags = [...new Set(engines.flatMap(e => e.tags))];
@@ -41,7 +28,33 @@ export const EngineFilter = () => {
         selectedTags.every(tag => engine.tags.includes(tag))
       );
 
-  const categories = ["Premium", "Free"];
+  const renderTable = (category) => {
+    const enginesByCategory = filtered.filter(e => e.category === category);
+    if (enginesByCategory.length === 0) return null;
+    return (
+      <div style={{ marginBottom: "30px" }}>
+        <h2>{category} Engines</h2>
+        <table style={{ width: "100%", borderCollapse: "collapse" }}>
+          <thead>
+            <tr>
+              <th style={{ textAlign: "left", borderBottom: "2px solid #ddd", padding: "8px" }}>Engine</th>
+              <th style={{ textAlign: "left", borderBottom: "2px solid #ddd", padding: "8px" }}>Tags</th>
+              <th style={{ textAlign: "left", borderBottom: "2px solid #ddd", padding: "8px" }}>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {enginesByCategory.map(engine => (
+              <tr key={engine.name}>
+                <td style={{ padding: "8px", borderBottom: "1px solid #eee" }}>{engine.name}</td>
+                <td style={{ padding: "8px", borderBottom: "1px solid #eee" }}>{engine.tags.join(" ")}</td>
+                <td style={{ padding: "8px", borderBottom: "1px solid #eee" }}>{engine.description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  };
 
   return (
     <div>
@@ -66,33 +79,9 @@ export const EngineFilter = () => {
         ))}
       </div>
 
-      {/* Tables by category */}
-      {categories.map(category => {
-        const enginesByCategory = filtered.filter(e => e.category === category);
-        return (
-          <div key={category} style={{ marginBottom: "30px" }}>
-            <h2>{category} Engines</h2>
-            <table style={{ width: "100%", borderCollapse: "collapse" }}>
-              <thead>
-                <tr>
-                  <th style={{ textAlign: "left", borderBottom: "2px solid #ddd", padding: "8px" }}>Engine</th>
-                  <th style={{ textAlign: "left", borderBottom: "2px solid #ddd", padding: "8px" }}>Tags</th>
-                  <th style={{ textAlign: "left", borderBottom: "2px solid #ddd", padding: "8px" }}>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                {enginesByCategory.map(engine => (
-                  <tr key={engine.name}>
-                    <td style={{ padding: "8px", borderBottom: "1px solid #eee" }}>{engine.name}</td>
-                    <td style={{ padding: "8px", borderBottom: "1px solid #eee" }}>{engine.tags.join(" ")}</td>
-                    <td style={{ padding: "8px", borderBottom: "1px solid #eee" }}>{engine.description}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        );
-      })}
+      {/* Separate tables */}
+      {renderTable("Premium")}
+      {renderTable("Free")}
     </div>
   );
 };
