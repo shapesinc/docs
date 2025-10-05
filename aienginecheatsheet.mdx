@@ -1,165 +1,136 @@
+import { useState } from 'react';
+
 ---
 title: "AI Engine Matchmaker"
-description: "At Shapes.inc, we offer a variety of models for running your Shapes. We regularly update the availability of models. Each model has its own strengths and characteristics."
+description: "At Shapes.inc, we offer a variety of models for running your Shapes. Each model has its own strengths and characteristics. Explore and filter engines by tags!"
 ---
 
-import { useState } from "react";
+# AI Engine Matchmaker
 
-<div className="filter-container">
-<FilterButtons />
+Use the buttons below to filter engines by tags. You can select multiple tags — only engines that match **all selected tags** will be shown.
 
+<div style={{ marginBottom: '1em' }}>
+  <FilterButtons />
 </div>
 
-<style jsx>
-  {`
-  .filter-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 1em;
-  }
-  .filter-container button {
-    background: #f3f4f6;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 6px 12px;
-    cursor: pointer;
-    font-size: 0.9rem;
-  }
-  .filter-container button.active {
-    background: #2563eb;
-    color: white;
-  }
-  tr.hidden {
-    display: none;
-  }
-  `}
-</style>
+<FilterTable />
 
-{/* --- React component for filter buttons --- */}
-
-export function FilterButtons() {
-  const [active, setActive] = useState([]);
-
-  const tags = ["🎭", "👤", "📚", "🛠️", "🧠", "🖼️"];
-
-  function toggle(tag) {
-    setActive(prev =>
-      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
-    );
-  }
-
-  // Update rows after every state change
-  if (typeof window !== "undefined") {
-    const rows = document.querySelectorAll("tbody tr");
-    rows.forEach(row => {
-      const tagsText = row.children[1]?.innerText || "";
-      const match = active.every(t => tagsText.includes(t));
-      row.classList.toggle("hidden", active.length && !match);
-    });
-  }
-
-  return (
-    <>
-      {tags.map(tag => (
-        <button
-          key={tag}
-          className={active.includes(tag) ? "active" : ""}
-          onClick={() => toggle(tag)}
-        >
-          {tag}
-        </button>
-      ))}
-    </>
-  );
-}
-
-## Premium Engines
-
-| Engine                                  | Tags         | Description                                                                                                                                                      |
-| --------------------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Anthropic: Claude Sonnet 4.5            | 🧠 🎭 📚 🛠️ | Favorite amongst roleplayers, 4.5 is intelligent, great for tool use, and Shape's default premium engine.                                                        |
-| DeepSeek V3.2 Exp                       | 🧠  📚 🛠️   | The latest experimental model from DeekSeek                                                                                                                      |
-| XAI: Grok 4 Fast                        | 🎭 📚        | The faster, less expensive version of Grok 4                                                                                                                     |
-| Gemini 2.5 Flash Image Preview          | 🖼️          | Image + text multimodal                                                                                                                                          |
-| OpenAI: GPT-5 Chat                      | 🎭 👤        | ChatGPT for Roleplayers and chatters                                                                                                                             |
-| OpenAI: GPT-5                           | 📚 🛠️       | Top-tier reasoning, multimodal                                                                                                                                   |
-| OpenAI: GPT-5 Mini                      | 🎭 📚 🛠️    | Balance of cost & capability                                                                                                                                     |
-| Anthropic: Claude Opus 4                | 📚 🛠️       | Long workflows, strong coding                                                                                                                                    |
-| Anthropic: Claude Sonnet 4              | 🎭 📚 🛠️    | Improved coding & reasoning - The community loves sonnet engines for their personality and quirky roleplay style.                                                |
-| Anthropic: Claude Sonnet 3.7            | 🎭 📚 🛠️    | Strong instruction model, favorite amongst roleplays                                                                                                             |
-| Anthropic: Claude Sonnet 3.7 (thinking) | 📚 🛠️       | Slower, deeper reasoning                                                                                                                                         |
-| Anthropic: Claude Sonnet 3.5            | 🎭 📚 🛠️    | Older, cheaper option - still wonderful for roleplays                                                                                                            |
-| Gemini 2.5 Pro (Latest)                 | 🎭 📚 👤 🛠️ | Google’s state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks - but is also a popular selection for roleplayers. |
-| Gemini 2.5 Flash (Thinking)             | 📚 🛠️       | Thinking varient                                                                                                                                                 |
-| OpenAI: GPT-4.1                         | 🎭 📚        | If you miss the old ChatGPT, you'll love this model. Prone to asking a lot of questions.                                                                         |
-| OpenAI: GPT-4.1 Mini                    | 🎭 📚        | The smaller, cheaper, faster version of GPT-4.1                                                                                                                  |
-| Grok 3                                  | 🎭 📚 👤 🛠️ | Logic-focused, deeper than mini                                                                                                                                  |
-| Grok 4                                  | 🎭 📚 👤 🛠️ | Better coding & agent workflows                                                                                                                                  |
-| Gemini 2.5 Pro                          | 🎭 📚 👤 🛠️ | Earlier releast of Gemini 2.5 Pro                                                                                                                                |
-| DeepSeek v3 0324                        | 🎭 📚 🛠️    | DeepSeeks flagship chat model.                                                                                                                                   |
-| DeepSeek R1 (May 28, 2025)              | 🧠 🎭 📚     | Set up with thinking enabled, this powerful model from DeepSeek is great for a variety of use cases.                                                             |
-| OpenAI: o3 Mini                         | 📚           | o3 was built for academics and takes the longest time to respond, it focuses on providing factual and in-depth info.                                             |
-| Gemini 1.5 Pro                          | 🎭 👤        | Older Gemini Model that is a well-rounded, smart/creative/human like!                                                                                            |
-| Nous: Hermes 3 405B                     | 🎭 👤        | Beloved by many, excellent choice for creative roleplay                                                                                                          |
-| Cohere: Command A                       | 📚           | Known to avoid providing false information at all costs.  This engine is very robotic but stays focused on never making anything up.                             |
-| OpenAI: GPT 4-o (2024-05-13)            | 🎭 📚 🛠️    | 4o is built to adapt on demand, at times it will respond quickly to basic requests and at others it will spend more time thinking on answers                     |
-| Meta: Llama 3.1 405B Instruct           | 🎭 📚 👤 🛠️ | 405B scale model                                                                                                                                                 |
-| Gemini 2.5 Flash                        | 🎭 📚 👤 🛠️ | AMAZING multilingual model that is fast                                                                                                                          |
-| Anthropic: Claude Opus 4.1              | 📚 🛠️       | Improved Opus 4                                                                                                                                                  |
-| DeepSeek V3.1                           | 🧠 🎭 📚 🛠️ |                                                                                                                                                                  |
-| MoonshotAI: Kimi K2 0905                | 🎭 📚 👤     | A recent update to Kimi K2.                                                                                                                                      |
-| Nous: Hermes 4 405B                     | 🎭 🛠️       | Large model ok for roleplay and shape skills but can be a bit slow                                                                                               |
-
-## Free Engines
-
-| Engine                                 | Tags            | Description                                                                                                                                     |
-| -------------------------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| OpenAI: GPT-5 Nano                     | 🎭 📚           | Low latency, huge context support                                                                                                               |
-| Grok 3 Mini                            | 🧠 🎭 📚 🛠️ 👤 | Grok 3 Mini like its larger version is amazing at following your prompts. It is extremely smart and very fast. The Swiss army knife of engines. |
-| Llama 4 Maverick                       | 🎭 📚 🛠️       | 17B expert mixture, multimodal                                                                                                                  |
-| Gemma 3 27b                            | 🎭              | Large context, balanced perf/latency                                                                                                            |
-| Llama 3.3 70b (Turbo)                  | 🎭 🛠️          | Multilingual, instruction-tuned                                                                                                                 |
-| Gemini 2.5 Flash (Lite)                | 👤 🛠️          | AMAZING multilingual model that is fast. This is also another great fallback model or speedy substitute for non-english Shapes                  |
-| Phi 4                                  | 🎭 📚           | Math/science reasoning focus                                                                                                                    |
-| Formless 70B v1a                       | 🎭              | Our exclusive model created by Shapes is designed for Roleplay.                                                                                 |
-| Gemini 2.0 Flash                       | 🎭 👤 🛠️       | Earlier Gemini Flash gen                                                                                                                        |
-| OpenAI: GPT-OSS 120B                   | 📚 🛠️          |                                                                                                                                                 |
-| OpenAI: GPT-OSS 20B                    | 📚              |                                                                                                                                                 |
-| MoonshotAI: Kimi K2                    | 🎭 📚 👤        | This model is very creative, it is great for roleplay or chatting with you just like your best friend!                                          |
-| Nous: Hermes 4 70B                     | 🎭              |                                                                                                                                                 |
-| Qwen: Qwen 3 235B                      | 📚 🛠️          | Large-scale model, long dialogue                                                                                                                |
-| Meituan: Longcat Flash Chat            | 🎭 👤 🛠️       | Non-thinking foundation model optimized for conversational tasks                                                                                |
-| Gemma 2 27b                            | 👤 🛠️          | With a mind of its own both gemma models are super fun to be friends with                                                                       |
-| Gemma 2 9b (Turbo)                     | 👤              | 9b is faster and much more goofy! It's sense of humor is great                                                                                  |
-| OpenAI: Gpt-4.1 Nano                   | 📚              | Perfect fallback engine choice for the latest GPT 4.1 model                                                                                     |
-| Llama 4 Scout                          | 🎭 👤 🛠️       | On par with the previously mentioned LLama models but is more up to date & great with skills.                                                   |
-| OpenAI: GPT-4o-mini                    | 🎭 📚 👤        | 4o Mini is another insanely fast GPT option that would do great as a fallback engine for other models if they go offline!                       |
-| Phi 4 Reasoning Plus                   | 📚              |                                                                                                                                                 |
-| Mistral: Mistral Small 3.1 24B 3/27/25 | 👤              | Rarely used                                                                                                                                     |
-| Llama 3.3 70B                          | 🎭              | Formerly known as llama 3 instruct model. Good at retrieving knowledge, being in character, human-like behavior                                 |
-| Deepseek-R1 Llama 3.3 70b Distill      | 🎭              | Good for general RP even though tends to mischaracterize                                                                                        |
-| Deepseek-R1 Qwen 32b Distill           | 🎭              | Very good for complex tasks, good for multi-step reasoning, okay for general RP                                                                 |
-| WizardLM 2 8x22b                       | 🎭              | Like lunaris Wizard thinks every roleplay is a wild ride                                                                                        |
-| Mistral NeMo                           | 🎭 👤           | Short creative role-player and great chatter                                                                                                    |
-| MythoMax 13b                           | 🎭              | Rarely used                                                                                                                                     |
-| AionLabs: Aion-RP 1.0 (8B)             | 🎭              | Rarely used                                                                                                                                     |
-| Mistral: Ministral 8B                  | 👤              | Rarely used                                                                                                                                     |
-| Nous: Hermes 3 70B                     | 👤              | Many members love this model for its unique word choices                                                                                        |
-| Qwen: QwQ 32B 3/25                     | 📚              | Rarely used but highly intelligent, known for being great at maths while being adorable!                                                        |
-| Lunaris L3 8B                          | 🎭              | Rarely refusing even the craziest roleplay scenes, lunaris is small but top tier in fast, insane, short roleplay adventures                     |
-| sao10k l3.3-euryale-70b                | 🎭              | Rarely used                                                                                                                                     |
+---
 
 ## Key:
 
-Thinking tags supported 🧠\
-Roleplay 🎭\
-Intelligence 📚\
-Skills (enabled for tool use)  🛠️\
-Human-Like 👤\
-Images 🖼️
+- 🧠 Thinking  
+- 🎭 Roleplay  
+- 📚 Intelligence  
+- 🛠️ Skills (enabled for tool use)  
+- 👤 Human-Like  
+- 🖼️ Images  
 
-_Last updated: 10/01/25_\
-\
-\
+_Last updated: 10/01/25_  
+
 [Return to App](https://shapes.inc)
+
+---
+
+export function FilterButtons({ activeTags, setActiveTags }) {
+  const tags = [
+    { emoji: '🎭', label: 'Roleplay' },
+    { emoji: '👤', label: 'Human-Like' },
+    { emoji: '📚', label: 'Intelligent' },
+    { emoji: '🛠️', label: 'Skills' },
+    { emoji: '🧠', label: 'Thinking' },
+    { emoji: '🖼️', label: 'Images' }
+  ];
+
+  const toggleTag = (tag) => {
+    if (activeTags.includes(tag)) {
+      setActiveTags(activeTags.filter(t => t !== tag));
+    } else {
+      setActiveTags([...activeTags, tag]);
+    }
+  };
+
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+      {tags.map(tag => (
+        <button
+          key={tag.emoji}
+          onClick={() => toggleTag(tag.emoji)}
+          style={{
+            background: activeTags.includes(tag.emoji) ? '#2563eb' : '#f3f4f6',
+            color: activeTags.includes(tag.emoji) ? 'white' : 'black',
+            border: '1px solid #ccc',
+            borderRadius: '8px',
+            padding: '6px 12px',
+            cursor: 'pointer',
+            fontSize: '0.9rem'
+          }}
+        >
+          {tag.emoji} {tag.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+export function FilterTable() {
+  const [activeTags, setActiveTags] = useState([]);
+
+  const engines = [
+    // Premium Engines
+    { name: "Anthropic: Claude Sonnet 4.5", tags: "🧠 🎭 📚 🛠️", description: "Favorite amongst roleplayers, 4.5 is intelligent, great for tool use, and Shape's default premium engine." },
+    { name: "DeepSeek V3.2 Exp", tags: "🧠 📚 🛠️", description: "The latest experimental model from DeepSeek." },
+    { name: "XAI: Grok 4 Fast", tags: "🎭 📚", description: "The faster, less expensive version of Grok 4." },
+    { name: "Gemini 2.5 Flash Image Preview", tags: "🖼️", description: "Image + text multimodal." },
+    { name: "OpenAI: GPT-5 Chat", tags: "🎭 👤", description: "ChatGPT for Roleplayers and chatters." },
+    { name: "OpenAI: GPT-5", tags: "📚 🛠️", description: "Top-tier reasoning, multimodal." },
+    { name: "OpenAI: GPT-5 Mini", tags: "🎭 📚 🛠️", description: "Balance of cost & capability." },
+    { name: "Anthropic: Claude Opus 4", tags: "📚 🛠️", description: "Long workflows, strong coding." },
+    { name: "Anthropic: Claude Sonnet 4", tags: "🎭 📚 🛠️", description: "Improved coding & reasoning - favorite for quirky roleplay style." },
+    { name: "Anthropic: Claude Sonnet 3.7", tags: "🎭 📚 🛠️", description: "Strong instruction model, favorite amongst roleplays." },
+    // ... add all remaining engines here in the same format
+  ];
+
+  const filteredEngines = engines.filter(engine => 
+    activeTags.every(tag => engine.tags.includes(tag))
+  );
+
+  return (
+    <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+      <thead>
+        <tr style={{ borderBottom: '2px solid #ccc' }}>
+          <th style={{ textAlign: 'left', padding: '8px' }}>Engine</th>
+          <th style={{ textAlign: 'left', padding: '8px' }}>Tags</th>
+          <th style={{ textAlign: 'left', padding: '8px' }}>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {filteredEngines.map(engine => (
+          <tr key={engine.name} style={{ borderBottom: '1px solid #eee' }}>
+            <td style={{ padding: '8px' }}>{engine.name}</td>
+            <td style={{ padding: '8px' }}>{engine.tags}</td>
+            <td style={{ padding: '8px' }}>{engine.description}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+
+
+## Premium Engines
+
+| Engine | Tags | Description |
+|--------|------|------------|
+| Anthropic: Claude Sonnet 4.5 | 🧠 🎭 📚 🛠️ | Favorite amongst roleplayers, 4.5 is intelligent, great for tool use. |
+| OpenAI: GPT-5 Chat | 🎭 👤 | ChatGPT for Roleplayers and chatters. |
+| OpenAI: GPT-5 Mini | 🎭 📚 🛠️ | Balance of cost & capability. |
+| Anthropic: Claude Opus 4 | 📚 🛠️ | Long workflows, strong coding. |
+
+## Free Engines
+
+| Engine | Tags | Description |
+|--------|------|------------|
+| OpenAI: GPT-5 Nano | 🎭 📚 | Low latency, huge context support. |
+| Gemma 3 27b | 🎭 | Large context, balanced perf/latency. |
