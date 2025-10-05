@@ -134,8 +134,6 @@ export const EngineFilter = () => {
                 <li
                   key={engine.name}
                   style={listItemStyle}
-                  onMouseEnter={(e) => e.currentTarget.style.background = "#eef4ff"}
-                  onMouseLeave={(e) => e.currentTarget.style.background = "#f9f9f9"}
                 >
                   <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
                   {engine.description || <em style={{ color: "#777" }}>No description available.</em>}
