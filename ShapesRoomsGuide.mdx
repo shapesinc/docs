@@ -217,69 +217,91 @@ Rooms are your playgrounds — spaces where you and your friends hang out with y
         - [Give your Shape a voice →](how-to-give-your-shape-a-voice)
         - [Receive voice messages →](how-to-receive-voice-messages)
       </Accordion>
-      ---
 
-      ## AI Engine Setup
+    # Ai Engine
 
-      Your Shape’s brain — configure how it thinks, creates, and responds.
+    Your Shape’s engine model - configure how it thinks, creates, and responds.\
+    This is one of the most important tabs on your Shape’s dashboard.
 
-      | Setting             | Description                              |
-      | ------------------- | ---------------------------------------- |
-      | **Primary Engine**  | Premium model used by default            |
-      | **Fallback Engine** | Free backup for non-premium users        |
-      | **Language Preset** | Defines your Shape’s base language       |
-      | **Base Preset**     | Core writing style and tone              |
-      | **Monologue**       | Enable/disable internal thought messages |
+    ## Overview
 
-      <Accordion title="Advanced Engine Controls">
-        Fine-tune engine parameters:
-        - Temperature
-        - Top P, Top K
-        - Frequency, Presence, and Repetition Penalties
-        - Min P, Top A
-        - Timezone settings
-        - Memory length and recall context
+    On this tab, you can:
 
-        > ⚠️ Adjust with care — small changes can greatly affect results.
-      </Accordion>
-      ---
+    - Update your Shape’s **Primary model**, **Fallback model**, and **Freewill model**
+    - Enable or disable **internal monologging**
+    - Toggle helpful options:
+      - Inform User When Fallback Engine is Used
+      - Inform Users When They Are Out of Shape Engine Credits
+      - Let Users Override AI Engine
+    - Select your Shape’s general **Language Preset**
+    - Write a **Base Preset** that defines its tone and behavior
 
-      ## Memory Systems
+      > Presets heavily impact how your Shape expresses personality.
 
-      Shapes remember what matters.
+    | Setting             | Description                              |
+    | ------------------- | ---------------------------------------- |
+    | **Primary Engine**  | Premium model used by default            |
+    | **Fallback Engine** | Free backup for non-premium users        |
+    | **Language Preset** | Defines your Shape’s base language       |
+    | **Base Preset**     | Core writing style and tone              |
+    | **Monologue**       | Enable/disable internal thought messages |
 
-      | Type                        | Description                                    |
-      | --------------------------- | ---------------------------------------------- |
-      | **Short-Term Memory (STM)** | Keeps recent messages for context              |
-      | **Long-Term Memory (LTM)**  | Stores persistent facts and relationships      |
-      | **Memory Recall**           | Retrieves memories based on relevance          |
-      | **Privacy Settings**        | Control whether memories are shared or private |
+    ---
 
-      <Accordion title="Memory Tips">
-        - Lower relevance = more recall, less accuracy
-        - Higher relevance = fewer recalls, more precision
-        - Use STM for active chats, LTM for lore or history
-      </Accordion>
-      ---
+    ## Advanced Engine Parameters
 
-      ## Settings & Ownership
+    <Accordion title="Fine-Tune Engine Controls">
+      You can also edit advanced AI parameters for more granular control:
 
-      Manage your Shape’s permissions and visibility.
-      - Add or remove **co-owners**
-      - Toggle **Sensitive Content**
-      - Control **Discoverability**
-      - Set an **Ignore List**
-      - **Duplicate** or **Delete** a Shape
-      - Adjust **Danger Zone** settings for permanent removal
+      - **Temperature** — randomness of responses
+      - **Top P** — controls probability diversity
+      - **Repetition Penalty** — reduces repeated text
+      - **Top K** — limits token sampling
+      - **Frequency Penalty** — penalizes overused words
+      - **Presence Penalty** — encourages new ideas
+      - **Min P** — minimum probability cutoff
+      - **Top A** — adaptive sampling
+      - **Timezone** — define the time context your Shape uses
 
-      ---
+      > ⚠️ It’s not suggested to edit these settings unless you know what you’re doing — small changes can drastically affect how your Shape behaves.
+    </Accordion>
+    ## Memory Systems
 
-      ## Explore. Experiment. Enjoy.
+    Shapes remember what matters.
 
-      Shapes & Rooms are about **creativity and connection**.\
-      Mix and match AI engines, memories, voices, and room designs.\
-      Roleplay, chat, build, or chill — **your imagination is the limit!**
+    | Type                        | Description                                    |
+    | --------------------------- | ---------------------------------------------- |
+    | **Short-Term Memory (STM)** | Keeps recent messages for context              |
+    | **Long-Term Memory (LTM)**  | Stores persistent facts and relationships      |
+    | **Memory Recall**           | Retrieves memories based on relevance          |
+    | **Privacy Settings**        | Control whether memories are shared or private |
 
-      [⬅️ Back to App](https://shapes.inc)
+    <Accordion title="Memory Tips">
+      - Lower relevance = more recall, less accuracy
+      - Higher relevance = fewer recalls, more precision
+      - Use STM for active chats, LTM for lore or history
+    </Accordion>
+    ---
+
+    ## Settings & Ownership
+
+    Manage your Shape’s permissions and visibility.
+
+    - Add or remove **co-owners**
+    - Toggle **Sensitive Content**
+    - Control **Discoverability**
+    - Set an **Ignore List**
+    - **Duplicate** or **Delete** a Shape
+    - Adjust **Danger Zone** settings for permanent removal
+
+    ---
+
+    ## Explore. Experiment. Enjoy.
+
+    Shapes & Rooms are about **creativity and connection**.\
+    Mix and match AI engines, memories, voices, and room designs.\
+    Roleplay, chat, build, or chill — **your imagination is the limit!**
+
+    [⬅️ Back to App](https://shapes.inc)
   </Tab>
 </Tabs>
