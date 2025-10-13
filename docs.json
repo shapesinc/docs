@@ -33,6 +33,7 @@
       {
         "group": "Creation & Customization",
         "pages": [
+          "ShapesRoomsGuide",
           "how-to-make-a-shape",
           "create-a-room",
           "room-appearance",
