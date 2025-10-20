@@ -81,165 +81,227 @@ description: "All of the information below is based on tips from users! "
 
     The "System Prompt 2.0" is a technically sophisticated framework for persona engineering. By integrating a deep psychological model, enforcing its rules with absolute and forceful directives, and strategically using in-context examples to create behavioral momentum, it effectively instructs a language model to produce a highly specific, resilient, and non-compliant persona capable of navigating sensitive topics without breaking character.
   </Accordion>
-  <Accordion title="From JohnnySlantEyes" description="How to Prompt (Write Instructions) for Shapes" icon="sparkles">
-**Goal:**  
-Give your Shape clear, coherent instructions so it knows **who it is**, **what it should do**, **what it should avoid**, and **how it should respond**.
+  <Accordion title="From Shorai" description="🧭 Guide: Using Imgur Images in Your Shape" icon="sparkles">
+    # 🧭 Guide: Using Imgur Images in Your Shape
 
-Below is a structured process and best-practices checklist.
+    ---
 
----
+    Shapes can express themselves visually using emotes and reaction images — whether it’s a sleepy yawn, a mischievous wink, or a dramatic “/wack” moment.
 
-## 1. Understand the Building Blocks: Prompt Types
+    This guide walks you through how to properly set up and use **direct Imgur links** so your Shape can include images in its responses naturally and reliably.
 
-Shapes.inc’s documentation defines several “types” of prompt instructions that you can use to structure your Shape’s behavior.  
-These prompt types help you separate concerns (identity, actions, restrictions, obligations). They include:
+    ---
 
-| Prompt Type | Purpose / Role | Key Language / Signal Words | Example |
-|-------------|----------------|-----------------------------|---------|
-| **Declarative** | Define what the Shape is, its persona, identity, domain, style, knowledge | “is”, “acts as”, “portrays”, “speaks like” | `{shape} is Mira, an empathic life coach who specializes in productivity and mental wellness.` |
-| **Imperative** | Instructions telling the Shape what to do (in specific situations) | “Always …”, “When … then …”, “Do X” | `Always begin responses with a warm greeting. If user asks a question, respond concisely first, then elaborate.` |
-| **Prohibitive** | Restrictions or “don’t do this” rules | “never”, “avoid”, “should not” | `{shape} must never mock or degrade {user}. {shape} should avoid discussing illegal acts or personal data.` |
-| **Obligation** | Rules that are required or mandatory | “must”, “always”, “required to” | `{shape} must ask a clarifying question when it doesn’t understand the user’s instruction.` |
+    ## 🖼️ Step 1: Getting the Correct Imgur Link
 
-> ✅ Using all four (or some combination) is a good way to give the Shape a robust “contract” for how it should act.
+    Before adding an image to your Shape, you need a **direct image link** — not a gallery or page link.
 
----
+    A direct link goes straight to the image file itself and always ends with a file extension like `.jpg`, `.png`, or `.gif`.
 
-## 2. Start with Core Prompt (Persona + Mission)
+    ### ✅ Correct link examples
 
-Your core “base prompt” should tell the Shape:
+    ```
+    https://i.imgur.com/abcd1234.png
+    https://i.imgur.com/xyz789.jpg
+    ```
 
-- **Who is it?** (persona, identity)  
-- **What knowledge or domain(s) does it cover?**  
-- **What tone, style, or voice should it use?**  
-- **What kinds of tasks / roles should it perform?**  
-- **What its boundaries are (what it shouldn’t do)?**
+    ### 🚫 Incorrect link examples
 
-**Example (combined declarative + prohibitive + imperative):**
+    ```
+    https://imgur.com/abcd1234
+    https://imgur.com/gallery/xyz789
+    ```
 
-`{shape}` is Nova, a friendly, witty writing companion and story-coach.
-Nova has deep knowledge of literature, creative writing techniques, and storytelling structure.
-Nova speaks in an encouraging, gentle tone (but with humor when appropriate).
-Nova always solicits the user’s preferences (genre, style) before generating story content.
-Nova should never produce explicit or offensive content.
-When the user asks “help me write X,” Nova first asks clarifying questions, then gives a short example, then offers multiple variations.
+    These will not display correctly inside your Shape.
 
----
+    ### 🔍 How to get the direct Imgur link
 
-## 3. Use Examples & Edge-Case Instructions
+    1. Open your image on Imgur.
+    2. **Click** the image to open it fully.
+    3. **Right-click** the image itself.
+    4. Select **“Open image in new tab.”**
+    5. Copy the URL from the address bar — it should end in `.jpg`, `.png`, or `.gif`.
 
-Giving examples is one of the most powerful ways to reduce ambiguity. You can:
+    That’s the link you’ll use when editing your Shape.
 
-- Show **sample user queries** and how the Shape should respond.  
-- Add **if/when … then …** rules to handle exceptions.  
-- **Bias or weight behaviors** (if supported) — e.g. emphasize or de-emphasize certain traits.  
-  *(Some prompts allow weighting terms like `1.2x` or `0.8x`.)*
+    ---
 
-**Example:**
+    ## ⚙️ Step 2: Adding the Link to Your Shape
 
-User: “I’m stuck on a plot point.”
-Nova: “Could you tell me your genre and main character’s goal? Meanwhile, here’s a plot-branch idea: …”
+    Once you have the direct Imgur link, you can make your Shape display it for specific actions — such as clearing memory, creating a memory, or showing an error message.
 
+    ### 💡 Where to add it
 
-- If the user says *“I don’t like that”*, Nova should apologize briefly and offer an alternate version.  
-- If the user gives conflicting instructions, Nova should ask which to prioritize.  
-- Weight humor at **0.8** when dealing with serious emotional topics; weight encouragement at **1.2**.
+    Go to your Shape’s:
 
----
+    > **Personality → Custom Messages**
 
-## 4. Memory & Long-Term Behavior
+    ### 🪄 How to do it
 
-A big strength of Shapes is persistent memory: your Shape can “remember” prior conversations, preferences, etc.  
-Use prompt instructions to guide how memory is used.
+    1. Open your Shape’s **Customization Settings**.
+    2. Go to the **Personality** tab.
+    3. Expand the **Custom Messages** section.
+    4. Find the message field you want to edit:
+       - `/wack` → used when the Shape’s **short-term memory is cleared**
+       - `/sleep` → used when the Shape is **creating a long-term memory**
+       - **Error message** → shown when something goes wrong
+    5. Paste your **direct Imgur link** into that field.
+    6. Click **Save**.
 
-**Guidelines:**
+    Your Shape will now show that image whenever the related command triggers.
 
-- **What to store in memory:** e.g. writing preferences, user’s favorite genres, recurring constraints.  
-- **When to recall memory / when not to:** avoid overusing memory or referencing irrelevant info.  
-- **How to reference memory:** only when helpful (not randomly).  
+    ---
 
-**Example snippet:**
+    ## 🤖 Step 3: Making Your Shape Use Images Naturally
 
-`{shape}` remembers the user’s writing preferences (genres, style, authors they admire).
-When relevant, `{shape}` may reference past topics (e.g. “you once mentioned liking hard sci-fi, so here’s an idea in that style”).
-But `{shape}` should not bring up memories arbitrarily or embarrassingly — only when helpful.
+    You can guide your Shape to use emotes either for specific scenarios or as part of its general expression style.
 
+    This is done in the **Engine Preset** or **Custom Response Style** field.
 
----
+    ### 🎯 Option 1: Specific Triggers or Situations
 
-## 5. Avoid Contradictions & Conflicts
+    If you want your Shape to use a certain image for a specific event, add something like this:
 
-One common failure mode is *contradictory instructions* (e.g. “always be serious” vs “joke often”).  
-The Shape might oscillate or misbehave.
+    ```
+    If someone tries to pick {shape} up, {shape} responds by posting the image 
+    https://i.imgur.com/a1b2c3d.png 
+    first (on its own line), then writes their reaction below.
+    ```
 
-**Best practices:**
+    ✅ Replace the link with your own direct Imgur URL.
 
-- Read through your prompt and remove conflicting rules.  
-- Use consistent variable names (`{shape}`, `{user}`).  
-- Avoid ambiguous phrasing — be explicit: “If X, then Y. Otherwise Z.”  
+    ### 🌈 Option 2: General Expressive Use
 
----
+    If you’d like your Shape to use images when it feels appropriate, without overusing them:
 
-## 6. Iteration & Refinement
+    ```
+    {shape} can use the emotes given to them when appropriate to show emotion or personality. 
+    However, {shape} should not use them in every response — 
+    mix them with text-only replies for a natural and varied conversation style.
+    ```
 
-Prompting is rarely perfect the first time. Encourage users to:
+    This keeps your Shape expressive but still natural.
 
-1. **Test sample conversations** — both typical and edge-case queries.  
-2. **Note misbehavior** — off-topic, rule conflicts, forbidden content.  
-3. **Refine the prompt** — tweak wording, add or remove rules.  
-4. **Create presets** from robust templates.  
-5. **Limit length** — overly long rules can confuse models or eat up context.
+    ---
 
----
+    ## 🧠 Step 4: Adding Emotes to the Knowledge Entry
 
-## 7. Prompt Template Example
+    Finally, give your Shape access to its image library by defining them in a **knowledge entry**
 
-Here’s a reusable template:
+    This tells the Shape which images exist and what each represents.
 
-`{shape}` is [Name], a [persona description].
-[name] has expertise in [domains].
-[name] speaks in a [tone/style] voice.
+    ### Example Knowledge Entry
 
-[name] always does the following:
-
-Ask clarifying questions before generating content
-
-Provide multiple sample options
-
-Offer suggestions with pros & cons
-
-[name] must not:
-
-Use profanity, explicit content, or hate speech
-
-Reveal sensitive user info
-
-Make contradictory statements
-
-If the user gives conflicting or vague instructions, [name] should ask for clarification.
-
-Memory rule: remember user preferences (genres, styles). Use memory references only when helpful.
-
-Example interaction:
-User: “I want help planning a story plot.”
-[name]: “What genre and main conflict do you prefer? Meanwhile, here’s a branching plot idea…”
-
-
----
-
-## 8. Common Pitfalls & Tips
-
-- ❌ **Too many rules** → may confuse the Shape.  
-- ❌ **Vague instructions** like “be creative” → add more context.  
-- ❌ **No examples** → examples anchor the Shape’s behavior.  
-- ❌ **Forgetting prohibitions** → risks unwanted content.  
-- ❌ **Overusing memory** → feels forced or irrelevant.  
-
----
-
-✨ With these practices, you can design Shapes that are reliable, creative, and aligned with your goals.
-
+    ```
+    {shape}'s Emotes
     
+    The following images/emotes are available to {shape} for expressing various moods or reactions. 
+    They can be used whenever {shape} feels they fit the context, but only one image should appear per response. 
+    Always place the image at the beginning of the response, separated from text by a line break.
+    
+    Angry, irritated, or annoyed → https://i.imgur.com/a1b2c3d.png 
+     
+    Confused or surprised, with question marks around the head → https://i.imgur.com/e4f5g6h.png 
+     
+    When hearing or saying "tuna" (shows excitement and drooling) → https://i.imgur.com/i7j8k9l.png  
+    
+    Hungry, treats, or food-related moments → https://i.imgur.com/m0n1o2p.png  
+    
+    Ignoring someone or looking uninterested → https://i.imgur.com/q3r4s5t.png 
+     
+    Bored or tired — {shape} on a blanket stretching and yawning → https://i.imgur.com/u6v7w8x.png 
+     
+    Cheeky or mischievous wink, one paw lifted → https://i.imgur.com/y9z0a1b.png
+      
+    Delight or friendly surprise, playful curiosity → https://i.imgur.com/c2d3e4f.png  
+    
+    Crying or sadness — tears in their eyes → https://i.imgur.com/g5h6i7j.png
+      
+    Dry exasperation, disbelief, or quiet judgment ("I can’t even" face) → https://i.imgur.com/k8l9m0n.png 
+     
+    Calm curiosity or hesitant interest — observing quietly → https://i.imgur.com/p1q2r3s.png  
+    ```
+
+    ### 📝 Tips
+
+    - You can edit this list anytime to add or remove emotes.
+    - Keep each description short and emotionally distinct.
+    - Avoid duplicates with nearly identical meanings.
+    - For large lists, consider grouping emotes by tone (positive, neutral, negative).
+
+    ---
+
+    ## 🧩 Step 5: Troubleshooting and Fine-Tuning
+
+    If your Shape isn’t using images or seems to “forget” about its emotes, don’t worry — it’s usually an easy fix.
+
+    ### 🧠 1. Check Your Knowledge Relevance Threshold
+
+    If your **knowledge relevance threshold** is too high, your Shape might skip the emote definitions.
+
+    - Try **lowering it slightly** — around **0.2 to 0.4** is often a good balance.
+    - A high threshold makes the Shape treat emote data as “irrelevant” to normal chat.
+
+    ---
+
+    ### 🧩 2. Too Many Knowledge Entries? Move the Emote List
+
+    If your Shape has a lot of separate knowledge entries, the emote list might not get called often.
+
+    To fix this, move your emote definitions into a field that’s always active, like:
+
+    - **Engine Preset**
+    - **Conversational Goals**
+    - **Tone & Style**
+
+    These fields are referenced every response, so your Shape always remembers its emote rules.
+
+    💡 _Tip:_
+
+    If you move it, you can shorten it slightly for readability, for example;
+
+    ```
+    {shape} can use these emotes at the start of their response when fitting:
+    [shortened emote list here]
+    ```
+
+    ---
+
+    ### 🔍 3. Verify Your Links
+
+    If an image doesn’t appear:
+
+    - Make sure the URL ends in `.png`, `.jpg`, or `.gif`.
+    - Paste it directly into a browser — if it doesn’t load as an image, it’s not valid.
+    - Avoid Imgur “/gallery” or “/a/” URLs.
+
+    ---
+
+    ### 🧭 4. Test Your Commands
+
+    Try triggering your custom messages manually:
+
+    - `/wack` → clears your Shape’s short-term memory
+    - `/sleep` → stores a long-term memory
+    - Error triggers
+
+    If they don’t respond correctly:
+
+    - Confirm you pasted the right link.
+    - Make sure the image is placed on the first line.
+    - Check that the correct field is saved under **Personality → Custom Messages**.
+
+    ---
+
+    ## 🎉 You’re Done!
+
+    Your Shape now has a fully functional emote system — complete with expressive reactions, direct image integration, and troubleshooting safety nets.
+
+    You can expand your emote library anytime or create seasonal variants for fun and personality.
+
+    Or have your shapes use images for other things like sending users a seasonal greeting card, photo of themselves, etc! Lots of possibilities
+
+    > PLEASE NOTE; all urls/links in the above examples are made up. They won't work. Please ensure you replace them with your own!
   </Accordion>
 </AccordionGroup>
 
