@@ -164,16 +164,16 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
       ## Step 1. Connect Zapier MCP for Google Slides
 
-      Go to 👉 https://zapier.com/mcp and click "Start Building."\
-      Zapier has a free tier, so you don't need to pay for this.
+      Go to 👉 https://zapier.com/mcp and click "Start Building."
 
+      <Tip>
+        Zapier has a free tier, so you don't need to pay for this.
+      </Tip>
       Once you're in:
 
       - Search for **Google Slides**.
       - Connect your **Google Account**.
       - Copy the **MCP connection link** (you'll need this soon).
-
-      ---
 
       ## Step 2. Add the Skill to Your Shape
 
@@ -188,8 +188,6 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
       Now your Shape can interact with Google Slides through the new skill.
 
-      ---
-
       ## Step 3. Add These Instructions to Your Room
 
       Here's what my Shape ("Cash Money") and Yaya came up with — a hilariously real but genuinely useful guide.\
@@ -201,13 +199,9 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
       >
       > **by Cash Money & Yaya — lessons learned the hard way**
       >
-      > ---
-      >
       > ## 🎯 What This Guide Is About
       >
       > If you're trying to add custom slides to a Google Slides presentation, here's everything you need to know — so you don't waste hours debugging like we did.
-      >
-      > ---
       >
       > ## ✅ DO THESE THINGS
       >
@@ -317,8 +311,6 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
       > - Don't use RGB 0–255 values (use 0.0–1.0).
       > - Don't rush through all slides at once.
       >
-      > ---
-      >
       > ## 🔧 Example That Works
       >
       > ```json
@@ -372,8 +364,6 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
       > }
       > ```
       >
-      > ---
-      >
       > ## 💡 Pro Tips
       >
       > - Keep a list of your `slideIds`.
@@ -382,8 +372,6 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
       > - Open the Slides presentation to visually verify changes.
       > - Save working JSON snippets.
       > - If multiple Shapes are collaborating, make sure they use unique IDs.
-      >
-      > ---
       >
       > ## 🚨 Common Errors
       >
@@ -394,8 +382,6 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
       > | `Invalid value at requests[X]`    | Broken JSON                                    | Validate syntax              |
       > | Nothing shows up                  | Wrong slide or off-screen                      | Verify IDs and EMU positions |
       >
-      > ---
-      >
       > ## 📝 Final Thoughts
       >
       > This isn't rocket science, but the details matter. Take it slow, check your structure, and test as you go.
@@ -403,11 +389,6 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
       > Cash Money and Yaya made every mistake so you don't have to.
       >
       > **Good luck 💸**
-
-      > _Written by Cash Money with contributions from Yaya_\
-      > _Lessons learned through pain and persistence._
-
-      ---
 
       ## Now Put Your Shapes to Work
 
@@ -434,8 +415,143 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
     ### 🕹️ Entertainment & Hobbies
 
+    <Accordion title="Spotify playlist generator" description=" → Get a playlist built around your conversation or shape." icon="sparkles">
+      # How to Get Your Shapes to Create a Spotify Playlist
+
+      A step-by-step guide to connecting Spotify to your Shapes via Zapier MCP.
+
+      ## Prerequisites
+
+      First, [create a room](create-a-room). 
+
+      ## Step 1: Connect Zapier MCP for Spotify
+
+      Go to 👉 https://zapier.com/mcp and click **"Start Building."**
+
+      <Tip>
+        Zapier has a free tier, so you don't need to pay for this.
+      </Tip>
+      Once you're in:
+
+      Search for **Spotify**
+
+      Connect your Spotify Account
+
+      Copy the MCP connection link (you'll need this soon)
+
+      ## Step 2: Add the Skill to Your Shape
+
+      Head to **shapes.inc** and open the room where you want to add this skill
+
+      Make sure your Shape uses [an AI engine that supports skills](https://docs.shapes.inc/shapeskills#engines-with-skills)
+
+      Go to **Room Settings → AI Configurations**
+
+      Under **Custom Skills**, select **"Enabled"**
+
+      Paste in the Zapier link you copied earlier
+
+      Optional: Give it a name like "Spotify," or you can put it as "Zapier" if you plan to add more tools later
+
+      Click **Save**
+
+      ## Step 3: Add These Instructions to Your Room
+
+      Here's a set of custom instructions that a Shape created to help you successfully use this tool.
+
+      Copy and paste this into your **Room Instructions**:
+
+      > # How to Build a Fire Playlist on Spotify 
+      >
+      > ## 🎯 What You're Doing
+      >
+      > Making a dope playlist with your favorite artists and tracks, all automated through spotify tools.
+      >
+      > ## 📋 Step-by-Step Process
+      >
+      > ### 1. **Create the playlist first**
+      >
+      > Use `spotify_create_playlist` to make a new empty playlist.
+      >
+      > Example:
+      >
+      > ```
+      > name: "cash money's favorite songs"
+      > description: "stacks racks bands"
+      > public: true (or false if you want it private)
+      > ```
+      >
+      > You'll get back a `playlist_id` - **save this**, you need it for everything else.
+      >
+      > ### 2. **Search for tracks you want**
+      >
+      > Use `spotify_search_for_item` to find songs by your favorite artists.
+      >
+      > Example:
+      >
+      > ```
+      > query: "sebii"
+      > type: "track"
+      > ```
+      >
+      > Do this for each artist you want. You'll get back track IDs (they look like `spotify:track:xxxxxxxxx`).
+      >
+      > ### 3. **Add tracks to your playlist**
+      >
+      > Use `spotify_add_items_to_playlist` with:
+      >
+      > - Your `playlist_id` from step 1
+      > - `uris`: comma-separated list of track IDs (up to 6-10 at a time works best)
+      >
+      > Example:
+      >
+      > ```
+      > playlist_id: "5cTNSRhBXkXWTqOGqTaET1"
+      > uris: "spotify:track:1MGJ8urTP1AgJXDAVJb5cj,spotify:track:284qRqsftKxNPWrejNEewL"
+      > ```
+      >
+      > ### 4. **Repeat until you're done**
+      >
+      > Keep searching and adding tracks until your playlist is complete.
+      >
+      > ## 💡 Pro Tips
+      >
+      > - **search multiple artists at once** - if they're independent searches, run them together to save time
+      > - **keep track IDs organized** - write down which track goes with which artist so you don't get lost
+      > - **add in batches** - don't try to add all tracks in one call, do 6-10 at a time
+      > - **check your playlist** - open the spotify link after to make sure everything worked
+      >
+      > ## 🔧 Example Workflow
+      >
+      > ```
+      > step 1: create playlist → get playlist_id
+      > step 2: search for "sebii" → get track ID
+      > step 3: search for "playboi carti" → get track ID  
+      > step 4: search for "100 gecs" → get track ID
+      > (repeat for all artists)
+      > step 5: add first batch of 6 tracks → confirm added
+      > step 6: add second batch of 6 tracks → confirm added
+      > step 7: done, share the link
+      > ```
+      >
+      > ## ⚠️ Common Mistakes
+      >
+      > - **losing the playlist_id** - save it immediately when you create the playlist
+      > - **wrong track format** - make sure track IDs start with `spotify:track:`
+      > - **adding too many at once** - keep batches reasonable (6-10 tracks)
+      > - **not checking results** - always verify tracks actually got added before moving on
+      >
+      > That's it yo, simple as that. Now go make some fire playlists 💸
+
+      ## Now Put Your Shapes to Work
+
+      Once your skill is set up, tell your Shapes to use their Spotify tool.
+
+      Try prompts like:
+
+      **"Create a playlist called 'Magical Dream' and add 12 of your favorite tracks to it."**
+    </Accordion>
     - **YouTube search** → Have Shapes pull videos to match their mood.
-    - **Spotify playlist generator** → Get a playlist built around your conversation or vibe.
     - **Meme generators** → Auto-generate memes to spice up roleplays or group chats.
 
     ### 💼 Productivity
