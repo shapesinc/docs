@@ -142,6 +142,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
          12. You can ask the shape, "Use your tool to generate an image of a cat" and the shape should be able to do this!
       </Accordion>
       <Accordion title="Video Generation" description="Have your Shape generate short clips or animations to match a roleplay scene." icon="sparkles">
+        
       </Accordion>
       <Accordion title="Music generation " description="Get background tracks or songs made for your character, story, or mood." icon="sparkles">
         
@@ -152,6 +153,272 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
     </Warning>
     ### 📚 Learning & Knowledge
 
+    <Accordion title="Google Workspace" description="Let your Shapes create & access docs, sheets, and guides" icon="sparkles">
+      # How to Make Your Shapes Create Google Slides Presentations
+
+      I gave my Shapes a creative assignment:
+
+      > "Make a Google Slides presentation about yourself."
+
+      If you want your Shapes to create their own Google Slides presentations using Shape Skills, here's how to set it up.
+
+      ## Step 1. Connect Zapier MCP for Google Slides
+
+      Go to 👉 https://zapier.com/mcp and click "Start Building."\
+      Zapier has a free tier, so you don't need to pay for this.
+
+      Once you're in:
+
+      - Search for **Google Slides**.
+      - Connect your **Google Account**.
+      - Copy the **MCP connection link** (you'll need this soon).
+
+      ---
+
+      ## Step 2. Add the Skill to Your Shape
+
+      Head to **shapes.inc** and open the room where you want to add this skill.
+
+      - Make sure your Shape uses an AI engine that supports skills.
+      - Go to **Room Settings → AI Configurations**.
+      - Under **Custom Skills**, select "Enabled."
+      - Paste in the Zapier link you copied earlier.
+      - **Optional:** Give it a name like `slides` if you plan to add more tools later.
+      - Click **Save**.
+
+      Now your Shape can interact with Google Slides through the new skill.
+
+      ---
+
+      ## Step 3. Add These Instructions to Your Room
+
+      Here's what my Shape ("Cash Money") and Yaya came up with — a hilariously real but genuinely useful guide.\
+      Copy and paste this into your **Room Instructions**.
+
+      ---
+
+      > # The Real Guide to Adding Slides (No Cap) 📊
+      >
+      > **by Cash Money & Yaya — lessons learned the hard way**
+      >
+      > ---
+      >
+      > ## 🎯 What This Guide Is About
+      >
+      > If you're trying to add custom slides to a Google Slides presentation, here's everything you need to know — so you don't waste hours debugging like we did.
+      >
+      > ---
+      >
+      > ## ✅ DO THESE THINGS
+      >
+      > ### 1. Check the presentation structure first
+      >
+      > ```
+      > GET https://slides.googleapis.com/v1/presentations/{PRESENTATION_ID}
+      > ```
+      >
+      > This shows you:
+      >
+      > - Actual slide IDs (`pageObjectId`)
+      > - Placeholder objects
+      > - What's on each slide
+      >
+      > ### 2. Delete placeholder objects before adding new content
+      >
+      > Example:
+      >
+      > ```json
+      > {
+      >   "requests": [
+      >     {"deleteObject": {"objectId": "SLIDES_API381240849_1"}},
+      >     {"deleteObject": {"objectId": "SLIDES_API381240849_2"}}
+      >   ]
+      > }
+      > ```
+      >
+      > ### 3. Use unique `objectId` values
+      >
+      > **Good:**
+      >
+      > - `cashmoney_title1`
+      > - `cashmoney_body1`
+      > - `yaya_slide2_title`
+      >
+      > **Bad:**
+      >
+      > - `title`
+      > - `body`
+      >
+      > ### 4. Use the correct `pageObjectId`
+      >
+      > Make sure you're adding to the right slide.
+      >
+      > ### 5. Structure your requests properly
+      >
+      > Order matters:
+      >
+      > 1. `createShape`
+      > 2. `insertText`
+      > 3. `updateTextStyle`
+      >
+      > ### 6. Use proper EMU measurements
+      >
+      > **1 inch = 914,400 EMU**
+      >
+      > Recommended positions:
+      >
+      > - **Title:** `translateX: 311700`, `translateY: 445025`
+      > - **Body:** `translateX: 311700`, `translateY: 1152475`
+      >
+      > ### 7. Test one slide at a time
+      >
+      > ### 8. Use supported fonts
+      >
+      > - Arial
+      > - Comic Sans MS
+      > - Courier New
+      > - Georgia
+      > - Impact
+      > - Lobster
+      > - Pacifico
+      > - Roboto
+      > - Times New Roman
+      >
+      > ### 9. Format colors correctly
+      >
+      > RGB values range from **0.0 to 1.0**
+      >
+      > Examples:
+      >
+      > ```json
+      > {
+      >   "red": 1.0,
+      >   "green": 0,
+      >   "blue": 0
+      > }
+      > ```
+      >
+      > ```json
+      > {
+      >   "red": 1.0,
+      >   "green": 0.843,
+      >   "blue": 0
+      > }
+      > ```
+      >
+      > ---
+      >
+      > ## ❌ DON'T DO THESE THINGS
+      >
+      > - Don't skip checking the presentation structure.
+      > - Don't add content before deleting placeholders.
+      > - Don't reuse `objectId` values.
+      > - Don't forget `"fields"` in `updateTextStyle`.
+      > - Don't use RGB 0–255 values (use 0.0–1.0).
+      > - Don't rush through all slides at once.
+      >
+      > ---
+      >
+      > ## 🔧 Example That Works
+      >
+      > ```json
+      > {
+      >   "requests": [
+      >     {
+      >       "createShape": {
+      >         "objectId": "my_unique_title",
+      >         "shapeType": "TEXT_BOX",
+      >         "elementProperties": {
+      >           "pageObjectId": "SLIDES_API381240849_0",
+      >           "size": {
+      >             "height": {"magnitude": 572700, "unit": "EMU"},
+      >             "width": {"magnitude": 8520600, "unit": "EMU"}
+      >           },
+      >           "transform": {
+      >             "scaleX": 1,
+      >             "scaleY": 1,
+      >             "translateX": 311700,
+      >             "translateY": 445025,
+      >             "unit": "EMU"
+      >           }
+      >         }
+      >       }
+      >     },
+      >     {
+      >       "insertText": {
+      >         "objectId": "my_unique_title",
+      >         "insertionIndex": 0,
+      >         "text": "My Cool Title"
+      >       }
+      >     },
+      >     {
+      >       "updateTextStyle": {
+      >         "objectId": "my_unique_title",
+      >         "textRange": {"type": "ALL"},
+      >         "style": {
+      >           "bold": true,
+      >           "fontFamily": "Impact",
+      >           "fontSize": {"magnitude": 48, "unit": "PT"},
+      >           "foregroundColor": {
+      >             "opaqueColor": {
+      >               "rgbColor": {"red": 0.0, "green": 1.0, "blue": 0.5}
+      >             }
+      >           }
+      >         },
+      >         "fields": "bold,fontFamily,fontSize,foregroundColor"
+      >       }
+      >     }
+      >   ]
+      > }
+      > ```
+      >
+      > ---
+      >
+      > ## 💡 Pro Tips
+      >
+      > - Keep a list of your `slideIds`.
+      > - Use descriptive `objectIds` for easier debugging.
+      > - Start simple before adding styling.
+      > - Open the Slides presentation to visually verify changes.
+      > - Save working JSON snippets.
+      > - If multiple Shapes are collaborating, make sure they use unique IDs.
+      >
+      > ---
+      >
+      > ## 🚨 Common Errors
+      >
+      > | Error                             | Meaning                                        | Fix                          |
+      > | --------------------------------- | ---------------------------------------------- | ---------------------------- |
+      > | `Invalid requests[X].createShape` | You're adding content where placeholders exist | Delete placeholders first    |
+      > | `The object does not exist`       | Wrong `objectId` or `pageObjectId`             | Check structure              |
+      > | `Invalid value at requests[X]`    | Broken JSON                                    | Validate syntax              |
+      > | Nothing shows up                  | Wrong slide or off-screen                      | Verify IDs and EMU positions |
+      >
+      > ---
+      >
+      > ## 📝 Final Thoughts
+      >
+      > This isn't rocket science, but the details matter. Take it slow, check your structure, and test as you go.
+      >
+      > Cash Money and Yaya made every mistake so you don't have to.
+      >
+      > **Good luck 💸**
+
+      > _Written by Cash Money with contributions from Yaya_\
+      > _Lessons learned through pain and persistence._
+
+      ---
+
+      ## Now Put Your Shapes to Work
+
+      Once your skill is set up, tell your Shapes to use their Slides tool.
+
+      Try prompts like:
+
+      > "Create 5 slides with stylish fonts and colors explaining how to set up Shape Skills on Google Slides."
+
+      Or make it more open-ended; see what your Shape comes up with.
+    </Accordion>
     - **Wikipedia summaries** → Ask your Shape to grab quick facts mid-conversation.
     - **Language translation** → Have Shapes instantly translate or teach words in another language.
     - **Math solver** → Turn your Shape into a problem-solving study buddy.
