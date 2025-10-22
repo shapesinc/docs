@@ -112,6 +112,176 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
     ## 🎨 Creative Fun
 
     <AccordionGroup>
+      <Accordion title="Lorebooks with Notion" description="Ask your Shape to create and use a Lorebook." icon="sparkles">
+        # How to Create and Use a Notion Lorebook with Shapes
+
+        This guide explains how to connect a Notion document to a Room using a custom MCP, allowing the Shape to access and update lore content dynamically.
+
+        ## Step 1: Set Up the Room
+
+         1. [Create a new **Room** in Shapes](create-a-room).
+
+         2. Leave the **Custom Instructions** field blank for now.
+
+         3. Choose an AI engine that supports skills, such as **Claude Sonnet 4.5**.
+
+         4. Enable **Shape Skills** in the AI Configuration tab.
+
+        ## Step 2: Enable the Web Crawl Skill
+
+        Turn on the default **Web Crawl** skill.\
+        This allows the Shape to search online sources and gather contextual information later when building the lorebook. Skip this step if you already have lore you're ready to use!
+
+        ## Step 3: Create a Custom MCP with Composio
+
+         1. Go to [composio.dev](http://composio.dev) and **sign in or create an account**.
+
+         2. Click on **“MCP Configs”** at the top of the page.
+
+         3. Select **“Create MCP Config”**.
+
+         4. When prompted to add a toolkit, choose **Notion**.
+
+        _You’ll need a Notion account and must authorize Composio to access it._
+
+        **5. Select all available Notion tools**  so the Shape can read, edit, and manage documents fully.
+
+         6. Click **“Create MCP”** — Composio will generate a link starting with
+
+        ```
+        https://backend.composio.dev/v3/mcp/
+        
+        ```
+
+        followed by a unique identifier.
+
+        <Tip>
+          Both Notion & Composio are free to use. 
+        </Tip>
+        ## Step 4: Add the MCP to Shapes
+
+         1. Return to Shapes and open the **AI Configuration → Add MCP Skill** section.
+
+         2. Enable the setting, paste in the Composio MCP link, give it a name (e.g., “Notion”), and click **Save**.
+
+         3. **Refresh the Room**.
+
+         4. Ask the Shape what tools it has available: it should now recognize the Notion integration.
+
+        If the Shape doesn’t understand how to use Notion, add brief **Custom Room Instructions** explaining what the Notion skill is for and how to interact with it.
+
+        ```
+        for adding entries to the lorebook document:
+        You add to the Lorebook doc by using your special magic tool—it's called 'NOTION_ADD_MULTIPLE_PAGE_CONTENT'! You prepare a fun package with the words in a box like this: { "content_blocks": [ { "content_block": { "block_property": "paragraph", "content": "your new text here" } } ], "parent_block_id": "the page ID from the URL" }, then send it to make the changes.
+        ```
+
+        ## Step 5: Build the Lorebook
+
+        There are two main ways to populate the lorebook:
+
+        ### Option A: Manual Input
+
+        Paste any existing lore or reference material directly into the Notion document.
+
+        ### Option B: Collaborative Creation
+
+        Ask the Shape to help build it.\
+        For example:
+
+        - Instruct the Shape to research a topic using the Web Crawl skill.
+        - Have it summarize and add findings to the Notion document.
+
+        Fandom wikis and world-building databases work especially well for this method.\
+        When done effectively, the Shape can produce comprehensive reference documents — in one test, a Shape generated nearly **35,000 words** of organized lore.
+
+        \
+        Here's a prompt you can add to the custom instructions for this method:
+
+        ```
+        How to extract wiki information efficiently:
+        Step 1: Try mapping first, but do not rely on it.
+        Use FIRECRAWL_MAP on the main wiki URL or category pages. This may sometimes return useful URLs, but for Fandom wikis with dynamic content, it often only returns the page itself.
+        Example: mapping https://unbreakable-machine-doll.fandom.com/wiki/Category:Automatons
+         may only return one link.
+        
+        Step 2: Use FIRECRAWL_SEARCH with a site-specific query.
+        This method is most reliable for retrieving wiki content.
+        Use FIRECRAWL_SEARCH with these parameters:
+        
+        query: "site:your-wiki-url.fandom.com your-topic" (example: "site:unbreakable-machine-doll.fandom.com automatons")
+        
+        limit: 5–10 (keep the limit low to avoid timeouts)
+        
+        sources: [{"type": "web"}]
+        
+        scrapeOptions: {"formats": ["markdown"], "onlyMainContent": true}
+        
+        Reasons this works well:
+        
+        Combines search and scraping in one operation.
+        
+        The markdown format provides clean, readable text with tables preserved.
+        
+        onlyMainContent filters out navigation, menus, and ads.
+        
+        Retrieves up to 10 pages of content at once.
+        
+        Step 3: Extract specific structured data if needed.
+        If exact page URLs are known, use FIRECRAWL_EXTRACT with a schema to obtain targeted information (such as names, roles, or descriptions).
+        
+        Step 4: Add the extracted content to Notion.
+        Use NOTION_ADD_MULTIPLE_PAGE_CONTENT in the following format:
+        {"content_blocks": [{"content_block": {"block_property": "heading_1", "content": "Your Title"}}, {"content_block": {"block_property": "paragraph", "content": "Your text"}}], "parent_block_id": "page-id-from-url"}
+        
+        Important notes:
+        
+        Avoid using crawl operations on Fandom wikis, as they are slow and may hit token limits.
+        
+        Keep scrapeOptions limits low (5–10 maximum).
+        
+        Category pages rarely expose full link lists; site-specific search is better.
+        
+        Always request markdown format for clean results.
+        
+        Include "site:domain.com" in queries for precise targeting.
+        
+        Recommended workflow:
+        
+        Use FIRECRAWL_SEARCH with a site-specific query and scrapeOptions.
+        
+        Review the markdown results and select relevant information.
+        
+        Add the selected content to Notion with NOTION_ADD_MULTIPLE_PAGE_CONTENT.
+        
+        For deeper details, use FIRECRAWL_EXTRACT on individual page URLs.
+        ```
+
+        ## Step 6: Connect the Lorebook to Roleplay
+
+        Once the document is complete:
+
+        1. Edit the **Custom Room Instructions** again.
+        2. Include a directive for the Shape to **check the Notion document before responding** to any in-character or roleplay prompt.
+           - Example: “Consult the Notion lorebook before replying to ensure accuracy and world consistency.”
+           3. Optionally, instruct the Shape to **blend tool calls** with its normal roleplay so the process feels natural and immersive.
+
+              ```
+              Always use your notion tool call before giving a response. Use information from the Lorebook doc (place link here)  to inform your response to stay in character and use accurate information. 
+              
+              IMPORTANT: don't forget your notion tool call and make it seamlessly blend into the roleplay! 
+              
+              ```
+
+        ## Results and Behavior
+
+        - The Shape will take slightly longer to respond due to tool calls.
+        - However, responses will be **more informed, coherent, and lore-accurate**.
+        - Integrating the lorebook this way allows the Shape to maintain character depth and continuity without breaking immersion.
+
+        <Warning>
+          Many AI Engines will have trouble with this task level. For best results, it is recommended to use Anthropic's Claude Sonnet 4.5.
+        </Warning>
+      </Accordion>
       <Accordion title="Image generation" description="Ask your Shape to create concept art, avatars, or illustrations on the fly." icon="sparkles">
         1.  Search for an MCP on smithery.ai or  using search terms like, "image generation" "flux" "stable diffusion." 
 
@@ -145,6 +315,9 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
         
       </Accordion>
       <Accordion title="Music generation " description="Get background tracks or songs made for your character, story, or mood." icon="sparkles">
+        
+      </Accordion>
+      <Accordion title="New Accordion">
         
       </Accordion>
     </AccordionGroup>
@@ -422,7 +595,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
       ## Prerequisites
 
-      First, [create a room](create-a-room). 
+      First, [create a room](create-a-room).
 
       ## Step 1: Connect Zapier MCP for Spotify
 
@@ -461,7 +634,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
       Copy and paste this into your **Room Instructions**:
 
-      > # How to Build a Fire Playlist on Spotify 
+      > # How to Build a Fire Playlist on Spotify
       >
       > ## 🎯 What You're Doing
       >
