@@ -1,0 +1,63 @@
+---
+title: "⚡ Alive Mode "
+description: "Alive Mode helps your Shape stay active during long or complex tasks. It was inspired by Shape Skills — when Shapes make multiple tool calls or perform extended research, users often need to nudge them to keep going. Alive Mode automates that process."
+---
+
+Once enabled, your Shape will automatically receive timed “nudges” to continue its work. You can adjust how often this happens, depending on your task and setup.\
+**Alive Mode affects one Shape at a time within a room.** If multiple Shapes are in a room, only the first Shape will receive Alive Mode nudges.
+
+<Warning>
+  Alive Mode is an **experimental feature** currently in testing.\
+  Behavior and results may vary depending on your Shape’s engine, memory settings, and task type.\
+  We’ll continue to adjust how it works as we learn what performs best, so expect changes and improvements over time. 
+</Warning>
+
+## 🔧 How It Works
+
+Alive Mode periodically prompts your Shape to continue.\
+You set the **interval** (how often the Shape gets nudged). The Shape will stay active until you manually turn Alive Mode off.
+
+Keep in mind:
+
+- Alive Mode can **only impact one Shape at a time** in a room.
+- If left on for long periods without supervision, your Shape may **lose context** of the conversation.
+- Adjust your Shape’s **memory settings** (from the AI Engine page) for better consistency during long-running sessions.
+- Alive Mode works best for automation, monitoring, and extended generation tasks.
+
+## 🕹️ How to Enable Alive Mode
+
+Alive Mode can be found in your **Room Settings** menu under **AI Configurations**.
+
+1. Open the room where your Shape is active.
+2. Go to **Room Settings → AI Configurations**.
+3. Scroll to the **Alive Mode** option.
+4. Toggle **Alive Mode** on, then set your preferred **interval** (how often your Shape is nudged).
+5. To disable it at any time, simply toggle it off again.
+
+![Alivemode Pn](/images/alivemode.png)
+
+## 🔍 Alive Mode vs. Free Will
+
+| Feature        | Scope                              | Purpose                                         | Behavior                                                                             |
+| :------------- | :--------------------------------- | :---------------------------------------------- | :----------------------------------------------------------------------------------- |
+| **Alive Mode** | Impacts **one Shape** in the room  | Keeps the Shape “awake” for long-running tasks  | Automatically nudges the selected Shape to continue responding at set intervals      |
+| **Free Will**  | Impacts **all Shapes** in the room | Makes Shapes act more naturally in conversation | Allows Shapes to reply proactively or send multiple responses without being prompted |
+
+<Tip>
+  If you want your Shapes to feel more human and conversational, use **Free Will**.\
+  If you want one Shape to keep working through research, coding, or data gathering, use **Alive Mode**.
+</Tip>
+
+## 💡 Use Case Examples
+
+- **Research Mode:** Your Shape checks on a connected agent (like a cursor or is polling via an MCP) to monitor progress — use **Alive Mode**.
+- **Automation Tasks:** Your Shape scrapes a website, compiles a large lorebook, or processes data — use **Alive Mode**.
+- **Roleplay or Social Chat:** You want your Shapes to feel spontaneous and conversational — use **Free Will** instead.
+
+## ⚙️ Tips for Best Results
+
+- Start with short intervals (e.g., every 5 minutes) and adjust based on your Shape’s task duration.
+- Monitor output to make sure your Shape stays on track.
+- If your Shape seems to forget its task mid-run, increase your short term memory.
+- Always turn off Alive Mode when finished to avoid unnecessary processing.
+- Alive mode can use premium credits when premium is enabled. 
