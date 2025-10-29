@@ -303,6 +303,225 @@ description: "All of the information below is based on tips from users! "
 
     > PLEASE NOTE; all urls/links in the above examples are made up. They won't work. Please ensure you replace them with your own!
   </Accordion>
+  <Accordion title="From Shorai" description="🎨 Master CSS Selector Reference" icon="sparkles">
+    # 🎨 Master CSS Selector Reference
+
+    #### This guide lists every selector used across the shape's profile page, organized by the section or div it affects.
+
+    #### Each section starts with the **main container** selector — everything beneath it lives inside that part of the page.
+
+    ---
+
+    ### 🌍 Global & Theme Variables
+
+    | Selector             | What it Styles / Does                                                              |
+    | -------------------- | ---------------------------------------------------------------------------------- |
+    | `:root`              | Defines the global color palette, spacing, and variables used throughout the site. |
+    | `[data-theme=dark]`  | Adjusts colors and variables when dark mode is active.                             |
+    | `[data-theme=light]` | Adjusts colors and variables when light mode is active.                            |
+
+    ---
+
+    ### 🖱️ Scrollbar Styling
+
+    | Selector                    | What it Styles / Does                                               |
+    | --------------------------- | ------------------------------------------------------------------- |
+    | `::-webkit-scrollbar`       | The overall scrollbar track area (the background of the scrollbar). |
+    | `::-webkit-scrollbar-thumb` | The draggable part of the scrollbar that you move up and down.      |
+    | `::-webkit-scrollbar-track` | The background “track” behind the thumb.                            |
+
+    #### **Note:** These styles affect how scrollbars look across the entire page. They use special _pseudo-elements_ (starting with `::`) that work mostly in **WebKit-based browsers** (like Chrome, Edge, and Safari).
+
+    ---
+
+    ### 🧱 Page Container (Main Layout)
+
+    | Selector                         | What it Styles / Does                                                                                                           |
+    | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+    | `.page_container__qSgfu`         | Main wrapper for the entire page layout — everything else sits inside this container.                                           |
+    | `.page_customContent__BYp2D`     | Optional custom content HTML section if you make one.                                                                           |
+    | `.page_createdDate__SGR46`       | Displays the shape creation date.                                                                                               |
+    | `.page_fanclubSection__yrqdQ`    | “Fan Club” section.                                                                                                             |
+    | `.page_recommendedShapes__XbZqi` | Section that shows “Recommended Shapes/Similar Shapes” cards.                                                                   |
+    | `.page_hero__qx1Dw`              | Full 'hero' area containing both the left and right. (This holds the banner, name, description, metadata, chat now buttons etc. |
+
+    ---
+
+    ### 🖼️ Page Hero
+
+    | Selector                              | What it Styles / Does                                                 |
+    | ------------------------------------- | --------------------------------------------------------------------- |
+    | `.page_hero__qx1Dw`                   | Full hero area containing both the left and right sections.           |
+    | `.page_heroBanner___fa90`             | Banner image or gradient bar across the top.                          |
+    | `.page_heroLeft__V2RZ4`               | Left side of the hero —  includes avatar, name, and description.      |
+    | `.page_heroRight__a0qRz`              | Right side of the hero — includes stats, chat button, and other info. |
+    | `.unified-profile_tagsSection__xV6b_` | Full container for Related tags.                                      |
+
+    ---
+
+    ### ▶️ Hero Left
+
+    | Selector                   | What it Styles / Does                                  |
+    | -------------------------- | ------------------------------------------------------ |
+    | `.page_shapeAvatar__bX7i_` | Profile or shape image shown in the hero.              |
+    | `.page_description__VpQUJ` | Description text about the shape or user.              |
+    | `.page_metadataRow__EGwhL` | Displays creation date and username in one small line. |
+
+    ---
+
+    ### ▶️ Hero Right
+
+    | Selector                     | What it Styles / Does                                       |
+    | ---------------------------- | ----------------------------------------------------------- |
+    | `.page_lifetimeStats__y1qyu` | Section box that holds statistics or key numbers.           |
+    | `.page_stat__38Reu`          | Each individual statistic card inside the stats box.        |
+    | `.page_value__kFjWx`         | The numerical part of a stat.                               |
+    | `.page_label__U_qYr`         | Label text that explains what the number represents.        |
+    | `.page_actions__6NuLK`       | The action row inside Hero Right (e.g., “Chat Now” button). |
+    | `.button_button__HOmVR`      | The main “Chat Now” button style.                           |
+
+    ---
+
+    ### 🧩 Unified Profile Sections
+
+    | Selector                                    | What it Styles / Does                                                                      |
+    | ------------------------------------------- | ------------------------------------------------------------------------------------------ |
+    | `.unified-profile_showcaseSection__op_Vx`   | Main showcase or gallery section on a profile. Where the screenshots you upload are shown. |
+    | `.unified-profile_categoryContainer__ybxyU` | Box that pairs a category label and its value. (Eg. Virtual Assistant)                     |
+    | `.unified-profile_categoryLabel__CSjGr`     | The label text (e.g., “Category”).                                                         |
+    | `.unified-profile_categoryValue__x0tei`     | The value shown next to the label.                                                         |
+    | `.unified-profile_tagsSection__xV6b_`       | Full container for Related tags.                                                           |
+    | `.unified-profile_tagsContainer__TjeFp`     | Box that holds multiple tags/badges.                                                       |
+    | `.unified-profile_tag__z0y_6`               | Individual tag badges.                                                                     |
+    | `.unified-profile_phrasesContainer__TxfH6`  | Section showing sample phrases or prompts.                                                 |
+    | `.unified-profile_phrasesList__ytRdg`       | Wrapper list holding all phrase lines.                                                     |
+    | `.unified-profile_phrase__xwJMD`            | A single phrase entry.                                                                     |
+    | `.unified-profile_examplePrompts__0PikK`    | Container for example prompt buttons.                                                      |
+    | `.unified-profile_examplePrompt__39yur`     | Individual example prompt entry.                                                           |
+
+    ---
+
+    ### 🔗 Mentions & Links
+
+    | Selector                                    | What it Styles / Does                                                                   |                 |
+    | ------------------------------------------- | --------------------------------------------------------------------------------------- | --------------- |
+    | `.unified-profile_mentionWrapper__JRIdP`    | Box around a username mention like [@handle](shape:92e6d8c6-df3b-4ef5-ada3-010d20b41688 | handle).        |
+    | `.unified-profile_mentionText__ihx_e`       | The visible [@username](shape:63b82f3f-2018-4c6c-8ce3-e35dddbb49dd                      | username) text. |
+    | `.unified-profile_mentionCopyButton__HGISM` | Button to copy the @mention.                                                            |                 |
+    | `.unified-profile_urlWrapper__CdDbJ`        | Container for the website or link section.                                              |                 |
+    | `.unified-profile_urlContainer__xSK4w`      | Shows the actual URL text.                                                              |                 |
+    | `.unified-profile_copyButton__yHSXq`        | Button that copies the link.                                                            |                 |
+
+    ---
+
+    ### 🧠 Recommended / Similar Shapes
+
+    | Selector                                      | What it Styles / Does                                 |
+    | --------------------------------------------- | ----------------------------------------------------- |
+    | `.similarShapesGrid_similarShapesGrid___Sm_f` | Grid background container for all recommended shapes. |
+    | `.similarShapesGrid_similarShapeItem__6ba8e`  | Each individual recommended shape card.               |
+    | `.similarShapesGrid_itemLink__PTw_s`          | The clickable area around the card.                   |
+    | `.similarShapesGrid_avatarContainer__ID7Es`   | Container for the small avatar image.                 |
+    | `.similarShapesGrid_avatar__cqssG`            | The image itself inside the avatar container.         |
+    | `.similarShapesGrid_content__YsBU6`           | Inner wrapper that holds name and description.        |
+    | `.similarShapesGrid_name__6cp_n`              | The shape’s name or title.                            |
+    | `.similarShapesGrid_description__mADQn`       | Short description beneath the name.                   |
+
+    ---
+
+    ### 🧭 Sidebar Navigation
+
+    | Selector                  | What it Styles / Does            |
+    | ------------------------- | -------------------------------- |
+    | `.sideNav_nav__e_z_L`     | Main sidebar navigation wrapper. |
+    | `.sideNav_navLink__zg5il` | Each pill-shaped sidebar link.   |
+
+    ---
+
+    ### 🧭 Top Navigation Bar
+
+    | Selector                    | What it Styles / Does                          |
+    | --------------------------- | ---------------------------------------------- |
+    | `.topNav_header__gtyrJ`     | The entire top navigation header.              |
+    | `.topNav_navLeft__3m1mX`    | Left portion (logo area).                      |
+    | `.topNav_navRight__rgh1s`   | Right portion (user area, theme toggle, etc.). |
+    | `.topNav_nav__sQU1q`        | Inner navigation container.                    |
+    | `.topNav_menuButton__rrHXH` | The mobile menu / hamburger button.            |
+
+    ---
+
+    ### 🌗 Theme Toggle
+
+    | Selector                           | What it Styles / Does                   |
+    | ---------------------------------- | --------------------------------------- |
+    | `.themeToggle_themeToggle__Qo6sg`  | Full theme toggle control wrapper.      |
+    | `.themeToggle_toggleButton__gavA0` | The clickable toggle itself.            |
+    | `.themeToggle_toggleTrack__uUtHv`  | Background track of the switch.         |
+    | `.themeToggle_toggleThumb__JIFKp`  | Small circle that slides when toggling. |
+    | `.themeToggle_dark__Fufmo`         | Dark mode active state.                 |
+    | `.themeToggle_moonIcon__rMfwN`     | Moon icon displayed in dark mode.       |
+
+    ---
+
+    ### 👤 Account / Profile Menu (Top Right)
+
+    | Selector                              | What it Styles / Does                          |
+    | ------------------------------------- | ---------------------------------------------- |
+    | `.navAccount_wrapper__rF2wn`          | Wrapper around the entire account menu area.   |
+    | `.navAccount_navAccount__oU4mA`       | The clickable user account button.             |
+    | `.navAccount_navAvatar__75SqV`        | The small circular user avatar.                |
+    | `.navAccount_premiumButton__klyX8`    | Button for “Premium” account features.         |
+    | `.navAccount_premiumText__EaoEi`      | Full “Premium” label text.                     |
+    | `.navAccount_premiumTextShort__QS9r1` | Shortened “Premium” label for smaller screens. |
+    | `.navAccount_caret__EcdgM`            | Small dropdown arrow beside the username.      |
+
+    ---
+
+    ### 🧭 Explore Page
+
+    | Selector                              | What it Styles / Does                            |
+    | ------------------------------------- | ------------------------------------------------ |
+    | `.explore_previewGridWrapper__tOY_C`  | Main explore grid showing all shapes.            |
+    | `.selectedShape_wrapper___iMpG`       | Container for the currently selected shape card. |
+    | `.selectedShape_shapeAvatar__jnsj1`   | The image for the selected shape.                |
+    | `.selectedShape_shapeLink__T6_rH`     | The clickable link or name for that shape.       |
+    | `.selectedShape_exploreButton__sDM0_` | Button to explore or view more about the shape.  |
+
+    ---
+
+    ### 🖼️ Logo & Branding
+
+    | Selector                     | What it Styles / Does                         |
+    | ---------------------------- | --------------------------------------------- |
+    | `.logo_wrapper__0WzgN`       | Wrapper for the logo section.                 |
+    | `.logo_logoContainer__0dQBE` | Inner container combining logo icon and text. |
+    | `.logo_logoImage__xMfPA`     | The image used for the logo.                  |
+    | `.logo_logoText__wLOMH`      | The logo’s text label.                        |
+
+    ---
+
+    ### 📄 Page Footer
+
+    | Selector                         | What it Styles / Does                                     |
+    | -------------------------------- | --------------------------------------------------------- |
+    | `.footer_footer__mQF6i`          | Main footer wrapper — all elements below are inside this. |
+    | `.footer_footerSection__x8z9I`   | Subsection for grouped footer content (links/info).       |
+    | `.footer_footerLinks__T18VU`     | Group of footer navigation links.                         |
+    | `.footer_footerContent__giD9w`   | Wrapper for footer text and content.                      |
+    | `.footer_footerBottom__GTOoL`    | Bottom row (copyright info).                              |
+    | `.footer_socialLinks__2JK6F`     | Row of social media icons.                                |
+    | `.footer_linkWithBadge__qr_yC`   | A footer link that includes a small badge or label.       |
+    | `.footer_footerDashboard__tLxZ3` | Footer variant for dashboard pages.                       |
+
+    ---
+
+    ### 📐 Page & Dashboard Layouts
+
+    | Selector                   | What it Styles / Does                   |
+    | -------------------------- | --------------------------------------- |
+    | `.layout_main__ZFL2g`      | Main layout wrapper for page content.   |
+    | `.layout_dashboard__nwUzI` | Full dashboard page container and grid. |
+  </Accordion>
 </AccordionGroup>
 
 <Note>
