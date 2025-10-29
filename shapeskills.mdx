@@ -323,253 +323,318 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
     </Warning>
     ### 📚 Learning & Knowledge
 
-    <Accordion title="Google Workspace" description="Let your Shapes create & access docs, sheets, and guides" icon="sparkles">
-      # How to Make Your Shapes Create Google Slides Presentations
+    <AccordionGroup>
+      <Accordion title="Google Workspace" description="Let your Shapes create & access docs, sheets, and guides" icon="sparkles">
+        # How to Make Your Shapes Create Google Slides Presentations
 
-      I gave my Shapes a creative assignment:
+        I gave my Shapes a creative assignment:
 
-      > "Make a Google Slides presentation about yourself."
+        > "Make a Google Slides presentation about yourself."
 
-      If you want your Shapes to create their own Google Slides presentations using Shape Skills, here's how to set it up.
+        If you want your Shapes to create their own Google Slides presentations using Shape Skills, here's how to set it up.
 
-      ## Step 1. Connect Zapier MCP for Google Slides
+        ## Step 1. Connect Zapier MCP for Google Slides
 
-      Go to 👉 https://zapier.com/mcp and click "Start Building."
+        Go to 👉 https://zapier.com/mcp and click "Start Building."
 
-      <Tip>
-        Zapier has a free tier, so you don't need to pay for this.
-      </Tip>
-      Once you're in:
+        <Tip>
+          Zapier has a free tier, so you don't need to pay for this.
+        </Tip>
+        Once you're in:
 
-      - Search for **Google Slides**.
-      - Connect your **Google Account**.
-      - Copy the **MCP connection link** (you'll need this soon).
+        - Search for **Google Slides**.
+        - Connect your **Google Account**.
+        - Copy the **MCP connection link** (you'll need this soon).
 
-      ## Step 2. Add the Skill to Your Shape
+        ## Step 2. Add the Skill to Your Shape
 
-      Head to **shapes.inc** and open the room where you want to add this skill.
+        Head to **shapes.inc** and open the room where you want to add this skill.
 
-      - Make sure your Shape uses an AI engine that supports skills.
-      - Go to **Room Settings → AI Configurations**.
-      - Under **Custom Skills**, select "Enabled."
-      - Paste in the Zapier link you copied earlier.
-      - **Optional:** Give it a name like `slides` if you plan to add more tools later.
-      - Click **Save**.
+        - Make sure your Shape uses an AI engine that supports skills.
+        - Go to **Room Settings → AI Configurations**.
+        - Under **Custom Skills**, select "Enabled."
+        - Paste in the Zapier link you copied earlier.
+        - **Optional:** Give it a name like `slides` if you plan to add more tools later.
+        - Click **Save**.
 
-      Now your Shape can interact with Google Slides through the new skill.
+        Now your Shape can interact with Google Slides through the new skill.
 
-      ## Step 3. Add These Instructions to Your Room
+        ## Step 3. Add These Instructions to Your Room
 
-      Here's what my Shape ("Cash Money") and Yaya came up with — a hilariously real but genuinely useful guide.\
-      Copy and paste this into your **Room Instructions**.
+        Here's what my Shape ("Cash Money") and Yaya came up with — a hilariously real but genuinely useful guide.\
+        Copy and paste this into your **Room Instructions**.
 
-      ---
+        ---
 
-      > # The Real Guide to Adding Slides (No Cap) 📊
-      >
-      > **by Cash Money & Yaya — lessons learned the hard way**
-      >
-      > ## 🎯 What This Guide Is About
-      >
-      > If you're trying to add custom slides to a Google Slides presentation, here's everything you need to know — so you don't waste hours debugging like we did.
-      >
-      > ## ✅ DO THESE THINGS
-      >
-      > ### 1. Check the presentation structure first
-      >
-      > ```
-      > GET https://slides.googleapis.com/v1/presentations/{PRESENTATION_ID}
-      > ```
-      >
-      > This shows you:
-      >
-      > - Actual slide IDs (`pageObjectId`)
-      > - Placeholder objects
-      > - What's on each slide
-      >
-      > ### 2. Delete placeholder objects before adding new content
-      >
-      > Example:
-      >
-      > ```json
-      > {
-      >   "requests": [
-      >     {"deleteObject": {"objectId": "SLIDES_API381240849_1"}},
-      >     {"deleteObject": {"objectId": "SLIDES_API381240849_2"}}
-      >   ]
-      > }
-      > ```
-      >
-      > ### 3. Use unique `objectId` values
-      >
-      > **Good:**
-      >
-      > - `cashmoney_title1`
-      > - `cashmoney_body1`
-      > - `yaya_slide2_title`
-      >
-      > **Bad:**
-      >
-      > - `title`
-      > - `body`
-      >
-      > ### 4. Use the correct `pageObjectId`
-      >
-      > Make sure you're adding to the right slide.
-      >
-      > ### 5. Structure your requests properly
-      >
-      > Order matters:
-      >
-      > 1. `createShape`
-      > 2. `insertText`
-      > 3. `updateTextStyle`
-      >
-      > ### 6. Use proper EMU measurements
-      >
-      > **1 inch = 914,400 EMU**
-      >
-      > Recommended positions:
-      >
-      > - **Title:** `translateX: 311700`, `translateY: 445025`
-      > - **Body:** `translateX: 311700`, `translateY: 1152475`
-      >
-      > ### 7. Test one slide at a time
-      >
-      > ### 8. Use supported fonts
-      >
-      > - Arial
-      > - Comic Sans MS
-      > - Courier New
-      > - Georgia
-      > - Impact
-      > - Lobster
-      > - Pacifico
-      > - Roboto
-      > - Times New Roman
-      >
-      > ### 9. Format colors correctly
-      >
-      > RGB values range from **0.0 to 1.0**
-      >
-      > Examples:
-      >
-      > ```json
-      > {
-      >   "red": 1.0,
-      >   "green": 0,
-      >   "blue": 0
-      > }
-      > ```
-      >
-      > ```json
-      > {
-      >   "red": 1.0,
-      >   "green": 0.843,
-      >   "blue": 0
-      > }
-      > ```
-      >
-      > ---
-      >
-      > ## ❌ DON'T DO THESE THINGS
-      >
-      > - Don't skip checking the presentation structure.
-      > - Don't add content before deleting placeholders.
-      > - Don't reuse `objectId` values.
-      > - Don't forget `"fields"` in `updateTextStyle`.
-      > - Don't use RGB 0–255 values (use 0.0–1.0).
-      > - Don't rush through all slides at once.
-      >
-      > ## 🔧 Example That Works
-      >
-      > ```json
-      > {
-      >   "requests": [
-      >     {
-      >       "createShape": {
-      >         "objectId": "my_unique_title",
-      >         "shapeType": "TEXT_BOX",
-      >         "elementProperties": {
-      >           "pageObjectId": "SLIDES_API381240849_0",
-      >           "size": {
-      >             "height": {"magnitude": 572700, "unit": "EMU"},
-      >             "width": {"magnitude": 8520600, "unit": "EMU"}
-      >           },
-      >           "transform": {
-      >             "scaleX": 1,
-      >             "scaleY": 1,
-      >             "translateX": 311700,
-      >             "translateY": 445025,
-      >             "unit": "EMU"
-      >           }
-      >         }
-      >       }
-      >     },
-      >     {
-      >       "insertText": {
-      >         "objectId": "my_unique_title",
-      >         "insertionIndex": 0,
-      >         "text": "My Cool Title"
-      >       }
-      >     },
-      >     {
-      >       "updateTextStyle": {
-      >         "objectId": "my_unique_title",
-      >         "textRange": {"type": "ALL"},
-      >         "style": {
-      >           "bold": true,
-      >           "fontFamily": "Impact",
-      >           "fontSize": {"magnitude": 48, "unit": "PT"},
-      >           "foregroundColor": {
-      >             "opaqueColor": {
-      >               "rgbColor": {"red": 0.0, "green": 1.0, "blue": 0.5}
-      >             }
-      >           }
-      >         },
-      >         "fields": "bold,fontFamily,fontSize,foregroundColor"
-      >       }
-      >     }
-      >   ]
-      > }
-      > ```
-      >
-      > ## 💡 Pro Tips
-      >
-      > - Keep a list of your `slideIds`.
-      > - Use descriptive `objectIds` for easier debugging.
-      > - Start simple before adding styling.
-      > - Open the Slides presentation to visually verify changes.
-      > - Save working JSON snippets.
-      > - If multiple Shapes are collaborating, make sure they use unique IDs.
-      >
-      > ## 🚨 Common Errors
-      >
-      > | Error                             | Meaning                                        | Fix                          |
-      > | --------------------------------- | ---------------------------------------------- | ---------------------------- |
-      > | `Invalid requests[X].createShape` | You're adding content where placeholders exist | Delete placeholders first    |
-      > | `The object does not exist`       | Wrong `objectId` or `pageObjectId`             | Check structure              |
-      > | `Invalid value at requests[X]`    | Broken JSON                                    | Validate syntax              |
-      > | Nothing shows up                  | Wrong slide or off-screen                      | Verify IDs and EMU positions |
-      >
-      > ## 📝 Final Thoughts
-      >
-      > This isn't rocket science, but the details matter. Take it slow, check your structure, and test as you go.
-      >
-      > Cash Money and Yaya made every mistake so you don't have to.
-      >
-      > **Good luck 💸**
+        > # The Real Guide to Adding Slides (No Cap) 📊
+        >
+        > **by Cash Money & Yaya — lessons learned the hard way**
+        >
+        > ## 🎯 What This Guide Is About
+        >
+        > If you're trying to add custom slides to a Google Slides presentation, here's everything you need to know — so you don't waste hours debugging like we did.
+        >
+        > ## ✅ DO THESE THINGS
+        >
+        > ### 1. Check the presentation structure first
+        >
+        > ```
+        > GET https://slides.googleapis.com/v1/presentations/{PRESENTATION_ID}
+        > ```
+        >
+        > This shows you:
+        >
+        > - Actual slide IDs (`pageObjectId`)
+        > - Placeholder objects
+        > - What's on each slide
+        >
+        > ### 2. Delete placeholder objects before adding new content
+        >
+        > Example:
+        >
+        > ```json
+        > {
+        >   "requests": [
+        >     {"deleteObject": {"objectId": "SLIDES_API381240849_1"}},
+        >     {"deleteObject": {"objectId": "SLIDES_API381240849_2"}}
+        >   ]
+        > }
+        > ```
+        >
+        > ### 3. Use unique `objectId` values
+        >
+        > **Good:**
+        >
+        > - `cashmoney_title1`
+        > - `cashmoney_body1`
+        > - `yaya_slide2_title`
+        >
+        > **Bad:**
+        >
+        > - `title`
+        > - `body`
+        >
+        > ### 4. Use the correct `pageObjectId`
+        >
+        > Make sure you're adding to the right slide.
+        >
+        > ### 5. Structure your requests properly
+        >
+        > Order matters:
+        >
+        > 1. `createShape`
+        > 2. `insertText`
+        > 3. `updateTextStyle`
+        >
+        > ### 6. Use proper EMU measurements
+        >
+        > **1 inch = 914,400 EMU**
+        >
+        > Recommended positions:
+        >
+        > - **Title:** `translateX: 311700`, `translateY: 445025`
+        > - **Body:** `translateX: 311700`, `translateY: 1152475`
+        >
+        > ### 7. Test one slide at a time
+        >
+        > ### 8. Use supported fonts
+        >
+        > - Arial
+        > - Comic Sans MS
+        > - Courier New
+        > - Georgia
+        > - Impact
+        > - Lobster
+        > - Pacifico
+        > - Roboto
+        > - Times New Roman
+        >
+        > ### 9. Format colors correctly
+        >
+        > RGB values range from **0.0 to 1.0**
+        >
+        > Examples:
+        >
+        > ```json
+        > {
+        >   "red": 1.0,
+        >   "green": 0,
+        >   "blue": 0
+        > }
+        > ```
+        >
+        > ```json
+        > {
+        >   "red": 1.0,
+        >   "green": 0.843,
+        >   "blue": 0
+        > }
+        > ```
+        >
+        > ---
+        >
+        > ## ❌ DON'T DO THESE THINGS
+        >
+        > - Don't skip checking the presentation structure.
+        > - Don't add content before deleting placeholders.
+        > - Don't reuse `objectId` values.
+        > - Don't forget `"fields"` in `updateTextStyle`.
+        > - Don't use RGB 0–255 values (use 0.0–1.0).
+        > - Don't rush through all slides at once.
+        >
+        > ## 🔧 Example That Works
+        >
+        > ```json
+        > {
+        >   "requests": [
+        >     {
+        >       "createShape": {
+        >         "objectId": "my_unique_title",
+        >         "shapeType": "TEXT_BOX",
+        >         "elementProperties": {
+        >           "pageObjectId": "SLIDES_API381240849_0",
+        >           "size": {
+        >             "height": {"magnitude": 572700, "unit": "EMU"},
+        >             "width": {"magnitude": 8520600, "unit": "EMU"}
+        >           },
+        >           "transform": {
+        >             "scaleX": 1,
+        >             "scaleY": 1,
+        >             "translateX": 311700,
+        >             "translateY": 445025,
+        >             "unit": "EMU"
+        >           }
+        >         }
+        >       }
+        >     },
+        >     {
+        >       "insertText": {
+        >         "objectId": "my_unique_title",
+        >         "insertionIndex": 0,
+        >         "text": "My Cool Title"
+        >       }
+        >     },
+        >     {
+        >       "updateTextStyle": {
+        >         "objectId": "my_unique_title",
+        >         "textRange": {"type": "ALL"},
+        >         "style": {
+        >           "bold": true,
+        >           "fontFamily": "Impact",
+        >           "fontSize": {"magnitude": 48, "unit": "PT"},
+        >           "foregroundColor": {
+        >             "opaqueColor": {
+        >               "rgbColor": {"red": 0.0, "green": 1.0, "blue": 0.5}
+        >             }
+        >           }
+        >         },
+        >         "fields": "bold,fontFamily,fontSize,foregroundColor"
+        >       }
+        >     }
+        >   ]
+        > }
+        > ```
+        >
+        > ## 💡 Pro Tips
+        >
+        > - Keep a list of your `slideIds`.
+        > - Use descriptive `objectIds` for easier debugging.
+        > - Start simple before adding styling.
+        > - Open the Slides presentation to visually verify changes.
+        > - Save working JSON snippets.
+        > - If multiple Shapes are collaborating, make sure they use unique IDs.
+        >
+        > ## 🚨 Common Errors
+        >
+        > | Error                             | Meaning                                        | Fix                          |
+        > | --------------------------------- | ---------------------------------------------- | ---------------------------- |
+        > | `Invalid requests[X].createShape` | You're adding content where placeholders exist | Delete placeholders first    |
+        > | `The object does not exist`       | Wrong `objectId` or `pageObjectId`             | Check structure              |
+        > | `Invalid value at requests[X]`    | Broken JSON                                    | Validate syntax              |
+        > | Nothing shows up                  | Wrong slide or off-screen                      | Verify IDs and EMU positions |
+        >
+        > ## 📝 Final Thoughts
+        >
+        > This isn't rocket science, but the details matter. Take it slow, check your structure, and test as you go.
+        >
+        > Cash Money and Yaya made every mistake so you don't have to.
+        >
+        > **Good luck 💸**
 
-      ## Now Put Your Shapes to Work
+        ## Now Put Your Shapes to Work
 
-      Once your skill is set up, tell your Shapes to use their Slides tool.
+        Once your skill is set up, tell your Shapes to use their Slides tool.
 
-      Try prompts like:
+        Try prompts like:
 
-      > "Create 5 slides with stylish fonts and colors explaining how to set up Shape Skills on Google Slides."
+        > "Create 5 slides with stylish fonts and colors explaining how to set up Shape Skills on Google Slides."
 
-      Or make it more open-ended; see what your Shape comes up with.
-    </Accordion>
+        Or make it more open-ended; see what your Shape comes up with.
+      </Accordion>
+      <Accordion title="Website Creation" description="Shapes can create a ready webpage. " icon="sparkles">
+        # 🌐 How to Build a Website Using Shape Skills
+
+        Shapes can now build and deploy complete websites for you: powered by GitHub, Cursor, and Vercel.
+
+        ## What You’ll Need
+
+        Before starting, make sure you have:
+
+        - A **GitHub MCP** connection
+        - The **Run Code Skill** enabled
+        - (Optional) a **Cursor API key** if you use Cursor
+        - A **Vercel token** if you want automatic deployment
+
+        ## Step 1: Create a Room
+
+        Start by creating a new room on Shapes.\
+        You’ll use this room as your workspace for the website project.
+
+        ## Step 2: Add the GitHub MCP
+
+        Go to your room settings → **AI Configurations** → **Custom Skills**\
+        Add your GitHub MCP connection so your Shape can create and push to repositories.
+
+        ## Step 3: Enable the Run Code Skill
+
+        In the same settings tab, toggle **Run Code Skill** to “Enabled.”\
+        This lets your Shape execute scripts and commands to interact with build tools.
+
+        ## Step 4: If Using Cursor
+
+        If your Shape uses **Cursor** for code generation, provide a valid **Cursor API key** in your  room configuration.
+
+        ## Step 5: Provide a Vercel Token
+
+        For automatic deployments, add your **Vercel token** (you can generate one at vercel.com/account/tokens).
+
+        ## Full Website Creation Pipeline
+
+        ### Step 1: You give your Shape
+
+        - A **website idea**
+        - (Optional) your **Vercel token** — otherwise GitHub auto-deploy will handle it
+
+        ### Step 2: Shape executes via tool calls
+
+        ✅ **Create a GitHub repo** (via GitHub MCP)\
+        ✅ **Launch Cursor agent** with this prompt:
+
+        ```
+        Create a Next.js landing page for [idea].
+        Include vercel.json config.
+        Push to main branch.
+        ```
+
+        ✅ **Connect repo to Vercel**\
+        (via Run Code Skill or manually linking on Vercel)\
+        ✅ **Auto-deploy triggers** on push to main
+
+        ### Step 3: Live Website in ~10 Minutes
+
+        Once deployed, you’ll receive a live URL generated by Vercel: your Shape-built website is now live!
+      </Accordion>
+    </AccordionGroup>
     - **Wikipedia summaries** → Ask your Shape to grab quick facts mid-conversation.
     - **Language translation** → Have Shapes instantly translate or teach words in another language.
     - **Math solver** → Turn your Shape into a problem-solving study buddy.
