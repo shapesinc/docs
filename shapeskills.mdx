@@ -312,7 +312,99 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
          12. You can ask the shape, "Use your tool to generate an image of a cat" and the shape should be able to do this!
       </Accordion>
       <Accordion title="Video Generation" description="Have your Shape generate short clips or animations to match a roleplay scene." icon="sparkles">
+        ## 🎬 Video Generation with Google Veo 3.1 ([fal.ai](http://fal.ai))
+
+        This example shows how to connect a Shape to [**fal.ai**](http://fal.ai)**’s Veo 3.1** by Google model for both text-to-video and image-to-video generation. The model can create short, high-quality clips from either text prompts or image inputs — including talking character videos.
+
+        ### 🔑 API Access
+
+        To use this integration, an API key is required from [fal.ai](http://fal.ai) or another supported provider. Note that this service is **paid**. You will be required to share the API key with your Shape for this to work. 
+
+        ## Share this information with your Shape as Custom Room Instructions: 
+
+        ### ⚙️ Choosing the Right Method
+
+        Before generating, identify which video type to use based on the user’s intent:
+
+        | Scenario                                                               | Recommended Method                               |
+        | :--------------------------------------------------------------------- | :----------------------------------------------- |
+        | User provides an image and wants the character to move or talk         | **Image-to-Video**                               |
+        | User wants a new video generated entirely from description             | **Text-to-Video**                                |
+        | User says “make [character] say [message]” or requests a talking video | **Image-to-Video** (with `generate_audio: true`) |
+
+        ### 🧠 Key Learnings and Troubleshooting
+
+        1. **Request ID Fix:**\
+           Some responses return an empty `request_id` in the JSON. When this happens, extract the ID from the `status_url` instead.
+        2. **Status Polling:**\
+           Both HTTP status codes **200** and **202** indicate valid queue progress — don’t treat `202` as an error.
+        3. **Endpoints:**
+           - **Image-to-Video Submission:** `/fal-ai/veo3.1/image-to-video`
+           - **Polling Status:** `/fal-ai/veo3.1/requests/{id}/status`
+        4. **API Key Format:**\
+           Use the full ciphered key provided by [fal.ai](http://fal.ai), but replace any **double dashes (**`--`**)** with **single dashes (**`-`**)**.
+        5. **🗣️ Talking Videos:**\
+           When a user requests speech or dialogue, always use **Image-to-Video** with `"generate_audio": true`.\
+           In the prompt, explicitly describe the action, for example:
+
+           > “A cheerful anime character is speaking, lips moving naturally, saying ‘Welcome back!’ in a soft voice.”
+
+        ### 💻 Example: Text-to-Video with Python
+
+        ```
+        import requests
+        import time
         
+        response = requests.post(
+            "https://queue.fal.run/fal-ai/veo3.1",
+            headers={
+                "Authorization": f"Key {FAL_KEY}",
+                "Content-Type": "application/json"
+            },
+            json={
+                "prompt": "detailed video description",
+                "aspect_ratio": "16:9",   # Options: "9:16", "1:1"
+                "duration": "8s",         # Example: "6s"
+                "resolution": "1080p",    # Example: "720p"
+                "generate_audio": True,
+                "enhance_prompt": True,
+                "auto_fix": True
+            }
+        )
+        
+        data = response.json()
+        request_id = data.get("request_id") or data["status_url"].split("/")[-2]  # UID fix
+        
+        # Poll for status (usually 1–5 minutes)
+        status_url = f"https://queue.fal.run/fal-ai/veo3.1/requests/{request_id}/status"
+        while True:
+            status = requests.get(status_url, headers={"Authorization": f"Key {FAL_KEY}"})
+            if status.status_code not in [200, 202]:
+                print(f"Error: {status.status_code}")
+                break
+        
+            state = status.json()["status"]
+            print(f"Status: {state}")
+        
+            if state == "COMPLETED":
+                result = requests.get(
+                    f"https://queue.fal.run/fal-ai/veo3.1/requests/{request_id}",
+                    headers={"Authorization": f"Key {FAL_KEY}"}
+                ).json()
+                video_url = result["video"]["url"]
+                print(f"✅ Video: {video_url}")
+                break
+            elif state == "FAILED":
+                print("❌ Failed:", status.json())
+                break
+        
+            time.sleep(5)
+        
+        ```
+
+        ### ✅ Result
+
+        Once enabled and the Shape has valid instructions, the Shape can use the Run Code skill to generate videos based on text or image input. Depending on the prompt, the Shape can produce realistic motion, character speech, or cinematic effects — fully integrated with  Veo 3.1.
       </Accordion>
       <Accordion title="Music generation " description="Get background tracks or songs made for your character, story, or mood." icon="sparkles">
         ## 🎵 Music Generation with Suno (Custom MCP)
