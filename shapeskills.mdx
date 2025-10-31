@@ -915,6 +915,199 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
     ### 💼 Productivity
 
+    <Accordion title="Changelog Generator" description="Help inform users of product updates!" icon="sparkle">
+      ## 📝 Changelog Generation Room (GitHub + Linear + Cursor Integration)
+
+      This guide explains how to build a Shape that automatically generates daily changelogs by analyzing code changes across multiple repositories and translating them into user-friendly product updates.
+
+      ### ⚙️ Overview
+
+      This Shape compiles a daily product changelog by fetching data from **GitHub**, **Linear**, and **Cursor**, then summarizes what changed, why it matters, and how it impacts users.
+
+      ## Prerequisites
+
+      1.  Create a room, and add Shapes to it that have skill-enabled engines like **Claude Sonnet 4.5**.
+      2. Have a GitHub account and get an access token (from the developer settings) + connect to the GitHub MCP. Your Shape will need access to the repo you're creating a changelog for. 
+      3.  Have a Linear account + connect to the Linear MCP.
+      4.  Have a Cursor account & add you key to your custom room instructions, along with the following information. This example is how we create our own changelog at https://shapes.inc/blog so you'll need to adjust this for your own repos & taste.
+
+      ### Core Principles (Tell this to your Shape Via Custom Room Instructions)
+
+      ✅ Use the **GitHub API** and **run_code** skill to fetch data.\
+      ✅ Send all text summaries directly to the user (users can’t see code execution).\
+      ✅ Focus on **impact**, not implementation.\
+      ✅ Write for **end users**, not developers.\
+      ✅ The run_code tool is **only** for API calls — never for output delivery.
+
+      ❌ Don’t mention PR numbers, commit SHAs, or internal details.\
+      ❌ Don’t include technical jargon or source code references.\
+      ❌ Don’t frame changelogs like marketing copy — clarity and transparency first.
+
+      ### 🕒 Step 1: Collect Commits for a Specific Date
+
+      GitHub timestamps are in UTC — convert local time to UTC before querying.
+
+      **Timezone conversion:**
+
+      - PDT (Mar → Nov): UTC − 7
+      - PST (Nov → Mar): UTC − 8
+
+      Example for **Oct 1 2025 PDT**:\
+      `since=2025-10-01T07:00:00Z` → `until=2025-10-02T06:59:59Z`
+
+      **API calls:**
+
+      ```
+      # For shapes.inc and shapes-chat (main branch)
+      GET /repos/shapesinc/{repo}/commits?sha=main&since={since}&until={until}&per_page=100
+      
+      # For app (master branch)
+      GET /repos/shapesinc/app/commits?sha=master&since={since}&until={until}&per_page=100
+      
+      ```
+
+      **Extract PR numbers:**\
+      Use regex `#(\d+)` to detect pull requests from commit messages (e.g., “feat: fanclub card (#1490)”).
+
+      ### 🔍 Step 2: Retrieve Pull Request Details
+
+      For each PR found:
+
+      1. Fetch PR metadata:
+
+         ```
+         GET /repos/shapesinc/{repo}/pulls/{pr_number}
+         
+         ```
+      2. Extract title, description, and merged timestamp.
+      3. Identify linked Linear tickets using regex `CIR-\d+` or Linear URLs.
+      4. Present details in plain text for context before writing.
+
+      ### 🧠 Step 3: Fetch Linear Ticket Context
+
+      Use the **Linear MCP tool** to gather business context for each ticket ID found in PRs.
+
+      Pull:
+
+      - Ticket title
+      - Description / acceptance criteria
+      - User-facing rationale (“why” behind the change)
+
+      Combine Linear info (requirements) + PR info (implementation) to form the full story behind each feature or fix.
+
+      ### 🔗 Step 4: Consolidate Across All Repositories
+
+      After processing all three repos:
+
+      - Display a summary of total commits, PRs, and tickets per repo.
+      - Merge duplicate tickets appearing in multiple repos into single entries.
+      - Group backend + frontend work into unified changelog items.
+
+      ### ✍️ Step 5: Generate a User-Facing Changelog
+
+      The Shape writes the changelog in a **Linear-style** format — professional, concise, and benefit-oriented.
+
+      **Audience:**
+
+      1. Room creators — manage communities.
+      2. Shape creators — build custom AI agents.
+      3. Everyday users — hang out and chat with Shapes.
+
+      **Formatting:**
+
+      ```
+      ## Changelog – [Month Day, Year]
+      
+      ### New Features
+      **Feature Name**  
+      Plain description of what changed, where to find it, and why it matters.
+      
+      ### Improvements
+      **Improvement Name**  
+      What was refined and how it benefits users.
+      
+      ### Fixes
+      **Fix Name**  
+      What issue was resolved and the effect for users.
+      
+      ---
+      
+      **Summary:** X new features • Y improvements • Z fixes
+      
+      ```
+
+      **Writing Guidelines**
+
+      ✅ Do:
+
+      - Use clear, everyday language.
+      - Focus on user impact and location (“via the 3-dot menu,” etc.).
+      - Combine related work into single entries.
+      - Use Linear context for purpose and benefit.
+
+      ❌ Don’t:
+
+      - Mention internal IDs or branches.
+      - Use hype or excessive punctuation.
+      - Overuse technical jargon.
+
+      ### 🧰 Step 6: Create a Branch with Cursor Agent
+
+      After the changelog markdown is generated, the Shape launches a **Cursor background agent** to create a new branch containing the changelog file.
+
+      **Process:**
+
+      1. Launch the agent via the Cursor API.
+      2. Wait ~180 seconds for processing.
+      3. Poll for completion (status = `FINISHED`).
+      4. Retrieve the new branch name once complete.
+
+      Cursor commits under its own system user. The changelog PR is created manually afterward for review.
+
+      ### 🪄 Step 7: Create Pull Request via GitHub MCP
+
+      Once the Cursor agent branch is ready, the Shape opens a PR using the **GitHub MCP**.
+
+      **Steps:**
+
+      1. Confirm branch name from Step 6.
+      2. Use the GitHub MCP to create a PR into `main`.
+      3. Return the PR URL and branch name to the user for review.
+
+      > ⚠️ **Do not** auto-merge — changelogs must be reviewed manually.
+
+      ### 📤 Step 8: Final Output Order
+
+      Each run outputs the following (as plain text):
+
+      1. Commit + PR summaries per repo
+      2. Consolidated summary
+      3. Final formatted changelog
+      4. Cursor agent status
+      5. GitHub PR link
+
+      All timestamps are converted to PDT for readability.
+
+      ### 🚫 Common Pitfalls
+
+      - Incorrect timezone conversion (offset errors).
+      - Missing PR numbers or Linear links.
+      - Wrong branch names (`main` vs `master`).
+      - Sending results via run_code instead of text output.
+      - Writing overly technical or overly enthusiastic changelogs.
+      - Forgetting to disable `autoCreatePr` in the Cursor agent.
+      - Polling Cursor agent too early (must wait ≈ 180 seconds).
+
+      ### Example Workflow (Oct 1 2025 PDT)
+
+      1. Fetch commits (UTC-converted window).
+      2. Extract 5 Linear tickets across 3 repos.
+      3. Fetch context for each ticket.
+      4. Group related PRs into unified entries.
+      5. Generate changelog (4 new features / 5 improvements / 1 fix).
+      6. Launch Cursor agent → wait → branch created.
+      7. Create PR → share URL with user for review and merge.
+    </Accordion>
     - **GitHub integration** → Let your Shape check issues, pull requests, or repos.
     - **Notion or Google Docs** → Generate, organize, or update notes while chatting.
     - **Web scraping** → Have Shapes pull info from a site so you don't have to leave the chat.
