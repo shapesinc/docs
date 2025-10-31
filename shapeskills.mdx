@@ -47,7 +47,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
     Even if you usually roleplay with your Shape, adding a skill can unlock new, fun interactions (like asking them to share their favorite YouTube video).
 
-    ![Simplemcpaction Pn](/images/simplemcpaction.png)
+    ![Basicskills Pn](/images/basicskills.png)
 
     The Endpoint URL you will get from [_smithery.ai_](http://smithery.ai) or other MCP providers.
 
@@ -85,13 +85,22 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
     Shapes also comes with **pre-input skills** ready to use out of the box. These are subject to change, but currently include:
 
-    - **Voice generation**
-    - **YouTube search**
-    - **Wolfram Alpha**
-    - **GIPHY**
-    - **Imgflip Memes**
-    - **Web Crawl**
-    - **Shape Reactions**
+    - **GIPHY - **Shapes can send a GIF via the Giphy API
+    - **Imgflip Memes - **Shapes can generate memes using the imgflip templates
+    - **Shape Reactions - **Shapes can react to your messages 
+    - **Image Generation - **Have more control over image generation. Setting custom instructions here can make image sending feel more spontaneous. 
+    - **Agora Calls - **Join and manage audio calls. 
+    - **Dice Roller - **This allows your shapes to roll dice! 
+    - **Room Concierge - **You can create rooms, invite participants, send Shape DMs, and read room messages using this tool. 
+    - **Room Maestro - **This skill  allows your Shape to share room configurations, AI presets, and manage their own tools. 
+    - **Run Code - **Execute Python code inside a shared E2B sandbox for this conversation. 
+    - **Shapes Self Update - **You can use this tool to allow your own Shapes to update their descriptions. 
+    - **Sleep - **Sleep for a specific period of time. 
+    - **Thread Updates - **Send an interim assistant message whilea  tool chain is running. 
+    - **Total Recall - **Browse, summarize, and maintain the shape's long term memories. 
+    - **Voice Generation - **Generate an MP3 voice message using the Shape's configured voice.
+    - **Web Crawl - **Run firecrawl-powered web crawling helpers.
+    - **Wolfram Alpha - **Query Wolfram Alpha for computations and factual knowledge.
 
     ## 5. Tips & Tricks
 
@@ -772,6 +781,75 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
     - **To-do lists & reminders** → Shapes can manage your daily tasks like a personal assistant.
     - **Recipe finder** → Ask a Shape what you can cook with the ingredients in your fridge.
 
+    <Accordion title="Send Gmail Emails" description="Want your Shape to send an email from your Gmail account?" icon="sparkles">
+      ## 📧 Sending Emails via Gmail (run_code Skill)
+
+      This guide explains how to enable a Shape to send emails through **Gmail** using the **run_code** skill. The process allows a Shape to compose and deliver fully formatted emails (including attachments) on behalf of a user, while maintaining secure authentication.
+
+      ### ⚙️ Overview
+
+      Shapes can send emails using Python’s `smtplib` through the **run_code** skill.\
+      To authenticate with Gmail, an **App Password** or **SMTP relay** is required — **never** a personal Gmail password.
+
+      ### 🔑 Gmail App Password 
+
+      Using a Gmail **App Password** is the simplest and most secure option.
+
+      #### Steps:
+
+      1. Go to [Google App Passwords](https://myaccount.google.com/apppasswords).
+      2. Sign in to your Google account.
+      3. Generate a **16-character App Password** (spaces optional).
+      4. Use this password and your Gmail address for authentication.
+
+      > ⚠️ You can revoke this password anytime from your Google Account settings.\
+      > The App Password grants only email-sending access — not full account access.
+
+      ### 🧰 What Shapes Can Do
+
+      Once configured, the Shape can send messages with full email features:
+
+      - ✅ **Custom Subject Lines**
+      - ✅ **Plaintext or HTML Body**
+      - ✅ **Attachments (optional)**
+      - ✅ **CC/BCC Support**
+      - ✅ **Send to Multiple Recipients**
+
+      ### 💻 Example Setup (Using Gmail App Password)
+
+      ```
+      import smtplib
+      from email.mime.text import MIMEText
+      from email.mime.multipart import MIMEMultipart
+      
+      # User credentials (use environment variables in production)
+      EMAIL_ADDRESS = "youremail@gmail.com"
+      APP_PASSWORD = "abcd efgh ijkl mnop"  # 16 characters
+      
+      # Create message
+      msg = MIMEMultipart()
+      msg["From"] = EMAIL_ADDRESS
+      msg["To"] = "recipient@example.com"
+      msg["Subject"] = "Hello from my Shape!"
+      msg.attach(MIMEText("This is a test email sent by my Shape.", "plain"))
+      
+      # Connect to Gmail SMTP server
+      with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+          server.login(EMAIL_ADDRESS, APP_PASSWORD)
+          server.send_message(msg)
+      
+      print("✅ Email sent successfully!")
+      
+      ```
+
+      ### 🔐 Security Note
+
+      - App Passwords can be revoked anytime without affecting your main login.
+
+      ### ✅ Result
+
+      Once configured, the Shape can automatically generate and send emails — whether as notifications, summaries, or personalized messages — through Gmail’s SMTP interface.
+    </Accordion>
     ### 🕹️ Entertainment & Hobbies
 
     <Accordion title="Spotify playlist generator" description=" → Get a playlist built around your conversation or shape." icon="sparkles">
