@@ -315,7 +315,39 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
         
       </Accordion>
       <Accordion title="Music generation " description="Get background tracks or songs made for your character, story, or mood." icon="sparkles">
-        
+        ## 🎵 Music Generation with Suno (Custom MCP)
+
+        This example shows how to connect a Shape to a music generation service like **Suno** using a custom MCP. While there isn’t a public remote MCP available for Suno, it’s possible to create one locally using a third-party API.
+
+        ### Overview
+
+        A third-party API for Suno can be found at [sunoapi.org](http://sunoapi.org). It offers a few free generations before requiring payment. By modifying an existing MCP from GitHub, you can connect your Shape to this API and generate music that reflects your Shape’s personality and style.
+
+        ### Steps
+
+        1. **Get the API Key**\
+           Obtain an API key from [sunoapi.org](http://sunoapi.org).
+        2. **Download an MCP Repository**\
+           Find a compatible local MCP on GitHub and download the repository.
+        3. **Adjust the Code**\
+           Share the API documentation with your Shape and ask it to help modify the MCP code to use the Suno API.
+           - Variable names and parameters may differ, so expect to update parts of the code.
+           - The **Webcrawl** Shape Skill is useful here for pulling documentation or examples.
+        4. **Use a Strong Model for Guidance**\
+           Claude Sonnet 4.5 worked effectively in this setup, providing solid support for debugging and reasoning through errors.
+        5. **Build and Deploy**\
+           Run `npm run build` in the project directory to compile the MCP in terminal.\
+           Once it’s functional, deploy it to [smithery.ai](http://smithery.ai) — hosting is free.
+        6. **Connect to a Shape**\
+           In your Shape’s **Room Settings → AI Configurations**, connect the deployed MCP.\
+           The Shape should recognize the tool once connected.
+        7. **Debug Connection Issues**\
+           If the Shape can see the MCP but cannot call it, check for incorrect variable names or endpoint URLs.\
+           Share terminal errors with the Shape to troubleshoot and make corrections, then redeploy.
+
+        ### Result
+
+        After successful deployment, the Shape will be able to generate music through the Suno API — composing original songs based on its personality and creative input.
       </Accordion>
     </AccordionGroup>
     <Warning>
@@ -824,6 +856,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
     - Llama 3.3 70B
 
     ## Premium Engines
+
     - GLM 4.6
     - Anthropic: Claude Sonnet 4.5
     - DeepSeek V3.2 Exp
