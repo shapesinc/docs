@@ -1193,7 +1193,82 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
     ### 🏡 Lifestyle & Exploration
 
-    - **Real estate listings (MLS)** → Have a Shape fetch all of the fresh real estate listings in your area each morning.
+    <Accordion title="Real Estate" description="Have a Shape fetch all of the fresh real estate listings in your area each morning." icon="sparkles">
+      ## 🏡 Home Listing Fetching with HomeHarvest MCP
+
+      Use this Shape-enabled tool to pull live property listings and related data (e.g., MLS listings) for a specified neighbourhood. Great for Shapes assisting users with “find homes for sale in [area]” workflows.
+
+      ### 🔑 Overview
+
+      With HomeHarvest MCP, a Shape can request listings via an API-backed MCP server and return user-facing summaries of available homes for sale. The MCP handles location filters, listing retrieval, and key property details; the Shape formats the results for users.
+
+      ### 🧰 Prerequisites & Setup
+
+      - You’ll need access to the HomeHarvest MCP server (hosted via Smithery.ai).
+      - Add this tool to your room's AI Configuration tab and enable it.
+
+      ### ✅ Basic Usage Flow
+
+      1. **User triggers search**\
+         Example: “Find homes for sale in Denver, CO under \$1M.”\
+         The Shape parses out: location (`Denver, CO`), max price (`$1M`), maybe bedrooms/bathrooms.
+      2. **Shape calls the MCP**\
+         The Shape uses the run_code tool/back-end connector to invoke the HomeHarvest MCP with parameters like:
+
+         ```
+         {
+           "location": "Denver, CO",
+           "max_price": 1000000,
+           "bedrooms": 3,
+           "bathrooms": 2
+         }
+         
+         ```
+      3. **MCP returns listings**\
+         Results may include multiple homes with details: address/area, price, bedrooms, bathrooms, status (“for sale”), link, etc.
+      4. **Shape formats output**
+         - You can customize this with your room instructions. 
+         - Your Shape can add their own personality to the results delivery.
+         - Summarizes key options (top 3–5 listings)
+         - Provide link to full listing when available.
+
+      ### 🧠 Best Practices & Instruction Tips
+
+      - **Limit the number of listings returned** for readability (top 3–5).
+      - **Avoid overload**: If many listings exist, summarize and offer to send full list if wanted.
+
+      ### 🔄 Example Interaction
+
+      **User:** “Show me homes for sale in Lake Ontario region (Rochester, NY) under \$400K with at least 3 bedrooms.”\
+      **Shape:**
+
+      - Parses location: “Lake Ontario region, Rochester, NY”
+      - Parses filters: max price \$400K, bedrooms ≥3
+      - Calls HomeHarvest MCP with those parameters
+      - Receives listings and returns user-friendly answer:
+
+        ```
+        Here are three current listings that match your criteria:
+        
+        1. 123 Maple St (Lakefront), Rochester – 3 beds / 2 baths • $389,900  
+           Spacious lake-view deck, 15-min drive to downtown.
+        
+        2. 456 Ridgewood Ave, Webster – 4 beds / 3 baths • $379,000  
+           Updated kitchen, short walk to Lake Ontario beach.
+        
+        3. 789 Pine Rd, Greece – 3 beds / 2 baths • $395,000  
+           Large backyard, close to parks and schools.
+        
+        Want more listings or change budget/neighbourhood?
+        
+        ```
+
+      ### 🚧 Key Considerations & Limitations
+
+      - **Filters may vary** by region or source; exact bedroom/bathroom criteria might return approximate.
+      - **No guarantee of showing every listing**; some homes may be agent-listed privately or in off-market status.
+      - **Not a substitute for agent-led search**: Use this as an aid; for official offers, inspections, and legal matters consult a licensed real estate professional.
+    </Accordion>
     - **Travel planning** → Get flights, hotels, and local attraction suggestions.
     - **Fitness tools** → Have Shapes create workout routines or track progress.
     - **Shopping assistants** → Compare prices or find product recommendations.
