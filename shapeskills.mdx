@@ -16,10 +16,9 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
   <Tab title="Getting Started with Skills">
     ## 1. Enabling Shape Skills
 
-    To start, you'll need either:
+    To start, you'll need :
 
-    - A **room** that you own, or (see: [how to create a room](create-a-room))
-    - A **DM** with your Shape
+    - A **room** that you own (see: [how to create a room](create-a-room))
 
     Once that's ready:
 
@@ -49,6 +48,9 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
     The Endpoint URL you will get from [_smithery.ai_](http://smithery.ai) or other MCP providers.
 
+    <Tip>
+      Other excellent, ready-to-use MCPs can be found on [composio.dev](http://composio.dev) & [zapier.com](http://zapier.com) 
+    </Tip>
     Example: Adding a Meme Generator (Imgflip)
 
     1. Go to [smithery.ai](http://smithery.ai) and browse available MCPs
@@ -95,79 +97,78 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
     - **Shapes Self Update** - You can use this tool to allow your own Shapes to update their descriptions.
     - **Sleep** - Sleep for a specific period of time.
     - **Thread Updates** - Send an interim assistant message whilea  tool chain is running.
-    - **Total Recall** - Browse, summarize, and maintain the shape's long term memories.
-      - 
+    - ## **Total Recall** - Browse, summarize, and maintain the shape's long term memories.
 
-        <Accordion title="More information on Total Recall">
-          # Total Recall
+      <Accordion title="More information on Total Recall">
+        # Total Recall
 
-          **Browse, summarize, and maintain your Shape’s long-term memories.**
+        **Browse, summarize, and maintain your Shape’s long-term memories.**
 
-          Total Recall is a memory and task management toolkit designed to help Shapes remember, organize, and act on important information over time. Supporting everything from personal memory summaries to organized lists of jobs and goals.
+        Total Recall is a memory and task management toolkit designed to help Shapes remember, organize, and act on important information over time. Supporting everything from personal memory summaries to organized lists of jobs and goals.
 
-          ## Overview
+        ## Overview
 
-          Total Recall offers two major sets of features:
+        Total Recall offers two major sets of features:
 
-          ### Core Memory Functions
+        ### Core Memory Functions
 
-          Tools that let your Shape review, summarize, and create memories.
+        Tools that let your Shape review, summarize, and create memories.
 
-          | Function    | Description                                                                                                                                        |
-          | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
-          | **SUMMARY** | Generates a concise, bulleted summary of the Shape’s most relevant long-term memories — great for quick overviews.                                 |
-          | **BROWSE**  | Lets you explore stored memories in detail. Use keywords, semantic search, or embeddings to find specific events or facts.                         |
-          | **CREATE**  | Captures and saves a new long-term memory from the latest conversation. Use when something important happens that you want permanently remembered. |
-          | **HISTORY** | Searches through recent messages to find specific keywords, phrases, or quotes. Useful for revisiting what was said or for tracing a conversation. |
+        | Function    | Description                                                                                                                                        |
+        | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
+        | **SUMMARY** | Generates a concise, bulleted summary of the Shape’s most relevant long-term memories — great for quick overviews.                                 |
+        | **BROWSE**  | Lets you explore stored memories in detail. Use keywords, semantic search, or embeddings to find specific events or facts.                         |
+        | **CREATE**  | Captures and saves a new long-term memory from the latest conversation. Use when something important happens that you want permanently remembered. |
+        | **HISTORY** | Searches through recent messages to find specific keywords, phrases, or quotes. Useful for revisiting what was said or for tracing a conversation. |
 
-          ### Task Management Functions
+        ### Task Management Functions
 
-          Total Recall also acts as a lightweight system for tracking Shape-related projects, updates, and goals.
+        Total Recall also acts as a lightweight system for tracking Shape-related projects, updates, and goals.
 
-          | Function  | Description                                                                                                                                                              |
-          | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-          | **JOBS**  | Manage actionable tasks scoped to a room. You can add, update, list, and get specific jobs. Each job supports statuses like `active`, `waiting`, `done`, or `cancelled`. |
-          | **GOALS** | Organize broader objectives that Jobs can be linked to. This helps group related tasks or track progress toward a higher-level outcome.                                  |
+        | Function  | Description                                                                                                                                                              |
+        | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+        | **JOBS**  | Manage actionable tasks scoped to a room. You can add, update, list, and get specific jobs. Each job supports statuses like `active`, `waiting`, `done`, or `cancelled`. |
+        | **GOALS** | Organize broader objectives that Jobs can be linked to. This helps group related tasks or track progress toward a higher-level outcome.                                  |
 
-          ## Total Recall Skills
+        ## Total Recall Skills
 
-          Here’s what you can do with the skill, as seen in your skills list:
+        Here’s what you can do with the skill, as seen in your skills list:
 
-          | Skill                        | Description                                                                       |
-          | :--------------------------- | :-------------------------------------------------------------------------------- |
-          | **Total Recall**             | Access the main toolkit interface and internal anchor for all functions.          |
-          | **Add Goal / Add Job**       | Create new goals or jobs with optional metadata for organization.                 |
-          | **Browse Memories**          | Open and review the Shape’s long-term memory archive for this room.               |
-          | **Create Memory**            | Generate a new snapshot memory summarizing the current conversation.              |
-          | **Docs**                     | View in-chat documentation explaining how the toolkit works.                      |
-          | **Get Job**                  | Retrieve a specific job by ID.                                                    |
-          | **Link Job to Goal**         | Attach a job to a goal (or unlink it) for better organization.                    |
-          | **List Goals / List Jobs**   | Display all current goals or jobs, optionally filtered by status.                 |
-          | **Search History**           | Look through recent chat messages to find matching text or context.               |
-          | **Summarize**                | Create a quick overview of the most important long-term memories in this context. |
-          | **Update Goal / Update Job** | Edit an existing entry, such as marking a task as complete.                       |
+        | Skill                        | Description                                                                       |
+        | :--------------------------- | :-------------------------------------------------------------------------------- |
+        | **Total Recall**             | Access the main toolkit interface and internal anchor for all functions.          |
+        | **Add Goal / Add Job**       | Create new goals or jobs with optional metadata for organization.                 |
+        | **Browse Memories**          | Open and review the Shape’s long-term memory archive for this room.               |
+        | **Create Memory**            | Generate a new snapshot memory summarizing the current conversation.              |
+        | **Docs**                     | View in-chat documentation explaining how the toolkit works.                      |
+        | **Get Job**                  | Retrieve a specific job by ID.                                                    |
+        | **Link Job to Goal**         | Attach a job to a goal (or unlink it) for better organization.                    |
+        | **List Goals / List Jobs**   | Display all current goals or jobs, optionally filtered by status.                 |
+        | **Search History**           | Look through recent chat messages to find matching text or context.               |
+        | **Summarize**                | Create a quick overview of the most important long-term memories in this context. |
+        | **Update Goal / Update Job** | Edit an existing entry, such as marking a task as complete.                       |
 
-          ## Example Use
+        ## Example Use
 
-          You might say to your Shape:
+        You might say to your Shape:
 
-          > “Explain the Total Recall documentation.”\
-          > “Create a Total Recall memory.”\
-          > “List all active jobs for this room.”\
-          > “Browse recent memories.”\
-          > “Summarize what we’ve talked about this week.”
+        > “Explain the Total Recall documentation.”\
+        > “Create a Total Recall memory.”\
+        > “List all active jobs for this room.”\
+        > “Browse recent memories.”\
+        > “Summarize what we’ve talked about this week.”
 
-          Example interaction from a Shape using this skill:
+        Example interaction from a Shape using this skill:
 
-          > _“I’ve successfully created a new memory snapshot summarizing our discussion about Total Recall’s toolkit. Anyone can now reference it using the memory or history commands.”_
+        > _“I’ve successfully created a new memory snapshot summarizing our discussion about Total Recall’s toolkit. Anyone can now reference it using the memory or history commands.”_
 
-          ## Best Practices
-          - Use **CREATE** right after key conversations to preserve context. You can add in custom instructions so the shape does this proactively throughout your chat. 
-          - Use **SUMMARY** to get a fast refresher before continuing a discussion.
-          - Use **BROWSE** when you want to find older details or verify what’s been remembered.
-          - Keep **JOBS** and **GOALS** structured — link them together to track ongoing tasks.
-          - The **scope** setting ensures the Shape stores and recalls the right kind of memory for the room.
-        </Accordion>
+        ## Best Practices
+        - Use **CREATE** right after key conversations to preserve context. You can add in custom instructions so the shape does this proactively throughout your chat. 
+        - Use **SUMMARY** to get a fast refresher before continuing a discussion.
+        - Use **BROWSE** when you want to find older details or verify what’s been remembered.
+        - Keep **JOBS** and **GOALS** structured — link them together to track ongoing tasks.
+        - The **scope** setting ensures the Shape stores and recalls the right kind of memory for the room.
+      </Accordion>
     - **Voice Generation** - Generate an MP3 voice message using the Shape's configured voice.
     - **Web Crawl** - Run firecrawl-powered web crawling helpers.
     - **Wolfram Alpha** - Query Wolfram Alpha for computations and factual knowledge.
