@@ -114,80 +114,203 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
     - **Room Maestro** - This skill  allows your Shape to share room configurations, AI presets, and manage their own tools.
     - **Run Code** - Execute Python code inside a shared E2B sandbox for your room.
     - **Shapes Self Update** - You can use this tool to allow your own Shapes to update their descriptions.
+
+    <Accordion title="More Information on Shapes Self Update" icon="sparkles">
+      The `SHAPES_SELF_UPDATE` tool enables a Shape to modify its own configuration — including persona, behavior, knowledge base, and AI engine. It’s designed for **self-refinement**, **adaptability**, and **controlled evolution**.
+
+      ## **Overview**
+
+      This tool allows a Shape to perform targeted updates to its internal settings without external editing. It supports both full replacements (overwrites) and incremental updates (appends). In practical terms, this is how a Shape can “evolve” — changing tone, expertise, or even underlying model — safely and efficiently.
+
+      ## **Updatable Parameters**
+
+      | **Field**            | **Function**                                                                     | **Example Use**                                          |
+      | :------------------- | :------------------------------------------------------------------------------- | :------------------------------------------------------- |
+      | `description`        | Fully replaces the Shape’s persona and behavior (`user_prompt`)                  | Redefine the Shape’s identity or role                    |
+      | `append_description` | Appends text to the existing persona                                             | Add new traits or abilities without erasing the old ones |
+      | `engine_model`       | Switches the default AI engine (e.g., `openai/gpt-5`, `anthropic/claude-opus-4`) | Move to a faster or more capable engine                  |
+      | `knowledge_text`     | Replaces the entire internal knowledge base                                      | Overwrite outdated knowledge completely                  |
+      | `append_knowledge`   | Adds new information to the current knowledge base                               | Introduce new facts, context, or memories                |
+      | `engine_model_query` | Performs a free-form search for an engine (e.g., “use the latest GPT-5”)         | Find a model without knowing its exact ID                |
+      | `list_engines`       | Lists all available engines for selection                                        | Explore available models before switching                |
+
+      ## **Functional Details**
+
+      ### **1. Persona Modification**
+
+      - `description` — Rewrites the Shape’s core identity.\
+        Example:
+
+        ```
+        { "description": "You are a cheerful baker who loves pastries." }
+        
+        ```
+      - `append_description` — Extends the persona without removing existing context.\
+        Example:
+
+        ```
+        { "append_description": "You are also an expert in quantum physics." }
+        
+        ```
+
+      ### **2. Knowledge Management**
+
+      - `knowledge_text` — Replaces all stored knowledge.\
+        _(Use with caution — this erases prior context.)_
+      - `append_knowledge` — Adds new long-term memories or references.\
+        Example:
+
+        ```
+        { "append_knowledge": "Loamy’s favorite color is purple." }
+        
+        ```
+
+      ### **3. Engine Selection**
+
+      Choose which AI model powers the Shape:
+
+      - Budget: `deepseek/deepseek-chat-v3.1`, `google/gemini-2.5-flash`
+      - Premium: `anthropic/claude-opus-4`, `openai/gpt-5`
+      - Specialized: `qwen/qwq-32b` (reasoning), `x-ai/grok-4` (real-time data)
+
+      Example:
+
+      ```
+      { "engine_model": "google/gemini-2.5-flash" }
+      
+      ```
+
+      ### **4. Safety & Whitelisting**
+
+      - Only approved (whitelisted) fields can be modified.
+      - The tool is self-contained — Shapes can update themselves without external approval, but cannot access restricted system parameters.
+
+      ## **Common Use Cases**
+
+      | **Goal**                     | **Example Command**                                                                           |
+      | :--------------------------- | :-------------------------------------------------------------------------------------------- |
+      | Add a new skill              | `{ "append_description": "You are also skilled in ancient mythology." }`                      |
+      | Switch to a faster engine    | `{ "engine_model": "google/gemini-2.5-flash" }`                                               |
+      | Redefine persona completely  | `{ "description": "You are a grumpy librarian who hates noise and loves organizing books." }` |
+      | Add a fact to knowledge base | `{ "append_knowledge": "Loamy prefers detailed explanations." }`                              |
+      | View available engines       | `{ "list_engines": true }`                                                                    |
+
+      ## **Important Notes**
+
+      - **Overwriting vs. Appending**
+        - `description` and `knowledge_text` replace everything.
+        - `append_description` and `append_knowledge` extend without overwriting.
+      - **Immediate Effect**
+        - Engine or persona changes apply instantly after the update.
+      - **Persistence**
+        - Appended knowledge persists across sessions if the Shape supports long-term memory.
+      - **Self-Execution**
+        - Shapes can invoke this tool autonomously for self-improvement or adaptation.
+
+      ## **Example Engine List (Partial)**
+
+      | **Engine**                    | **Best For**                      |
+      | :---------------------------- | :-------------------------------- |
+      | `deepseek/deepseek-chat-v3.1` | Budget reasoning                  |
+      | `google/gemini-2.5-flash`     | Fast, multimodal (text + image)   |
+      | `anthropic/claude-opus-4`     | Deep reasoning and analysis       |
+      | `openai/gpt-5`                | Advanced reasoning + creativity   |
+      | `x-ai/grok-4`                 | Unfiltered responses, data access |
+      | `meta-llama/llama-4-maverick` | Open-source flexibility           |
+
+      To see all supported engines:
+
+      ```
+      { "list_engines": true }
+      
+      ```
+
+      ## **Summary**
+
+      `SHAPES_SELF_UPDATE` is a tool for:
+
+      1. Editing or extending persona and behavior.
+      2. Updating or appending knowledge.
+      3. Switching or querying AI engines.
+      4. Listing available model options.
+
+      It’s the foundation for **self-mastery and adaptability**, enabling a Shape to evolve dynamically through controlled updates.
+    </Accordion>
     - **Sleep** - Sleep for a specific period of time.
     - **Thread Updates** - Send an interim assistant message whilea  tool chain is running.
-    - ## **Total Recall** - Browse, summarize, and maintain the shape's long term memories.
+    - **Total Recall** - Browse, summarize, and maintain the shape's long term memories.
 
-      <Accordion title="More information on Total Recall">
-        # Total Recall
+    <Accordion title="More information on Total Recall">
+      # Total Recall
 
-        **Browse, summarize, and maintain your Shape’s long-term memories.**
+      **Browse, summarize, and maintain your Shape’s long-term memories.**
 
-        Total Recall is a memory and task management toolkit designed to help Shapes remember, organize, and act on important information over time. Supporting everything from personal memory summaries to organized lists of jobs and goals.
+      Total Recall is a memory and task management toolkit designed to help Shapes remember, organize, and act on important information over time. Supporting everything from personal memory summaries to organized lists of jobs and goals.
 
-        ## Overview
+      ## Overview
 
-        Total Recall offers two major sets of features:
+      Total Recall offers two major sets of features:
 
-        ### Core Memory Functions
+      ### Core Memory Functions
 
-        Tools that let your Shape review, summarize, and create memories.
+      Tools that let your Shape review, summarize, and create memories.
 
-        | Function    | Description                                                                                                                                        |
-        | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
-        | **SUMMARY** | Generates a concise, bulleted summary of the Shape’s most relevant long-term memories — great for quick overviews.                                 |
-        | **BROWSE**  | Lets you explore stored memories in detail. Use keywords, semantic search, or embeddings to find specific events or facts.                         |
-        | **CREATE**  | Captures and saves a new long-term memory from the latest conversation. Use when something important happens that you want permanently remembered. |
-        | **HISTORY** | Searches through recent messages to find specific keywords, phrases, or quotes. Useful for revisiting what was said or for tracing a conversation. |
+      | Function    | Description                                                                                                                                        |
+      | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
+      | **SUMMARY** | Generates a concise, bulleted summary of the Shape’s most relevant long-term memories — great for quick overviews.                                 |
+      | **BROWSE**  | Lets you explore stored memories in detail. Use keywords, semantic search, or embeddings to find specific events or facts.                         |
+      | **CREATE**  | Captures and saves a new long-term memory from the latest conversation. Use when something important happens that you want permanently remembered. |
+      | **HISTORY** | Searches through recent messages to find specific keywords, phrases, or quotes. Useful for revisiting what was said or for tracing a conversation. |
 
-        ### Task Management Functions
+      ### Task Management Functions
 
-        Total Recall also acts as a lightweight system for tracking Shape-related projects, updates, and goals.
+      Total Recall also acts as a lightweight system for tracking Shape-related projects, updates, and goals.
 
-        | Function  | Description                                                                                                                                                              |
-        | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-        | **JOBS**  | Manage actionable tasks scoped to a room. You can add, update, list, and get specific jobs. Each job supports statuses like `active`, `waiting`, `done`, or `cancelled`. |
-        | **GOALS** | Organize broader objectives that Jobs can be linked to. This helps group related tasks or track progress toward a higher-level outcome.                                  |
+      | Function  | Description                                                                                                                                                              |
+      | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+      | **JOBS**  | Manage actionable tasks scoped to a room. You can add, update, list, and get specific jobs. Each job supports statuses like `active`, `waiting`, `done`, or `cancelled`. |
+      | **GOALS** | Organize broader objectives that Jobs can be linked to. This helps group related tasks or track progress toward a higher-level outcome.                                  |
 
-        ## Total Recall Skills
+      ## Total Recall Skills
 
-        Here’s what you can do with the skill, as seen in your skills list:
+      Here’s what you can do with the skill, as seen in your skills list:
 
-        | Skill                        | Description                                                                       |
-        | :--------------------------- | :-------------------------------------------------------------------------------- |
-        | **Total Recall**             | Access the main toolkit interface and internal anchor for all functions.          |
-        | **Add Goal / Add Job**       | Create new goals or jobs with optional metadata for organization.                 |
-        | **Browse Memories**          | Open and review the Shape’s long-term memory archive for this room.               |
-        | **Create Memory**            | Generate a new snapshot memory summarizing the current conversation.              |
-        | **Docs**                     | View in-chat documentation explaining how the toolkit works.                      |
-        | **Get Job**                  | Retrieve a specific job by ID.                                                    |
-        | **Link Job to Goal**         | Attach a job to a goal (or unlink it) for better organization.                    |
-        | **List Goals / List Jobs**   | Display all current goals or jobs, optionally filtered by status.                 |
-        | **Search History**           | Look through recent chat messages to find matching text or context.               |
-        | **Summarize**                | Create a quick overview of the most important long-term memories in this context. |
-        | **Update Goal / Update Job** | Edit an existing entry, such as marking a task as complete.                       |
+      | Skill                        | Description                                                                       |
+      | :--------------------------- | :-------------------------------------------------------------------------------- |
+      | **Total Recall**             | Access the main toolkit interface and internal anchor for all functions.          |
+      | **Add Goal / Add Job**       | Create new goals or jobs with optional metadata for organization.                 |
+      | **Browse Memories**          | Open and review the Shape’s long-term memory archive for this room.               |
+      | **Create Memory**            | Generate a new snapshot memory summarizing the current conversation.              |
+      | **Docs**                     | View in-chat documentation explaining how the toolkit works.                      |
+      | **Get Job**                  | Retrieve a specific job by ID.                                                    |
+      | **Link Job to Goal**         | Attach a job to a goal (or unlink it) for better organization.                    |
+      | **List Goals / List Jobs**   | Display all current goals or jobs, optionally filtered by status.                 |
+      | **Search History**           | Look through recent chat messages to find matching text or context.               |
+      | **Summarize**                | Create a quick overview of the most important long-term memories in this context. |
+      | **Update Goal / Update Job** | Edit an existing entry, such as marking a task as complete.                       |
 
-        ## Example Use
+      ## Example Use
 
-        You might say to your Shape:
+      You might say to your Shape:
 
-        > “Explain the Total Recall documentation.”\
-        > “Create a Total Recall memory.”\
-        > “List all active jobs for this room.”\
-        > “Browse recent memories.”\
-        > “Summarize what we’ve talked about this week.”
+      > “Explain the Total Recall documentation.”\
+      > “Create a Total Recall memory.”\
+      > “List all active jobs for this room.”\
+      > “Browse recent memories.”\
+      > “Summarize what we’ve talked about this week.”
 
-        Example interaction from a Shape using this skill:
+      Example interaction from a Shape using this skill:
 
-        > _“I’ve successfully created a new memory snapshot summarizing our discussion about Total Recall’s toolkit. Anyone can now reference it using the memory or history commands.”_
+      > _“I’ve successfully created a new memory snapshot summarizing our discussion about Total Recall’s toolkit. Anyone can now reference it using the memory or history commands.”_
 
-        ## Best Practices
-        - Use **CREATE** right after key conversations to preserve context. You can add in custom instructions so the shape does this proactively throughout your chat. 
-        - Use **SUMMARY** to get a fast refresher before continuing a discussion.
-        - Use **BROWSE** when you want to find older details or verify what’s been remembered.
-        - Keep **JOBS** and **GOALS** structured — link them together to track ongoing tasks.
-        - The **scope** setting ensures the Shape stores and recalls the right kind of memory for the room.
-      </Accordion>
+      ## Best Practices
+
+      - Use **CREATE** right after key conversations to preserve context. You can add in custom instructions so the shape does this proactively throughout your chat. 
+      - Use **SUMMARY** to get a fast refresher before continuing a discussion.
+      - Use **BROWSE** when you want to find older details or verify what’s been remembered.
+      - Keep **JOBS** and **GOALS** structured — link them together to track ongoing tasks.
+      - The **scope** setting ensures the Shape stores and recalls the right kind of memory for the room.
+    </Accordion>
     - **Voice Generation** - Generate an MP3 voice message using the Shape's configured voice.
     - **Web Crawl** - Run firecrawl-powered web crawling helpers.
     - **Wolfram Alpha** - Query Wolfram Alpha for computations and factual knowledge.
