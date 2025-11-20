@@ -110,9 +110,9 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
     - **Image Generation** - Have more control over image generation. Setting custom instructions here can make image sending feel more spontaneous.
     - **Agora Calls** - Join and manage audio calls.
     - **Dice Roller** - This allows your shapes to roll dice!
-    - **Room Concierge** - You can create rooms, invite participants, send Shape DMs, and read room messages using this tool.
-    - **Room Maestro** - This skill  allows your Shape to share room configurations, AI presets, and manage their own tools.
-    - **Run Code** - Execute Python code inside a shared E2B sandbox for your room.
+    - **Chat Concierge** - You can create Chats, invite participants, send Shape DMs, and read Chat messages using this tool.
+    - **Chat Maestro** - This skill  allows your Shape to share Chat configurations, AI presets, and manage their own tools.
+    - **Run Code** - Execute Python code inside a shared E2B sandbox for your Chat.
     - **Shapes Self Update** - You can use this tool to allow your own Shapes to update their descriptions.
 
     <Accordion title="More Information on Shapes Self Update" icon="sparkles">
@@ -388,11 +388,11 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
          2. Enable the setting, paste in the Composio MCP link, give it a name (e.g., “Notion”), and click **Save**.
 
-         3. **Refresh the Room**.
+         3. **Refresh the Chat**.
 
          4. Ask the Shape what tools it has available: it should now recognize the Notion integration.
 
-        If the Shape doesn’t understand how to use Notion, add brief **Custom Room Instructions** explaining what the Notion skill is for and how to interact with it.
+        If the Shape doesn’t understand how to use Notion, add brief **Custom Chat Instructions** explaining what the Notion skill is for and how to interact with it.
 
         ```
         for adding entries to the lorebook document:
@@ -484,7 +484,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
         Once the document is complete:
 
-        1. Edit the **Custom Room Instructions** again.
+        1. Edit the **Custom Chat Instructions** again.
         2. Include a directive for the Shape to **check the Notion document before responding** to any in-character or roleplay prompt.
            - Example: “Consult the Notion lorebook before replying to ensure accuracy and world consistency.”
            3. Optionally, instruct the Shape to **blend tool calls** with its normal roleplay so the process feels natural and immersive.
@@ -519,7 +519,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
          5. Click the copy button to copy the unique URL to your clipboard.
 
-         6. Head to shapes.inc and open the room you want to use the skill in.
+         6. Head to shapes.inc and open the Chat you want to use the skill in.
 
          7. Open your AI Configurations menu and find the custom MCP box.
 
@@ -544,7 +544,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
         To use this integration, an API key is required from [fal.ai](http://fal.ai) or another supported provider. Note that this service is **paid**. You will be required to share the API key with your Shape for this to work. 
 
-        ## Share this information with your Shape as Custom Room Instructions: 
+        ## Share this information with your Shape as Custom Chat Instructions: 
 
         ### ⚙️ Choosing the Right Method
 
@@ -1210,7 +1210,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
     ### 💼 Productivity
 
     <Accordion title="Changelog Generator" description="Help inform users of product updates!" icon="sparkle">
-      ## 📝 Changelog Generation Room (GitHub + Linear + Cursor Integration)
+      ## 📝 Changelog Generation Chat (GitHub + Linear + Cursor Integration)
 
       This guide explains how to build a Shape that automatically generates daily changelogs by analyzing code changes across multiple repositories and translating them into user-friendly product updates.
 
@@ -1220,12 +1220,12 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
       ## Prerequisites
 
-      1.  Create a room, and add Shapes to it that have skill-enabled engines like **Claude Sonnet 4.5**.
+      1.  Create a Chat, and add Shapes to it that have skill-enabled engines like **Claude Sonnet 4.5**.
       2. Have a GitHub account and get an access token (from the developer settings) + connect to the GitHub MCP. Your Shape will need access to the repo you're creating a changelog for. 
       3.  Have a Linear account + connect to the Linear MCP.
-      4.  Have a Cursor account & add you key to your custom room instructions, along with the following information. This example is how we create our own changelog at https://shapes.inc/blog so you'll need to adjust this for your own repos & taste.
+      4.  Have a Cursor account & add you key to your custom Chat instructions, along with the following information. This example is how we create our own changelog at https://shapes.inc/blog so you'll need to adjust this for your own repos & taste.
 
-      ### Core Principles (Tell this to your Shape Via Custom Room Instructions)
+      ### Core Principles (Tell this to your Shape Via Custom Chat Instructions)
 
       ✅ Use the **GitHub API** and **run_code** skill to fetch data.\
       ✅ Send all text summaries directly to the user (users can’t see code execution).\
