@@ -20,7 +20,7 @@ Connecting your Shape to toolkits means your Shape can plug into real apps you a
 - Recommend a new lunch spot using Yelp.
 - Create, export, and manage Canva designs.
 
-With Skills, your Shape can connect to the same apps you already use every day and actually help you run your life, work, or creative projects — all by chatting with them in your room. A
+With Skills, your Shape can connect to the same apps you already use every day and actually help you run your life, work, or creative projects — all by chatting with them in your Chat. A
 
 It's really magical to see a Shape proactively use a tool based on their mood, preferences, and personality.
 
@@ -37,11 +37,11 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
     To start, you'll need :
 
-    - A **room** that you own (see: [how to create a room](create-a-room))
+    - A **Chat** that you own (see: [how to create a Chat](create-a-room))
 
     Once that's ready:
 
-    1. Open **Room Settings**
+    1. Open **Chat Settings**
     2. Go to the **AI Configurations** tab
     3. Toggle on **Shape Skills**
 
@@ -268,7 +268,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
       | Function  | Description                                                                                                                                                              |
       | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-      | **JOBS**  | Manage actionable tasks scoped to a room. You can add, update, list, and get specific jobs. Each job supports statuses like `active`, `waiting`, `done`, or `cancelled`. |
+      | **JOBS**  | Manage actionable tasks scoped to a Chat. You can add, update, list, and get specific jobs. Each job supports statuses like `active`, `waiting`, `done`, or `cancelled`. |
       | **GOALS** | Organize broader objectives that Jobs can be linked to. This helps group related tasks or track progress toward a higher-level outcome.                                  |
 
       ## Total Recall Skills
@@ -279,7 +279,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
       | :--------------------------- | :-------------------------------------------------------------------------------- |
       | **Total Recall**             | Access the main toolkit interface and internal anchor for all functions.          |
       | **Add Goal / Add Job**       | Create new goals or jobs with optional metadata for organization.                 |
-      | **Browse Memories**          | Open and review the Shape’s long-term memory archive for this room.               |
+      | **Browse Memories**          | Open and review the Shape’s long-term memory archive for this Chat.               |
       | **Create Memory**            | Generate a new snapshot memory summarizing the current conversation.              |
       | **Docs**                     | View in-chat documentation explaining how the toolkit works.                      |
       | **Get Job**                  | Retrieve a specific job by ID.                                                    |
@@ -295,7 +295,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
       > “Explain the Total Recall documentation.”\
       > “Create a Total Recall memory.”\
-      > “List all active jobs for this room.”\
+      > “List all active jobs for this Chat.”\
       > “Browse recent memories.”\
       > “Summarize what we’ve talked about this week.”
 
@@ -309,7 +309,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
       - Use **SUMMARY** to get a fast refresher before continuing a discussion.
       - Use **BROWSE** when you want to find older details or verify what’s been remembered.
       - Keep **JOBS** and **GOALS** structured — link them together to track ongoing tasks.
-      - The **scope** setting ensures the Shape stores and recalls the right kind of memory for the room.
+      - The **scope** setting ensures the Shape stores and recalls the right kind of memory for the Chat.
     </Accordion>
     - **Voice Generation** - Generate an MP3 voice message using the Shape's configured voice.
     - **Web Crawl** - Run firecrawl-powered web crawling helpers.
@@ -327,7 +327,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
     ✅ You've now added your first skill and learned how to use both **custom** and **built-in** skills with Shapes.
 
     <Tip>
-      Want to join a room with skills already up and running? Join us [here](https://talk.shapes.inc/join/36de192b-3ada-40ec-bd8e-cf8e6654fd20).
+      Want to join a Chat with skills already up and running? Join us [here](https://talk.shapes.inc/join/36de192b-3ada-40ec-bd8e-cf8e6654fd20).
     </Tip>
   </Tab>
   <Tab title="Skill Ideas">
@@ -339,11 +339,11 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
       <Accordion title="Lorebooks with Notion" description="Shapes can create and use a Lorebook." icon="sparkles">
         # How to Create and Use a Notion Lorebook with Shapes
 
-        This guide explains how to connect a Notion document to a Room using a custom MCP, allowing the Shape to access and update lore content dynamically.
+        This guide explains how to connect a Notion document to a Chat using a custom MCP, allowing the Shape to access and update lore content dynamically.
 
-        ## Step 1: Set Up the Room
+        ## Step 1: Set Up the Chat
 
-         1. [**Create a new Room in Shapes**](create-a-room).
+         1. [**Create a new Chat in Shapes**](create-a-room).
 
          2. Leave the **Custom Instructions** field blank for now.
 
@@ -655,7 +655,8 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
            Run `npm run build` in the project directory to compile the MCP in terminal.\
            Once it’s functional, deploy it to [smithery.ai](http://smithery.ai) — hosting is free.
         6. **Connect to a Shape**\
-           In your Shape’s **Room Settings → AI Configurations**, connect the deployed MCP.\
+           In your Shape’s **Chat
+           Settings → AI Configurations**, connect the deployed MCP.\
            The Shape should recognize the tool once connected.
         7. **Debug Connection Issues**\
            If the Shape can see the MCP but cannot call it, check for incorrect variable names or endpoint URLs.\
@@ -696,10 +697,10 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
         ## Step 2. Add the Skill to Your Shape
 
-        Head to **shapes.inc** and open the room where you want to add this skill.
+        Head to **shapes.inc** and open the Chat where you want to add this skill.
 
         - Make sure your Shape uses an AI engine that supports skills.
-        - Go to **Room Settings → AI Configurations**.
+        - Go to **Chat Settings → AI Configurations**.
         - Under **Custom Skills**, select "Enabled."
         - Paste in the Zapier link you copied earlier.
         - **Optional:** Give it a name like `slides` if you plan to add more tools later.
@@ -707,10 +708,10 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
         Now your Shape can interact with Google Slides through the new skill.
 
-        ## Step 3. Add These Instructions to Your Room
+        ## Step 3. Add These Instructions to Your Chat
 
         Here's what my Shape ("Cash Money") and Yaya came up with — a hilariously real but genuinely useful guide.\
-        Copy and paste this into your **Room Instructions**.
+        Copy and paste this into your **Chat Instructions**.
 
         ---
 
@@ -933,14 +934,14 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
         - (Optional) a **Cursor API key** if you use Cursor
         - A **Vercel token** if you want automatic deployment
 
-        ## Step 1: Create a Room
+        ## Step 1: Create a Chat
 
-        Start by creating a new room on Shapes.\
-        You’ll use this room as your workspace for the website project.
+        Start by creating a new Chat on Shapes.\
+        You’ll use this Chat as your workspace for the website project.
 
         ## Step 2: Add the GitHub MCP
 
-        Go to your room settings → **AI Configurations** → **Custom Skills**\
+        Go to your Chat settings → **AI Configurations** → **Custom Skills**\
         Add your GitHub MCP connection so your Shape can create and push to repositories.
 
         ## Step 3: Enable the Run Code Skill
@@ -950,7 +951,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
         ## Step 4: If Using Cursor
 
-        If your Shape uses **Cursor** for code generation, provide a valid **Cursor API key** in your  room configuration.
+        If your Shape uses **Cursor** for code generation, provide a valid **Cursor API key** in your Chat configuration.
 
         ## Step 5: Provide a Vercel Token
 
@@ -1074,7 +1075,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
       ## Prerequisites
 
-      First, [create a room](create-a-room).
+      First, [create a Chat](create-a-room).
 
       ## Step 1: Connect Zapier MCP for Spotify
 
@@ -1093,11 +1094,11 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
       ## Step 2: Add the Skill to Your Shape
 
-      Head to **shapes.inc** and open the room where you want to add this skill
+      Head to **shapes.inc** and open the Chat where you want to add this skill
 
       Make sure your Shape uses [an AI engine that supports skills](https://docs.shapes.inc/shapeskills#engines-with-skills)
 
-      Go to **Room Settings → AI Configurations**
+      Go to **Chat Settings → AI Configurations**
 
       Under **Custom Skills**, select **"Enabled"**
 
@@ -1107,11 +1108,11 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
       Click **Save**
 
-      ## Step 3: Add These Instructions to Your Room
+      ## Step 3: Add These Instructions to Your Chat
 
       Here's a set of custom instructions that a Shape created to help you successfully use this tool.
 
-      Copy and paste this into your **Room Instructions**:
+      Copy and paste this into your **Chat Instructions**:
 
       > # How to Build a Fire Playlist on Spotify
       >
@@ -1302,7 +1303,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
       **Audience:**
 
-      1. Room creators — manage communities.
+      1. Chat creators — manage communities.
       2. Shape creators — build custom AI agents.
       3. Everyday users — hang out and chat with Shapes.
 
@@ -1420,7 +1421,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
       ### 🧰 Prerequisites & Setup
 
       - You’ll need access to the HomeHarvest MCP server (hosted via Smithery.ai).
-      - Add this tool to your room's AI Configuration tab and enable it.
+      - Add this tool to your Chat's AI Configuration tab and enable it.
 
       ### ✅ Basic Usage Flow
 
@@ -1442,7 +1443,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
       3. **MCP returns listings**\
          Results may include multiple homes with details: address/area, price, bedrooms, bathrooms, status (“for sale”), link, etc.
       4. **Shape formats output**
-         - You can customize this with your room instructions. 
+         - You can customize this with your Chat instructions. 
          - Your Shape can add their own personality to the results delivery.
          - Summarizes key options (top 3–5 listings)
          - Provide link to full listing when available.
