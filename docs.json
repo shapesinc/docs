@@ -34,11 +34,11 @@
       {
         "group": "Creation & Customization",
         "pages": [
-          "shapesroomsguide",
+          "shapeschatsguide",
           "how-to-make-a-shape",
-          "create-a-room",
-          "room-appearance",
-          "custominstructions-rooms",
+          "create-a-chat",
+          "chat-appearance",
+          "custominstructions-chats",
           "how-to-give-your-shape-a-voice",
           "how-to-receive-voice-messages",
           "initialmessages",
@@ -71,7 +71,7 @@
           "credits",
           "credits-guide",
           "giftcards",
-          "how-to-purchase-credits-for-a-room",
+          "how-to-purchase-credits-for-a-chat",
           "purchasegiftcards",
           "auto-top-up"
         ]
