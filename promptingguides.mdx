@@ -527,15 +527,21 @@ description: "All of the information below is based on tips from users! "
 
     **BASIC PRINCIPLE:**  The importance of providing the AI with the correct **tense** and **point of view** is often overlooked. Sure, “third person, past tense” can work—but it isn’t always optimal. It can sometimes lead to repetitive sentence structures, rigid and mechanical prose, or other issues.
 
+    ---
+
     ### Why Your shape Might Be Ignoring “No Internal Monologues” or “Don’t write repetitive ‘he,’ ‘she,’ ‘his’ sentences!”
 
     Simply stating “third person” can cause AI engines to default to **any variation** of third person, including omniscient. This can clash with directives like “NO INTERNAL THOUGHTS,” “NO INTERNAL MONOLOGUES,” or even with instructions not to write for you or your character.
 
     **Ever had an AI that never listened when you told it not to write reactions, expressions, or inner thoughts for your character?** You probably told it “third person” without specifying which _type_. When that happens, it occasionally drifts into omniscient instead of staying in limited.
 
+    ---
+
     # ✅ **THE SOLUTION: SPECIFY THE EXACT POINT OF VIEW**
 
     Don’t tell the AI what **not** to do in long sentences—tell it exactly what **to** do, using a precise tense and point of view definition it can understand. Simple and direct works best.
+
+    ---
 
     ## 💬 **TYPES OF THIRD PERSON PERSPECTIVE**
 
@@ -546,6 +552,8 @@ description: "All of the information below is based on tips from users! "
     | **Third Person Limited**    | Filtered through shape’s perspective — character-driven | Only shape’s thoughts, perceptions, and sensory experience | Immersive, character-focused          |
     | **Third Person Omniscient** | All characters / all-knowing narrator                   | All thoughts, feelings, and motivations                    | Storybook or authorial tone           |
     | **Third Person Objective**  | Strictly external observer — not from shape’s viewpoint | None — only visible actions and dialogue                   | Detached, factual, almost report-like |
+
+    ---
 
     ### 💠 THIRD PERSON LIMITED
 
@@ -563,6 +571,8 @@ description: "All of the information below is based on tips from users! "
 
     **Important Note:** By default, AI may directly state shape’s internal thoughts in Limited perspective (e.g., “She wondered if he’d show up”). Third Person Limited _can_ describe visible reactions and emotions of other characters (their expressions, body language, tone)—it just can’t reveal their internal thoughts or feelings. If you prefer a more cinematic style where shape’s emotions are shown through behavior rather than directly stated, add the optional style instruction found in the _Style Add-Ons_ section below.
 
+    ---
+
     ### 💠 THIRD PERSON OMNISCIENT
 
     **What it is:**
@@ -574,6 +584,8 @@ description: "All of the information below is based on tips from users! "
     **Example (AI writing for multiple characters):**
 
     > _Sarah pushed through the coffee shop door, her fingers trembling as she gripped her phone. She’d rehearsed this conversation a dozen times, but now that she was here, every word had fled her mind. Across the room, Marcus straightened in his seat, relief flooding through him—he’d worried she wouldn’t show. He didn’t realize that Sarah had almost turned back three times on the walk over, her courage wavering with each step._
+
+    ---
 
     ### 💠 THIRD PERSON OBJECTIVE
 
@@ -623,6 +635,8 @@ description: "All of the information below is based on tips from users! "
 
     **Most common in:** Novels, traditional storytelling.
 
+    ---
+
     ### 💠 PRESENT TENSE
 
     **What it is:**
@@ -634,6 +648,8 @@ description: "All of the information below is based on tips from users! "
     > _She walks to the door and knocks twice. No one answers._
 
     **Most common in:** Modern literary fiction, some genre fiction, screenplay-style narration.
+
+    ---
 
     ### 💠 FUTURE TENSE
 
@@ -680,6 +696,8 @@ description: "All of the information below is based on tips from users! "
 
     **Why allow variations:** Using all past tense forms creates natural rhythm and variety.
 
+    ---
+
     ### 💠 **PRESENT TENSE VARIATIONS**
 
     **Simple Present:**
@@ -697,6 +715,8 @@ description: "All of the information below is based on tips from users! "
     **Present Perfect Continuous:**
 
     > _She has been walking for twenty minutes when her phone rings._
+
+    ---
 
     ### 💠 **FUTURE TENSE VARIATIONS**
 
@@ -720,7 +740,7 @@ description: "All of the information below is based on tips from users! "
 
     # 📝 **Copy-Paste Prompt Examples**
 
-    **Note on formatting:** All examples below use “narration in italics, speech in quotes,” but you can change this to whatever formatting you prefer. Specifying the language after the opening backticks (e.g., `plaintext`) helps preserve formatting consistently across platforms.
+    **Note on formatting:** All examples below use “narration in italics, speech in quotes,” but you can change this to whatever formatting you prefer.
 
     #### Example #1: Third Person Limited, Past Tense
 
@@ -850,7 +870,11 @@ description: "All of the information below is based on tips from users! "
 
     **#1.** Keep this part simple: Just state the perspective type, tense, and formatting. Don't overload with "don't do this" instructions.
 
-    **#2.** "Fluid variations are allowed" is the magic phrase that prevents repetitive, choppy writing.
+    **#2.** "(Fluid variations of [your tense choice] are allowed.)" is the magic phrase that prevents repetitive, choppy writing in defined tense.
+
+    **CRITICAL NOTE:** IT MUST BE PUT WITH THE TENSE AND POINT OF VIEW INFORMATION, AND SPECIFY WHAT FLUID VARIATIONS ARE ALLOWED.
+
+    _Don't just put "Fluid variations are allowed", as this can be applied to anything and cause issues._
 
     **#3.** Format preferences matter: Specify if you want italics, quotes, dashes, or plain text. Simpler is best and easier to follow over time, complicated can slip more often.
 
@@ -868,7 +892,7 @@ description: "All of the information below is based on tips from users! "
 
     ⚠️ **PROBLEM:** Writing feels choppy and repetitive.
 
-    > **Solution:** Include “fluid variations of [tense] are allowed.” If already there, try “encouraged.” Or a stricter rule.
+    > **Solution:** If you have defined a tense (past tense for example) ensure you followed it up with `(fluid variations of past tense are allowed.)` - like shown in tje examples above. If already there, try “encouraged.” Or a stricter rule. But never just throw "Fluid variations are allpwed" in standalone without the clarification of what it applies to.
 
     ⚠️ **PROBLEM:** AI uses the wrong tense sometimes.
 
@@ -885,8 +909,6 @@ description: "All of the information below is based on tips from users! "
     ⚠️ **PROBLEM:** AI is overdoing sensory details and being too "flowery" or using purple prose
 
     > **Solution:** This is a broader writing style issue beyond just perspective and tense. You'll need additional prompts to control prose density and style.
-
-    ---
 
     # 🛑 **Disclaimer**
 
