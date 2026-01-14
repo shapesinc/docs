@@ -18,6 +18,54 @@ import { useState } from "react";
 
 export const EngineFilter = () => {
     const engines = [
+    { 
+  name: "Anthropic: Claude Haiku 4.5",
+  tier: "premium",
+  tags: ["👤","🛠️"],
+  description: "Fast, expressive, and natural-feeling. Ideal for conversational Shapes that need warmth, personality, and responsiveness without heavy reasoning."
+},
+{ 
+  name: "ChatGPT-5.1",
+  tier: "premium",
+  tags: ["🧠","📚","🛠️"],
+  description: "A powerful general-purpose reasoning model with strong instruction following, coding ability, and tool use."
+},
+{ 
+  name: "ChatGPT-5.1 Chat",
+  tier: "premium",
+  tags: ["🎭","👤"],
+  description: "Optimized for conversational flow and character interaction, prioritizing natural dialogue over deep analysis."
+},
+{ 
+  name: "ChatGPT-5.2",
+  tier: "premium",
+  tags: ["🧠","📚","🛠️"],
+  description: "An upgraded reasoning-focused model with improved accuracy, planning, and multimodal capability."
+},
+{ 
+  name: "Gemini 3 Pro Preview",
+  tier: "premium",
+  tags: ["🧠","📚","🛠️"],
+  description: "Google’s next-generation reasoning model designed for complex logic, coding, and long-form thinking."
+},
+{ 
+  name: "Gemini 3 Flash Preview",
+  tier: "premium",
+  tags: ["📚","👤","🛠️"],
+  description: "A faster Gemini 3 variant that balances intelligence with conversational speed for interactive Shapes."
+},
+{ 
+  name: "TNG: R1T Chimera",
+  tier: "premium",
+  tags: ["🧠","📚","🛠️"],
+  description: "A hybrid reasoning model built for structured thinking, planning, and tool-driven workflows."
+},
+{ 
+  name: "MoonshotAI: Kimi K2 Thinking",
+  tier: "premium",
+  tags: ["🧠","📚"],
+  description: "A deep-thinking variant of Kimi K2 that prioritizes careful reasoning and long-context understanding."
+},
         { name: "GLM 4.6", tier: "premium", tags: ["🎭","🛠️"], description: "Widely considered one of the best engines for roleplayers." },
     { name: "Anthropic: Claude Sonnet 4.5", tier: "premium", tags: ["🧠","🎭","📚","🛠️"], description: "Favorite amongst roleplayers, 4.5 is intelligent, great for tool use, and Shape's default premium engine." },
     { name: "DeepSeek V3.2 Exp", tier: "premium", tags: ["🧠","📚","🛠️"], description: "The latest experimental model from DeepSeek." },
@@ -46,13 +94,24 @@ export const EngineFilter = () => {
     { name: "DeepSeek V3.1", tier: "premium", tags: ["🧠","🎭","📚","🛠️"], description: "A hybrid model that supports both thinking mode and non-thinking mode. Compared to the previous version, this upgrade brings improvements in multiple aspects." },
     { name: "MoonshotAI: Kimi K2 0905", tier: "premium", tags: ["🎭","📚","👤"], description: "Recent update to Kimi K2." },
     { name: "Nous: Hermes 4 405B", tier: "premium", tags: ["🧠","🎭","🛠️"], description: "Large model for roleplay and skills, a bit slow." },
+    { 
+  name: "DeepSeek V3.2",
+  tier: "free",
+  tags: ["🧠","🎭","📚"],
+  description: "A flexible hybrid model that performs well in both roleplay and analytical tasks, with surprisingly strong reasoning for a free engine."
+},
+{ 
+  name: "Mistral Small Creative",
+  tier: "free",
+  tags: ["🎭","👤"],
+  description: "Designed for expressive, imaginative writing. Excels at personality, tone, and creative roleplay rather than structured reasoning."
+},
     { name: "OpenAI: GPT-5 Nano", tier: "free", tags: ["🎭","📚"], description: "Low latency, huge context support." },
     { name: "Grok 3 Mini", tier: "free", tags: ["🧠","🎭","📚","🛠️","👤"], description: "Fast, smart, and versatile — the Swiss army knife of engines." },
     { name: "Llama 4 Maverick", tier: "free", tags: ["🎭","📚","🛠️"], description: "17B expert mixture, multimodal." },
     { name: "Gemma 3 27b", tier: "free", tags: ["🎭"], description: "Large context, balanced performance/latency." },
     { name: "Llama 3.3 70b (Turbo)", tier: "free", tags: ["🎭","🛠️"], description: "Multilingual, instruction-tuned." },
     { name: "Gemini 2.5 Flash (Lite)", tier: "free", tags: ["🧠","👤","🛠️"], description: "AMAZING multilingual model; great fallback for non-English Shapes." },
-    { name: "Formless 70B v1a", tier: "free", tags: ["🎭"], description: "Exclusive Shapes model designed for roleplay." },
     { name: "Gemini 2.0 Flash", tier: "free", tags: ["🎭","👤","🛠️"], description: "Earlier Gemini Flash gen." },
     { name: "Nous: Hermes 4 70B", tier: "free", tags: ["🧠","🎭"], description: "Hermes 4 70B is a frontier, hybrid-mode reasoning model based on Llama-3.1-70B by Nous Research" },
     { name: "Meituan: Longcat Flash Chat", tier: "free", tags: ["🎭","👤","🛠️"], description: "Optimized for conversational tasks." },
@@ -60,7 +119,6 @@ export const EngineFilter = () => {
     { name: "Llama 4 Scout", tier: "free", tags: ["🎭","👤","🛠️"], description: "Updated, skill-friendly Llama variant." },
     { name: "OpenAI: GPT-4o-mini", tier: "free", tags: ["🎭","📚","👤"], description: "Fast GPT option — great fallback engine." },
     { name: "Mistral: Mistral Small 3.1 24B 3/27/25", tier: "free", tags: ["👤"], description: "Said to have improved text performance, multimodal understanding, and an expanded context window. The model outperforms comparable models like Gemma 3 and GPT-4o Mini." },
-    { name: "Llama 3.3 70B", tier: "free", tags: ["🎭"], description: "Good at retrieving knowledge and being in character." },
     { name: "Deepseek-R1 Llama 3.3 70b Distill", tier: "free", tags: ["🎭"], description: "Good for general RP, sometimes mischaracterizes." },
     { name: "AionLabs: Aion-RP 1.0 (8B)", tier: "free", tags: ["🎭"], description: "Aion-RP-Llama-3.1-8B ranks the highest in the character evaluation portion of the RPBench-Auto benchmark, a roleplaying-specific variant of Arena-Hard-Auto, where LLMs evaluate each other’s responses. It is a fine-tuned base model rather than an instruct model, designed to produce more natural and varied writing." },
     { name: "Nous: Hermes 3 70B", tier: "free", tags: ["👤"], description: "Loved for unique word choices." },
