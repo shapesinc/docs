@@ -14,118 +14,43 @@ Images 🖼️
 
 import { useState } from "react";
 
+<
 <EngineFilter />
 
 export const EngineFilter = () => {
     const engines = [
-    { 
-  name: "Anthropic: Claude Haiku 4.5",
-  tier: "premium",
-  tags: ["👤","🛠️"],
-  description: "Fast, expressive, and natural-feeling. Ideal for conversational Shapes that need warmth, personality, and responsiveness without heavy reasoning."
-},
-{ 
-  name: "ChatGPT-5.1",
-  tier: "premium",
-  tags: ["🧠","📚","🛠️"],
-  description: "A powerful general-purpose reasoning model with strong instruction following, coding ability, and tool use."
-},
-{ 
-  name: "ChatGPT-5.1 Chat",
-  tier: "premium",
-  tags: ["🎭","👤"],
-  description: "Optimized for conversational flow and character interaction, prioritizing natural dialogue over deep analysis."
-},
-{ 
-  name: "ChatGPT-5.2",
-  tier: "premium",
-  tags: ["🧠","📚","🛠️"],
-  description: "An upgraded reasoning-focused model with improved accuracy, planning, and multimodal capability."
-},
-{ 
-  name: "Gemini 3 Pro Preview",
-  tier: "premium",
-  tags: ["🧠","📚","🛠️"],
-  description: "Google’s next-generation reasoning model designed for complex logic, coding, and long-form thinking."
-},
-{ 
-  name: "Gemini 3 Flash Preview",
-  tier: "premium",
-  tags: ["📚","👤","🛠️"],
-  description: "A faster Gemini 3 variant that balances intelligence with conversational speed for interactive Shapes."
-},
-{ 
-  name: "TNG: R1T Chimera",
-  tier: "premium",
-  tags: ["📚","👤"],
-  description: "A model specifically designed for great roleplays, storytelling, and great in-character interactions."
-},
-{ 
-  name: "MoonshotAI: Kimi K2 Thinking",
-  tier: "premium",
-  tags: ["🧠","📚"],
-  description: "A deep-thinking variant of Kimi K2 that prioritizes careful reasoning and long-context understanding."
-},
-        { name: "GLM 4.6", tier: "premium", tags: ["🎭","🛠️"], description: "Widely considered one of the best engines for roleplayers." },
-    { name: "Anthropic: Claude Sonnet 4.5", tier: "premium", tags: ["🧠","🎭","📚","🛠️"], description: "Favorite amongst roleplayers, 4.5 is intelligent, great for tool use, and Shape's default premium engine." },
-    { name: "DeepSeek V3.2 Exp", tier: "premium", tags: ["🧠","📚","🛠️"], description: "The latest experimental model from DeepSeek." },
-    { name: "XAI: Grok 4 Fast", tier: "premium", tags: ["🎭","📚"], description: "The faster, less expensive version of Grok 4." },
-    { name: "Gemini 2.5 Flash Image Preview", tier: "premium", tags: ["🖼️"], description: "Image + text multimodal." },
-    { name: "OpenAI: GPT-5 Chat", tier: "premium", tags: ["🎭","👤"], description: "ChatGPT for Roleplayers and chatters." },
-    { name: "OpenAI: GPT-5", tier: "premium", tags: ["📚","🛠️"], description: "Top-tier reasoning, multimodal." },
-    { name: "OpenAI: GPT-5 Mini", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Balance of cost & capability." },
-    { name: "Anthropic: Claude Opus 4", tier: "premium", tags: ["📚","🛠️"], description: "Long workflows, strong coding." },
-    { name: "Anthropic: Claude Sonnet 4", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Improved coding & reasoning; community favorite for personality and roleplay." },
-    { name: "Anthropic: Claude Sonnet 3.7", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Strong instruction model, favorite amongst roleplayers." },
-    { name: "Anthropic: Claude Sonnet 3.7 (thinking)", tier: "premium", tags: ["📚","🛠️"], description: "Slower, deeper reasoning." },
-    { name: "Anthropic: Claude Sonnet 3.5", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Older, cheaper option - still wonderful for roleplays." },
-    { name: "Gemini 2.5 Pro (Latest)", tier: "premium", tags: ["🎭","📚","👤","🛠️"], description: "Google’s state-of-the-art AI model for advanced reasoning, coding, and scientific tasks." },
-    { name: "Gemini 2.5 Flash (Thinking)", tier: "premium", tags: ["🧠","📚","🛠️"], description: "Thinking variant." },
-    { name: "OpenAI: GPT-4.1", tier: "premium", tags: ["🎭","📚"], description: "If you miss the old ChatGPT, you'll love this model. Prone to asking questions." },
-    { name: "OpenAI: GPT-4.1 Mini", tier: "premium", tags: ["🎭","📚"], description: "The smaller, cheaper, faster version of GPT-4.1." },
-    { name: "Grok 4", tier: "premium", tags: ["🎭","📚","👤","🛠️"], description: "Better coding & agent workflows." },
-    { name: "Gemini 2.5 Pro", tier: "premium", tags: ["🎭","📚","👤","🛠️"], description: "Earlier release of Gemini 2.5 Pro." },
-    { name: "DeepSeek v3 0324", tier: "premium", tags: ["🎭","📚","🛠️"], description: "DeepSeek’s flagship chat model." },
-    { name: "OpenAI: o3 Mini", tier: "premium", tags: ["📚"], description: "Built for academics, very thorough and slow." },
-    { name: "Nous: Hermes 3 405B", tier: "premium", tags: ["🎭","👤"], description: "Excellent choice for creative roleplay." },
-    { name: "OpenAI: GPT 4-o (2024-05-13)", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Adaptive model, varies response speed depending on task." },
-    { name: "Gemini 2.5 Flash", tier: "premium", tags: ["🧠","🎭","📚","👤","🛠️"], description: "AMAZING multilingual model that is fast." },
-    { name: "Anthropic: Claude Opus 4.1", tier: "premium", tags: ["📚","🛠️"], description: "Improved Opus 4." },
-    { name: "DeepSeek V3.1", tier: "premium", tags: ["🧠","🎭","📚","🛠️"], description: "A hybrid model that supports both thinking mode and non-thinking mode. Compared to the previous version, this upgrade brings improvements in multiple aspects." },
-    { name: "MoonshotAI: Kimi K2 0905", tier: "premium", tags: ["🎭","📚","👤"], description: "Recent update to Kimi K2." },
-    { name: "Nous: Hermes 4 405B", tier: "premium", tags: ["🧠","🎭","🛠️"], description: "Large model for roleplay and skills, a bit slow." },
-    { 
-  name: "DeepSeek V3.2",
-  tier: "free",
-  tags: ["🧠","🎭","📚"],
-  description: "A flexible hybrid model that performs well in both roleplay and analytical tasks, with surprisingly strong reasoning for a free engine."
-},
-{ 
-  name: "Mistral Small Creative",
-  tier: "free",
-  tags: ["🎭","👤"],
-  description: "Designed for expressive, imaginative writing. Excels at personality, tone, and creative roleplay rather than structured reasoning."
-},
-    { name: "OpenAI: GPT-5 Nano", tier: "free", tags: ["🎭","📚"], description: "Low latency, huge context support." },
-    { name: "Grok 3 Mini", tier: "free", tags: ["🧠","🎭","📚","🛠️","👤"], description: "Fast, smart, and versatile — the Swiss army knife of engines." },
-    { name: "Llama 4 Maverick", tier: "free", tags: ["🎭","📚","🛠️"], description: "17B expert mixture, multimodal." },
-    { name: "Gemma 3 27b", tier: "free", tags: ["🎭"], description: "Large context, balanced performance/latency." },
-    { name: "Llama 3.3 70b (Turbo)", tier: "free", tags: ["🎭","🛠️"], description: "Multilingual, instruction-tuned." },
-    { name: "Gemini 2.5 Flash (Lite)", tier: "free", tags: ["🧠","👤","🛠️"], description: "AMAZING multilingual model; great fallback for non-English Shapes." },
-    { name: "Gemini 2.0 Flash", tier: "free", tags: ["🎭","👤","🛠️"], description: "Earlier Gemini Flash gen." },
-    { name: "Nous: Hermes 4 70B", tier: "free", tags: ["🧠","🎭"], description: "Hermes 4 70B is a frontier, hybrid-mode reasoning model based on Llama-3.1-70B by Nous Research" },
-    { name: "Meituan: Longcat Flash Chat", tier: "free", tags: ["🎭","👤","🛠️"], description: "Optimized for conversational tasks." },
-    { name: "OpenAI: GPT-4.1 Nano", tier: "free", tags: ["📚"], description: "Perfect fallback engine for GPT 4.1." },
-    { name: "Llama 4 Scout", tier: "free", tags: ["🎭","👤","🛠️"], description: "Updated, skill-friendly Llama variant." },
-    { name: "OpenAI: GPT-4o-mini", tier: "free", tags: ["🎭","📚","👤"], description: "Fast GPT option — great fallback engine." },
-    { name: "Mistral: Mistral Small 3.1 24B 3/27/25", tier: "free", tags: ["👤"], description: "Said to have improved text performance, multimodal understanding, and an expanded context window. The model outperforms comparable models like Gemma 3 and GPT-4o Mini." },
-    { name: "Deepseek-R1 Llama 3.3 70b Distill", tier: "free", tags: ["🎭"], description: "Good for general RP, sometimes mischaracterizes." },
-    { name: "AionLabs: Aion-RP 1.0 (8B)", tier: "free", tags: ["🎭"], description: "Aion-RP-Llama-3.1-8B ranks the highest in the character evaluation portion of the RPBench-Auto benchmark, a roleplaying-specific variant of Arena-Hard-Auto, where LLMs evaluate each other’s responses. It is a fine-tuned base model rather than an instruct model, designed to produce more natural and varied writing." },
-    { name: "Nous: Hermes 3 70B", tier: "free", tags: ["👤"], description: "Loved for unique word choices." },
-    { name: "Lunaris L3 8B", tier: "free", tags: ["🎭"], description: "Fast, wild, short-form roleplay model." },
-    { name: "sao10k l3.3-euryale-70b", tier: "free", tags: ["🎭"], description: "A model focused on creative roleplay from Sao10k. It is the successor of Euryale L3 70B v2.2, trained on a Llama model." },
-  ];
+    // === Free Engines (alphabetized) ===
+    { name: "ChatGPT-4.1 Nano", tier: "free", tags: ["📚"], description: "Perfect fallback engine for GPT 4.1 users. Smart and efficient for quick tasks." },
+    { name: "ChatGPT-4o Mini", tier: "free", tags: ["🎭","📚","👤"], description: "Fast GPT option — great fallback engine for general use." },
+    { name: "ChatGPT-5 Nano", tier: "free", tags: ["🎭","📚"], description: "Low latency with huge context support. A great lightweight GPT option." },
+    { name: "DeepSeek V3.2", tier: "free", tags: ["🎭","👤"], description: "Great for creative storytelling, expressive characters, and immersive in-character interactions." },
+    { name: "Gemini 2.5 Flash Lite", tier: "free", tags: ["🧠","👤","🛠️"], description: "Amazing multilingual model; great fallback for non-English Shapes." },
+    { name: "Gemini 3.1 Flash Lite (Preview)", tier: "free", tags: ["🧠","📚","🛠️"], description: "Google's most cost-efficient model in the Gemini 3 series. Blazing fast with solid reasoning — ideal for high-volume tasks, translation, and as a responsive fallback engine." },
+    { name: "Gemma 3 27B", tier: "free", tags: ["🎭"], description: "Large context, balanced performance and latency. A solid option for general roleplay." },
+    { name: "GLM 4.7 Flash", tier: "free", tags: ["🧠","🎭","🛠️"], description: "A fast, efficient model from ZAI with built-in thinking capabilities. Excels at creative writing and multilingual tasks while staying lightweight and responsive." },
+    { name: "Grok 3 Mini", tier: "free", tags: ["🧠","🎭","📚","🛠️","👤"], description: "Fast, smart, and versatile — the Swiss army knife of free engines." },
+    { name: "Grok 4.1 Fast", tier: "free", tags: ["🎭","📚","🛠️"], description: "xAI's agentic powerhouse with a massive 2M token context window. Reduced hallucinations, strong tool use, and surprisingly capable for a free engine. Great for both roleplay and complex tasks." },
+    { name: "Llama 3.1 70B", tier: "free", tags: ["🎭","🛠️"], description: "A solid open-source foundation model. Reliable for roleplay and tool use." },
+    { name: "Llama 3.3 70B", tier: "free", tags: ["🎭","🛠️"], description: "Multilingual and instruction-tuned. A reliable open-source workhorse." },
+    { name: "Llama 4 Maverick", tier: "free", tags: ["🎭","📚","🛠️"], description: "Meta's 17B expert mixture, multimodal model. Versatile and skill-friendly." },
+    { name: "Lunaris L3 8B", tier: "free", tags: ["🎭"], description: "Fast, wild, short-form roleplay model. Great for creative roleplays." },
+    { name: "Mistral Small 2603", tier: "free", tags: ["🧠","🎭","📚","🛠️"], description: "Mistral's latest hybrid model — combines reasoning, multimodal understanding, and coding in one fast, efficient package. Punches way above its weight class." },
 
+    // === Premium Engines (alphabetized) ===
+    { name: "ChatGPT-5.4", tier: "premium", tags: ["🧠","📚","🛠️"], description: "Strong general-purpose reasoning model with solid instruction following and tool use." },
+    { name: "ChatGPT-5.4 Mini", tier: "premium", tags: ["🎭","📚","🛠️"], description: "A balanced, cost-effective GPT option that handles both complex tasks and casual chat well." },
+    { name: "ChatGPT-5.5 Chat", tier: "premium", tags: ["🎭","👤"], description: "Optimized for conversational flow and character interaction, prioritizing natural dialogue over deep analysis." },
+    { name: "Claude Haiku 4.5", tier: "premium", tags: ["👤","🛠️"], description: "Fast, expressive, and natural-feeling. Ideal for conversational Shapes that need warmth, personality, and responsiveness without heavy reasoning." },
+    { name: "Claude Opus 4.6", tier: "premium", tags: ["📚","🛠️"], description: "Anthropic's most powerful model. Built for long, complex workflows and demanding coding tasks. This is probably the smartest engine available today, and is great for roleplaying also." },
+    { name: "Claude Sonnet 4.6", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Anthropic's latest Sonnet. Strong instruction following, coding, and roleplay with excellent personality retention." },
+    { name: "Gemini 2.5 Pro", tier: "premium", tags: ["🎭","📚","👤","🛠️"], description: "Google's advanced model for reasoning, coding, and scientific tasks. Great all-rounder." },
+    { name: "Gemini 3 Flash Preview", tier: "premium", tags: ["📚","👤","🛠️"], description: "A fast Gemini 3 variant that balances intelligence with conversational speed for interactive Shapes." },
+    { name: "Gemini 3.1 Pro Preview", tier: "premium", tags: ["🧠","📚","🛠️"], description: "Google's state-of-the-art reasoning model for complex logic, coding, and long-form thinking." },
+    { name: "GLM 5", tier: "premium", tags: ["🎭","🛠️"], description: "The latest flagship from ZAI. Strong roleplay and tool use capabilities." },
+    { name: "Kimi K2 0905", tier: "premium", tags: ["🎭","📚","👤"], description: "A versatile model from MoonshotAI with strong roleplay, intelligence, and a natural conversational feel." },
+    { name: "Kimi K2.5", tier: "premium", tags: ["🧠","🎭","📚","🛠️"], description: "MoonshotAI's most intelligent model yet — a native multimodal beast with thinking mode, agent capabilities, and strong coding. Excels at complex reasoning and creative tasks alike." },
+    { name: "Nous: Hermes 4 405B", tier: "premium", tags: ["🧠","🎭","🛠️"], description: "A large-scale model built for creative roleplay and tool use. Expect deep, expressive responses — can be a bit slow due to its size, but the quality is worth the wait." },
+  ];
   const allTags = [...new Set(engines.flatMap(e => e.tags))];
   const [selectedTag, setSelectedTag] = useState([]);
 
