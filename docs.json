@@ -1,8 +1,8 @@
 {
   "seo": {
     "metatags": {
-      "og:title": "Shapes - AI Social Agents",
-      "og:description": "Everything from basics to beyond with Shapes.inc. Choose from millions of Shapes popular in Games, YouTube, TV, Music, Gossip, Homework Help, Coworkers, and more! Or make your own in minutes. It's all free.",
+      "og:title": "Shapes Inc Docs — Social AI & Group Chat With AI",
+      "og:description": "Shapes Inc is the social AI platform for group chats with AI and friends. Multiplayer AI, AI groupchats, and social AI built for humans and AI in the same space. Free, no limits.",
       "og:image": "/images/embedlogo.png",
       "og:url": "https://docs.shapes.inc"
     }
@@ -17,68 +17,98 @@
   },
   "favicon": "/favicon.png",
   "navigation": {
-    "groups": [
+    "tabs": [
       {
-        "group": "Getting Started",
-        "pages": [
-          "introduction",
-          "what-are-shapes",
-          "faq",
-          "navigation",
-          "make-or-recover-account",
-          "how-to-talk-to-shapes",
-          "notifications",
-          "learninghub",
-          "rewards",
-          "games"
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "what-are-shapes",
+              "faq",
+              "navigation",
+              "make-or-recover-account",
+              "how-to-talk-to-shapes",
+              "notifications",
+              "learninghub",
+              "rewards",
+              "games"
+            ]
+          },
+          {
+            "group": "Creation & Customization",
+            "pages": [
+              "shapeschatsguide",
+              "how-to-make-a-shape",
+              "create-a-chat",
+              "chat-appearance",
+              "custominstructions-chats",
+              "how-to-give-your-shape-a-voice",
+              "how-to-receive-voice-messages",
+              "voicecalls",
+              "initialmessages",
+              "multimessages",
+              "branch-off",
+              "shapeskills",
+              "css",
+              "sidebar-organization",
+              "alivemode",
+              "messageactionsmenu",
+              "groups",
+              "fandomchat"
+            ]
+          },
+          {
+            "group": "Prompts, Engines, & Beyond",
+            "pages": [
+              "variables",
+              "prompt101",
+              "aienginecheatsheet",
+              "presets",
+              "memory",
+              "regeneration",
+              "shortguide",
+              "contextwindows",
+              "promptingguides"
+            ]
+          },
+          {
+            "group": "Products & Services",
+            "pages": [
+              "credits",
+              "credits-guide",
+              "giftcards",
+              "how-to-purchase-credits-for-a-chat",
+              "purchasegiftcards",
+              "auto-top-up"
+            ]
+          }
         ]
       },
       {
-        "group": "Creation & Customization",
-        "pages": [
-          "shapeschatsguide",
-          "how-to-make-a-shape",
-          "create-a-chat",
-          "chat-appearance",
-          "custominstructions-chats",
-          "how-to-give-your-shape-a-voice",
-          "how-to-receive-voice-messages",
-          "voicecalls",
-          "initialmessages",
-          "multimessages",
-          "branch-off",
-          "shapeskills",
-          "css",
-          "sidebar-organization",
-          "alivemode",
-          "messageactionsmenu",
-          "groups",
-          "fandomchat"
-        ]
-      },
-      {
-        "group": "Prompts, Engines, & Beyond",
-        "pages": [
-          "variables",
-          "prompt101",
-          "aienginecheatsheet",
-          "presets",
-          "memory",
-          "regeneration",
-          "shortguide",
-          "contextwindows",
-          "promptingguides"
-        ]
-      },
-      {
-        "group": "Products & Services",
-        "pages": [
-          "credits",
-          "credits-guide",
-          "giftcards",
-          "how-to-purchase-credits-for-a-chat",
-          "purchasegiftcards",
-          "auto-top-up"
+        "tab": "Articles",
+        "groups": [
+          {
+            "group": "About Shapes Inc",
+            "pages": [
+              "articles/meet-shapes-inc",
+              "articles/you-dont-have-to-chat-with-ai-alone",
+              "articles/ai-with-friends-redefining-group-chat",
+              "articles/why-solo-ai-chat-is-broken",
+              "articles/top-platforms-mixing-ai-human-communities",
+              "articles/best-ai-companion-social-ai-apps"
+            ]
+          },
+          {
+            "group": "Comparisons & Guides",
+            "pages": [
+              "articles/best-ai-tools-roleplay-fanfic-creative-writing",
+              "articles/best-ai-image-generators-2026",
+              "articles/best-discord-alternatives-2026",
+              "articles/free-ai-tools-no-message-limits"
+            ]
+          }
         ]
       }
     ]
