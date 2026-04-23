@@ -25,11 +25,14 @@
             "group": "Getting Started",
             "pages": [
               "introduction",
+              "ai-group-chats",
               "what-are-shapes",
+              "shapes101",
               "faq",
               "navigation",
               "make-or-recover-account",
               "how-to-talk-to-shapes",
+              "friends",
               "notifications",
               "learninghub",
               "rewards",
@@ -40,6 +43,7 @@
             "group": "Creation & Customization",
             "pages": [
               "shapeschatsguide",
+              "chats-101",
               "how-to-make-a-shape",
               "create-a-chat",
               "chat-appearance",
