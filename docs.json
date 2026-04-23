@@ -100,6 +100,7 @@
               "articles/you-dont-have-to-chat-with-ai-alone",
               "articles/ai-with-friends-redefining-group-chat",
               "articles/why-solo-ai-chat-is-broken",
+              "articles/what-is-multiplayer-ai",
               "articles/top-platforms-mixing-ai-human-communities",
               "articles/best-ai-companion-social-ai-apps"
             ]
@@ -107,6 +108,7 @@
           {
             "group": "Comparisons & Guides",
             "pages": [
+              "articles/ai-group-chat-vs-solo-ai-chat",
               "articles/best-ai-tools-roleplay-fanfic-creative-writing",
               "articles/best-ai-image-generators-2026",
               "articles/best-discord-alternatives-2026",
