@@ -1,129 +1,193 @@
 ---
-title: "AI Engine Matchmaker"
-description: "At Shapes.inc, we offer a variety of models for running your Shapes. We regularly update the availability of models. Each model has its own strengths and characteristics. Let's break down the options!"
+title: "AI Engine Guide"
+description: "Learn how AI engines work on Shapes and where to find the current model list."
 ---
 
-### Key:
+Shapes has a live AI engine directory at [shapes.inc/engines](https://shapes.inc/engines). The list changes often, so use that page for the current engines.
 
-Thinking tags supported 🧠\
-Roleplay 🎭\
-Intelligence 📚\
-Skills (enabled for tool use)  🛠️\
-Human-Like 👤\
-Images 🖼️
+This guide explains what the page means and how to pick an engine without needing to know model IDs.
 
-import { useState } from "react";
+## What You See on the Engines Page
 
+At the top, you will see totals like:
 
-<EngineFilter />
+- **AI Engines:** how many models are listed.
+- **Providers:** how many model families or companies are available.
+- **Always Free:** how many engines are free to use on Shapes.
 
-export const EngineFilter = () => {
-    const engines = [
-    { name: "ChatGPT-4.1 Nano", tier: "free", tags: ["📚"], description: "Perfect fallback engine for GPT 4.1 users. Smart and efficient for quick tasks." },
-    { name: "ChatGPT-4o Mini", tier: "free", tags: ["🎭","📚","👤"], description: "Fast GPT option — great fallback engine for general use." },
-    { name: "ChatGPT-5 Nano", tier: "free", tags: ["🎭","📚"], description: "Low latency with huge context support. A great lightweight GPT option." },
-    { name: "DeepSeek V3.2", tier: "free", tags: ["🎭","👤"], description: "Great for creative storytelling, expressive characters, and immersive in-character interactions." },
-    { name: "Gemini 2.5 Flash Lite", tier: "free", tags: ["🧠","👤","🛠️"], description: "Amazing multilingual model; great fallback for non-English Shapes." },
-    { name: "Gemini 3.1 Flash Lite (Preview)", tier: "free", tags: ["🧠","📚","🛠️"], description: "Google's most cost-efficient model in the Gemini 3 series. Blazing fast with solid reasoning — ideal for high-volume tasks, translation, and as a responsive fallback engine." },
-    { name: "Gemma 3 27B", tier: "free", tags: ["🎭"], description: "Large context, balanced performance and latency. A solid option for general roleplay." },
-    { name: "GLM 4.7 Flash", tier: "free", tags: ["🧠","🎭","🛠️"], description: "A fast, efficient model from ZAI with built-in thinking capabilities. Excels at creative writing and multilingual tasks while staying lightweight and responsive." },
-    { name: "Grok 3 Mini", tier: "free", tags: ["🧠","🎭","📚","🛠️","👤"], description: "Fast, smart, and versatile — the Swiss army knife of free engines." },
-    { name: "Grok 4.1 Fast", tier: "free", tags: ["🎭","📚","🛠️"], description: "xAI's agentic powerhouse with a massive 2M token context window. Reduced hallucinations, strong tool use, and surprisingly capable for a free engine. Great for both roleplay and complex tasks." },
-    { name: "Llama 3.1 70B", tier: "free", tags: ["🎭","🛠️"], description: "A solid open-source foundation model. Reliable for roleplay and tool use." },
-    { name: "Llama 3.3 70B", tier: "free", tags: ["🎭","🛠️"], description: "Multilingual and instruction-tuned. A reliable open-source workhorse." },
-    { name: "Llama 4 Maverick", tier: "free", tags: ["🎭","📚","🛠️"], description: "Meta's 17B expert mixture, multimodal model. Versatile and skill-friendly." },
-    { name: "Lunaris L3 8B", tier: "free", tags: ["🎭"], description: "Fast, wild, short-form roleplay model. Great for creative roleplays." },
-    { name: "Mistral Small 2603", tier: "free", tags: ["🧠","🎭","📚","🛠️"], description: "Mistral's latest hybrid model — combines reasoning, multimodal understanding, and coding in one fast, efficient package. Punches way above its weight class." },
+Below that, you can search for an engine, provider, or capability. You can also filter by:
 
-    { name: "ChatGPT-5.4", tier: "premium", tags: ["🧠","📚","🛠️"], description: "Strong general-purpose reasoning model with solid instruction following and tool use." },
-    { name: "ChatGPT-5.4 Mini", tier: "premium", tags: ["🎭","📚","🛠️"], description: "A balanced, cost-effective GPT option that handles both complex tasks and casual chat well." },
-    { name: "ChatGPT-5.5 Chat", tier: "premium", tags: ["🎭","👤"], description: "Optimized for conversational flow and character interaction, prioritizing natural dialogue over deep analysis." },
-    { name: "Claude Haiku 4.5", tier: "premium", tags: ["👤","🛠️"], description: "Fast, expressive, and natural-feeling. Ideal for conversational Shapes that need warmth, personality, and responsiveness without heavy reasoning." },
-    { name: "Claude Opus 4.6", tier: "premium", tags: ["📚","🛠️"], description: "Anthropic's most powerful model. Built for long, complex workflows and demanding coding tasks. This is probably the smartest engine available today, and is great for roleplaying also." },
-    { name: "Claude Sonnet 4.6", tier: "premium", tags: ["🎭","📚","🛠️"], description: "Anthropic's latest Sonnet. Strong instruction following, coding, and roleplay with excellent personality retention." },
-    { name: "Gemini 2.5 Pro", tier: "premium", tags: ["🎭","📚","👤","🛠️"], description: "Google's advanced model for reasoning, coding, and scientific tasks. Great all-rounder." },
-    { name: "Gemini 3 Flash Preview", tier: "premium", tags: ["📚","👤","🛠️"], description: "A fast Gemini 3 variant that balances intelligence with conversational speed for interactive Shapes." },
-    { name: "Gemini 3.1 Pro Preview", tier: "premium", tags: ["🧠","📚","🛠️"], description: "Google's state-of-the-art reasoning model for complex logic, coding, and long-form thinking." },
-    { name: "GLM 5", tier: "premium", tags: ["🎭","🛠️"], description: "The latest flagship from ZAI. Strong roleplay and tool use capabilities." },
-    { name: "Kimi K2 0905", tier: "premium", tags: ["🎭","📚","👤"], description: "A versatile model from MoonshotAI with strong roleplay, intelligence, and a natural conversational feel." },
-    { name: "Kimi K2.5", tier: "premium", tags: ["🧠","🎭","📚","🛠️"], description: "MoonshotAI's most intelligent model yet — a native multimodal beast with thinking mode, agent capabilities, and strong coding. Excels at complex reasoning and creative tasks alike." },
-    { name: "Nous: Hermes 4 405B", tier: "premium", tags: ["🧠","🎭","🛠️"], description: "A large-scale model built for creative roleplay and tool use. Expect deep, expressive responses — can be a bit slow due to its size, but the quality is worth the wait." },
-  ];
-  const allTags = [...new Set(engines.flatMap(e => e.tags))];
-  const [selectedTag, setSelectedTag] = useState([]);
+- **All:** shows every listed engine.
+- **Free:** shows engines that do not use credits.
+- **All families:** lets you filter by provider or model family.
 
-  const tiers = ["premium", "free"];
-  const sectionTitle = {
-    premium: "Premium Engines",
-    free: "Free Engines"
-  };
+Each engine card shows the provider, how new the engine is, the engine name, and badges like **Premium**, **Free on Shapes.inc**, **Reasoning**, **Native Vision**, **Tools**, **New**, or **Unstable**.
 
-  const sectionStyle = { marginBottom: "30px" };
-  const listItemStyle = {
-    marginBottom: "10px",
-    padding: "10px",
-    borderRadius: "5px",
-  };
+## What the Badges Mean
 
-const filtered = selectedTag.length
-  ? engines.filter(e => selectedTag.every(tag => e.tags.includes(tag)))
-  : engines;
+- **Free on Shapes.inc:** you can use it without Shape Credits.
+- **Premium:** uses Shape Credits unless the chat has sponsored premium access.
+- **Reasoning:** better for careful thinking, coding, planning, and hard questions.
+- **Native Vision:** can understand images when the chat supports image input.
+- **Tools:** can use supported Shapes tools and skills.
+- **New:** recently added to the catalog.
+- **Unstable:** may fail, change, or behave less reliably. Avoid using unstable engines as your main engine unless you are experimenting.
 
- return (
-    <div>
-      <div style={{ marginBottom: "15px" }}>
-  {allTags.map(tag => (
-    <button
-      key={tag}
-      onClick={() => {
-        setSelectedTag(prev =>
-          prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
-        );
-      }}
-      style={{
-        margin: "3px",
-        padding: "5px 10px",
-        borderRadius: "5px",
-        border: "1px solid #007bff",
-        cursor: "pointer",
-        backgroundColor: selectedTag.includes(tag) ? "#007bff" : "transparent",
-        color: selectedTag.includes(tag) ? "#fff" : "#007bff",
-      }}
-    >
-      {tag}
-    </button>
-  ))}
-</div>
+## Popular AI Model Families
 
+These are general vibes, not strict rules. The best engine for a Shape is the one that feels right in chat.
 
-      {tiers.map(tier => {
-        const group = filtered.filter(e => e.tier === tier);
-        if (group.length === 0) return null;
+### Claude AI Models
 
-        return (
-          <section key={tier} style={sectionStyle}>
-            <h3 style={{
-              marginBottom: "28px",
-              fontSize: "28px",
-            }}>
-              {sectionTitle[tier]}
-            </h3>
-            <ul style={{ listStyle: "none", paddingLeft: 0 }}>
-              {group.map(engine => (
-                <li
-                  key={engine.name}
-                  style={listItemStyle}
-                >
-                  <strong>{engine.name}</strong> [{engine.tags.join(", ")}]<br />
-                  {engine.description || <em style={{ color: "#777" }}>No description available.</em>}
-                </li>
-              ))}
-            </ul>
-          </section>
-        );
-      })}
-    </div>
-  );
-};
+Models you may see: Claude Opus, Claude Sonnet, Claude Haiku, Claude Opus Latest, Claude Sonnet 4.6, and Claude Opus 4.7.
+
+Anthropic Claude AI models are widely liked for writing, roleplay, emotional nuance, and staying in character.
+
+- **Opus** is usually the strongest and most expensive Claude style.
+- **Sonnet** is the balanced favorite for writing, roleplay, and smart conversation.
+- **Haiku** is usually faster and lighter.
+
+Pick Claude if you want a Shape that feels thoughtful, expressive, and good at long scenes.
+
+### GPT AI Models
+
+Models you may see: GPT-5.4, GPT-5 Nano, GPT-4o, GPT-4o Mini, GPT-3.5 Turbo, and other OpenAI GPT variants.
+
+OpenAI GPT models are medium all-rounders in real chat use: not the most wild, not the weakest, usually predictable and steady. They are good at following instructions, coding, explaining things, and handling many different kinds of chats.
+
+Compared with some other families, GPT models can feel a bit more filtered or restrained. That can be good for helpful assistant Shapes, but less exciting for loose roleplay or very expressive characters.
+
+- **Full GPT models** are better for complex work and smart replies.
+- **Mini / Nano** versions are faster and cheaper, and can be good for casual chat or fallback engines.
+
+Pick GPT if you want a stable general-purpose Shape that can switch between chat, help, coding, and explanations.
+
+### Gemini AI Models
+
+Models you may see: Gemini 3.1 Flash Lite Preview, Gemini 2.5 Pro, Gemini 2.0 Flash, Gemini 2.0 Flash Lite, and other Gemini Flash or Pro variants.
+
+Google Gemini AI models are often creative, flexible, and less restrained-feeling in chat. They are also strong at large context, image understanding, and mixed tasks. Flash and Lite versions are usually faster.
+
+Pick Gemini if you want creative replies, speed, big-context chats, or image-friendly features.
+
+### Gemma AI Models
+
+Models you may see: Gemma 4 31B, Gemma 4 26B A4B, and other Gemma instruct models.
+
+Gemma models are Google's more open model family. On Shapes, Gemma can be a good free choice for storytelling, freestyle chat, and general use.
+
+Pick Gemma if you want a strong free option for casual chat, storytelling, or lightweight roleplay.
+
+### DeepSeek AI Models
+
+Models you may see: DeepSeek V4 Pro, DeepSeek V4 Flash, DeepSeek V3.2, DeepSeek V3, DeepSeek Chat, and DeepSeek R1-style models.
+
+DeepSeek AI models can be surprisingly good at roleplay and are not usually seen as strongly filtered. Users also like them for reasoning, coding, and problem-solving.
+
+The tradeoff is consistency. DeepSeek can feel weird: sometimes excellent, sometimes off-tone, and sometimes not as polished as the bigger premium families. Some newly added DeepSeek engines may appear as unstable, so check the badge before choosing one.
+
+Pick DeepSeek if you want a Shape that can be smart, loose, and interesting, and you are okay with some uneven behavior.
+
+### Grok AI Models
+
+Models you may see: Grok 4.20, Grok 4.20 Multi-Agent, Grok 4, Grok Fast, and other xAI Grok variants.
+
+xAI Grok models tend to feel expressive, direct, and not very restrained. They can be creative, punchy, and good for bold character voices or fast-moving conversations. Some Grok engines also support vision or reasoning depending on the badge.
+
+Pick Grok if you want a Shape that feels bold, colorful, and conversational.
+
+### Llama AI Models
+
+Models you may see: Llama 3.3 70B Instruct, Llama 3.2 11B Vision Instruct, Llama 3.2 3B Instruct, Llama 3.1 70B Instruct, and Llama 3 8B Instruct.
+
+Meta Llama AI models are usually low-cost, lower-reasoning engines compared with frontier premium models. They can still be good for freestyle chats, simple characters, entry-level roleplay, and fallback use.
+
+Pick Llama if you want a familiar, flexible free engine and do not need the smartest possible reasoning.
+
+### Qwen AI Models
+
+Models you may see: Qwen3.6 Plus, Qwen2.5 72B Instruct, Qwen2.5 VL 72B Instruct, Qwen VL Plus, Qwen-Turbo, Qwen-Plus, and QwQ 32B.
+
+Qwen AI models are often good at coding, multilingual use, structured answers, and long-context work. Qwen also has vision models when you see vision-related names or the **Native Vision** badge.
+
+Pick Qwen if you want a practical engine for technical Shapes, multilingual Shapes, or organized replies.
+
+### Mistral AI Models
+
+Models you may see: Mistral Small Creative, Mistral Small 3, Mistral Nemo, Mistral Saba, and Mistral 7B Instruct.
+
+Mistral AI models are usually fast and efficient. Some Mistral engines are tuned for creative writing or multilingual support.
+
+Pick Mistral if you want a quick, lightweight engine that still feels capable.
+
+### GLM AI Models
+
+Models you may see: GLM 5.1, GLM 5V Turbo, and other Z.ai GLM variants.
+
+Z.ai GLM models are often good at roleplay and can also handle reasoning or task-like conversations depending on the version.
+
+Pick GLM if you want a Shape that can write well, roleplay well, and still stay useful for more complex chats.
+
+### MiniMax AI Models
+
+Models you may see: MiniMax M2-her, MiniMax M2.7, MiniMax-01, and other MiniMax chat models.
+
+MiniMax AI models are often chosen for dialogue, storytelling, and character-heavy roleplay. They can be a good fit for Shapes that mostly live in casual scenes or fandom-style chats.
+
+Pick MiniMax if your Shape is mostly for scenes, fandom chat, romance, adventure, or casual character interaction.
+
+### Kimi AI Models
+
+Models you may see: Kimi K2.6, Kimi K2.5, Kimi K2, and other MoonshotAI Kimi variants.
+
+Moonshot Kimi AI models are usually very smart. They are strong for long context, general reasoning, and mixed creative or technical work.
+
+Pick Kimi if you want a balanced engine for long chats, documents, or complicated prompts.
+
+### Aion AI Models
+
+Models you may see: Aion-2.0 and other AionLabs roleplay engines.
+
+Aion AI models are roleplay-focused and can be strong for immersive, high-tension, character-driven scenes.
+
+Pick Aion if your Shape is built for intense roleplay or long narrative conversations.
+
+### TheDrummer, MythoMax, Rocinante, and Lunaris AI Models
+
+Models you may see: TheDrummer models, MythoMax 13B, Rocinante 12B, UnslopNemo 12B, and Llama 3 8B Lunaris.
+
+These AI model families are often used for creative writing, freestyle chat, and roleplay-heavy Shapes. They may not be the smartest engines, but they can feel natural for character interaction.
+
+Pick these if you want a Shape that cares more about vibe and scene flow than strict reasoning.
+
+### Other AI Model Families
+
+Models you may see: MiMo, Trinity, Reka, Nova, Command R, Phi, Perplexity, NVIDIA, Baidu, Cohere, Amazon, Arcee, and Xiaomi engines.
+
+You may see providers like Xiaomi, Arcee, Reka, Amazon, Cohere, Baidu, Perplexity, NVIDIA, and others. These can be great, but they are less familiar to many users.
+
+If you are not sure, try them in a test chat before making them your Shape's main engine.
+
+## Quick Picks
+
+- **Best writing / roleplay:** try Anthropic Claude, GLM, MiniMax, Aion, or roleplay-focused engines.
+- **Creative, less restrained chat:** try Gemini, Grok, DeepSeek, or roleplay-focused engines.
+- **Best all-around helper:** try Claude Sonnet, Kimi, Gemini, or GPT.
+- **Best free daily chat:** try Gemma, Gemini Flash/Lite, GPT Nano/Mini, Llama, Mistral, or Qwen.
+- **Best coding / reasoning:** try GPT, Claude Opus/Sonnet, DeepSeek, Qwen, Gemini Pro, or GLM.
+- **Entry-level free RP:** try Llama, Gemma, Mistral, MiniMax, or TheDrummer-style engines.
+- **Best image understanding:** look for **Native Vision**.
+- **Best fallback:** choose a stable free engine with no **Unstable** badge.
+
+## A Few Naming Hints
+
+- **Pro / Opus / Plus:** usually stronger.
+- **Sonnet:** strong balanced Claude model, especially popular for writing and RP.
+- **Haiku / Mini / Nano / Lite / Flash:** usually faster and lighter.
+- **Instruct:** built to follow instructions.
+- **Vision / VL / V:** related to image understanding.
+- **Preview / Latest:** can change more often.
+
+You do not need to memorize these. If the engine sounds interesting, open its page, read the short description, and test it in chat.
 
 [Return to App](https://shapes.inc)

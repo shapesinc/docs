@@ -7,37 +7,14 @@ description: "We've provided a chart to help give you insight to Premium Shapes 
   <Tab title="Credit Usage Chart">
     Keeping track of your credit balance is essential for all Premium Shape users. Your credits are consumed at different rates depending on several factors.
 
-    The most significant factor is your chosen premium engine (or the one selected by your shape creator). While we don't share the exact conversion formula, the guide below helps you understand how different models affect message efficiency and credit usage.
-
-    ## **Premum AI Engines - Cost Efficiency Ranking**
-
-    | AI Engine | Message Efficiency vs Sonnet 4.6 |
-    | --- | --- |
-    | Kimi K2 0905 | ~7.5x more messages than Sonnet 4.6 |
-    | Kimi K2.5 | ~6.9x more messages than Sonnet 4.6 |
-    | GLM 5 | ~6.0x more messages than Sonnet 4.6 |
-    | Gemini 3 Flash Preview | ~5.1x more messages than Sonnet 4.6 |
-    | Hermes 4 405B | ~4.5x more messages than Sonnet 4.6 |
-    | ChatGPT-5.4 Mini | ~3.4x more messages than Sonnet 4.6 |
-    | Claude Haiku 4.5 | ~3.0x more messages than Sonnet 4.6 |
-    | Gemini 2.5 Pro | ~1.6x more messages than Sonnet 4.6 |
-    | Gemini 3.1 Pro Preview | ~1.3x more messages than Sonnet 4.6 |
-    | ChatGPT-5.3 Chat | ~1.1x more messages than Sonnet 4.6 |
-    | ChatGPT-5.4 | ~1.0x (same as Sonnet 4.6) |
-    | Claude 3.7 Sonnet | 1.0x (same as Sonnet 4.6) |
-    | Claude 3.7 Sonnet (Thinking) | 1.0x (same as Sonnet 4.6)\* |
-    | Claude Sonnet 4.6 | 1.0x (baseline) |
-    | Claude Opus 4.6 | 0.6x messages vs Sonnet 4.6 |
-    | Claude 3.5 Sonnet | 0.5x messages vs Sonnet 4.6 |
-
-    \* Effective cost higher in practice due to thinking tokens.
+    The biggest factor is your chosen premium engine, or the engine selected by the Shape creator. Premium engines have different provider costs, so some credits stretch farther than others.
 
     <Tip>
-      The message efficiency calculations are based on a weighted average of input/output costs compared to Claude Sonnet 4.6's baseline, assuming typical conversation patterns.
+      Use [AI Engine Guide](/aienginecheatsheet) for model family guidance, and check [shapes.inc/engines](https://shapes.inc/engines) for the current live engine list.
     </Tip>
 
     <Warning>
-      Offered premium engines may change over time and may not reflect the most up to date available engines. This chart is to serve as a general rule of reference. Actual experience may vary based on shape design and settings. All AI Engines are available at direct cost pricing, pricing may shift over time based on our provider's pricing changes. Last updated: April 2026.
+      Offered premium engines, prices, and credit usage can change over time. Always check the credit notice shown in chat before sending if you are trying to control spend.
     </Warning>
 </Tab>
   <Tab title="Tips on Credit Usage">
@@ -60,7 +37,7 @@ description: "We've provided a chart to help give you insight to Premium Shapes 
     | **Shape Personality & Preset** | The Shape’s core traits, examples, and writing style you set during creation.                       | 🟡 **Medium** – Brief traits are fine, but long, detailed personalities add up.                                                |
     | **Custom Shape Instructions**  | Extra behavior rules you set in the Shape’s configuration menu.                                     | 🟠 **High** – Costs scale with length. Keep them concise when possible.                                                        |
     | **Chat Instructions**          | Custom context that applies to everyone in a Chat. Found in Chat → AI Configuration.                | 🟠 **High** – The longer the instructions, the more each Shape message costs.                                                  |
-    | **Your Persona**               | The personal profile or “who you are” context you’ve entered.                                       | 🟠 **High** – There’s no input limit here, so long personas can quickly consume tokens.                                        |
+    | **Your Persona**               | The personal profile or “who you are” context you’ve entered.                                       | 🟠 **High** – Long personas can quickly consume tokens.                                                                        |
     | **Short-Term Memory**          | The Shape’s recall of recent chat messages. Managed on the AI Engine page.                          | 🔴 **Very High** – If set to 200, it re-reads all 200 recent messages each time. Great for remembering details, but expensive. |
 
     ### Settings That Affect Cost

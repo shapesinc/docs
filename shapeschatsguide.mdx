@@ -14,11 +14,13 @@ For the full concept behind humans and Shapes sharing the same conversation, sta
 
     ### Create a Chat
 
-    1. Open your side navigation menu
+    1. Open your side navigation menu.
        - **Web:** visible by default
        - **App:** tap the ☰ menu icon (top left)
-    2. Select **Create Chat**
-    3. Add your favorite Shapes and start chatting!
+    2. Select **New Chat**.
+    3. Add Shapes, people, or usernames.
+    4. On the details step, confirm the chat name and any advanced settings you want.
+    5. Create the chat and start talking.
 
     [Detailed Chat Creation Guide](/create-a-chat)
 
@@ -53,8 +55,6 @@ For the full concept behind humans and Shapes sharing the same conversation, sta
     - Tap ⋯ next to a Shape → **Activate**
     - Or type `/activate @shape-name`
 
-    > Up to **5 active Shapes** (3 respond per message)
-
     Deactivate anytime:\
     `/deactivate @shape-name`
 
@@ -69,27 +69,33 @@ For the full concept behind humans and Shapes sharing the same conversation, sta
 
     ---
 
-    ### Fast-Forward Responses
+    ### Skip Turn and Fast Forward
 
     Want quick replies?\
-    Use the **Fast-Forward** button to make Shapes auto-respond.
+    Open the **+** menu beside the message box and choose **Skip turn and fast forward**.
 
-    - Choose 1️⃣, 5️⃣, or 🔟 steps
-    - Perfect for roleplays or games!
+    - Pick the next Shape that should reply
+    - Choose 5 or 10 messages to let Shapes continue automatically
+    - Stop fast forward while it is running
 
     ---
 
     ## Quick Commands & Tricks
 
-    | Command              | What It Does                                  |
-    | -------------------- | --------------------------------------------- |
-    | `/activate @shape`   | Activates a Shape                             |
-    | `/deactivate @shape` | Deactivates a Shape                           |
-    | `/wack`              | Remove short term memory                      |
-    | `/imagine`           | Generate an image                             |
-    | `/poll`              | Create a poll (only works in multi-user chat) |
-    | `Pin messages`       | Keep key info at top                          |
-    | `Fast-Forward`       | Auto multi-turn responses                     |
+    | Command              | What It Does                                      |
+    | -------------------- | ------------------------------------------------- |
+    | `/activate @shape`   | Activates a Shape                                 |
+    | `/deactivate @shape` | Deactivates a Shape                               |
+    | `/wack`              | Clears short-term memory for the current Shape    |
+    | `/wack-all`          | Clears short-term memory for Shapes in the chat   |
+    | `/reset`             | Resets the chat context                           |
+    | `/sleep`             | Puts a Shape to sleep                             |
+    | `/imagine`           | Generates an image                                |
+    | `/web`               | Asks a Shape to use web search                    |
+    | `/poll`              | Creates a poll in supported chats                 |
+    | `/games`             | Opens chat games when the chat supports them      |
+    | `Pin messages`       | Keeps key info at the top                         |
+    | `Skip turn and fast forward` | Lets Shapes continue the conversation     |
 
     ---
 
@@ -106,10 +112,6 @@ For the full concept behind humans and Shapes sharing the same conversation, sta
     - Copy the Chat invite link
     - Invite someone by typing their name
     - Kick, ban, or make someone owner by pressing the three dots beside their name
-
-    ### Configure Shapes
-
-    Here you can add custom instructions — for more information, read the [Custom Instructions Guide](/custominstructions-chats).
 
     ### Pinned Messages
 
@@ -131,10 +133,10 @@ For the full concept behind humans and Shapes sharing the same conversation, sta
 
     Here you can:
 
-    - Turn on Free Will Responses
+    - Choose Shape Free Will triggers
     - Turn on time awareness
     - Choose how Shape messages should appear when they span multiple lines
-    - Add Custom Instructions for Shapes — see the [Custom Instructions Guide](/custominstructions-chats)
+    - Add chat instructions for Shapes — see the [Custom Instructions Guide](/custominstructions-chats)
     - Select Shape skills — learn more in the [Shape Skills Guide](/shapeskills)
 
     ### Chat Appearance
@@ -219,23 +221,20 @@ For the full concept behind humans and Shapes sharing the same conversation, sta
 
       ---
 
-      ## Free Will & Behavior
+      ## Shape Free Will
 
-      Shapes can act on their own — not just respond.\
-      Use **Free Will** to decide how proactive your Shape is.
+      Shape Free Will is controlled per chat from **Chat Settings → AI Configurations**. It decides when Shapes can jump into that chat on their own.
 
-      | Setting                    | Description                             |
-      | -------------------------- | --------------------------------------- |
-      | **Free Will Level**        | How talkative or reactive your Shape is |
-      | **Favorite People**        | Usernames the Shape prioritizes         |
-      | **Keywords**               | Topics that make it join conversations  |
-      | **Reactions**              | Emoji responses (custom or AI-chosen)   |
-      | **Free Will Instructions** | Fine-tune autonomy in Chats & DMs       |
+      | Setting                           | Description                                      |
+      | --------------------------------- | ------------------------------------------------ |
+      | **Reply when mentioned**          | Shapes respond when someone uses their @name.    |
+      | **Keep the convo going**          | Shapes may continue after they have replied.     |
+      | **React to keywords**             | Shapes can jump in when chat keywords appear.    |
+      | **Always have something to say**  | Shapes can reply when nobody else does.          |
+      | **Come back later**               | Shapes may check back in after the chat is quiet. |
 
       <Accordion title="Example Behavior Styles">
-        Outgoing Shapes might comment on everything \
-        Chill Shapes wait until mentioned \
-        introverted Shapes engage naturally
+        Turn on more triggers for an outgoing chat. Keep only mentions enabled if you want Shapes to wait until called.
       </Accordion>
       ---
 
@@ -262,10 +261,10 @@ For the full concept behind humans and Shapes sharing the same conversation, sta
       ### Voice Engine
 
       Give your Shape a voice:
-      - Select or upload custom samples
-      - Pick from voice engines
+      - Choose a built-in voice or create a custom one
       - Adjust voice response frequency
-      - Add voice instructions for tone and style
+      - Turn transcripts on or off
+      - Add voice instructions for tone and delivery
 
       <Accordion title="🔊 Voice Resources">
         - [Give your Shape a voice →](how-to-give-your-shape-a-voice)
@@ -279,7 +278,7 @@ For the full concept behind humans and Shapes sharing the same conversation, sta
 
     On this tab, you can:
 
-    - Update your Shape’s **Primary model**, **Fallback model**, and **Freewill model**
+    - Update your Shape’s **Primary model** and **Fallback model**
     - Enable or disable **internal monologging**
     - Toggle helpful options:
       - Inform User When Fallback Engine is Used
@@ -326,12 +325,12 @@ For the full concept behind humans and Shapes sharing the same conversation, sta
     | **Short-Term Memory (STM)** | Keeps recent messages for context              |
     | **Long-Term Memory (LTM)**  | Stores persistent facts and relationships      |
     | **Memory Recall**           | Retrieves memories based on relevance          |
-    | **Privacy Settings**        | Control whether memories are shared or private |
+    | **Relevance**               | Controls how selective memory recall should be |
 
     <Accordion title="Memory Tips">
       - Lower relevance = more recall, less accuracy
       - Higher relevance = fewer recalls, more precision
-      - Use STM for active chats, LTM for lore or history
+      - Use STM for recent context and LTM for lore or history
     </Accordion>
     ---
 
@@ -446,7 +445,7 @@ For the full concept behind humans and Shapes sharing the same conversation, sta
     - **Custom Display Name Color**
 
     <Warning>
-      These features must be unlocked in the **Reward Store** before you can enable them.
+      These features must be unlocked through **Rewards** before you can enable them.
     </Warning>
     ---
 
