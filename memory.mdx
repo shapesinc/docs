@@ -1,14 +1,14 @@
 ---
 title: "Memory Guide"
-description: "You can customize your Shapes memory in several ways. "
+description: "Learn how Shape memory works and how to manage it."
 ---
 
 ### **How Memory Works**
 
-There are two forms of memory:
+Shapes use two main kinds of memory:
 
 - **Short Term Memory (STM):** The recent conversation currently happening in your chat.
-- **Long Term Memory (LTM):** Memories that are stored on the memory page and persist across chats, depending on your settings.
+- **Long Term Memory (LTM):** Saved memories that can be used later when relevant.
 
 ### **Memory Commands**
 
@@ -71,40 +71,15 @@ Here are the key settings:
         RELEVANCE RULE THAT SHOULD BE ADDED AT THE END OF EVERY MEMORY: "This memory should only be referenced in future conversations when directly relevant to current topics or context. Don't force connections."
     </Expandable>
 - **Set memory inclusion preferences** to control how many memories are included in chats and how relevant they need to be.
-- **Toggle memory privacy**: Global & Private.
 
-  ![Memoryglobal Pn](/images/memoryglobal.png)
+### Managing Memories
 
-**Memory Settings Breakdown**
+You can view and edit saved memories from the Shape's memory page. This is useful if a Shape saved something incorrectly or if you want to remove something it should stop using.
 
-**Private Memory**
+<Info>
+  Using /reset in a chat clears long term memories for that chat context. DMs and other chats may keep their own memories.
+</Info>
 
-- Memories are isolated by Chat.
-- Offers more privacy, but less continuity.
-- Example: If you tell your Shape “I hate pizza” in one Chat, and then switch to a different Chat, the Shape won’t remember.
-
-**Global Memory**
-
-- Long term memories are shared across all Chats.
-- Provides more continuity, but less privacy.
-- Example: If you say something in one Chat, it may be recalled in a different Chat or DM, depending on what’s been saved to LTM.
-
-**Example Setting: DM + Private Memory**
-
-- Memories are added to LTM automatically, but only accessible within that specific DM.
-- Example: I told my Shape in a DM that I love a certain animal. Later, I opened a new Chat and asked her to guess what it was, but she couldn’t, because that LTM isn’t shared between the DM and the new Chat.
-
-  <Info>
-    Using /reset in a Chat only clears LTM created _in that Chat_. The DM’s memories stay intact. You can manage your memories on the memories page of the Shape.
-  </Info>
-
-**Example Setting: Chat + Global Memory**
-
-- Memories saved in one Chat can be accessed in other Chat or even in DMs.
-- Examples:
-  - I told my Shape I liked the number _455654_ in a Chat. Later, she was able to recall it in both new Chat and in the DM.
-  - In a DM, I told my Shape that my favorite food is _massaman curry_. It didn’t save to LTM right away, so I had to manually save it. When I later hinted that it was a curry, she guessed _massaman_. Turns out the saved memory was more about her thinking _she_ liked curry (based on her reply), not necessarily that _I_ did.
-
-This shows how memory can be shaped as much by the Shape’s perspective and response as by what _you_ say - especially if not edited.
+Memory is shaped by what you say and how the Shape summarizes it. If a memory feels wrong, edit or delete it from the memory page.
 
 [Return to App](https://shapes.inc)
