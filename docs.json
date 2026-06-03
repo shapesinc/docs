@@ -28,63 +28,80 @@
               "ai-group-chats",
               "what-are-shapes",
               "shapes101",
-              "faq",
-              "navigation",
+              "core-concepts",
+              "learninghub",
               "make-or-recover-account",
               "how-to-talk-to-shapes",
-              "friends",
-              "notifications",
-              "learninghub",
-              "rewards",
-              "games"
+              "navigation",
+              "faq"
             ]
           },
           {
-            "group": "Creation & Customization",
+            "group": "Ways to Use Shapes",
             "pages": [
-              "shapeschatsguide",
-              "chats-101",
-              "how-to-make-a-shape",
+              "ai-at-work",
+              "plan-and-build-together",
+              "fun-and-friends"
+            ]
+          },
+          {
+            "group": "Group Chats",
+            "pages": [
               "create-a-chat",
-              "chat-appearance",
+              "chats-101",
               "custominstructions-chats",
-              "how-to-give-your-shape-a-voice",
-              "how-to-receive-voice-messages",
-              "voicecalls",
-              "initialmessages",
               "multimessages",
               "branch-off",
-              "shapeskills",
-              "css",
+              "groups",
               "sidebar-organization",
               "messageactionsmenu",
-              "groups",
+              "notifications",
+              "friends",
               "fandomchat"
             ]
           },
           {
-            "group": "Prompts, Engines, & Beyond",
+            "group": "Building Shapes",
             "pages": [
-              "variables",
-              "prompt101",
-              "aienginecheatsheet",
-              "presets",
-              "memory",
-              "regeneration",
+              "how-to-make-a-shape",
+              "designing-social-intelligence",
+              "shapeschatsguide",
               "shortguide",
-              "contextwindows",
-              "promptingguides"
+              "chat-appearance",
+              "css",
+              "initialmessages",
+              "how-to-give-your-shape-a-voice",
+              "how-to-receive-voice-messages",
+              "voicecalls",
+              "games",
+              "shapeskills"
             ]
           },
           {
-            "group": "Products & Services",
+            "group": "Models, Prompts & Memory",
             "pages": [
+              "aienginecheatsheet",
+              "prompt101",
+              "presets",
+              "variables",
+              "promptingguides",
+              "regeneration",
+              "contextwindows",
+              "memory"
+            ]
+          },
+          {
+            "group": "Credits & Products",
+            "pages": [
+              "premium",
               "credits",
               "credits-guide",
+              "rewards",
               "giftcards",
               "how-to-purchase-credits-for-a-chat",
               "purchasegiftcards",
-              "auto-top-up"
+              "auto-top-up",
+              "premium-subscriptions"
             ]
           }
         ]
