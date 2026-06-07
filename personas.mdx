@@ -33,6 +33,12 @@ That one line changes how every Shape talks to you — references you'll get, th
 
 When a Shape replies to you, your persona is added to its context **every message**:
 
+```mermaid
+flowchart LR
+    P["Your persona<br/>name + backstory"] --> C["Added to the Shape's context<br/>on every reply to you"]
+    C --> R["It calls you by name and<br/>keeps your details in mind"]
+```
+
 - **Your name** becomes how the Shape refers to you and how you show up in the conversation, ahead of your display name.
 - **Your backstory** is handed to the Shape as standing context about who it's talking to.
 
