@@ -68,6 +68,7 @@
               "how-to-make-a-shape",
               "designing-shapes",
               "designing-social-intelligence",
+              "personas",
               "shape-settings",
               "shapeschatsguide",
               "shortguide",
@@ -78,15 +79,15 @@
               "how-to-give-your-shape-a-voice",
               "how-to-receive-voice-messages",
               "voicecalls",
-              "games",
-              "shapeskills"
+              "games"
             ]
           },
           {
             "group": "Capabilities",
             "pages": [
               "capabilities",
-              "commands"
+              "commands",
+              "shapeskills"
             ]
           },
           {
