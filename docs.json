@@ -25,10 +25,12 @@
             "group": "Getting Started",
             "pages": [
               "introduction",
+              "quickstart",
               "ai-group-chats",
               "what-are-shapes",
               "shapes101",
               "core-concepts",
+              "glossary",
               "learninghub",
               "make-or-recover-account",
               "how-to-talk-to-shapes",
@@ -64,9 +66,12 @@
             "group": "Building Shapes",
             "pages": [
               "how-to-make-a-shape",
+              "designing-shapes",
               "designing-social-intelligence",
+              "shape-settings",
               "shapeschatsguide",
               "shortguide",
+              "showcase",
               "chat-appearance",
               "css",
               "initialmessages",
@@ -78,8 +83,16 @@
             ]
           },
           {
+            "group": "Capabilities",
+            "pages": [
+              "capabilities",
+              "commands"
+            ]
+          },
+          {
             "group": "Models, Prompts & Memory",
             "pages": [
+              "choosing-a-model",
               "aienginecheatsheet",
               "prompt101",
               "presets",
