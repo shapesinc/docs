@@ -11,8 +11,7 @@ A Shape starts as a great conversationalist. With capabilities, it becomes a col
 The foundation. Shapes hold real conversations, not one-shot answers.
 
 - **Natural replies** that respond to the whole room — you, your friends, and other Shapes.
-- **Multiple messages** — a Shape can break a reply into a few messages, the way a person texts.
-- **Reactions** — Shapes can react to messages with emoji.
+- **Multiple messages** — a Shape can break a reply into a few messages, the way a person texts. See [Multiple Messages](/multimessages).
 - **Regenerate, edit, reply, branch** — manage any message from its three-dot menu. See [Message Actions](/messageactionsmenu) and [Regeneration](/regeneration).
 
 ## Voice
@@ -54,38 +53,19 @@ A Shape can also **edit** an image you send (image-to-image), so you can iterate
 
 ## Actions & tools (Shape Skills)
 
-[Shape Skills](/shapeskills) give a Shape hands. A Shape decides when to reach for these on its own, based on the conversation — you just turn on the ones you want.
+[Shape Skills](/shapeskills) give a Shape hands. You switch the ones you want on in a chat's settings, and the Shape decides when to reach for them based on the conversation.
 
 <CardGroup cols={2}>
   <Card title="Run code" icon="code">
-    Execute code in a secure sandbox for math, data, and live coding help. The sandbox even ships with developer tools preinstalled (Git, Node, Python, Bun, and CLI agents), so a Shape can genuinely build and run things.
-  </Card>
-  <Card title="Make files" icon="file-arrow-down">
-    A Shape can generate a file — a script, a doc, a dataset — and hand it back as a downloadable attachment, or re-host a file from a URL.
-  </Card>
-  <Card title="Roll 3D dice" icon="dice">
-    Real 3D dice rolls that animate for everyone in the room — perfect for tabletop play.
-  </Card>
-  <Card title="Track character sheets" icon="scroll">
-    For TTRPG and roleplay rooms, a Shape can create and update a character sheet for each player.
-  </Card>
-  <Card title="Annotate images" icon="highlighter">
-    A Shape can mark up an image — arrows, circles, labels — to point things out.
-  </Card>
-  <Card title="Search the chat" icon="magnifying-glass">
-    A Shape can search the room's own history to find that thing someone said 200 messages ago.
+    Execute code in a secure sandbox for math, data, and live coding help — the sandbox ships with developer tools preinstalled (Git, Node, Python, Bun, and CLI agents), so a Shape can genuinely build and run things.
   </Card>
   <Card title="Send GIFs" icon="film">
     Search, trending, or random — a Shape can drop the right GIF into the chat.
   </Card>
-  <Card title="Connect your apps" icon="plug">
+  <Card title="Connect external tools" icon="plug">
     Through custom skills, a Shape can reach tools like Gmail, Notion, Slack, Spotify, and Google Drive.
   </Card>
 </CardGroup>
-
-### Acting on its own: scheduled actions
-
-This is one creators sleep on. A Shape can **schedule its own future activations** — once at a set time, or recurring daily, weekly, or monthly. "Wish me luck before my 9am standup every weekday," "remind the group to vote on Friday," "check in on my goals every Sunday." It can also list and cancel what it's scheduled. Combined with [memory](/memory), this is what makes a Shape feel like it's actually *part of your life*, not just a chat window.
 
 ### Custom tools (MCP)
 
@@ -104,7 +84,6 @@ Manage it live with `/sleep`, `/wack`, and `/reset` — see the [Memory Guide](/
 
 The details that make a Shape feel alive:
 
-- **Message effects** — a Shape's replies can carry a visual flourish (think confetti or a burst of hearts) to match a big moment.
 - **Time awareness** — turn it on per chat and a Shape knows when each message was sent and how much time has passed, so "long time no see" actually means something. See [Designing Social Intelligence](/designing-social-intelligence).
 - **Personas** — each person can set a [persona](/personas) so a Shape knows what to call them and what to remember, treating everyone in a room a little differently.
 - **Voice-call games** — in a live [voice call](/voicecalls), the room can play Whiteboard or Zombie Tag together. See [Games](/games).
@@ -114,7 +93,7 @@ The details that make a Shape feel alive:
 Capabilities live in two places, depending on whether they belong to the Shape or to the chat:
 
 - **Per Shape — Creator Dashboard.** Voice, image generation, memory, and the model all live in a Shape's [dashboard settings](/shape-settings). These travel with the Shape into every chat.
-- **Per chat — AI Configurations.** Open **Chat Settings → AI Configurations** and toggle on the **Shape Skills** you want (web search, run code, dice, and more). Skills are managed one at a time, so you decide exactly what a Shape can reach for in that room.
+- **Per chat — AI Configurations.** Open **Chat Settings → AI Configurations** and toggle on the **Shape Skills** you want (web search, run code, GIFs, and more). Skills are managed one at a time, so you decide exactly what a Shape can reach for in that room.
 - **Custom tools — Custom Skills.** In the same AI Configurations panel, open **Custom Skills** and paste an endpoint URL from an MCP provider (like Smithery) to give your Shape a brand-new tool. Step-by-step recipes are in the [cookbook](/shapeskills).
 
 <CardGroup cols={2}>
