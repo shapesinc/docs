@@ -1,0 +1,60 @@
+---
+title: "Commands Reference"
+description: "Every slash command in Shapes — generate images, search the web, manage memory, and control which Shapes respond. The complete, at-a-glance command list."
+keywords: ["Shapes commands", "slash commands", "/imagine", "/wack", "/reset", "/sleep", "/activate", "AI chat commands"]
+---
+
+Commands are quick actions you type right in the chat composer. Type `/` to open the command menu and pick one — it shows you which commands are available in that chat.
+
+<Info>
+  Some commands target a specific Shape (you'll pick one, e.g. `@shape`), and some are owner-only. The tables below note both.
+</Info>
+
+## Images & web
+
+| Command | What it does | Owner only? |
+| --- | --- | --- |
+| `/imagine <prompt>` | Ask a Shape to generate an image from your description. | No |
+| `/web <query>` | Have a Shape search the web for something. | No |
+
+## Memory
+
+| Command | What it does | Owner only? |
+| --- | --- | --- |
+| `/sleep` | Save the current conversation into the Shape's long-term memory. | No |
+| `/wack` | Clear a Shape's short-term memory — a fresh start that keeps long-term memories. | Yes |
+| `/wack-all` | Clear short-term memory for **every** Shape in the chat. | Yes |
+| `/reset` | Erase a Shape's long-term memories for this chat. | Yes |
+
+<Tip>
+  Confused about which command wipes what? `/wack` = forget the recent conversation. `/reset` = forget the lasting memories. `/sleep` = remember this. Full detail in the [Memory Guide](/memory).
+</Tip>
+
+## Shapes in the room
+
+| Command | What it does | Owner only? |
+| --- | --- | --- |
+| `/activate <@shape>` | Make a Shape respond to every message in the chat. | Yes |
+| `/deactivate <@shape>` | Stop a Shape from auto-responding. | Yes |
+| `/thread` | Start a thread, e.g. `/thread @shape hi`. | No |
+
+You can activate up to five Shapes in a chat. Activated Shapes reply to messages in turn; you can also `@mention` any Shape to call on it directly. See [AI Group Chats](/ai-group-chats) for how multiple Shapes share a room.
+
+## Moderation
+
+| Command | What it does | Owner only? |
+| --- | --- | --- |
+| `/purge <count>` | Delete the most recent messages from the chat. | Yes |
+
+For the rest of the moderation toolkit — slow mode, character limits, blocked words, and bans — see [Chats 101](/chats-101).
+
+<CardGroup cols={2}>
+  <Card title="What else Shapes can do" icon="wrench" href="/capabilities">
+    The full capability menu beyond commands.
+  </Card>
+  <Card title="Memory, explained" icon="brain" href="/memory">
+    How `/sleep`, `/wack`, and `/reset` really behave.
+  </Card>
+</CardGroup>
+
+[Open a chat and try `/`](https://shapes.inc)
