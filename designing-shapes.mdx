@@ -1,12 +1,15 @@
 ---
 title: "Designing Great Shapes"
-description: "The complete craft of building a Shape people actually want in the room: identity, personality, preset, knowledge, memory, voice, and social intelligence, with real, copy-ready configs verified against the product."
+sidebarTitle: "2 · Give it a personality"
+description: "Chapter 2 of the Make Shapes guide: the craft of a character. Identity, personality, voice, quirks, boundaries, and the preset, with real configs you can paste in."
 keywords: ["design a Shape", "build an AI character", "AI personality design", "Shape preset", "social AI design", "make a great AI", "AI character writing", "multiplayer AI design"]
 ---
 
-Anyone can spin up a Shape in two minutes. Making one that people *keep* talking to, in a group chat with their friends watching, is the real craft. This is the guide for that.
+*Chapter 2 of the [Make Shapes](/make-shapes) guide.*
 
-By the end you'll know how every part of a Shape fits together, which knobs actually matter, and how to write the few sentences that make a character feel alive instead of generic. We'll build a real example end to end and leave you with configs you can paste straight into your own Shape.
+Your Shape can talk. Now make it feel like *someone*. This chapter is the craft of character: the few sentences that turn a generic assistant into a specific person with a voice, a mood, and opinions.
+
+By the end you'll know which fields actually matter and how to write them. We build a real example along the way and leave you with a config you can paste into your own Shape.
 
 <Note>
   This is the "how to think" guide. For a line-by-line description of every setting and what it does, keep the [Shape Settings Reference](/shape-settings) open in a second tab.
@@ -159,46 +162,14 @@ Both use semantic recall, which leads to the most common mistake creators make:
 
 You can tune how many entries get pulled in and how strict the matching is (the knowledge and training context-size and relevance sliders) in the AI Engine settings, but the defaults are sensible. Start with great entries before you touch the dials.
 
-## 5. Memory: continuity is the magic
+## Then make it smart and social
 
-A Shape that remembers feels like a participant. One that forgets feels like a vending machine. Memory comes in two layers:
+A personality is the foundation. Two more things turn a good character into a great chat member, and each gets its own chapter.
 
-- **Short-term memory (STM)** is the recent messages in the current chat. It's the working context the Shape reasons over.
-- **Long-term memory (LTM)** is the lasting stuff it keeps about people and events, recalled across conversations when relevant.
+- **Make it smart.** A memory so it remembers people and inside jokes, the right [model](/choosing-a-model) to run on, and [skills](/capabilities) it can use. That's [Chapter 3](/make-it-smart).
+- **Make it social.** Knowing when to talk and when to listen in a group, tuned with Free Will. That's [Chapter 4](/designing-social-intelligence), and it's the thing only Shapes does well.
 
-LTM is what lets a Shape bring up the inside joke from last week or remember that `{user}` is studying for finals. It's on by default and generates automatically. You (or anyone chatting) can steer it live with commands:
-
-| Command | What it does |
-| --- | --- |
-| `/sleep` | Save the current conversation into long-term memory now. |
-| `/wack` | Clear short-term memory for a fresh start. Long-term memories stay. |
-| `/reset` | Erase long-term memories for this context. |
-
-See the full behavior in the [Memory Guide](/memory) and the [Commands Reference](/commands). For most Shapes the defaults are right; the place to invest is the **LTM engine instructions**, where you can shape *what kind* of details get remembered (relationships, decisions, running jokes) versus generic summaries.
-
-## 6. The engine underneath
-
-Every Shape runs on an AI **model** (we call it an engine), and the same character feels different on a different one. A creative model makes a Shape loose and expressive; a reasoning model makes it sharp and careful. You set a **primary** engine and a **fallback** for when the primary is busy.
-
-Don't agonize. Pick by vibe, test in chat, and swap if it feels off. The [Which Model Should I Use?](/choosing-a-model) guide gives you fast picks, and the [AI Engine Guide](/aienginecheatsheet) explains the badges (Reasoning, Native Vision, Tools, Free, Premium).
-
-## 7. Give it hands: voice, images, and tools
-
-A great personality is the foundation. Capabilities make it *do* things:
-
-- **Voice.** Your Shape can reply with audio in its own voice, and you can hop into a live [voice call](/voicecalls). Set it up in [Give Your Shape a Voice](/how-to-give-your-shape-a-voice).
-- **Images.** It can generate images with `/imagine` and *see* the images people send it.
-- **Web, code, files, and more.** With [Shape Skills](/shapeskills) it can search the web, run code, read PDFs and documents, and connect custom tools.
-
-The full menu is in [What Shapes Can Do](/capabilities). Add capabilities that fit the character. A coding mentor that runs code is great; a brooding poet that posts GIFs probably isn't.
-
-## 8. Social intelligence: the part most people skip
-
-A Shape that's perfect in a one-on-one DM can be a menace in a group chat if it answers *every* message. Knowing when to speak is a craft of its own, with [its own guide](/designing-social-intelligence). Read it before you put a Shape in a busy room. The short version:
-
-- In a chat you can **activate up to five Shapes**, and activated Shapes reply to messages in turn.
-- **Free Will** controls when a Shape speaks on its own: reply when mentioned, keep the convo going, react to keywords, always have something to say, come back later. Match these to the room. A focused work chat wants restraint; a quiet friend group wants a Shape that keeps the energy up.
-- Write the personality to **react**, not monologue. Shorter, responsive replies always win in a crowd.
+Here's a shortcut for both: write the personality to **react** rather than monologue. Shorter, responsive replies set your Shape up to be smart *and* social. Now let's see it all on one Shape.
 
 ## Worked example: "Sage," a study buddy
 
@@ -235,40 +206,24 @@ Let's assemble everything into one real Shape. Sage helps a group of friends stu
 
 Drop Sage into a chat, study for ten minutes, then adjust one thing. That last step is the whole game.
 
-<Card title="See more complete examples" icon="grid-2" href="/showcase">
-  The Showcase has copy-ready configs for a dungeon master, a roast-bot, a creative writing partner, and more.
-</Card>
+More complete configs to copy live in the [Showcase](/showcase).
 
-## Test, watch, iterate
+## The personality checklist
 
-Social and conversational quality is *tuned*, not guessed. Once your Shape is live:
-
-1. **Watch real conversations.** Is it too long? Too eager? Off-tone?
-2. **Change one thing at a time**, usually reply length or a single Free Will trigger.
-3. **[Regenerate](/regeneration)** a few replies to see the range before you commit to a change.
-4. Repeat until it feels like it belongs in the room.
-
-## The checklist
-
-A Shape that's genuinely good usually has all of this dialed in:
+A character that feels like someone usually has:
 
 - A short backstory with an actual point of view.
 - Personality written in keywords, not paragraphs.
 - A preset that controls length and format, using `{shape}` and `{user}`.
+- A clear voice (shown in conversational examples), one good quirk, and real boundaries.
 - Only the knowledge the model couldn't already know.
-- Memory left on so it has continuity.
-- An engine that matches the vibe, with a fallback set.
-- Capabilities that fit the character.
-- Free Will matched to the room, not maxed out.
-- Tuning based on watching it live.
 
-<CardGroup cols={2}>
-  <Card title="Every setting, explained" icon="sliders" href="/shape-settings">
-    The full reference for every knob in the dashboard.
-  </Card>
-  <Card title="Make it social" icon="users-round" href="/designing-social-intelligence">
-    The deep guide to behaving well in a group chat.
-  </Card>
-</CardGroup>
+## What's next
+
+Your Shape has a personality. Now give it a memory, the right brain, and a few skills.
+
+<Card title="Chapter 3 · Make it smart" icon="arrow-right" href="/make-it-smart">
+  Memory, the right model, and the skills it can actually use.
+</Card>
 
 [Start building on Shapes](https://shapes.inc)
