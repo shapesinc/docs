@@ -38,23 +38,25 @@
               "quickstart",
               "what-are-shapes",
               "ai-group-chats",
-              "core-concepts",
-              "how-to-talk-to-shapes"
+              "core-concepts"
             ]
           },
           {
-            "group": "What you can use it for",
+            "group": "Use Shapes",
             "pages": [
-              "fun-and-friends",
-              "plan-and-build-together",
-              "ai-at-work"
-            ]
-          },
-          {
-            "group": "Group chats",
-            "pages": [
+              "use-shapes",
+              "how-to-talk-to-shapes",
               "create-a-chat",
               "chats-101",
+              "fun-and-friends",
+              "plan-and-build-together",
+              "ai-at-work",
+              "fandomchat"
+            ]
+          },
+          {
+            "group": "Group chat features",
+            "pages": [
               "custominstructions-chats",
               "multimessages",
               "branch-off",
@@ -63,35 +65,45 @@
               "messageactionsmenu",
               "notifications",
               "friends",
-              "fandomchat"
+              "chat-appearance"
             ]
           },
           {
-            "group": "Make your own Shape",
+            "group": "Make Shapes",
             "pages": [
+              "make-shapes",
               "how-to-make-a-shape",
               "designing-shapes",
-              "prompt-engineering",
+              "make-it-smart",
               "designing-social-intelligence",
-              "personas",
-              "shape-settings",
-              "shortguide",
-              "showcase",
-              "chat-appearance",
-              "css",
-              "initialmessages",
-              "how-to-give-your-shape-a-voice",
-              "how-to-receive-voice-messages",
-              "voicecalls",
-              "games"
+              "share-your-shape"
             ]
           },
           {
-            "group": "What Shapes can do",
+            "group": "Make Shapes: go deeper",
+            "pages": [
+              "prompt-engineering",
+              "prompt101",
+              "presets",
+              "variables",
+              "promptingguides",
+              "shortguide",
+              "showcase",
+              "personas",
+              "initialmessages",
+              "how-to-give-your-shape-a-voice",
+              "css"
+            ]
+          },
+          {
+            "group": "What the AI can do",
             "pages": [
               "capabilities",
               "commands",
-              "shapeskills"
+              "shapeskills",
+              "how-to-receive-voice-messages",
+              "voicecalls",
+              "games"
             ]
           },
           {
@@ -99,17 +111,13 @@
             "pages": [
               "choosing-a-model",
               "aienginecheatsheet",
-              "prompt101",
-              "presets",
-              "variables",
-              "promptingguides",
-              "regeneration",
+              "memory",
               "contextwindows",
-              "memory"
+              "regeneration"
             ]
           },
           {
-            "group": "Credits & extras",
+            "group": "Credits & rewards",
             "pages": [
               "premium",
               "credits",
@@ -123,13 +131,14 @@
             ]
           },
           {
-            "group": "Help & reference",
+            "group": "Reference & help",
             "pages": [
+              "shape-settings",
               "glossary",
-              "learninghub",
               "make-or-recover-account",
               "navigation",
-              "faq"
+              "faq",
+              "learninghub"
             ]
           }
         ]
