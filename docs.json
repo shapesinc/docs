@@ -20,6 +20,10 @@
     {
       "source": "/shapeschatsguide",
       "destination": "/chats-101"
+    },
+    {
+      "source": "/shapes101",
+      "destination": "/core-concepts"
     }
   ],
   "navigation": {
@@ -28,32 +32,26 @@
         "tab": "Docs",
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "Start here",
             "pages": [
               "introduction",
               "quickstart",
-              "ai-group-chats",
               "what-are-shapes",
-              "shapes101",
+              "ai-group-chats",
               "core-concepts",
-              "glossary",
-              "learninghub",
-              "make-or-recover-account",
-              "how-to-talk-to-shapes",
-              "navigation",
-              "faq"
+              "how-to-talk-to-shapes"
             ]
           },
           {
-            "group": "Ways to Use Shapes",
+            "group": "What you can use it for",
             "pages": [
-              "ai-at-work",
+              "fun-and-friends",
               "plan-and-build-together",
-              "fun-and-friends"
+              "ai-at-work"
             ]
           },
           {
-            "group": "Group Chats",
+            "group": "Group chats",
             "pages": [
               "create-a-chat",
               "chats-101",
@@ -69,10 +67,11 @@
             ]
           },
           {
-            "group": "Building Shapes",
+            "group": "Make your own Shape",
             "pages": [
               "how-to-make-a-shape",
               "designing-shapes",
+              "prompt-engineering",
               "designing-social-intelligence",
               "personas",
               "shape-settings",
@@ -88,7 +87,7 @@
             ]
           },
           {
-            "group": "Capabilities",
+            "group": "What Shapes can do",
             "pages": [
               "capabilities",
               "commands",
@@ -96,12 +95,11 @@
             ]
           },
           {
-            "group": "Models, Prompts & Memory",
+            "group": "Models & memory",
             "pages": [
               "choosing-a-model",
               "aienginecheatsheet",
               "prompt101",
-              "prompt-engineering",
               "presets",
               "variables",
               "promptingguides",
@@ -111,7 +109,7 @@
             ]
           },
           {
-            "group": "Credits & Products",
+            "group": "Credits & extras",
             "pages": [
               "premium",
               "credits",
@@ -122,6 +120,16 @@
               "purchasegiftcards",
               "auto-top-up",
               "premium-subscriptions"
+            ]
+          },
+          {
+            "group": "Help & reference",
+            "pages": [
+              "glossary",
+              "learninghub",
+              "make-or-recover-account",
+              "navigation",
+              "faq"
             ]
           }
         ]
