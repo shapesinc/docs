@@ -4,7 +4,7 @@ description: "The full menu of Shape capabilities — voice, image generation, v
 keywords: ["Shape capabilities", "AI tools", "AI voice", "AI image generation", "AI web search", "AI code execution", "AI memory", "AI read PDF", "Shape skills"]
 ---
 
-A Shape starts as a great conversationalist. With capabilities, it becomes a collaborator — it can see, speak, search, build, and remember. Here's the full menu, and where to set each one up.
+A Shape starts as a great conversationalist. With capabilities, it becomes a collaborator — it can see, speak, search, build, and remember. This page is the complete catalog: what every capability does and how to switch it on. For recipes that combine them into something delightful, see the [Skill Ideas cookbook](/shapeskills).
 
 ## Talk
 
@@ -31,8 +31,8 @@ Shapes can also **listen** — send a voice note and the Shape transcribes and r
 ## Images
 
 <CardGroup cols={2}>
-  <Card title="Generate images" icon="image" href="/shapeskills">
-    Use `/imagine` (or ask in natural language) and the Shape draws it. Tune the look in the Image Engine settings.
+  <Card title="Generate images" icon="image" href="/shape-settings#image-engine">
+    Use `/imagine` (or ask in natural language) and the Shape draws it. Choose **Nano Banana** or **Nano Banana Pro** and tune the look in the Image Engine settings.
   </Card>
   <Card title="See your images" icon="eye">
     Send a Shape an image and — on a vision-capable model — it understands and responds to what's in it.
@@ -106,15 +106,20 @@ The details that make a Shape feel alive:
 
 - **Message effects** — a Shape's replies can carry a visual flourish (think confetti or a burst of hearts) to match a big moment.
 - **Time awareness** — turn it on per chat and a Shape knows when each message was sent and how much time has passed, so "long time no see" actually means something. See [Designing Social Intelligence](/designing-social-intelligence).
-- **Personas** — a Shape can keep a [persona](/glossary) for each person: the name to call you and what to remember about you, so it treats everyone in a room a little differently.
+- **Personas** — each person can set a [persona](/personas) so a Shape knows what to call them and what to remember, treating everyone in a room a little differently.
+- **Voice-call games** — in a live [voice call](/voicecalls), the room can play Whiteboard or Zombie Tag together. See [Games](/games).
 
 ## Turn capabilities on
 
-Most capabilities are configured per Shape in the [Creator Dashboard](/shape-settings) (voice, images, memory) or per chat under **AI Configurations** → **Shape Skills** (web, code, custom tools). Skills are managed one by one, so you decide exactly what a Shape can reach for.
+Capabilities live in two places, depending on whether they belong to the Shape or to the chat:
+
+- **Per Shape — Creator Dashboard.** Voice, image generation, memory, and the model all live in a Shape's [dashboard settings](/shape-settings). These travel with the Shape into every chat.
+- **Per chat — AI Configurations.** Open **Chat Settings → AI Configurations** and toggle on the **Shape Skills** you want (web search, run code, dice, and more). Skills are managed one at a time, so you decide exactly what a Shape can reach for in that room.
+- **Custom tools — Custom Skills.** In the same AI Configurations panel, open **Custom Skills** and paste an endpoint URL from an MCP provider (like Smithery) to give your Shape a brand-new tool. Step-by-step recipes are in the [cookbook](/shapeskills).
 
 <CardGroup cols={2}>
-  <Card title="Set up Shape Skills" icon="toolbox" href="/shapeskills">
-    Enable web, code, and custom tools, with ready-to-use skill ideas.
+  <Card title="Skill ideas & recipes" icon="book-open" href="/shapeskills">
+    Inspiring ways to combine these capabilities, with step-by-step setups.
   </Card>
   <Card title="Commands reference" icon="terminal" href="/commands">
     Every slash command, in one place.
