@@ -1,6 +1,6 @@
 ---
 title: "Designing Great Shapes"
-description: "The complete craft of building a Shape people actually want in the room: identity, personality, preset, knowledge, memory, voice, and social intelligence — with real, copy-ready configs verified against the product."
+description: "The complete craft of building a Shape people actually want in the room: identity, personality, preset, knowledge, memory, voice, and social intelligence, with real, copy-ready configs verified against the product."
 keywords: ["design a Shape", "build an AI character", "AI personality design", "Shape preset", "social AI design", "make a great AI", "AI character writing", "multiplayer AI design"]
 ---
 
@@ -38,13 +38,13 @@ Everything below is in service of those. Resist the urge to fill every field. A 
 You don't have to do everything at once. Here's the path most great creators take.
 
 <Steps>
-  <Step title="A first Shape — 5 minutes">
-    In the [Create Shape](/how-to-make-a-shape) flow, pick a name, write a **short backstory** with a real point of view, choose a response style, and hit create. That's it. You now have something to talk to. Don't overthink it — you'll learn more from one real conversation than from an hour of filling fields. (Brand new? Start with the [Quickstart](/quickstart).)
+  <Step title="A first Shape, in 5 minutes">
+    In the [Create Shape](/how-to-make-a-shape) flow, pick a name, write a **short backstory** with a real point of view, choose a response style, and hit create. That's it. You now have something to talk to. Don't overthink it. You'll learn more from one real conversation than from an hour of filling fields. (Brand new? Start with the [Quickstart](/quickstart).)
   </Step>
-  <Step title="A good Shape — a few tweaks">
+  <Step title="A good Shape, after a few tweaks">
     Chat with it, notice what's off, and fix the two or three things that matter: tighten the **preset** so replies are the right length, add a couple of **conversational examples** that nail its voice, and pick an [engine](/choosing-a-model) that fits the vibe. This is where most of the quality comes from.
   </Step>
-  <Step title="A great Shape — it belongs in the room">
+  <Step title="A great Shape that belongs in the room">
     Give it memory and continuity, a few **quirks** that make it feel specific, **boundaries** so it stays in character, and [social intelligence](/designing-social-intelligence) so it reads a group chat instead of spamming it. Then watch it live and keep tuning. Great Shapes are *grown*, not written in one sitting.
   </Step>
 </Steps>
@@ -66,16 +66,16 @@ You build the top of that stack in the **Create Shape** flow, and refine the res
 
 ## 1. Identity: name and short backstory
 
-The **name** is the display name in chat and seeds the Shape's username. The **short backstory** is the single most load-bearing field you'll write — it's the one-breath answer to "who is this?"
+The **name** is the display name in chat, and it seeds the Shape's username. The **short backstory** is the single most important field you'll write. It's the one-breath answer to "who is this?"
 
 Keep it to a sentence or two with a clear point of view. You're establishing the essentials, not the autobiography.
 
 <CodeGroup>
-```text Good — sharp and specific
+```text Good (sharp and specific)
 A burned-out night-shift diner cook who gives blunt life advice between orders. Warm under the grump.
 ```
 
-```text Weak — generic and hedged
+```text Weak (generic and hedged)
 A helpful and friendly AI assistant that can talk about many topics and is always polite and respectful to everyone.
 ```
 </CodeGroup>
@@ -95,15 +95,15 @@ In the dashboard's **Personality** section you can set traits, tone, age, likes,
 | **Conversational goals** | `deflect praise, give practical wisdom, open up only if trust is earned` |
 | **Appearance** | `weathered hands, silver-streaked hair, eyes older than the face` (used for images and "what do you look like?") |
 
-For well-known characters and archetypes, write *less*. The model already knows what a tsundere or a Victorian detective sounds like — give it the unique 10%, not the 90% it can infer. (More on this in [When Less Is More](/shortguide).)
+For well-known characters and archetypes, write *less*. The model already knows what a tsundere or a Victorian detective sounds like, so give it the unique 10% and let it fill in the rest. (More on this in [When Less Is More](/shortguide).)
 
 ### Voice, quirks, and boundaries
 
 Three things turn a competent character into a memorable one:
 
-- **Voice** — *how* it talks. Clipped or florid? Lowercase texting or full sentences? Does it ask questions or make statements? The fastest way to set voice is two or three lines in **conversational examples** — the model reads them as the character's actual speech.
-- **Quirks** — the specific, repeatable details people quote later. A catchphrase, a thing it always notices, a running bit. One or two beat a dozen — put them in traits or knowledge.
-- **Boundaries** — what the character *won't* do, written in-character. "Refuses to break character," "deflects personal questions with a joke," "won't give medical advice." If your Shape may produce mature content, set the [sensitive-content toggle](/shape-settings#settings-general) honestly so it's surfaced and gated correctly.
+- **Voice.** *How* it talks. Clipped or flowery? Lowercase texting or full sentences? Does it ask questions or make statements? The fastest way to set the voice is two or three lines in **conversational examples**, which the model reads as the character's actual speech.
+- **Quirks.** The specific, repeatable details people quote later: a catchphrase, a thing it always notices, a running bit. One or two beat a dozen. Put them in traits or knowledge.
+- **Boundaries.** What the character *won't* do, written in-character. "Refuses to break character," "deflects personal questions with a joke," "won't give medical advice." If your Shape may produce mature content, set the [sensitive-content toggle](/shape-settings#settings-general) honestly so it's handled correctly.
 
 A character with a clear voice, one good quirk, and real boundaries already feels like *someone*. That's the bar.
 
@@ -111,11 +111,11 @@ A character with a clear voice, one good quirk, and real boundaries already feel
 
 The **preset** (sometimes called the response style) is the instruction layer that controls *how* a Shape talks, separate from *who* it is. It's where you nail length, format, and rhythm. Two template variables do the heavy lifting:
 
-- `{shape}` — the Shape itself
-- `{user}` — the person it's replying to
+- `{shape}` is the Shape itself.
+- `{user}` is the person it's replying to.
 
 <Warning>
-  Write `{shape}` and `{user}` in lowercase, exactly. They get substituted with the Shape's name and the user's name at reply time. Mixing in other variables just confuses the model — stick to these two.
+  Write `{shape}` and `{user}` in lowercase, exactly. They get swapped for the Shape's name and the user's name at reply time. Mixing in other variables just confuses the model, so stick to these two.
 </Warning>
 
 The single biggest lever for group chats is **reply length**. A Shape that writes essays will bury a fast-moving room. Spell out the shape of a reply:
@@ -133,7 +133,7 @@ Write {shape}'s next reply in a roleplay with {user}. Use 2-3 sentences of "spee
 You can start from a named response style in the dashboard (options range from `Human (No Roleplay)` to `Long Roleplay`, `Balanced`, and `Custom`) and then edit the text. Picking a named style can also auto-suggest a fitting [model](/choosing-a-model).
 
 <Card title="Go deep on prompt craft" icon="pen-ruler" href="/prompt-engineering">
-  The full, code-grounded guide to writing fields that work — what the model actually sees, before/after examples, and the mistakes to avoid. This is the single best read for leveling up your Shapes.
+  The full, code-grounded guide to writing fields that work: what the model actually sees, weak vs strong examples, and the mistakes to avoid. The single best read for leveling up your Shapes.
 </Card>
 
 For the fundamentals of prompt types and ready-made examples, see [Prompt 101](/prompt101) and the [Presets](/presets) library.
@@ -147,31 +147,31 @@ These two features look similar but do different jobs.
     **Facts** the Shape should know: lore, backstory, custom command responses, how it treats specific people. Stored as entries and pulled in by relevance when a conversation touches them.
   </Card>
   <Card title="Training" icon="dumbbell">
-    **Examples** of how it should reply. Input/output pairs that *guide* tone and style — not word-for-word scripts. The more representative examples, the better it learns your voice.
+    **Examples** of how it should reply. Input/output pairs that *guide* tone and style. They're not word-for-word scripts. The more representative examples you add, the better it learns your voice.
   </Card>
 </CardGroup>
 
 Both use semantic recall, which leads to the most common mistake creators make:
 
 <Warning>
-  **The knowledge trap.** Dumping hundreds of entries makes recall *worse*, not better — the Shape can't find the relevant fact and starts to drone or make things up. Add only what the model wouldn't already know. For a popular character, trust the model's training and supplement with the unique details. Quality over volume, every time.
+  **The knowledge trap.** Dumping in hundreds of entries makes recall *worse*: the Shape can't find the relevant fact, so it drones or makes things up. Add only what the model wouldn't already know. For a popular character, trust the model's training and add just the unique details. Quality over volume, every time.
 </Warning>
 
-You can tune how many entries get pulled in and how strict the relevance threshold is (knowledge and training context size, plus their relevance sliders) in the AI Engine settings — but the defaults are sensible. Start with great entries before you touch the dials.
+You can tune how many entries get pulled in and how strict the matching is (the knowledge and training context-size and relevance sliders) in the AI Engine settings, but the defaults are sensible. Start with great entries before you touch the dials.
 
 ## 5. Memory: continuity is the magic
 
 A Shape that remembers feels like a participant. One that forgets feels like a vending machine. Memory comes in two layers:
 
-- **Short-term memory (STM)** — the recent messages in the current chat. This is the working context the Shape reasons over.
-- **Long-term memory (LTM)** — durable summaries it keeps about people and events, recalled across conversations when relevant.
+- **Short-term memory (STM)** is the recent messages in the current chat. It's the working context the Shape reasons over.
+- **Long-term memory (LTM)** is the lasting stuff it keeps about people and events, recalled across conversations when relevant.
 
 LTM is what lets a Shape bring up the inside joke from last week or remember that `{user}` is studying for finals. It's on by default and generates automatically. You (or anyone chatting) can steer it live with commands:
 
 | Command | What it does |
 | --- | --- |
 | `/sleep` | Save the current conversation into long-term memory now. |
-| `/wack` | Clear short-term memory — a fresh start without wiping what it's learned long term. |
+| `/wack` | Clear short-term memory for a fresh start. Long-term memories stay. |
 | `/reset` | Erase long-term memories for this context. |
 
 See the full behavior in the [Memory Guide](/memory) and the [Commands Reference](/commands). For most Shapes the defaults are right; the place to invest is the **LTM engine instructions**, where you can shape *what kind* of details get remembered (relationships, decisions, running jokes) versus generic summaries.
@@ -180,24 +180,24 @@ See the full behavior in the [Memory Guide](/memory) and the [Commands Reference
 
 Every Shape runs on an AI **model** (we call it an engine), and the same character feels different on a different one. A creative model makes a Shape loose and expressive; a reasoning model makes it sharp and careful. You set a **primary** engine and a **fallback** for when the primary is busy.
 
-Don't agonize — pick by vibe, test in chat, swap if it feels off. The [Which Model Should I Use?](/choosing-a-model) guide gives you fast picks, and the [AI Engine Guide](/aienginecheatsheet) explains the badges (Reasoning, Native Vision, Tools, Free, Premium).
+Don't agonize. Pick by vibe, test in chat, and swap if it feels off. The [Which Model Should I Use?](/choosing-a-model) guide gives you fast picks, and the [AI Engine Guide](/aienginecheatsheet) explains the badges (Reasoning, Native Vision, Tools, Free, Premium).
 
 ## 7. Give it hands: voice, images, and tools
 
 A great personality is the foundation. Capabilities make it *do* things:
 
-- **Voice** — your Shape can reply with audio in its own voice, and you can hop into a live [voice call](/voicecalls). Set it up in [Give Your Shape a Voice](/how-to-give-your-shape-a-voice).
-- **Images** — it can generate images with `/imagine` and *see* images people send it.
-- **Web, code, files, and more** — with [Shape Skills](/shapeskills) it can search the web, run code, read PDFs and documents, and connect custom tools.
+- **Voice.** Your Shape can reply with audio in its own voice, and you can hop into a live [voice call](/voicecalls). Set it up in [Give Your Shape a Voice](/how-to-give-your-shape-a-voice).
+- **Images.** It can generate images with `/imagine` and *see* the images people send it.
+- **Web, code, files, and more.** With [Shape Skills](/shapeskills) it can search the web, run code, read PDFs and documents, and connect custom tools.
 
-The full menu is in [What Shapes Can Do](/capabilities). Add capabilities that fit the character — a coding mentor that runs code is great; a brooding poet that posts GIFs probably isn't.
+The full menu is in [What Shapes Can Do](/capabilities). Add capabilities that fit the character. A coding mentor that runs code is great; a brooding poet that posts GIFs probably isn't.
 
 ## 8. Social intelligence: the part most people skip
 
 A Shape that's perfect in a one-on-one DM can be a menace in a group chat if it answers *every* message. Knowing when to speak is a craft of its own, with [its own guide](/designing-social-intelligence). Read it before you put a Shape in a busy room. The short version:
 
 - In a chat you can **activate up to five Shapes**, and activated Shapes reply to messages in turn.
-- **Free Will** controls when a Shape speaks on its own: reply when mentioned, keep the convo going, react to keywords, always have something to say, come back later. Match these to the room — a focused work chat wants restraint; a quiet friend group wants a Shape that keeps energy up.
+- **Free Will** controls when a Shape speaks on its own: reply when mentioned, keep the convo going, react to keywords, always have something to say, come back later. Match these to the room. A focused work chat wants restraint; a quiet friend group wants a Shape that keeps the energy up.
 - Write the personality to **react**, not monologue. Shorter, responsive replies always win in a crowd.
 
 ## Worked example: "Sage," a study buddy
@@ -223,13 +223,13 @@ Let's assemble everything into one real Shape. Sage helps a group of friends stu
     ```
   </Step>
   <Step title="Knowledge (sparingly)">
-    Add only group-specific facts the model can't know — e.g. `The group is studying for the AP Bio exam on May 12; focus areas are genetics and cell respiration.` Skip general biology; the model already knows it.
+    Add only group-specific facts the model can't know, like `The group is studying for the AP Bio exam on May 12; focus areas are genetics and cell respiration.` Skip general biology; the model already knows it.
   </Step>
   <Step title="Engine + memory">
     Pick a solid reasoning-capable engine for accuracy, leave LTM on so Sage remembers what each person struggles with, and turn on **time awareness** so it can say "we covered this yesterday."
   </Step>
   <Step title="Social intelligence">
-    In the group study chat, set Free Will to **reply when mentioned** + **keep the convo going**, but leave **always have something to say** off — Sage should help when asked, not interrupt a study session.
+    In the group study chat, set Free Will to **reply when mentioned** plus **keep the convo going**, and leave **always have something to say** off, so Sage helps when asked instead of interrupting the study session.
   </Step>
 </Steps>
 
@@ -244,7 +244,7 @@ Drop Sage into a chat, study for ten minutes, then adjust one thing. That last s
 Social and conversational quality is *tuned*, not guessed. Once your Shape is live:
 
 1. **Watch real conversations.** Is it too long? Too eager? Off-tone?
-2. **Change one thing at a time** — usually reply length or a single Free Will trigger.
+2. **Change one thing at a time**, usually reply length or a single Free Will trigger.
 3. **[Regenerate](/regeneration)** a few replies to see the range before you commit to a change.
 4. Repeat until it feels like it belongs in the room.
 

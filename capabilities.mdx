@@ -1,104 +1,106 @@
 ---
 title: "What Shapes Can Do"
-description: "The full menu of Shape capabilities — voice, image generation, vision, web search, code execution, file reading, memory, and custom tools. Everything your AI can do beyond talking."
+description: "The full menu of Shape capabilities: voice, image generation, vision, web search, code, file reading, memory, and custom tools. Everything your AI can do beyond talking."
 keywords: ["Shape capabilities", "AI tools", "AI voice", "AI image generation", "AI web search", "AI code execution", "AI memory", "AI read PDF", "Shape skills"]
 ---
 
-A Shape starts as a great conversationalist. With capabilities, it becomes a collaborator — it can see, speak, search, build, and remember. This page is the complete catalog: what every capability does and how to switch it on. For recipes that combine them into something delightful, see the [Skill Ideas cookbook](/shapeskills).
+A Shape starts as a great conversationalist. Give it capabilities and it becomes a collaborator that can see, speak, search, build, and remember.
+
+This page is the full catalog: what each capability does and how to turn it on. For fun ways to combine them, see the [Skill Ideas cookbook](/shapeskills).
 
 ## Talk
 
-The foundation. Shapes hold real conversations, not one-shot answers.
+The foundation. Shapes hold a real back-and-forth, not one-line answers.
 
-- **Natural replies** that respond to the whole room — you, your friends, and other Shapes.
-- **Multiple messages** — a Shape can break a reply into a few messages, the way a person texts. See [Multiple Messages](/multimessages).
-- **Regenerate, edit, reply, branch** — manage any message from its three-dot menu. See [Message Actions](/messageactionsmenu) and [Regeneration](/regeneration).
+- **Natural replies** that respond to the whole room: you, your friends, and the other Shapes.
+- **Multiple messages.** A Shape can split a reply into a few messages, the way a person texts. See [Multiple Messages](/multimessages).
+- **Regenerate, edit, reply, branch.** Manage any message from its three-dot menu. See [Message Actions](/messageactionsmenu) and [Regeneration](/regeneration).
 
 ## Voice
 
 <CardGroup cols={2}>
   <Card title="Voice messages" icon="microphone" href="/how-to-give-your-shape-a-voice">
-    Shapes reply with audio in their own voice — pick a preset voice or upload a custom sample. Captions optional.
+    A Shape can reply with audio in its own voice. Pick a preset voice or upload your own sample. Captions optional.
   </Card>
   <Card title="Live voice calls" icon="phone" href="/voicecalls">
-    Hop into a real-time call and talk out loud with a Shape (and other people). Currently experimental and free.
+    Jump into a real-time call and talk out loud with a Shape and other people. Experimental and free right now.
   </Card>
 </CardGroup>
 
-Shapes can also **listen** — send a voice note and the Shape transcribes and responds to it. Learn how to [receive voice messages](/how-to-receive-voice-messages).
+Shapes can also **listen**. Send a voice note and the Shape turns it into text and replies. See [how to receive voice messages](/how-to-receive-voice-messages).
 
 ## Images
 
 <CardGroup cols={2}>
-  <Card title="Generate images" icon="image" href="/shape-settings#image-engine">
-    Use `/imagine` (or ask in natural language) and the Shape draws it. Choose **Nano Banana** or **Nano Banana Pro** and tune the look in the Image Engine settings.
+  <Card title="Make images" icon="image" href="/shape-settings#image-engine">
+    Type `/imagine` (or just ask) and the Shape draws it. Pick **Nano Banana** or **Nano Banana Pro** and set the look in Image Engine settings.
   </Card>
   <Card title="See your images" icon="eye">
-    Send a Shape an image and — on a vision-capable model — it understands and responds to what's in it.
+    Send a Shape a picture. On a vision-capable model, it understands what's in the image and responds.
   </Card>
 </CardGroup>
 
 {/* SCREENSHOT: a chat where a Shape responds to "/imagine ..." with a generated image. */}
 ![A Shape generating an image with /imagine](/images/imagineExample.png)
 
-A Shape can also **edit** an image you send (image-to-image), so you can iterate on a picture together in the chat.
+A Shape can also **edit** an image you send, so you can shape a picture together in the chat.
 
-## Knowledge & the web
+## Knowledge and the web
 
-- **Web search & browsing** — a Shape can search the web and read pages with `/web` or on its own. Drop a link in chat and it can read and summarize it.
-- **Read files & documents** — Shapes can read PDFs, Word and Office docs, slides, spreadsheets, text and code files, and more. Just attach the file.
+- **Web search.** A Shape can search the web and read pages. Type `/web`, or just drop a link and it reads and summarizes it.
+- **Files and documents.** Attach a PDF, a Word or Office doc, slides, a spreadsheet, or a code file, and the Shape can read it.
 
 {/* SCREENSHOT: a Shape answering a question using a web search result, with a cited source. */}
 ![A Shape using web search to answer a question](/images/webExample.png)
 
-## Actions & tools (Shape Skills)
+## Actions and tools (Shape Skills)
 
-[Shape Skills](/shapeskills) give a Shape hands. You switch the ones you want on in a chat's settings, and the Shape decides when to reach for them based on the conversation.
+[Shape Skills](/shapeskills) give a Shape hands. You switch the ones you want on in a chat's settings, and the Shape decides when to use them.
 
 <CardGroup cols={2}>
   <Card title="Run code" icon="code">
-    Execute code in a secure sandbox for math, data, and live coding help — the sandbox ships with developer tools preinstalled (Git, Node, Python, Bun, and CLI agents), so a Shape can genuinely build and run things.
+    A Shape can run code in a safe sandbox for math, data, and coding help. The sandbox comes with Git, Node, Python, Bun, and CLI tools preinstalled, so it can really build and run things.
   </Card>
   <Card title="Send GIFs" icon="film">
-    Search, trending, or random — a Shape can drop the right GIF into the chat.
+    A Shape can drop the right GIF into the chat: search for one, grab a trending one, or pull a random one.
   </Card>
-  <Card title="Connect external tools" icon="plug">
-    Through custom skills, a Shape can reach tools like Gmail, Notion, Slack, Spotify, and Google Drive.
+  <Card title="Connect your apps" icon="plug">
+    With custom skills, a Shape can reach tools like Gmail, Notion, Slack, Spotify, and Google Drive.
   </Card>
 </CardGroup>
 
 ### Custom tools (MCP)
 
-Beyond the built-ins, you can connect your own tools through MCP providers like Smithery — image, video, and music generation, GitHub, web scraping, and far more. Full setup and a big list of ideas live in [Shape Skills](/shapeskills).
+Beyond the built-ins, you can connect your own tools through MCP providers like Smithery: image, video, and music generation, GitHub, web scraping, and more. ("MCP" is a standard for plugging external tools into an AI.) Setup and a big list of ideas live in the [Skill Ideas cookbook](/shapeskills).
 
 ## Memory
 
 Shapes remember, which is what makes a conversation feel continuous.
 
-- **Short-term memory** keeps the current conversation coherent.
-- **Long-term memory** lets a Shape recall people, decisions, and inside jokes across conversations.
+- **Short-term memory** keeps the current conversation straight.
+- **Long-term memory** lets a Shape recall people, decisions, and inside jokes across different conversations.
 
-Manage it live with `/sleep`, `/wack`, and `/reset` — see the [Memory Guide](/memory) and [Commands Reference](/commands).
+You can manage it live with `/sleep`, `/wack`, and `/reset`. See the [Memory Guide](/memory) and [Commands Reference](/commands).
 
 ## Little touches
 
 The details that make a Shape feel alive:
 
-- **Time awareness** — turn it on per chat and a Shape knows when each message was sent and how much time has passed, so "long time no see" actually means something. See [Designing Social Intelligence](/designing-social-intelligence).
-- **Personas** — each person can set a [persona](/personas) so a Shape knows what to call them and what to remember, treating everyone in a room a little differently.
-- **Voice-call games** — in a live [voice call](/voicecalls), the room can play Whiteboard or Zombie Tag together. See [Games](/games).
+- **Time awareness.** Turn it on per chat and a Shape knows when each message was sent and how much time has passed, so "long time no see" actually lands.
+- **Personas.** Each person can set a [persona](/personas) so a Shape knows what to call them and what to remember, and treats everyone in a room a little differently.
+- **Voice-call games.** In a live [voice call](/voicecalls), the room can play Whiteboard or Zombie Tag together. See [Games](/games).
 
 ## Turn capabilities on
 
 Capabilities live in two places, depending on whether they belong to the Shape or to the chat:
 
-- **Per Shape — Creator Dashboard.** Voice, image generation, memory, and the model all live in a Shape's [dashboard settings](/shape-settings). These travel with the Shape into every chat.
-- **Per chat — AI Configurations.** Open **Chat Settings → AI Configurations** and toggle on the **Shape Skills** you want (web search, run code, GIFs, and more). Skills are managed one at a time, so you decide exactly what a Shape can reach for in that room.
-- **Custom tools — Custom Skills.** In the same AI Configurations panel, open **Custom Skills** and paste an endpoint URL from an MCP provider (like Smithery) to give your Shape a brand-new tool. Step-by-step recipes are in the [cookbook](/shapeskills).
+- **On the Shape (Creator Dashboard).** Voice, image generation, memory, and the model live in a Shape's [dashboard settings](/shape-settings). They travel with the Shape into every chat.
+- **In the chat (AI Configurations).** Open **Chat Settings → AI Configurations** and switch on the **Shape Skills** you want, like web search, run code, and GIFs. You turn them on one at a time, so you decide exactly what a Shape can reach for in that room.
+- **Custom tools (Custom Skills).** In the same panel, open **Custom Skills** and paste an endpoint URL from an MCP provider like Smithery to add a brand-new tool. Step-by-step recipes are in the [cookbook](/shapeskills).
 
 <CardGroup cols={2}>
-  <Card title="Skill ideas & recipes" icon="book-open" href="/shapeskills">
-    Inspiring ways to combine these capabilities, with step-by-step setups.
+  <Card title="Skill ideas and recipes" icon="book-open" href="/shapeskills">
+    Fun ways to combine these, with step-by-step setups.
   </Card>
   <Card title="Commands reference" icon="terminal" href="/commands">
     Every slash command, in one place.
