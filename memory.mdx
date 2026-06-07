@@ -10,6 +10,17 @@ Shapes use two main kinds of memory:
 - **Short Term Memory (STM):** The recent conversation currently happening in your chat.
 - **Long Term Memory (LTM):** Saved memories that can be used later when relevant.
 
+Here's the lifecycle — how a moment in chat becomes a lasting memory, and how the commands move things around:
+
+```mermaid
+flowchart LR
+    A[You chat] --> B[Short-term memory: recent messages]
+    B -- "auto-saves over time, or /sleep" --> C[Long-term memory: durable summaries]
+    C -- "recalled when relevant" --> D[Future conversations]
+    B -. "/wack clears this" .-> B
+    C -. "/reset erases this" .-> C
+```
+
 ### **Memory Commands**
 
 - /wack — Erases short term memory only.

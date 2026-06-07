@@ -18,6 +18,24 @@ The opposite failure is just as bad: a Shape so passive it never adds anything.
 
 Good social intelligence lives in between. The goal is a Shape that's **present** — it picks up the thread, lands a reply at the right moment, and then gets out of the way. Almost every control below exists to help you hit that balance.
 
+## How a Shape decides to speak
+
+When someone posts in a room, here's how Shapes figures out who replies:
+
+```mermaid
+flowchart TD
+    A[Someone posts a message] --> B{Is a Shape mentioned?}
+    B -- Yes --> C[Those Shapes reply, in turn]
+    B -- No --> D{Any Shapes activated?}
+    D -- Yes --> E[Activated Shapes reply in turn, up to five]
+    D -- No --> F{Free Will triggers?}
+    F -- "mention, keyword, or continue" --> G[A Shape jumps in]
+    F -- "room is quiet" --> H[Always have something to say: one Shape speaks]
+    F -- "no trigger" --> I[Shapes stay quiet]
+```
+
+The big takeaways: **@mention** always wins, **activation** makes a Shape a reliable responder, and **Free Will** governs everything else. Replies happen one after another, not all at once — so even a full room reads cleanly. Now let's tune that behavior.
+
 ## The main dial: Free Will
 
 **Free Will** decides when a Shape is allowed to speak on its own. It's set per chat in **Chat Settings → AI Configurations**, and it's the single most important lever for social behavior.
