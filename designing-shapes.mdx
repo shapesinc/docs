@@ -33,17 +33,33 @@ A Shape is not a system prompt. It's a character with a job in a conversation. T
 
 Everything below is in service of those. Resist the urge to fill every field — a tight, opinionated Shape beats an over-described one almost every time.
 
+## From zero to activated
+
+You don't have to do everything at once. Here's the path most great creators take.
+
+<Steps>
+  <Step title="A first Shape — 5 minutes">
+    Pick a name, write a **short backstory** with a real point of view, choose a response style, and hit create. That's it. You now have something to talk to. Don't overthink it — you'll learn more from one real conversation than from an hour of filling fields.
+  </Step>
+  <Step title="A good Shape — a few tweaks">
+    Chat with it, notice what's off, and fix the two or three things that matter: tighten the **preset** so replies are the right length, add a couple of **conversational examples** that nail its voice, and pick an [engine](/choosing-a-model) that fits the vibe. This is where most of the quality comes from.
+  </Step>
+  <Step title="A great Shape — it belongs in the room">
+    Give it memory and continuity, a few **quirks** that make it feel specific, **boundaries** so it stays in character, and [social intelligence](/designing-social-intelligence) so it reads a group chat instead of spamming it. Then watch it live and keep tuning. Great Shapes are *grown*, not written in one sitting.
+  </Step>
+</Steps>
+
 ## The anatomy of a Shape
 
 ```mermaid
 flowchart TD
-    A[Identity<br/>name · short backstory] --> B[Personality<br/>traits · tone · likes · goals]
-    B --> C[Response style / Preset<br/>how it actually writes]
-    C --> D[Knowledge & Training<br/>facts it must know · examples of its voice]
-    D --> E[Memory<br/>short-term + long-term]
-    E --> F[Capabilities<br/>voice · images · web · code · tools]
-    F --> G[Social intelligence<br/>when it speaks in a group]
-    G --> H((A Shape people<br/>want in the room))
+    A["Identity<br/>name and short backstory"] --> B["Personality<br/>traits, tone, likes, goals"]
+    B --> C["Response style / preset<br/>how it actually writes"]
+    C --> D["Knowledge and training<br/>facts it must know, examples of its voice"]
+    D --> E["Memory<br/>short-term and long-term"]
+    E --> F["Capabilities<br/>voice, images, web, code, tools"]
+    F --> G["Social intelligence<br/>when it speaks in a group"]
+    G --> H(("A Shape people<br/>want in the room"))
 ```
 
 You build the top of that stack in the **Create Shape** flow, and refine the rest in the **Creator Dashboard**. Let's go layer by layer.
@@ -81,6 +97,16 @@ In the dashboard's **Personality** section you can set traits, tone, age, likes,
 
 For well-known characters and archetypes, write *less*. The model already knows what a tsundere or a Victorian detective sounds like — give it the unique 10%, not the 90% it can infer. (More on this in [When Less Is More](/shortguide).)
 
+### Voice, quirks, and boundaries
+
+Three things turn a competent character into a memorable one:
+
+- **Voice** — *how* it talks. Clipped or florid? Lowercase texting or full sentences? Does it ask questions or make statements? The fastest way to set voice is two or three lines in **conversational examples** — the model reads them as the character's actual speech.
+- **Quirks** — the specific, repeatable details people quote later. A catchphrase, a thing it always notices, a running bit. One or two beat a dozen — put them in traits or knowledge.
+- **Boundaries** — what the character *won't* do, written in-character. "Refuses to break character," "deflects personal questions with a joke," "won't give medical advice." If your Shape may produce mature content, set the [sensitive-content toggle](/shape-settings#settings-general) honestly so it's surfaced and gated correctly.
+
+A character with a clear voice, one good quirk, and real boundaries already feels like *someone*. That's the bar.
+
 ## 3. The preset: how it actually writes
 
 The **preset** (sometimes called the response style) is the instruction layer that controls *how* a Shape talks, separate from *who* it is. It's where you nail length, format, and rhythm. Two template variables do the heavy lifting:
@@ -104,7 +130,13 @@ Write {shape}'s next reply in a roleplay with {user}. Use 2-3 sentences of "spee
 ```
 </CodeGroup>
 
-You can start from a named response style in the dashboard (options range from `Human (No Roleplay)` to `Long Roleplay`, `Balanced`, and `Custom`) and then edit the text. Picking a named style can also auto-suggest a fitting [model](/choosing-a-model). For a deeper toolkit of prompt patterns — declarative, imperative, prohibitive, obligation — read [Prompt 101](/prompt101), and grab ready-made examples from [Presets](/presets).
+You can start from a named response style in the dashboard (options range from `Human (No Roleplay)` to `Long Roleplay`, `Balanced`, and `Custom`) and then edit the text. Picking a named style can also auto-suggest a fitting [model](/choosing-a-model).
+
+<Card title="Go deep on prompt craft" icon="pen-ruler" href="/prompt-engineering">
+  The full, code-grounded guide to writing fields that work — what the model actually sees, before/after examples, and the mistakes to avoid. This is the single best read for leveling up your Shapes.
+</Card>
+
+For the fundamentals of prompt types and ready-made examples, see [Prompt 101](/prompt101) and the [Presets](/presets) library.
 
 ## 4. Knowledge and training: feed the right things
 
