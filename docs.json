@@ -16,6 +16,12 @@
     "dark": "#1D4ED8"
   },
   "favicon": "/favicon.png",
+  "redirects": [
+    {
+      "source": "/shapeschatsguide",
+      "destination": "/chats-101"
+    }
+  ],
   "navigation": {
     "tabs": [
       {
@@ -70,7 +76,6 @@
               "designing-social-intelligence",
               "personas",
               "shape-settings",
-              "shapeschatsguide",
               "shortguide",
               "showcase",
               "chat-appearance",
