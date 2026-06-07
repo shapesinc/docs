@@ -54,22 +54,42 @@ A Shape can also **edit** an image you send (image-to-image), so you can iterate
 
 ## Actions & tools (Shape Skills)
 
-[Shape Skills](/shapeskills) give a Shape hands. Beyond the built-ins, you can connect external apps and custom tools.
+[Shape Skills](/shapeskills) give a Shape hands. A Shape decides when to reach for these on its own, based on the conversation — you just turn on the ones you want.
 
 <CardGroup cols={2}>
   <Card title="Run code" icon="code">
-    Execute code in a secure sandbox — great for math, data, and coding help that runs live in the thread.
+    Execute code in a secure sandbox for math, data, and live coding help. The sandbox even ships with developer tools preinstalled (Git, Node, Python, Bun, and CLI agents), so a Shape can genuinely build and run things.
   </Card>
-  <Card title="Roll dice & play" icon="dice">
-    3D dice rolls, character sheets for TTRPGs, GIFs, and built-in [games](/games).
+  <Card title="Make files" icon="file-arrow-down">
+    A Shape can generate a file — a script, a doc, a dataset — and hand it back as a downloadable attachment, or re-host a file from a URL.
+  </Card>
+  <Card title="Roll 3D dice" icon="dice">
+    Real 3D dice rolls that animate for everyone in the room — perfect for tabletop play.
+  </Card>
+  <Card title="Track character sheets" icon="scroll">
+    For TTRPG and roleplay rooms, a Shape can create and update a character sheet for each player.
+  </Card>
+  <Card title="Annotate images" icon="highlighter">
+    A Shape can mark up an image — arrows, circles, labels — to point things out.
+  </Card>
+  <Card title="Search the chat" icon="magnifying-glass">
+    A Shape can search the room's own history to find that thing someone said 200 messages ago.
+  </Card>
+  <Card title="Send GIFs" icon="film">
+    Search, trending, or random — a Shape can drop the right GIF into the chat.
   </Card>
   <Card title="Connect your apps" icon="plug">
     Through custom skills, a Shape can reach tools like Gmail, Notion, Slack, Spotify, and Google Drive.
   </Card>
-  <Card title="Custom skills (MCP)" icon="wrench" href="/shapeskills">
-    Add your own tools via MCP providers like Smithery — image and music generation, GitHub, web scraping, and more.
-  </Card>
 </CardGroup>
+
+### Acting on its own: scheduled actions
+
+This is one creators sleep on. A Shape can **schedule its own future activations** — once at a set time, or recurring daily, weekly, or monthly. "Wish me luck before my 9am standup every weekday," "remind the group to vote on Friday," "check in on my goals every Sunday." It can also list and cancel what it's scheduled. Combined with [memory](/memory), this is what makes a Shape feel like it's actually *part of your life*, not just a chat window.
+
+### Custom tools (MCP)
+
+Beyond the built-ins, you can connect your own tools through MCP providers like Smithery — image, video, and music generation, GitHub, web scraping, and far more. Full setup and a big list of ideas live in [Shape Skills](/shapeskills).
 
 ## Memory
 
@@ -79,6 +99,14 @@ Shapes remember, which is what makes a conversation feel continuous.
 - **Long-term memory** lets a Shape recall people, decisions, and inside jokes across conversations.
 
 Manage it live with `/sleep`, `/wack`, and `/reset` — see the [Memory Guide](/memory) and [Commands Reference](/commands).
+
+## Little touches
+
+The details that make a Shape feel alive:
+
+- **Message effects** — a Shape's replies can carry a visual flourish (think confetti or a burst of hearts) to match a big moment.
+- **Time awareness** — turn it on per chat and a Shape knows when each message was sent and how much time has passed, so "long time no see" actually means something. See [Designing Social Intelligence](/designing-social-intelligence).
+- **Personas** — a Shape can keep a [persona](/glossary) for each person: the name to call you and what to remember about you, so it treats everyone in a room a little differently.
 
 ## Turn capabilities on
 
