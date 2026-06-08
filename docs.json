@@ -16,6 +16,9 @@
     "dark": "#1D4ED8"
   },
   "favicon": "/favicon.png",
+  "icons": {
+    "library": "fontawesome"
+  },
   "redirects": [
     {
       "source": "/shapeschatsguide",
