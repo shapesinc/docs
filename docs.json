@@ -28,16 +28,21 @@
               "ai-group-chats",
               "what-are-shapes",
               "shapes101",
-              "faq",
               "navigation",
               "make-or-recover-account",
-              "delete-account",
               "how-to-talk-to-shapes",
               "friends",
               "notifications",
               "learninghub",
               "rewards",
               "games"
+            ]
+          },
+          {
+            "group": "FAQ",
+            "pages": [
+              "faq",
+              "delete-account"
             ]
           },
           {
