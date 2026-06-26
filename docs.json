@@ -31,10 +31,15 @@
               "core-concepts",
               "learninghub",
               "make-or-recover-account",
-              "delete-account",
               "how-to-talk-to-shapes",
-              "navigation",
-              "faq"
+              "navigation"
+            ]
+          },
+          {
+            "group": "FAQ",
+            "pages": [
+              "faq",
+              "delete-account"
             ]
           },
           {
