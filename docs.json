@@ -22,18 +22,7 @@
     }
   },
   "fonts": {
-    "heading": {
-      "family": "Lexend",
-      "weight": 700,
-      "source": "/images/fonts/lexend-latin-variable.woff2",
-      "format": "woff2"
-    },
-    "body": {
-      "family": "Lexend",
-      "weight": 400,
-      "source": "/images/fonts/lexend-latin-variable.woff2",
-      "format": "woff2"
-    }
+    "family": "Lexend"
   },
   "favicon": "/favicon.png",
   "navigation": {
