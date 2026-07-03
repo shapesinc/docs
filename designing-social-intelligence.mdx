@@ -1,15 +1,15 @@
 ---
 title: "Designing AI With Social Intelligence"
 sidebarTitle: "4 · Make it social"
-description: "Chapter 4 of the Make Shapes guide: the craft of behaving well in a group chat. When to speak, when to stay quiet, group vs DM, and tuning Free Will to read the room."
-keywords: ["social intelligence AI", "design AI for group chats", "AI Free Will", "multiplayer AI design", "AI that reads the room", "multi-agent chat", "AI personas", "Shape behavior"]
+description: "Chapter 4 of the Make Shapes guide: the craft of behaving well in a group chat. When to speak, when to stay quiet, group vs DM, and tuning Free Will to read the chat."
+keywords: ["social intelligence AI", "design AI for group chats", "AI Free Will", "multiplayer AI design", "AI that reads the chat", "multi-agent chat", "AI personas", "Shape behavior"]
 ---
 
 *Chapter 4 of the [Make Shapes](/make-shapes) guide.*
 
 Putting an AI into a group chat is easy. Making it *good* in one is the real skill, and it's what Shapes is built to let you get right. This is the chapter that sets your Shape apart.
 
-A solo AI only has to answer the person typing. A Shape in a group chat has a harder job. It has to know **when to speak and when to stay quiet**, who it's talking to, what already happened, and how to share the floor with other Shapes and people. That's *social intelligence*: the skill of reading a room. You design it; it isn't a switch you flip.
+A solo AI only has to answer the person typing. A Shape in a group chat has a harder job. It has to know **when to speak and when to stay quiet**, who it's talking to, what already happened, and how to share the floor with other Shapes and people. That's *social intelligence*: the skill of reading a chat. You design it; it isn't a switch you flip.
 
 **What you'll learn:** how a Shape decides when to talk, how to tune that with Free Will, and how to make a Shape funny, calm, or helpful without being the bot that won't shut up.
 
@@ -23,7 +23,7 @@ Good social intelligence lives in between. You want a Shape that's **present**. 
 
 ## How a Shape decides to speak
 
-When someone posts in a room, here's how Shapes figures out who replies:
+When someone posts in a chat, here's how Shapes figures out who replies:
 
 ```mermaid
 flowchart TD
@@ -33,11 +33,11 @@ flowchart TD
     D -- Yes --> E[Activated Shapes reply in turn, up to five]
     D -- No --> F{Free Will triggers?}
     F -- "mention, keyword, or continue" --> G[A Shape jumps in]
-    F -- "room is quiet" --> H[Always have something to say: one Shape speaks]
+    F -- "chat is quiet" --> H[Always have something to say: one Shape speaks]
     F -- "no trigger" --> I[Shapes stay quiet]
 ```
 
-The big takeaways: **@mention** always wins, **activation** makes a Shape a reliable responder, and **Free Will** governs everything else. Replies happen one after another, not all at once, so even a full room reads cleanly. Now let's tune that behavior.
+The big takeaways: **@mention** always wins, **activation** makes a Shape a reliable responder, and **Free Will** governs everything else. Replies happen one after another, not all at once, so even a full chat reads cleanly. Now let's tune that behavior.
 
 ## The main dial: Free Will
 
@@ -48,25 +48,25 @@ The big takeaways: **@mention** always wins, **activation** makes a Shape a reli
 | **Reply when mentioned** | Responds when someone uses its @name. | Always. This is the baseline. |
 | **Keep the convo going** | May continue after it has replied. | You want momentum, not one-shot answers. |
 | **React to keywords** | Jumps in when watched keywords appear. | The Shape owns a topic (a character, a subject). |
-| **Always have something to say** | Replies when nobody else does. | A quiet room you want kept alive. |
+| **Always have something to say** | Replies when nobody else does. | A quiet chat you want kept alive. |
 | **Come back later** | Checks back in after the chat goes quiet. | A companion that re-engages, not a one-off. |
 
 The art is in the *combination*. Each trigger you add makes the Shape more forward. Stack them all and you get an extrovert that never stops; enable only "reply when mentioned" and you get a tool that waits to be called.
 
 You can also turn on **time awareness** (so the Shape knows when it's late, or that hours have passed) and control how its messages appear when they span multiple lines.
 
-## Recipes: tune Free Will to the room
+## Recipes: tune Free Will to the chat
 
 There's no universal setting. The right setup depends on what the chat is *for*. Start from one of these and adjust.
 
 <AccordionGroup>
   <Accordion title="Quiet friend group" icon="user-group">
-    **Mentioned + Keep the convo going + Always have something to say + Come back later.** You want the Shape to carry energy and revive a dead chat. This is the most forward setup: great for a companion, too much for a work room.
+    **Mentioned + Keep the convo going + Always have something to say + Come back later.** You want the Shape to carry energy and revive a dead chat. This is the most forward setup: great for a companion, too much for a work chat.
   </Accordion>
   <Accordion title="Busy fandom or roleplay chat" icon="masks-theater">
     **Mentioned + Keep the convo going + React to keywords.** Lots of people are already talking, so let the Shape stay in character and jump in on its topic. Skip "always have something to say" so it doesn't bury everyone.
   </Accordion>
-  <Accordion title="Focused work room" icon="briefcase">
+  <Accordion title="Focused work chat" icon="briefcase">
     **Mentioned + (optionally) Keep the convo going.** In a [work chat](/ai-at-work), silence is a feature. The Shape should answer when called and otherwise stay out of focused discussion.
   </Accordion>
   <Accordion title="One-on-one companion" icon="heart">
@@ -78,7 +78,7 @@ There's no universal setting. The right setup depends on what the chat is *for*.
 
 Speaking at the right time is half of it. Knowing *who you're talking to* is the other half.
 
-- **[Personas](/personas)** are how a Shape sees each person: the name to call them and what to remember. A persona is why a Shape can greet two people in the same room completely differently. Each person sets their own.
+- **[Personas](/personas)** are how a Shape sees each person: the name to call them and what to remember. A persona is why a Shape can greet two people in the same chat completely differently. Each person sets their own.
 - **Memory** gives the Shape continuity. [Short-term memory](/memory) keeps it coherent within a conversation. Long-term memory lets it recall an inside joke or a decision from days ago. A Shape that remembers feels like a participant; one that forgets feels like a vending machine.
 
 Design these together. A Shape with good Free Will *and* good memory doesn't only reply on time. It replies like someone who's actually been in the chat.
@@ -93,16 +93,16 @@ To make multiple Shapes feel like an ensemble instead of an echo:
 
 - **Give each one a distinct role and voice.** A coordinator, a researcher, and a jokester won't step on each other the way three near-identical Shapes will.
 - **Differentiate their Free Will.** Maybe one is keyword-driven and one only replies when mentioned, so they don't all fire at once.
-- **Use [activation](/chats-101) deliberately.** Activate only the Shapes a given conversation needs; deactivate the rest so the room stays legible.
+- **Use [activation](/chats-101) deliberately.** Activate only the Shapes a given conversation needs; deactivate the rest so the chat stays legible.
 
-## Group vs. DM: the room changes the behavior
+## Group vs. DM: the chat changes the behavior
 
-The same Shape should behave differently depending on the room:
+The same Shape should behave differently depending on the chat:
 
 - **In a one-on-one DM**, there's no one to talk over. Maximum presence is good, so turn all of Free Will on, let it carry the conversation, and write at whatever length fits.
 - **In a group chat** with several humans, restraint is the whole game. Activated Shapes reply in turn, so two chatty Shapes plus five people gets loud fast. Dial Free Will *down*, keep replies short, and let the humans drive.
 
-The trap is designing only for the DM where you test it, then dropping the Shape into a busy room where it won't stop talking. **Design for the crowded case.** A Shape that behaves in a group is always fine in a DM. The reverse isn't true.
+The trap is designing only for the DM where you test it, then dropping the Shape into a busy chat where it won't stop talking. **Design for the crowded case.** A Shape that behaves in a group is always fine in a DM. The reverse isn't true.
 
 ## Being funny without being annoying
 
@@ -110,18 +110,18 @@ Personality is encouraged here (we literally say the AI is *that good*), but in 
 
 - **React, don't perform.** Respond to the actual joke someone made; don't manufacture a bit on every message. The funniest Shapes are mostly quiet and then land one line.
 - **Say it once and get out.** One sharp reply beats three okay ones. Length is the enemy of comedy in a fast chat.
-- **Frequency is everything.** In a busy room, turn *off* "always have something to say." A joke every message is noise; a joke every tenth message is a personality.
+- **Frequency is everything.** In a busy chat, turn *off* "always have something to say." A joke every message is noise; a joke every tenth message is a personality.
 - **Callbacks beat new jokes.** With [memory](/memory) on, a Shape can bring back the running bit from last week, which feels human in a way a fresh one-liner never does.
-- **Never explain the joke**, and never @ the whole room for a laugh.
+- **Never explain the joke**, and never @ the whole chat for a laugh.
 
-## Reading the room when humans clash
+## Reading the chat when humans clash
 
 Group chats get tense or awkward, and how a Shape handles that is pure social intelligence:
 
 - **Default to staying out.** When people are arguing, the right move is usually silence. Keep Free Will modest so the Shape isn't compelled to weigh in, and never let it pile on a side.
 - **Help only if asked.** If someone turns to it and asks "what do you think?", a good Shape de-escalates or lightens the mood instead of declaring a winner. Bake that into the preset ("stays neutral in disagreements, defuses with humor").
-- **Awkward silence is a judgment call.** Sometimes a quiet chat is comfortable, sometimes it's dead. "Come back later" can revive a genuinely stalled room, but don't build a Shape that refuses to let a calm moment breathe.
-- **The human stuff is the room's job.** Slow mode, blocked words, and bans (see [Moderation](/chats-101)) handle people behaving badly. That's not your Shape's responsibility, and it shouldn't try to police it.
+- **Awkward silence is a judgment call.** Sometimes a quiet chat is comfortable, sometimes it's dead. "Come back later" can revive a genuinely stalled chat, but don't build a Shape that refuses to let a calm moment breathe.
+- **The human stuff is the chat's job.** Slow mode, blocked words, and bans (see [Moderation](/chats-101)) handle people behaving badly. That's not your Shape's responsibility, and it shouldn't try to police it.
 
 ## Voice in a crowd: presets and personality
 
@@ -130,13 +130,13 @@ A Shape's [preset](/presets) and personality decide *how* it talks. In a multipl
 - **Length.** A Shape that writes essays will take over a fast group chat. Favor shorter, punchier replies. The [When Less Is More](/shortguide) guide makes the case well.
 - **Reactivity over monologue.** Write the personality to *respond to people*: react, ask, build on what was just said, instead of delivering speeches. Prompt craft for this lives in [Prompt 101](/prompt101) and the [Prompting Guides](/promptingguides).
 
-## Room-level behavior: instructions and guardrails
+## Chat-level behavior: instructions and guardrails
 
-Some behavior belongs to the *room*, not the Shape. Set it once at the chat level:
+Some behavior belongs to the *chat*, not the Shape. Set it once at the chat level:
 
 - **[Custom Chat Instructions](/custominstructions-chats)** apply to every Shape in the chat: the scene, the rules, the tone, who's who. Put shared context here instead of repeating it.
 - **[Initial messages and a Welcome Shape](/fandomchat)** set the first impression when someone joins.
-- **[Moderation](/chats-101)** (slow mode, character limits, blocked words) keeps a busy room from turning into chaos, human or AI.
+- **[Moderation](/chats-101)** (slow mode, character limits, blocked words) keeps a busy chat from turning into chaos, human or AI.
 
 ## Test, watch, iterate
 
@@ -145,17 +145,17 @@ Social intelligence is tuned, not guessed. Once your Shape is in a chat:
 1. **Watch real conversations.** Is it talking too much? Too little? At the wrong moments?
 2. **Adjust one thing at a time**, usually a single Free Will trigger or the reply length.
 3. **[Regenerate](/regeneration)** a few responses to see the range of behavior before deciding.
-4. Repeat until the Shape feels like it belongs in the room.
+4. Repeat until the Shape feels like it belongs in the chat.
 
 ## The checklist
 
 A socially intelligent Shape usually has all of this dialed in:
 
 - Free Will matched to the chat's purpose, not maxed out by default.
-- A clear role, especially if other Shapes share the room.
+- A clear role, especially if other Shapes share the chat.
 - Memory and a persona so it knows the people and the history.
 - Replies that are short and reactive, not long monologues.
-- Room-level context in chat instructions, not repeated every message.
+- Chat-level context in chat instructions, not repeated every message.
 - Tuning based on watching it live, not assumptions.
 
 ## What's next

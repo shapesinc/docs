@@ -11,9 +11,18 @@
   "theme": "mint",
   "name": "Shapes Inc Docs",
   "colors": {
-    "primary": "#2563EB",
-    "light": "#3B82F6",
-    "dark": "#1D4ED8"
+    "primary": "#e94db3",
+    "light": "#e94db3",
+    "dark": "#e94db3"
+  },
+  "background": {
+    "color": {
+      "light": "#f8f8f8",
+      "dark": "#191B20"
+    }
+  },
+  "fonts": {
+    "family": "Lexend"
   },
   "favicon": "/favicon.png",
   "icons": {
@@ -142,6 +151,47 @@
               "navigation",
               "faq",
               "learninghub"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "FAQ",
+        "groups": [
+          {
+            "group": "FAQ",
+            "pages": [
+              "faq",
+              "faq/how-do-i-edit-my-shapes-profile",
+              "faq/how-do-i-edit-my-shapes-personality",
+              "faq/how-do-i-edit-my-profile",
+              "faq/how-to-make-a-shape",
+              "faq/how-do-i-make-a-shape-private",
+              "faq/how-do-i-use-the-app",
+              "faq/how-do-i-make-a-group-chat",
+              "faq/how-do-i-find-group-chats",
+              "faq/how-do-i-use-voice-messages",
+              "faq/how-do-i-use-fast-forward-or-skip-turn",
+              "faq/how-do-i-change-language",
+              "faq/how-do-i-stop-shapes-from-calling-me",
+              "faq/how-do-i-turn-off-typewriter-streaming-text",
+              "faq/how-do-i-delete-a-shape",
+              "faq/how-do-i-delete-my-account",
+              "faq/how-can-i-use-my-premium-features",
+              "faq/how-do-i-delete-a-chat",
+              "faq/how-does-the-friends-section-work",
+              "faq/how-do-i-change-font-size",
+              "faq/how-do-i-change-my-shapes-vanity-url",
+              "faq/does-shapes-support-markdown",
+              "faq/how-do-i-lock-a-chat-so-that-other-people-cant-join",
+              "faq/why-did-i-get-charged-automatically-for-more-credits",
+              "faq/how-do-i-unsubscribe-from-emails",
+              "faq/why-did-a-shape-create-a-chat-with-me",
+              "faq/why-is-a-free-engine-costing-credits",
+              "faq/why-did-i-get-invited-to-a-chat",
+              "faq/what-does-this-error-undefined-mean-when-i-try-to-create-a-shape",
+              "faq/why-are-the-shapes-settings-not-loading",
+              "faq/why-dont-the-premium-credit-redemption-options-reset-on-the-rewards-page"
             ]
           }
         ]

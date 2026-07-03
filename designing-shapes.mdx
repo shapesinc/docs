@@ -24,7 +24,7 @@ A Shape is not a system prompt. It's a character with a job in a conversation. T
     It wants something, talks a certain way, and reacts like a specific person with real opinions.
   </Card>
   <Card title="The right length" icon="ruler">
-    It matches the room. Two lines in a fast group chat; a paragraph when the scene calls for it.
+    It matches the chat. Two lines in a fast group chat; a paragraph when the scene calls for it.
   </Card>
   <Card title="Memory that lands" icon="brain">
     It remembers the people and the running jokes, so the conversation has continuity.
@@ -47,7 +47,7 @@ You don't have to do everything at once. Here's the path most great creators tak
   <Step title="A good Shape, after a few tweaks">
     Chat with it, notice what's off, and fix the two or three things that matter: tighten the **preset** so replies are the right length, add a couple of **conversational examples** that nail its voice, and pick an [engine](/choosing-a-model) that fits the vibe. This is where most of the quality comes from.
   </Step>
-  <Step title="A great Shape that belongs in the room">
+  <Step title="A great Shape that belongs in the chat">
     Give it memory and continuity, a few **quirks** that make it feel specific, **boundaries** so it stays in character, and [social intelligence](/designing-social-intelligence) so it reads a group chat instead of spamming it. Then watch it live and keep tuning. Great Shapes are *grown*, not written in one sitting.
   </Step>
 </Steps>
@@ -62,7 +62,7 @@ flowchart TD
     D --> E["Memory<br/>short-term and long-term"]
     E --> F["Capabilities<br/>voice, images, web, code, tools"]
     F --> G["Social intelligence<br/>when it speaks in a group"]
-    G --> H(("A Shape people<br/>want in the room"))
+    G --> H(("A Shape people<br/>want in the chat"))
 ```
 
 You build the top of that stack in the **Create Shape** flow, and refine the rest in the **Creator Dashboard**. Let's go layer by layer.
@@ -121,7 +121,7 @@ The **preset** (sometimes called the response style) is the instruction layer th
   Write `{shape}` and `{user}` in lowercase, exactly. They get swapped for the Shape's name and the user's name at reply time. Mixing in other variables just confuses the model, so stick to these two.
 </Warning>
 
-The single biggest lever for group chats is **reply length**. A Shape that writes essays will bury a fast-moving room. Spell out the shape of a reply:
+The single biggest lever for group chats is **reply length**. A Shape that writes essays will bury a fast-moving chat. Spell out the shape of a reply:
 
 <CodeGroup>
 ```text Tight conversational voice
