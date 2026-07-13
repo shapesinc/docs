@@ -25,38 +25,50 @@
     "family": "Lexend"
   },
   "favicon": "/favicon.png",
+  "icons": {
+    "library": "fontawesome"
+  },
+  "redirects": [
+    {
+      "source": "/shapeschatsguide",
+      "destination": "/chats-101"
+    },
+    {
+      "source": "/shapes101",
+      "destination": "/core-concepts"
+    }
+  ],
   "navigation": {
     "tabs": [
       {
         "tab": "Docs",
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "Start here",
             "pages": [
               "introduction",
-              "ai-group-chats",
+              "quickstart",
               "what-are-shapes",
-              "shapes101",
-              "core-concepts",
-              "learninghub",
-              "make-or-recover-account",
+              "ai-group-chats",
+              "core-concepts"
+            ]
+          },
+          {
+            "group": "Use Shapes",
+            "pages": [
+              "use-shapes",
               "how-to-talk-to-shapes",
-              "navigation"
-            ]
-          },
-          {
-            "group": "Ways to Use Shapes",
-            "pages": [
-              "ai-at-work",
-              "plan-and-build-together",
-              "fun-and-friends"
-            ]
-          },
-          {
-            "group": "Group Chats",
-            "pages": [
               "create-a-chat",
               "chats-101",
+              "fun-and-friends",
+              "plan-and-build-together",
+              "ai-at-work",
+              "fandomchat"
+            ]
+          },
+          {
+            "group": "Group chat features",
+            "pages": [
               "custominstructions-chats",
               "multimessages",
               "branch-off",
@@ -65,41 +77,59 @@
               "messageactionsmenu",
               "notifications",
               "friends",
-              "fandomchat"
+              "chat-appearance"
             ]
           },
           {
-            "group": "Building Shapes",
+            "group": "Make Shapes",
             "pages": [
+              "make-shapes",
               "how-to-make-a-shape",
+              "designing-shapes",
+              "make-it-smart",
               "designing-social-intelligence",
-              "shapeschatsguide",
-              "shortguide",
-              "chat-appearance",
-              "css",
-              "initialmessages",
-              "how-to-give-your-shape-a-voice",
-              "how-to-receive-voice-messages",
-              "voicecalls",
-              "games",
-              "shapeskills"
+              "share-your-shape"
             ]
           },
           {
-            "group": "Models, Prompts & Memory",
+            "group": "Make Shapes: go deeper",
             "pages": [
-              "aienginecheatsheet",
+              "prompt-engineering",
               "prompt101",
               "presets",
               "variables",
               "promptingguides",
-              "regeneration",
-              "contextwindows",
-              "memory"
+              "shortguide",
+              "showcase",
+              "personas",
+              "initialmessages",
+              "how-to-give-your-shape-a-voice",
+              "css"
             ]
           },
           {
-            "group": "Credits & Products",
+            "group": "What the AI can do",
+            "pages": [
+              "capabilities",
+              "commands",
+              "shapeskills",
+              "how-to-receive-voice-messages",
+              "voicecalls",
+              "games"
+            ]
+          },
+          {
+            "group": "Models & memory",
+            "pages": [
+              "choosing-a-model",
+              "aienginecheatsheet",
+              "memory",
+              "contextwindows",
+              "regeneration"
+            ]
+          },
+          {
+            "group": "Credits & rewards",
             "pages": [
               "premium",
               "credits",
@@ -110,6 +140,17 @@
               "purchasegiftcards",
               "auto-top-up",
               "premium-subscriptions"
+            ]
+          },
+          {
+            "group": "Reference & help",
+            "pages": [
+              "shape-settings",
+              "glossary",
+              "make-or-recover-account",
+              "navigation",
+              "faq",
+              "learninghub"
             ]
           }
         ]

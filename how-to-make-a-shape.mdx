@@ -1,62 +1,62 @@
 ---
-title: "How to Make a Shape — Build Your Own Social AI Character"
-description: "Learn how to make a Shape: create a custom AI character for group chats, define its personality and memory, and share your social AI with friends in multiplayer AI spaces."
-keywords: ["create AI character", "make a Shape", "custom AI companion", "AI character builder", "AI personality", "AI memory", "social AI creation", "share AI with friends"]
+title: "Make Your First Shape"
+sidebarTitle: "1 · Create your Shape"
+description: "Chapter 1 of the Make Shapes guide: create your own AI character in a few minutes. Give it a name and a one-line backstory, pick a model, and it's ready to talk."
+keywords: ["create AI character", "make a Shape", "build your own AI", "custom AI companion", "AI character builder", "AI personality", "make AI with friends"]
 ---
 
-1. **Sign in to** [**shapes.inc**](http://shapes.inc)
+*Chapter 1 of the [Make Shapes](/make-shapes) guide.*
 
-![Log In](/1000002305.png)
+Making your own AI takes a few minutes. You give it a name and a one-line backstory, pick a model to run it on, and it's ready to talk. This chapter gets you to a living Shape. The next four chapters make it great.
 
-2. **Click on "+ Create Shape"**
+Every setting you'll meet here is covered in full in the [Shape Settings Reference](/shape-settings) when you want the detail.
 
-![Create A Shape](/1000002301.png)
+```mermaid
+flowchart LR
+    A[Sign in] --> B[Create Shape]
+    B --> C[Name + short backstory]
+    C --> D[Pick a response style]
+    D --> E[Add a profile: avatar, tagline, tags]
+    E --> F((Your Shape is live))
+```
 
-4. **Fill out the Basic settings for your Shape**
-   - **Name:** Choose a unique name for your Shape
-   - **Short backstory:** Write a brief description of your Shape's background
-   - **Response style:** Select how your Shape communicates
-   - **Custom response style field:** Add any specific style instructions
+## Create it
 
-![Create A Shape 4 Pn](/Screenshot_20250820-133344.png)
+<Steps>
+  <Step title="Sign in">
+    Go to [shapes.inc](https://shapes.inc) and sign in.
 
-## Advanced Settings Menu
+    ![Sign in to Shapes](/1000002305.png)
+  </Step>
+  <Step title="Click “+ Create Shape”">
+    {/* SCREENSHOT: the dashboard with the "+ Create Shape" button highlighted. */}
+    ![Create a Shape](/1000002301.png)
+  </Step>
+  <Step title="Fill in the basics">
+    This is all you truly need to get going:
 
-4. **Customize Advanced settings (optional)**
-   - **Initial message**: Set what your Shape says when conversations start
-   - **Allow shape to send multiple messages**: Disable multi-message responses
-   - **Personality traits**: Define key characteristics
-   - **Tone**: Set the conversational tone
-   - **Age**: Define your Shape's age
-   - **Birthday**: Set your Shape's birthday
-   - **Story**: Extended backstory with more detailed background information
-   - **Likes**: What your Shape enjoys
-   - **Dislikes**: What your Shape avoids
-   - **Goals**: Your Shape's objectives in conversations
-   - **Conversation examples**: Sample interactions to guide behavior
-   - **Appearance**: Describe your Shape's visual characteristics
+    - **Name.** The display name in chat. It also seeds the username.
+    - **Short backstory.** One or two sentences with a clear point of view. This is the most important thing you'll write, so make it specific. "A burned-out night-shift diner cook who gives blunt advice between orders" beats "a friendly helpful assistant."
+    - **Response style.** Pick how it writes, or write your own. You can use the `{shape}` and `{user}` [variables](/variables) here.
 
-     ![Screenshot 20250820 133357 Pn](/images/Screenshot_20250820-133357.png)
+    ![Basic settings for a new Shape](/Screenshot_20250820-133344.png)
+  </Step>
+  <Step title="Add a profile (optional but worth it)">
+    An avatar, banner, tagline, category, and tags help people discover your Shape. You can also add a custom look with [HTML & CSS](/css).
+  </Step>
+  <Step title="Create">
+    Hit **Create** and your Shape is live. Start talking to it right away.
+  </Step>
+</Steps>
 
-## Custom Messages Menu
+## What's next
 
-5. **Set up Custom Messages (Optional)**
-   - **Wack message**: Confirmation message for resetting the conversation context. This doesn't delete long-term memories
-   - **Error message**: What your Shape sends when it encounters an error
-   - **Sleep message**: The message your Shape sends to confirm that it saved a long-term memory
+You have a Shape that talks. Right now it's leaning on its default personality. The next chapter is where it becomes a character with a voice of its own.
 
-     ![Screenshot 20250820 133445 Pn](/images/Screenshot_20250820-133445.png)
+<Card title="Chapter 2 · Give it a personality" icon="arrow-right" href="/designing-shapes">
+  Voice, backstory, quirks, and boundaries that make it feel like someone.
+</Card>
 
-## Profile & Branding
+In a hurry? You can also [copy a complete config](/showcase) and tweak it, or browse [every setting](/shape-settings).
 
-6. **Complete your Shape's Profile**
-   - **Profile picture**: Upload an avatar for your Shape
-   - **Banner**: Add a banner image
-   - **Category**: Choose the appropriate category
-   - **Tagline**: Write a catchy one-liner
-   - **SEO description**: Help others discover your Shape
-   - **Tags**: Add relevant keywords
-7. **Click "Create" to publish your Shape**
-8. **Congratulations! Your Shape is ready to chat!**
-
-[Return to App](https://shapes.inc)
+[Create a Shape](https://shapes.inc)

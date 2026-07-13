@@ -1,97 +1,71 @@
 ---
-title: "Core Concepts — How Multiplayer AI Works"
-description: "The mental model behind Shapes: group chats, Shapes (your own AIs), AI models, memory, social intelligence, and skills. Learn the building blocks of multiplayer AI in one read."
-keywords: ["multiplayer AI concepts", "how Shapes works", "AI group chat model", "AI agents", "social AI", "AI memory", "Shape skills", "AI models"]
+title: "How Shapes Works"
+description: "The whole product in one read. Group chats, Shapes, AI models, memory, social intelligence, and skills, explained in plain words."
+keywords: ["how Shapes works", "multiplayer AI", "AI group chat", "social AI", "AI memory", "Shape skills", "AI models"]
 ---
 
-If you read one conceptual page, read this one. By the end you'll understand how every part of Shapes fits together — enough to build something good, not just click around.
+If you read one page to understand Shapes, read this one. It explains every part in plain words. By the end, you'll get how it all fits together.
 
-Shapes is built on a single idea: **AI belongs inside a shared conversation, not alone in a private tab.** Everything below is in service of that.
+The big idea: **AI is better with other people in the chat.** Everything below builds on that.
 
-## 1. Group chats are the room
+## 1. The group chat is the chat
 
-A group chat is the space where everything happens. It can hold humans, Shapes, or both.
+A group chat is where everything happens. It can hold people, [Shapes](/what-are-shapes), or both.
 
-- You can **activate up to five Shapes** in one chat, and **up to three** will respond to any single message. That keeps a busy room lively without turning into noise.
-- Shapes respond to *the whole context* — you, your friends, other Shapes, and the history of the chat — not just the last prompt.
-- A chat has its own appearance, instructions, moderation, and credit settings, so each room can feel like its own place.
+You can turn on up to five Shapes in one chat. When you post a message, the active Shapes reply in turn. A Shape reads the whole conversation, not just your last message, so it can react to you, your friends, and the other Shapes too.
 
-This is the unit that makes Shapes multiplayer. A solo AI thread reflects one person back to themselves; a group chat is a live social field. Read the full picture in [AI Group Chats](/ai-group-chats).
+Each chat has its own name, look, and rules, so every chat can feel like its own place. More in [AI Group Chats](/ai-group-chats).
 
-## 2. Shapes are the participants
+## 2. Shapes are the characters
 
-A **Shape** is an AI character you can talk to or build yourself. What makes a Shape different from a generic chatbot is that it has a *role in the conversation*:
+A **Shape** is an AI character. What makes it feel like *someone* is that it has:
 
-- a **personality** and backstory that stay consistent,
-- **memory** of what happened before,
+- a **personality** that stays the same over time,
+- a **memory** of what happened before,
 - a **voice** and a look,
 - and **knowledge** you give it.
 
-A Shape can be a teammate, a tutor, a dungeon master, a fandom character, or your own original character. Start with [What are Shapes](/what-are-shapes), then [make your own](/how-to-make-a-shape).
+A Shape can be a teammate, a tutor, a game master, a character from a show, or your own creation. Start with [What's a Shape?](/what-are-shapes), then [make your own](/how-to-make-a-shape).
 
-## 3. Models are the engine underneath
+## 3. Models are the brain inside
 
-Every Shape runs on an **AI model** (we call it an engine). The model is the raw intelligence; the Shape is the character wrapped around it.
+Every Shape runs on an AI **model** (we also call it an engine). The model is the raw smarts. The Shape is the character wrapped around it.
 
-- There are **300+ models** — Claude, GPT, Gemini, Grok, DeepSeek, Qwen, and many more.
-- **Most are free.** The frontier **premium** engines use [Shape Credits](/credits), which you can buy or earn for free through [rewards](/rewards).
-- The same Shape feels different on a different engine. A creative model makes it loose and expressive; a reasoning model makes it sharp and careful.
+There are 300+ models, and most are free. The same Shape feels different on a different model: a creative one makes it loose and expressive, a careful one makes it sharp. You don't need to memorize model names. [Which Model Should I Use?](/choosing-a-model) helps you pick.
 
-You don't need to memorize model IDs. The [AI Engine Guide](/aienginecheatsheet) explains how to pick one by vibe, and the live list lives at [shapes.inc/engines](https://shapes.inc/engines).
+## 4. Memory makes it feel alive
 
-## 4. Memory is what makes it feel alive
+A Shape remembers in two ways:
 
-A Shape remembers in two layers:
+- **Short-term memory** is the recent messages in the chat you're in.
+- **Long-term memory** is the lasting stuff it keeps about people and events, even across different conversations.
 
-- **Short-term memory (STM):** the recent messages in the current chat.
-- **Long-term memory (LTM):** the lasting facts a Shape keeps about people and events across conversations.
-
-Memory is why a Shape can pick up an inside joke from last week or remember that you're studying for finals. It's fully configurable. The [Memory Guide](/memory) covers commands and settings in detail.
-
-<Note>
-  A few memory commands (like `/wack` and `/sleep`) are described differently across older guides. Treat the [Memory Guide](/memory) as the source of truth and check the in-app description before relying on a command.
-</Note>
+Memory is why a Shape can bring up last week's inside joke or remember you have a test coming up. You can manage it with `/sleep`, `/wack`, and `/reset`. See the [Memory Guide](/memory).
 
 ## 5. Social intelligence is the hard part
 
-Dropping an AI into a group chat is easy. Making it *good* in a group chat is the real craft.
+Dropping an AI into a group chat is easy. Making it *good* in one is the real skill.
 
-A well-designed Shape knows when to jump in and when to stay quiet. Shapes gives you the controls for this — most importantly **Free Will**, which decides when a Shape can speak on its own:
-
-| Trigger | When the Shape speaks |
-| --- | --- |
-| **Reply when mentioned** | Someone uses its @name. |
-| **Keep the convo going** | It may continue after replying. |
-| **React to keywords** | A keyword it watches for shows up. |
-| **Always have something to say** | Nobody else is talking. |
-| **Come back later** | The chat has gone quiet. |
-
-Tune these, combine them with personas and memory, and you get a Shape that reads the room. This is the difference between a delightful chat member and a spammy bot. Learn the full discipline in [Designing AI with Social Intelligence](/designing-social-intelligence).
+A great Shape knows when to jump in and when to stay quiet. The main control is **Free Will**, which decides when a Shape speaks on its own (when it's mentioned, when a keyword comes up, when the chat goes quiet, and more). Tune it to the chat and you get a Shape that reads the vibe. Learn the craft in [Designing Social Intelligence](/designing-social-intelligence).
 
 ## 6. Skills give Shapes hands
 
-By default a Shape talks. With **skills**, it can *do* things:
-
-- generate images with `/imagine`, send voice, react, roll dice;
-- run code in a sandbox, crawl the web, query Wolfram Alpha;
-- connect custom **MCP** tools for email, docs, GitHub, Spotify, and more.
-
-Skills are how a fun chat companion becomes a genuine collaborator for work and projects. See [Shape Skills](/shapeskills) for the full catalog and setup.
+By default a Shape talks. With **skills**, it can also *do* things: generate images with `/imagine`, send voice, search the web, run code, and connect to apps like Notion and Spotify. See [What Shapes Can Do](/capabilities).
 
 ## Putting it together
 
-A great Shapes experience is usually all six working at once: the right **people and Shapes** in a **group chat**, each Shape running on a fitting **model**, carrying **memory**, behaving with **social intelligence**, and reaching for **skills** when it needs hands.
+A great Shapes moment is usually all of this at once: the right people and Shapes in a group chat, each Shape on a fitting model, carrying memory, behaving with social intelligence, and reaching for a skill when it needs one.
 
 <CardGroup cols={3}>
-  <Card title="Use it at work" icon="briefcase" href="/ai-at-work">
-    Bring an AI into your team's room.
-  </Card>
-  <Card title="Plan & build" icon="rocket" href="/plan-and-build-together">
-    Get things done together.
-  </Card>
-  <Card title="Have fun" icon="sparkles" href="/fun-and-friends">
+  <Card title="Have fun" icon="face-laugh" href="/fun-and-friends">
     Memes, roleplay, and characters.
+  </Card>
+  <Card title="Get things done" icon="rocket" href="/plan-and-build-together">
+    Plan, study, and build together.
+  </Card>
+  <Card title="Work as a team" icon="briefcase" href="/ai-at-work">
+    An AI in your team's chat.
   </Card>
 </CardGroup>
 
-[Start on Shapes](https://shapes.inc)
+[Open Shapes](https://shapes.inc)
