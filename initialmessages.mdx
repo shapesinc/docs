@@ -5,7 +5,7 @@ description: "Initial messages are the very first thing a Shape says when a new 
 
 ## **What Are Initial Messages?**
 
-- If you **set an initial message**, your Shape will send that message first, every time a new chat starts. This only works with free will enabled.
+- If you **set an initial message**, your Shape will send that message first, every time a new chat starts. Automatic participation depends on the chat's reply settings.
 - If you **leave it blank**, your Shape will generate its own opening line to start the conversation.
 
 This gives creators full control over how a Shape greets users and frames the interaction.
@@ -33,10 +33,12 @@ If no initial message is set by the creator, [**custom chat instructions**](/cus
 - Custom chat instructions provide **extra context** that will influence the Shape’s opening message and all messages that follow.
 - This is useful if you want to control the opening _per chat_ rather than globally for all chats with the Shape.
 
-## Free Will
+<span id="free-will" />
 
-- If free will is enabled, the Shape will always go first, whether an initial message is set or not.
-- If free will is disabled, the user will always go first, whether an initial message is set or not.
-- Free Will is controlled inside the chat's **AI Configurations** settings.
+## AI replies
+
+Open **More actions** → **Settings** → **AI Configurations** and find **AI replies** → **Auto-reply triggers** to review when the Shape can speak without a new prompt. An initial message sets the opener; it is separate from these participation controls.
+
+See [assistant behavior](/designing-social-intelligence) for the available triggers. To ask for a reply directly, mention the Shape with `@`.
 
 [Return to App](https://shapes.inc)
