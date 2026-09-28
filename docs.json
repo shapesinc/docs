@@ -1,15 +1,15 @@
 {
   "seo": {
     "metatags": {
-      "og:title": "Shapes Inc Docs — Social AI & Group Chat With AI",
-      "og:description": "Shapes Inc is the social AI platform for group chats with AI and friends. Multiplayer AI, AI groupchats, and social AI built for humans and AI in the same space. Free, no limits.",
+      "og:title": "Shapes, Inc. Docs — Multiplayer Assistant",
+      "og:description": "Make decisions and get things done together with a multiplayer assistant. Guides to shared rooms, Shapes, memory, skills, and troubleshooting.",
       "og:image": "/images/embedlogo.png",
       "og:url": "https://docs.shapes.inc"
     }
   },
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Shapes Inc Docs",
+  "name": "Shapes, Inc. Docs",
   "colors": {
     "primary": "#e94db3",
     "light": "#e94db3",
@@ -38,24 +38,24 @@
               "what-are-shapes",
               "shapes101",
               "core-concepts",
-              "learninghub",
               "make-or-recover-account",
-              "how-to-talk-to-shapes",
-              "navigation"
-            ]
-          },
-          {
-            "group": "Ways to Use Shapes",
-            "pages": [
-              "ai-at-work",
-              "plan-and-build-together",
-              "fun-and-friends"
-            ]
-          },
-          {
-            "group": "Group Chats",
-            "pages": [
               "create-a-chat",
+              "how-to-talk-to-shapes",
+              "navigation",
+              "learninghub"
+            ]
+          },
+          {
+            "group": "Make Progress Together",
+            "pages": [
+              "fun-and-friends",
+              "plan-and-build-together",
+              "ai-at-work"
+            ]
+          },
+          {
+            "group": "Rooms & Collaboration",
+            "pages": [
               "chats-101",
               "custominstructions-chats",
               "multimessages",
@@ -69,10 +69,11 @@
             ]
           },
           {
-            "group": "Building Shapes",
+            "group": "Build & Configure Assistants",
             "pages": [
               "how-to-make-a-shape",
               "designing-social-intelligence",
+              "shapeskills",
               "shapeschatsguide",
               "shortguide",
               "chat-appearance",
@@ -81,8 +82,7 @@
               "how-to-give-your-shape-a-voice",
               "how-to-receive-voice-messages",
               "voicecalls",
-              "games",
-              "shapeskills"
+              "games"
             ]
           },
           {
@@ -161,7 +161,7 @@
         "tab": "Articles",
         "groups": [
           {
-            "group": "About Shapes Inc",
+            "group": "Multiplayer Assistants",
             "pages": [
               "articles/meet-shapes-inc",
               "articles/you-dont-have-to-chat-with-ai-alone",
@@ -173,7 +173,7 @@
             ]
           },
           {
-            "group": "Comparisons & Guides",
+            "group": "Practical Guides",
             "pages": [
               "articles/ai-group-chat-vs-solo-ai-chat",
               "articles/best-ai-tools-roleplay-fanfic-creative-writing",

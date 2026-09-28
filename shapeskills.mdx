@@ -1,28 +1,17 @@
 ---
 title: "Shape Skills"
-description: "Shape Skills let your Shapes use tools to go beyond roleplay or conversation; whether that's generating memes, pulling in news, making playlists, or even scraping the web."
+description: "Give your multiplayer assistant supported actions for research, images, code, and connected services. Learn how to enable skills and configure custom MCP skills."
 ---
 
 # **Why Shape Skills?**
 
-Connecting your Shape to toolkits means your Shape can plug into real apps you already use — like Google Drive, Gmail, Slack, Spotify, Notion, and more. Suddenly, your Shape isn’t just chatting, it’s getting things done.
+Skills let a Shape do useful work for a shared goal, such as creating an image for a design discussion, running code to explore an idea, or retrieving information with an available research action. The result stays in the room for the group to review and build on.
 
-## **💡 Imagine if your Shape could…**
+Start with the task, then enable the actions it needs. Give the Shape relevant context and explain what a useful result looks like: a comparison with sources, a working draft, or a visual everyone can discuss.
 
-- Create a note or a full, working Lorebook in Notion that it could reference throughout your roleplay.
-- Send an email for you through Gmail.
-- Check your calendar or schedule a meeting on Google Calendar.
-- Post a message in Slack.
-- Add a song to a Spotify playlist when you tell it what your mood is.
-- Save files to your Google Drive automatically.
-- Summarize your inbox or draft replies.
-- Scrape the web for peer reviewed studies that are relevant to your homework, give you a summary, and help you create a Google Slides presentation based on what you learn.
-- Recommend a new lunch spot using Yelp.
-- Create, export, and manage Canva designs.
+Custom MCP skills can add actions from external services. Availability depends on the provider, authentication, permissions, your chosen engine, and the skills enabled in the room. Mentioning a service in a message does not connect it or grant access to its data. The examples below describe individual setups, not integrations that every Shape has by default.
 
-With Skills, your Shape can connect to the same apps you already use every day and actually help you run your life, work, or creative projects — all by chatting with them in your Chat. A
-
-It's really magical to see a Shape proactively use a tool based on their mood, preferences, and personality.
+A Shape may choose to use an enabled skill when it is relevant to the conversation. Review its results, and use [room instructions](/custominstructions-chats) to say when the group wants a proposal before an external action.
 
 <Tabs>
   <Tab title="Getting Started with Skills">
@@ -63,7 +52,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
     - Spotify playlist creation
     - So many more possibilities...
 
-    Even if you usually roleplay with your Shape, adding a skill can unlock new, fun interactions (like asking them to share their favorite YouTube video).
+    Choose a skill for the work your group needs. The meme generator below is one concrete setup example; other providers offer different actions and authentication requirements.
 
     The Endpoint URL you will get from [_smithery.ai_](http://smithery.ai) or other MCP providers.
 
@@ -78,14 +67,14 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
     4. Select **Meme Creation Platform**
     5. Create an **Imgflip account** and connect it to smithery
     6. Click **"Get URL with keys instead"** and copy the link
-    7. Back in Shapes, paste this link into your **AI Configuration** settings under Custom Skills
+    7. Back on Shapes, Inc., paste this link into your **AI Configuration** settings under Custom Skills
     8. Name your skill (e.g., _Imgflip Memes_)
 
     Your Shape now has access to the meme generator! 🎉
 
     ![Smitherygeturl Pn](/images/Smitherygeturl.png)
 
-    The yellow box is highlighting where to find the URL that you need to share with Shapes.
+    The yellow box is highlighting where to find the URL to paste into the Custom Skills configuration. Treat URLs containing keys as credentials; do not post them in room messages.
 
     ## 3. Triggering Skills in Chat
 
@@ -102,7 +91,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
     ## 4. Built-in Skills
 
-    Shapes also comes with **pre-input skills** ready to use out of the box. These are subject to change, but currently include:
+    Shapes, Inc. also comes with **pre-input skills** ready to use out of the box. These are subject to change, but currently include:
 
     - **GIPHY** - Shapes can send a GIF via the Giphy API
     - **Imgflip Memes** - Shapes can generate memes using the imgflip templates
@@ -343,7 +332,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
         ## Step 1: Set Up the Chat
 
-         1. [**Create a new Chat in Shapes**](/create-a-chat).
+         1. [**Create a new Chat on Shapes, Inc.**](/create-a-chat).
 
          2. Leave the **Custom Instructions** field blank for now.
 
@@ -382,9 +371,11 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
         <Tip>
           Both Notion & Composio are free to use.
         </Tip>
-        ## Step 4: Add the MCP to Shapes
+        <span id="step-4-add-the-mcp-to-shapes" />
 
-         1. Return to Shapes and open the **AI Configuration → Add MCP Skill** section.
+        ## Step 4: Add the MCP to Shapes, Inc.
+
+         1. Return to Shapes, Inc. and open the **AI Configuration → Add MCP Skill** section.
 
          2. Enable the setting, paste in the Composio MCP link, give it a name (e.g., “Notion”), and click **Save**.
 
@@ -668,7 +659,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
       </Accordion>
     </AccordionGroup>
     <Warning>
-      _AI generation MCPs (such as video, audio, images) will often require a paid API key from the provider, such as Google or OpenAI. Shapes does not provide these._
+      _AI generation MCPs (such as video, audio, images) will often require a paid API key from the provider, such as Google or OpenAI. Shapes, Inc. does not provide these._
     </Warning>
     ### 📚 Learning & Knowledge
 
@@ -936,7 +927,7 @@ It's really magical to see a Shape proactively use a tool based on their mood, p
 
         ## Step 1: Create a Chat
 
-        Start by creating a new Chat on Shapes.\
+        Start by creating a new Chat on Shapes, Inc.\
         You’ll use this Chat as your workspace for the website project.
 
         ## Step 2: Add the GitHub MCP

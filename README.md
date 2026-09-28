@@ -1,6 +1,6 @@
-# Shapes Inc Documentation
+# Shapes, Inc. Documentation
 
-Welcome to the official documentation repository for Shapes Inc! This repository contains all user guides, getting started materials, and help documentation for the Shapes platform.
+Welcome to the official documentation repository for Shapes, Inc.! This repository contains all user guides, getting started materials, and help documentation for Shapes, Inc.
 
 ## About This Repository
 
@@ -120,6 +120,8 @@ The `docs.json` file controls the site configuration and navigation. **Always up
 
 ## Content Guidelines
 
+Our documentation explains Shapes, Inc. as a multiplayer assistant for shared decisions and work. Follow [AGENTS.md](AGENTS.md) and the [documentation architecture](architecture/DOCUMENTATION.md) for positioning, feature accuracy, and validation.
+
 ### Writing Style
 - Use clear, concise language
 - Write in second person ("you")
@@ -145,7 +147,7 @@ We support all standard Markdown plus Mintlify components:
 ## Current Site Structure
 
 - **Getting Started** - Introduction, welcome, and account setup
-- **User Guides** - How-to guides and tutorials for using Shapes
+- **User Guides** - How-to guides and tutorials for using Shapes, Inc.
 
 ## Troubleshooting
 
@@ -157,9 +159,9 @@ We support all standard Markdown plus Mintlify components:
 ## Support
 
 - For documentation issues: Create an issue in this repository
-- For Shapes platform support: Email [hi@shapes.inc](mailto:hi@shapes.inc)
-- For technical questions: Check our [User Guide](/user-guide)
+- For Shapes, Inc. support: Email [hi@shapes.inc](mailto:hi@shapes.inc)
+- For technical questions: Check our [getting started guide](https://docs.shapes.inc/introduction)
 
 ---
 
-**Made with ❤️ by the Shapes Inc team**
+**Made with ❤️ by the Shapes, Inc. team**

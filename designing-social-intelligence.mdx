@@ -1,119 +1,131 @@
 ---
-title: "Designing AI With Social Intelligence"
-description: "The craft of making a Shape behave well in a group chat: when to speak, when to stay quiet, how to coordinate multiple AIs, and how to use Free Will, personas, and memory to read the room."
-keywords: ["social intelligence AI", "design AI for group chats", "AI Free Will", "multiplayer AI design", "AI that reads the room", "multi-agent chat", "AI personas", "Shape behavior"]
+title: "Designing a Multiplayer Assistant"
+description: "Help a Shape earn the group's trust, contribute its own perspective, and add value at the right moment with shared instructions, memory, and Free Will."
+keywords: ["multiplayer assistant", "group trust", "social intelligence AI", "Shape Free Will", "collaborative decisions", "AI configuration"]
+sidebarTitle: "Assistant Behavior"
 ---
 
-Putting an AI into a group chat is easy. Making it *good* in a group chat is the actual skill — and it's the thing Shapes is built to let you get right.
+A multiplayer assistant has to work with several people's priorities at once. On Shapes, Inc., a useful Shape helps a group understand its options, surface disagreements, and make progress together.
 
-A solo AI only has to answer the person typing. A Shape in a group chat has a harder job: it has to know **when to speak and when to shut up**, who it's talking to, what already happened, and how to share the floor with other Shapes and humans. That's social intelligence, and it's a design discipline, not a setting you flip on.
+Good behavior takes more than answering quickly. It depends on understanding what the group values, contributing a useful perspective, and choosing the right moment to speak.
 
-This guide teaches it from the ground up. By the end you'll be able to tune a Shape that feels like a great chat member instead of a bot that won't stop talking.
+## Three principles for a multiplayer assistant
+
+### Earn the group's trust
+
+Share the group's goal, constraints, and preferences in [Custom Chat Instructions](/custominstructions-chats). Ask the Shape to explain recommendations in terms of those priorities, distinguish facts from assumptions, and acknowledge what it does not know.
+
+When it misses someone's point, correct it in the room and ask for a revised summary. Trust grows when the group can inspect and improve the work together.
+
+### Be an equal actor in the group
+
+Give the Shape a clear role and a perspective it can contribute. A researcher can point out missing evidence; a planning assistant can explain why an option fails a shared constraint.
+
+Its recommendations should consider everyone in the collaboration. Ask it to explain disagreements respectfully and avoid treating one person's preference as the whole group's decision. The people involved still decide what to do.
+
+### Proactively add value to the group
+
+A well-timed contribution might be a clarifying question, a relevant fact, a comparison, or a recap that reveals an unresolved choice. The measure of success is whether it helps the group move forward.
+
+Use the reply triggers below to tune participation. [Shape Skills](/shapeskills) can add capabilities when configured, but reply triggers do not themselves connect calendars, email, or other apps, or guarantee background work.
 
 ## The core problem: presence without spam
 
-Every annoying group-chat bot makes the same mistake — it treats every message as a cue to respond. The result is a wall of AI text that drowns the humans.
+An assistant that answers every message can crowd out the people making the decision. One that never contributes can leave useful questions unexplored.
 
-The opposite failure is just as bad: a Shape so passive it never adds anything.
-
-Good social intelligence lives in between. The goal is a Shape that's **present** — it picks up the thread, lands a reply at the right moment, and then gets out of the way. Almost every control below exists to help you hit that balance.
+Start with a clear role and a small set of reply triggers. Watch whether contributions help the group, then adjust. A useful short question can do more than several unsolicited recommendations.
 
 ## The main dial: Free Will
 
-**Free Will** decides when a Shape is allowed to speak on its own. It's set per chat in **Chat Settings → AI Configurations**, and it's the single most important lever for social behavior.
+**Shape Free Will** controls when Shapes can join the conversation. Find it in **Chat Settings → AI Configurations**. These are room-level controls; the options shown can vary by room type.
 
-| Trigger | What it does | Use it when |
-| --- | --- | --- |
-| **Reply when mentioned** | Responds when someone uses its @name. | Always — this is the baseline. |
-| **Keep the convo going** | May continue after it has replied. | You want momentum, not one-shot answers. |
-| **React to keywords** | Jumps in when watched keywords appear. | The Shape owns a topic (a character, a subject). |
-| **Always have something to say** | Replies when nobody else does. | A quiet room you want kept alive. |
-| **Come back later** | Checks back in after the chat goes quiet. | A companion that re-engages, not a one-off. |
+- **Reply when mentioned** lets Shapes respond when someone uses their `@name`.
+- **Keep the convo going** lets a Shape continue the exchange after it has replied, without needing another mention.
+- **React to keywords** lets Shapes respond to configured trigger words. Where this option is available, set keywords for individual Shapes in that room and use **Save**.
+- **Always have something to say** lets a Shape respond when nobody else replies.
+- **Come back later** lets Shapes check back in hours later if the conversation goes quiet. Treat it as conversational follow-up rather than a scheduled reminder with a guaranteed time.
 
-The art is in the *combination*. Each trigger you add makes the Shape more forward. Stack them all and you get an extrovert that never stops; enable only "reply when mentioned" and you get a tool that waits to be called.
-
-You can also turn on **time awareness** (so the Shape knows when it's late, or that hours have passed) and control how its messages appear when they span multiple lines.
+Enable triggers deliberately and adjust them when the room becomes too noisy. **Time Awareness** supplies time context to responses; it is separate from deciding which reply triggers to enable. See [Multiple Messages](/multimessages) if you are troubleshooting extra replies or message splitting.
 
 ## Recipes: tune Free Will to the room
 
-There's no universal setting — the right configuration depends on what the chat is *for*. Start from one of these and adjust.
+Start with the purpose of the room and adjust one setting at a time.
 
 <AccordionGroup>
-  <Accordion title="Quiet friend group" icon="users">
-    **Mentioned + Keep the convo going + Always have something to say + Come back later.** You want the Shape to carry energy and revive a dead chat. This is the most forward setup — great for a companion, too much for a work room.
+  <Accordion title="Comparing options as a group" icon="scale-balanced">
+    Start with **Reply when mentioned**. Ask the Shape to summarize everyone's criteria and compare the options. Add **Keep the convo going** if follow-up questions help the group work through the choice.
   </Accordion>
-  <Accordion title="Busy fandom / roleplay chat" icon="sparkles">
-    **Mentioned + Keep the convo going + React to keywords.** Lots of humans are already talking, so let the Shape stay in character and jump in on its topic — but skip "always have something to say" so it doesn't bury the humans.
+  <Accordion title="A focused project discussion" icon="briefcase">
+    Start with **Reply when mentioned** and concise [room instructions](/custominstructions-chats). If a Shape has a specific area to cover, try **React to keywords** with a small set of relevant terms.
   </Accordion>
-  <Accordion title="Focused work room" icon="briefcase">
-    **Mentioned + (optionally) Keep the convo going.** In a [work chat](/ai-at-work), silence is a feature. The Shape should answer when called and otherwise stay out of focused discussion.
+  <Accordion title="An ongoing plan with friends or family" icon="users">
+    Start with **Reply when mentioned** and optionally **Keep the convo going**. Consider **Come back later** if the group wants conversational follow-ups. Keep confirmed dates and responsibilities in a pinned recap.
   </Accordion>
-  <Accordion title="One-on-one companion" icon="heart">
-    **All triggers on.** In a private chat there's no one to talk over, so maximum presence usually feels best.
+  <Accordion title="Too many Shape messages" icon="volume-low">
+    Turn off unwanted automatic triggers one at a time and check the result. Review [Multiple Messages](/multimessages) for the separate Shape personality setting and fast-forward controls.
   </Accordion>
 </AccordionGroup>
 
 ## Reading people: personas and memory
 
-Speaking at the right time is half of it. Knowing *who you're talking to* is the other half.
+People often want different things from the same plan. Give the Shape enough context to recognize those differences.
 
-- **Personas** are how a Shape sees each person — the name to call them and what to remember about them. A persona is why a Shape can greet two different users in two different ways in the same room.
-- **Memory** gives the Shape continuity. [Short-term memory](/memory) keeps it coherent within a conversation; long-term memory lets it recall an inside joke or a past decision days later. A Shape that remembers feels like a participant; one that forgets feels like a vending machine.
+- **Personas** provide information about how a person should be represented in a conversation.
+- **[Memory](/memory)** helps with continuity across the context available to a Shape. When a preference or decision matters, state it clearly and correct misunderstandings.
+- **A shared recap** lets everyone check whether the assistant understood the group. Pin the current plan and revise it when agreement changes.
 
-Design these together: a Shape with good Free Will *and* good memory doesn't just reply on time — it replies like someone who's actually been in the chat.
+Do not assume a Shape can recall every detail. Bring the relevant information back into the conversation when needed.
 
 ## Coordinating multiple Shapes
 
-Group chats can hold **up to five active Shapes**, and **up to three respond to any single message**. That's a deliberate ceiling — it lets you build a small cast without every Shape piling onto every line.
+If a room has multiple Shapes, give each a distinct contribution: one might draft a plan while another checks it against the group's constraints.
 
-To make multiple Shapes feel like an ensemble instead of an echo:
-
-- **Give each one a distinct role and voice.** A coordinator, a researcher, and a jokester won't step on each other the way three near-identical Shapes will.
-- **Differentiate their Free Will.** Maybe one is keyword-driven and one only replies when mentioned, so they don't all fire at once.
-- **Use [activation](/shapes101#chats) deliberately.** Activate only the Shapes a given conversation needs; deactivate the rest so the room stays legible.
+- **Separate their roles.** Avoid several Shapes repeating the same recommendation.
+- **Use room-specific keywords where available.** Those can help direct relevant topics to different Shapes; Free Will triggers themselves are room settings.
+- **Use [activation](/shapes101#chats) deliberately.** Keep the Shapes you need active and deactivate the others.
 
 ## Voice in a crowd: presets and personality
 
-A Shape's [preset](/presets) and personality decide *how* it talks. In a multiplayer setting, two things matter more than in solo chat:
+A Shape's [preset](/presets) and personality influence how it responds. Make its guidance useful in a group:
 
-- **Length.** A Shape that writes essays will dominate a fast group chat. Favor shorter, punchier replies — the [When Less Is More](/shortguide) guide makes the case well.
-- **Reactivity over monologue.** Write the personality to *respond to people* — react, ask, build on what was said — rather than deliver speeches. Prompt craft for this lives in [Prompt 101](/prompt101) and the [Prompting Guides](/promptingguides).
+- Keep replies short enough for everyone to discuss.
+- Ask it to build on what people have said and ask a focused question when something is missing.
+- Request the reason for a recommendation and the main tradeoff.
+- Ask it to label suggestions separately from confirmed decisions.
+
+For more on response style, see [When Less Is More](/shortguide), [Prompt 101](/prompt101), and the [Prompting Guides](/promptingguides).
 
 ## Room-level behavior: instructions and guardrails
 
-Some behavior belongs to the *room*, not the Shape. Set it once at the chat level:
+Use room-level controls for expectations that apply to every Shape:
 
-- **[Custom Chat Instructions](/custominstructions-chats)** apply to every Shape in the chat — the scene, the rules, the tone, who's who. Put shared context here instead of repeating it.
-- **[Initial messages and a Welcome Shape](/fandomchat)** set the first impression when someone joins.
-- **[Moderation](/chats-101)** — slow mode, character limits, blocked words — keeps a busy room from turning into chaos, human or AI.
+- **[Custom Chat Instructions](/custominstructions-chats):** the shared goal, decision criteria, constraints, and preferred response format.
+- **[Initial messages and a Welcome Shape](/fandomchat):** context for people joining the room.
+- **[Moderation](/chats-101):** controls such as slow mode, character limits, and blocked words.
 
 ## Test, watch, iterate
 
-Social intelligence is tuned, not guessed. Once your Shape is in a chat:
-
-1. **Watch real conversations.** Is it talking too much? Too little? At the wrong moments?
-2. **Adjust one thing at a time** — usually a single Free Will trigger or the reply length.
-3. **[Regenerate](/regeneration)** a few responses to see the range of behavior before deciding.
-4. Repeat until the Shape feels like it belongs in the room.
+1. Ask the Shape to summarize the group's priorities. Check whether everyone is represented accurately.
+2. Ask it to compare options. Look for useful evidence, clear tradeoffs, and acknowledged uncertainty.
+3. Watch when it speaks. Adjust one Free Will trigger or response-length instruction at a time.
+4. If a response misses the point, correct the context or [regenerate](/regeneration) it, then review the result with the group.
 
 ## The checklist
 
-A socially intelligent Shape usually has all of this dialed in:
-
-- Free Will matched to the chat's purpose, not maxed out by default.
-- A clear role, especially if other Shapes share the room.
-- Memory and a persona so it knows the people and the history.
-- Replies that are short and reactive, not long monologues.
-- Room-level context in chat instructions, not repeated every message.
-- Tuning based on watching it live, not assumptions.
+- A clear contribution to the group's actual goal.
+- Instructions that reflect everyone's stated priorities.
+- Recommendations people can question and correct.
+- Free Will triggers matched to the room's needs.
+- Relevant skills configured before relying on outside information.
+- A visible recap of confirmed decisions and unresolved questions.
 
 <CardGroup cols={2}>
   <Card title="Make your first Shape" icon="shapes" href="/how-to-make-a-shape">
-    Build the character, then bring it here to make it social.
+    Create a Shape with a role and personality suited to your group.
   </Card>
-  <Card title="See it at work" icon="briefcase" href="/ai-at-work">
-    Where "knowing when to stay quiet" matters most.
+  <Card title="Use an assistant with your team" icon="briefcase" href="/ai-at-work">
+    Compare proposals, draft shared work, and agree on next steps.
   </Card>
 </CardGroup>
 
-[Start designing on Shapes](https://shapes.inc)
+[Start configuring your assistant on Shapes, Inc.](https://shapes.inc)
