@@ -2,8 +2,10 @@
 
 - The platform, product, and company name is **Shapes, Inc.** Always include the comma and period.
 - Never refer to the platform as **Shapes**. For example, write **On Shapes, Inc.** instead of **On Shapes**.
-- A **Shape** is an AI assistant that participates in a shared room on Shapes, Inc. Use **Shapes** only as the plural of those AI participants.
-- Preserve exact interface labels when documenting navigation. Labels such as **Your Shapes** and **New Chat** are correct even when the surrounding explanation uses assistant and room terminology.
+- A **Shape** is an AI assistant that participates in a shared chat on Shapes, Inc. Use **Shapes** only as the plural of those AI participants.
+- Use **chat** or **group chat** for the product conversation. Do not infer public terminology from source variable names, component names, or database fields.
+- Verify navigation labels in the deployed product on talk.shapes.inc. Preserve the labels readers see, such as **New Chat**, **Quick chat**, **AI**, **People**, **Instructions**, and **AI replies**. If a control cannot be verified, describe the task without inventing a label.
+- Check screenshots as well as prose and metadata. Retire images that show obsolete UI labels or navigation.
 - Before finishing documentation changes, check that every use of **Shapes** clearly refers to AI participants; otherwise, change it to **Shapes, Inc.**
 
 # Product positioning

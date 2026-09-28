@@ -2,7 +2,7 @@
   "seo": {
     "metatags": {
       "og:title": "Shapes, Inc. Docs — Multiplayer Assistant",
-      "og:description": "Make decisions and get things done together with a multiplayer assistant. Guides to shared rooms, Shapes, memory, skills, and troubleshooting.",
+      "og:description": "Make decisions and get things done together with a multiplayer assistant. Guides to shared chats, Shapes, memory, skills, and troubleshooting.",
       "og:image": "/images/embedlogo.png",
       "og:url": "https://docs.shapes.inc"
     }
@@ -54,7 +54,7 @@
             ]
           },
           {
-            "group": "Rooms & Collaboration",
+            "group": "Chats & Collaboration",
             "pages": [
               "chats-101",
               "custominstructions-chats",
