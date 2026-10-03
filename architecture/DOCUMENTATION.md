@@ -2,7 +2,7 @@
 
 ## Product model
 
-Shapes, Inc. is a multiplayer assistant for shared decisions and work. A chat brings together the people involved and AI participants called Shapes. The content should help readers make progress on a group goal: share context, research, compare preferences and tradeoffs, review work, and decide on next steps.
+shapes.inc is a multiplayer assistant for shared decisions and work. A chat brings together the people involved and AI participants called Shapes. The content should help readers make progress on a group goal: share context, research, compare preferences and tradeoffs, review work, and decide on next steps.
 
 Three principles organize the product explanation: earn the group's trust, participate as an equal actor, and proactively add value. These are design principles, not guarantees that every Shape has complete context or can act in connected services without configuration.
 
@@ -18,7 +18,7 @@ Three principles organize the product explanation: earn the group's trust, parti
 
 ## Writing and maintenance
 
-Use **Shapes, Inc.** for the product and **Shape/Shapes** for AI participants. Use **chat** or **group chat** in public prose, headings, metadata, and link labels, preserving UI labels such as **New Chat**, **Create Chat**, and **Chat Menu**. Prefer everyday collaboration examples as well as work examples; multiplayer assistance is broader than workplace productivity.
+Use **shapes.inc** for the product and **Shape/Shapes** for AI participants. Use **chat** or **group chat** in public prose, headings, metadata, and link labels, preserving UI labels such as **New Chat**, **Create Chat**, and **Chat Menu**. Prefer everyday collaboration examples as well as work examples; multiplayer assistance is broader than workplace productivity.
 
 Describe what a reader can actually configure or do. Link to the live engine catalog for changing availability and pricing. Built-in skills are included automatically. External MCP servers require configuration and may need each member to sign in; capabilities still depend on the selected engine and permissions. Keep fundraising, financial projections, hiring plans, and other internal strategy out of public help pages.
 
