@@ -3,6 +3,8 @@
 - The user-facing platform and product name is **shapes.inc**. Always use this exact lowercase spelling with the dot; never use a space or a comma.
 - Never shorten the platform name to **Shapes** or **shapes**, including in headings, metadata, prompts, and compact UI copy. Always write **shapes.inc**.
 - A **Shape** is an AI assistant that participates in a shared chat on shapes.inc. Use **Shapes** only as the plural of those AI participants.
+- Call each individual a **shape** (plural **shapes**), never an “AI character” or a hyphenated variant.
+- Never use “roleplay,” “role-play,” “role play,” “RP,” or translated equivalents in authored public copy, including metadata and example prompts. Describe the actual conversation, speech, actions, or narration when needed. Preserve features, policies, technical identifiers, literal API values, and existing URLs or compatibility anchors; a copy correction does not authorize changing behavior.
 - Use **chat** or **group chat** for the product conversation. Do not infer public terminology from source variable names, component names, or database fields.
 - Verify navigation labels in the deployed product on talk.shapes.inc. Preserve the labels readers see, such as **New Chat**, **Quick chat**, **AI**, **People**, **Instructions**, and **AI replies**. If a control cannot be verified, describe the task without inventing a label.
 - Check screenshots as well as prose and metadata. Retire images that show obsolete UI labels or navigation.

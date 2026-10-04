@@ -24,6 +24,8 @@ Describe what a reader can actually configure or do. Link to the live engine cat
 
 Retain existing routes and linked heading anchors when rewriting a page. Update titles, descriptions, keyword metadata, cards, and navigation alongside body copy so search and social previews tell the same story.
 
+Follow the terminology rules in `AGENTS.md` throughout authored public copy, including example presets and search metadata. Describe conversation style through speech, actions, and narration. Keep existing routes and compatibility anchors intact when their wording is retired from visible copy; preserve each example's behavior and constraints.
+
 ## Validation
 
 This repository is a Mintlify MDX site with no application TypeScript project or package test suite. For documentation changes:
