@@ -24,7 +24,7 @@ Describe what a reader can actually configure or do. Link to the live engine cat
 
 Retain existing routes and linked heading anchors when rewriting a page. Update titles, descriptions, keyword metadata, cards, and navigation alongside body copy so search and social previews tell the same story.
 
-Follow the terminology rules in `AGENTS.md` for authored public labels, explanatory prose, and search metadata. Preserve AI-facing instruction text byte-for-byte, including built-in preset bodies and exact prompt examples intended to be copied or sent to AI; the copy sweep applies only to their surrounding labels and explanations. Keep existing routes and compatibility anchors intact when their wording is retired from visible copy.
+Follow the terminology rules in `AGENTS.md` for authored public labels, explanatory prose, and search metadata. AI-facing edits require explicit authorization; the approved preset/example instruction changes use narrated actions and scenes while preserving the same sentence counts, response constraints, and placeholders. Keep unrelated system/classifier instructions and saved user content unchanged. Keep existing routes and compatibility anchors intact when their wording is retired from visible copy.
 
 ## Validation
 
