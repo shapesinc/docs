@@ -47,3 +47,9 @@ Read-only inspection of the signed-in desktop site at `talk.shapes.inc` confirme
 - **Add participants** uses **AI** and **People** tabs.
 
 Keep public labels current on future edits. Legacy file paths and hidden anchor aliases may remain to avoid breaking links; they are not reader-facing terminology.
+
+## Skip turn support source (October 4, 2026)
+
+The FAQ is the canonical troubleshooting source consumed by documentation search. Keep related guides aligned with `components/actions-dropdown-button.tsx` in shapes-chat: existing messages, at least one active shape, Chat mode, and group-owner authorization. One-to-one shape chats are supported. Do not infer a multiple-shape requirement from the feature’s group use cases or describe it as an Agent control. Mode descriptions remain capability-based; this correction changes no runtime behavior or permissions.
+
+The fix replaces inaccurate/ambiguous retrieved prose without adding an AI call, classifier, permanent prompt, or retrieval step. The combined changed public text is shorter; expected incremental recurring inference spend is $0/day. Search-index rollout follows the normal documentation deployment; a merged PR alone is not evidence that an already-running support conversation has refreshed its retrieved context.
