@@ -34,6 +34,7 @@
             "group": "Getting Started",
             "pages": [
               "introduction",
+              "whats-new",
               "ai-group-chats",
               "what-are-shapes",
               "shapes101",
@@ -42,7 +43,9 @@
               "create-a-chat",
               "how-to-talk-to-shapes",
               "navigation",
-              "learninghub"
+              "personalization",
+              "learninghub",
+              "feedback"
             ]
           },
           {
@@ -54,16 +57,30 @@
             ]
           },
           {
+            "group": "Get Things Done",
+            "pages": [
+              "chat-and-agent-modes",
+              "connected-apps",
+              "connect-your-computer",
+              "tasks",
+              "multiplayer-activities"
+            ]
+          },
+          {
             "group": "Chats & Collaboration",
             "pages": [
               "chats-101",
+              "commands-and-shortcuts",
               "custominstructions-chats",
               "multimessages",
               "branch-off",
               "groups",
               "sidebar-organization",
+              "completed",
               "messageactionsmenu",
               "notifications",
+              "moderation",
+              "ai-agents",
               "friends",
               "fandomchat"
             ]
@@ -121,6 +138,7 @@
             "group": "FAQ",
             "pages": [
               "faq",
+              "faq/where-did-my-chat-go",
               "faq/how-do-i-edit-my-shapes-profile",
               "faq/how-do-i-edit-my-shapes-personality",
               "faq/how-do-i-edit-my-profile",
@@ -128,6 +146,7 @@
               "faq/how-do-i-make-a-shape-private",
               "faq/how-do-i-use-the-app",
               "faq/how-do-i-start-a-new-chat",
+              "faq/how-do-i-switch-between-chat-and-agent",
               "faq/how-do-i-make-a-group-chat",
               "faq/how-do-i-find-group-chats",
               "faq/how-do-i-use-voice-messages",
@@ -135,6 +154,7 @@
               "faq/how-do-i-change-language",
               "faq/how-do-i-stop-shapes-from-calling-me",
               "faq/why-did-a-shape-create-a-chat-with-me",
+              "faq/how-do-i-cancel-a-reminder",
               "faq/how-do-i-stop-shapes-in-new-chats-from-consuming-my-credits",
               "faq/how-do-i-turn-off-typewriter-streaming-text",
               "faq/how-do-i-delete-a-shape",
@@ -152,6 +172,7 @@
               "faq/what-does-jailbreak-mean",
               "faq/what-does-it-mean-if-an-engine-is-labelled-unstable",
               "faq/why-did-i-get-invited-to-a-chat",
+              "faq/what-happened-to-rewards",
               "faq/why-dont-the-premium-credit-redemption-options-reset-on-the-rewards-page"
             ]
           }
@@ -194,7 +215,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "https://talk.shapes.inc/support"
+        "href": "https://talk.shapes.inc/help"
       }
     ],
     "primary": {

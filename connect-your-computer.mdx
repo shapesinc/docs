@@ -1,0 +1,98 @@
+---
+title: "Connect Your Computer"
+description: "Let Shapes work on your own computer in Agent chats. Set it up once, allow it chat by chat, approve requests in the chat, hand coding work to Codex or Claude Code, and share access with chat members."
+keywords: ["connect your computer", "Computers settings", "Agent chats", "Codex", "Claude Code", "Code Projects", "shared computer access", "multiplayer assistant"]
+sidebarTitle: "Connect Your Computer"
+---
+
+Some group work needs a real computer: run the project before the demo, check a file only you have, or fix the build your teammate asked about. When you connect your computer, Shapes in the [Agent chats](/chat-and-agent-modes) you choose can do that work for you, and you approve permissions or answer their questions right in the chat.
+
+You stay in control. You set your computer up once, allow it one chat at a time, and can remove access whenever you want.
+
+<Warning>
+  When you allow a chat, Shapes there can run commands, read and change files, use apps, control the keyboard and mouse, see your screen, and use the network, within the system permissions you give your computer. Results you ask for may be visible to other people in the chat. Only allow chats you trust.
+</Warning>
+
+## Set up your computer once
+
+1. Open **Settings** → **Computers**.
+2. Under **Add a computer once**, select **Copy install command**.
+3. Run the command in Terminal or PowerShell on the computer you want to use. Setup requires Node.js 18 or newer.
+4. Open the link setup gives you and approve the computer for your shapes.inc account. Only approve if you started setup on that computer and its terminal shows the same code.
+5. Grant the system permissions your computer asks for, then let setup finish. You can close the terminal afterward; the connection keeps running in the background and starts when you sign in to your computer.
+6. In **Settings** → **Computers**, select **Check for my computer**.
+
+Your computer appears under **Your computers** as **Online** or **Offline**. Keep it on and connected to the internet while Shapes work on it. If it goes offline, it reconnects when it's on, signed in, and online, and its chat permissions are saved. Open **Permissions & background status** on a computer to see which system permissions it has.
+
+## Allow a chat to use it
+
+1. In an Agent chat, open the composer's **+** menu → **Connect your computer**. You can also select the connect link in a Shape's reply when it asks for your computer.
+2. Choose a computer.
+3. Select **Allow in this chat**.
+
+If you opened the dialog from a Shape's reply and the computer is online, the button reads **Allow and continue**. It allows the chat and asks the Shape to resume your request, so you don't need to retype it.
+
+Allowing a chat lets your own requests there use your computer. Other members can't use it unless you [share it](#share-your-computer-with-chat-members).
+
+To stop, open **Connect your computer** again and select **Remove chat access**, or **Change computer** to use a different one. **Remove computer** in **Settings** → **Computers** removes it from your account and stops access in every chat.
+
+## Approve requests in the chat
+
+When a task on your computer needs a permission or an answer, a **Computer task** card in the chat asks you to approve or answer. Nothing is chosen for you, and the task continues only after you respond. Only you can answer for your computer.
+
+The card's status describes the task on your computer. Check the Shape's reply for the result, such as whether a change was made.
+
+## Hand coding work to Codex or Claude Code
+
+Shapes can hand parts of a task to Codex or Claude Code on your computer. These tasks start quickly and show their progress live in the chat. They run with the Codex or Claude Code setup and accounts already on your computer.
+
+Tell a Shape your preferences once and it remembers them:
+
+> Always use a thread and my local Codex for code changes in this chat.
+
+## Code Projects
+
+Code Projects connect GitHub repositories for code tasks in an Agent chat. They're under **AI Configurations**, which chat owners can open; in a DM with a Shape, you can open it yourself.
+
+1. Open the chat's **Settings** → **AI Configurations** → **Code Projects**.
+2. Select **Connect GitHub**, or **Add Org** to install the shapes.inc GitHub App on another account or organization.
+3. Select **New Project**, choose the **GitHub account** and **Repository**, and add optional **Workflow steps** and **Project instructions**.
+4. Select **Create Project**.
+
+New projects are private: only you can use them. To let the chat use one, open the project's editor and select **Share with members**. Read what members will be able to do, check the box to authorize them, and select **Share with members** again. Members can then run code and publish changes using the project's repositories and saved environment, including secrets, and can edit its environment and instructions. Your personal GitHub connection stays private. **Stop sharing** removes future access but doesn't undo changes already published.
+
+Projects keep going after the first step. Shapes can continue in the same repository, keep results from background runs, and push a branch without opening a pull request when you ask.
+
+## Share your computer with chat members
+
+You can let specific members use your computer in a chat where you've allowed it.
+
+1. Open **Connect your computer** in that chat.
+2. Under **Shared computer access**, find **Share my computer in this chat** and choose up to 50 members.
+3. Choose the permission:
+   - **Read-only**: members can read files and ask Codex or Claude Code for read-only work. Commands, file changes, and opening apps are blocked.
+   - **Can make changes**: members can run commands, change files, open apps, and use Codex or Claude Code to make changes with your local accounts.
+4. Choose when access ends: **1 hour** or **24 hours**.
+5. Select **Save access**. Saving replaces the computer's current shared access in that chat.
+
+Each share shows its permission, who has it, and when it expires. Select **Revoke** to end it early. Shapes check the current permission before every action, so revoking or expiry applies to the next action; it doesn't undo work already done. Only you can share your computer, and members who leave the chat lose access.
+
+## Troubleshooting
+
+### Connect your computer isn't in the + menu
+
+It appears only in Agent chats. Ask a chat owner to switch the chat to **Agent**; see [Chat, Agent, and Auto](/chat-and-agent-modes#switch-an-existing-chat).
+
+### My computer shows Offline
+
+Make sure it's on, signed in, and connected to the internet, then select **Check for my computer** in **Settings** → **Computers**.
+
+### The setup code doesn't work
+
+The code may have expired. Run the install command again to get a new code.
+
+### I can't share my computer
+
+First allow your computer in that chat. You also need at least one other member in the chat to share with.
+
+For related guides, see [Connected apps](/connected-apps), [Shape Skills](/shapeskills), and [Tasks, reminders, and watches](/tasks).

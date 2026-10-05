@@ -1,80 +1,130 @@
 ---
 title: "Chat Controls for Working Together"
-description: "Manage a chat on shapes.inc: invite collaborators, add Shapes, find shared decisions, and configure your multiplayer assistant."
-keywords: ["chat controls", "multiplayer assistant", "AI configuration", "shared decisions", "invite collaborators", "chat settings"]
+description: "Manage a chat on shapes.inc: invite collaborators, add Shapes, find shared decisions and files, and configure how your multiplayer assistant contributes."
+keywords: ["chat controls", "chat settings", "multiplayer assistant", "AI Configurations", "invite collaborators", "pinned messages", "shared decisions"]
 sidebarTitle: "Chat Controls"
 ---
 
 ## Open the chat controls
 
-Open **More actions** → **Settings** for chat settings, or **More actions** → **Members / Invite** to add people and Shapes.
+Select the chat's name or picture at the top of the chat to open its **Settings**. Chat owners can also use **More actions** (**⋯**) → **Settings**.
 
 A chat brings the people involved and a multiplayer assistant together around a shared goal. Use these controls to invite collaborators, keep reference material and decisions easy to find, and tune how Shapes contribute. Read [AI Group Chats](/ai-group-chats) for the bigger picture or [create a chat](/create-a-chat) to get started.
 
+The top of a chat also has:
+
+- **Invite** (in group chats): opens **Invite friends** with **Copy Link** and **Share via...**. Invite links look like `shapes.inc/j/…`.
+- **Start Call** when the chat has one person and one Shape.
+- **More actions** (**⋯**): **New chat**, **Search Messages**, **Manage memories**, **Settings** (chat owners), **Instructions**, a call option when the chat has one Shape, **Mentions**, **Mark completed** or **Reopen**, and, outside DMs, **Report chat** and **Leave chat**.
+
+Members, Invite, Share, and Delete are no longer in **More actions**. Find members under **Participants** in the chat's **Settings**, and **Invite**, **Share**, and **Delete** in the chat's **⋯** menu in the sidebar.
 
 <Info>
-  Use the three-dot menu next to a message to regenerate, edit, react to, branch off, or reply. These controls help you refine a draft, correct an answer, or explore a side question.
+  Use the **⋯** menu on a message to reply, edit, regenerate, translate, branch off, or check **Generation details**. See the [message actions menu](/messageactionsmenu).
 </Info>
 
 ## Find the control you need
 
+The **Settings** panel is grouped into **Chat settings**, **Chat management**, and **Shared content**. Use **Search settings...** at the top to jump to an option. Some options appear only for chat owners or only in certain chats.
+
+### Chat settings
+
 <AccordionGroup>
-  <Accordion title="Invite people" description="How do I invite the people involved?" icon="mailbox-flag-up">
-    - Copy a chat invite link to share with the friends, family members, classmates, or teammates involved in the plan.
+  <Accordion title="AI Configurations" description="How do I change how Shapes work in this chat?" icon="robot">
+    Chat owners see **AI Configurations**. In a DM with a Shape, you can open it too.
 
+    - Switch the chat between **Auto**, **Chat**, and **Agent**. See [Chat and Agent](/chat-and-agent-modes).
+    - Write shared [chat instructions](/custominstructions-chats) with the group's goal, constraints, and decision criteria.
+    - Choose [AI replies](/designing-social-intelligence#the-main-dial-free-will) triggers for when Shapes can jump in without being asked.
+    - Review built-in **Skills** and, in Agent chats, connect **MCP servers**. See the [Skills guide](/shapeskills).
+    - In Agent chats, connect repositories under **Code Projects** for code tasks in this chat. See [Connect your computer](/connect-your-computer).
+  </Accordion>
+  <Accordion title="Engines" description="How do I choose the AI engine for this chat?" icon="microchip">
+    Chat owners, and anyone in a DM with a Shape, can open **Engines**. Browse the full catalog under **Choose engine**, including your **Favorites**, and change **Reasoning effort** under **Engine settings**. The engine built by shapes.inc is shown as **Formless**. You can also switch engines from the composer's **+** menu.
+  </Accordion>
+  <Accordion title="Chat Appearance" description="How do I change how my chat looks?" icon="card-heart">
+    Chat owners can change a group chat's look. In a DM, you can change it too.
 
+    - Change the **Chat Title** and **Chat Description**
+    - Set a **Chat Avatar**, **Chat Banner**, and **Chat Background**
+    - Change **Bubble Colors**
+    - Use a **Custom Font (Google Fonts)**
+    - [Read the in-depth guide](/chat-appearance)
   </Accordion>
-  <Accordion title="Add Shapes" description="How do I invite my Shape?" icon="circle-plus">
-    Open **More actions** → **Members / Invite** → **Add participants**. Select **AI**, search for a Shape by name or username, select it, and choose **Add**.
+  <Accordion title="Profile & credits" description="How do I choose how I appear and whether this chat uses my credits?" icon="user">
+    - Pick which of your Profiles Shapes use for you in this chat, or keep **Use my default**.
+    - See that your personal preset applies here too, and edit it.
+    - Turn on **Don't use my credits** so this chat doesn't spend your credits.
 
-
+    Set your defaults in [Personalization](/personalization).
   </Accordion>
-  <Accordion title="Manage Participants" description="How do I choose which Shapes participate or manage access?" icon="thought-bubble">
-    Open **Participants** in **Chat Menu** to review who is included. Available member actions depend on your role. To control when Shapes respond, use **AI Configurations** → **AI replies**.
-  </Accordion>
-  <Accordion title="Pinned Messages" description="How do I see messages I've pinned?" icon="map-pin">
-    - View/Jump to/Unpin Messages from chat
-    - Pin the current plan, reference material, or confirmed decisions so everyone can find them.
-  </Accordion>
-  <Accordion title="Search" description="How do I find previous messages or users?" icon="magnifying-glass-arrow-right">
-    - Search for messages or chat participants
-  </Accordion>
-  <Accordion title="Notifications" description="How do I edit what notifications I receive?" icon="alarm-exclamation">
-    - Select to receive All/Mentions/Nothing as notifications for your Chat or simply mute them for a specific duration.
-    - [Click here to learn more about notifications!](/notifications)
-  </Accordion>
-  <Accordion title="AI Configurations" description="How do I stop my Shape from sending extra messages or give them specific instructions?" icon="robot">
-    - Choose [AI replies](/designing-social-intelligence#the-main-dial-free-will) triggers for when Shapes can jump in
-    - Write custom [chat instructions](/custominstructions-chats) with the shared goal, constraints, and decision criteria
-    - Review built-in **Skills** and connect external services through **MCP servers**; see the [Skills guide](/shapeskills)
-  </Accordion>
-  <Accordion title="Chat Appearance" description="How do I change how my Chat looks?" icon="card-heart">
-    - Change your Chat name
-    - Change Chat Avatar
-    - Change Chat Banner
-    - Change Chat Background
-    - Change incoming/outgoing message colors
-    - Provide a custom Chat font
-    - [Click here for an in-depth guide!](/chat-appearance)
-  </Accordion>
-  <Accordion title="Moderation" description="How do I see who I've banned and block words?" icon="do-not-enter">
-    - Enable/Disable allowing everyone to add Shapes to your Chat
-    - Set a character limit for how long user messages can be
-    - Create a slow mode to control how frequently people can send messages in your Chat
-    - Block certain words from being used in your chat using the blocked words list
-    - See a list of banned users
-    - [Click here to learn more about moderation in your Chat!](/create-a-chat#moderation)
-  </Accordion>
-  <Accordion title="Chat Discovery" description="How do I set up my Chat for others to join it?" icon="asterisk">
-    - Add a Chat description and tags to your Chat if you plan on sharing it in Chat discovery
+  <Accordion title="Manage memories" description="What do Shapes remember about this chat?" icon="brain">
+    Opens the memories for this chat, where you can view, add, edit, and delete them. See [Memory](/memory).
   </Accordion>
 </AccordionGroup>
 
+### Chat management
 
-<Accordion title="Wait what do these buttons do?" icon="sparkles">
-  - Send an image, such as a reference you want to discuss with your Shape
-  - Send a voice note; see [voice messages](/how-to-receive-voice-messages) for response settings
-  - Find GIFs
-  - Select an emoji
-  - Use [**Skip turn**](/faq/how-do-i-use-fast-forward-or-skip-turn) in **Chat** mode to let a shape respond next
+<AccordionGroup>
+  <Accordion title="Participants" description="How do I invite people, add Shapes, or manage access?" icon="users">
+    Open **Participants** to see everyone in the chat.
+
+    - **Invite friends** shares a link so people can join.
+    - **Add participants** adds people and Shapes directly. Choose the **Shapes** or **People** tab, select who to add, and select **Add**. The Shapes tab lists Shapes you own and Shapes you've messaged recently.
+    - **Create shape** makes a new Shape for the chat.
+
+    Select a person or Shape for more options, such as **Send DM**. Chat owners can also make someone an owner and remove or ban people. To control when Shapes respond, use **AI Configurations** → **AI replies**.
+  </Accordion>
+  <Accordion title="Notifications" description="How do I change what notifications I get from this chat?" icon="alarm-exclamation">
+    - Choose **All Messages**, **Only @mentions**, or **Nothing** for this chat.
+    - Use **Mute Notifications** for a set time, or **Until I turn it back on**.
+    - [Learn more about notifications](/notifications)
+  </Accordion>
+  <Accordion title="Moderation" description="How do I lock the chat, ban people, or set limits?" icon="do-not-enter">
+    Chat owners see **Moderation** in group chats. Use it to:
+
+    - **Lock Chat** so new people can't join
+    - Make a Shape the moderator and review the **Moderation log**
+    - Choose whether to **Allow AI agents** and whether anyone can add Shapes
+    - Set **Character Limits**, **Slow Mode**, and a **Blocked Words Filter**
+    - Review **Banned Users**
+
+    [Learn more about moderation](/moderation)
+  </Accordion>
+</AccordionGroup>
+
+### Shared content
+
+<AccordionGroup>
+  <Accordion title="Search" description="How do I find earlier messages?" icon="magnifying-glass-arrow-right">
+    Type in **Search messages...** to search the chat's history. **More actions** → **Search Messages** does the same, and **More actions** → **Mentions** finds messages that mention you.
+  </Accordion>
+  <Accordion title="Pinned Messages" description="How do I see pinned messages?" icon="map-pin">
+    - View and jump to pinned messages from the chat's **Settings**.
+    - Chat owners can pin the current plan, reference material, or confirmed decisions from a message's **⋯** menu so everyone can find them.
+  </Accordion>
+  <Accordion title="Media & Files" description="Where are the photos and files shared here?" icon="images">
+    Browse the photos, videos, and files shared in the chat.
+  </Accordion>
+</AccordionGroup>
+
+### Leave or delete a chat
+
+At the bottom of **Settings**, **Leave Chat** removes you from a group chat. You'll need an invite link to rejoin. Chat owners also see **Delete chat**. After you delete a chat, **Undo** appears for a few seconds. To clear a chat from your list without deleting it, use **Mark completed** instead. See [How do I delete a chat?](/faq/how-do-i-delete-a-chat) and [Completed](/completed).
+
+## Composer controls
+
+<Accordion title="What's in the + menu?" icon="sparkles">
+  The **+** beside the message box includes:
+
+  - **Add attachment** to share a file, such as a reference you want the group to discuss. You can also drop a file anywhere over the chat. On phones, **Take photo** is here too.
+  - **Connected apps** to let Shapes use apps like Gmail or Notion. See [Connected apps](/connected-apps).
+  - **Connect your computer** in Agent chats. See [Connect your computer](/connect-your-computer).
+  - **Commands** for slash commands such as `/remember` and `/new`. See [Commands and shortcuts](/commands-and-shortcuts).
+  - **Draw something**, **Search GIFs**, and **Insert emoji** (not on phones)
+  - [**Skip turn**](/faq/how-do-i-use-fast-forward-or-skip-turn) in **Chat** mode to let a shape respond next
+  - **Engine** to switch the AI engine
+  - **Feedback** to tell the shapes.inc team about a problem or idea. See [Feedback](/feedback).
+
+  Use the microphone button to record a voice message, preview it, then send it. See [voice messages](/how-to-receive-voice-messages) for reply settings.
 </Accordion>

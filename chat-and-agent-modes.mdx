@@ -1,0 +1,104 @@
+---
+title: "Chat, Agent, and Auto"
+description: "Choose whether Shapes just talk with your group or take actions for it. Learn how Chat, Agent, and Auto work, set the default for new chats, and read what Agent replies show."
+keywords: ["Agent chats", "Chat mode", "Auto mode", "New chats setting", "multiplayer assistant", "Generation details", "step log", "Formless"]
+sidebarTitle: "Chat, Agent & Auto"
+---
+
+Some conversations are for talking things through: comparing opinions, brainstorming, or catching up. Others need work done: researching options, checking a spreadsheet, or drafting an email from an app you've connected. shapes.inc has two kinds of chat for these: **Chat**, where Shapes just talk, and **Agent**, where Shapes take actions for you. **Auto** picks between them as the conversation goes.
+
+## The three options
+
+| Option | What it's for |
+|---|---|
+| **Auto** | Chooses Chat or Agent based on what you need. Auto checks every message, so an Auto chat can switch back and forth. |
+| **Chat** | For when you just want to chat, without web search, code execution, or other actions. |
+| **Agent** | For help with tasks using web search, code execution, and other actions. |
+
+If you set a chat to **Chat** or **Agent** yourself, it stays that way. Only Auto chats switch.
+
+Private one-to-one conversations are called **DMs**. A DM between two people doesn't have this setting.
+
+## Choose how new chats start
+
+1. Open **Settings**.
+2. Find **New chats**.
+3. Choose **Auto**, **Chat**, or **Agent**.
+
+**Auto** is the default. The setting applies to chats you start from now on; existing chats keep their setting. See [Personalization](/personalization) for the rest of your account settings.
+
+## Switch an existing chat
+
+Chat owners can change a chat's mode at any time:
+
+1. Open the chat's **Settings**: select the chat's name at the top of the chat, or open **More actions** → **Settings**.
+2. Select **AI Configurations**.
+3. At the top, choose **Auto**, **Chat**, or **Agent**.
+
+If you don't see these options, ask a chat owner to switch the chat for you. See also [How do I switch between Chat and Agent?](/faq/how-do-i-switch-between-chat-and-agent)
+
+## What's different in Agent chats
+
+- **Shapes act, not just answer.** They can search the web, run code, use your [connected apps](/connected-apps), set [reminders and scheduled checks](/tasks), find places near you, and, if you allow it, [work on your computer](/connect-your-computer). Built-in skills are included automatically; owners can add **MCP servers** under **AI Configurations**. See [Shape Skills](/shapeskills).
+- **Shapes join in when they can help.** In group Agent chats, Shapes reply when they can contribute and stay out of ordinary conversation between people.
+- **You can see that work has started.** While a Shape works on your request, it reacts 👍 to your message until the reply lands.
+- **Reply suggestions offer one next step.** Agent chats show one suggested next step; Chat chats show up to three. Turn suggestions off under **Settings** → **Personalization** → **Chats & Shapes** → **Reply suggestions**.
+- **Skip turn is for Chat only.** It isn't available in Agent chats. See [Skip turn and fast forward](/multimessages#skip-turn-and-fast-forward).
+- **Participant controls are simpler.** The menu for a person under **Participants** shows **Remove** instead of **Kick** and **Ban**. See [Moderation](/moderation).
+
+### Interactive answers
+
+Comparisons, timelines, and charts can come back as interactive panels instead of long text. Asking a Shape to find a home gets a visual shortlist with photos, prices, and filters.
+
+Pages a Shape builds run inside the message, so the group can sort, filter, and type without leaving the chat. They lead the reply at full width, with any downloads after the answer. Use **More actions** (⋯) under a page to **Open full view**, **Download**, **Open in a new tab**, or **Collapse** it. For polls, games, and forms everyone uses together, see [Live polls, games, and forms](/multiplayer-activities).
+
+### See what a Shape did
+
+Under an Agent reply, a step log lists what the Shape did, such as searches, pages read, files, apps used, and watches it set up, with timing. It's folded to one line, such as "Worked for 1m 40s · 6 steps". Select it (**Show steps**) to open the list. On a step, **Details** shows its **Input** and **Output**.
+
+If a reply seems stuck for a couple of minutes, **Stop & retry** appears above the message box. It stops the reply and sends a short message mentioning the Shape so it tries again.
+
+## Check how a reply was made
+
+Open the ⋯ menu on any Shape message and select **Generation details**. It shows the engine, why it was picked, how long the reply took, and the credits used. The engine built by shapes.inc is shown as **Formless**; see the [AI Engine Guide](/aienginecheatsheet).
+
+Anyone in a chat can **Regenerate** a Shape's reply, including Agent replies. Credits come from whoever regenerates. See [Message Regeneration](/regeneration).
+
+## Ask a Shape to set up chats
+
+When you clearly ask and it's allowed, a Shape can start a new chat, add someone you already share a chat with, or send a message into another private chat you can access.
+
+> Start a new chat with Maya and Drew and get this done.
+
+That request carries the task into the new chat with the people you name. If a name is ambiguous, the Shape asks first. Replying "yes" or "add Drew instead" to its offer works.
+
+## Troubleshooting
+
+### My chat switched between Chat and Agent
+
+The chat is set to **Auto**, which checks every message. To keep one mode, a chat owner can choose **Chat** or **Agent** under **AI Configurations**.
+
+### A Shape didn't reply in a group Agent chat
+
+In group Agent chats, Shapes stay out of ordinary conversation. Ask the Shape directly and say what you need. To change when Shapes jump in, owners can adjust **AI replies** under **AI Configurations**; see [Designing Social Intelligence](/designing-social-intelligence).
+
+### Skip turn or Connect your computer is missing
+
+**Skip turn** appears only in chats set to Chat, and **Connect your computer** only in Agent chats. Check the chat's mode under **AI Configurations**.
+
+## Related guides
+
+<CardGroup cols={2}>
+  <Card title="Connected apps" icon="plug" href="/connected-apps">
+    Let Shapes use Gmail, Google Calendar, Notion, and more for your requests.
+  </Card>
+  <Card title="Connect your computer" icon="laptop" href="/connect-your-computer">
+    Approve tasks on your own computer and hand coding work to Codex or Claude Code.
+  </Card>
+  <Card title="Tasks and reminders" icon="list-check" href="/tasks">
+    See and cancel reminders, watches, and work in progress.
+  </Card>
+  <Card title="Commands and shortcuts" icon="keyboard" href="/commands-and-shortcuts">
+    Slash commands, message queueing, and keyboard shortcuts.
+  </Card>
+</CardGroup>
