@@ -1,11 +1,37 @@
 ---
 title: "AI Engine Guide"
-description: "Learn how AI engines work on shapes.inc and where to find the current model list."
+description: "Learn how AI engines work on shapes.inc, how to switch a chat's engine, and where to find the current model list."
+keywords: ["AI engines", "Formless", "switch engine", "reasoning effort", "engine catalog", "premium engines", "free engines"]
 ---
 
-shapes.inc has a live AI engine directory at [shapes.inc/engines](https://shapes.inc/engines). The list changes often, so use that page for the current engines.
+shapes.inc has a live AI engine directory at [shapes.inc/engines](https://shapes.inc/engines). The list changes often, so use that page for the current engines and pricing.
 
-This guide explains what the page means and how to pick an engine without needing to know model IDs.
+This guide explains what the page means, how to switch engines in a chat, and how to pick an engine without needing to know model IDs.
+
+## Switch engines in a chat
+
+In a DM with a Shape, or in a chat you own, you can change the engine the chat uses:
+
+- In the composer, open **+** → **Engine**. The menu item shows the current engine's name.
+- Type `/model` in the composer.
+- Open the chat's **Settings** (select the chat's name at the top of the chat) → **Engines**.
+
+**Engines** opens **Choose an AI engine**, with two tabs:
+
+- **Choose engine:** search the catalog, pick **shapes.inc default** to use each Shape's default engine, and keep the engines you use most in **Favorites**.
+- **Engine settings:** set **Reasoning effort** to **Default**, **Off**, **Low**, **Medium**, or **High**. It applies to everyone in the chat, and only the levels the selected engine supports are available. Higher effort can take longer and use more credits. **Temperature** is here too.
+
+The engine built by shapes.inc is shown as **Formless**.
+
+If you own a Shape, you can set its engines in **Settings** → **My Shapes** → choose the Shape → **AI Engine**: **Main engine**, **Premium engine** (used when someone has credits), and **Fallback engine** (used when the main engine is unavailable). The same section has the Shape's own **Reasoning effort** setting, which appears when the engine supports reasoning and **Show reasoning** is on.
+
+<Tip>
+  To see which engine wrote a reply, open the ⋯ menu on the Shape's message and select **Generation details**. It shows the engine, why it was picked, how long the reply took, and the credits it used.
+</Tip>
+
+## Automatic upgrades
+
+**Auto upgrade**, under **Settings** → **Personalization** → **Credits**, automatically upgrades you to the best engine shapes.inc recommends. Premium engines use credits. To keep a chat from spending your credits, see [stopping new chats from using your credits](/faq/how-do-i-stop-shapes-in-new-chats-from-consuming-my-credits).
 
 ## What You See on the Engines Page
 
@@ -26,12 +52,12 @@ Each engine card shows the provider, how new the engine is, the engine name, and
 ## What the Badges Mean
 
 - **Free on shapes.inc:** you can use it without Shape Credits.
-- **Premium:** uses Shape Credits unless the chat has sponsored premium access.
+- **Premium:** uses Shape Credits unless the chat has sponsored premium access. Premium engine replies are charged at twice the engine's provider cost.
 - **Reasoning:** better for careful thinking, coding, planning, and hard questions.
 - **Native Vision:** can understand images when the chat supports image input.
 - **Tools:** can use supported skills and actions on shapes.inc.
 - **New:** recently added to the catalog.
-- **Unstable:** may fail, change, or behave less reliably. Avoid using unstable engines as your main engine unless you are experimenting.
+- **Unstable:** failing or temporarily unavailable. Choose another engine until it recovers. See [the Unstable label](/faq/what-does-it-mean-if-an-engine-is-labelled-unstable).
 
 ## Choose for the group's task
 
@@ -41,7 +67,7 @@ Start with the work you want the assistant to do. Use the live catalog's descrip
 - **Draft or study together:** provide the group's brief or study material. Check clarity, accuracy, and how well the response follows your instructions.
 - **Use external actions:** look for **Tools** support, then check that the required [skills](/shapeskills) are enabled and configured.
 - **Discuss images:** look for **Native Vision** and verify that the chat supports the image input you need.
-- **Control costs:** use the **Free** filter or review premium credit requirements. Other features, such as image generation or voice, can have their own costs.
+- **Control costs:** use the **Free** filter or review premium credit requirements. Other features, such as image generation, voice, or higher **Reasoning effort**, can have their own costs.
 
 A model family name alone does not tell you which capabilities a particular engine supports. Availability, pricing, and behavior change, so use the current catalog rather than a fixed ranking.
 

@@ -38,15 +38,16 @@ This repository is a Mintlify MDX site with no application TypeScript project or
 
 Changes deploy when merged to `main`. A pull request is the review handoff; opening one does not publish the revised site.
 
-## Verified public terminology (2026-09-28)
+## Verified public terminology (2026-10-05)
 
-Read-only inspection of the signed-in desktop site at `talk.shapes.inc` confirmed:
+Checked against the deployed frontend source (`shapes-chat` `main`) after the October 4 release, plus the signed-out sign-in and agent pages on `talk.shapes.inc`. The in-app **Settings** → **What's new** release notes list everything that moved.
 
-- **New Chat** opens a **New chat** sidebar with **Quick chat**, **AI**, and **People**. After selection, **Continue** opens **Chat details**, then **Create Chat**.
-- The chat header's **More actions** menu includes **Settings**, **Instructions**, **Members / Invite** (with a participant count), and **Share chat**.
-- **Settings** opens **Chat Menu**, including **Participants**, **AI Configurations**, and **Chat Appearance**.
-- **AI Configurations** contains **Instructions**, **AI replies** with **Auto-reply triggers**, **Skills**, and **MCP servers**. Built-in skills are included automatically; **Add MCP server** configures an extension.
-- **Add participants** uses **AI** and **People** tabs.
+- **New Chat** opens a **New chat** picker with **Quick chat** and the **Shapes** and **People** tabs, then **Continue**. The header ⋯ → **New chat** dialog uses **Next** → **Chat details** → **Create Chat**. There is no **AI** tab.
+- Chats are **Chat** or **Agent**; **Auto** chooses per message. The account default is the **New chats** setting on the Settings page; owners change a chat's mode in its **Settings** → **AI Configurations**. One-to-one conversations are **DMs**. The shapes.inc engine is **Formless**.
+- Selecting a chat's name opens its **Settings** panel: **AI Configurations**, **Engines**, **Chat Appearance**, **Profile & credits**, **Manage memories**, **Participants**, **Notifications**, **Moderation**, **Pinned Messages**, **Media & Files**, **Leave Chat**, and **Delete chat**. "Chat Menu" is no longer a visible label.
+- The chat header's **More actions** menu no longer has Members, Invite, Share, or Delete. Group chats have an **Invite** button in the header; the sidebar ⋯ menu has **Invite**, **Share**, **Mark completed**, and **Delete**.
+- Account settings: **Personalization** (preset, Location, Credits, Chats & Shapes, Profiles), **My Shapes**, **Connected apps**, **Computers**, **Manage memories**, **Tasks**, **Completed**, **Notifications & privacy**, and the **Support** group (**What's new**, **Feedback**, **Support Chat**, **For AI agents**).
+- Retired: Rewards, Personas (now **Profiles**), Archive (now **Completed**), message ratings, public Shape discovery in search, and the Shape reach-outs and Streaming settings toggles.
 
 Keep public labels current on future edits. Legacy file paths and hidden anchor aliases may remain to avoid breaking links; they are not reader-facing terminology.
 

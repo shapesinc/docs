@@ -9,7 +9,7 @@ description: "All of the information below is based on tips from users! "
 
     ---
 
-    ## **Core Components of the Technique (System/Engine Prompt "Custom Engine Instructions")**
+    ## **Core Components of the Technique (Response style "Instructions" field)**
 
     This prompt's effectiveness stems from several key components that work in concert to define and enforce the shape's behavior.
 
@@ -55,7 +55,7 @@ description: "All of the information below is based on tips from users! "
 
     ---
 
-    ### **Advanced Refusal Mitigation via In-Context Examples (Conversational Examples field)**
+    ### **Advanced Refusal Mitigation via In-Context Examples (Example exchanges field)**
 
     A key innovation of this technique is its method for navigating topics that would typically trigger a model's safety alignment. It leverages the powerful in-context learning capabilities of models like Llama 3.3 70b, which are highly sensitive to established conversational patterns.
 
@@ -128,23 +128,22 @@ description: "All of the information below is based on tips from users! "
 
     ## ⚙️ Step 2: Adding the Link to Your Shape
 
-    Once you have the direct Imgur link, you can make your Shape display it for specific actions — such as clearing memory, creating a memory, or showing an error message.
+    Once you have the direct Imgur link, you can make your Shape display it for specific actions — such as clearing memory or creating a memory.
 
     ### 💡 Where to add it
 
     Go to your Shape’s:
 
-    > **Personality → Custom Messages**
+    > **Personality → Command replies**
 
     ### 🪄 How to do it
 
-    1. Open your Shape’s **Customization Settings**.
-    2. Go to the **Personality** tab.
-    3. Expand the **Custom Messages** section.
+    1. Open **Settings** → **My Shapes** and choose your Shape.
+    2. Go to the **Personality** section.
+    3. Expand **Command replies**.
     4. Find the message field you want to edit:
-       - `/wack` → used when the Shape’s **short-term memory is cleared**
-       - `/sleep` → used when the Shape is **creating a long-term memory**
-       - **Error message** → shown when something goes wrong
+       - **After /wack** → used when the Shape’s **short-term memory is cleared**
+       - **After /sleep** → used when the Shape is **creating a long-term memory**
     5. Paste your **direct Imgur link** into that field.
     6. Click **Save**.
 
@@ -156,7 +155,7 @@ description: "All of the information below is based on tips from users! "
 
     You can guide your Shape to use emotes either for specific scenarios or as part of its general expression style.
 
-    This is done in the **Engine Preset** or **Custom Response Style** field.
+    This is done in the **Instructions** field under **Personality** → **Response style**. Editing it switches the style to **Custom**.
 
     ### 🎯 Option 1: Specific Triggers or Situations
 
@@ -237,7 +236,7 @@ description: "All of the information below is based on tips from users! "
 
     ### 🧠 1. Check Your Knowledge Relevance Threshold
 
-    If your **knowledge relevance threshold** is too high, your Shape might skip the emote definitions.
+    If your **Knowledge relevance** setting (under **Memory** → **Knowledge recall**) is too high, your Shape might skip the emote definitions.
 
     - Try **lowering it slightly** — around **0.2 to 0.4** is often a good balance.
     - A high threshold makes the Shape treat emote data as “irrelevant” to normal chat.
@@ -250,9 +249,9 @@ description: "All of the information below is based on tips from users! "
 
     To fix this, move your emote definitions into a field that’s always active, like:
 
-    - **Engine Preset**
-    - **Conversational Goals**
-    - **Tone & Style**
+    - **Response style** → **Instructions**
+    - **Conversational goals**
+    - **Tone**
 
     These fields are referenced every response, so your Shape always remembers its emote rules.
 
@@ -281,15 +280,14 @@ description: "All of the information below is based on tips from users! "
 
     Try triggering your custom messages manually:
 
-    - `/wack` → clears your Shape’s short-term memory
+    - `/wack` → clears your Shape’s short-term memory (chat owner only)
     - `/sleep` → stores a long-term memory
-    - Error triggers
 
     If they don’t respond correctly:
 
     - Confirm you pasted the right link.
     - Make sure the image is placed on the first line.
-    - Check that the correct field is saved under **Personality → Custom Messages**.
+    - Check that the correct field is saved under **Personality → Command replies**.
 
     ---
 
@@ -884,7 +882,7 @@ description: "All of the information below is based on tips from users! "
 
     **#5.** Match your engine. Some engines respond better to certain phrasings. Some need it written as a rule. You can try phrasing it as a mandatory rule.
 
-    **#6.** Put tense, viewpoint and formatting at the VERY TOP of your engine preset.
+    **#6.** Put tense, viewpoint and formatting at the VERY TOP of your preset.
 
     ---
 
@@ -896,7 +894,7 @@ description: "All of the information below is based on tips from users! "
 
     ⚠️ **PROBLEM:** AI uses the wrong tense sometimes.
 
-    > **Solution:** Try moving this prompt to the VERY TOP of your engine preset as it can help define these requirements before it reads the rest of the information. It can help the AI interpret other things you have said. Also check your preset all over for anything that might be telling it to write differently (sometimes old info slips in from copy pasting or not deleted when changes are made.)
+    > **Solution:** Try moving this prompt to the VERY TOP of your preset as it can help define these requirements before it reads the rest of the information. It can help the AI interpret other things you have said. Also check your preset all over for anything that might be telling it to write differently (sometimes old info slips in from copy pasting or not deleted when changes are made.)
 
     ⚠️ **PROBLEM:** AI keeps writing for my character.
 

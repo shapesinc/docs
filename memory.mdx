@@ -1,56 +1,82 @@
 ---
 title: "Memory Guide"
-description: "Learn how Shape memory works and how to manage it."
+description: "How Shapes remember what your group shares, how to ask a Shape to remember something, and how to view, add, edit, and delete memories."
+keywords: ["memory", "memories", "Manage memories", "remember", "long-term memory", "short-term memory", "/remember", "/compact", "/clear"]
 ---
+
+Memory helps a Shape keep track of what your group has shared: decisions, preferences, and details that matter later. Memory is selective, not a perfect record, so check important details and correct anything a Shape gets wrong.
 
 ### **How Memory Works**
 
-Shapes use two main kinds of memory:
+Shapes use a few kinds of memory:
 
-- **Short Term Memory (STM):** The recent conversation currently happening in your chat.
-- **Long Term Memory (LTM):** Saved memories that can be used later when relevant.
+- **Short-term memory:** the recent conversation in the chat you're in.
+- **Long-term memory:** summaries of past conversations that a Shape can bring back up when they're relevant.
+- **Saved notes:** things people asked a Shape to remember. A note can be personal, for a chat, or for a workspace.
+
+Short-term memory only covers the chat you're in. Long-term memories and notes can come up in later conversations when they're relevant. In Agent chats, a Shape may also recall memories from other chats you can access, and it finds the right ones more reliably in long histories.
+
+### **Ask a Shape to Remember Something**
+
+Say what you want remembered, for example "Remember that Sam is vegetarian and we're booking for six." The Shape saves it and confirms only once it's saved. Its reply says where the note went: **Personal**, a chat, or a workspace.
+
+You can also type `/remember` followed by the note to save it to the chat's memory.
 
 ### **Memory Commands**
 
-- /wack — Erases short term memory only.
-- /reset — Erases long term memory only.
-- /sleep — Adds recent short term memory to long term memory.
+Type these in the composer:
 
-![Wack Pn](/images/wack.png)
+| Command | What it does |
+| --- | --- |
+| `/remember` | Save a note to this chat's memory. |
+| `/memory` | Open the memories for this chat. |
+| `/compact` | Save this chat to memory so Shapes keep the gist. `/sleep` does the same. |
+| `/clear` | Clear this chat's short-term memory. Chat owner only. |
+| `/wack` | Reset a Shape's short-term memory. Chat owner only. |
+| `/reset` | Reset a Shape's long-term memories from this chat. Chat owner only. |
+
+See [commands and shortcuts](/commands-and-shortcuts) for the full list.
+
+### **Manage Memories**
+
+Open **Settings** → **Manage memories** to see the **Memories** page. From a chat, select **More actions** (⋯) in the chat header → **Manage memories**, open the chat's **Settings** → **Manage memories**, or type `/memory`. **Back to chat** returns you to the conversation.
+
+The **Memories** page has four views:
+
+- **Personal:** notes only you can add, edit, or delete.
+- **Chats:** notes for a chat. Pick the chat to see its memories.
+- **Workspaces:** notes for a workspace. Pick the workspace to see its memories.
+- **Conversation summaries:** the summaries Shapes made from your conversations.
+
+Each view shows whether its memories are **Private** or **Shared**. Use **Add memory** to write a new one, **Edit** or **Delete** on a memory to change or remove it, and **How this memory works** to see where it is used and who can change it. Shared memories can be changed by people allowed to manage them (others see them as view only), and conversation summaries can be viewed and changed by the people included in them.
+
+Deleting a memory doesn't change messages or replies that already used it, and new conversations can create new memories.
 
 <Info>
-  These commands are used directly in the [chat interface](https://talk.shapes.inc).
+  Replies can include remembered information, and anyone who can read the conversation can read those replies, including people invited later.
 </Info>
 
 ### **Types of Conversations**
 
-- **Chats:** Chats you can delete, invite more shapes to, and invite more users to.
-- **DM:** Persistent chat between you and your Shape.
+- **Chats:** chats you can invite more people and Shapes to.
+- **DMs:** private one-to-one conversations, such as you and a Shape.
 
-  ![Friends2 Pn](/images/friends2.png)
+Long-term memory can be used in both DMs and chats. Short-term memory is only used in the chat you are currently active in.
 
-<Info>
-  Use the sidebar chat list or **Search...** on [talk.shapes.inc](https://talk.shapes.inc) to return to a conversation.
-</Info>
-
-LTM can be used in both DMs and Chats.\
-STM is only used in the chat you are currently active in.
-
-![Memorysettings Pn](/images/memorysettings.png)
-
-### Memory Settings
+### Shape Memory Settings
 
 <Info>
-  A Shape owner can manage how memories are created and used in the Shape's AI Engine settings page.
+  If you own a Shape, open **Settings** → **My Shapes**, choose the Shape, and go to **Memory** to manage how it creates and uses memories.
 </Info>
 
 Here are the key settings:
 
-- **Turn off long term memory** entirely. Helpful if you want to have many chats without needing to manage memories between them.
-- **Disable auto-generation** of long term memories. Only manually added memories via /sleep will be stored.
-- **Adjust memory generation frequency** to control how often long term memories are recorded.
-- **Change the engine and instructions** used to generate memories.
-  - Looking for an update to your LTM Engine Instructions? Here's a sample of an updated preset you can try:
+- **Short-term memory:** how many **Recent messages** the Shape reads before replying. Your plan sets the maximum.
+- **How often:** how frequently new memories are made from recent messages.
+- **Long-term memory:** turn **Remember past conversations** off if you want many chats without carrying memories between them, or turn **Make memories automatically** off so the Shape only keeps memories that are added on purpose.
+- **Memories per reply** and **Memory relevance:** how many memories can come up in a reply, and how relevant they need to be.
+- **Advanced memory:** the **Memory instructions**, **Memory engine**, and **Memory fallback engine** used to write memories.
+  - Looking for an update to your **Memory instructions**? Here's a sample of an updated preset you can try:
 
     <Expandable title="Content">
       You are a conversation memory assistant. Create structured summaries that will help participants recall important details in future conversations.\
@@ -69,16 +95,12 @@ Here are the key settings:
       - Prioritize information that would be genuinely useful to remember later\
         RELEVANCE RULE THAT SHOULD BE ADDED AT THE END OF EVERY MEMORY: "This memory should only be referenced in future conversations when directly relevant to current topics or context. Don't force connections."
     </Expandable>
-- **Set memory inclusion preferences** to control how many memories are included in chats and how relevant they need to be.
+- **Knowledge recall** and **Training recall:** how many knowledge entries and training examples the Shape can pull into a reply.
 
-### Managing Memories
+The **Manage memories** button in this section opens the Shape's conversation summaries.
 
-You can view and edit saved memories from the Shape's memory page. This is useful if a Shape saved something incorrectly or if you want to remove something it should stop using.
+### Fixing a Memory
 
-<Info>
-  Using /reset in a chat clears long term memories for that chat context. DMs and other chats may keep their own memories.
-</Info>
-
-Memory is shaped by what you say and how the Shape summarizes it. If a memory feels wrong, edit or delete it from the memory page.
+Memory is shaped by what people say and how the Shape summarizes it. If a memory is wrong, or you want a Shape to stop using something, edit or delete it from the **Memories** page. Changes to a shared memory apply to everyone included in it.
 
 [Return to App](https://shapes.inc)

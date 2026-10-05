@@ -1,13 +1,14 @@
 ---
 title: "Shape Skills"
-description: "Use your multiplayer assistant for research, images, code, and shared context. Learn where to find skills, connect an MCP server, and troubleshoot access."
+description: "Use your multiplayer assistant for research, images, code, and shared context. Learn where to find skills in Chat and Agent chats, connect apps and MCP servers, and troubleshoot access."
+keywords: ["Shape skills", "MCP servers", "Custom Skills", "Code Projects", "connected apps", "Agent chats"]
 ---
 
 <a id="why-shape-skills" />
 
 Skills help a Shape turn a group's conversation into useful work: research an option, make a visual, check a calculation, or prepare something everyone can review. Start with the group's goal and describe the result you need.
 
-Built-in skills are included automatically. Connections to outside services are separate: a chat owner can add an MCP server, and each member connects their own account when sign-in is required.
+Built-in skills are included automatically; in Agent chats they can't be turned off, and in Chat chats owners can turn them on or off. Connections to outside services are separate: you connect apps such as Gmail or Notion to your own account, a chat owner can add an MCP server to a chat, and each member connects their own account when sign-in is required.
 
 ## Find Skills in Your Chat
 
@@ -15,11 +16,14 @@ Built-in skills are included automatically. Connections to outside services are 
 <a id="1-enabling-shape-skills" />
 
 1. Open the chat you want to use.
-2. Open **More actions** → **Settings**.
-3. Select **AI Configurations**.
+2. Select the chat's name or avatar at the top to open its **Settings**. Chat owners can also use **More actions** → **Settings**.
+3. Select **AI Configurations**. It's available to chat owners and in DMs with a Shape.
 4. Scroll to **Skills** to see the available capabilities.
 
-The Skills section says that these skills are included automatically and cannot be disabled. Its **Enabled** and **Disabled** indicators are read-only; you do not need to turn on a master switch before asking a Shape to help.
+What you can change depends on the kind of chat (see [Chat and Agent modes](/chat-and-agent-modes)):
+
+- **Agent chats:** the Skills section says these skills are included automatically and can't be disabled. Its **Enabled** and **Disabled** indicators are read-only; you do not need to turn on a master switch before asking a Shape to help.
+- **Chat chats:** the chat owner can set skills to **Enabled** or **Disabled** for the chat and turn individual skills on or off. Custom MCP skills are under **Advanced** → **Custom Skills**.
 
 Use the list in your chat to check what is available. For example, it includes **Web Crawl**, **Image Generator**, **Run Code**, **Chat History**, **Total Recall**, and **Voice Gen**.
 
@@ -70,6 +74,8 @@ Review generated text and details before sharing the result. See the [image gene
 
 For a coding task, describe the expected behavior, provide the relevant project context, and ask for a clear explanation of the result. Access to a repository or outside service may require a connection.
 
+In Agent chats, **AI Configurations** also has **Code Projects** for connecting GitHub repositories to code tasks in the chat. New projects are private; you can share one with the chat after creating it. To let Shapes hand work to Codex or Claude Code on your own machine, see [Connect your computer](/connect-your-computer).
+
 ### Review Shared Context
 
 <a id="total-recall" />
@@ -89,36 +95,44 @@ Check the summary with the people involved. For reviewing and correcting remembe
 
 Specify the format you need and check that the returned file opens correctly. For voice settings and calls, see [Voice Calls](/voicecalls).
 
+You can also share a public Google Docs, Sheets, Slides, or Drive link, and Shapes can read it. See [Connected apps](/connected-apps).
+
 ### Plan Follow-up Work
 
 **Scheduled Actions** is listed for scheduled work. Include the task, intended time, and time zone when asking for a follow-up.
 
 > Remind this chat tomorrow at 6 p.m. Pacific time to confirm everyone's travel dates.
 
-Check the Shape's result to see whether an action was actually scheduled. A suggested reminder in a reply is not a scheduling confirmation.
+Check the Shape's result to see whether an action was actually scheduled. A suggested reminder in a reply is not a scheduling confirmation. Scheduled reminders and in-progress work appear in **Settings** → **Tasks**, where you can cancel them. See [Tasks](/tasks).
 
 ## Connect an Outside Service
 
 <a id="2-adding-custom-mcp-skills" />
 
-An MCP server makes actions from another service available to the assistant. You need the server details from that service or its administrator.
+There are three ways to give Shapes access to another service:
 
-Mentioning an app or pasting a document link does not connect an account. A connected server supplies the actions it supports; access still depends on the service and the member who is signed in.
+- **Connected apps:** connect apps such as Gmail, Google Calendar, Notion, or Google Drive to your account in **Settings** → **Connected apps**, or from the composer's **+** menu → **Connected apps**. When a Shape needs an app you haven't connected, a Connect card appears in the chat. See [Connected apps](/connected-apps).
+- **Apps found by an Agent chat:** Agent chats can find more apps in the public MCP directory and WebMCP. A Connect card appears in the chat, and the task continues after you connect.
+- **An MCP server added to the chat:** a chat owner adds the server's details, as described below. You need the server details from that service or its administrator.
+
+Mentioning an app or pasting a private document link does not connect an account. A connected app or server supplies the actions it supports; access still depends on the service and the member who is signed in.
 
 ### Add an MCP Server
 
-Chat owners can add servers:
+Chat owners can add servers in Agent chats:
 
-1. Open **More actions** → **Settings** → **AI Configurations**.
+1. Open the chat's **Settings** → **AI Configurations**.
 2. Find **MCP servers**, below **Skills**.
 3. Select **Add MCP server**.
 4. Enter a descriptive **Name** so the group can recognize the connection.
 5. Check **Transport**. The dialog defaults to **Streamable HTTP**; use the transport required by the server provider.
 6. Enter the provider's endpoint in **Server URL**.
-7. Review **Access**. Its default is **No sign-in (public tools)**; use the access setup required by the service.
+7. Review **Access**. Its default is **No sign-in (public tools)**. Choose **Each member signs in** when everyone should use their own account, or **Shared API key** when everyone in the chat uses one key, as the service requires.
 8. Select **Add server**.
 
 Use **Cancel** to close the dialog without adding the server.
+
+In Chat chats, owners add custom MCP skills instead: open **Skills** → **Advanced** → **Custom Skills**, set **MCP skills** to **Enabled**, and use **Add MCP skill**.
 
 The endpoint must be an MCP server URL supplied for this purpose. A service's ordinary website or a link to one document may not be a server endpoint.
 
@@ -144,25 +158,25 @@ Review which resource the Shape used and whether the result matches your request
 
 ### I Cannot Enable or Disable a Built-in Skill
 
-Built-in skills are included automatically, and their availability controls are read-only. Use **Skills** to inspect them, then ask the Shape for the task you want completed.
+In Agent chats, built-in skills are included automatically, and their availability controls are read-only. Use **Skills** to inspect them, then ask the Shape for the task you want completed. In Chat chats, only the chat owner can turn skills on or off.
 
-MCP connections are managed separately under **MCP servers**.
+MCP connections are managed separately under **MCP servers** in Agent chats, or **Advanced** → **Custom Skills** in Chat chats.
 
 ### I Cannot Add an MCP Server
 
-Chat owners add MCP servers. Ask an owner to open **AI Configurations** and check the server setup.
+Chat owners add MCP servers. Ask an owner to open **AI Configurations** and check the server setup. If you want to use an app with your own account, connect it in **Settings** → **Connected apps** instead.
 
 If the dialog reports a problem, check the **Server URL**, **Transport**, and **Access** against the provider's instructions. Copy the endpoint intended for MCP connections.
 
 ### The Service Asks Me to Sign In
 
-Complete the connection flow with your own account. Another member's sign-in does not connect your account.
+Complete the connection flow with your own account. Another member's sign-in does not connect your account. If a Connect card appears in the chat, only the person who asked can connect their account from it.
 
-If you have already connected, check whether the service needs you to reconnect or whether your account can access the requested resource.
+If you have already connected, check whether the service needs you to reconnect or whether your account can access the requested resource. **Settings** → **Connected apps** shows apps that need permission or reconnecting.
 
 ### The Shape Cannot Find a Document or Perform an Action
 
-Check that the required MCP server has been added, that you have connected your account when required, and that your account has permission to use the resource.
+Check that the required app is connected or MCP server has been added, that you have connected your account when required, and that your account has permission to use the resource.
 
 Be specific about the document or action. A connection may support only some of the features available on the service's website.
 
@@ -172,7 +186,7 @@ Try one small task with a clear input. Review the error or missing information, 
 
 For web research, try opening the source yourself. For generated files, check the format and contents. For calculations, review the input data and assumptions.
 
-If the problem continues, ask in our [support chat](https://talk.shapes.inc/support). Include what you asked for, the skill involved, and the error message. Keep account credentials out of your support message.
+If the problem continues, ask in [Help Me](https://talk.shapes.inc/help). Include what you asked for, the skill involved, and the error message. Keep account credentials out of your support message.
 
 ## Engines and Credits
 

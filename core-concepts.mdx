@@ -1,7 +1,7 @@
 ---
 title: "Core Concepts — How a Multiplayer Assistant Works"
-description: "Understand shared chats, AI assistants, engines, memory, participation, and skills on shapes.inc. Set up the pieces your group needs to make progress together."
-keywords: ["multiplayer assistant", "shared AI assistant", "group decisions", "AI memory", "Shape skills", "shapes.inc"]
+description: "Understand shared chats, Chat and Agent modes, AI assistants, engines, memory, participation, and skills on shapes.inc. Set up the pieces your group needs to make progress together."
+keywords: ["multiplayer assistant", "shared AI assistant", "group decisions", "Agent chats", "AI memory", "Shape skills", "shapes.inc"]
 sidebarTitle: "Core Concepts"
 ---
 
@@ -17,9 +17,17 @@ A chat holds the people, Shapes, and conversation for a shared purpose: a family
 
 - Invite the people involved so the assistant can work with their different preferences.
 - Put the goal and standing constraints in [chat instructions](/custominstructions-chats).
-- Use the chat's notification, moderation, appearance, and credit settings to suit the group.
+- Use the chat's notification, moderation, appearance, and credit settings to suit the group. Select the chat's name at the top to open its **Settings**.
 
 See [AI Group Chats](/ai-group-chats) for an example and [Create a chat](/create-a-chat) for the setup steps.
+
+### Two kinds of chat
+
+- **Chat** is for talking things through, without web search, code execution, or other actions.
+- **Agent** is for getting tasks done: Shapes can search the web, run code, use apps you've connected, and show their steps under each reply.
+- **Auto** chooses Chat or Agent based on each message, so an Auto chat can switch.
+
+Auto is the default. Change it for chats you start with the **New chats** setting on the **Settings** page; chat owners can switch an existing chat under the chat's **Settings** → **AI Configurations**. Private one-to-one conversations are called **DMs**. See [Chat and Agent](/chat-and-agent-modes).
 
 ## 2. Shapes are the participants
 
@@ -31,9 +39,9 @@ Start with [What Are Shapes?](/what-are-shapes), then [find one](/how-to-talk-to
 
 ## 3. Models are the engine underneath
 
-Each Shape runs on an **AI engine**, the model that generates its responses. Instructions define the role; the engine affects reasoning, writing, supported inputs, and skill use.
+Each Shape runs on an **AI engine**, the model that generates its responses. Instructions define the role; the engine affects reasoning, writing, supported inputs, and skill use. The engine built by shapes.inc appears as **Formless**.
 
-Choose an engine for the task and check its current cost. Some engines are free; premium engines use [Shape Credits](/credits). Features and availability vary by model.
+Choose an engine for the task and check its current cost. Some engines are free; premium engines use [Shape Credits](/credits). Features and availability vary by model. To switch engines in a chat, use the composer's **+** menu → **Engine**. To see which engine wrote a reply and what it cost, open **Generation details** from the reply's ⋯ menu.
 
 Use the [AI Engine Guide](/aienginecheatsheet) and the [live engine list](https://shapes.inc/engines). If a response uses credits unexpectedly, check the selected engine, fallback behavior, and [credit settings](/faq/why-is-a-free-engine-costing-credits).
 
@@ -46,11 +54,11 @@ A Shape can use two kinds of memory, depending on its settings:
 
 This helps a group keep track of preferences, decisions, and recurring constraints. Memory is selective, and context windows have limits. Restate a critical requirement when it matters, and review remembered information when plans change.
 
-The [Memory Guide](/memory) explains how to inspect and edit memories. [Context Windows](/contextwindows) explains how much information an engine can use at once.
+Open **More actions** → **Manage memories** in a chat, or **Settings** → **Manage memories** to view, add, edit, and delete personal, chat, and workspace memories. The [Memory Guide](/memory) explains how. [Context Windows](/contextwindows) explains how much information an engine can use at once.
 
 ## 5. Participation determines when a Shape contributes
 
-**AI replies** settings help control when Shapes contribute. Open **More actions** → **Settings** → **AI Configurations** and review **Auto-reply triggers**. Choose triggers that fit the group's purpose and leave people time to respond.
+**AI replies** settings help control when Shapes contribute. Chat owners open the chat's **Settings** → **AI Configurations** and review **Auto-reply triggers**. Choose triggers that fit the group's purpose and leave people time to respond. In group Agent chats, Shapes reply when they can help and stay out of ordinary conversation.
 
 The AI replies controls include:
 
@@ -66,9 +74,9 @@ See [Designing a Multiplayer Assistant](/designing-social-intelligence) for the 
 
 ## 6. Skills let Shapes take action
 
-**Shape Skills** give an assistant capabilities beyond a text response. Depending on the available skill and engine, it can generate an image, research a page, run code, or use a connected service.
+**Shape Skills** give an assistant capabilities beyond a text response. Depending on the kind of chat, the available skill, and the engine, it can generate an image, research a page, run code, or use a connected service. In Agent chats, built-in skills are included automatically.
 
-External MCP servers require setup, supported authentication, and access to the outside service. Connecting one service does not give a Shape access to other people's private accounts. Review the skill's permissions and what it can change before using it in a shared chat.
+To let Shapes use apps like Gmail, Google Calendar, or Notion in Agent chats, connect them under **Settings** → **Connected apps**; see [Connected apps](/connected-apps). Shapes can also work on a computer you link; see [Connect your computer](/connect-your-computer). External MCP servers require setup, supported authentication, and access to the outside service. Connecting one service does not give a Shape access to other people's private accounts. Review the skill's permissions and what it can change before using it in a shared chat.
 
 Follow [Shape Skills](/shapeskills) for setup and troubleshooting. If an action fails, check whether the skill is available, whether the engine supports it, and whether the connection still has the required access.
 
@@ -85,7 +93,7 @@ The assistant contributes the research and drafts it can support. The group revi
   <Card title="Plan and build" icon="rocket" href="/plan-and-build-together">
     Turn a shared goal into concrete next steps.
   </Card>
-  <Card title="Troubleshoot" icon="circle-help" href="/faq">
+  <Card title="Troubleshoot" icon="circle-question" href="/faq">
     Find help with accounts, chats, engines, and credits.
   </Card>
 </CardGroup>
