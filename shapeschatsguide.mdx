@@ -1,7 +1,7 @@
 ---
 title: "Shapes & Chats — Feature Guide"
-description: "Manage a group chat, guide your multiplayer assistant, and find help with messages, Shape settings, and your profile."
-keywords: ["chat guide", "assistant settings", "multiplayer assistant", "shapes.inc help"]
+description: "Manage a group chat, guide your multiplayer assistant, and find help with chat settings, the Shape editor in Settings → My Shapes, and your profile."
+keywords: ["chat guide", "chat settings", "Shape editor", "My Shapes", "assistant settings", "multiplayer assistant", "shapes.inc help"]
 sidebarTitle: "Feature Guide"
 ---
 
@@ -17,40 +17,39 @@ Bring the people involved in a decision into a group chat and give a Shape a use
 
     ### Create a Chat
 
-    1. Select **New Chat** in the sidebar.
-    2. Use **AI** and **People** to choose who to include. **Quick chat** is also available in this panel.
+    1. Select **New Chat** in the sidebar. On phones, use the **New** tab.
+    2. Use the **Shapes** and **People** tabs to choose who to include. **Quick chat** is also available in this panel.
     3. Select **Continue** to open **Chat details**.
     4. Give the chat a name and select **Create Chat**.
 
-    See [Create a Chat](/create-a-chat) for the full walkthrough.
+    New chats start in the mode chosen under **New chats** in **Settings** (**Auto** by default). See [Chat and Agent modes](/chat-and-agent-modes) and [Create a Chat](/create-a-chat) for the full walkthrough.
 
     ### Adding Shapes
 
-    Open **More actions** and choose the **Members** entry or **Invite** to manage who is in the conversation. The Members entry includes the current count, such as **Members (2)**.
-
-    Choose **Add participants** → **AI** to find a Shape. See [adding Shapes to a chat](/how-to-talk-to-shapes) for help choosing an assistant. Give each Shape a distinct job, such as comparing options or reviewing a draft.
+    Select the chat's name or avatar at the top of the chat to open its **Settings**, then select **Participants**. Choose **Add participants** and use the **Shapes** tab to find a Shape. Shape pickers show Shapes you own and Shapes you've messaged in the last 7 days. See [adding Shapes to a chat](/how-to-talk-to-shapes) for help choosing an assistant. Give each Shape a distinct job, such as comparing options or reviewing a draft.
 
     ### Inviting Friends
 
-    Use **More actions** → **Invite** to bring in the people whose information or agreement the group needs. Check who can access the chat before sharing personal information. See [group chat setup](/faq/how-do-i-make-a-group-chat) and [chat access](/faq/how-do-i-lock-a-chat-so-that-other-people-cant-join).
+    In a group chat, select **Invite** in the chat header. Empty chats and Home also show **Invite friends**, and the chat's menu in the sidebar has **Invite**. The invite dialog leads with **Copy Link** and **Share via...**. Bring in the people whose information or agreement the group needs, and check who can access the chat before sharing personal information. See [group chat setup](/faq/how-do-i-make-a-group-chat) and [chat access](/faq/how-do-i-lock-a-chat-so-that-other-people-cant-join).
 
     <span id="activating-shapes" />
 
     ### Choose When Shapes Reply
 
-    Open **More actions** → **Settings** → **AI Configurations**. Under **AI replies**, review **Auto-reply triggers**:
+    Open the chat's **Settings** → **AI Configurations**. Under **AI replies**, review **Auto-reply triggers**:
 
+    - **Jev (experimental)**
     - **Reply when mentioned**
     - **Keep the convo going**
     - **React to keywords**
     - **Always have something to say**
     - **Come back later**
 
-    Choose triggers that suit the work. If the group wants to direct each contribution, start with **Reply when mentioned** and mention the Shape with `@`. For more guidance, see [assistant participation](/designing-social-intelligence).
+    Choose triggers that suit the work. If the group wants to direct each contribution, start with **Reply when mentioned** and mention the Shape with `@`. In Agent chats with two or more people, Jev is always on and Shapes reply when they can help. For more guidance, see [assistant participation](/designing-social-intelligence).
 
     ### Chat Aesthetics
 
-    Open **More actions** → **Settings** → **Chat Appearance** to make a project recognizable and the discussion comfortable to read. See [Chat Appearance](/chat-appearance).
+    Open the chat's **Settings** → **Chat Appearance** to make a project recognizable and the discussion comfortable to read. See [Chat Appearance](/chat-appearance).
 
     ### Skip Turn and Fast Forward
 
@@ -65,17 +64,20 @@ Bring the people involved in a decision into a group chat and give a Shape a use
     - [Review or correct memory](/memory) when a detail is missing or wrong.
     - [Regenerate a response](/regeneration) after identifying what needs to improve.
     - [Use skills and connected services](/shapeskills) for work beyond conversation.
+    - [Use slash commands and shortcuts](/commands-and-shortcuts) to work faster in the composer.
 
     <span id="heres-what-everything-does-in-chats" />
     <span id="here-s-what-everything-does-in-chats" />
 
-    ## Find Chat Settings
+    <span id="find-chat-settings" />
 
-    **More actions** → **Settings** opens **Chat Menu**. These are the main sections:
+    ## Find a Chat's Settings
+
+    Select the chat's name or avatar at the top of the chat to open its **Settings**. Chat owners can also use **More actions** (**⋯**) → **Settings**. The panel is grouped into **Chat settings**, **Chat management**, and **Shared content**, and some sections only appear for chat owners.
 
     ### Participants
 
-    Review who is in the chat. You can also reach the member list from **More actions** → **Members**. Invite the people needed for the task and check the list before sharing information.
+    **Participants** shows who is in the chat, with the member count. Invite the people needed for the task and check the list before sharing information.
 
     ### Pinned Messages
 
@@ -87,7 +89,7 @@ Bring the people involved in a decision into a group chat and give a Shape a use
 
     ### Search
 
-    Use **Search Messages** in Chat Menu, or **Search** in **More actions**, to find an earlier detail. **Mentions** is also available in **More actions**.
+    Use the search field under **Shared content**, or **Search Messages** in **More actions**, to find an earlier detail. **Mentions** is also available in **More actions**.
 
     ### Notifications
 
@@ -95,16 +97,26 @@ Bring the people involved in a decision into a group chat and give a Shape a use
 
     <span id="personal-ai-preferences" />
 
-    ### Credits
+    ### Profile & Credits
 
-    Check [Shape Credits](/credits) and the [account credit usage guide](/faq/how-do-i-stop-shapes-in-new-chats-from-consuming-my-credits) when planning premium usage. Review the settings and prices shown in the app before spending credits.
+    **Profile & credits** chooses which of your Profiles you use in this chat and whether the chat can spend your credits (**Don't use my credits**). Check [Shape Credits](/credits) and the [account credit usage guide](/faq/how-do-i-stop-shapes-in-new-chats-from-consuming-my-credits) when planning premium usage. Review the settings and prices shown in the app before spending credits.
 
     ### AI Configurations
 
+    - **Chat mode:** chat owners switch between **Auto**, **Chat**, and **Agent**. See [Chat and Agent modes](/chat-and-agent-modes).
     - **Instructions:** describe the group's goal, constraints, and how the assistant should help. You can also open **Instructions** directly from **More actions**. See [chat instructions](/custominstructions-chats).
     - **AI replies:** choose **Auto-reply triggers** to guide when Shapes contribute.
-    - **Skills:** built-in skills are included automatically and cannot be disabled.
-    - **MCP servers:** use **Add MCP server** to connect an external service. Complete any authentication the service requires. See [Skills and MCP servers](/shapeskills).
+    - **Skills:** built-in skills are included automatically in Agent chats; in Chat chats the owner can turn them on or off.
+    - **MCP servers** (Agent chats): use **Add MCP server** to connect an external service. Complete any authentication the service requires. See [Skills and MCP servers](/shapeskills).
+    - **Code Projects** (Agent chats): connect repositories for code tasks in this chat.
+
+    ### Engines
+
+    **Engines** lets you choose the chat's AI engine and, under **Engine settings**, the **Reasoning effort**. You can also switch engines from the composer's **+** menu. See [the engine guide](/aienginecheatsheet).
+
+    ### Manage Memories
+
+    **Manage memories** opens what Shapes remember for this chat. See [Memory](/memory).
 
     ### Chat Appearance
 
@@ -112,7 +124,11 @@ Bring the people involved in a decision into a group chat and give a Shape a use
 
     ### Moderation
 
-    Review who is in the chat and who can join. The [chat access guide](/faq/how-do-i-lock-a-chat-so-that-other-people-cant-join) explains access controls. If a control is unavailable, check your role and permissions before trying to change it.
+    Chat owners use **Moderation** to control who can join and post, set slow mode or blocked words, and choose a moderator Shape. See [Moderation](/moderation) and the [chat access guide](/faq/how-do-i-lock-a-chat-so-that-other-people-cant-join). If a control is unavailable, check your role and permissions before trying to change it.
+
+    ### Leave or Delete
+
+    **Leave Chat** is at the bottom of the panel; you'll need an invite link to rejoin. Chat owners also see **Delete chat**, and a notice offers **Undo** right after deleting.
   </Tab>
   <Tab title="Shapes 101">
     <span id="shapes---your-ai-companion" />
@@ -124,19 +140,21 @@ Bring the people involved in a decision into a group chat and give a Shape a use
 
     ## Customizing Your Shapes
 
-    Shape owners and co-owners manage default behavior from the Shape's page. Open its sidebar and look under **Shape Settings**.
+    Shape owners manage default behavior in the Shape editor. Open **Settings** → **My Shapes** (also on Home) and select a Shape, or select a Shape's name or avatar in a chat and choose **Edit Shape**. To make a new one, select **New shape**; see [Build an Assistant](/how-to-make-a-shape).
 
     <span id="creator-dashboard" />
     <span id="for-everyone" />
     <span id="for-shape-owners" />
 
-    ![Shape page sidebar with Shape Settings and User Shape Settings](/images/shapes-faq-shape-sidebar-light.png)
-
     - **Profile:** edit how the Shape introduces itself. See [Shape profile editing](/faq/how-do-i-edit-my-shapes-profile).
-    - **Personality:** give it a clear role and useful behavior. See [personality editing](/faq/how-do-i-edit-my-shapes-personality).
-    - **AI Engine:** review model choices and behavior settings. See [the engine guide](/aienginecheatsheet).
-    - **Voice Engine:** choose how it sounds. See [voice setup](/how-to-give-your-shape-a-voice).
-    - **Memory**, under **User Shape Settings:** review remembered information. See [memory](/memory).
+    - **Personality:** give it a clear role, a **Response style**, and useful behavior. See [personality editing](/faq/how-do-i-edit-my-shapes-personality).
+    - **AI Engine:** review model choices, **Reasoning effort** (for engines that support it), and behavior settings. See [the engine guide](/aienginecheatsheet).
+    - **Memory:** choose how the Shape remembers conversations. To review what it remembers, see [memory](/memory).
+    - **Knowledge** and **Training:** reference material and example replies.
+    - **Voice** and **Images:** how it sounds and how it makes images.
+    - **Stats** and **Manage:** activity, visibility, copies, and deletion.
+
+    The editor keeps your draft until you select **Save**, and offers to restore unsaved changes if you leave and come back.
 
     ### Stats
 
@@ -144,31 +162,37 @@ Bring the people involved in a decision into a group chat and give a Shape a use
 
     ### Personality
 
-    Use **Personality** to explain what the Shape should contribute. A useful brief tells it to consider everyone's preferences, ask about missing constraints, and explain the tradeoffs behind a recommendation.
+    Use **Personality** to explain what the Shape should contribute. A useful brief tells it to consider everyone's preferences, ask about missing constraints, and explain the tradeoffs behind a recommendation. **Response style** sets the length and format of every reply.
 
     <span id="shape-free-will" />
 
     ## AI replies
 
-    Participation is configured per chat through **More actions** → **Settings** → **AI Configurations** → **AI replies**. Use **Auto-reply triggers** to guide when Shapes contribute. See [assistant participation](/designing-social-intelligence).
+    Participation is configured per chat through the chat's **Settings** → **AI Configurations** → **AI replies**. Use **Auto-reply triggers** to guide when Shapes contribute. See [assistant participation](/designing-social-intelligence).
 
     ## Knowledge & Training
 
     **Knowledge** holds reference material for the Shape's role. **Training** provides examples of useful responses. Keep the material accurate and relevant; examples guide the assistant but do not guarantee an exact response. See [knowledge and training](/shapes101#knowledge).
 
-    ## Image & Voice Engines
+    <span id="image--voice-engines" />
 
-    ### Image Engine
+    ## Images & Voice
 
-    Review **Image Engine** on the Shape's page for the available image settings. When asking for an image, give the group a chance to agree on the brief and review the result. See [creating images together](/articles/best-ai-image-generators-2026).
+    <span id="image-engine" />
 
-    ### Voice Engine
+    ### Images
 
-    Use **Voice Engine** on the Shape's page for voice setup. Follow [Give Your Shape a Voice](/how-to-give-your-shape-a-voice) and [Receive Voice Messages](/how-to-receive-voice-messages) for the detailed steps.
+    Review **Images** in the Shape editor for the image engine, style, and size. When asking for an image, give the group a chance to agree on the brief and review the result. See [creating images together](/articles/best-ai-image-generators-2026).
+
+    <span id="voice-engine" />
+
+    ### Voice
+
+    Use **Voice** in the Shape editor for voice setup. Follow [Give Your Shape a Voice](/how-to-give-your-shape-a-voice) and [Receive Voice Messages](/how-to-receive-voice-messages) for the detailed steps.
 
     # AI Engine
 
-    Choose an engine based on the group's task, required capabilities, and budget. Check [the engine guide](/aienginecheatsheet), [credits](/credits), and [presets](/presets) before adjusting the Shape's default behavior.
+    Choose an engine based on the group's task, required capabilities, and budget. A Shape's default engines are in the editor's **AI Engine** section; chat owners can change the engine for one chat under the chat's **Settings** → **Engines**. Check [the engine guide](/aienginecheatsheet), [credits](/credits), and [presets](/presets) before adjusting the Shape's default behavior.
 
     ### Advanced Engine Parameters
 
@@ -180,7 +204,7 @@ Bring the people involved in a decision into a group chat and give a Shape a use
 
     ## Settings & Ownership
 
-    Use **Settings** on the Shape's page for management controls available to its owners. See the focused guides for [discoverability](/faq/how-do-i-make-a-shape-private) and [deleting a Shape](/faq/how-do-i-delete-a-shape).
+    Use **Manage** in the Shape editor for visibility, duplicating, and deleting. See the focused guides for [discoverability](/faq/how-do-i-make-a-shape-private) and [deleting a Shape](/faq/how-do-i-delete-a-shape).
   </Tab>
   <Tab title="User Profiles 101">
     ### What You Can Customize
@@ -203,6 +227,12 @@ Bring the people involved in a decision into a group chat and give a Shape a use
 
     Share information you want other people to know, such as what you work on or the kinds of projects you enjoy.
 
+    <span id="personas" />
+
+    ### Profiles for Chats
+
+    **Profiles** (formerly Personas) choose the name, photo, and details Shapes use for you. Manage them in **Settings** → **Personalization** → **Profiles**, and pick a different one for a chat under that chat's **Profile & credits**. See [Personalization](/personalization).
+
     <span id="badges--visibility" />
     <span id="badges-visibility" />
     <span id="reward-features" />
@@ -212,7 +242,6 @@ Bring the people involved in a decision into a group chat and give a Shape a use
     <span id="thats-your-profile" />
     <span id="that-s-your-profile" />
     <span id="inbox" />
-    <span id="personas" />
     <span id="settings" />
     <span id="private-account" />
     <span id="creator-dashboard-1" />

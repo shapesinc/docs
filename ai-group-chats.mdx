@@ -15,6 +15,8 @@ The assistant works with the group's conversation. One person might care about p
 
 A useful Shape contributes its own research, drafts, and suggestions. The people in the chat can correct it and decide what to use. Its role is to help the whole group make progress.
 
+A chat can be a **Chat**, for talking things through, or an **Agent** chat, where Shapes can search the web, run code, and use apps people have connected. **Auto**, the default for new chats, chooses for each message. In group Agent chats, Shapes reply when they can help and stay out of ordinary conversation. See [Chat and Agent](/chat-and-agent-modes).
+
 ## A Good Multiplayer Assistant
 
 We build toward three principles:
@@ -32,21 +34,21 @@ You can guide this behavior through [chat instructions](/custominstructions-chat
 - **Study and projects:** turn a brief into tasks, explain difficult concepts, and surface unanswered questions.
 - **Team decisions:** summarize a discussion, compare proposals, and draft next steps with owners and open questions.
 
-For fresh research or work in an outside app, check the available [Shape Skills](/shapeskills). External services require a compatible skill, configuration, and access; adding a Shape does not automatically connect everyone's accounts.
+For fresh research or work in an outside app, use an Agent chat and check the available [Shape Skills](/shapeskills). A Shape can use an app like Gmail or Notion only after someone connects it under [Connected apps](/connected-apps); adding a Shape does not connect everyone's accounts. Shapes can also set up [live polls and forms](/multiplayer-activities) so everyone can weigh in.
 
 ## How to Start a Group Chat With AI
 
-1. Select **New Chat** in the sidebar.
-2. Select a Shape under **AI**. Switch to **People** to add the people involved.
+1. Select **New Chat** in the sidebar. On a phone, tap **New**.
+2. Select a Shape under **Shapes**. Switch to **People** to add the people involved.
 3. Select **Continue**, choose a chat name, and select **Create Chat**.
 4. Send a message describing the decision or task you want help with.
-5. To invite more people or Shapes later, open **More actions** → **Members / Invite**. Use **Invite friends** to share a link, or **Add participants** to add people and Shapes.
+5. To invite more people later, select **Invite** at the top of the chat and use **Copy Link** or **Share via...**. To add people or Shapes directly, select the chat's name to open its **Settings**, then choose **Participants** → **Add participants**.
 
 Ask each person to add their priorities before the Shape recommends an answer. For example:
 
 > We're choosing a couch for our apartment. Our total budget is $900. One of us needs washable fabric, and one needs enough space to stretch out. Help us compare the options we share, explain the compromises, and ask about anything we have missed.
 
-Settings live under **More actions** → **Settings**. From there you can manage notifications, AI settings, chat appearance, and moderation. See the [new chat walkthrough](/faq/how-do-i-start-a-new-chat) for screenshots and [Chats 101](/chats-101) for the detailed controls.
+Select the chat's name at the top to open its **Settings**. From there you can manage notifications, participants, and shared files; chat owners also find AI settings, chat appearance, and moderation. See the [new chat walkthrough](/faq/how-do-i-start-a-new-chat) for each step and [Chats 101](/chats-101) for the detailed controls.
 
 <span id="give-the-room-shared-context" />
 
@@ -63,8 +65,8 @@ Keep the assistant informed when plans change. Use [memory controls](/memory) to
 - **A Shape is quiet:** mention it with `@`, check the selected engine and any credit requirement, and review [reply settings](/shapes101#activating-shapes).
 - **Too many responses:** review [AI replies](/designing-social-intelligence) and turn off unwanted automatic triggers.
 - **It misses a requirement:** restate the requirement, update [chat instructions](/custominstructions-chats), and check [memory](/memory).
-- **Someone cannot join:** review the invitation and [chat lock settings](/faq/how-do-i-lock-a-chat-so-that-other-people-cant-join).
-- **Credits are being used unexpectedly:** check the engine and [credit preferences](/faq/why-is-a-free-engine-costing-credits).
+- **Someone cannot join:** send a fresh link from **Invite** and review the [chat lock settings](/faq/how-do-i-lock-a-chat-so-that-other-people-cant-join).
+- **Credits are being used unexpectedly:** open **Generation details** from the reply's ⋯ menu to see the engine and credits used, then check [credit preferences](/faq/why-is-a-free-engine-costing-credits).
 
 <CardGroup cols={2}>
   <Card title="Plan and build together" icon="rocket" href="/plan-and-build-together">
@@ -73,10 +75,10 @@ Keep the assistant informed when plans change. Use [memory controls](/memory) to
   <Card title="Configure your assistant" icon="brain" href="/designing-social-intelligence">
     Set expectations for judgment, participation, and when to speak.
   </Card>
-  <Card title="Understand the controls" icon="messages-square" href="/shapes101">
+  <Card title="Understand the controls" icon="messages" href="/shapes101">
     Manage participants, reply settings, memory, engines, and Shape settings.
   </Card>
-  <Card title="Get help" icon="circle-help" href="/faq">
+  <Card title="Get help" icon="circle-question" href="/faq">
     Find practical answers about accounts, chats, settings, and credits.
   </Card>
 </CardGroup>

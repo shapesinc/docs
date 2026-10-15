@@ -1,11 +1,25 @@
 ---
-title: "How to set a Shape as your default search engine on PC!"
-description: "Learn how to bring your Shape to your browser!"
+title: "Set a Shape as Your Browser Search Engine"
+description: "Send what you type in your browser's address bar straight to a Shape on shapes.inc by adding it as a custom search engine in Chrome or Edge."
+keywords: ["browser search engine", "Chrome site search", "Edge search engine", "Shape shortcut"]
+sidebarTitle: "Shape as Search Engine"
 ---
 
-<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/-TP4g5SvZrE?si=NrXtfhsPDlbiAaky" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+You can add a Shape to your desktop browser as a custom search engine. When you search with it, your browser opens your DM with that Shape on shapes.inc and sends what you typed as a message.
 
-## Check out
+## Build the Search URL
+
+Use this URL, replacing `shape-username` with the Shape's username:
+
+```
+https://talk.shapes.inc/shape-username/dm?query=%s
+```
+
+The username is the last part of the Shape's profile link, such as `myfavshape` in `talk.shapes.inc/myfavshape`. For a Shape you own, open **Settings** → **My Shapes**, select the Shape, and find the link under **Manage** → **About** → **Profile**.
+
+You need to be signed in to shapes.inc in that browser. If you aren't, the link opens the Shape's profile instead of a chat.
+
+## Add It to Your Browser
 
 <AccordionGroup>
   <Accordion title="Google Chrome Guide" icon="sparkles">
@@ -25,7 +39,7 @@ description: "Learn how to bring your Shape to your browser!"
 
     \* Shortcut: shapes
 
-    \* URL with %s in place of query: To get this URL, go to [shapes.inc/browse](https://shapes.inc/browse), open your favorite Shape's chat, and copy the resulting URL. Paste it in the URL field and add ?query=%s at the end, like [https://talk.shapes.inc/myfavshape/dm](https://talk.shapes.inc/myfavshape/dm?query=%s)**<u>?query=%s</u>**
+    \* URL with %s in place of query: the search URL you built above, for example https://talk.shapes.inc/myfavshape/dm?query=%s
 
     **2. Set It as Your Default:**
 
@@ -52,7 +66,7 @@ description: "Learn how to bring your Shape to your browser!"
 
     \* Shortcut: shapes
 
-    \* URL with %s in place of query: To get this URL, go to [shapes.inc/browse](https://shapes.inc/browse), open your favorite Shape's chat, and copy the resulting URL. Paste it in the URL field and add ?query=%s at the end, like https://talk.shapes.inc/myfavshape/dm?query=%s
+    \* URL with %s in place of query: the search URL you built above, for example https://talk.shapes.inc/myfavshape/dm?query=%s
 
     **2. Set It as Your Default:**
 
@@ -63,5 +77,9 @@ description: "Learn how to bring your Shape to your browser!"
     \* Select Make default.
   </Accordion>
 </AccordionGroup>
+
+<Note>
+  Public Shape browsing on the shapes.inc website is retired, so pick a Shape you already know. Direct Shape links like this one still work. Featured Shapes are at [shapes.inc/featured](https://shapes.inc/featured).
+</Note>
 
 [Return to App](https://shapes.inc)

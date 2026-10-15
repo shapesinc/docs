@@ -1,12 +1,13 @@
 ---
 title: "Message Regeneration"
-description: "When you click regenerate, you’re not asking the AI to “reword” what it already said, you’re giving it another chance to generate a brand-new response from scratch."
+description: "Regenerate a Shape's reply to get a brand-new response. Anyone in the chat can regenerate, and the credits come from whoever does."
+keywords: ["regenerate", "regeneration", "new response", "Generation details", "credits"]
 ---
 
-<Tip>
-  To regenerate a message, select the three dot menu next to the Shape's message.
+When you regenerate a reply, you're not asking the AI to "reword" what it already said. You're giving it another chance to generate a brand-new response from scratch.
 
-  ![Messagemenu Jpe](/images/messagemenu.jpeg)
+<Tip>
+  To regenerate a reply, open the ⋯ menu on the Shape's message and select **Regenerate**. Anyone in the chat can regenerate a Shape's reply, not only the person it answered, and it works on Agent replies too.
 </Tip>
 
 ## **What Happens Each Regeneration**
@@ -15,6 +16,7 @@ Every regeneration runs the full pipeline again:
 
 1. **Inputs gathered**
    - Your Shape’s personality inputs
+   - The chat's **Instructions** and any personal preset that applies
    - Relevant knowledge (based on your Shape’s knowledge settings)
    - Short- and long-term memories (based on your Shape’s memory settings)
    - Training (based on your Shape’s training information)
@@ -24,8 +26,10 @@ Every regeneration runs the full pipeline again:
    The AI Engine calculates a new answer token by token, using randomness and probabilities.
 
    <Tip>
-     Premium user tip: This is why regenerations cost the same as a new message, it’s the same full process each time.
+     Credit tip: a regeneration runs the same full process as a new reply, so it costs the same. The credits come from whoever requests the regeneration, not from the person the original reply answered.
    </Tip>
+
+To see how a reply was made, open its ⋯ menu and select **Generation details**. It shows the engine, why it was picked, how long the reply took, and the credits it used. If a reply is wrong or broken, use **Report a problem** in the same menu.
 
 ## **Why Responses Differ**
 
@@ -40,10 +44,10 @@ Each run is like rolling a weighted set of dice. The outcome can vary depending 
 
 If you want regenerations that explore different angles, try:
 
-- Raising **temperature/top-p** to encourage creativity.
+- Raising **Temperature** or **Top P** to encourage creativity. Shape owners find these in the Shape editor under **AI Engine** → **Advanced sampling**. In a chat you own, **Temperature** is also in the chat's **Settings** → **Engines** → **Engine settings**.
 - Rephrasing your question to push for new perspectives.
 - Providing more context or constraints to steer variety.
-- Changing your AI Engine or Shape prompting if the responses aren't what you're looking for.
+- Changing the [AI Engine](/aienginecheatsheet) or the Shape's instructions if the responses aren't what you're looking for.
 
   <Warning>
     Use caution when adjusting parameters like temperature and top p: these make a huge impact!

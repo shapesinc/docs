@@ -27,7 +27,7 @@ Its recommendations should consider everyone in the collaboration. Ask it to exp
 
 A well-timed contribution might be a clarifying question, a relevant fact, a comparison, or a recap that reveals an unresolved choice. The measure of success is whether it helps the group move forward.
 
-Use the reply triggers below to tune participation. [Skills](/shapeskills) provide built-in capabilities, and connected MCP servers can add more, but reply triggers do not themselves connect calendars, email, or other apps, or guarantee background work.
+Use the reply triggers below to tune participation. [Skills](/shapeskills) provide built-in capabilities, and [connected apps](/connected-apps) or MCP servers can add more, but reply triggers do not themselves connect calendars, email, or other apps, or guarantee background work.
 
 ## The core problem: presence without spam
 
@@ -39,15 +39,20 @@ Start with a clear role and a small set of reply triggers. Watch whether contrib
 
 ## The main dial: AI replies
 
-**AI replies** controls when Shapes can join the conversation. Open **More actions** → **Settings** → **AI Configurations**, then find **AI replies** → **Auto-reply triggers**. The options shown can vary with your permissions and chat.
+**AI replies** controls when Shapes join the conversation on their own. Open the chat's **Settings** by selecting its name or avatar at the top of the chat (chat owners can also use **More actions** → **Settings**), then go to **AI Configurations** → **AI replies**. **AI Configurations** is available to chat owners and in DMs with a Shape.
 
+In **Agent** chats with two or more people, **Jev (experimental)** is always on: the AI reads the conversation, joins in when it can help, and stays out of ordinary conversation. Most of the individual triggers below don't appear there. See [Chat and Agent modes](/chat-and-agent-modes).
+
+In other chats, choose under **Auto-reply triggers**. The options shown vary with the chat; DMs with a Shape show fewer.
+
+- **Jev (experimental)** uses the conversation to decide whether the AI should reply or stay quiet. Your other controls still apply.
 - **Reply when mentioned** lets Shapes respond when someone uses their `@name`.
 - **Keep the convo going** lets a Shape continue the exchange after it has replied, without needing another mention.
-- **React to keywords** lets Shapes respond to configured trigger words. Where this option is available, set keywords for individual Shapes in that chat and use **Save**.
+- **React to keywords** lets Shapes respond to trigger words. Set keywords for individual Shapes and use **Save**; they only work in that chat.
 - **Always have something to say** lets a Shape respond when nobody else replies.
-- **Come back later** lets Shapes check back in later if the conversation goes quiet. Treat it as conversational follow-up rather than a scheduled reminder with a guaranteed time.
+- **Come back later** lets Shapes check back in later if the conversation goes quiet. Treat it as conversational follow-up rather than a scheduled reminder with a guaranteed time. For reminders, ask a Shape directly and check **Settings** → **Tasks**; see [Tasks](/tasks).
 
-Enable triggers deliberately and adjust them when the chat becomes too noisy. **Time Awareness** supplies time context to responses; it is separate from deciding which reply triggers to enable. See [Multiple Messages](/multimessages) if you are troubleshooting extra replies or message splitting.
+Enable triggers deliberately and adjust them when the chat becomes too noisy. **Time Awareness**, under **General Settings** in the same panel, supplies time context to responses; it is separate from deciding which reply triggers to enable. See [Multiple Messages](/multimessages) if you are troubleshooting extra replies or message splitting.
 
 <span id="recipes-tune-free-will-to-the-room" />
 
@@ -111,7 +116,7 @@ Use chat-level controls for expectations that apply to every Shape:
 
 - **[Custom Chat Instructions](/custominstructions-chats):** the shared goal, decision criteria, constraints, and preferred response format.
 - **[Initial messages and a Welcome Shape](/fandomchat):** context for people joining the chat.
-- **[Moderation](/chats-101):** controls such as slow mode, character limits, and blocked words.
+- **[Moderation](/moderation):** controls such as slow mode, character limits, blocked words, and a moderator Shape.
 
 ## Test, watch, iterate
 
@@ -126,7 +131,7 @@ Use chat-level controls for expectations that apply to every Shape:
 - Instructions that reflect everyone's stated priorities.
 - Recommendations people can question and correct.
 - AI replies triggers matched to the chat's needs.
-- Relevant skills available and any required service connected before relying on outside information.
+- Relevant skills available and any required app or service connected before relying on outside information.
 - A visible recap of confirmed decisions and unresolved questions.
 
 <CardGroup cols={2}>

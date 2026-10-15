@@ -1,20 +1,22 @@
 ---
 title: "Shape Credits Guide"
-description: "We've provided a chart to help give you insight to Premium Shapes and credit usage"
+description: "What affects how many Shape Credits a premium reply uses, and how to keep usage low."
 ---
 
 <Tabs>
   <Tab title="Credit Usage Chart">
     Keeping track of your credit balance is essential for all Premium Shape users. Your credits are consumed at different rates depending on several factors.
 
-    The biggest factor is your chosen premium engine, or the engine selected by the Shape creator. Premium engines have different provider costs, so some credits stretch farther than others.
+    The biggest factor is your chosen premium engine, or the engine selected by the Shape creator. Premium engine replies are charged at twice the engine's provider cost, and providers charge different amounts, so some credits stretch farther than others.
+
+    To see what a reply used, open the ⋯ menu on the Shape's message and select **Generation details**. It shows the engine, why it was picked, and the credits used.
 
     <Tip>
       Use [AI Engine Guide](/aienginecheatsheet) for model family guidance, and check [shapes.inc/engines](https://shapes.inc/engines) for the current live engine list.
     </Tip>
 
     <Warning>
-      Offered premium engines, prices, and credit usage can change over time. Always check the credit notice shown in chat before sending if you are trying to control spend.
+      Offered premium engines, prices, and credit usage can change over time. If you are trying to control spend, check the chat's engine before sending and review **Generation details** afterward.
     </Warning>
 </Tab>
   <Tab title="Tips on Credit Usage">
@@ -31,14 +33,14 @@ description: "We've provided a chart to help give you insight to Premium Shapes 
     | Input Source                   | What It Is                                                                                          | Token Impact                                                                                                                   |
     | :----------------------------- | :-------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------- |
     | **Your Message**               | What you just type or say each time you chat.                                                       | 🟢 **Low** – Short messages barely cost anything; long paragraphs increase cost slightly.                                      |
-    | **Training Samples**           | Example chats you’ve added to “teach” your Shape. Managed on the AI Engine page.                    | 🟢 **Low** – Only up to 10 examples are pulled at once, so cost stays small.                                                   |
-    | **Knowledge**                  | The Shape’s linked knowledge base or uploaded reference material. Controlled on the AI Engine page. | 🟢 **Low** – Up to 10 knowledge entries may load per message depending on settings. Each one adds input length.                |
-    | **Long-Term Memory**           | Saved memories from past sessions. Found on the Shape’s Memory page and AI Engine settings.         | 🟢 **Low** – A maximum of 10 memories are pulled each time.                                                                    |
-    | **Shape Personality & Preset** | The Shape’s core traits, examples, and writing style you set during creation.                       | 🟡 **Medium** – Brief traits are fine, but long, detailed personalities add up.                                                |
-    | **Custom Shape Instructions**  | Extra behavior rules you set in the Shape’s configuration menu.                                     | 🟠 **High** – Costs scale with length. Keep them concise when possible.                                                        |
-    | **Chat Instructions**          | Custom context that applies to everyone in a Chat. Found in Chat → AI Configuration.                | 🟠 **High** – The longer the instructions, the more each Shape message costs.                                                  |
-    | **Your Persona**               | The personal profile or “who you are” context you’ve entered.                                       | 🟠 **High** – There’s no input limit here, so long personas can quickly consume tokens.                                        |
-    | **Short-Term Memory**          | The Shape’s recall of recent chat messages. Managed on the AI Engine page.                          | 🔴 **Very High** – If set to 200, it re-reads all 200 recent messages each time. Great for remembering details, but expensive. |
+    | **Training Samples**           | Example chats you’ve added in the Shape editor's **Training** section.                              | 🟢 **Low** – Only a few examples are pulled at once (set by **Examples per reply**), so cost stays small.                     |
+    | **Knowledge**                  | The Shape’s knowledge entries. Recall is controlled under **Memory** → **Knowledge recall**.        | 🟢 **Low** – Only some entries load per message (set by **Entries per reply**). Each one adds input length.                   |
+    | **Long-Term Memory**           | Saved memories from past sessions. Managed in the Shape editor's **Memory** section.                | 🟢 **Low** – Only some memories are pulled each time (set by **Memories per reply**).                                         |
+    | **Shape Personality & Preset** | The Shape’s description, traits, story, and conversation examples under **Personality**.            | 🟡 **Medium** – Brief traits are fine, but long, detailed personalities add up.                                                |
+    | **Response Style Instructions** | The **Instructions** under the Shape’s **Personality** → **Response style**.                       | 🟠 **High** – Costs scale with length. Keep them concise when possible.                                                        |
+    | **Chat Instructions**          | Context that applies to everyone in a chat. Found in the chat’s **Settings** → **AI Configurations**. | 🟠 **High** – The longer the instructions, the more each Shape message costs.                                                |
+    | **Your Profile & Preset**      | Your Profile’s **About you** details and your preset, both in **Settings** → **Personalization**.    | 🟠 **High** – Long Profile details and presets can quickly consume tokens. Your preset is limited to 8,000 characters.         |
+    | **Short-Term Memory**          | The Shape’s recall of recent chat messages. Set by **Recent messages** under **Memory** → **Short-term memory**. | 🔴 **Very High** – If set to 200, it re-reads all 200 recent messages each time. Great for remembering details, but expensive. |
 
     ### Settings That Affect Cost
 
@@ -49,8 +51,9 @@ description: "We've provided a chart to help give you insight to Premium Shapes 
     | **Engine Choice**      | Different AI models have different prices per token.     | 💡 Cheaper engines = longer chats for less.                                     |
     | **Memory Settings**    | Control how much context is re-sent.                     | 💡 Try lowering if your Shape doesn’t need full recall.                         |
     | **Knowledge Settings** | Enables use of stored data or uploaded text.             | 💡 Turn off if not needed for casual chats. Utilize the Engine's built in data. |
-    | **Training Level**     | Controls how many examples are sent to guide tone/style. | 💡 Keep to Low unless you need better replication.                              |
-    | **Chat Settings**      | Custom instructions, Shape instructions, Persona         | 💡 You can be very concise with all of your inputs here!                        |
+    | **Training Recall**    | Controls how many examples are sent to guide tone/style. | 💡 Keep it low unless you need better replication.                              |
+    | **Reasoning Effort**   | Higher effort can take longer and use more credits.      | 💡 Use **Default** or **Low** unless the task needs careful thinking.           |
+    | **Instructions & Profile** | Chat Instructions, Shape instructions, your preset and Profile | 💡 You can be very concise with all of your inputs here!          |
 
     ---
 
@@ -68,7 +71,7 @@ description: "We've provided a chart to help give you insight to Premium Shapes 
     - **Keep inputs concise.** Every word adds tokens.
     - **Use memory settings wisely** unless you need deep recall.
     - **Disable unused features** like knowledge or training.
-    - **Switch engines** if you’re chatting often, try a different one.
+    - **Switch engines** if you’re chatting often, try a different one. See the [AI Engine Guide](/aienginecheatsheet).
 
     ### TL;DR
 
