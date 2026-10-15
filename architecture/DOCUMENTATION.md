@@ -76,13 +76,15 @@ Screenshots in `images/october-2026/` are actual captures of the signed-in deplo
 
 ## Support FAQ additions (2026-10-15)
 
-Added four canonical FAQs from the October 1–15 Help Me and Reviews audit: purchasing account credits without a subscription, retaining credits after cancellation, editing Shape replies in Agent mode, and reasoning effort versus the former thinking panel. The FAQ index, navigation, and related guides link to the answers. No other audit topics are included in this follow-up.
+Added canonical FAQs from the October 1–15 Help Me and Reviews audit: purchasing account credits without a subscription, retaining credits after cancellation, editing Shape replies in Agent mode, reasoning effort versus the former thinking panel, and export/backup limitations. The FAQ index, navigation, and related guides link to the answers.
 
 - Billing was checked against `app/api/service/premium_plans_v2_eligibility.py`, `premium_plans_v2_entitlements.py`, `stripe_service.py`, and `credit_subscription_email_service.py`. Every existing user is eligible for the current plan flow; the old balance checkout is blocked. Existing balances remain usable without an active subscription, and cancellation keeps already-added credits. Do not imply there is a hidden one-time account credit button.
 - `shapes-chat/components/message.tsx` hides Edit for assistant messages while the chat is in Agent mode, before owner/staff permissions are considered. Own-message editing remains available. The same component omits reasoning parts and strips thinking tags from displayed replies.
 - Verified **Settings → My Shapes → AI Engine → Show Internal Monologue (experimental)** in the signed-in deployed UI without changing the setting. `components/my-shapes/sections/engine-section.tsx` gates the Shape's effort selector on this toggle and engine support. Corrected the older **Show reasoning** wording and kept generation effort distinct from display behavior.
 
-Validation: Mintlify build and broken-link checks pass, and all 117 navigation entries resolve. The FAQ index and credit-purchase answer were inspected on desktop; all four new answers render at 375px without document-level horizontal overflow.
+Validation: Mintlify build and broken-link checks pass, and all 118 navigation entries resolve. The FAQ index, credit-purchase answer, and export answer were inspected on desktop; all five new answers render at 375px without document-level horizontal overflow.
+
+The export FAQ scopes the limitation to a full export or backup of Shapes, chat histories, and memories. Current frontend and backend searches found no corresponding user export flow; individual message copying and file downloads remain available. `components/delete-account-modal.tsx` contains an “Export your data first” reminder but provides no export action. `JsonDownloader` is used by ads analytics, not as an account or chat backup. Do not turn those strings or an AI-generated document into an official full-export claim. Third-party tools are used at the user's own risk, without guarantees of security, privacy, compatibility, or completeness; no community tool is endorsed.
 
 ## Skip turn support source (October 4, 2026)
 
