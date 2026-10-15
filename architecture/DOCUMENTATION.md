@@ -51,6 +51,29 @@ Checked against the deployed frontend source (`shapes-chat` `main`) after the Oc
 
 Keep public labels current on future edits. Legacy file paths and hidden anchor aliases may remain to avoid breaking links; they are not reader-facing terminology.
 
+## Signed-in verification and screenshots (2026-10-15)
+
+Walked through the deployed Settings, Personalization, New chats controls, Shape creation, Premium entry point, and Your AI agents. The retained October 5 source audit above remains the context for pages outside this walkthrough.
+
+- **More preferences** now contains **Sound alerts**, **Use shape avatars for chats**, **Personalized ideas**, and **Premium message badges**. **Haptic feedback** is conditional on a supported touch device; that gate was checked in frontend source rather than exercised on a physical phone.
+- **Settings → Your AI agents** shows owner-linked agents and the MCP connector address. The deployed copy says Shape replies to linked agents use the human owner's credits. Personal one-time invitations establish ownership; ordinary chat links do not. Cross-checked the limits and linking behavior against the current frontend/backend sources.
+- **Set up (1/2)** saves a Shape before image setup. **Start over** on the image step returns to the blank creation form without deleting that saved Shape. Do not use a real account to create walkthrough examples without accounting for this side effect.
+- The tested Premium account uses a store-managed page with **Manage subscription**, not the old gift-card dashboard. Gift-card purchasing/redemption and the full billing-provider matrix were not exercised. Keep their availability conditional and never promise that every account has those controls. Backend `auto_top_up_service.py` retires legacy top-up once an account moves to subscription billing; `stripe_service.py` redeems gift cards into billing balance, not directly into Shape Credits.
+
+Local preview checks: all seven illustrated pages loaded their eight captures at 375px with no document-level horizontal overflow; the creation guide and Premium card were also visually checked on desktop. Build validation, broken-link checks, all 113 navigation paths, and local image paths pass. Existing auto-top-up heading anchors remain available.
+
+Screenshots in `images/october-2026/` are actual captures of the signed-in deployed UI, cropped to the relevant controls. Creation uses a neutral Study Planner example; other crops omit chat lists, personal profiles, connected account identities, and payment details. These are narrow browser views, not claims of native mobile-app coverage. The original JPEG captures remain unaltered. `images/guide-pointer.svg` is a presentation overlay in the MDX, anchored proportionally to the target. Every illustrated step also has written instructions, descriptive alt text, a caption, and a full-size image link. Keep images at readable widths and check the pointer after replacing a capture.
+
+| Capture | Guide |
+| --- | --- |
+| `create-shape-basic.jpg`, `create-shape-images.jpg` | Shape creation FAQ |
+| `premium-settings-card.jpg` | Gift cards |
+| `new-chat-mode.jpg` | Chat, Agent, and Auto |
+| `more-preferences.jpg` | Settings and Personalization |
+| `credit-preferences.jpg` | Stop new chats from using credits FAQ |
+| `completed-preferences.jpg` | Completed chats |
+| `agent-connector.jpg` | Invite AI agents |
+
 ## Skip turn support source (October 4, 2026)
 
 The FAQ is the canonical troubleshooting source consumed by documentation search. Keep related guides aligned with `components/actions-dropdown-button.tsx` in shapes-chat: existing messages, at least one active shape, Chat mode, and group-owner authorization. One-to-one shape chats are supported. Do not infer a multiple-shape requirement from the feature’s group use cases or describe it as an Agent control. Mode descriptions remain capability-based; this correction changes no runtime behavior or permissions.
