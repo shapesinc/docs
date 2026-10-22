@@ -1,5 +1,11 @@
 # Documentation architecture
 
+## Reddit promotion removal (October 22, 2026; CIR-5874)
+
+`docs.json` no longer advertises Reddit in the site footer. The footer keeps its
+shapes.inc link, and the existing documentation and support navigation remain
+unchanged. Keep Reddit community promotions out of authored documentation.
+
 ## Product model
 
 shapes.inc is a multiplayer assistant for shared decisions and work. A chat brings together the people involved and AI participants called Shapes. The content should help readers make progress on a group goal: share context, research, compare preferences and tradeoffs, review work, and decide on next steps.
