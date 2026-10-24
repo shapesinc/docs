@@ -80,6 +80,37 @@ Screenshots in `images/october-2026/` are actual captures of the signed-in deplo
 | `completed-preferences.jpg` | Completed chats |
 | `agent-connector.jpg` | Invite AI agents |
 
+## Hosted coding-agent allowances (2026-10-23)
+
+`faq/how-do-free-coding-agent-limits-work.mdx` is the canonical public explanation
+of the three independent limits: two coding starts shared across Claude Code
+and Codex, $1/day of free coding-model provider usage, and $0.20/day of hosted
+computer/browser usage. Credits and Skills link to it, and it appears in both
+the FAQ index and navigation.
+
+Verified against `shapesinc/app` master commit
+`f256a1b0d9a477b4bfe7583cc6acd6b212edde04`: `config.py`,
+`api/service/sandbox_llm_gateway.py`, `api/service/sandbox_compute_billing.py`,
+`tools/claude_code_tool.py`, and `tools/codex_tool.py`. These limits predate the
+later copy-only change; the proposed independent free-compute allowance was
+closed without merging and is not documented as available behavior.
+
+Keep the account boundary and units explicit: these are per-user budgets
+across chats, not a group pool or credit deposits. Paid coding runs share the
+computer allowance but do not spend the free-model budget or free-start count.
+The public FAQ explains UTC reset, upfront reservation, failed/cancelled starts,
+credit-based admission, and the distinction from agents on a connected personal
+computer. It adds no new UI navigation instructions or screenshots. Changing
+these pages changes documentation only; publication follows the normal merge
+to `main` and documentation deployment.
+
+Validation: `mint broken-links` reports no broken links and all 119 navigation
+entries resolve. The local Mintlify preview renders the FAQ on desktop and a
+375px viewport without document-level horizontal overflow; its two-column table
+fits the mobile content width. Credits and Skills links reach the FAQ, and the
+FAQ index includes its card. Escape currency dollar signs in MDX so two amounts
+in one paragraph are not interpreted as a math expression.
+
 ## Support FAQ additions (2026-10-15)
 
 Added canonical FAQs from the October 1–15 Help Me and Reviews audit: purchasing account credits without a subscription, retaining credits after cancellation, editing Shape replies in Agent mode, reasoning effort versus the former thinking panel, and export/backup limitations. The FAQ index, navigation, and related guides link to the answers.
