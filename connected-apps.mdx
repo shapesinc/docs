@@ -7,7 +7,7 @@ sidebarTitle: "Connected Apps"
 
 Group plans often depend on things that live in your own apps: the calendar that shows when you're free, the doc with the venue quotes, the email thread with the landlord. Connected apps let a Shape work with those accounts when you ask, so it can check, find, and draft things for the group instead of you copying them in.
 
-Connections belong to you, not to the chat. Shapes use your connected apps in [Agent chats](/chat-and-agent-modes), only for requests you send, and check with you before sending or deleting anything.
+Personal connections belong to you. Shapes use them for your requests in [Agent chats](/chat-and-agent-modes), including later runs of watches or tasks you authorized. A clear request can authorize an action, such as sending a specific message; the shape asks when important details are missing or a service requires approval.
 
 ## Open Connected apps
 
@@ -56,9 +56,15 @@ App mentions are available in Agent chats when you're signed in. They aren't off
 
 ### Connect cards
 
-When a Shape needs an app you haven't connected, a **Connect** card for that app appears in the chat. Only the person who asked can connect their account; other members see the card without a button. Select **Connect** and sign in. The Shape picks the task back up after you connect, without you sending another message.
+When a shape needs an app you haven't connected, a **Connect** card for that app appears in the chat. For a personal connection, only the person asked to connect can sign in for their account. Select **Connect** and sign in. The shape picks the task back up after you connect, without you sending another message.
 
 If an app is missing a permission, the card says the app needs permission and shows **Reconnect**. Reconnect and allow every permission it asks for.
+
+## Share an app with a chat
+
+Some work apps support a separate connection for a group: Linear, Notion, Jira, Asana, ClickUp, Airtable, Trello, Confluence, and Monday. When **Share with a chat…** is offered in an app's details, it connects an account for the selected chat. A chat's connect card may also offer **Connect for this chat**, alongside **Just for me** for the personal connection. Sharing lets eligible members use that account in the selected chat; it does not turn all your personal connections into shared accounts. Gmail, personal calendars, and GitHub do not support this sharing option.
+
+Shared connections appear under **Shared with chats** in Connected apps. The person who connected the account can use **Manage chats** to change where it is shared, or **Stop sharing everywhere** to disconnect that shared sign-in. Access depends on both the requester and the person sharing still having access to the chat, and on the connection remaining active. Sharing pauses in a chat if the person who connected the account leaves it.
 
 ## Share links and files
 
@@ -68,11 +74,11 @@ Share a public Google Docs, Sheets, Slides, or Drive link in a chat and Shapes c
 
 - **From marketplaces**, on the Connected apps page, lists apps from public app directories. Select one to see its directory and service, then select **Connect**.
 - In Agent chats, Shapes can find and connect more apps from the public MCP directory and WebMCP. A Connect card appears in the chat, and the task continues after you connect.
-- Chat owners can add an MCP server for a whole chat under the chat's **Settings** → **AI Configurations** → **MCP servers**. See [Shape Skills](/shapeskills#connect-an-outside-service).
+- Chat owners can add an MCP server for a whole chat under the chat's **Settings** → **AI settings** → **MCP servers**. See [Shape Skills](/shapeskills#connect-an-outside-service).
 
 ## Let a Shape keep an eye on Gmail or GitHub
 
-With your OK, a Shape can watch your connected Gmail and GitHub and flag only what needs you, in a private chat between the two of you.
+Ask a shape to watch a specific update in your connected Gmail or GitHub. Choose the chat where you want its updates; in a shared chat, other members can read what it posts. A broader request to keep an eye out for anything that needs you uses a private chat with the shape.
 
 > Keep an eye on my Gmail and tell me only when something needs a reply from me.
 
@@ -83,12 +89,12 @@ Say stop at any time. To review watches and reminders, see [Tasks, reminders, an
 1. On the Connected apps page, open the app's ⋯ menu, or open the app.
 2. Select **Disconnect** and confirm.
 
-Shapes stop using that app's accounts right away, in every chat. Disconnecting removes every account for the app; to remove only one, use **Remove** on that account. For Google apps, the confirmation also links to your Google account permissions so you can remove access there too.
+Once disconnection completes, shapes stop using that app's accounts in every chat. Disconnecting removes every account for the app; to remove only one, use **Remove** on that account. To change only where a shared connection is available, use **Manage chats** under **Shared with chats**. For Google apps, the confirmation also links to your Google account permissions so you can remove access there too.
 
 ## Privacy and trust
 
-- **Your accounts stay yours.** In a group chat, a Shape uses your connection only for messages you send. Other members connect their own accounts.
-- **Nothing goes out without you.** Examples open as drafts, and Shapes check with you before sending or deleting anything.
+- **Personal accounts stay yours.** Your personal connection is used for your requests and authorized scheduled work. Other members do not gain it simply by joining the chat.
+- **Say what action you want.** Examples open as drafts. Specify whether you want a draft or an action completed; an explicit request can authorize the action without a second confirmation. Check the returned result.
 - **Account details stay hidden.** Account emails show only when you open **Accounts**, and Shapes refer to accounts by nickname.
 
 ## Troubleshooting

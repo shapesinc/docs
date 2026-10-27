@@ -1,0 +1,53 @@
+---
+title: "Files and Attachments"
+description: "Share files with your chat, understand upload and reading limits, and find or download shared work."
+sidebarTitle: "Files & Attachments"
+---
+
+Share notes, photos, plans, and other files in the chat where you are working together. You can also ask a shape in Agent mode to make a file for the group.
+
+## Attach a file
+
+1. Sign in and open the chat.
+2. Open **More actions** beside the message box and choose **Add attachment**. On desktop, you can also drop a file into the chat or paste an image.
+3. Wait for the attachment to finish uploading. Add a message explaining what you want to do with it.
+4. Send the message. Before sending, you can remove an attachment from the draft.
+
+Uploads require a signed-in account. Each uploaded file can be up to **100MB**. Common image, audio, video, document, spreadsheet, presentation, text, and archive formats are supported, but uploads are checked for their actual type. Executable files and some other formats are blocked; changing the extension does not make a file supported.
+
+### Paste a long note
+
+When you paste at least 4,000 characters, the composer offers **Upload as .txt** or **Paste as text**. You can name the text file before uploading it. Either choice still leaves you in the composer to review and send the message.
+
+## What a shape can read
+
+Being able to share or download a file does not mean a shape can read all of its contents. The attachment can show **Shapes can't see this file** when its format is not passed to the shape.
+
+- JPEG, PNG, and WebP images can be passed to a shape. Animated GIFs can be shared, but are not passed as images for the shape to inspect. HEIC photos are converted for chat uploads; if conversion fails, export a JPEG or PNG and try again.
+- Supported audio and video can be processed; video reading is limited to clips of **20 minutes or less**. Documents such as PDFs, Word files, spreadsheets, presentations, and plain text can provide readable content. Extraction depends on the file and its format; a successful upload is not proof that every page, sheet, frame, or formatting detail was read.
+- ZIP, TAR, and TAR.GZ archives can provide a file listing and selected text contents. They are not automatically unpacked and executed, and large archives or binary members may not be readable. A 7z archive can be shared but cannot be inspected; repackage it as ZIP when you want a shape to read its contents.
+
+For a large file, ask about a specific section and check which pages, sheets, or files the answer used. If a shape cannot read the attachment, try exporting the relevant content as text or PDF, or provide a screenshot of the part you need help with. [Hosted coding agents have separate input limits](/faq/how-do-free-coding-agent-limits-work).
+
+## Open, find, and download files
+
+Open an attachment from its message to use the available preview. File previews vary by format; use **Download** when you need the original file or the preview cannot display it. A preview limit does not mean the upload failed.
+
+To find shared files later, open the chat's **More actions → Settings → Media & Files**. This opens a search for media in that chat. You can also use **Search messages** to find the message containing the file.
+
+Sending the message shares it with the chat. A [thread](/threads) has the same audience as its chat. The file itself has a shareable URL: anyone with that URL can open it outside the chat. That URL exists once the upload finishes, even before you send the message.
+
+File downloads and [chat exports](/faq/can-i-export-or-back-up-my-data) serve different purposes; exporting chat text is not a complete backup of every attachment.
+
+## Ask a shape to make a file
+
+In [Agent mode](/chat-and-agent-modes), describe the result and format you want: for example, “Make our trip checklist as a Markdown file,” or “Put this study plan into a CSV.” [File skills](/shapeskills#prepare-files-and-voice-content) can create downloadable output when available. **File Generator** has a separate **25MB per-call output limit**; the 100MB upload limit does not apply to its generated output. Ask for smaller files if the output exceeds that limit.
+
+Open the returned file and check its contents before treating the work as complete. A proposed filename or a message saying a file will be created is not a downloadable result. Generation or other actions can have their own [usage and credit limits](/credits).
+
+## When something goes wrong
+
+- **Upload fails:** keep the original file, check that you are signed in, and retry the failed upload. Reduce files above 100MB or export a supported format. Wait for the attachment to finish before sending.
+- **The preview fails:** try Download and open the file locally. Some formats can be shared without an in-app preview.
+- **The shape misses content:** ask which part it could read, then send a smaller excerpt or another supported format. For videos over 20 minutes, share a shorter clip. Do not assume a partial answer covers the entire file.
+- **You cannot find a file:** check the correct chat and thread, use Media & Files or search, and confirm that the message was actually sent. A file left in a draft is not a shared message.

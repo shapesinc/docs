@@ -34,6 +34,7 @@
             "group": "Getting Started",
             "pages": [
               "introduction",
+              "create-a-chat",
               "features",
               "docs-for-agents",
               "whats-new",
@@ -42,7 +43,6 @@
               "shapes101",
               "core-concepts",
               "make-or-recover-account",
-              "create-a-chat",
               "how-to-talk-to-shapes",
               "navigation",
               "personalization",
@@ -62,6 +62,7 @@
             "group": "Get Things Done",
             "pages": [
               "chat-and-agent-modes",
+              "shapeskills",
               "connected-apps",
               "websites-and-purchases",
               "saved-details",
@@ -74,6 +75,11 @@
             "group": "Chats & Collaboration",
             "pages": [
               "chats-101",
+              "files-and-attachments",
+              "voicecalls",
+              "chat-appearance",
+              "games",
+              "markdown",
               "commands-and-shortcuts",
               "custominstructions-chats",
               "multimessages",
@@ -93,16 +99,12 @@
             "pages": [
               "how-to-make-a-shape",
               "designing-social-intelligence",
-              "shapeskills",
               "shapeschatsguide",
               "shortguide",
-              "chat-appearance",
               "css",
               "initialmessages",
               "how-to-give-your-shape-a-voice",
-              "how-to-receive-voice-messages",
-              "voicecalls",
-              "games"
+              "how-to-receive-voice-messages"
             ]
           },
           {

@@ -1,7 +1,86 @@
 ---
-title: "Customize a Shape's Profile with CSS"
-description: "Make your Shape's profile look completely unique with custom CSS, free on every plan. Use AI to design a theme from scratch or modify an existing one — no coding experience required."
+title: "Customize a Shape's Profile with HTML and CSS"
+description: "Add and style a custom section on your shape's public profile, then preview it from the shape editor."
 ---
+
+You can add your own HTML and CSS to a shape's public profile. Custom profile HTML and CSS is free on every plan; only the shape's owners can edit it.
+
+Custom CSS styles the HTML you add below the built-in profile. It does not change the app's navigation, profile header, or other product controls.
+
+## Open page customization
+
+1. Open **Settings** → **Your shapes** and select the shape.
+2. Choose **Share** → **Page customization**.
+3. Enter the content in **Custom HTML** and its styles in **Custom CSS**.
+4. Turn on **Enable custom HTML/CSS on profile page** and select **Save Changes**.
+5. Select **View public page** to check the result. Check it on a phone as well as a larger screen.
+
+Each field allows up to **20,000 characters**. Keep a copy of any existing HTML and CSS before replacing it. Custom CSS only appears when custom HTML is enabled and contains supported content.
+
+<span id="1-copy-this-example-css-as-a-base" />
+
+## Start with a small custom section
+
+Paste this into **Custom HTML**:
+
+```html
+<section class="profile-card">
+  <h2>Study group helper</h2>
+  <p>Bring your notes and questions. We can work through them together.</p>
+</section>
+```
+
+Then paste this into **Custom CSS**:
+
+```css
+.profile-card {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 24px;
+  border: 1px solid var(--border-midway);
+  border-radius: 16px;
+  background: var(--background-secondary);
+  color: var(--body-primary);
+}
+
+.profile-card h2 {
+  margin: 0 0 12px;
+  color: var(--highlight-primary);
+}
+
+.profile-card p {
+  margin: 0;
+  line-height: 1.6;
+}
+```
+
+Use class names you define in your own HTML. The profile supplies theme variables such as `--background-secondary`, `--body-primary`, `--highlight-primary`, and `--border-midway`, so the section can follow its light or dark theme.
+
+<span id="2-describe-the-look-you-want" />
+<span id="3-let-the-ai-generate-your-css" />
+<span id="4-copy-paste-into-shapes" />
+<span id="4-copy-&amp;-paste-into-shapes-inc" />
+<span id="5-iterate-and-experiment" />
+<span id="example-cash-money-theme" />
+
+## Adjust and check the result
+
+You can ask a shape to help write or revise the HTML and CSS. Include both snippets so it styles the elements you actually have. Start with one small change, save it, and reopen **View public page** to check it.
+
+- If nothing appears, check that the enable switch is on, the HTML contains supported content, and you saved your changes.
+- If styles do not apply, check that the class names in the CSS match the HTML. Rules for `body`, `:root`, or old app-generated class names do not style the built-in profile.
+- Scripts, embedded apps, external stylesheets, and CSS resource loading are not supported. Basic HTML and scoped CSS are supported; responsive `@media` and feature-based `@supports` rules can be used.
+- Avoid fixed widths that overflow on phones. Keep text readable in light and dark themes.
+
+To hide your custom section, turn off **Enable custom HTML/CSS on profile page** and save. The editor keeps the saved HTML and CSS for later.
+
+[Return to App](https://shapes.inc)
+
+<Visibility for="humans">
+{/* October 26, 2026: the native public profile scopes CSS to custom HTML.
+The former whole-page theme below targets obsolete app classes and cannot
+style the current profile controls. Preserve it verbatim for history while
+excluding it from both the rendered guide and agent Markdown exports.
 
 <Tip>
   If you want to manually input CSS or get more control of a specific element, you should use Shorai's guide [here](/promptingguides#from-shorai). You could also share this guide with AI to give even more context!
@@ -21,7 +100,8 @@ Custom profile HTML and CSS is free on every plan.
     overflow-x: hidden;
   }
   
-  /* Matrix rain animation */
+  /* Matrix rain animation */}
+{/*
   body::before {
     content: '';
     position: fixed;
@@ -190,7 +270,8 @@ Custom profile HTML and CSS is free on every plan.
     66% { filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.6)) saturate(1.1) contrast(1.3) hue-rotate(-30deg); }
   }
   
-  /* Mobile Mode */
+  /* Mobile Mode */}
+{/*
   @media (max-width: 768px) {
     .character-container {
       flex-direction: column;
@@ -232,7 +313,8 @@ Custom profile HTML and CSS is free on every plan.
     }
   }
   
-  /* CARD SECTION - Cute Hacker Gallery */
+  /* CARD SECTION - Cute Hacker Gallery */}
+{/*
   .characters-wrapper {
     background: linear-gradient(135deg, #292f40, #1f2332);
     padding: 30px 20px;
@@ -381,7 +463,8 @@ Custom profile HTML and CSS is free on every plan.
     75% { transform: translateX(2px); }
   }
   
-  /* Responsive Tweaks */
+  /* Responsive Tweaks */}
+{/*
   @media (max-width: 768px) {
     .character-gallery {
       grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
@@ -398,7 +481,8 @@ Custom profile HTML and CSS is free on every plan.
     }
   }
   
-  /* MAIN LAYOUT OVERRIDES - Cute Matrix Theme */
+  /* MAIN LAYOUT OVERRIDES - Cute Matrix Theme */}
+{/*
   .layout_main__ZFL2g {
       background: linear-gradient(135deg, #292f40, #1a1e2e) !important;
       color: white !important;
@@ -419,7 +503,8 @@ Custom profile HTML and CSS is free on every plan.
     z-index: -1;
   }
   
-  /* Sidebar - Cute Hacker Style */
+  /* Sidebar - Cute Hacker Style */}
+{/*
   .sideNav_nav__e_z_L, .page_container__qSgfu {
       background: linear-gradient(135deg, #292f40, #1f2332) !important;
       border: 2px solid #cc9dd4 !important;
@@ -435,7 +520,8 @@ Custom profile HTML and CSS is free on every plan.
       fill: white !important;
   }
   
-  /* Custom scrollbar for sidebar */
+  /* Custom scrollbar for sidebar */}
+{/*
   .sideNav_nav__e_z_L::-webkit-scrollbar {
       width: 8px;
   }
@@ -454,7 +540,8 @@ Custom profile HTML and CSS is free on every plan.
       background: linear-gradient(45deg, #ff69b4, #00ffff);
   }
   
-  /* Page hero - Matrix aesthetic */
+  /* Page hero - Matrix aesthetic */}
+{/*
   .page_hero__qx1Dw, .page_hero__qx1Dw *, .page_hero__ruqUj * {
       background-color: transparent !important;
       color: white !important;
@@ -494,7 +581,8 @@ Custom profile HTML and CSS is free on every plan.
       pointer-events: none;
   }
   
-  /* Logo - Cute Hacker Style */
+  /* Logo - Cute Hacker Style */}
+{/*
   .page_heroLeft__V2RZ4 h1 {
       font-family: 'Courier New', 'Monaco', monospace !important;
       font-size: 48px !important;
@@ -542,7 +630,8 @@ Custom profile HTML and CSS is free on every plan.
     }
   }
   
-  /* Theme variables - Cute Matrix Palette */
+  /* Theme variables - Cute Matrix Palette */}
+{/*
   :root[data-theme="light"],
   :root[data-theme="dark"] {
     --background-primary: #292f40 !important;
@@ -581,7 +670,8 @@ Custom profile HTML and CSS is free on every plan.
     --logo-filter: brightness(1.2) !important;
   }
   
-  /* Stats - Glitchy Numbers */
+  /* Stats - Glitchy Numbers */}
+{/*
   .page_stat__38Reu .page_value__kFjWx {
       font-size: clamp(2.2rem, 5vw, 3.2rem) !important;
       font-weight: 800 !important;
@@ -624,7 +714,8 @@ Custom profile HTML and CSS is free on every plan.
     }
   }
   
-  /* Avatar - Cute Glowing Effect */
+  /* Avatar - Cute Glowing Effect */}
+{/*
   .page_shapeAvatar__bX7i_ {
       transform: scale(1.05) !important;
       filter: 
@@ -699,3 +790,6 @@ Here’s what we asked AI to make:
 And here’s what we got back: [cash money](https://shapes.inc/reallylongusernametomessupthescrollbar)
 
 [Return to App](https://shapes.inc)
+
+*/}
+</Visibility>
