@@ -1,17 +1,17 @@
 ---
 title: "Presets"
-description: "How to write presets for Shapes, and where to use them: your own preset, a chat's Instructions, or a Shape's response style."
+description: "Choose or edit instructions for replies to you, everyone in a chat, or an individual shape."
 keywords: ["presets", "Preset Templates", "Your preset", "Instructions", "Response style", "custom instructions"]
 ---
 
-Welcome to the guide on writing presets for Shapes. Presets are reusable instructions for a Shape's response style, separate from its backstory. They help you customize how your Shape behaves in different scenarios.
+Presets are reusable instructions that guide how shapes respond. Choose the scope that fits: replies to you, everyone in a chat, or an individual shape.
 
 **Key Elements**
 
 When writing a preset, remember these two keywords:
 
-- `{shape}`: Refers to the Shape.
-- `{user}`: Refers to the user interacting with the Shape.
+- `{shape}`: Refers to the shape.
+- `{user}`: Refers to the user interacting with the shape.
 
 <Info>
   _Ensure that "shape" and "user" are not capitalized._
@@ -21,13 +21,15 @@ When writing a preset, remember these two keywords:
 
 You can use a preset in three places:
 
-- **Your preset:** open **Settings** → **Personalization** → **Your preset**. Pick a template from **Preset Templates** or write your own, up to 8,000 characters. It applies to replies to you in every chat, alongside that chat's instructions. See [Personalization](/personalization).
-- **A chat's Instructions:** open **More actions** (⋯) in the chat header → **Instructions**, or the chat's **Settings** → **AI Configurations** → **Instructions**. These apply to everyone in the chat. **Preset Templates** are available here too, except in Agent chats. Chat owners can edit them, and so can you in a DM with a Shape.
-- **A Shape's response style:** if you own the Shape, open **Settings** → **My Shapes**, choose the Shape, and go to **Personality** → **Response style**. Pick **Human**, **Short creative**, **Long creative**, or another style, or edit **Instructions** to write your own. Editing the instructions switches the style to **Custom**.
+- **Your preset:** open **Settings** → **Personalization** → **Your preset**. Pick a template from **Preset Templates**, or select **Custom instructions** to edit the current instructions, up to 8,000 characters. It applies to replies to you in every chat, alongside that chat's instructions. See [Personalization](/personalization).
+- **A chat's Instructions:** open **More actions** (⋯) in the chat header → **Instructions**, or the chat's **Settings** → **AI Configurations** → **Instructions**. These apply to everyone in the chat. Where **Preset Templates** is shown, select a template or **Custom instructions** to edit the current instructions. Where there is no template picker, write directly in the instructions box. Chat owners can edit them, and so can you in a DM with a shape.
+- **A shape's response style:** if you own the shape, open **Settings** → **Your shapes**, choose the shape, and open **Profile** → **Personality and behavior** → **Response Style**. Choose a built-in style, or select **Custom** to write your own.
+
+Built-in choices remain available, but their instruction text stays hidden while a built-in is selected. Custom instructions remain editable.
 
 **Creating Your Own Presets**
 
-To create your own presets, think about the specific behavior or style you want your Shape to adopt and simply instruct your Shape on how it will behave. Use the format:
+Describe how you want the shape to respond. Use the format:
 
 ```
 {shape} [your instruction here]. {shape}'s [additional instruction if needed].
@@ -36,6 +38,15 @@ To create your own presets, think about the specific behavior or style you want 
 <Info>
   Need a little more help writing presets? Head over to [Prompt 101](/prompt101) to learn more.
 </Info>
+
+<span id="example-presets" />
+<span id="conclusion" />
+
+<Visibility for="humans">
+{/* October 26, 2026: Mintlify exports MDX comments verbatim. This human-only wrapper keeps the archived source out of agent Markdown; the comment keeps it hidden on the page. */}
+{/* October 26, 2026: pause the entertainment-led preset showcase while keeping
+    the original examples available in source for a deliberate review. This is
+    documentation presentation only; runtime presets and saved instructions are unchanged.
 
 #### **Example Presets**
 
@@ -252,9 +263,11 @@ Here are some preset examples:
 ## **Conclusion**
 
 Writing presets for Shapes is a simple yet powerful way to customize their behavior and make interactions more engaging. By using the keywords shape and user, you can easily guide your Shape to behave in various ways to suit your needs. Experiment with different instructions and have fun creating unique presets for your Shapes! Make sure to check out [Prompt 101](/prompt101) if you need a little more context in how to create different types of prompts for presets.
+*/}
+</Visibility>
 
 <Info>
-  If you have any questions or need further assistance, feel free to reach out to [the community](https://talk.shapes.inc/chat/f1e72a86-d360-4987-9009-7c27fc242e71) for support. Happy shaping!
+  Need help? Ask in the [support chat](https://talk.shapes.inc/help).
 </Info>
 
 [Return to App](https://shapes.inc)
