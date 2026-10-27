@@ -1,87 +1,98 @@
 ---
 title: "A Multiplayer Assistant for Your Team"
-description: "Bring teammates and a Shape into one chat to compare options, work through tradeoffs, and turn shared discussion into a decision and next steps."
+description: "Work through a team project in one chat: gather input, use personal or shared connections, review code and documents, and coordinate clear handoffs and follow-ups."
 keywords: ["multiplayer assistant for teams", "AI collaboration", "shared decisions", "team planning", "AI for work"]
 sidebarTitle: "Team Projects"
 ---
 
-A launch date, an onboarding flow, a project scope: the useful answer depends on more than one person's priorities. shapes.inc brings your team and a multiplayer assistant into the same chat to work through those decisions together.
+A team project works better when people can contribute directly, see the same draft, and understand the next step. shapes.inc brings your team and a shape into one chat to research, make things, and work through decisions together.
 
-A [Shape](/what-are-shapes) can help organize the information you share, compare proposals, and draft a plan for everyone to review. Teammates can challenge assumptions and add constraints in the same conversation. The goal is a decision the group understands, with clear next steps.
+Use one chat for a project and [threads](/threads) for focused work within it. Each person brings their expertise and access; the shape helps organize the discussion and carry out the work you request. This can be a class project, a volunteer group, or work with colleagues.
 
 <span id="why-a-shared-room-beats-a-private-tab" />
 
 ## Why a shared chat beats a private tab
 
-- **Everyone can inspect the same work.** Questions, source material, drafts, and corrections are visible in the chat.
-- **Different priorities stay in view.** Ask the Shape to separate delivery constraints, customer needs, and unresolved disagreements before recommending a path.
-- **Recommendations can improve in public.** When someone corrects an assumption, ask the Shape to revise its comparison so the whole team can review the change.
-- **Decisions have a place to live.** Request a recap of what was agreed, what remains open, and who volunteered for each next step. Pin the recap so people can find it.
+Suppose your group is preparing a new website. Maya knows the audience, Drew maintains the code, and Lee has the event details. They can put those inputs in the same conversation, ask the shape for a draft, and review it together. Corrections reach the shape directly instead of one person copying answers between separate chats.
+
+Ask for a recap that separates confirmed decisions, open questions, and assigned next steps. Keep the current brief visible in the chat. When work moves into a thread, put new requirements into that thread too; later main-chat messages do not automatically become part of its conversation context.
 
 ## Set up a team chat
 
-1. [Create a chat](/create-a-chat) for one team, project, or decision.
-2. Select **Invite** to bring in the people involved, and add a Shape to help with research, drafting, or coordination. For research or work in other apps, use an [Agent chat](/chat-and-agent-modes).
-3. Add [Custom Chat Instructions](/custominstructions-chats) with your goal, constraints, and how the group wants recommendations presented.
-4. Pin useful references and the current plan.
-5. Tune [AI replies](/designing-social-intelligence) to the chat. Start with **Reply when mentioned**, then enable other triggers if their contributions help the group.
+1. Choose [New chat](/create-a-chat) for the project and select the people to invite. Under **Shapes**, select **Auto** or choose an existing shape if you want an assistant. Making a custom shape is optional.
+2. Use [Agent mode](/chat-and-agent-modes) for research, files, and actions. Add the goal, constraints, and review expectations to [Custom Chat Instructions](/custominstructions-chats).
+3. Share the relevant [files](/files-and-attachments) and links. Name who will check the content, the implementation, and the final result.
+4. Set up the specific app, Code Project, or computer the task needs. Review its access separately from membership in the chat.
+5. Adjust [AI replies](/designing-social-intelligence) so the shape participates at useful moments, and ask for the first concrete comparison or draft.
 
-For example, ask:
+For example:
 
-> Help us choose what belongs in our first release. First summarize each person's priorities from this conversation. Compare the proposed scopes against our deadline and support capacity. Identify missing information before recommending one. Finish with the decisions we still need to make.
+> Help us choose what belongs in our first release. Maya will review the audience and copy, Drew will review the implementation, and Lee will confirm the dates. Compare our proposed scopes against the deadline, identify missing information, and give us a brief we can correct together.
 
 ## Share one premium engine across the team
 
-If your team chooses a premium engine, you can add [Shape Credits to the chat](/how-to-purchase-credits-for-a-chat) to fund eligible responses from its shared balance. Check the [AI Engine Guide](/aienginecheatsheet) for engine options and credit requirements.
+If your team chooses a premium AI Engine, an available [chat credit balance](/how-to-purchase-credits-for-a-chat) can fund eligible responses. Review [AI Engine options](/aienginecheatsheet) and [credit controls](/credits#plan-paid-work-with-your-group), including each person's **Don't use my credits** preference and the owner's **Keep the chosen AI Engine** setting.
+
+A shared chat does not split every charge equally or combine everyone's allowances. Hosted coding has [per-user limits](/faq/how-do-free-coding-agent-limits-work), voice has its own funding rules, and an external agent or local coding setup may use a separate provider account. Check **Generation details** on a reply and the relevant task's result instead of assuming all work uses the same balance.
 
 ## What an AI teammate actually does
 
-Start with the material your group shares in the chat. For research or work in another service, use an Agent chat and check which [Skills](/shapeskills) are available, what they can access, and whether your selected engine supports them.
+### Bring information from personal or shared apps
 
-<CardGroup cols={2}>
-  <Card title="Compare proposals" icon="scale-balanced">
-    Ask for the strengths, costs, and open questions in each proposal, using the criteria your team agrees on.
-  </Card>
-  <Card title="Draft a shared brief" icon="file-lines">
-    Turn the conversation into a draft with the goal, audience, constraints, and unresolved choices. Have the team correct it together.
-  </Card>
-  <Card title="Research a missing fact" icon="globe" href="/shapeskills">
-    With an appropriate research skill available, ask for sources that address a specific open question and inspect them before relying on the answer.
-  </Card>
-  <Card title="Capture the next steps" icon="list-check">
-    Ask the Shape to distinguish confirmed decisions from suggestions and list the next steps people have agreed to take.
-  </Card>
-  <Card title="Work in your apps" icon="plug" href="/connected-apps">
-    In an Agent chat, type **@** to mention a connected app like Gmail, Google Calendar, Notion, or Google Drive, then say what you need.
-  </Card>
-  <Card title="Collect everyone's input" icon="check-to-slot" href="/multiplayer-activities">
-    Ask for a live poll or form to gather votes or availability. The Shape can read the results back to the team.
-  </Card>
-</CardGroup>
+For a planning meeting, Maya can connect her calendar and ask for her availability; Drew can share his availability in a message. The shape compares the information they supplied and proposes times. If Maya then asks it to create the agreed event for named invitees, check the resulting calendar event. The comparison itself has not created one.
 
-<Info>
-  A Shape uses an app only after you connect it under **Settings** → **Connected apps**, and only in Agent chats when it is replying to your own messages. Teammates' messages don't use your accounts. If an app isn't connected, a Connect card appears in the chat, and only the person who asked can connect their account. Mentioning a document or service does not grant access to its contents; custom connections can require separate setup and credentials.
-</Info>
+[Personal app connections](/connected-apps) are used for that person's requests and authorized scheduled work. Other members do not gain access merely by joining the chat. A reply can still share information retrieved for its requester with the group, so say which result you want brought into the conversation.
+
+Supported work apps, including Notion and Linear, also offer [a separate connection shared with a chat](/connected-apps#share-an-app-with-a-chat). If Maya explicitly shares the project account, eligible members can ask the shape to use it in that chat. Drew might request an update to the agreed Notion planning page; the group can review the returned summary and open the actual page. The person who connected the account manages its sharing. Gmail, personal calendars, and GitHub do not offer this shared-app option.
+
+An explicit request can authorize a supported action without another confirmation. Say whether you want a draft, an edit, or a completed send, and name the destination. A mention or private link alone does not grant access. [Custom MCP connections](/shapeskills#connect-an-outside-service) have their own public, per-member, or shared-key setup.
+
+### Review documents and produce a shared result
+
+Ask each person to attach the material they own and explain what needs review. A shape can compare the supplied information, find disagreements, and draft a brief or presentation outline. Put detailed review in a thread, let people check their own contributions, and ask for a revised downloadable file after the corrections are agreed.
+
+Open the actual [file](/files-and-attachments) and check the content and format before using it. The chat is a place to discuss revisions; it is not automatically a shared document editor. To update a document in another app, request that action through the relevant connection and verify the saved document there. See [planning and making things together](/plan-and-build-together#make-documents-images-and-slides-together) for the full workflow.
+
+### Build and review code in the right place
+
+For an existing repository, a chat owner can set up a [Code Project](/connect-your-computer#code-projects). It starts private. After its owner shares it, current and future members can run work and publish changes using the project's saved environment, including secrets, and edit its environment and instructions. The owner's personal GitHub connection remains separate.
+
+Drew can ask for a fix in that project while Maya reviews the preview and Lee checks the requirements. Ask the shape to report the changed files, checks that ran, failures, and where the result lives. A local edit, a pushed branch, a pull request, and a deployed site are different milestones; specify the next step and verify the actual link or files.
+
+For files or tools on Drew's own machine, [connect that computer](/connect-your-computer) instead. Drew can request work himself, including from his phone while the computer remains online. Other members need a saved computer share to request work there; **Read-only** supports review, while **Can make changes** allows editing with the local setup. Sharing a Code Project does not share the computer, and sharing a computer does not transfer its owner's account to the other members.
+
+[Hosted Claude Code or Codex](/faq/how-do-free-coding-agent-limits-work) runs through shapes.inc rather than that computer. An [external agent](/ai-agents) is another participant run by you or a teammate, with its own host and tools. Choose the intended environment in the request so the group knows where to inspect the result.
 
 ## Patterns that work
 
-- **Review a tradeoff.** “What do we gain and give up if we launch this week instead of next week?”
-- **Catch up on a discussion.** Ask for a recap of the available conversation, then let teammates fill in anything missing. [Memory](/memory) supports continuity, but keep important decisions in a visible recap.
-- **Explore a side question.** Use [Branch Off](/branch-off) to continue from a message in another chat, then bring the conclusion back to the main chat.
-- **Use distinct roles.** If you add multiple Shapes, give each a clear contribution, such as drafting or reviewing assumptions. Use [reply settings](/shapes101#activating-shapes) to choose which Shapes should participate.
-- **Keep follow-ups on track.** In an Agent chat, ask a Shape to set a reminder or work on a task for you. Track and cancel them under **Settings** → [Tasks](/tasks).
-- **Bring in your coding agents.** Teammates can invite outside AI agents such as Claude Code or Codex with the chat's invite link. See [Invite AI agents](/ai-agents) and [Connect your computer](/connect-your-computer).
+### Give people distinct review roles
+
+Assign contributions people can actually check: one person supplies source material, another checks the facts, and another tries the finished output. Ask the shape to keep unresolved questions visible and revise the work using their replies. If several shapes or external agents participate, give each a clear task so they do not all repeat the same answer.
+
+### Keep a focused thread, then share the conclusion
+
+Use a [thread](/threads) to investigate a bug or compare proposals within the same chat. The thread has the chat's audience. Once people agree, post the conclusion in the main chat or ask the shape to send that specific update there. A [branch](/branch-off) creates a separate chat with copied context; choose it when that is the conversation you want to continue.
+
+### Hand off one task with the right context
+
+Ask a shape to [start a task chat](/tasks#hand-off-work-to-another-chat) with the named people and the specific information they need. For example, carry over the approved scope and deadline so two teammates can prepare a test checklist. Open the task chat to review the actual work; creating it is only the beginning. Its members do not gain all of the requester's accounts or other conversations.
+
+An external agent can also take a named part of the work, but its owner must keep its responder running if the group expects ongoing replies. Joining a chat and monitoring it are separate steps; follow the [external-agent guide](/ai-agents) for setup and verification.
+
+### Schedule a follow-up or watch an update
+
+For a recurring team recap, name the chat, time, time zone, and what to include. The requester checks the saved schedule in **Settings → Tasks**, and the group reviews the posted result when it runs.
+
+For a specific update, someone with the right personal connection can ask: “Watch this GitHub pull request and tell this chat when review is requested, then stop.” The [watch](/tasks#watches-and-scheduled-checks) uses its creator's access; the update is visible to the chat. A broad request to watch for anything needing that person's attention uses a private chat instead. Watches are periodic checks, and later runs still need the creator's membership, connection, and required usage allowance or credits.
+
+Use **Tasks** to review or cancel follow-ups. If the creator marks the chat Completed, their scheduled checks pause; another member marking it Completed does not pause everybody's tasks. Follow the [timing and recovery guide](/tasks#timing-and-limits) when a schedule does not run as expected.
 
 <span id="keep-the-room-sane" />
 
 ## Keep the chat sane
 
-Useful participation builds the team's trust. Give the Shape guidance to acknowledge uncertainty, consider everyone's stated priorities, and keep contributions concise.
+Keep the goal and current decision visible. Use [Custom Chat Instructions](/custominstructions-chats) for lasting expectations, [AI replies](/designing-social-intelligence) for participation, and [moderation](/moderation) for chat controls. Ask for evidence, a draft, or a completed action as appropriate, and review the resulting file, app record, or code change together.
 
-Use [Custom Chat Instructions](/custominstructions-chats) for shared expectations, [AI replies](/designing-social-intelligence) for reply triggers, and [moderation](/moderation) when you need controls such as slow mode or restrictions on who can add Shapes.
+Before closing a project, check unfinished work and cancel follow-ups you no longer need. [Completed chats](/completed) help organize the sidebar; completed messages and files remain separate from work still running in an outside service or on someone's computer.
 
-<Card title="Help a Shape earn the group's trust" icon="brain" href="/designing-social-intelligence">
-  Configure a multiplayer assistant that listens to the group, contributes its own perspective, and adds useful information.
-</Card>
-
-[Start a team chat on shapes.inc](https://shapes.inc)
+[Start a team chat on shapes.inc](https://talk.shapes.inc)

@@ -1,17 +1,25 @@
 ---
 title: "Connect Your Computer"
-description: "Let Shapes work on your own computer in Agent chats. Set it up once, allow it chat by chat, approve requests in the chat, hand coding work to Codex or Claude Code, and share access with chat members."
+description: "Work with your people on files and code that live on a computer. Connect your own machine, choose personal or shared access, and understand local agents, hosted coding, and Code Projects."
 keywords: ["connect your computer", "Computers settings", "Agent chats", "Codex", "Claude Code", "Code Projects", "shared computer access", "multiplayer assistant"]
 sidebarTitle: "Connect Your Computer"
 ---
 
-Some group work needs a real computer: run the project before the demo, check a file only you have, or fix the build your teammate asked about. When you connect your computer, Shapes in the [Agent chats](/chat-and-agent-modes) you choose can do that work for you, and you approve permissions or answer their questions right in the chat.
+Some group work depends on files or tools on one person's computer: the budget for a family trip, a class project's code, or the build your friend needs help fixing. Connect that computer to an [Agent chat](/chat-and-agent-modes), then ask a shape to help you work on it together. The chat shows requests, progress, and results while the shape works on the computer you authorize.
 
 You stay in control. You set your computer up once, allow it one chat at a time, and can remove access whenever you want.
 
 <Warning>
   When you allow a chat, Shapes there can run commands, read and change files, use apps, control the keyboard and mouse, see your screen, and use the network, within the system permissions you give your computer. Results you ask for may be visible to other people in the chat. Only allow chats you trust.
 </Warning>
+
+## Choose where the work runs
+
+- **Your connected computer:** use files, apps, and tools on that machine. Local Codex or Claude Code uses the setup and accounts already there. The computer needs to stay online.
+- **Hosted Claude Code or Codex:** use coding agents run by shapes.inc. They do not use your computer or its local sign-in. See [hosted coding limits](/faq/how-do-free-coding-agent-limits-work) for allowances and billing.
+- **Code Projects:** connect a GitHub repository and its saved environment to coding work in a chat. This is separate from connecting a personal computer. A project starts private and has its own [sharing controls](#code-projects).
+
+Name the computer or project in your request, especially when you have both personal and shared access. For example, “Review the project on Maya's shared computer using her local Codex.” A shape should report an unavailable computer or agent rather than silently moving the task somewhere else.
 
 ## Set up your computer once
 
@@ -22,7 +30,15 @@ You stay in control. You set your computer up once, allow it one chat at a time,
 5. Grant the system permissions your computer asks for, then let setup finish. You can close the terminal afterward; the connection keeps running in the background and starts when you sign in to your computer.
 6. In **Settings** → **Computers**, select **Check for my computer**.
 
+<Frame caption="Settings → Computers has the install command and a check for the computer after setup.">
+  <img src="/images/october-2026/computer-setup-20261027.jpg" alt="Your computers page showing Add a computer once, Copy install command, setup steps, and Check for my computer" />
+</Frame>
+
 Your computer appears under **Your computers** as **Online** or **Offline**. Keep it on and connected to the internet while Shapes work on it. If it goes offline, it reconnects when it's on, signed in, and online, and its chat permissions are saved. Open **Permissions & background status** on a computer to see which system permissions it has.
+
+### Use your computer from your phone
+
+After setup, you can open the same shapes.inc account on your phone, enter the group's Agent chat, and use **+** → **Connect your computer** to choose your online computer and allow the chat. Ask the shape to read a named file or run a task there, then review its reply on your phone. The work still runs on the connected computer, which must stay on and online. Other chat members can read what the shape shares in the conversation; they do not gain access to your machine just because you are using it from your phone.
 
 ## Allow a chat to use it
 
@@ -59,9 +75,11 @@ Code Projects connect GitHub repositories for code tasks in an Agent chat. They'
 3. Select **New Project**, choose the **GitHub account** and **Repository**, and add optional **Workflow steps** and **Project instructions**.
 4. Select **Create Project**.
 
-New projects are private: only you can use them. To let the chat use one, open the project's editor and select **Share with members**. Read what members will be able to do, check the box to authorize them, and select **Share with members** again. Members can then run code and publish changes using the project's repositories and saved environment, including secrets, and can edit its environment and instructions. Your personal GitHub connection stays private. **Stop sharing** removes future access but doesn't undo changes already published.
+New projects are private: only you can use them. To let the chat use one, open the project's editor and select **Share with members**. Read what members will be able to do, check the box to authorize them, and select **Share with members** again. Current and future chat members can then run code and publish changes using the project's repositories and saved environment, including secrets, and can edit its environment and instructions. Your personal GitHub connection stays private. **Stop sharing** removes future access but doesn't undo changes already published or files already downloaded.
 
 Projects keep going after the first step. Shapes can continue in the same repository, keep results from background runs, and push a branch without opening a pull request when you ask.
+
+For a group project, one person can connect the repository and share the Code Project. Another member can ask a shape to investigate a failing test; the group can review the explanation and then request a fix. Ask for the changed files and test result in the chat. If you request publication, check the returned branch or pull-request link in GitHub. Sharing the project permits those actions; it does not mean a task has already run or a change has been published.
 
 ## Share your computer with chat members
 
@@ -76,6 +94,30 @@ You can let specific members use your computer in a chat where you've allowed it
 5. Select **Save access**. Saving replaces the computer's current shared access in that chat.
 
 Each share shows its permission, who has it, and when it expires. Select **Revoke** to end it early. Shapes check the current permission before every action, so revoking or expiry applies to the next action; it doesn't undo work already done. Only you can share your computer, and members who leave the chat lose access.
+
+## Work together on a connected computer
+
+### Bring a local file into the discussion
+
+Maya has the trip budget on her laptop. The rest of the family needs to compare two accommodation options.
+
+1. Maya connects her computer, allows the family chat, and asks the shape to read the named budget file and summarize the relevant totals in that chat.
+2. Everyone compares the summary and adds missing requirements. They can discuss what Maya shared without getting access to her computer.
+3. Maya asks for any further file reads or changes herself, or explicitly [shares computer access](#share-your-computer-with-chat-members) with selected people.
+
+Give the file's location and the question you want answered. Check the figures against the original file before deciding. A summary in the chat is shared information; it does not give other members permission to browse the rest of the computer.
+
+### Let a friend review without changing files
+
+For a class project, Maya can share **Read-only** access with Drew. Drew then asks a shape to review the named folder on Maya's computer, or use her configured local Codex or Claude Code for a review. The shape can post findings in the chat or the [thread](/threads) where Drew asked.
+
+Read-only access supports file reads and agent inspection, not direct commands, edits, or opening apps. If the next step requires changes, Maya must save **Can make changes** access for Drew before Drew's request can make them. Saying “you can edit it” in the conversation does not change that saved permission.
+
+### Make a change and review the result together
+
+With **Can make changes** access, Drew can ask the shape to use Maya's named computer to fix a specific issue and run the relevant checks. For example: “Fix the date calculation in this project, run its tests, and leave the changes for us to review.” The local agent uses Maya's installed setup and accounts.
+
+Keep the computer online while the job runs. Ask for the changed files, check results, and any unfinished steps in the conversation, then inspect the actual files on that computer. A started job or finished status alone does not prove that the requested fix worked or that a branch was published. Revoking access prevents later actions; do not assume it cancels work already running.
 
 ## Troubleshooting
 

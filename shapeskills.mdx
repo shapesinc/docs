@@ -1,6 +1,6 @@
 ---
 title: "Shape Skills"
-description: "Use your multiplayer assistant for research, images, code, and shared context. Learn where to find skills in Chat and Agent chats, connect apps and MCP servers, and troubleshoot access."
+description: "Research a shared plan, make a poster, check a group budget, or prepare a file together. Learn which skills and connections your chat can use."
 keywords: ["Shape skills", "MCP servers", "Custom Skills", "Code Projects", "connected apps", "Agent chats"]
 ---
 
@@ -37,9 +37,9 @@ Describe the task in a normal message. Include the shared goal, relevant links o
 
 For example:
 
-> Compare these three desks for our apartment. We need space for two monitors, a width under 120 cm, and a total price under $400. Read the product pages, list the tradeoffs, and tell us which details are missing.
+> Compare these three desks for our apartment. Maya will check the measurements, and Drew will check delivery. We need space for two monitors, a width under 120 cm, and a total price under \$400. Read the product pages, list the tradeoffs, and tell us which details are missing.
 
-A useful request makes clear what the group wants to decide. Ask the Shape to explain its sources and assumptions so everyone can check the result.
+A useful request makes clear what the group wants to decide and what each person is contributing. The shape's comparison appears in the chat, where Maya can correct a measurement and Drew can add delivery information. Ask the shape to update the recommendation using those replies, then decide together. Researching a product does not buy it.
 
 A Shape chooses which skills to use for the task. Naming a skill can clarify your request, but it does not guarantee that an outside service will be connected or that the action will succeed.
 
@@ -58,13 +58,15 @@ Use [custom instructions](/custominstructions-chats) for standing preferences, s
 
 Check the returned sources before making a decision. A page may be unavailable, require sign-in, or omit the detail you need.
 
+One friend can contribute the venue links while others add accessibility needs or travel constraints. The shape brings that information into a shared comparison; ask for a [poll or shortlist](/multiplayer-activities) when the group is ready to choose. Reading public pages does not require every participant to connect an account. Private sources need the relevant access.
+
 ### Create and Discuss Images
 
 **Image Generator** and **Image Annotation** support visual work. Explain the purpose of the image, the audience, and the details the group has already agreed on.
 
-> Make a draft poster for our neighborhood cleanup. Use a simple layout, include the date and meeting point from our messages, and leave space for us to review the wording.
+> Make a draft poster for our neighborhood cleanup using the date and meeting point we agreed. Maya will check the wording, and Drew will check that the location is clear. Post the draft here for us to review.
 
-Review generated text and details before sharing the result. See the [image generation guide](/articles/best-ai-image-generators-2026) for related guidance.
+The group can reply with corrections and ask for a revised image in the same conversation. Review generated text and details before downloading or sharing the result; generating the poster does not post it elsewhere. See the [image generation guide](/articles/best-ai-image-generators-2026) for related guidance.
 
 ### Check Calculations and Work With Code
 
@@ -72,9 +74,11 @@ Review generated text and details before sharing the result. See the [image gene
 
 Hosted Claude Code and Codex share **up to 2 free coding starts per day**, subject to separate model-token and computer allowances. Run Code and Browser also use the shared computer allowance. See [free coding-agent limits and paid usage](/faq/how-do-free-coding-agent-limits-work) before planning work around the free allowance.
 
-> Use the costs in this file to compare three budget scenarios. Show your assumptions and give us a summary we can check together.
+> Use this costs file to compare three budgets for our weekend away. Maya will confirm transport costs, and Drew will confirm accommodation. Show the totals and assumptions here so we can check them together.
 
-For a coding task, describe the expected behavior, provide the relevant project context, and ask for a clear explanation of the result. Access to a repository or outside service may require a connection.
+Check the inputs, totals, and any missing costs in the returned result. A calculation in the chat does not update the source spreadsheet unless you also request and complete a supported edit.
+
+For a coding task, one teammate can describe the bug, another can supply the expected behavior, and the shape can help investigate or make a requested change. Ask it to report what changed, which checks ran, and where to review the output. A started coding run is not a completed fix, and a local edit is not a published branch or pull request. Access to a repository or outside service may require a connection.
 
 In Agent chats, **AI settings** also has **Code Projects** for connecting GitHub repositories to code tasks in the chat. New projects are private; you can share one with the chat after creating it. To let Shapes hand work to Codex or Claude Code on your own machine, see [Connect your computer](/connect-your-computer).
 
@@ -85,9 +89,9 @@ In Agent chats, **AI settings** also has **Code Projects** for connecting GitHub
 
 **Chat History** and **Total Recall** help with earlier conversation context. Ask for the specific decision, requirement, or discussion you need to revisit.
 
-> Summarize what we agreed about the trip dates and budget. Separate confirmed decisions from ideas we have not settled, and identify anything that still needs an answer.
+> Maya has just joined our trip chat. Summarize the dates and budget we agreed here, separate confirmed decisions from open ideas, and point out where we still need her input.
 
-Check the summary with the people involved. For reviewing and correcting remembered information, see [Memory](/memory).
+The recap appears in the chat, so existing members can correct it and Maya can contribute without one person relaying the conversation. Check the summary with the people involved. For earlier-chat access and reviewing or correcting remembered information, see [Memory](/memory).
 
 ### Prepare Files and Voice Content
 
@@ -96,6 +100,8 @@ Check the summary with the people involved. For reviewing and correcting remembe
 > Turn our agreed plan into a file we can share, with the decisions first and the remaining questions underneath.
 
 Specify the format you need and check that the returned file opens correctly. For voice settings and calls, see [Voice Calls](/voicecalls).
+
+For example, the person organizing a meetup can ask for a downloadable plan after everyone has checked the time and place. The shape prepares the file in its reply; a group member opens it, checks the details, and shares it where needed. Creating a file or spoken clip does not send it to an outside recipient.
 
 You can also share a public Google Docs, Sheets, Slides, or Drive link, and Shapes can read it. See [Connected apps](/connected-apps).
 

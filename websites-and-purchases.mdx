@@ -4,7 +4,7 @@ description: "Use a shape's browser, sign in privately, review purchases and tra
 sidebarTitle: "Websites & Purchases"
 ---
 
-In Agent chats, shapes can use websites to research options, fill forms, and help you buy or book. Tell the shape what you want, including dates, location, preferences, and budget.
+In Agent chats, shapes can help your group compare options on websites, fill forms, and buy or book. Put the requirements in the conversation so everyone can help decide: dates, location, preferences, and budget.
 
 > Compare these three options for our trip. Show us the total and cancellation terms before booking.
 
@@ -20,20 +20,26 @@ When a site needs your account, a private sign-in card can ask for the required 
 4. If the site needs direct interaction, such as a passkey, use **Browser** to view the browser and take control.
 5. Check that sign-in succeeded before continuing the task.
 
-The card passes credentials to the website without putting them into shared chat or memory. The browser can retain your signed-in session for future requests. This is separate from [Saved details](/saved-details), which does not store passwords or one-time codes.
+The card passes credentials to the website without putting them into shared chat or memory. Filling it is not by itself proof that the website signed you in. After the shape confirms the signed-in page, your card can show **Saved** when that browser is keeping the sign-in for future requests. A saved sign-in is checked before asking you to sign in again.
 
-After sign-in, the shape can read the pages it opens and may include relevant information in its reply. The private browser panel does not make the shape's reply private from the chat. Ordinary browser screenshots stay private to the task; ask explicitly when you want a screenshot shared in a reply. After a secure sign-in or payment fill is attempted, screenshots and exports from that browser session are blocked; the requester can still use the private Browser panel.
+Manage these under **Settings** → **Connected apps** → **Saved sign-ins**. Select **Remove** beside a site to remove its saved sign-in, or **Remove all saved sign-ins** for all sites. If removal cannot finish while a browser is using the saved profile, end that browser session and retry. This is separate from [Saved details](/saved-details), which does not store passwords or one-time codes.
+
+While a shape browses public pages, the group can follow a live browser view on its [task card](/chat-and-agent-modes#see-what-a-shape-did). The screen is withheld from other members on sign-in, payment, account, and address pages, when your saved sign-in is in use, and while you have control. Other members see a status note instead. You can still see your own browser.
+
+After sign-in, the shape can read the pages it opens and may include relevant information in its reply. A private browser view does not make that reply private from the chat. Screenshots attached to a reply are separate from the live task-card view; ask explicitly when you want one. After a secure sign-in or payment fill is attempted, screenshots and exports from that browser session are blocked; the requester can still use the private Browser panel.
 
 ### Take control of the browser
 
-In the private Browser panel, **Take control** pauses the shape's browser actions while you interact with the website. Choose **Done** when you want the shape to continue. Closing the panel alone does not resume it. **End** ends that browser session; use it when you are finished rather than when you only want to hide the panel.
+On the task card, **Take over** opens your private Browser panel with control. In that panel, **Take control** pauses the shape's browser actions while you interact with the website. Choose **Done** when you want the shape to continue. Closing the panel alone does not resume it. **End** ends that browser session; use it when you are finished rather than when you only want to hide the panel.
 
 ## Buy something
 
-1. Ask the shape to find or buy the item, with the requirements and spending limit.
-2. Review the purchase card's merchant, items, total, and payment method.
-3. Connect an eligible payment service if prompted, and complete the approval shown for that purchase.
-4. Follow the final order status and receipt. Approval or a submitted checkout alone does not confirm the merchant placed the order.
+For example, housemates can compare a table for their shared kitchen. Each person adds constraints such as measurements, delivery dates, and budget; the shape brings the options back into the chat.
+
+1. Ask the shape to compare suitable items and show the details the group needs to decide.
+2. Once you have chosen, the person paying asks to buy the specific item with a spending limit. Review the purchase card's merchant, items, total, and payment method.
+3. That person connects an eligible payment service if prompted and completes the approval shown for the purchase. Other members can discuss the choice without gaining access to that payment method.
+4. Follow the final order status and receipt in the purchase card. Approval or a submitted checkout alone does not confirm the merchant placed the order.
 
 The person making the request is the payer. Other chat members can see the shared purchase summary and status, but cannot use the payer's private payment controls or card details.
 
@@ -52,11 +58,13 @@ If a total changes, check the updated amount and any renewed approval request. I
 
 Shapes can search flights, hotels, and rental cars and assemble a trip card when travel booking is available.
 
-1. Give the dates, destination, party size, and important requirements.
-2. Review the options with the people travelling.
-3. Each traveller in the chat enters their own details in a private form. The payer enters the booking contact and details for guests who do not have an account.
-4. The payer reviews the exact itinerary, fare or cancellation rules, and total, then agrees and pays through the offered checkout.
-5. Check the final status and booking confirmations for every item. A trip can complete only partly if some items fail.
+For a family trip, keep the dates, budget, and must-haves in one chat so the people travelling can compare the same options.
+
+1. One person asks the shape to search with the group's dates, destination, party size, and requirements. Other members add or correct their preferences in the chat.
+2. Review the options together, then have the person paying request the selected itinerary for the named travellers. The shared trip card keeps the group looking at the same booking.
+3. Each traveller in the chat enters their own details in a private form. The payer enters the booking contact and details for guests who do not have an account. Share preferences in the conversation; use the private forms for the requested personal details.
+4. The payer reviews the exact itinerary, fare or cancellation rules, and total, then agrees and pays through the offered checkout. Other chat members cannot approve payment on the payer's behalf.
+5. Check the final status and booking confirmations for every item. A trip can complete only partly if some items fail; do not treat one confirmed item as confirmation of the whole trip.
 
 Prices and availability can change before booking. An option shown earlier is not a reservation. Only the payer can change or cancel the trip or confirm a paid booking's cancellation. Cancellation or refund eligibility depends on the booked fare or supplier's rules; cancelling a draft is different from cancelling a confirmed booking.
 
