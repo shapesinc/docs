@@ -25,7 +25,7 @@ Three principles organize the product explanation: earn the group's trust, parti
 
 ## Writing and maintenance
 
-Use **shapes.inc** for the product and **Shape/Shapes** for AI participants. Use **chat** or **group chat** in public prose, headings, metadata, and link labels, preserving UI labels such as **New Chat**, **Create Chat**, and **Chat Menu**. Prefer everyday collaboration examples as well as work examples; multiplayer assistance is broader than workplace productivity.
+Use **shapes.inc** for the product and **shape/shapes** for AI participants. Use **chat** or **group chat** in public prose, headings, metadata, and link labels. Preserve current visible control labels; do not infer them from old screenshots or technical identifiers. Prefer everyday collaboration examples as well as work examples; multiplayer assistance is broader than workplace productivity.
 
 Describe what a reader can actually configure or do. Link to the live engine catalog for changing availability and pricing. Built-in skills are included automatically. External MCP servers require configuration and may need each member to sign in; capabilities still depend on the selected engine and permissions. Keep fundraising, financial projections, hiring plans, and other internal strategy out of public help pages.
 
@@ -60,6 +60,21 @@ Fandom and fiction showcase pages, the old preset showcase, and obsolete call-ga
 Validation includes the official Mintlify renderer, desktop and 390px mobile reading, navigation and keyboard links, all changed page routes, local link checks, and comment/metadata checks. The local `/_markdown/<slug>` route serves actual candidate Markdown using the same `buildMarkdownResponse` and `transformContentForMarkdown` path as hosted exports; use it to verify that archived material is excluded. Test results and candidate revisions are recorded in the PR. The local preview does not serve the public `.md`/`llms.txt` aliases or live search: verify those outputs after publication before claiming their deployment.
 
 The changes add no AI calls, runtime prompts, classifiers, or permanent retrieval context. Incremental recurring provider spend from these changes is $0/day.
+
+## Live-feature follow-up (October 26, 2026)
+
+Docs #31 and Talk #5869 were admin-merged after explicit user approval. The deployed docs' `llms.txt`, sitemap, and full Markdown index contain 121 guides at that revision; the three retired showcase routes are excluded, and sampled archive-bearing Markdown pages do not expose their original commented content. The live Settings Help group now shows Docs.
+
+This follow-up checks current product source against deployed controls. Source references: Talk `95afb0caa45c8ede89affffe627c5e79747f2dce` and app `00cd926f718285f73d4d284770b7678484b7df0b`; the production API reports release `v5.3.1189`, which maps to that backend revision. Live browser checks confirmed Settings → General → More preferences, Premium, Your shapes, AI settings, Thread-only replies, Keep the chosen AI Engine, `/thread`, `/btw`, Media & Files, the long-paste choices, and the listed Agent skills. These are documentation checks, not successful payment, external-account sharing, or provider execution tests.
+
+- `files-and-attachments.mdx` is the canonical upload, reading, preview/download, and recovery guide. Its 100MB limit and type constraints come from `lib/file-upload-constants.ts`, the upload route, attachment rendering/forwarding helpers, and backend file ingestion. Avoid promising complete file reading or equating a chat export with an attachment backup.
+- `tasks.mdx` records the deployed scheduler's timing boundaries, adaptive checks, quiet-watch notices, and Completed/reopen behavior. `connected-apps.mdx` distinguishes specific authorized actions, supported shared app connections, personal connections, and broad private watches. A second confirmation is not guaranteed for an already explicit request; payment approval remains a separate flow.
+- The old CSS whole-app selector reference cannot affect native profile controls. Custom CSS is scoped to enabled custom HTML. Keep the obsolete examples in dated human-only comment archives, including their existing anchors, without exposing them in Markdown exports.
+- Navigation puts starting a chat near the entry, chat features in Chats & Collaboration, and skills with actions. `features.mdx` and `docs-for-agents.mdx` link the canonical guides. The logged-out homepage wording and product focus are unchanged.
+
+The connected-app footer still says shapes check before every send/delete, while the current instructions permit clear authorized requests without a second confirmation. That separate UI mismatch is recorded for follow-up; this documentation change does not alter product permissions or behavior. A test account without connected apps cannot exercise the post-connection sharing controls without granting new access.
+
+No runtime code or AI calls are added: incremental recurring provider spend is **$0/day**. Candidate renderer, responsive, link, export and remaining validation results belong in the PR handoff; source coverage alone must not be reported as live provider verification.
 
 ## Verified public terminology (2026-10-05)
 

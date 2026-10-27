@@ -40,20 +40,29 @@ The Shape carries the task into the new chat. Work a Shape is doing for you in a
 
 ## Watches and scheduled checks
 
-A watch keeps an eye on something for you and speaks up when there's an update. For example, with your OK a Shape can watch your connected Gmail or GitHub and flag only what needs you, in a private chat between the two of you. See [Connected apps](/connected-apps#let-a-shape-keep-an-eye-on-gmail-or-github).
+A watch keeps an eye on something for you and speaks up when there's an update. Ask for a specific check in the chat where you want its result. It can use your connected Gmail or GitHub; in a shared chat, other members can read its updates. A broader request to keep an eye out for anything that needs you uses a private chat with the shape. See [Connected apps](/connected-apps#let-a-shape-keep-an-eye-on-gmail-or-github).
 
 - In **Settings** → **Tasks**, watches are marked **Watching for updates**.
-- A watch that finds nothing finishes quietly instead of posting an empty update.
+- A check that finds nothing usually finishes quietly. Frequently recurring watches may send a brief still-watching note after about 12 quiet hours. The broader private-chat watch does not send those notes.
 - When a scheduled check has nothing to report yet and plans another look, the chat says "I'll follow up again at …" with the time.
 - To stop a watch, select **Cancel** in **Settings** → **Tasks**, or tell the Shape to stop.
 
 In Agent chats, enable **Working steps** in **Settings** → **General** → **More preferences** to see when a shape set up a watch. See [Working steps and Stop](/chat-and-agent-modes#see-what-a-shape-did).
+
+## Timing and limits
+
+- A new reminder or task must start within the next **30 days**. Recurring work can continue after that first run.
+- Fixed repeat intervals can range from **5 minutes to 30 days**. Checks that use general tools instead of the built-in Gmail/GitHub sources repeat no faster than **15 minutes**.
+- Watches normally check hourly unless you ask for another cadence. Faster fixed-interval checks slow down after two quiet hours; overnight they can slow further. Daily, weekly, and monthly schedules keep their calendar cadence. Watches are periodic checks, not a continuous live feed.
+- Future runs still need the creator's chat membership, app access, and any required usage allowance or credits. A task being scheduled does not guarantee that every later run can complete.
 
 ## Completed chats pause watches and checks
 
 Watches and scheduled checks pause while their chat is Completed for the person who created them. Another member marking the same chat Completed does not pause everyone’s tasks. Chats you haven't used in a while can also move to Completed automatically.
 
 To resume your watches and scheduled checks, reopen the chat: send a new message, choose **Reopen** from the chat's ⋯ menu, or select **Restore** in **Settings** → **Completed**. See [Completed chats](/completed).
+
+Reopening resumes a pending occurrence. Missed recurring slots are skipped rather than delivered all at once.
 
 ## Troubleshooting
 
