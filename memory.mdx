@@ -14,7 +14,11 @@ Shapes use a few kinds of memory:
 - **Long-term memory:** summaries of past conversations that a Shape can bring back up when they're relevant.
 - **Saved notes:** things people asked a Shape to remember. A note can be personal, for a chat, or for a workspace.
 
-Short-term memory only covers the chat you're in. Long-term memories and notes can come up in later conversations when they're relevant. In Agent chats, a Shape may also recall memories from other chats you can access, and it finds the right ones more reliably in long histories.
+Short-term memory normally covers the current conversation. In an [Agent thread](/threads), it includes the original request, a bounded summary of the main chat up to that request, and the thread's own history. Later main-chat messages and other threads are not automatically added to that context.
+
+Long-term memories and notes can come up in later conversations when relevant. Agent replies can also use relevant summaries from other chats in the same workspace where the acting person is a current, visible member. Belonging to a workspace alone does not give access to every chat in it. Other permitted cross-chat recall still follows the acting person's access.
+
+A recalled detail may appear in a reply visible to the destination chat. Recall does not give a shape new permission to change or send anything in another chat.
 
 ### **Ask a Shape to Remember Something**
 
@@ -39,7 +43,7 @@ See [commands and shortcuts](/commands-and-shortcuts) for the full list.
 
 ### **Manage Memories**
 
-Open **Settings** → **Manage memories** to see the **Memories** page. From a chat, select **More actions** (⋯) in the chat header → **Manage memories**, open the chat's **Settings** → **Manage memories**, or type `/memory`. **Back to chat** returns you to the conversation.
+Open **Settings** → **Memories** to see the **Memories** page. From a chat, select **More actions** (⋯) in the chat header → **Manage memories**, open the chat's **Settings** → **Manage memories**, or type `/memory`. **Back to chat** returns you to the conversation.
 
 The **Memories** page has four views:
 
@@ -61,21 +65,21 @@ Deleting a memory doesn't change messages or replies that already used it, and n
 - **Chats:** chats you can invite more people and Shapes to.
 - **DMs:** private one-to-one conversations, such as you and a Shape.
 
-Long-term memory can be used in both DMs and chats. Short-term memory is only used in the chat you are currently active in.
+Long-term memory can be used in both DMs and chats. Short-term memory follows the current conversation or Agent thread, as described above.
 
 ### Shape Memory Settings
 
 <Info>
-  If you own a Shape, open **Settings** → **My Shapes**, choose the Shape, and go to **Memory** to manage how it creates and uses memories.
+  If you own a shape, open **Settings** → **Your shapes**, choose the shape, and open **AI Engine** to find its memory controls.
 </Info>
 
 Here are the key settings:
 
-- **Short-term memory:** how many **Recent messages** the Shape reads before replying. Your plan sets the maximum.
-- **How often:** how frequently new memories are made from recent messages.
-- **Long-term memory:** turn **Remember past conversations** off if you want many chats without carrying memories between them, or turn **Make memories automatically** off so the Shape only keeps memories that are added on purpose.
-- **Memories per reply** and **Memory relevance:** how many memories can come up in a reply, and how relevant they need to be.
-- **Advanced memory:** the **Memory instructions**, **Memory engine**, and **Memory fallback engine** used to write memories.
+- **Short-term memory (STM)** → **Number of messages:** how many recent messages the shape reads before replying. Your plan sets the maximum.
+- **Long-term memory** → **Enable Long-term Memory:** controls whether the shape uses long-term memory.
+- **Auto-generate memories:** controls automatic memory creation. When enabled, **Generation Frequency** sets how often new memories are made.
+- **Memory Context Size** and **Memory Relevance:** how many memories can come up in a reply, and how relevant they need to be.
+- **Memory AI Engine:** the **AI Engine**, **Fallback AI Engine**, and **Memory instructions** used to write memories.
   - Looking for an update to your **Memory instructions**? Here's a sample of an updated preset you can try:
 
     <Expandable title="Content">
@@ -95,9 +99,9 @@ Here are the key settings:
       - Prioritize information that would be genuinely useful to remember later\
         RELEVANCE RULE THAT SHOULD BE ADDED AT THE END OF EVERY MEMORY: "This memory should only be referenced in future conversations when directly relevant to current topics or context. Don't force connections."
     </Expandable>
-- **Knowledge recall** and **Training recall:** how many knowledge entries and training examples the Shape can pull into a reply.
+- **Knowledge Context Size** and **Training Context Size:** how many knowledge entries and training examples the shape can pull into a reply.
 
-The **Manage memories** button in this section opens the Shape's conversation summaries.
+With long-term memory enabled, **View All Memories** opens the shape's conversation summaries. Save edits with **Save Changes**.
 
 ### Fixing a Memory
 

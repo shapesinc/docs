@@ -5,7 +5,7 @@ keywords: ["multiplayer assistant", "shared AI assistant", "group decisions", "A
 sidebarTitle: "Core Concepts"
 ---
 
-shapes.inc brings the people making a decision and an AI assistant into the same chat. Everyone can add context, inspect suggestions, and shape the next step.
+Make a chat, invite your friends, and get things done together. Shapes are group assistants, built to help you all together. See [Features and limits](/features) for the current capabilities and setup guides.
 
 The goal is an assistant that earns the group's trust, contributes as its own participant, and proactively does useful work. These six building blocks help you configure that experience.
 
@@ -24,10 +24,10 @@ See [AI Group Chats](/ai-group-chats) for an example and [Create a chat](/create
 ### Two kinds of chat
 
 - **Chat** is for talking things through, without web search, code execution, or other actions.
-- **Agent** is for getting tasks done: Shapes can search the web, run code, use apps you've connected, and show their steps under each reply.
+- **Agent** can help with tasks using web search, code execution, and connected apps. To open a reply's activity details, turn on **Settings** → **General** → **More preferences** → **Working steps**. See [Working steps](/chat-and-agent-modes#see-what-a-shape-did).
 - **Auto** chooses Chat or Agent based on each message, so an Auto chat can switch.
 
-Auto is the default. Change it for chats you start with the **New chats** setting on the **Settings** page; chat owners can switch an existing chat under the chat's **Settings** → **AI Configurations**. Private one-to-one conversations are called **DMs**. See [Chat and Agent](/chat-and-agent-modes).
+Auto is the default. Change it for chats you start under **Settings** → **General** → **New chats**; chat owners can switch an existing chat under the chat's **Settings** → **AI Configurations**. Private one-to-one conversations are called **DMs**. See [Chat and Agent](/chat-and-agent-modes).
 
 ## 2. Shapes are the participants
 
@@ -35,13 +35,15 @@ A **Shape** is a customizable AI assistant with a name, personality, instruction
 
 Give the Shape a role that serves the group. Ask it to explain its recommendations, notice missing perspectives, and accept corrections from the people involved. Creator permissions control who can edit the Shape; they do not make the creator's opinion the group's answer.
 
-Start with [What Are Shapes?](/what-are-shapes), then [find one](/how-to-talk-to-shapes) or [make your own](/how-to-make-a-shape).
+Start with **New chat**. You can also [choose an existing shape](/how-to-talk-to-shapes) or [make your own](/how-to-make-a-shape); customization is optional. See [What Are Shapes?](/what-are-shapes).
 
-## 3. Models are the engine underneath
+<span id="3-models-are-the-engine-underneath" />
 
-Each Shape runs on an **AI engine**, the model that generates its responses. Instructions define the role; the engine affects reasoning, writing, supported inputs, and skill use. The engine built by shapes.inc appears as **Formless**.
+## 3. AI Engines generate responses
 
-Choose an engine for the task and check its current cost. Some engines are free; premium engines use [Shape Credits](/credits). Features and availability vary by model. To switch engines in a chat, use the composer's **+** menu → **Engine**. To see which engine wrote a reply and what it cost, open **Generation details** from the reply's ⋯ menu.
+Each Shape uses an **AI Engine** to generate its responses. Instructions define the role; the AI Engine affects reasoning, writing, supported inputs, and skill use. The AI Engine built by shapes.inc appears as **Formless**.
+
+Choose an AI Engine for the task and check its current cost. Some AI Engines are free; premium AI Engines use [Shape Credits](/credits). Features and availability vary by AI Engine. To switch in a chat, use the composer's **+** menu → **Engine**. To see which AI Engine wrote a reply and what it cost, open **Generation details** from the reply's ⋯ menu.
 
 Use the [AI Engine Guide](/aienginecheatsheet) and the [live engine list](https://shapes.inc/engines). If a response uses credits unexpectedly, check the selected engine, fallback behavior, and [credit settings](/faq/why-is-a-free-engine-costing-credits).
 
@@ -54,7 +56,7 @@ A Shape can use two kinds of memory, depending on its settings:
 
 This helps a group keep track of preferences, decisions, and recurring constraints. Memory is selective, and context windows have limits. Restate a critical requirement when it matters, and review remembered information when plans change.
 
-Open **More actions** → **Manage memories** in a chat, or **Settings** → **Manage memories** to view, add, edit, and delete personal, chat, and workspace memories. The [Memory Guide](/memory) explains how. [Context Windows](/contextwindows) explains how much information an engine can use at once.
+Open **More actions** → **Manage memories** in a chat, or **Settings** → **Memories** to view, add, edit, and delete personal, chat, and workspace memories. The [Memory Guide](/memory) explains how. [Context Windows](/contextwindows) explains how much information an engine can use at once.
 
 ## 5. Participation determines when a Shape contributes
 
@@ -82,7 +84,7 @@ Follow [Shape Skills](/shapeskills) for setup and troubleshooting. If an action 
 
 ## Putting it together
 
-For a family trip, create a chat, invite everyone, and add a planning Shape. Share dates, budgets, and preferences. Ask it to compare possible plans, identify the tradeoffs, and draft an itinerary. Update the shared context as people make decisions.
+For a family trip, start with **New chat** and invite everyone. Share dates, budgets, and preferences. Ask the Shape to compare possible plans, identify the tradeoffs, and draft an itinerary. Update the shared context as people make decisions.
 
 The assistant contributes the research and drafts it can support. The group reviews the result and chooses what to do next.
 

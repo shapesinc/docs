@@ -120,7 +120,7 @@ The `docs.json` file controls the site configuration and navigation. **Always up
 
 ## Content Guidelines
 
-Our documentation explains shapes.inc as a multiplayer assistant for shared decisions and work. Follow [AGENTS.md](AGENTS.md) and the [documentation architecture](architecture/DOCUMENTATION.md) for positioning, feature accuracy, and validation.
+Our documentation uses the [talk.shapes.inc homepage](https://talk.shapes.inc/) language: “Do things with your friends” and “make a chat, invite your friends, and get things done together.” shapes.inc is a place to collaborate, with shapes as group assistants. Follow [AGENTS.md](AGENTS.md) and the [documentation architecture](architecture/DOCUMENTATION.md) for positioning, feature accuracy, and validation.
 
 ### Writing Style
 - Use clear, concise language

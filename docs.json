@@ -1,8 +1,8 @@
 {
   "seo": {
     "metatags": {
-      "og:title": "shapes.inc Docs — Multiplayer Assistant",
-      "og:description": "Make decisions and get things done together with a multiplayer assistant. Guides to shared chats, Shapes, memory, skills, and troubleshooting.",
+      "og:title": "shapes.inc Docs — Do Things With Your Friends",
+      "og:description": "Make a chat, invite your friends, and get things done together. Learn how to use shapes.inc and its group assistants.",
       "og:image": "/images/embedlogo.png",
       "og:url": "https://docs.shapes.inc"
     }
@@ -34,6 +34,8 @@
             "group": "Getting Started",
             "pages": [
               "introduction",
+              "features",
+              "docs-for-agents",
               "whats-new",
               "ai-group-chats",
               "what-are-shapes",
@@ -49,7 +51,7 @@
             ]
           },
           {
-            "group": "Make Progress Together",
+            "group": "Do Things Together",
             "pages": [
               "fun-and-friends",
               "plan-and-build-together",
@@ -61,6 +63,8 @@
             "pages": [
               "chat-and-agent-modes",
               "connected-apps",
+              "websites-and-purchases",
+              "saved-details",
               "connect-your-computer",
               "tasks",
               "multiplayer-activities"
@@ -73,16 +77,15 @@
               "commands-and-shortcuts",
               "custominstructions-chats",
               "multimessages",
+              "threads",
               "branch-off",
-              "groups",
               "sidebar-organization",
               "completed",
               "messageactionsmenu",
               "notifications",
               "moderation",
               "ai-agents",
-              "friends",
-              "fandomchat"
+              "friends"
             ]
           },
           {
@@ -103,7 +106,7 @@
             ]
           },
           {
-            "group": "Models, Prompts & Memory",
+            "group": "AI Engines, Prompts & Memory",
             "pages": [
               "aienginecheatsheet",
               "prompt101",
@@ -203,7 +206,6 @@
             "group": "Practical Guides",
             "pages": [
               "articles/ai-group-chat-vs-solo-ai-chat",
-              "articles/best-ai-tools-roleplay-fanfic-creative-writing",
               "articles/best-ai-image-generators-2026",
               "articles/best-discord-alternatives-2026",
               "articles/free-ai-tools-no-message-limits"
@@ -226,8 +228,8 @@
     ],
     "primary": {
       "type": "button",
-      "label": "visit shapes.inc",
-      "href": "https://shapes.inc"
+      "label": "New chat",
+      "href": "https://talk.shapes.inc"
     }
   },
   "footer": {

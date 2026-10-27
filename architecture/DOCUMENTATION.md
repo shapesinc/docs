@@ -8,13 +8,14 @@ unchanged. Keep Reddit community promotions out of authored documentation.
 
 ## Product model
 
-shapes.inc is a multiplayer assistant for shared decisions and work. A chat brings together the people involved and AI participants called Shapes. The content should help readers make progress on a group goal: share context, research, compare preferences and tradeoffs, review work, and decide on next steps.
+Use the [talk.shapes.inc homepage](https://talk.shapes.inc/) as the source for positioning: “Do things with your friends” and “make a chat, invite your friends, and get things done together.” shapes.inc is a place to collaborate. Shapes are “group assistants,” built to “help you all together,” for “anything that you do with other people.” Reuse this language rather than inventing a new slogan. Manual shape creation is optional.
 
 Three principles organize the product explanation: earn the group's trust, participate as an equal actor, and proactively add value. These are design principles, not guarantees that every Shape has complete context or can act in connected services without configuration.
 
 ## Content structure
 
 - `introduction.mdx` is the main entry point: product purpose, first chat, principles, task guides, and help.
+- `features.mdx` indexes capabilities and their canonical guides; `docs-for-agents.mdx` explains the Markdown exports and distinguishes product guides from the live external-agent API contract.
 - Getting Started defines chats, assistants, instructions, memory, engines, and skills, then links to current setup steps.
 - Use-case guides cover everyday decisions, planning and learning, and team projects. Each gives a concrete goal, a shared prompt, and relevant controls.
 - Feature guides remain operational references, including creative features. Their introductions explain how the feature supports a shared activity.
@@ -43,6 +44,22 @@ This repository is a Mintlify MDX site with no application TypeScript project or
 5. Review diffs for terminology, preserved troubleshooting, valid MDX, and unsupported feature claims.
 
 Changes deploy when merged to `main`. A pull request is the review handoff; opening one does not publish the revised site.
+
+## Feature-reference refresh (October 26, 2026)
+
+This refresh makes the docs a shared operational reference for humans and agents: what a feature does, how to use it, the relevant access and usage limits, how to recognize completion, and what to do when it fails. Positioning follows the Talk homepage's “Do things with your friends” wording.
+
+The new feature index links canonical guides for threads, Saved details, browser sign-in, purchases and travel, polls and shared pages, connected computers, hosted coding allowances, tasks, voice, memory, and external agents. New guides distinguish browser sessions from connected computers, private forms from shared replies, payment approval from order confirmation, and native shape capabilities from outside-agent API access. None of these documentation edits changes runtime capabilities, routing, permissions, defaults, or billing.
+
+The source audit used `shapes-chat` main at `f6ae5f33d6` and `app` master at `881d29d71`, including the October 15–26 merged feature changes. Key implementation references are `CHAT_THREADS.md`, `ACCOUNT_AUTOFILL.md`, `WORKSHOP_BROWSER.md`, the travel/payment services, `genui/polls.py`, `genui/registry.py`, `shared_activity_renderer.py`, shared voice billing, agent authorization, and the current settings/editor components. Source verification establishes the documented implementation; it does not establish that a live payment, travel booking, or provider-failure scenario was exercised in this docs-only task.
+
+Current account navigation is **General**, **Appearance**, **Notifications & privacy**; **Personalization**, **Saved details**, **Memories**, **Custom emoji**; **Your shapes**, **Connected apps**, **Tasks**, **Completed**, **Computers**, **Your AI agents**; account controls; and **Help**. **Streaming** and **Working steps** are in General → More preferences and default off. The companion frontend PR adds **Docs** under Help and to settings search. Older dated verification notes below are historical snapshots, not the current settings inventory.
+
+Fandom and fiction showcase pages, the old preset showcase, and obsolete call-game/related-group guidance are retained in dated MDX comments inside `<Visibility for="humans">` blocks. Plain MDX comments are invisible in the browser but Mintlify's Markdown transform retains them; the visibility wrapper excludes the archive from agent Markdown as well. Retired route landing pages are hidden from navigation and marked `noindex`, with original routes and compatibility anchors preserved. They point readers to current guides. Direct shape links remain supported; public discovery is not recommended.
+
+Validation includes the official Mintlify renderer, desktop and 390px mobile reading, navigation and keyboard links, all changed page routes, local link checks, and comment/metadata checks. The local `/_markdown/<slug>` route serves actual candidate Markdown using the same `buildMarkdownResponse` and `transformContentForMarkdown` path as hosted exports; use it to verify that archived material is excluded. Test results and candidate revisions are recorded in the PR. The local preview does not serve the public `.md`/`llms.txt` aliases or live search: verify those outputs after publication before claiming their deployment.
+
+The changes add no AI calls, runtime prompts, classifiers, or permanent retrieval context. Incremental recurring provider spend from these changes is $0/day.
 
 ## Verified public terminology (2026-10-05)
 

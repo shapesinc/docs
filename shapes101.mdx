@@ -7,7 +7,7 @@ sidebarTitle: "Getting Started"
 
 ## Start With a Shared Goal
 
-shapes.inc is built for people making decisions and doing things together. Create a chat for the goal, invite the people involved, and add a Shape to help compare options, draft a plan, or explain a difficult problem. For the big picture, start with [Multiplayer Assistants in Group Chats](/ai-group-chats).
+shapes.inc is built for people making decisions and doing things together. Create a chat for the goal and invite the people involved. You do not need to create or choose a shape first; the picker offers **Auto**. For the big picture, start with [Multiplayer Assistants in Group Chats](/ai-group-chats).
 
 Shapes are customizable AI assistants. Depending on the engine and available capabilities, they can:
 
@@ -32,9 +32,9 @@ Choose the settings that affect your shared work:
 
 # Chats
 
-Chats bring people and Shapes into the same conversation. Select **New Chat** in the sidebar, or tap **New** on a phone. Use **Shapes** and **People** to choose who to include, then select **Continue**. In **Chat details**, give the chat a name and select **Create Chat**. See the [walkthrough](/faq/how-do-i-start-a-new-chat).
+Chats bring people and Shapes into the same conversation. Select **New Chat** in the sidebar, or tap **New** on a phone. The picker opens on **People**. Select people to include, or open **Shapes** to choose **Auto** or an existing shape, then select **Continue**. In **Chat details**, review the name and select **Create Chat**. See the [walkthrough](/faq/how-do-i-start-a-new-chat).
 
-Each chat is either a **Chat**, for talking things through, or an **Agent** chat, where Shapes can take actions such as web searches and code. **Auto**, the default, chooses for each message. Set the default under **Settings** → **New chats**; see [Chat and Agent](/chat-and-agent-modes).
+Each chat is either a **Chat**, for talking things through, or an **Agent** chat, where Shapes can take actions such as web searches and code. **Auto** chooses for each message. Set your default mode under **Settings** → **General** → **New chats**; this is separate from the **Auto** choice in the shape picker. See [Chat and Agent](/chat-and-agent-modes).
 
 ## Adding Shapes
 
@@ -96,9 +96,9 @@ Use **More actions** → **Search Messages** to find an earlier detail. The chat
 
 # Shape Settings
 
-Owners edit their Shapes under **Settings** → **My Shapes**. Select a Shape to open its editor, which has **Profile**, **Personality**, **AI Engine**, **Memory**, **Knowledge**, **Training**, **Voice**, **Images**, **Stats**, and **Manage**. Select **Save** to keep your changes; the editor keeps your draft if you leave before saving.
+Owners edit their Shapes under **Settings** → **Your shapes**. Select a Shape to open its editor, which has **Profile**, **Knowledge**, **Training**, **AI Engine**, **Image Engine**, **Voice Engine**, **Share**, and **Settings**. Personality controls are inside **Profile**; memory controls are inside **AI Engine**. Select **Save Changes** to keep your changes.
 
-To review what a Shape remembers about you or a chat, open **More actions** → **Manage memories** in the chat, or **Settings** → **Manage memories**. Use [chat instructions](/custominstructions-chats) to explain what your group needs in this conversation.
+To review what a Shape remembers about you or a chat, open **More actions** → **Manage memories** in the chat, or **Settings** → **Memories**. Use [chat instructions](/custominstructions-chats) to explain what your group needs in this conversation.
 
 <span id="shape-owner-tools" />
 
@@ -110,13 +110,21 @@ Give the Shape a clear role that considers everyone in the chat. Use its setting
 
 Use **Profile** to introduce the assistant through its name, image, and description. See [editing a Shape's profile](/faq/how-do-i-edit-my-shapes-profile) and [profile styling](/css).
 
+<span id="stats" />
+
+<Visibility for="humans">
+{/* October 26, 2026: Mintlify exports MDX comments verbatim. This human-only wrapper keeps the archived source out of agent Markdown; the comment keeps it hidden on the page. */}
+{/* October 26, 2026: Stats is not a section in the current shape editor.
+Preserve the previous guidance without directing readers to an absent control.
 ### Stats
 
 Use **Stats** to review activity. Usage helps you understand how often people interact with the Shape; review its actual responses to judge whether it is useful.
+*/}
+</Visibility>
 
 ### Personality
 
-Use **Personality** to explain how the Shape should behave. Give it a role, the kind of help it should offer, and examples of how to handle uncertainty or disagreement. **Response style** sets the length and format of every reply, with options such as **Human**, **Short creative**, **Long creative**, and **Custom**. See [personality editing](/faq/how-do-i-edit-my-shapes-personality) and [presets](/presets) for focused guidance.
+Use **Profile** → **Personality and behavior** to explain how the Shape should behave. Give it a role, the kind of help it should offer, and examples of how to handle uncertainty or disagreement. **Response Style** sets the length and format of every reply, with options such as **Human**, **Short creative**, **Long creative**, and **Custom**. See [personality editing](/faq/how-do-i-edit-my-shapes-personality) and [presets](/presets) for focused guidance.
 
 ### Knowledge
 
@@ -136,23 +144,23 @@ Use **Training** for examples of useful responses. For instance, show how to ask
 
 ### Images
 
-Use **Images** to choose the Shape's image engine, style, and size. For group work, agree on the audience, style, composition, and required details before asking for an image. Review the result against the brief and check any credit requirement. See [creating images together](/articles/best-ai-image-generators-2026).
+Use **Image Engine** to choose the Shape's image engine, preset, and size. For group work, agree on the audience, style, composition, and required details before asking for an image. Review the result against the brief and check any credit requirement. See [creating images together](/articles/best-ai-image-generators-2026).
 
 <span id="voice-engine" />
 
 ### Voice
 
-Use **Voice** to pick a pre-made voice or use your own, and to set how often the Shape replies with voice. Follow [Give Your Shape a Voice](/how-to-give-your-shape-a-voice) for setup and [Receive Voice Messages](/how-to-receive-voice-messages) for chat controls.
+Use **Voice Engine** to pick a pre-made voice or use your own, and to set how often the Shape replies with voice. Follow [Give Your Shape a Voice](/how-to-give-your-shape-a-voice) for setup and [Receive Voice Messages](/how-to-receive-voice-messages) for chat controls.
 
 <span id="settings" />
 
 ### Manage
 
-Use **Manage** for owner controls such as **Visibility & safety**, **Duplicate**, and **Delete shape**. Public Shape discovery in search is retired, but direct links to a Shape still work. See the focused guides for [visibility](/faq/how-do-i-make-a-shape-private), [the Shape's URL](/faq/how-do-i-change-my-shapes-vanity-url), and [deleting a Shape](/faq/how-do-i-delete-a-shape).
+Use the editor's **Settings** for owner controls, **Privacy**, **Duplicate This Shape**, and **Danger Zone**. **Share** controls the description and appearance of the shape's direct page. Public catalogs are paused, but direct shape links still work. See the focused guides for [visibility](/faq/how-do-i-make-a-shape-private), [the Shape's URL](/faq/how-do-i-change-my-shapes-vanity-url), and [deleting a Shape](/faq/how-do-i-delete-a-shape).
 
 ## AI Engine
 
-Use **AI Engine** in the Shape editor to set its **Main engine**, **Premium engine**, and **Fallback engine**. **Reasoning effort** appears when the Shape's engine supports reasoning and **Show Internal Monologue (experimental)** is on, and it lists only the levels that engine supports. The engine built by shapes.inc appears as **Formless**. Choose based on the work the group needs, required capabilities, and available [credits](/credits). Higher reasoning effort can take longer and use more credits. These controls do not restore the [former thinking panel](/faq/where-did-the-thinking-panel-go). See [the engine guide](/aienginecheatsheet) and [presets](/presets) for more detail.
+Use **AI Engine** in the Shape editor to set its **AI Engine** and **Fallback AI Engine**. **Reasoning effort** appears when the Shape's engine supports reasoning and **Show Internal Monologue (experimental)** is on, and it lists only the levels that engine supports. The engine built by shapes.inc appears as **Formless**. Choose based on the work the group needs, required capabilities, and available [credits](/credits). Higher reasoning effort can take longer and use more credits. These controls do not restore the [former thinking panel](/faq/where-did-the-thinking-panel-go). See [the engine guide](/aienginecheatsheet) and [presets](/presets) for more detail.
 
 ### Advanced Engine Parameters
 
@@ -160,11 +168,11 @@ Available controls vary by engine. Change one setting at a time and compare resp
 
 ### Timezone
 
-Under **Language & time**, owners can turn on **Knows the current date and time** and set a **Timezone**. For plans involving dates or times, still give the assistant the relevant timezone explicitly and check its interpretation before acting on a schedule.
+Under **AI Engine** → **Time**, owners can turn on **Shape knows the current date** and set a **Timezone**. For plans involving dates or times, still give the assistant the relevant timezone explicitly and check its interpretation before acting on a schedule.
 
 ### Short-Term Memory (STM)
 
-The editor's **Memory** section controls **Short-term memory**, **Long-term memory**, and related recall settings. Recent messages provide context for a response, subject to the engine's [context window](/contextwindows). If an older constraint is missing, restate the current brief instead of assuming every previous message is still available.
+The editor's **AI Engine** section includes **Short-term memory (STM)**, **Long-term memory**, and related recall settings. Recent messages provide context for a response, subject to the engine's [context window](/contextwindows). If an older constraint is missing, restate the current brief instead of assuming every previous message is still available.
 
 ### Long-Term Memory
 
