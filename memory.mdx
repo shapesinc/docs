@@ -1,18 +1,18 @@
 ---
 title: "Memory Guide"
-description: "How Shapes remember what your group shares, how to ask a Shape to remember something, and how to view, add, edit, and delete memories."
+description: "How shapes remember what your group shares, how to ask a shape to remember something, and how to view, add, edit, and delete memories."
 keywords: ["memory", "memories", "Manage memories", "remember", "long-term memory", "short-term memory", "/remember", "/compact", "/clear"]
 ---
 
-Memory helps a Shape keep track of what your group has shared: decisions, preferences, and details that matter later. Memory is selective, not a perfect record, so check important details and correct anything a Shape gets wrong.
+Memory helps a shape keep track of what your group has shared: decisions, preferences, and details that matter later. Memory is selective, not a perfect record, so check important details and correct anything a shape gets wrong.
 
 ### **How Memory Works**
 
-Shapes use a few kinds of memory:
+A shape can use a few kinds of memory:
 
 - **Short-term memory:** the recent conversation in the chat you're in.
-- **Long-term memory:** summaries of past conversations that a Shape can bring back up when they're relevant.
-- **Saved notes:** things people asked a Shape to remember. A note can be personal, for a chat, or for a workspace.
+- **Long-term memory:** summaries of past conversations that a shape can bring back up when they're relevant.
+- **Saved notes:** things people asked a shape to remember. A note can be personal, for a chat, or for a workspace.
 
 Short-term memory normally covers the current conversation. In an [Agent thread](/threads), it includes the original request, a bounded summary of the main chat up to that request, and the thread's own history. Later main-chat messages and other threads are not automatically added to that context.
 
@@ -20,11 +20,17 @@ Long-term memories and notes can come up in later conversations when relevant. A
 
 A recalled detail may appear in a reply visible to the destination chat. Recall does not give a shape new permission to change or send anything in another chat.
 
-### **Ask a Shape to Remember Something**
+### **Ask a shape to remember something**
 
-Say what you want remembered, for example "Remember that Sam is vegetarian and we're booking for six." The Shape saves it and confirms only once it's saved. Its reply says where the note went: **Personal**, a chat, or a workspace.
+Say what you want remembered, for example "Remember that Sam is vegetarian and we're booking for six." The shape saves it and confirms only once it's saved. Its reply says where the note went: **Personal**, a chat, or a workspace.
 
 You can also type `/remember` followed by the note to save it to the chat's memory.
+
+### Keep a group decision current
+
+For a recurring dinner, each person can share their availability and food preferences in the chat. Once the group agrees on the date, headcount, and requirements, ask the shape to save those details for the chat. Check its confirmation for the destination, then open **Manage memories** to review the saved note.
+
+Before planning the next dinner, check what has changed. Someone allowed to manage that shared note can edit it, and the updated note applies to everyone included in it. Post the change in the conversation too: editing a memory does not correct an earlier reply or tell everyone that the plan changed. Use the note as context for the next discussion, not proof that an old decision still holds.
 
 ### **Memory Commands**
 
@@ -34,10 +40,10 @@ Type these in the composer:
 | --- | --- |
 | `/remember` | Save a note to this chat's memory. |
 | `/memory` | Open the memories for this chat. |
-| `/compact` | Save this chat to memory so Shapes keep the gist. `/sleep` does the same. |
+| `/compact` | Save this chat to memory so shapes keep the gist. `/sleep` does the same. |
 | `/clear` | Clear this chat's short-term memory. Chat owner only. |
-| `/wack` | Reset a Shape's short-term memory. Chat owner only. |
-| `/reset` | Reset a Shape's long-term memories from this chat. Chat owner only. |
+| `/wack` | Reset a shape's short-term memory. Chat owner only. |
+| `/reset` | Reset a shape's long-term memories from this chat. Chat owner only. |
 
 See [commands and shortcuts](/commands-and-shortcuts) for the full list.
 
@@ -50,7 +56,7 @@ The **Memories** page has four views:
 - **Personal:** notes only you can add, edit, or delete.
 - **Chats:** notes for a chat. Pick the chat to see its memories.
 - **Workspaces:** notes for a workspace. Pick the workspace to see its memories.
-- **Conversation summaries:** the summaries Shapes made from your conversations.
+- **Conversation summaries:** the summaries shapes made from your conversations.
 
 Each view shows whether its memories are **Private** or **Shared**. Use **Add memory** to write a new one, **Edit** or **Delete** on a memory to change or remove it, and **How this memory works** to see where it is used and who can change it. Shared memories can be changed by people allowed to manage them (others see them as view only), and conversation summaries can be viewed and changed by the people included in them.
 
@@ -62,24 +68,24 @@ Deleting a memory doesn't change messages or replies that already used it, and n
 
 ### **Types of Conversations**
 
-- **Chats:** chats you can invite more people and Shapes to.
-- **DMs:** private one-to-one conversations, such as you and a Shape.
+- **Chats:** chats you can invite more people and shapes to.
+- **DMs:** private one-to-one conversations, such as you and a shape.
 
 Long-term memory can be used in both DMs and chats. Short-term memory follows the current conversation or Agent thread, as described above.
 
-### Shape Memory Settings
+### shape memory settings
 
 <Info>
-  If you own a shape, open **Settings** → **Your shapes**, choose the shape, and open **AI Engine** to find its memory controls.
+  If you own a shape, open **Settings** → **Your shapes**, choose the shape, and open **AI Engine** for short-term memory or **Memory** for long-term memory and saved summaries.
 </Info>
 
 Here are the key settings:
 
-- **Short-term memory (STM)** → **Number of messages:** how many recent messages the shape reads before replying. Your plan sets the maximum.
-- **Long-term memory** → **Enable Long-term Memory:** controls whether the shape uses long-term memory.
-- **Auto-generate memories:** controls automatic memory creation. When enabled, **Generation Frequency** sets how often new memories are made.
-- **Memory Context Size** and **Memory Relevance:** how many memories can come up in a reply, and how relevant they need to be.
-- **Memory AI Engine:** the **AI Engine**, **Fallback AI Engine**, and **Memory instructions** used to write memories.
+- **AI Engine → Short-term memory → Messages** (labelled with the shape’s name): how many recent messages the shape reads before replying. Your plan sets the maximum.
+- **Memory → Long-term memory:** controls whether the shape uses long-term memory.
+- **Write memories automatically:** controls automatic memory creation. When enabled, **How often** sets how often new memories are made.
+- **Recall → Memories per reply** and **Match strictness:** how many memories can come up in a reply, and how relevant they need to be.
+- **Memory engine**, **Fallback engine**, and **Memory instructions:** used to write memories.
   - Looking for an update to your **Memory instructions**? Here's a sample of an updated preset you can try:
 
     <Expandable title="Content">
@@ -99,13 +105,13 @@ Here are the key settings:
       - Prioritize information that would be genuinely useful to remember later\
         RELEVANCE RULE THAT SHOULD BE ADDED AT THE END OF EVERY MEMORY: "This memory should only be referenced in future conversations when directly relevant to current topics or context. Don't force connections."
     </Expandable>
-- **Knowledge Context Size** and **Training Context Size:** how many knowledge entries and training examples the shape can pull into a reply.
+- **Knowledge → Recall → Entries per reply** and **Training → Recall → Examples per reply:** how many knowledge entries and training examples the shape can pull into a reply.
 
-With long-term memory enabled, **View All Memories** opens the shape's conversation summaries. Save edits with **Save Changes**.
+The **Memory** section also lists the shape's conversation summaries. Use **Save** for changes to the editor's memory settings; individual summary edits have their own save controls.
 
 ### Fixing a Memory
 
-Memory is shaped by what people say and how the Shape summarizes it. If a memory is wrong, or you want a Shape to stop using something, edit or delete it from the **Memories** page. Changes to a shared memory apply to everyone included in it.
+Memory is shaped by what people say and how the shape summarizes it. If a memory is wrong, or you want a shape to stop using something, edit or delete it from the **Memories** page. Changes to a shared memory apply to everyone included in it.
 
 For saving a copy outside the app, see [export and backup limitations](/faq/can-i-export-or-back-up-my-data). There is currently no official full memory export or backup tool.
 

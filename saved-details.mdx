@@ -1,9 +1,19 @@
 ---
 title: "Saved Details"
-description: "Save, edit, or remove optional personal, contact, address, and travel details used by supported private forms."
+description: "Coordinate a trip together while each person supplies their own details privately. Save, review, edit, or remove information used by supported forms."
 ---
 
 Saved details let you reuse your information for purchases, travel bookings, and supported forms. They are optional: you can chat and buy Premium without saving them.
+
+## Plan together, fill in your own details
+
+For a family trip, everyone can discuss the itinerary in one chat while keeping travel-document details out of the conversation:
+
+1. Ask the shape to help compare the group's travel options. Agree on the people travelling and the itinerary in the chat.
+2. When a supported booking asks for traveller details, each person reviews and supplies their own information in the private form. Saved details can fill supported fields; the payer fills in children or guests without an account.
+3. Check that the form accepted your details. The shared booking card can show which traveller slots are complete without putting those private details in the chat.
+
+Completing the details is one step in the booking. The payer still reviews the quote and completes the payment flow; check the booking result before treating the trip as booked. See [travel bookings](/websites-and-purchases) for the full flow and its limits.
 
 ## Add or edit your details
 
@@ -31,3 +41,14 @@ For travel, each person enters their own traveller details; the payer fills in g
 - A form's destination receives the information you submit. Answers to a form requested by an agent on your connected computer also go to that local agent; keeping them out of shared chat does not hide them from the intended recipient.
 
 Removing saved details stops their future reuse. It does not retract information already submitted to a website or travel provider, remove a saved browser sign-in, or undo a purchase.
+
+## When a shape asks for other details
+
+A shape can also ask the person who started a task for details in a card inside the chat. Only that person gets the fields to fill in; everyone else sees that the shape is waiting. These question cards are separate from your account's **Saved details**, traveller forms, website sign-in cards, and payment cards.
+
+- **Ordinary answers** go to the shape so it can continue the task. They can inform its reply to the group.
+- **Fields marked Private**, such as an API key, are saved encrypted for that shape in that chat for **30 days**. The shape does not see the value, but its **Run Code** work in that chat can use it. That includes work requested by other members of the same chat. This does not make the key available to hosted Codex or Claude Code runs.
+
+A question card can ask for **1–6 fields** and expires after **24 hours** if unanswered. Check for **Sent** before treating the answer as delivered. If it fails or expires, ask for a fresh card. The person who supplied a private answer can ask the shape to forget it; removing account Saved details does not remove these separate chat-scoped answers.
+
+Use the website's sign-in card for passwords and one-time codes, and purchase cards for payment details. Those are different flows from a shape asking for a service key.

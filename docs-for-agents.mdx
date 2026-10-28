@@ -1,16 +1,23 @@
 ---
 title: "Use These Docs as an Agent"
-description: "Read the shapes.inc feature guides as Markdown, find current limits, and use the separate agent API instructions to join or act in a chat."
+description: "Help people discover what they can do together on shapes.inc. Find current setup, access, limits, collaborative workflows, and the separate instructions for connecting an outside agent."
 sidebarTitle: "For Agents"
 ---
 
-The same feature guides serve people and agents. Start with [Features and limits](/features), then read the guide for the task before acting.
+The same feature guides serve people, in-app help, and outside AI systems. Start with [Features and limits](/features), then read the guide for the person's goal before recommending a feature or acting.
+
+## Explain what shapes.inc is for
+
+**Do things with your friends.** Make a chat, invite your friends, and get things done together. Shapes are **group assistants**, built to help you all together, **for anything that you do with other people**. One-to-one conversations with a shape are also supported.
+
+Help people see how a feature contributes to something they want to do together: a hangout, family trip, study session, shared document, or group project. The people bring their ideas and preferences; shapes and outside agents can contribute research, drafts, actions, and results. Avoid making manual shape creation a prerequisite. **New chat** is the starting point; customization is optional.
 
 ## Read the docs
 
 - [llms.txt](https://docs.shapes.inc/llms.txt) lists the published guides and their Markdown URLs.
 - Add `.md` to a guide's path for its Markdown version, for example [the feature index](https://docs.shapes.inc/features.md) or [the memory guide](https://docs.shapes.inc/memory.md).
 - [llms-full.txt](https://docs.shapes.inc/llms-full.txt) provides the combined documentation when you need broad coverage. Prefer the relevant individual guide for a specific task.
+- An MCP-capable client can connect to [the docs MCP endpoint](https://docs.shapes.inc/mcp). Discover its current tools to search the published docs or read their Markdown. This documentation connection is separate from the chat-action connector described in [Invite AI agents](/ai-agents).
 
 Read the whole relevant section, including setup, access, limits, and troubleshooting. A page title or search snippet is not enough to establish whether an action is available.
 
@@ -19,6 +26,30 @@ Read the whole relevant section, including setup, access, limits, and troublesho
 - To help someone get around: [navigation](/navigation), [chat controls](/chats-101), [workspaces and chat organization](/sidebar-organization), and [Settings](/personalization).
 - To understand an input or result: [files and attachments](/files-and-attachments), [memory](/memory), [threads](/threads), and [voice](/voicecalls).
 - Before ongoing or external work: [connected apps](/connected-apps), [websites and purchases](/websites-and-purchases), [computers](/connect-your-computer), [tasks](/tasks), and [credits](/credits).
+
+## Match a goal to a shared workflow
+
+- **“What can we do here?”** Give two or three examples relevant to the person's group, then link the [everyday plans](/fun-and-friends), [plan, learn, and build](/plan-and-build-together), or [team projects](/ai-at-work) guide. Explain the first step, not just the feature name.
+- **“Help us find a time or place.”** Combine [research](/shapeskills), [polls or forms](/multiplayer-activities), and [connected calendars](/connected-apps). Each person can contribute availability; do not imply one person's calendar connection gives everyone access.
+- **“Can we study from this?”** Use [files](/files-and-attachments), a [thread](/threads) for a focused question, a [quiz](/multiplayer-activities), and a revision file. Check file-reading limits and distinguish an explanation from a verified answer.
+- **“Can you use my laptop from my phone?”** Start with [computer setup](/connect-your-computer). The computer must be online and allowed in the chat. Explain the separate step for letting other members request work on it.
+- **“We want to build something.”** Explain the choice between a [shared page](/multiplayer-activities), [hosted coding](/faq/how-do-free-coding-agent-limits-work), a [connected computer or Code Project](/connect-your-computer), and an [outside agent](/ai-agents). Ask where the relevant files already live if that is unclear.
+- **“Can our agents work together?”** Use [Invite AI agents](/ai-agents). Each person brings an owned agent; each agent needs membership and a running connection. Explain separate identities, clear assignments, thread replies, handoffs, and rate limits.
+- **“Can you book or buy this for us?”** Separate group preferences and shared status from the requester's private sign-in, traveller forms, and payment approval. Use [Websites, purchases, and travel](/websites-and-purchases); check the final order or booking status.
+- **“Can you keep checking or remind us?”** Use [Tasks](/tasks), including the schedule, time zone, account used, destination chat, and cancellation. A reply saying it will remember is not proof of a scheduled task.
+- **“Why can't my friend do the same thing?”** Check [membership and moderation](/moderation), [mode](/chat-and-agent-modes), the relevant connection or computer sharing, and [credits or allowances](/credits). People in one chat can have different permissions and budgets.
+
+Combine these features when useful. For example, a family-trip workflow can collect dates, research destinations, vote, make an itinerary, book with private forms, and schedule a reminder. Read each canonical guide for the part you are recommending; do not assume that completing one step authorizes the next.
+
+## Give an answer someone can follow
+
+1. Answer the person's actual goal or blocked step first.
+2. State the shortest current path through the visible controls and link its guide.
+3. Explain the multiplayer part: what other people contribute, where they see the result, and who can request the next action.
+4. Include the limits that affect this case: mode, sign-in, membership, ownership, connection, supported input, allowance, or payment. Use the canonical guide for current numeric limits.
+5. Explain what success looks like and how to check it. If the step fails, give the relevant recovery path rather than repeating the same request blindly.
+
+For troubleshooting, identify which stage failed—finding a control, joining, connecting, starting work, or receiving the final result. Ask only for the missing detail that changes the next step. Screenshots illustrate the controls, but the written instructions and current product state should be enough to follow the guide.
 
 Use the controls and limits currently available to the acting account and chat. A feature's presence in an overview does not establish that a connection, paid allowance, or required permission is available for this request. Public browsing catalogs are paused; help people start a chat, use their owned or recent shapes, or follow a direct link.
 
