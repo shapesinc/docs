@@ -96,11 +96,11 @@ This is a docs-only change. It adds no AI calls, permanent prompt context, or ru
 
 ## Get the most out of shapes.inc and October 29–30 launches (2026-10-30)
 
-`get-the-most-out-of-shapes-inc.mdx` is the practical entry point: five-minute setup, ready-to-send requests for what people actually do, new features, power moves, habits, free allowances, and recovery. Its use cases and ordering come from production study `voct29.01-feature-guide` (Oct 1–29 tool use across all non-staff chats, plus a labeled 220-chat sample from Oct 20–29). Public pages carry no usage numbers; the aggregates and method are in the PR and `reports/docs-get-the-most-out-2026-10-29/` in the local Shapes folder.
+`get-the-most-out-of-shapes-inc.mdx` is the practical entry point: five-minute setup, ready-to-send requests for what people actually do, new features, power moves, habits, free allowances, and recovery. Its use cases and ordering come from an internal, aggregate review of October usage. Public pages carry no usage numbers; the study and its method are kept in the team's private handoff, not in this repository.
 
 New canonical guides:
 
-- `texting.mdx`: Messages texting (connect flow, sign up by text, chat routing commands, media, tapbacks, edits, numbered cards, iMessage groups, limits, STOP/START) and notification sign-in links. The in-app connect flow is allowlisted by config default, so the page says texting is rolling out; sign up by text and groups are on for everyone.
+- `texting.mdx`: Messages texting (connect flow, sign up by text, chat routing commands, media, tapbacks, edits, numbered cards, iMessage groups, limits, STOP/START) and notification sign-in links. The in-app connect flow is not yet shown to every account, so the page says texting is rolling out; sign up by text and groups are available to everyone.
 - `phone-calls.mdx`: shape-placed calls in Agent chats (number verification, statuses, mid-call questions, saved details, recordings visible to chat members, Free $1.00/UTC day vs Premium pay-per-use at $0.22/min, 3- and 15-minute limits, recovery).
 - `slack-and-hooks.mdx`: Slack import, two-way sync, and chat hooks. Slack OAuth, events, and outbound posts were not exercised live.
 
