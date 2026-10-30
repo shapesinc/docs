@@ -41,6 +41,15 @@ Every layer except short-term memory is retrieved by how well it matches your la
   **Chat chats** use short-term memory, long-term memories, and saved notes. Full chat history recall and workspace memory are part of **Agent** chats. See [Chat, Agent, and Auto](/chat-and-agent-modes).
 </Info>
 
+### Full chat history in Agent chats
+
+In [Agent chats](/chat-and-agent-modes), shapes can look back through the chat's whole history, not just summaries. Ask "what did we decide about the hotel last month?" or "find the address Sam sent" and the shape searches earlier messages by meaning, along with the chat's summaries and saved notes. This covers the most recent 20,000 messages of the chat you're in; it doesn't reach into other chats.
+
+- Deleted messages stop being recalled within a few minutes. Edited and removed messages, and deleted chats, drop out within a day.
+- Messages from people banned from the chat are never recalled.
+- If a shape's owner turns off **Long-term memory** for that shape, it doesn't use this history.
+- In Auto chats, this works on the messages a shape answers in Agent mode. Chat-mode replies use the memory described above.
+
 ### What a shape can look up for itself
 
 In Agent chats, a shape doesn't only wait for memory to come to it. When a question is about the past, it can go and check:

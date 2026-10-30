@@ -23,14 +23,22 @@ Check the returned changes and test results. A coding run finishing is separate 
 | Limit | Daily allowance per user |
 | --- | --- |
 | Free coding runs | **Up to 2 starts** |
-| Model tokens for free coding runs | **US\$1.00** of model-provider cost |
-| Hosted computer and browser use | **US\$0.20** of computer/browser cost |
+| Model tokens for free coding runs | **100 credits** of model-provider cost |
+| Hosted computer and browser use | **20 credits** of computer/browser cost |
 
 Claude Code and Codex share the two starts and the model-token budget across all your chats. The computer allowance covers both agents, Run Code, Code Project operations that use a hosted computer, and Browser.
 
 The model allowance pays for the model processing the task and generating responses. The computer allowance pays for running the hosted computer and browser, including CPU, memory, disk, and browser time. These are separate budgets; unused model allowance cannot cover computer usage. They are not deposits into your Shape Credit balance.
 
 The limits are **per user**, shared across that user's chats and actions. Each person has their own allowances, even in a group chat. They reset at **00:00 UTC** each day, which is **21:00 in São Paulo (UTC−3)**.
+
+## Run coding work in parallel
+
+You can run one coding task in the main chat and another in a [thread](/threads) at the same time, for example Claude Code on a bug in the main chat and Codex on a new page in a thread. A second run in the same thread, or in the main chat, waits its turn. Parallel runs share your daily allowances.
+
+## Paid coding runs
+
+With enough credits, coding runs aren't held to the free daily limits. A run continues until the work is done, your credits run out, or it reaches its time or request limit. Whenever a run stops, the chat gets a final notice saying why; nothing retries automatically.
 
 ## Why can a free run be blocked before I use both starts?
 
@@ -46,7 +54,7 @@ If a daily allowance prevents a free run, wait for the daily reset or use paid a
 
 The app uses the credits available for the task to decide paid or free coding access. An active Premium subscription is not required to use an existing eligible credit balance. A zero or negative balance can still use free coding access when all its limits allow it.
 
-For paid coding runs, **model tokens and computer time are separate costs**. Computer and browser use spends the shared US\$0.20 daily allowance first, then charges eligible credits for the remaining usage. Paid coding runs also consume this computer allowance; it is not reserved exclusively for free coding runs. Their model tokens are billed separately, rather than using the US\$1.00 free-model allowance.
+For paid coding runs, **model tokens and computer time are separate costs**. Computer and browser use spends the shared 20-credit daily allowance first, then charges eligible credits for the remaining usage. Paid coding runs also consume this computer allowance; it is not reserved exclusively for free coding runs. Their model tokens are billed separately, rather than using the 100-credit free-model allowance.
 
 Paid coding runs do not use the two free starts. Having enough eligible credits can therefore allow more coding work after the free starts are used. Run Code and Browser can also continue on eligible credits after the computer allowance is used; without enough allowance or eligible credits to start, the action is blocked.
 

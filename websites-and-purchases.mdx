@@ -37,22 +37,40 @@ On the task card, **Take over** opens your private Browser panel with control. I
 For example, housemates can compare a table for their shared kitchen. Each person adds constraints such as measurements, delivery dates, and budget; the shape brings the options back into the chat.
 
 1. Ask the shape to compare suitable items and show the details the group needs to decide.
-2. Once you have chosen, the person paying asks to buy the specific item with a spending limit. Review the purchase card's merchant, items, total, and payment method.
-3. That person connects an eligible payment service if prompted and completes the approval shown for the purchase. Other members can discuss the choice without gaining access to that payment method.
-4. Follow the final order status and receipt in the purchase card. Approval or a submitted checkout alone does not confirm the merchant placed the order.
+2. Once you have chosen, the person paying asks to buy the specific item. Saying what to buy and who is paying is enough; you don't need to confirm twice.
+3. The shape checks out on the store's own website, in your own account there when you're signed in. Subscriptions, memberships, and rentals in your own streaming or app-store account are bought on that site. If the site needs you to sign in, that's your only step: use the sign-in card or the **Browser** button.
+4. Review the purchase card's store, items, total, and way to pay, then approve it. Nothing is ordered until you select **Place order** or approve the payment.
+5. Follow the final order status and receipt in the purchase card. Approval or a submitted checkout alone does not confirm the store placed the order.
 
-The person making the request is the payer. Other chat members can see the shared purchase summary and status, but cannot use the payer's private payment controls or card details.
+The person making the request is the payer. Other chat members can see the shared purchase summary and status, but cannot use the payer's private payment controls or card details. Each chat, and each thread, works on one purchase at a time.
+
+If you reply to a shape while it's buying something for you, your reply counts as part of your request. You don't need to tag the shape again.
+
+### How a shape picks the way to pay
+
+Shapes don't ask how you want to pay. They use the first way that works, in this order:
+
+1. **Your account at that store**, when you're signed in there.
+2. **Your wallet.** At stores that take Shop Pay, this can be your Shop account.
+3. **A shopping service** that can order from large stores and food delivery for you.
+4. **Your saved card**, at the store's checkout.
+
+Name a way to pay and the shape uses it instead, for example "use my wallet" or "pay on delivery". The only payment question you'll get is for a step only you can take: signing in, connecting your wallet, or adding a card.
 
 ### Payment options and limits
 
-- **Link** supports payers in the US and Canada. Its spend-request limit is US\$500; eligibility and the checkout's currency can further restrict a purchase.
-- **Natural** lets you connect saved cards through its card-vault flow. It can be used when Link cannot serve the purchase. The phone flow asks you to save a card on Natural's page and verify a texted code; supported phone numbers, cards, merchants, and provider checks still determine whether it works.
-- With a card-only Natural connection, each purchase needs its own approval. An eligible existing Natural account may instead use a budget you have authorized there. Check the purchase card and provider's approval terms rather than assuming every connection works the same way.
-- **Pay on delivery** is available only when the merchant supports it and that option is offered. It still places an order; it is not a free trial of checkout.
+Manage these in **Settings → Connected apps → Payments**:
 
-Payment services are separate from Shape Credits. Credits pay for eligible AI features; they are not your shopping wallet. Connecting a payment service or saving an address does not itself approve a purchase. Availability does not guarantee that a particular site or provider will accept a transaction.
+- **Wallet:** connect once, then approve each purchase in your wallet app. For payers in the US and Canada, at US and Canadian stores, in US or Canadian dollars.
+- **Saved cards:** save a card once. You approve each payment on your phone.
+- **Shop Pay:** at stores that take it, the purchase card shows a code and **Continue**, which opens Shop's own page to connect. After that, select **Place order**, or **Continue** to review and pay in Shop. To disconnect, remove shapes.inc from your connections in Shop.
+- **Pay on delivery:** available only when the store offers it. It still places an order.
 
-If a total changes, check the updated amount and any renewed approval request. If status is pending or uncertain, ask the shape to check the existing purchase before starting another one. Cancelling an unfinished purchase attempt does not cancel an order the merchant has already placed.
+On the purchase card, the way to pay shows as **Wallet**, **Card**, **Your … account**, or **Cash on delivery**. If details like your address or phone number are missing, a private **Your details for this form** card asks for them and saves them to [Saved details](/saved-details).
+
+Payment methods are separate from Shape Credits. Credits pay for eligible AI features; they are not your shopping wallet. Connecting a payment method or saving an address does not itself approve a purchase. Availability does not guarantee that a particular store will accept a transaction.
+
+If a total changes, check the updated amount and any renewed approval request. If status is pending or uncertain, ask the shape to check the existing purchase before starting another one. Cancelling an unfinished purchase attempt does not cancel an order the store has already placed.
 
 ## Book travel
 
@@ -66,11 +84,13 @@ For a family trip, keep the dates, budget, and must-haves in one chat so the peo
 4. The payer reviews the exact itinerary, fare or cancellation rules, and total, then agrees and pays through the offered checkout. Other chat members cannot approve payment on the payer's behalf.
 5. Check the final status and booking confirmations for every item. A trip can complete only partly if some items fail; do not treat one confirmed item as confirmation of the whole trip.
 
-Prices and availability can change before booking. An option shown earlier is not a reservation. Only the payer can change or cancel the trip or confirm a paid booking's cancellation. Cancellation or refund eligibility depends on the booked fare or supplier's rules; cancelling a draft is different from cancelling a confirmed booking.
+Hotel options show the room, cancellation terms, and meals. Taxes and fees paid at the hotel are not in the trip total; the trip card shows them as **Due at the desk**. Flight options name the fare, such as a basic fare with carry-on only, and cancellation deadlines are shown in UTC.
+
+Prices and availability can change before booking. Fares aren't held: an option shown earlier is not a reservation. Only the payer can change or cancel the trip or confirm a paid booking's cancellation. Cancellation or refund eligibility depends on the booked fare or supplier's rules; cancelling a draft is different from cancelling a confirmed booking.
 
 ## When something doesn't work
 
 - **The website refuses access or asks for a check:** use the private browser controls when prompted. A shape may be unable to finish on that website.
-- **A connection or payment method is unavailable:** check the connection, payer eligibility, and the options the current card offers.
+- **A way to pay doesn't work:** the shape moves on to the next one by itself. If none is ready, it asks you to sign in, connect your wallet, or add a card. Check eligibility in **Settings → Connected apps → Payments**.
 - **The purchase is pending or only partly complete:** check the existing status and receipt before retrying. Do not treat the shape's intention to buy as confirmation.
 - **You need to change saved information:** update [Saved details](/saved-details), then review the form again. Changes do not rewrite an already-submitted order or booking.

@@ -113,7 +113,7 @@ flowchart TB
 
 **Pass 1 keeps the text.** The conversation is grouped into sessions, each session is split into passages, and every passage is indexed by meaning with its date and a link back to the exact messages. This is what lets a shape open the original message instead of paraphrasing it.
 
-**Pass 2 extracts memories.** From each session the engine writes short, standalone facts: "Sam is vegetarian", "the group picked May 12 for the trip", "Priya runs the budget". Pronouns and "that place" are resolved against the surrounding conversation, so each fact makes sense on its own, and each fact stays tied to the passage it came from as evidence. Extraction runs as soon as new messages arrive, not hours later.
+**Pass 2 extracts memories.** From each session the engine writes short, standalone facts: "Sam is vegetarian", "the group picked May 12 for the trip", "Priya runs the budget". Pronouns and "that place" are resolved against the surrounding conversation, so each fact makes sense on its own, and each fact stays tied to the passage it came from as evidence. Extraction runs as soon as new messages arrive, not hours later. The engine is kept in step with the chat too: when a message is deleted or edited, or someone is banned from the chat, the passages and the facts drawn from them are forgotten, within minutes for a deletion and within a day otherwise.
 
 **Facts live in a memory graph, not a pile.** Each new fact is linked to the facts it touches:
 

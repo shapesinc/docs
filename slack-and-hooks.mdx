@@ -1,0 +1,60 @@
+---
+title: "Bring Slack and Your Tools Into shapes.inc"
+description: "Import your Slack history into a shapes.inc workspace, keep channels in sync both ways, and post updates from GitHub, Linear, Ramp, or any tool into a chat with hooks."
+keywords: ["Slack import", "Slack sync", "move from Slack", "webhooks", "hooks", "GitHub notifications", "Linear notifications", "Ramp notifications", "team workspace"]
+sidebarTitle: "Slack & Hooks"
+---
+
+If your team already talks in Slack, you can bring it with you: import your history, keep channels in sync while people switch over, and send updates from the tools you use into the right chat, where shapes can read them and help.
+
+All of this lives in a [workspace](/sidebar-organization). Open **Settings → Slack** to start. In your personal space, you'll be asked to create a workspace first. In a workspace you don't own, ask a workspace owner to connect Slack.
+
+## Import your Slack history
+
+1. In Slack, export your workspace. Slack workspace admins can do this from Slack's export settings; you'll get a .zip file.
+2. In shapes.inc, open **Settings → Slack → Bring your history** and drop the .zip in. It's read in your browser, not uploaded as a file.
+3. Choose a workspace you own, or create a new one.
+4. Pick what to bring. Archived channels and DMs are off by default, and you'll only be offered DMs you were part of.
+5. Leave **Invite by email** on to invite the people from your Slack workspace, or turn it off to invite them later.
+
+Each channel becomes a chat with its history, threads, and reactions. Messages keep their authors' Slack names and pictures with a **Slack** badge, and files come through as links to Slack. Canvases, huddles, custom emoji images, edit history, pins, and bookmarks aren't imported.
+
+Imported chats start with only you in them, until the people you invited join. You can run the import again later; messages already imported aren't duplicated.
+
+## Keep Slack in sync
+
+Workspace owners can connect Slack so new messages flow both ways while people move over:
+
+1. Select **Connect Slack** in **Settings → Slack** or the workspace menu, then **Allow** in Slack.
+2. On **Add your Slack channels**, pick channels. Public channels are selected for you. Select **Add** to finish.
+
+After an import, the last step also offers **Keep in sync with Slack**.
+
+- New messages in either place show up in the other.
+- New public channels get a chat automatically. For a private channel, type `/invite @shapes.inc` in that channel in Slack.
+- Channel renames carry over.
+- People in a channel whose email matches a shapes.inc account are added to its chat. People from other organizations in shared channels aren't added.
+
+In a chat's **Settings → Integrations → Slack**, owners can set which direction messages sync, turn on **Shapes reply to @mentions from Slack**, or **Unlink** the channel.
+
+Not synced yet: edits, deletions, and reactions made in shapes.inc; file contents; DMs; archived channels; and people leaving a channel.
+
+## Post updates with hooks
+
+A hook gives a chat its own web address that a tool can post to: a new pull request, a Linear issue, a card transaction, a build that failed. Updates show up as cards with an **APP** badge, and shapes in the chat can read them, so you can ask "anything from GitHub today I should look at?"
+
+1. Open the chat's **Settings → Integrations**. Only chat owners can, and not in DMs.
+2. Select **New hook**, choose **GitHub**, **Linear**, **Ramp**, **Slack-compatible**, or **Generic JSON**, name it, and select **Create**.
+3. Copy the address with **Copy URL** and paste it into the tool's webhook settings. The address is shown once. For GitHub, leave the secret blank.
+
+Treat the address like a password: anyone who has it can post into the chat. Use **Rotate URL** to replace it, or **Delete** to remove the hook. Messages it already posted stay.
+
+**Let shapes respond** is off by default. Turn it on and up to 5 shapes in the chat can reply to each update, charged to the person who created the hook like any other message.
+
+| Limit | |
+|---|---|
+| Hooks per chat | 20 |
+| Updates per hook | 120 a minute |
+| Update size | 1MB; long text is shortened |
+
+See [A multiplayer assistant for your team](/ai-at-work) for ways to use a team chat once everyone is in.
