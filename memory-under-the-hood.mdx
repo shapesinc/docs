@@ -12,6 +12,7 @@ The [Memory Guide](/memory) tells you what a shape remembers. This page tells yo
 Most assistants remember a conversation as a sliding window of recent messages plus a list of facts about you. A shape's memory is built for a chat that several people and several shapes share over months:
 
 - **The whole chat, not a window.** In Agent chats, every message stays retrievable, by meaning, with the date it was said, including messages from before the shape joined.
+- **Understood, not just stored.** Each chat's history is also distilled into standalone facts linked in a memory graph, where a newer fact updates an older one, so a shape knows what's true now and what used to be. See [inside the chat history engine](#inside-the-chat-history-engine).
 - **Multiplayer.** Memory records who said what, so a shape can tell your preference from your friend's, and a chat note is shared with everyone in the chat on purpose.
 - **Scoped.** Personal, chat, and workspace memory are separate, and you choose where a note goes.
 - **Connected.** A chat in a workspace starts with background from your other chats in it, and a shape can search your other chats when you ask.
@@ -87,6 +88,50 @@ flowchart TB
 - **Ask the shape to restate results.** A shape's own long replies are kept in shortened form, and what it *did* during an action is remembered through what it *said* about it. "Summarize what you found in three lines" makes that part of the record.
 - **Keep one topic per sitting when you can.** Topics that run together in one stretch retrieve together. A pause, or a plain "new topic:", makes a cleaner boundary.
 - **If it seems to have forgotten, ask again.** The history lookup has a time budget and is skipped on a slow reply rather than holding it up. Asking again usually brings it back, and "check the earlier messages" makes the shape search on purpose.
+
+#### Inside the chat history engine
+
+Chat history is not a search box over old messages. Each chat gets its own sealed memory engine, and everything that goes in is processed twice.
+
+```mermaid
+flowchart TB
+  subgraph In["What goes in, per chat"]
+    direction LR
+    T["The transcript<br/>grouped into sessions"]
+    S["Each shape's summaries<br/>of this chat"]
+    Nn["The chat's saved notes"]
+  end
+  In --> P1["Pass 1: keep the text<br/>passages indexed by meaning, with dates<br/>and links back to the exact messages"]
+  In --> P2["Pass 2: extract memories<br/>standalone facts, each tied to<br/>the passage it came from"]
+  P2 --> G["Memory graph<br/>updates · extends · derives"]
+  Q["Your latest message"] --> H["One search over facts and passages<br/>only history older than short-term memory"]
+  P1 --> H
+  G --> H
+  H --> Out["Best matches, with dates<br/>a matched fact brings its source passage"]
+  Out --> Shape["Read as things that happened, not instructions<br/>recent messages win"]
+```
+
+**Pass 1 keeps the text.** The conversation is grouped into sessions, each session is split into passages, and every passage is indexed by meaning with its date and a link back to the exact messages. This is what lets a shape open the original message instead of paraphrasing it.
+
+**Pass 2 extracts memories.** From each session the engine writes short, standalone facts: "Sam is vegetarian", "the group picked May 12 for the trip", "Priya runs the budget". Pronouns and "that place" are resolved against the surrounding conversation, so each fact makes sense on its own, and each fact stays tied to the passage it came from as evidence. Extraction runs as soon as new messages arrive, not hours later.
+
+**Facts live in a memory graph, not a pile.** Each new fact is linked to the facts it touches:
+
+```mermaid
+flowchart LR
+  F1["March: Sam is vegetarian"] -- "updates" --> F2["June: Sam eats fish now<br/>what's true now"]
+  F1 -- "extends" --> F3["March: Sam's favourite<br/>is the Thai place"]
+  F2 --> F4["derived: pick somewhere with<br/>fish and vegetarian options<br/>marked as an inference"]
+  F3 --> F4
+```
+
+- A fact that **changes** an earlier one updates it: the newest statement wins for what's true now, and the older one stays as history, so the shape can say "Sam used to be vegetarian" rather than mixing the two.
+- A fact that **adds detail** extends an earlier one; both stay true.
+- The engine can **derive** a fact from several others. Derived facts are marked as inferences, so a shape treats them as a reasonable guess, not a quote.
+
+**One search covers three sources.** Your message is matched against facts and passages together, over the transcript, every shape's long-term summaries of the chat, and the chat's saved notes at once, so a note and the conversation that led to it come back side by side. A matched fact brings its source passage along as evidence. In Agent chats, asking about the past also runs an exact-word search over the messages themselves, next to the meaning search.
+
+**Tuned on real chats, not demos.** Before this shipped, every option was replayed against real conversations from shapes.inc with questions whose answers were known: how many matches to include, whether to re-rank them, whether to rewrite the query, whether facts alone or passages alone did better, and how to word the header the shape reads. The plain match over facts and passages, filtered to history older than short-term memory, was the most faithful to what was actually said, so that is what runs.
 
 ### Saved notes
 
