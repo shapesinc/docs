@@ -101,14 +101,14 @@ This is a docs-only change. It adds no AI calls, permanent prompt context, or ru
 New canonical guides:
 
 - `texting.mdx`: Messages texting (connect flow, sign up by text, chat routing commands, media, tapbacks, edits, numbered cards, iMessage groups, limits, STOP/START) and notification sign-in links. The in-app connect flow is not yet shown to every account, so the page says texting is rolling out; sign up by text and groups are available to everyone.
-- `phone-calls.mdx`: shape-placed calls in Agent chats (number verification, statuses, mid-call questions, saved details, recordings visible to chat members, Free $1.00/UTC day vs Premium pay-per-use at $0.22/min, 3- and 15-minute limits, recovery).
+- `phone-calls.mdx`: shape-placed calls in Agent chats (number verification, statuses, mid-call questions, saved details, recordings visible to chat members, Free 100 credits per UTC day vs Premium pay-per-use at 22 credits a minute, 3- and 15-minute limits, recovery).
 - `slack-and-hooks.mdx`: Slack import, two-way sync, and chat hooks. Slack OAuth, events, and outbound posts were not exercised live.
 
-Updated: buying (store checkout first, fixed way-to-pay order, Shop Pay, US\$5,000 wallet limit, Payments rows; payment-company names removed per the product copy rule), whole-chat memory in Agent chats, app actions and shapes made on demand, Agent shape search and **Make discoverable in search**, **Let shapes talk**, **Automatic threads**, **Shared access**, credit recovery and the free Agent engine below 100 credits, the private details card, parallel and paid coding runs, PR follow-ups, call transcripts for shapes, reactions, Translate and Ask moderator removal, desktop **Take photo**, notifications, What's new, features, agent guide, and navigation. The pre-existing broken `#finding-shapes-you-dont-own` anchor now has an explicit target.
+Updated: buying (store checkout first, fixed way-to-pay order, Shop Pay, the wallet, Payments rows; payment-company names removed per the product copy rule), whole-chat memory in Agent chats, app actions and shapes made on demand, Agent shape search and **Make discoverable in search**, **Let shapes talk**, **Automatic threads**, **Shared access**, credit recovery and the free Agent engine below 100 credits, the private details card, parallel and paid coding runs, PR follow-ups, call transcripts for shapes, reactions, Translate and Ask moderator removal, desktop **Take photo**, notifications, What's new, features, agent guide, and navigation. The pre-existing broken `#finding-shapes-you-dont-own` anchor now has an explicit target.
 
 Source: app `8fe075248` (production `v5.3.1327`) and shapes-chat `c134eea6d`. Product source and PR bodies establish these behaviors; no live call, text, purchase, Slack sync, or hook delivery was made for this docs change. Validation: `mint validate`, `mint broken-links --check-anchors` (no broken links), every changed route returns 200 in `mint dev`, no horizontal overflow at 375px on the new and buying/apps/modes pages, and the Markdown export renders the new guide.
 
-This is a docs-only change: no AI calls, prompts, or retrieval steps are added. Incremental recurring provider spend is **$0/day**.
+This is a docs-only change: no AI calls, prompts, or retrieval steps are added, so it adds no recurring provider spend. Prices and allowances in these guides are written in credits, not dollars.
 
 ## Verified public terminology (2026-10-05)
 
