@@ -7,6 +7,7 @@ keywords: ["memory", "memories", "Manage memories", "remember", "chat history", 
 Memory helps a shape keep track of what your group has shared: decisions, preferences, and details that matter later. Memory is selective, not a perfect record, so check important details and correct anything a shape gets wrong.
 
 ### How Memory Works
+
 A shape builds each reply from several kinds of memory. Most of them work on their own; a few you can steer.
 
 - **Short-term memory:** the most recent messages in the chat you're in. The shape reads them in full before every reply. How many it reads is set by the shape's owner, up to your plan's limit.
@@ -17,6 +18,8 @@ A shape builds each reply from several kinds of memory. Most of them work on the
 - **Thread memory:** an [Agent thread](/threads) works from its original request, a short summary of the chat up to that point, and the thread's own conversation. Long threads keep a running summary so earlier decisions and finished work stay in view.
 
 Memory is background for a reply, not permission. Recalling something from another chat never lets a shape change or send anything there, and a shape only ever recalls from chats you are in.
+
+Every layer except short-term memory is retrieved by how well it matches your latest message, not read in full. [Memory under the hood](/memory-under-the-hood) explains how each layer is retrieved and the habits that get you much better recall.
 
 <Info>
   **Chat chats** use short-term memory, long-term memories, and saved notes. Full chat history recall and workspace memory are part of **Agent** chats. See [Chat, Agent, and Auto](/chat-and-agent-modes).
@@ -34,6 +37,8 @@ In Agent chats, a shape doesn't only wait for memory to come to it. When a quest
 Tell the shape where to look when you can. "Check the dev chat" gets a better answer than "do you remember", because the first search is aimed at the right place.
 
 ### Get more out of memory
+
+The short version is below. For the mechanics behind each tip, and more of them, see [Memory under the hood](/memory-under-the-hood).
 #### In one chat
 
 - **Refer back naturally.** "Like we said last week" or "the place Sam suggested" is enough; the shape pulls the related history. You don't have to re-explain earlier context.
@@ -61,6 +66,7 @@ Tell the shape where to look when you can. "Check the dev chat" gets a better an
 - **Change the note when the plan changes.** Editing a memory doesn't correct an earlier reply or tell everyone that the plan changed. Post the change in the chat too.
 
 ### Ask a shape to remember something
+
 Say what you want remembered, for example "Remember that Sam is vegetarian and we're booking for six." The shape saves it and confirms only once it's saved. Its reply says where the note went: **Personal**, a chat, or a workspace. To choose the destination, say it: "remember this for the workspace" or "remember this just for me". In a group chat, notes go to the chat unless you say otherwise.
 
 You can also type `/remember` followed by the note to save it to the chat's memory.
@@ -74,6 +80,7 @@ For a recurring dinner, each person can share their availability and food prefer
 Before planning the next dinner, check what has changed. Someone allowed to manage that shared note can edit it, and the updated note applies to everyone included in it. Post the change in the conversation too: editing a memory does not correct an earlier reply or tell everyone that the plan changed. Use the note as context for the next discussion, not proof that an old decision still holds.
 
 ### Memory Commands
+
 Type these in the composer:
 
 | Command | What it does |
@@ -90,6 +97,7 @@ Type these in the composer:
 See [commands and shortcuts](/commands-and-shortcuts) for the full list.
 
 ### Manage Memories
+
 Open **Settings** → **Memories** to see the **Memories** page. From a chat, select **More actions** (⋯) in the chat header → **Manage memories**, open the chat's **Settings** → **Manage memories**, or type `/memory`. **Back to chat** returns you to the conversation.
 
 The **Memories** page has four views:
@@ -108,6 +116,7 @@ Deleting a memory doesn't change messages or replies that already used it, and n
 </Info>
 
 ### Types of Conversations
+
 - **Chats:** chats you can invite more people and shapes to.
 - **DMs:** private one-to-one conversations, such as you and a shape.
 
