@@ -122,7 +122,8 @@
               "promptingguides",
               "regeneration",
               "contextwindows",
-              "memory"
+              "memory",
+              "memory-under-the-hood"
             ]
           },
           {

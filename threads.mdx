@@ -45,6 +45,8 @@ Chat owners can open the chat's **Settings** → **AI settings** → **General S
 
 For an Agent thread, the shape uses the original request, a bounded summary of the main chat up to that request, and the thread's own conversation. Later main-chat messages and other threads are not automatically added to that conversation context.
 
+In a long thread, the shape keeps a running summary of the thread so earlier decisions and finished work stay in view after the messages themselves leave short-term memory. The original messages are kept, and the shape can go back to them when it needs exact wording or the details of an earlier result, without redoing the work.
+
 Bring a new decision or changed requirement into the thread when it matters. Relevant saved [memories](/memory) and permitted recall can still help; this context is not a complete copy of every conversation.
 
 ## Access and limits
