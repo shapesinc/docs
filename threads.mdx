@@ -7,7 +7,7 @@ A thread keeps replies about one message together inside the same chat. Use it w
 
 ## Work in a thread
 
-In Agent chats, a shape can start a thread for focused work, such as comparing options and choosing together, reviewing a document, or investigating code. Your request is the thread's original message. Quick answers and ordinary conversation can stay in the main chat.
+In Agent chats, ask a shape to work in a thread, or start one yourself with `/thread`. If a chat owner turns on [Automatic threads](#let-shapes-start-threads), shapes also start threads on their own for focused work, such as comparing options and choosing together, reviewing a document, or investigating code. Your request is the thread's original message. Quick answers and ordinary conversation stay in the main chat.
 
 You can ask directly:
 
@@ -26,6 +26,16 @@ Tell the shape if you want the work kept in the main chat or moved to a new chat
 In a family trip chat, start a thread for choosing where to stay. One person can add arrival dates, another the budget, and another accessibility or room requirements. A shape can compare the options using those details while the main chat continues with other plans.
 
 Keep corrections and follow-up questions in that thread so the shape has them when it replies. When people agree on an option, post the decision in the main chat or ask the shape to send that specific update there. The thread's replies stay with the discussion; starting a thread does not notify everyone of the final decision or create a separate audience.
+
+## Let shapes start threads
+
+Chat owners can let shapes start threads by themselves in Agent mode:
+
+1. Open the chat's **Settings** → **AI settings**.
+2. Under **Threads**, turn on **Automatic threads**.
+3. Optionally edit **When to start a thread** to tell shapes what deserves its own thread, then select **Save instructions**. **Use default** restores the original text. Changes apply to everyone in the chat.
+
+It's off by default. Asking for a thread, `/thread`, and `/btw` work either way. Coding work can run in a thread while other work continues in the main chat; see [coding limits](/faq/how-do-free-coding-agent-limits-work).
 
 ## Keep shape replies in threads
 

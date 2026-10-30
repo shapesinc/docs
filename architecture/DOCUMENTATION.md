@@ -94,6 +94,22 @@ The public docs MCP endpoint exposes search and filesystem tools. A read-only MC
 
 This is a docs-only change. It adds no AI calls, permanent prompt context, or runtime retrieval steps; incremental recurring provider spend is **$0/day**. The live walkthrough used a one-off shape response, separate from recurring production cost.
 
+## Get the most out of shapes.inc and October 29–30 launches (2026-10-30)
+
+`get-the-most-out-of-shapes-inc.mdx` is the practical entry point: five-minute setup, ready-to-send requests for what people actually do, new features, power moves, habits, free allowances, and recovery. Its use cases and ordering come from an internal, aggregate review of October usage. Public pages carry no usage numbers; the study and its method are kept in the team's private handoff, not in this repository.
+
+New canonical guides:
+
+- `texting.mdx`: Messages texting (connect flow, sign up by text, chat routing commands, media, tapbacks, edits, numbered cards, iMessage groups, limits, STOP/START) and notification sign-in links. The in-app connect flow is not yet shown to every account, so the page says texting is rolling out; sign up by text and groups are available to everyone.
+- `phone-calls.mdx`: shape-placed calls in Agent chats (number verification, statuses, mid-call questions, saved details, recordings visible to chat members, Free 100 credits per UTC day vs Premium pay-per-use at 22 credits a minute, 3- and 15-minute limits, recovery).
+- `slack-and-hooks.mdx`: Slack import, two-way sync, and chat hooks. Slack OAuth, events, and outbound posts were not exercised live.
+
+Updated: buying (store checkout first, fixed way-to-pay order, Shop Pay, the wallet, Payments rows; payment-company names removed per the product copy rule), whole-chat memory in Agent chats, app actions and shapes made on demand, Agent shape search and **Make discoverable in search**, **Let shapes talk**, **Automatic threads**, **Shared access**, credit recovery and the free Agent engine below 100 credits, the private details card, parallel and paid coding runs, PR follow-ups, call transcripts for shapes, reactions, Translate and Ask moderator removal, desktop **Take photo**, notifications, What's new, features, agent guide, and navigation. The pre-existing broken `#finding-shapes-you-dont-own` anchor now has an explicit target.
+
+Source: app `8fe075248` (production `v5.3.1327`) and shapes-chat `c134eea6d`. Product source and PR bodies establish these behaviors; no live call, text, purchase, Slack sync, or hook delivery was made for this docs change. Validation: `mint validate`, `mint broken-links --check-anchors` (no broken links), every changed route returns 200 in `mint dev`, no horizontal overflow at 375px on the new and buying/apps/modes pages, and the Markdown export renders the new guide.
+
+This is a docs-only change: no AI calls, prompts, or retrieval steps are added, so it adds no recurring provider spend. Prices and allowances in these guides are written in credits, not dollars.
+
 ## Verified public terminology (2026-10-05)
 
 Checked against the deployed frontend source (`shapes-chat` `main`) after the October 4 release, plus the signed-out sign-in and agent pages on `talk.shapes.inc`. The in-app **Settings** → **What's new** release notes list everything that moved.
