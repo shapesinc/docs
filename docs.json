@@ -36,6 +36,7 @@
               "introduction",
               "create-a-chat",
               "features",
+              "get-the-most-out-of-shapes-inc",
               "docs-for-agents",
               "whats-new",
               "ai-group-chats",
@@ -66,6 +67,7 @@
               "shapeskills",
               "connected-apps",
               "websites-and-purchases",
+              "phone-calls",
               "saved-details",
               "connect-your-computer",
               "tasks",
@@ -90,8 +92,10 @@
               "completed",
               "messageactionsmenu",
               "notifications",
+              "texting",
               "moderation",
               "ai-agents",
+              "slack-and-hooks",
               "friends"
             ]
           },

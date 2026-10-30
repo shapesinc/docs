@@ -32,6 +32,14 @@ The model allowance pays for the model processing the task and generating respon
 
 The limits are **per user**, shared across that user's chats and actions. Each person has their own allowances, even in a group chat. They reset at **00:00 UTC** each day, which is **21:00 in São Paulo (UTC−3)**.
 
+## Run coding work in parallel
+
+You can run one coding task in the main chat and another in a [thread](/threads) at the same time, for example Claude Code on a bug in the main chat and Codex on a new page in a thread. A second run in the same thread, or in the main chat, waits its turn. Parallel runs share your daily allowances.
+
+## Paid coding runs
+
+With enough credits, coding runs aren't held to the free daily limits. A run continues until the work is done, your credits run out, or it reaches its time or request limit. Whenever a run stops, the chat gets a final notice saying why; nothing retries automatically.
+
 ## Why can a free run be blocked before I use both starts?
 
 All three limits must allow the run. For example, if you use the computer allowance on Run Code and Browser, a coding run can be blocked even if you have used neither free coding start nor any of the free model allowance.
