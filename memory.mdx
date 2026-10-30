@@ -10,6 +10,22 @@ Memory helps a shape keep track of what your group has shared: decisions, prefer
 
 A shape builds each reply from several kinds of memory. Most of them work on their own; a few you can steer.
 
+```mermaid
+flowchart LR
+  M["Your message"] --> Q["Matched against<br/>your latest message"]
+  Q --> N["Saved notes"]
+  Q --> L["Long-term memories"]
+  Q --> H["Chat history<br/>Agent chats"]
+  Q --> W["Workspace memory<br/>Agent chats"]
+  I["Instructions"] --> P["What the shape reads"]
+  S["Short-term memory<br/>recent messages"] --> P
+  N --> P
+  L --> P
+  H --> P
+  W --> P
+  P --> R["Reply"]
+```
+
 - **Short-term memory:** the most recent messages in the chat you're in. The shape reads them in full before every reply. How many it reads is set by the shape's owner, up to your plan's limit.
 - **Chat history (Agent chats):** everything that has happened in this chat. When you send a message, the shape finds the moments in the chat's history that relate to it (names, decisions, promises, running jokes, details) and reads them with the dates they were said. This covers messages that left short-term memory long ago, and messages from before the shape joined the chat. Recent messages win when something has changed since. Chat history is per chat: it never looks into other chats.
 - **Long-term memories:** summaries a shape writes about its conversations as they happen, on a schedule its owner sets. Relevant summaries come back in later replies in that chat. You can read and edit them on the **Memories** page.

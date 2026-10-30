@@ -7,7 +7,34 @@ sidebarTitle: "Memory under the hood"
 
 The [Memory Guide](/memory) tells you what a shape remembers. This page tells you how, in enough detail to work with it. Every layer below is retrieved, not read in full, and the thing it is retrieved *for* is almost always your latest message. Once you know that, most of the tips write themselves.
 
+## What's different about it
+
+Most assistants remember a conversation as a sliding window of recent messages plus a list of facts about you. A shape's memory is built for a chat that several people and several shapes share over months:
+
+- **The whole chat, not a window.** In Agent chats, every message stays retrievable, by meaning, with the date it was said, including messages from before the shape joined.
+- **Multiplayer.** Memory records who said what, so a shape can tell your preference from your friend's, and a chat note is shared with everyone in the chat on purpose.
+- **Scoped.** Personal, chat, and workspace memory are separate, and you choose where a note goes.
+- **Connected.** A chat in a workspace starts with background from your other chats in it, and a shape can search your other chats when you ask.
+- **Verifiable.** Asked about the past, a shape finds the moment and opens the original messages before it answers, instead of guessing from a summary.
+- **Bounded.** Nothing is recalled from a chat you aren't in, and recall never grants permission to act anywhere.
+
 ## How a reply is assembled
+
+```mermaid
+flowchart LR
+  M["Your message"] --> Q["Matched against<br/>your latest message"]
+  Q --> N["Saved notes<br/>personal · chat · workspace"]
+  Q --> L["Long-term memories<br/>this shape's summaries"]
+  Q --> H["Chat history<br/>excerpts with dates"]
+  Q --> W["Workspace memory<br/>your other chats here"]
+  I["Instructions<br/>shape · chat · your preset"] --> P["What the shape reads"]
+  S["Short-term memory<br/>recent messages, in full"] --> P
+  N --> P
+  L --> P
+  H --> P
+  W --> P
+  P --> E["AI Engine"] --> R["Reply"]
+```
 
 When you send a message, the shape builds its reply from these pieces, in roughly this order:
 
@@ -28,6 +55,24 @@ Steps 3 to 6 run at the same time, each with its own small time budget, and a la
 
 ### Chat history
 
+```mermaid
+flowchart TB
+  subgraph Keep["Keeping the chat"]
+    direction LR
+    C["Every message in the chat<br/>including before the shape joined"] --> G["Grouped into sessions<br/>stretches with no long gap"] --> X["Indexed by meaning<br/>new messages join within minutes"]
+  end
+  subgraph Recall["Every reply, Agent chats"]
+    direction LR
+    Y["Your latest message"] --> F["Find the matching moments<br/>older than short-term memory"] --> Z["Excerpts with dates<br/>things that really happened"]
+  end
+  subgraph Ask["When you ask about the past"]
+    direction LR
+    A["What did we decide in March?"] --> B["Search by exact words<br/>and by meaning"] --> O["Open the original messages"] --> V["Answer with specifics"]
+  end
+  X --> F
+  X --> B
+```
+
 **What it is.** In Agent chats, the whole conversation is kept searchable: the first time a shape replies in a chat, the chat's history is loaded (tens of thousands of messages in a very long chat), and new messages join it within minutes of being sent. The history is grouped into sessions, stretches of conversation with no long gap, so a decision and the discussion around it are stored together.
 
 **How it is retrieved.** Your message is matched against the history by meaning, so "the hotel we liked" finds the conversation about the hotel even if nobody wrote "liked". The shape receives the best-matching excerpts, each with its date, and is told to treat them as things that really happened, not as instructions. Only history older than short-term memory is retrieved; recent messages are already there in full.
@@ -45,6 +90,14 @@ Steps 3 to 6 run at the same time, each with its own small time budget, and a la
 
 ### Saved notes
 
+```mermaid
+flowchart LR
+  PN["Personal note<br/>only you can see or edit it"] --> PC["Your private chats with shapes<br/>no other people, no workspace"]
+  CN["Chat note<br/>shared with the chat"] --> OC["That chat"]
+  WN["Workspace note<br/>shared with the workspace"] --> WC["Every chat in the workspace"]
+  LT["Shape's long-term memories<br/>its summaries of a chat"] --> LC["That chat, for that shape"]
+```
+
 **What they are.** Notes you or a shape saved on purpose, in three scopes. Personal notes apply in your private chats with shapes, where there are no other people and no workspace. Chat notes apply in that chat. Workspace notes apply in every chat in the workspace.
 
 **How they are retrieved.** The notes that best match your message are included, a handful at a time. Scopes are checked together, workspace first, then chat, then personal. Notes are exact text: the shape reads your wording, not a paraphrase.
@@ -58,6 +111,14 @@ Steps 3 to 6 run at the same time, each with its own small time budget, and a la
 - **Say where it goes.** "Remember this for the workspace" versus "remember this just for me". In a group chat, notes go to the chat unless you say otherwise.
 
 ### Long-term memories
+
+```mermaid
+flowchart LR
+  Conv["Conversation"] -- "every so often, or /compact" --> Sum["Summary<br/>who said what, what was decided"]
+  Sum --> Store["Stored for this shape<br/>in this chat"]
+  Store -- "matches your message and<br/>clears the owner's strictness" --> Next["Next replies"]
+  You["You edit or delete it<br/>on the Memories page"] --> Store
+```
 
 **What they are.** Every so often, each shape writes a summary of the latest stretch of conversation in a chat: who said what, what was decided, what mattered. The summaries are written from the conversation text, not from the details of actions, with one exception: a purchase is recorded only when it actually went through.
 
@@ -77,6 +138,19 @@ Steps 3 to 6 run at the same time, each with its own small time budget, and a la
 
 ### Workspace memory
 
+```mermaid
+flowchart LR
+  subgraph WS["One workspace"]
+    A["Planning chat<br/>you're in it"]
+    B["Tickets chat<br/>you're in it"]
+    Cc["Design chat<br/>you're not in it"]
+    D["Your new chat"]
+  end
+  A -- "relevant summaries,<br/>labelled with the chat" --> D
+  B -- "relevant summaries,<br/>labelled with the chat" --> D
+  Cc -. "nothing" .-> D
+```
+
 **What it is.** In a workspace, an Agent chat also receives a few summaries from the other chats in that workspace that you are a member of, matched to your message, each labelled with the chat it came from. Only chats you are in count: a workspace does not open its other chats to you or to the shape.
 
 **Tips**
@@ -86,6 +160,15 @@ Steps 3 to 6 run at the same time, each with its own small time budget, and a la
 - **Put team rules in workspace notes.** A convention that applies across chats belongs in a workspace note, not a chat note in the chat where it happened to come up.
 
 ### Threads
+
+```mermaid
+flowchart LR
+  MC["Main chat<br/>up to the request"] -- "short summary" --> T["What the thread works from"]
+  RQ["Original request<br/>kept word for word"] --> T
+  TC["The thread's own conversation"] --> T
+  T --> RS["Running summary<br/>as the thread grows"]
+  RS -. "exact wording when needed" .-> OM["Original messages"]
+```
 
 **What a thread works from.** Its original request, kept word for word; a short summary of the main chat up to that point; and the thread's own conversation. As a long thread grows, a running summary keeps earlier decisions and finished work in view, and the shape can go back to the original messages for exact wording or the details of an earlier result without redoing it.
 
