@@ -195,6 +195,12 @@ The FAQ is the canonical troubleshooting source consumed by documentation search
 
 The fix replaces inaccurate/ambiguous retrieved prose without adding an AI call, classifier, permanent prompt, or retrieval step. The combined changed public text is shorter; expected incremental recurring inference spend is $0/day. Search-index rollout follows the normal documentation deployment; a merged PR alone is not evidence that an already-running support conversation has refreshed its retrieved context.
 
+## Reddit connector unavailable (November 1, 2026)
+
+Reddit was removed from Connected apps in `app` (`connected_apps_directory.UNAVAILABLE`, shapesinc/app#5849). Composio's shared Reddit OAuth app is no longer a valid Reddit app (Reddit's sign-in page answers "invalid client id"; none of the 252 Reddit sign-ins started since April 2026 completed), and Reddit announced on September 30, 2026 that it is closing the public Data API: no new access requests after October 31, 2026, removals for unregistered apps from January 12, 2027, closure in March 2027. There is no Reddit app of ours to use instead. Reddit Ads is a separate API and stays.
+
+The support path is `faq/why-cant-i-connect-reddit.mdx`, linked from `faq.mdx`, `docs.json` and the Troubleshooting section of `connected-apps.mdx`, so the Help me shape can explain the removal and point people to Reddit's decision. It states Reddit's timeline and cites press coverage; it is an explanation of an unavailable feature, not a Reddit community promotion (see the October 22 note). The old "Connect Reddit" card now answers "Reddit can't be connected anymore." No AI calls or runtime behavior change in this repository: $0/day.
+
 ## Phone calls free allowance (2026-11-01)
 
 The free daily phone allowance is 66 credits, exactly three minutes of calling at 22 credits a minute (it was 100 credits, about four minutes). `phone-calls.mdx` "Cost and limits" and the "What's free" table in `get-the-most-out-of-shapes-inc.mdx` carry the new figure; the Premium column, the 3- and 15-minute call lengths and the shortened-call rule are unchanged. Source: shapesinc/app#5857 (`_free_daily_micro_usd` default $0.66). Publish after that PR deploys so the page never promises more than the product gives; the Premium comparison in the app reads the figure live from `usage_limits.phone_calls.free_daily_usd`. Docs-only change, no AI calls, $0/day.

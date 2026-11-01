@@ -1,0 +1,34 @@
+---
+title: "Why can't I connect Reddit?"
+description: "Reddit left Connected apps because Reddit is closing its public Data API. What Reddit changed, what still works, and what an old Connect Reddit card does now."
+keywords: ["Reddit", "connected apps", "invalid client id", "Reddit API", "Reddit Ads", "connect Reddit"]
+---
+
+Reddit is no longer offered in **Settings** → **Connected apps**, and shapes don't ask you to connect it. This follows Reddit's decision to close its public Data API; it is not a temporary outage, and there is nothing to retry.
+
+## What Reddit changed
+
+On September 30, 2026, Reddit announced that it is closing the public Data API, the interface apps like shapes.inc used to read and post on Reddit on your behalf:
+
+- **October 31, 2026:** Reddit stopped accepting new requests for public API access.
+- **January 12, 2027:** Reddit begins removing access for apps that haven't registered with its Developer Platform.
+- **March 2027:** Remaining public Data API access ends.
+
+The shared Reddit sign-in that shapes relied on stopped working ahead of this: Reddit's sign-in page answered **invalid client id**, so no connection could finish. Because Reddit no longer issues new app access, it can't be replaced. Rather than leave a Connect button that can't complete, Reddit was removed from Connected apps on November 1, 2026.
+
+## What still works
+
+- **Reddit Ads** is a separate Reddit API and still connects from Connected apps.
+- You can still paste a Reddit link in a chat for the others to open.
+
+## If you see an old Connect Reddit card
+
+Selecting **Connect** on a card or link from before this change shows **Reddit can't be connected anymore.** You can ignore the card; the shape can't finish that part of the task through Reddit.
+
+Reddit's timeline is covered in [TechRepublic](https://www.techrepublic.com/article/news-reddit-rss-public-api-shutdown/) and [Decrypt](https://decrypt.co/379892/reddit-killing-rss-feeds-and-public-api-access-to-fight-ai-scrapers).
+
+<Tip>
+  Need more help? Ask in our [support chat](https://talk.shapes.inc/help).
+</Tip>
+
+[Back to FAQ](/faq)
