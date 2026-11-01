@@ -89,7 +89,7 @@
               "threads",
               "branch-off",
               "sidebar-organization",
-              "completed",
+              "archive",
               "messageactionsmenu",
               "notifications",
               "texting",
@@ -252,5 +252,12 @@
         ]
       }
     ]
-  }
+  },
+  "redirects": [
+    {
+      "source": "/completed",
+      "destination": "/archive",
+      "permanent": true
+    }
+  ]
 }
