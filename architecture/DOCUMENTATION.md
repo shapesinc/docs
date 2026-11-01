@@ -53,7 +53,7 @@ The new feature index links canonical guides for threads, Saved details, browser
 
 The source audit used `shapes-chat` main at `f6ae5f33d6` and `app` master at `881d29d71`, including the October 15–26 merged feature changes. Key implementation references are `CHAT_THREADS.md`, `ACCOUNT_AUTOFILL.md`, `WORKSHOP_BROWSER.md`, the travel/payment services, `genui/polls.py`, `genui/registry.py`, `shared_activity_renderer.py`, shared voice billing, agent authorization, and the current settings/editor components. Source verification establishes the documented implementation; it does not establish that a live payment, travel booking, or provider-failure scenario was exercised in this docs-only task.
 
-Current account navigation is **General**, **Appearance**, **Notifications & privacy**; **Personalization**, **Saved details**, **Memories**, **Custom emoji**; **Your shapes**, **Connected apps**, **Tasks**, **Completed**, **Computers**, **Your AI agents**; account controls; and **Help**. **Streaming** and **Working steps** are in General → More preferences and default off. The companion frontend PR adds **Docs** under Help and to settings search. Older dated verification notes below are historical snapshots, not the current settings inventory.
+Current account navigation is **General**, **Appearance**, **Notifications & privacy**; **Personalization**, **Saved details**, **Memories**, **Custom emoji**; **Your shapes**, **Connected apps**, **Tasks**, **Archive**, **Computers**, **Your AI agents**; account controls; and **Help**. **Streaming** and **Working steps** are in General → More preferences and default off. The companion frontend PR adds **Docs** under Help and to settings search. Older dated verification notes below are historical snapshots, not the current settings inventory.
 
 Fandom and fiction showcase pages, the old preset showcase, and obsolete call-game/related-group guidance are retained in dated MDX comments inside `<Visibility for="humans">` blocks. Plain MDX comments are invisible in the browser but Mintlify's Markdown transform retains them; the visibility wrapper excludes the archive from agent Markdown as well. Retired route landing pages are hidden from navigation and marked `noindex`, with original routes and compatibility anchors preserved. They point readers to current guides. Direct shape links remain supported; public discovery is not recommended.
 
@@ -68,7 +68,7 @@ Docs #31 and Talk #5869 were admin-merged after explicit user approval. The depl
 This follow-up checks current product source against deployed controls. Source references: Talk `95afb0caa45c8ede89affffe627c5e79747f2dce` and app `00cd926f718285f73d4d284770b7678484b7df0b`; the production API reports release `v5.3.1189`, which maps to that backend revision. Live browser checks confirmed Settings → General → More preferences, Premium, Your shapes, AI settings, Thread-only replies, Keep the chosen AI Engine, `/thread`, `/btw`, Media & Files, the long-paste choices, and the listed Agent skills. These are documentation checks, not successful payment, external-account sharing, or provider execution tests.
 
 - `files-and-attachments.mdx` is the canonical upload, reading, preview/download, and recovery guide. Its 100MB limit and type constraints come from `lib/file-upload-constants.ts`, the upload route, attachment rendering/forwarding helpers, and backend file ingestion. Avoid promising complete file reading or equating a chat export with an attachment backup.
-- `tasks.mdx` records the deployed scheduler's timing boundaries, adaptive checks, quiet-watch notices, and Completed/reopen behavior. `connected-apps.mdx` distinguishes specific authorized actions, supported shared app connections, personal connections, and broad private watches. A second confirmation is not guaranteed for an already explicit request; payment approval remains a separate flow.
+- `tasks.mdx` records the deployed scheduler's timing boundaries, adaptive checks, quiet-watch notices, and Archive/restore behavior. `connected-apps.mdx` distinguishes specific authorized actions, supported shared app connections, personal connections, and broad private watches. A second confirmation is not guaranteed for an already explicit request; payment approval remains a separate flow.
 - The old CSS whole-app selector reference cannot affect native profile controls. Custom CSS is scoped to enabled custom HTML. Keep the obsolete examples in dated human-only comment archives, including their existing anchors, without exposing them in Markdown exports.
 - Navigation puts starting a chat near the entry, chat features in Chats & Collaboration, and skills with actions. `features.mdx` and `docs-for-agents.mdx` link the canonical guides. The logged-out homepage wording and product focus are unchanged.
 
@@ -117,9 +117,9 @@ Checked against the deployed frontend source (`shapes-chat` `main`) after the Oc
 - **New Chat** opens a **New chat** picker with **Quick chat** and the **Shapes** and **People** tabs, then **Continue**. The header ⋯ → **New chat** dialog uses **Next** → **Chat details** → **Create Chat**. There is no **AI** tab.
 - Chats are **Chat** or **Agent**; **Auto** chooses per message. The account default is the **New chats** setting on the Settings page; owners change a chat's mode in its **Settings** → **AI Configurations**. One-to-one conversations are **DMs**. The shapes.inc engine is **Formless**.
 - Selecting a chat's name opens its **Settings** panel: **AI Configurations**, **Engines**, **Chat Appearance**, **Profile & credits**, **Manage memories**, **Participants**, **Notifications**, **Moderation**, **Pinned Messages**, **Media & Files**, **Leave Chat**, and **Delete chat**. "Chat Menu" is no longer a visible label.
-- The chat header's **More actions** menu no longer has Members, Invite, Share, or Delete. Group chats have an **Invite** button in the header; the sidebar ⋯ menu has **Invite**, **Share**, **Mark completed**, and **Delete**.
-- Account settings: **Personalization** (preset, Location, Credits, Chats & Shapes, Profiles), **My Shapes**, **Connected apps**, **Computers**, **Manage memories**, **Tasks**, **Completed**, **Notifications & privacy**, and the **Support** group (**What's new**, **Feedback**, **Support Chat**, **For AI agents**).
-- Retired: Rewards, Personas (now **Profiles**), Archive (now **Completed**), message ratings, public Shape discovery in search, and the Shape reach-outs and Streaming settings toggles.
+- The chat header's **More actions** menu no longer has Members, Invite, Share, or Delete. Group chats have an **Invite** button in the header; the sidebar ⋯ menu has **Invite**, **Share**, **Archive**, and **Delete**.
+- Account settings: **Personalization** (preset, Location, Credits, Chats & Shapes, Profiles), **My Shapes**, **Connected apps**, **Computers**, **Manage memories**, **Tasks**, **Archive**, **Notifications & privacy**, and the **Support** group (**What's new**, **Feedback**, **Support Chat**, **For AI agents**).
+- Retired: Rewards, Personas (now **Profiles**), message ratings, public Shape discovery in search, and the Shape reach-outs and Streaming settings toggles.
 
 Keep public labels current on future edits. Legacy file paths and hidden anchor aliases may remain to avoid breaking links; they are not reader-facing terminology.
 
@@ -143,7 +143,7 @@ Screenshots in `images/october-2026/` are actual captures of the signed-in deplo
 | `new-chat-mode.jpg` | Chat, Agent, and Auto |
 | `more-preferences.jpg` | Settings and Personalization |
 | `credit-preferences.jpg` | Stop new chats from using credits FAQ |
-| `completed-preferences.jpg` | Completed chats |
+| `completed-preferences.jpg` | Archive (still shows the old **Mark completed when inactive** label; replace with a new capture) |
 | `agent-connector.jpg` | Invite AI agents |
 
 ## Hosted coding-agent allowances (2026-10-23)
