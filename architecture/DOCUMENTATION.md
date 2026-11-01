@@ -143,7 +143,7 @@ Screenshots in `images/october-2026/` are actual captures of the signed-in deplo
 | `new-chat-mode.jpg` | Chat, Agent, and Auto |
 | `more-preferences.jpg` | Settings and Personalization |
 | `credit-preferences.jpg` | Stop new chats from using credits FAQ |
-| `completed-preferences.jpg` | Archive (still shows the old **Mark completed when inactive** label; replace with a new capture) |
+| `archive-preferences-20261101.jpg` | Archive (Archive when inactive and Days of inactivity) |
 | `agent-connector.jpg` | Invite AI agents |
 
 ## Hosted coding-agent allowances (2026-10-23)
