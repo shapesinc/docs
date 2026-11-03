@@ -35,6 +35,10 @@ flowchart LR
 
 Memory is background for a reply, not permission. Recalling something from another chat never lets a shape change or send anything there, and a shape only ever recalls from chats you are in.
 
+<a id="memories-are-dated" />
+
+Memory is also a record of what was true at the time, not a fresh check. In Agent chats, a shape treats memories and what it reads in other chats as dated: it says where and when something was said ("on Tuesday the trip chat was still waiting on the hotel") instead of repeating it as today's status. When the current state matters, ask it to check again. Summaries of work that was still in progress are kept as unfinished at that point, not as the outcome.
+
 Every layer except short-term memory is retrieved by how well it matches your latest message, not read in full. [Memory under the hood](/memory-under-the-hood) explains how each layer is retrieved and the habits that get you much better recall.
 
 <Info>
@@ -159,7 +163,7 @@ Here are the key settings:
 - **Memory → Long-term memory:** controls whether the shape uses long-term memory.
 - **Write memories automatically:** controls automatic memory creation. When enabled, **How often** sets how often new memories are made.
 - **Recall → Memories per reply** and **Match strictness:** how many memories can come up in a reply, and how relevant they need to be.
-- **Memory engine**, **Fallback engine**, and **Memory instructions:** used to write memories.
+- **Memory engine** and **Memory instructions:** used to write memories. If the memory engine fails, memories are written with the same [free engine every shape recovers on](/aienginecheatsheet#fallback-engine).
   - Looking for an update to your **Memory instructions**? Here's a sample of an updated preset you can try:
 
     <Expandable title="Content">

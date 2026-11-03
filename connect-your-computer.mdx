@@ -1,7 +1,7 @@
 ---
 title: "Connect Your Computer"
-description: "Work with your people on files and code that live on a computer. Connect your own machine, choose personal or shared access, and understand local agents, hosted coding, and Code Projects."
-keywords: ["connect your computer", "Computers settings", "Agent chats", "Codex", "Claude Code", "Code Projects", "shared computer access", "multiplayer assistant"]
+description: "Work with your people on files and code that live on a computer. Connect your own machine or use the Mac app, choose personal or shared access, ask about the computer itself, and understand local agents, hosted coding, and Code Projects."
+keywords: ["connect your computer", "Computers settings", "Mac app", "shapes.inc for Mac", "Connect this Mac", "Agent chats", "Codex", "Claude Code", "Code Projects", "shared computer access", "multiplayer assistant"]
 sidebarTitle: "Connect Your Computer"
 ---
 
@@ -21,7 +21,49 @@ You stay in control. You set your computer up once, allow it one chat at a time,
 
 Name the computer or project in your request, especially when you have both personal and shared access. For example, “Review the project on Maya's shared computer using her local Codex.” A shape should report an unavailable computer or agent rather than silently moving the task somewhere else.
 
+## Use the Mac app
+
+The shapes.inc app for Mac can connect the Mac it runs on, with no install command. Connecting is optional: you can use the app just for your chats and connect later.
+
+### Install the app
+
+1. Go to [shapes.inc/downloads](https://shapes.inc/downloads) and select **Download for macOS**. The app needs macOS 13.5 or later.
+2. Open the downloaded file and drag shapes.inc to the **Applications** folder.
+3. Open shapes.inc from Applications.
+
+If you open the app straight from the downloaded file, it asks you to **Move shapes.inc to Applications** first, because updates don't work from there. Select **Show in Finder** to move it, or **Open without moving** to use it where it is.
+
+### Sign in through your browser
+
+On first launch, a **Set up shapes.inc** window takes you through setup one step at a time.
+
+1. On **Welcome to shapes.inc**, select **Continue with** your browser. To pick a different one, select **Use another browser**, or choose **Copy sign-in link** and open it in any browser.
+2. In the browser, sign in or create an account if you need to. On **Sign in to shapes.inc for Mac**, select **Continue as** your name. Only continue if you started this sign-in from the app.
+3. The app comes back on its own, signed in.
+
+If sign-in doesn't finish, select **Try again** in the app. To sign in later, choose **shapes.inc** → **Sign In…** in the menu bar.
+
+### Connect this Mac
+
+After you sign in, setup offers **Connect this Mac**. If you chose **Not now**, open it any time from **shapes.inc** → **Computer connection…** in the menu bar, or from **Settings** → **Computers** → **This Mac**.
+
+1. Select **Connect this Mac**. While it's connecting, you can select **Cancel**; quitting the app during setup also cancels it.
+2. On **Turn on permissions**, select **Allow** or **Open Settings** for each permission you want to give: **Keyboard and mouse** and **Screen recording**, plus the optional **Protected files** and **App control**. macOS asks once for each, and the list updates on its own as you allow them.
+3. Select **Continue**, then **Start chatting**.
+
+Connecting doesn't give any chat access to your Mac. [Allow each chat](#allow-a-chat-to-use-it) that should use it, the same as any computer. **Settings** → **Computers** shows it as **This Mac**, with each permission marked **Allowed** or with **Open System Settings**.
+
+This Mac **stays connected when you quit shapes.inc**: closing the window or quitting the app keeps it available to the chats you allowed, as long as it's on and online. When you reopen the app, the connection can pause for a moment while it checks your account.
+
+To stop, select **Disconnect this Mac** in **Settings** → **Computers** or in **shapes.inc** → **Computer connection…**. A disconnected Mac stays on your account; select **Reconnect this Mac** to use it again. **Remove computer** removes it from your account and stops access in every chat.
+
+### Update the app
+
+Choose **shapes.inc** → **Check for Updates…**. The update installs, the app reopens, and you stay signed in. If your copy of the app doesn't have **Check for Updates…**, download the current version from [shapes.inc/downloads](https://shapes.inc/downloads) once and replace the old one in Applications.
+
 ## Set up your computer once
+
+On a Mac, you can [use the Mac app](#use-the-mac-app) instead. On Windows, Linux, or a Mac without the app, use the install command:
 
 1. Open **Settings** → **Computers**.
 2. Under **Add a computer once**, select **Copy install command**.
@@ -57,6 +99,16 @@ To stop, open **Connect your computer** again and select **Remove chat access**,
 When a task on your computer needs a permission or an answer, a **Computer task** card in the chat asks you to approve or answer. Nothing is chosen for you, and the task continues only after you respond. Only you can answer for your computer.
 
 The card's status describes the task on your computer. Check the Shape's reply for the result, such as whether a change was made.
+
+## Ask about the computer itself
+
+Shapes can check your computer directly instead of giving you manual steps: which Wi-Fi network it's on and which networks are nearby, its IP address, battery, free disk space, settings, installed apps, or where a file is.
+
+> Which Wi-Fi network is my laptop on right now?
+
+> Find the PDF I downloaded this morning and tell me what it's about.
+
+The computer must be online and allowed in that chat. If you've set it up but haven't allowed this chat yet, the shape offers a link to [allow it](#allow-a-chat-to-use-it) rather than guessing. Shapes can check only a connected computer, not your phone's settings.
 
 ## Hand coding work to Codex or Claude Code
 
@@ -128,6 +180,15 @@ It appears only in Agent chats. Ask a chat owner to switch the chat to **Agent**
 ### My computer shows Offline
 
 Make sure it's on, signed in, and connected to the internet, then select **Check for my computer** in **Settings** → **Computers**. If it still does not reconnect, use **Copy restart command** on the offline computer's card and run it on that computer. On macOS, you can also open **shapes.inc Bridge** from Applications.
+
+If you connected it with the Mac app, open shapes.inc on that Mac. If **This Mac** shows **Disconnected**, select **Reconnect this Mac**.
+
+### Connect this Mac doesn't finish
+
+- Check that the Mac is online, select **Cancel**, and try again.
+- If the app says **Update the app to connect this Mac**, choose **shapes.inc** → **Check for Updates…**, or download the current version from [shapes.inc/downloads](https://shapes.inc/downloads).
+- If setup shows **Open Login Items Settings**, macOS is stopping shapes.inc from running in the background. Select it, allow shapes.inc in **System Settings** → **General** → **Login Items & Extensions**, then connect again.
+- If you're signed out, the step shows **Sign in** instead. Sign in first, then connect.
 
 ### The setup code doesn't work
 

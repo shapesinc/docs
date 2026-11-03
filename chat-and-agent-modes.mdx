@@ -1,7 +1,7 @@
 ---
 title: "Chat, Agent, and Auto"
-description: "Talk through plans and do things with your friends. Choose Chat, Agent, or Auto, see a shape's working steps, and check the result together."
-keywords: ["Agent chats", "Chat mode", "Auto mode", "New chats setting", "multiplayer assistant", "Generation details", "step log", "Formless"]
+description: "Talk through plans and do things with your friends. Choose Chat, Agent, or Auto, follow or stop a shape's work, and check the result together."
+keywords: ["Agent chats", "Chat mode", "Auto mode", "New chats setting", "multiplayer assistant", "Generation details", "stop a reply", "Formless"]
 sidebarTitle: "Chat, Agent & Auto"
 ---
 
@@ -79,11 +79,11 @@ A shape can offer a **Yes** or **No** card before starting extra work nobody req
 
 ### See what a Shape did
 
-Research, browser, and app work can appear as one live task card with a plan, status, and **Details**. The card updates as work proceeds, and the shape posts the result afterward. A task can be **Done**, **Waiting on you**, **Stopped**, or **Didn't finish**; **Ended** means the run ended before its plan was fully completed. Check the reply for the actual result.
+While a shape is answering, a bar above the message box says who is working, such as “Tod is working,” with a timer. When more than one reply is underway, it also shows how many are in progress. Select the bar to see each reply in progress: the shape, who asked with a quote of their message, and its timer. A reply shows **Queued** while that shape finishes an earlier reply in the same chat or thread. Select a row to jump to the message it answers. When a reply lands further down the chat, it quotes the message it answers.
 
-For runs without that card, including coding progress, turn on **Settings** → **General** → **More preferences** → **Working steps** to inspect the activity log. This is off by default. Select the reply's status line to expand its working details. A completed reply can show a line such as “Worked for 1m 40s · 6 steps.”
+The person who asked, or the chat owner, can select **Stop** on that reply's row. If a reply seems stuck, **Retry** stops it and asks the same shape again. A reply you stopped shows **Stopped**. Stopping does not undo a message, file change, purchase, or other action already completed; check the previous outcome before repeating a consequential action.
 
-The person who requested a task can select **Stop** on its task card: beside the live browser controls, or inside **Details**. For the separate Working details controls, the requester or chat owner can stop the reply. A stuck reply can show **Stop & retry**, which stops that run and sends a new request to the same shape. Stopping does not undo a message, file change, purchase, or other action already completed; check the previous outcome before repeating a consequential action.
+The shape's reply is the result: check it for what was done. Step-by-step tool details, and the raw input and output behind them, aren't shown in chats; the **Working steps** switch in **More preferences** doesn't change this. Hosted coding work can still show a live progress line, and work on your own computer shows a **Computer task** card. A [thread](/threads) has its own bar above its message box.
 
 Substantial or iterative work can continue in a [thread](/threads) inside the same chat. Follow its replies there and bring any new requirements into that thread.
 
@@ -101,15 +101,23 @@ Anyone in a chat can **Regenerate** a Shape's reply, including Agent replies. Cr
 
 ## Ask a shape to do it in the app
 
-In Agent chats, you can ask a shape to do almost anything you could do yourself with a few taps: rename or set up a chat, change its settings, invite people, start a poll or a call, make or edit a shape, set a reminder, or change your own settings, profiles, and memories. It uses the app's own controls with your permissions, so membership, ownership, blocks, and workspace rules still apply. Its working details show these as **App actions**.
+In Agent chats, you can ask a shape to do almost anything you could do yourself with a few taps: rename or set up a chat, change its settings, invite people, start a poll or a call, make or edit a shape, set a reminder, or change your own settings, profiles, and memories. It uses the app's own controls with your permissions, so membership, ownership, blocks, and workspace rules still apply.
 
 > Rename this chat to "Lisbon in May", invite Maya and Drew, and pin the itinerary.
 
-> Turn on Working steps for me and set my new chats to Auto.
+> Turn on Streaming for me and set my new chats to Auto.
 
 > Start a new chat with Maya and Drew and get this done.
 
 That last request carries the task into a new chat with the people you name. If a name is ambiguous, the shape asks first; replying "yes" or "add Drew instead" works. When you name a friend by first name, your closest contacts are checked first.
+
+<a id="post-in-another-chat" />
+
+You can also ask a shape to post in another chat you're in:
+
+> Tell the trip chat we booked the cabin, and send them the confirmation.
+
+The shape posts the message there under its own name, with any files you point it to. A clear ask is enough; you don't need to grant it permission first, and there is no setting for it. If it can't tell which chat you mean or what to say, it asks you once to confirm the message and the chat, and nothing is sent until you do.
 
 A few things always stay with you: shapes can't post as you, change payment or sign-in security settings, or delete your account. In a group, a shape won't change your account because someone else asked. If the app refuses an action, the shape tells you why and that nothing was changed.
 
@@ -139,6 +147,10 @@ The chat is set to **Auto**, which checks every message. To keep one mode, a cha
 ### A Shape didn't reply in a group Agent chat
 
 In group Agent chats, Shapes stay out of ordinary conversation. Ask the Shape directly and say what you need. To change when Shapes jump in, owners can adjust **AI replies** under **AI settings**; see [Designing Social Intelligence](/designing-social-intelligence).
+
+### A reply stopped partway
+
+If a reply is interrupted by an update or a brief outage on our side, it resumes on its own and posts one final reply in the same place. Actions it already finished, such as a sent message or a run of code, aren't repeated. The same applies to work you started with a **Yes** card. Give it a moment before asking again. If nothing arrives and **Retry** appears in the bar above the message box, select it, or ask again after checking what was already done.
 
 ### Skip turn or Connect your computer is missing
 

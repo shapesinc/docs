@@ -32,6 +32,10 @@ Supported private forms can fill in your saved details for you to review. Comple
 
 For travel, each person enters their own traveller details; the payer fills in guests. Another person's details are not added to your own saved profile.
 
+When a website's sign-in card asks only for an email and you've saved one under **Contact info**, the card shows **Use my saved email**. One tap fills in your email from here; it isn't shown on the card, in the chat, or to the shape. See [website sign-ins](/websites-and-purchases#sign-in-to-a-website).
+
+For shopping, your saved address's country tells a shape where an order ships when **Let Shapes know your approximate location** is off. See [shopping where you are](/websites-and-purchases#shopping-where-you-are).
+
 ## What is and isn't saved
 
 - Personal, contact, address, and travel fields are stored privately on your account, encrypted at rest. They are not added to shared chat history or a shape's memory.
@@ -44,12 +48,14 @@ Removing saved details stops their future reuse. It does not retract information
 
 ## When a shape asks for other details
 
-When a form, purchase, or phone call needs a detail you haven't saved, a private **Your details for this form** card asks for each missing field. Only you see it; everyone else sees that the shape is waiting for you. When you select **Send**, your answers are saved to **Saved details** and filled in without the shape seeing them. A date saved once also fills forms that split it into separate month, day, and year boxes. For your own shopping orders, your saved name, phone, and address go straight to the store or shopping service, not into the chat.
+When a form, purchase, or phone call needs a detail you haven't saved, a private **Your details for this form** card asks for each missing field. Only you see it; everyone else sees that the shape is waiting for you. When you select **Send**, your answers are saved to **Saved details** and filled in without the shape seeing them. A date saved once also fills forms that split it into separate month, day, and year boxes. The card asks for a US state or Canadian province as two letters, such as CA; one saved earlier as a full name is sent as its code. For your own shopping orders, your saved name, phone, and address go straight to the store or shopping service, not into the chat.
 
 A shape can also ask the person who started a task for other details in a question card inside the chat. Only that person gets the fields to fill in; everyone else sees that the shape is waiting. These question cards are separate from your account's **Saved details**, traveller forms, website sign-in cards, and payment cards.
 
 - **Ordinary answers** go to the shape so it can continue the task. They can inform its reply to the group.
 - **Fields marked Private**, such as an API key, are saved encrypted for that shape in that chat for **30 days**. The shape does not see the value, but its **Run Code** work in that chat can use it. That includes work requested by other members of the same chat. This does not make the key available to hosted Codex or Claude Code runs.
+
+When you answer, the shape picks up the request the card was asked on. If you said to do something once you'd answered, such as "start the chats after I fill this in", your answer is the go-ahead; you don't need to ask again.
 
 A question card can ask for **1–6 fields** and expires after **24 hours** if unanswered. Check for **Sent** before treating the answer as delivered. If it fails or expires, ask for a fresh card. The person who supplied a private answer can ask the shape to forget it; removing account Saved details does not remove these separate chat-scoped answers.
 
