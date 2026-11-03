@@ -26,18 +26,24 @@ Imported chats start with only you in them, until the people you invited join. Y
 Workspace owners can connect Slack so new messages flow both ways while people move over:
 
 1. Select **Connect Slack** in **Settings → Slack** or the workspace menu, then **Allow** in Slack.
-2. On **Add your Slack channels**, pick channels. Public channels are selected for you. Select **Add** to finish.
+2. On **Add channels**, pick channels. Public channels are selected for you. Select **Add** to finish.
 
 After an import, the last step also offers **Keep in sync with Slack**.
 
 - New messages in either place show up in the other.
-- New public channels get a chat automatically. For a private channel, type `/invite @shapes.inc` in that channel in Slack.
+- New public channels get a chat automatically. A private channel you didn't add from the list joins once someone types `/invite @shapes.inc` in it in Slack.
 - Channel renames carry over.
 - People in a channel whose email matches a shapes.inc account are added to its chat. People from other organizations in shared channels aren't added.
 
 In a chat's **Settings → Integrations → Slack**, owners can set which direction messages sync, turn on **Shapes reply to @mentions from Slack**, or **Unlink** the channel.
 
 Not synced yet: edits, deletions, and reactions made in shapes.inc; file contents; DMs; archived channels; and people leaving a channel.
+
+<a id="add-private-channels" />
+
+### Add private channels
+
+**Add channels** also lists the private Slack channels you're in, marked with a lock. Only you see them, and they're never selected for you. Tick one and select **Add**: the shapes.inc app is invited to that channel for you, and it starts syncing right away. If you connected Slack before this was available, select **Show private channels** at the top of the list and **Allow** in Slack again; you come straight back to the list. To open the list later, use **Settings → Slack → Add channels**.
 
 ## Post updates with hooks
 

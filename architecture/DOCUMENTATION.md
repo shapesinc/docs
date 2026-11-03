@@ -110,6 +110,23 @@ Source: app `8fe075248` (production `v5.3.1327`) and shapes-chat `c134eea6d`. Pr
 
 This is a docs-only change: no AI calls, prompts, or retrieval steps are added, so it adds no recurring provider spend. Prices and allowances in these guides are written in credits, not dollars.
 
+## November 2 shipped-work refresh (2026-11-03)
+
+Brings the guides up to the product as merged between the October 30 refresh (app `8fe075248`, shapes-chat `c134eea6d`) and app `55f899bb1` (production `v5.3.1407`), shapes-chat `cfce4df3c`, and shapes-inc-native-apps `c21c082`: 154 merged PRs across app, shapes-chat, shapes.inc, shapes-inc-native-apps, and bridge. Docs #42 and #43 had already covered saved numbers for "call me" and today's allowances.
+
+- `phone-calls.mdx`: calling the shapes.inc number (Call Tod), calls to you and the second ring, picking the caller's voice, the call card's request list, Free calls continuing on account credits, call lengths, and new recovery items. `faq/how-do-i-stop-shapes-from-calling-me.mdx` separates calls to your number from **Who can call me**.
+- `voicecalls.mdx`: calls with a shape (persona, memory, Agent-chat requests handed to the chat, call card, account-credit billing, error table, call voices) versus calls with people. Phone screen sharing and the iPhone minimize bar are merged but not yet in a store build, so the page says they arrive with the next app update.
+- `connect-your-computer.mdx`: the Mac app (download, browser sign-in, **Connect this Mac**, permissions, staying connected after quit, updates) and asking about the computer itself. The live **Connect this Mac** permission flow was not exercised for this change.
+- `aienginecheatsheet.mdx`, `credits.mdx`, Premium pages and FAQs: the task-ranked engine picker, the Agent engine list and Formless v2.1, removal of the per-shape **Fallback engine**, the credits card, and benefit lines that would otherwise be false now that an available credit balance carries plan benefits. Per the product decision on app#5855, that rule gets no section of its own. Ad frequency is not documented.
+- `websites-and-purchases.mdx`, `saved-details.mdx`: shopping by the requester's country, checkouts resuming after sign-in or adding a card, saved-card end reasons and the 15-minute approval, multi-airport flight search, **Use my saved email**, and the header **Browser** button replacing the removed task card.
+- `texting.mdx`, `notifications.mdx`: texting rollout wording, 24-hour reply rule regardless of mute, no texts from chats of 10 or more people, typing dots, and calling the same number.
+- `chat-and-agent-modes.mdx`, `tasks.mdx`, `threads.mdx`, and related pages: the bar above the message box replaces Working rows and task cards; step details are not shown in chats; watches end themselves; Agent chat titles follow the topic; posting in another chat; private Slack channels; Devin as a shared app; dated memories; the photo viewer.
+- Settings lists add **Slack** and **Usage**.
+
+The **Working steps** switch is still shown with its old description but no longer changes what non-staff see; the docs describe actual behavior and the UI copy mismatch is left for a product change.
+
+Validation: `mint validate` and `mint broken-links --check-anchors`; labels checked against the source revisions above and, where noted in the PR, in the signed-in product. No live phone call, text, purchase, Slack sync, or Mac permission grant was made for these documentation edits. This is a docs-only change with no AI calls, prompts, or retrieval steps: incremental recurring provider spend is $0/day.
+
 ## Verified public terminology (2026-10-05)
 
 Checked against the deployed frontend source (`shapes-chat` `main`) after the October 4 release, plus the signed-out sign-in and agent pages on `talk.shapes.inc`. The in-app **Settings** → **What's new** release notes list everything that moved.
