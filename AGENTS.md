@@ -16,7 +16,7 @@
 - Use the current [talk.shapes.inc homepage](https://talk.shapes.inc/) language: **Do things with your friends.** **Make a chat, invite your friends, and get things done together.** shapes.inc is a place to collaborate; do not invent replacement positioning.
 - Explain shapes as **group assistants**, built to help you all together, **for anything that you do with other people**. Use the homepage examples, including hangouts, family trips, study groups, and group projects.
 - **New chat** is the primary starting action. Creating or customizing a shape is optional, and is never required before starting a chat.
-- Public Featured, tag, fandom, article-acquisition, and browse/search catalogs are paused. Do not recommend them. Preserve direct shape links, existing chats, and the current owned/recent picker behavior.
+- Public Featured, tag, fandom, article-acquisition, and browse/search catalogs are gone and aren't coming back. Do not recommend them. Preserve direct shape links, existing chats, and the current owned/recent picker behavior.
 - The guiding principles are earning the group's trust, participating as an equal actor with its own perspective, and proactively adding useful work. Do not equate proactivity with more messages.
 - Personality and creative or social uses can support collaboration; entertainment, companionship, and “talk to AI with friends” are not the primary product promise.
 - Keep feature steps and troubleshooting concrete. Verify interface labels and capabilities; distinguish product direction from available behavior. Do not promise automatic app access, perfect memory, unlimited usage, or actions that depend on unconfigured skills.
