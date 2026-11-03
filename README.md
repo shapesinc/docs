@@ -83,7 +83,7 @@ Short version of [AGENTS.md](AGENTS.md) and [architecture/DOCUMENTATION.md](arch
 - Positioning comes from the talk.shapes.inc homepage: "Do things with your friends." Shapes are group assistants for anything you do with other people. **New chat** is the primary action; making a shape is optional.
 - Use the labels readers see in the deployed product. Do not infer labels from source identifiers, old screenshots, or database fields. If you cannot verify a control, describe the task without naming it.
 - Describe what people can actually do today, with the access and usage limits that apply. Do not promise automatic app access, perfect memory, unlimited usage, or features that depend on unconfigured skills. Prices and allowances are written in credits.
-- Public discovery catalogs (Featured, tags, browse/search) are paused; do not recommend them. Keep direct shape links and existing chats.
+- Public discovery catalogs (Featured, tags, browse/search) are gone and aren't coming back; do not recommend them. Keep direct shape links and existing chats.
 - Each feature guide covers purpose, setup, limits, how to tell it finished, and recovery. Keep one canonical explanation and link to it from overviews instead of copying limits around.
 - Changing anything a shape reads as instructions (prompts, preset examples) needs explicit authorization; copy fixes do not change behavior.
 - Keep fundraising, projections, hiring plans, usage numbers, and other internal material out of public pages. Record them in the PR or the architecture handoff instead.
