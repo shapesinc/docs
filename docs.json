@@ -176,7 +176,7 @@
               "faq/how-can-i-use-my-premium-features",
               "faq/can-i-buy-credits-without-a-subscription",
               "faq/do-i-keep-my-credits-if-i-cancel-premium",
-              "faq/why-does-my-plan-show-fewer-credits-in-the-app",
+              "faq/why-do-web-plans-include-more-credits",
               "faq/how-do-free-coding-agent-limits-work",
               "faq/how-do-i-delete-a-chat",
               "faq/how-does-the-friends-section-work",
@@ -258,6 +258,11 @@
     {
       "source": "/completed",
       "destination": "/archive",
+      "permanent": true
+    },
+    {
+      "source": "/faq/why-does-my-plan-show-fewer-credits-in-the-app",
+      "destination": "/faq/why-do-web-plans-include-more-credits",
       "permanent": true
     }
   ]
