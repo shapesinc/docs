@@ -1,167 +1,116 @@
-# shapes.inc Documentation
+# shapes.inc documentation
 
-Welcome to the official documentation repository for shapes.inc! This repository contains all user guides, getting started materials, and help documentation for shapes.inc.
+Source for [docs.shapes.inc](https://docs.shapes.inc), the help site for shapes.inc. It is a [Mintlify](https://mintlify.com/) MDX site: pages are `.mdx` files, `docs.json` owns navigation and site metadata, and there is no application code, package manifest, or test suite in this repository. Merges to `main` publish the site.
 
-## About This Repository
+Read [AGENTS.md](AGENTS.md) (terminology, positioning, feature-reference rules) and [architecture/DOCUMENTATION.md](architecture/DOCUMENTATION.md) (content structure, validation, dated handoff notes) before editing. This file only tells you how the repository works.
 
-This documentation is built with [Mintlify](https://mintlify.com/) and automatically deploys to our documentation site when changes are merged to the main branch.
+## Layout
 
-## Quick Start for Contributors
-
-### Prerequisites
-
-1. Install [Node.js](https://nodejs.org/) (version 19 or higher)
-2. Install the Mintlify CLI globally:
-   ```bash
-   npm i -g mintlify
-   ```
-
-### Local Development
-
-1. Clone this repository
-2. Navigate to the documentation folder
-3. Run the development server:
-   ```bash
-   mintlify dev
-   ```
-4. Open your browser to `http://localhost:3000` to preview changes
-
-## How to Update Documentation
-
-### Adding a New Page
-
-1. **Create the MDX file** in the root directory using kebab-case naming:
-   ```
-   my-new-guide.mdx
-   ```
-
-2. **Add proper frontmatter** to your MDX file:
-   ```mdx
-   ---
-   title: 'My New Guide'
-   description: 'A helpful description of what this guide covers.'
-   ---
-
-   # My New Guide
-
-   Your content here...
-   ```
-
-3. **Update docs.json** to include your new page in the navigation:
-   ```json
-   {
-     "group": "User Guides",
-     "pages": [
-       "existing-page",
-       "my-new-guide"  // Add your new page here
-     ]
-   }
-   ```
-
-### Editing Existing Pages
-
-1. Find the `.mdx` file you want to edit
-2. Make your changes using [Markdown syntax](https://mintlify.com/docs/content/text)
-3. Test locally with `mintlify dev`
-4. Commit and push your changes
-
-### Removing Pages
-
-1. **Delete the MDX file**
-2. **Remove from docs.json** - This is critical! Remove the page reference from the navigation structure
-3. **Update any internal links** that pointed to the deleted page
-
-## docs.json Management
-
-The `docs.json` file controls the site configuration and navigation. **Always update this file when adding, removing, or reorganizing pages.**
-
-### Current Structure
-
-```json
-{
-  "navigation": {
-    "groups": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "introduction",
-          "welcome-to-shapes", 
-          "make-or-recover-account"
-        ]
-      },
-      {
-        "group": "User Guides",
-        "pages": [
-          "user-guide",
-          "how-to-make-a-shape",
-          "how-to-make-high-quality-shape"
-        ]
-      }
-    ]
-  }
-}
+```
+docs.json                   navigation, metadata, redirects, theme
+*.mdx                       guides (Docs tab)
+faq.mdx, faq/*.mdx          FAQ index and answers (FAQ tab)
+articles/*.mdx              longer articles (Articles tab)
+images/                     screenshots and site images, served at /images/...
+images/october-2026/        current signed-in UI captures, dated -YYYYMMDD.jpg
+logo/, favicon.png          site logo (light/dark) and favicon
+AGENTS.md                   rules for people and agents writing these docs
+architecture/DOCUMENTATION.md   content architecture, validation, verification log
 ```
 
-### Best Practices
+Entry points: `introduction.mdx` is the landing page, `features.mdx` indexes capabilities and their canonical guides, `docs-for-agents.mdx` explains the Markdown exports (`llms.txt`, `llms-full.txt`, `<page>.md`, the `/mcp` endpoint) that AI agents read.
 
-- **File Naming**: Use kebab-case for all file names (`my-guide.mdx`, not `My Guide.mdx`)
-- **Always Update Navigation**: When adding/removing files, update `docs.json` immediately
-- **Test Locally**: Run `mintlify dev` to test changes before committing
-- **Clear Titles**: Use descriptive titles in frontmatter
-- **Consistent Structure**: Follow the existing page structure and formatting
+## Local preview
 
-### What NOT to Do
+The repository's own instructions use the `mint` CLI.
 
-- **Don't** create files without adding them to `docs.json`
-- **Don't** use spaces or special characters in file names
-- **Don't** leave empty placeholder files (they'll be removed)
-- **Don't** reference deleted files in `docs.json` navigation
-- **Don't** commit broken links or 404s
+```bash
+npm i -g mint
+mint dev --no-open
+```
 
-## Content Guidelines
+`mint dev` renders the site locally. It does not serve the public `.md` and `llms.txt` aliases or live search; verify those on the deployed site after a merge. The local `/_markdown/<slug>` route shows the Markdown an agent would receive for a page.
 
-Our documentation uses the [talk.shapes.inc homepage](https://talk.shapes.inc/) language: “Do things with your friends” and “make a chat, invite your friends, and get things done together.” shapes.inc is a place to collaborate, with shapes as group assistants. Follow [AGENTS.md](AGENTS.md) and the [documentation architecture](architecture/DOCUMENTATION.md) for positioning, feature accuracy, and validation.
+## Pages
 
-### Writing Style
-- Use clear, concise language
-- Write in second person ("you")
-- Include helpful examples and screenshots
-- Break content into digestible sections
+Every page has YAML frontmatter with `title` and `description`. Most also set `keywords` (an array) and `sidebarTitle`. Retired routes that stay on disk for old links set `noindex: true` and `hidden: true` and point readers to the current guide.
 
-### Markdown Features
-We support all standard Markdown plus Mintlify components:
-- `<Card>` components for call-to-action sections
-- `<CardGroup>` for organizing multiple cards
-- `<Accordion>` for collapsible content
-- Code blocks with syntax highlighting
-- Images and media embeds
+**Add a page**
 
-## Deployment Process
+1. Create `kebab-case.mdx` in the root, `faq/`, or `articles/` with frontmatter.
+2. Add its path (no extension) to the right group in `docs.json`.
+3. If it documents a feature, link it from `features.mdx` and, where relevant, `docs-for-agents.mdx` and `faq.mdx`.
 
-1. **Create a branch** for your changes
-2. **Make your updates** following the guidelines above
-3. **Test locally** with `mintlify dev`
-4. **Create a Pull Request** to the main branch
-5. **Review and merge** - Changes auto-deploy to production
+**Edit a page**
 
-## Current Site Structure
+Keep the route and existing heading anchors; other pages, the FAQ index, and the deployed Help flow link to them. Update `title`, `description`, `keywords`, cards, and navigation together with the body so search and social previews match.
 
-- **Getting Started** - Introduction, welcome, and account setup
-- **User Guides** - How-to guides and tutorials for using shapes.inc.
+**Remove or retire a page**
 
-## Troubleshooting
+Prefer retiring: keep the file, add `noindex: true` and `hidden: true`, remove it from `docs.json`, and replace the body with a pointer to the current guide. Content that must leave the page but stay in source goes inside `<Visibility for="humans">` wrapping a dated MDX comment, which keeps it out of both the rendered page and the agent Markdown export. If a route must move, add an entry to `redirects` in `docs.json` (example: `/completed` -> `/archive`). Fix every internal link to the old path.
 
-- **Mintlify dev not working**: Run `mintlify install` to reinstall dependencies
-- **404 errors**: Check that all files referenced in `docs.json` actually exist
-- **Build fails**: Verify `docs.json` syntax is valid JSON
-- **Navigation missing**: Ensure new pages are added to `docs.json` navigation
+**Images**
 
-## Support
+Put new captures in a dated or topic folder under `images/` (current practice: `images/october-2026/<control>-YYYYMMDD.jpg`, cropped to the relevant controls, no chat lists, invite links, identities, or payment details). Embed with a caption and alt text:
 
-- For documentation issues: Create an issue in this repository
-- For shapes.inc support: Email [hi@shapes.inc](mailto:hi@shapes.inc)
-- For technical questions: Check our [getting started guide](https://docs.shapes.inc/introduction)
+```mdx
+<Frame caption="Settings → Computers has the install command.">
+  <img src="/images/october-2026/computer-setup-20261027.jpg" alt="Your computers page showing Add a computer once and Copy install command" />
+</Frame>
+```
 
----
+Every illustrated step also needs written instructions. Replace or retire screenshots that show labels the product no longer uses. Re-captured images get a new filename so caches do not serve the old one.
 
-**Made with ❤️ by the shapes.inc team**
+## docs.json
+
+`docs.json` follows the Mintlify `docs.json` schema (`"theme": "mint"`). It holds the site name, colors, logo, favicon, Lexend font, navbar (Support link to `talk.shapes.inc/help`, **New chat** button to `talk.shapes.inc`), footer, Open Graph tags, one redirect, and the navigation.
+
+Navigation is three tabs. Counts as of the last change to this file:
+
+| Tab | Groups | Pages |
+| --- | --- | --- |
+| Docs | Getting Started, Do Things Together, Get Things Done, Chats & Collaboration, Build & Configure Assistants, AI Engines, Prompts & Memory, Credits & Products | 75 |
+| FAQ | FAQ | 44 |
+| Articles | Multiplayer Assistants, Practical Guides | 11 |
+
+Every navigation entry must exist on disk; `mint validate` and `mint broken-links` catch missing pages. Keep existing page paths stable, including older slugs, so external links keep working.
+
+## Content rules
+
+Short version of [AGENTS.md](AGENTS.md) and [architecture/DOCUMENTATION.md](architecture/DOCUMENTATION.md); those files win.
+
+- The product is **shapes.inc**, always lowercase with the dot. An individual AI is a **shape**; **shapes** is only the plural of those participants. The conversation is a **chat** or **group chat**.
+- Positioning comes from the talk.shapes.inc homepage: "Do things with your friends." Shapes are group assistants for anything you do with other people. **New chat** is the primary action; making a shape is optional.
+- Use the labels readers see in the deployed product. Do not infer labels from source identifiers, old screenshots, or database fields. If you cannot verify a control, describe the task without naming it.
+- Describe what people can actually do today, with the access and usage limits that apply. Do not promise automatic app access, perfect memory, unlimited usage, or features that depend on unconfigured skills. Prices and allowances are written in credits.
+- Public discovery catalogs (Featured, tags, browse/search) are paused; do not recommend them. Keep direct shape links and existing chats.
+- Each feature guide covers purpose, setup, limits, how to tell it finished, and recovery. Keep one canonical explanation and link to it from overviews instead of copying limits around.
+- Changing anything a shape reads as instructions (prompts, preset examples) needs explicit authorization; copy fixes do not change behavior.
+- Keep fundraising, projections, hiring plans, usage numbers, and other internal material out of public pages. Record them in the PR or the architecture handoff instead.
+
+## Before opening a PR
+
+From the validation section of `architecture/DOCUMENTATION.md`:
+
+1. Check terminology and labels against the deployed UI, including metadata, navigation, image text, and link labels.
+2. Confirm `docs.json` parses and every navigation page exists.
+3. Run the Mintlify checks and separate pre-existing failures from new ones:
+
+   ```bash
+   mint validate
+   mint broken-links --check-anchors
+   ```
+
+4. Preview with `mint dev --no-open` and look at every changed route on desktop and at a phone width (recent passes used 375px or 390px) for broken images and horizontal overflow.
+5. Review the diff for terminology, preserved troubleshooting, valid MDX, and unsupported feature claims. Escape `$` in MDX when a paragraph has two amounts.
+6. In the PR, state which product source revisions you checked against and what was not verified live. Add a dated section to `architecture/DOCUMENTATION.md` for changes that future editors need to know about; the file is additive.
+
+## Deployment
+
+A merged PR to `main` publishes the site; the PR itself does not. There is no build or deploy workflow in this repository. After publication, confirm the public `.md` pages, `llms.txt`, and search reflect the change before telling anyone they do.
+
+## Contacts
+
+- Site: https://docs.shapes.inc
+- Product support: https://talk.shapes.inc/help or hi@shapes.inc
+- Documentation problems: open an issue or PR in this repository.
