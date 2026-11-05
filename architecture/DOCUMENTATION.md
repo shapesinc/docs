@@ -91,3 +91,10 @@ The export FAQ scopes the limitation to a full export or backup of Shapes, chat 
 The FAQ is the canonical troubleshooting source consumed by documentation search. Keep related guides aligned with `components/actions-dropdown-button.tsx` in shapes-chat: existing messages, at least one active shape, Chat mode, and group-owner authorization. One-to-one shape chats are supported. Do not infer a multiple-shape requirement from the feature’s group use cases or describe it as an Agent control. Mode descriptions remain capability-based; this correction changes no runtime behavior or permissions.
 
 The fix replaces inaccurate/ambiguous retrieved prose without adding an AI call, classifier, permanent prompt, or retrieval step. The combined changed public text is shorter; expected incremental recurring inference spend is $0/day. Search-index rollout follows the normal documentation deployment; a merged PR alone is not evidence that an already-running support conversation has refreshed its retrieved context.
+
+
+## Credit-based Pro access (November 5, 2026)
+
+`faq/why-do-i-have-pro-without-subscribing.mdx` explains the November 1 entitlement policy: any positive pooled account-credit balance grants Pro benefits without a subscription or payment. Keep Premium, credits, and cancellation answers aligned. Account credits include historical rewards and gifts; chat/shape wallets and daily free allowances do not grant account-wide benefits. An actual charge still requires checking billing records, so the FAQ does not promise that every reader has no charges or subscriptions.
+
+Verified against `app/api/service/premium_plans_v2_entitlements.py` and the backend contract. Support already retrieves these docs; this correction adds no permanent prompt, provider call, or tool permission. Search-index publication follows the normal docs deployment. No support message is sent by this change.
