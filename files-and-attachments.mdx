@@ -1,0 +1,90 @@
+---
+title: "Files and Attachments"
+description: "Share files with your chat, understand upload and reading limits, and find or download shared work."
+sidebarTitle: "Files & Attachments"
+---
+
+Share notes, photos, plans, and other files in the chat where you are working together. You can also ask a shape in Agent mode to make a file for the group.
+
+## Attach a file
+
+<div style={{ maxWidth: "234px", margin: "1.5rem 0" }}>
+  <img src="/images/october-2026/composer-menu-20261027.jpg" alt="The chat composer's plus menu with Add attachment, Connected apps, and Connect your computer" style={{ width: "100%", borderRadius: "0.75rem" }} />
+  <p>The composer's + menu brings files, apps, and computers into the conversation.</p>
+</div>
+
+1. Sign in and open the chat.
+2. Open **More actions** beside the message box and choose **Add attachment**. On desktop, you can also drop a file into the chat or paste an image.
+3. Wait for the attachment to finish uploading. Add a message explaining what you want to do with it.
+4. Send the message. Before sending, you can remove an attachment from the draft.
+
+Uploads require a signed-in account. Each uploaded file can be up to **100MB**. Common image, audio, video, document, spreadsheet, presentation, text, and archive formats are supported, but uploads are checked for their actual type. Executable files and some other formats are blocked; changing the extension does not make a file supported.
+
+### Bring the group's material together
+
+For a study session, one person can attach the assignment, another their notes, and someone else a worked example. Send each file with a short explanation of what it contains and where you need help. In Agent mode, a shape can help compare the material, identify conflicting answers, and prepare a study checklist.
+
+Review the answer together in the chat or [thread](/threads) where you asked. Each person can check the part they contributed and send corrections or a replacement file. If you ask for a downloadable checklist, open the returned file and check that the agreed changes are included; the conversation itself is not a shared document editor.
+
+### Paste a long note
+
+When you paste at least 4,000 characters, the composer offers **Upload as .txt** or **Paste as text**. You can name the text file before uploading it. Either choice still leaves you in the composer to review and send the message.
+
+## What a shape can read
+
+Being able to share or download a file does not mean a shape can read all of its contents. The attachment can show **Shapes can't see this file** when its format is not passed to the shape.
+
+- JPEG, PNG, and WebP images can be passed to a shape. Animated GIFs can be shared, but are not passed as images for the shape to inspect. HEIC photos are converted for chat uploads; if conversion fails, export a JPEG or PNG and try again.
+- Supported audio and video can be processed; video reading is limited to clips of **20 minutes or less**. Documents such as PDFs, Word files, spreadsheets, presentations, and plain text can provide readable content. Extraction depends on the file and its format; a successful upload is not proof that every page, sheet, frame, or formatting detail was read.
+- ZIP, TAR, and TAR.GZ archives can provide a file listing and selected text contents. They are not automatically unpacked and executed, and large archives or binary members may not be readable. A 7z archive can be shared but cannot be inspected; repackage it as ZIP when you want a shape to read its contents.
+
+Every AI Engine can answer questions about a video, free or premium. shapes.inc watches the clip and listens to its sound first, then gives the shape a summary with timestamps. This also works for public YouTube and TikTok links. Watching the video doesn't add to the reply's credit cost. You can send up to **3** videos in one message. The summary samples frames, so it can miss brief moments. If a video can't be read, the shape tells you it couldn't watch it.
+
+For a large file, ask about a specific section and check which pages, sheets, or files the answer used. If a shape cannot read the attachment, try exporting the relevant content as text or PDF, or provide a screenshot of the part you need help with. [Hosted coding agents have separate input limits](/faq/how-do-free-coding-agent-limits-work).
+
+## Open, find, and download files
+
+Select a file's card in the message to open the in-app viewer. PDFs can show a preview of their first page on the card, and text or code files can show their first lines. Office files, archives, and other formats may show an icon instead. The download control is inside the viewer.
+
+The viewer opens as a dialog on desktop or a sheet on phones. PDF pages scroll continuously; text and code have line numbers, Markdown renders, and supported spreadsheets or CSV files can show a table. Use **Download** in the viewer when you need the original file or when it says there is no preview. A preview limit does not mean the upload failed.
+
+<Accordion title="Preview limits">
+  - Text, Markdown, JSON, and CSV previews are limited to about **512KB**. Larger files may show only part of their contents or ask you to download them.
+  - Spreadsheet and ZIP previews accept files up to **4MB**. CSV/TSV tables show up to **1,000 data rows** plus their header; spreadsheets show up to **1,000 rows per sheet**. Switch sheet tabs to see another sheet.
+  - ZIP previews list up to **10,000 files**. Supported text members can be previewed when each is at most **64KB**, within **8MB** of expanded text in total.
+  - A text file's message card shows up to **10 lines** from its first **4KB**; a PDF card shows its first page. Open the viewer for more, or download the original for its full contents. These preview limits are separate from what a shape can read.
+</Accordion>
+
+<Frame caption="Open a file card to inspect it in the viewer. Download keeps the original file.">
+  <img src="/images/october-2026/file-viewer-20261027.jpg" alt="The in-app viewer showing a weekend-plan text file with line numbers, Copy, Download, and Close controls" />
+</Frame>
+
+### Look at photos
+
+Select an image in a message to open it full screen. On a phone or tablet, the viewer works like your phone's photo app:
+
+- **Pinch** to zoom and move around; **double-tap** a spot to zoom in on it, and double-tap again to zoom out.
+- **Swipe left or right** to move between the images in that message.
+- **Swipe down** to close, or use your browser's or phone's **Back**; you return to the same place in the chat.
+- **Tap once** to show or hide the controls.
+
+On a computer, click to zoom. A touchscreen laptop also zooms with a trackpad pinch or the mouse wheel.
+
+To find shared files later, open the chat's **More actions → Settings → Media & Files**. This opens a search for media in that chat. You can also use **Search messages** to find the message containing the file.
+
+Sending the message shares it with the chat. A [thread](/threads) has the same audience as its chat. The file itself has a shareable URL: anyone with that URL can open it outside the chat. That URL exists once the upload finishes, even before you send the message.
+
+File downloads and [chat exports](/faq/can-i-export-or-back-up-my-data) serve different purposes; exporting chat text is not a complete backup of every attachment.
+
+## Ask a shape to make a file
+
+In [Agent mode](/chat-and-agent-modes), describe the result and format you want: for example, “Make our trip checklist as a Markdown file,” or “Put this study plan into a CSV.” [File skills](/shapeskills#prepare-files-and-voice-content) can create downloadable output when available. **File Generator** has a separate **25MB per-call output limit**; the 100MB upload limit does not apply to its generated output. Ask for smaller files if the output exceeds that limit.
+
+Open the returned file and check its contents before treating the work as complete. A proposed filename or a message saying a file will be created is not a downloadable result. Generation or other actions can have their own [usage and credit limits](/credits).
+
+## When something goes wrong
+
+- **Upload fails:** keep the original file, check that you are signed in, and retry the failed upload. Reduce files above 100MB or export a supported format. Wait for the attachment to finish before sending.
+- **The preview fails:** try Download and open the file locally. Some formats can be shared without an in-app preview.
+- **The shape misses content:** ask which part it could read, then send a smaller excerpt or another supported format. For videos over 20 minutes, share a shorter clip. Do not assume a partial answer covers the entire file.
+- **You cannot find a file:** check the correct chat and thread, use Media & Files or search, and confirm that the message was actually sent. A file left in a draft is not a shared message.

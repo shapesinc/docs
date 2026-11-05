@@ -1,0 +1,58 @@
+---
+title: "Threads"
+description: "Keep a focused task inside a chat, follow its replies, and understand what context and access a thread shares with the main conversation."
+---
+
+A thread keeps replies about one message together inside the same chat. Use it when you want to work through a decision, research, or a draft without filling the main conversation with every step.
+
+## Work in a thread
+
+In Agent chats, ask a shape to work in a thread, or start one yourself with `/thread`. If a chat owner turns on [Automatic threads](#let-shapes-start-threads), shapes also start threads on their own for focused work, such as comparing options and choosing together, reviewing a document, or investigating code. Your request is the thread's original message. Quick answers and ordinary conversation stay in the main chat.
+
+You can ask directly:
+
+> Work through these options with us in a thread.
+
+To start one yourself, type `/thread` followed by your message in the chat's message box and send it. You can also choose `/thread` from the **/** command menu, then add your message. Commands require sign-in and aren't available in DMs between people.
+
+For a side question, send `/btw` followed by your question. This opens a thread in a small window on desktop, with the main chat still usable. On phones, it opens full screen. It has the same audience as the chat.
+
+Open the replies attached to the original message to follow the thread. Send follow-ups in the thread's composer to keep the work there. Use **Close thread** or **Back to chat** to return to the main conversation.
+
+Tell the shape if you want the work kept in the main chat or moved to a new chat. Starting a thread does not start a separate coding job or save a preference for future tasks.
+
+### Work through one decision together
+
+In a family trip chat, start a thread for choosing where to stay. One person can add arrival dates, another the budget, and another accessibility or room requirements. A shape can compare the options using those details while the main chat continues with other plans.
+
+Keep corrections and follow-up questions in that thread so the shape has them when it replies. When people agree on an option, post the decision in the main chat or ask the shape to send that specific update there. The thread's replies stay with the discussion; starting a thread does not notify everyone of the final decision or create a separate audience.
+
+## Let shapes start threads
+
+Chat owners can let shapes start threads by themselves in Agent mode:
+
+1. Open the chat's **Settings** → **AI settings**.
+2. Under **Threads**, turn on **Automatic threads**.
+3. Optionally edit **When to start a thread** to tell shapes what deserves its own thread, then select **Save instructions**. **Use default** restores the original text. Changes apply to everyone in the chat.
+
+It's off by default. Asking for a thread, `/thread`, and `/btw` work either way. Coding work can run in a thread while other work continues in the main chat; see [coding limits](/faq/how-do-free-coding-agent-limits-work).
+
+## Keep shape replies in threads
+
+Chat owners can open the chat's **Settings** → **AI settings** → **General Settings** and turn on **Thread-only replies**. With it on, shapes start or continue a thread for every reply instead of posting in the main chat. When it is off, shapes can reply directly in the main chat.
+
+## What the shape remembers
+
+For an Agent thread, the shape uses the original request, a bounded summary of the main chat up to that request, and the thread's own conversation. Later main-chat messages and other threads are not automatically added to that conversation context.
+
+In a long thread, the shape keeps a running summary of the thread so earlier decisions and finished work stay in view after the messages themselves leave short-term memory. The original messages are kept, and the shape can go back to them when it needs exact wording or the details of an earlier result, without redoing the work.
+
+Bring a new decision or changed requirement into the thread when it matters. Relevant saved [memories](/memory) and permitted recall can still help; this context is not a complete copy of every conversation.
+
+## Access and limits
+
+- A thread belongs to its chat and has the same audience. It does not make the discussion private from other chat members.
+- Chat permissions, connected-account access, credit settings, and usage limits still apply.
+- A [branch](/branch-off) is a separate chat with copied context. A thread remains in the original chat.
+- To post a thread update to the main chat, ask the shape to send that specific update there. A reply inside the thread does not itself announce the result to everyone.
+- A thread has its own bar above its message box for replies in progress there, with **Stop** for each; in the main chat, the thread's chip shows when a shape is working in it. See [Follow and stop a reply](/chat-and-agent-modes#see-what-a-shape-did). Stop ends further work; it does not reverse completed actions.

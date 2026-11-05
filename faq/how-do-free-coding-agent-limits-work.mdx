@@ -1,0 +1,67 @@
+---
+title: "How do free Claude Code and Codex limits work?"
+description: "Understand the separate daily limits for free coding runs, model tokens, and shared computer/browser use, plus what happens when you have credits."
+keywords: ["Claude Code", "Codex", "free coding agents", "daily limits", "model tokens", "computer allowance", "Run Code", "Browser", "Shape Credits"]
+---
+
+The built-in Claude Code and Codex skills can help your group review code or work on a project. Their free access has **three separate limits**. Having a free run left does not guarantee that there is enough model or computer allowance to start it.
+
+Registered users can use this free access when they do not have enough eligible credits for a paid coding run.
+
+These limits apply to the coding agents hosted by shapes.inc. Agents running on [your own connected computer](/connect-your-computer) use the setup and accounts on that computer.
+
+## Work on a project together
+
+Suppose your study group is building a small website. One person can [set up a Code Project](/connect-your-computer#code-projects) and choose whether to share it with the chat. A member with access can ask a shape to use hosted Claude Code or Codex to investigate a problem, make a specific change, and report the relevant test result. Keep the work in the chat or a [thread](/threads) so the group can review it together.
+
+Sharing the project gives members access to that project; it does not combine everyone's free allowances into a group pool. The limits below remain per user, and eligible credits available to the task determine paid access. If one request is blocked, another person's unused allowance does not automatically fund it.
+
+Check the returned changes and test results. A coding run finishing is separate from publishing a branch or pull request; when publication is requested, check the returned GitHub link. If the work needs files or an agent login on someone's laptop, use the [connected-computer workflow](/connect-your-computer#work-together-on-a-connected-computer) instead of assuming a hosted run can see that machine.
+
+## The three daily limits
+
+| Limit | Daily allowance per user |
+| --- | --- |
+| Free coding runs | **Up to 2 starts** |
+| Model tokens for free coding runs | **100 credits** of model-provider cost |
+| Hosted computer and browser use | **20 credits** of computer/browser cost |
+
+Claude Code and Codex share the two starts and the model-token budget across all your chats. The computer allowance covers both agents, Run Code, Code Project operations that use a hosted computer, and Browser.
+
+The model allowance pays for the model processing the task and generating responses. The computer allowance pays for running the hosted computer and browser, including CPU, memory, disk, and browser time. These are separate budgets; unused model allowance cannot cover computer usage. They are not deposits into your Shape Credit balance.
+
+The limits are **per user**, shared across that user's chats and actions. Each person has their own allowances, even in a group chat. They reset at **00:00 UTC** each day, which is **21:00 in São Paulo (UTC−3)**.
+
+## Run coding work in parallel
+
+You can run one coding task in the main chat and another in a [thread](/threads) at the same time, for example Claude Code on a bug in the main chat and Codex on a new page in a thread. A second run in the same thread, or in the main chat, waits its turn. Parallel runs share your daily allowances.
+
+## Paid coding runs
+
+With enough credits, coding runs aren't held to the free daily limits. A run continues until the work is done, your credits run out, or it reaches its time or request limit. Whenever a run stops, the chat gets a final notice saying why; nothing retries automatically.
+
+## Why can a free run be blocked before I use both starts?
+
+All three limits must allow the run. For example, if you use the computer allowance on Run Code and Browser, a coding run can be blocked even if you have used neither free coding start nor any of the free model allowance.
+
+Before starting a free coding run, shapes.inc reserves enough computer allowance to cover its allowed execution time. This means a run can also be blocked when some computer allowance remains, but not enough for that reservation. The unused part of a reservation is returned when the run finishes or admission fails.
+
+**Two starts is a maximum, not a promise of two completed tasks.** A run that starts can count even if it later fails or is cancelled. Each free run also allows up to 20 model requests and 5 minutes of coding execution, with a separate bounded window for preparation.
+
+If a daily allowance prevents a free run, wait for the daily reset or use paid access with enough eligible credits. Repeatedly retrying does not reset an allowance.
+
+## What happens when I have credits?
+
+The app uses the credits available for the task to decide paid or free coding access. An active Premium subscription is not required to use an existing eligible credit balance. A zero or negative balance can still use free coding access when all its limits allow it.
+
+For paid coding runs, **model tokens and computer time are separate costs**. Computer and browser use spends the shared 20-credit daily allowance first, then charges eligible credits for the remaining usage. Paid coding runs also consume this computer allowance; it is not reserved exclusively for free coding runs. Their model tokens are billed separately, rather than using the 100-credit free-model allowance.
+
+Paid coding runs do not use the two free starts. Having enough eligible credits can therefore allow more coding work after the free starts are used. Run Code and Browser can also continue on eligible credits after the computer allowance is used; without enough allowance or eligible credits to start, the action is blocked.
+
+## Can hosted coding agents inspect images?
+
+The hosted Claude Code and Codex integrations currently accept text, not image, audio, or video inputs. They can work with project files, but producing a screenshot does not mean the coding agent has visually inspected it. Ask the shape in the chat to inspect an image or PDF page separately when visual review is needed. Agents on your own connected computer use that computer's capabilities instead.
+
+See [Shape Credits](/credits) for credit sources and [Shape Skills](/shapeskills) for the built-in actions.
+
+[Back to FAQ](/faq)
