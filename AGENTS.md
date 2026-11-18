@@ -72,6 +72,12 @@ shapes.inc docs read like the docs of a frontier agent product: Claude Code, Cod
 - "Everyone can use connected apps." → "A shape uses your connected apps for your own requests. Teammates' requests use them only as **Shared access** allows."
 - "Oops, something went wrong." → "The call didn't connect. You weren't charged. Ask again, or check the number."
 
+# Commercially sensitive details
+
+- Some mechanics stay high level in public docs: when ads do and don't appear and how they're chosen, eligibility rules and thresholds the product doesn't show in its own UI, and anything that reads as a way around a paid plan. Say what the reader sees and what they can do about it. Don't list the rules.
+- Plan benefits shown on the Premium page, such as no ads, are fine to state as benefits.
+- When a change would add this kind of detail, or you're unsure whether something belongs in public, write the conservative version and ask Anushk to double-check. It is not blocking: ship the conservative wording and flag the question.
+
 # Layout: how every page is put together
 
 Benchmarked in November 2026 against the Claude Help Center and claude.com/docs, the ChatGPT Help Center and learn.chatgpt.com, and the Cursor, Manus, Lovable and Replit docs. This section governs frontmatter, headings and page structure. The voice rules above still apply, and facts, labels, limits, routes and anchors never change in a layout edit.
