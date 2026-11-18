@@ -203,32 +203,6 @@
             ]
           }
         ]
-      },
-      {
-        "tab": "Articles",
-        "groups": [
-          {
-            "group": "Multiplayer Assistants",
-            "pages": [
-              "articles/meet-shapes-inc",
-              "articles/you-dont-have-to-chat-with-ai-alone",
-              "articles/ai-with-friends-redefining-group-chat",
-              "articles/why-solo-ai-chat-is-broken",
-              "articles/what-is-multiplayer-ai",
-              "articles/top-platforms-mixing-ai-human-communities",
-              "articles/best-ai-companion-social-ai-apps"
-            ]
-          },
-          {
-            "group": "Practical Guides",
-            "pages": [
-              "articles/ai-group-chat-vs-solo-ai-chat",
-              "articles/best-ai-image-generators-2026",
-              "articles/best-discord-alternatives-2026",
-              "articles/free-ai-tools-no-message-limits"
-            ]
-          }
-        ]
       }
     ]
   },
@@ -270,6 +244,71 @@
     {
       "source": "/faq/why-does-my-plan-show-fewer-credits-in-the-app",
       "destination": "/faq/why-do-web-plans-include-more-credits",
+      "permanent": true
+    },
+    {
+      "source": "/articles/meet-shapes-inc",
+      "destination": "/introduction",
+      "permanent": true
+    },
+    {
+      "source": "/articles/you-dont-have-to-chat-with-ai-alone",
+      "destination": "/ai-group-chats",
+      "permanent": true
+    },
+    {
+      "source": "/articles/ai-with-friends-redefining-group-chat",
+      "destination": "/ai-group-chats",
+      "permanent": true
+    },
+    {
+      "source": "/articles/why-solo-ai-chat-is-broken",
+      "destination": "/ai-group-chats",
+      "permanent": true
+    },
+    {
+      "source": "/articles/what-is-multiplayer-ai",
+      "destination": "/ai-group-chats",
+      "permanent": true
+    },
+    {
+      "source": "/articles/top-platforms-mixing-ai-human-communities",
+      "destination": "/ai-group-chats",
+      "permanent": true
+    },
+    {
+      "source": "/articles/ai-group-chat-vs-solo-ai-chat",
+      "destination": "/ai-group-chats",
+      "permanent": true
+    },
+    {
+      "source": "/articles/best-ai-companion-social-ai-apps",
+      "destination": "/what-are-shapes",
+      "permanent": true
+    },
+    {
+      "source": "/articles/best-ai-image-generators-2026",
+      "destination": "/plan-and-build-together#make-documents-images-and-slides-together",
+      "permanent": true
+    },
+    {
+      "source": "/articles/best-discord-alternatives-2026",
+      "destination": "/create-a-chat",
+      "permanent": true
+    },
+    {
+      "source": "/articles/free-ai-tools-no-message-limits",
+      "destination": "/credits-guide",
+      "permanent": true
+    },
+    {
+      "source": "/articles/best-ai-tools-roleplay-fanfic-creative-writing",
+      "destination": "/fun-and-friends",
+      "permanent": true
+    },
+    {
+      "source": "/articles",
+      "destination": "/introduction",
       "permanent": true
     }
   ]
