@@ -130,7 +130,22 @@ To send from your own Gmail instead, say "as me" or "from my email". That uses y
 
 Ask for a draft ("draft a reply, I want to check it first") and the shape shows the exact words with a **Send** button. Anyone in the chat can tap **Send**, and that sends exactly those words.
 
-When a shape writes an email in its own words for you, such as a reply or a thank-you, it first reads a few emails you've sent from your connected Gmail and matches your greeting, sign-off, length, and tone. If it can't find any, it says so instead of guessing a style.
+### Emails in your voice
+
+When you ask a shape in an Agent chat to write an email as you from your connected Gmail, and you haven't given the words, it first reads a few of your recent sent emails and matches your greeting, sign-off, length, and tone. This covers a reply, a thank-you, or a draft it shows you first.
+
+- **What it reads:** mail you sent from your own connected Gmail, to the same recipient when it knows the address. It uses your own words only. Quoted replies, forwarded text, signature blocks, and drafts are left out. It never reads another member's mailbox.
+- **When:** only for a request you make in that turn. Scheduled and proactive runs don't read your sent mail for style, and neither does a request that only reads mail.
+- **What it does with them:** it matches the style. It doesn't reuse your sentences or quote those emails in the new email or in the chat.
+- **If it finds nothing you wrote yourself:** it writes plainly and says the tone isn't matched, instead of guessing a style.
+
+A greeting, sign-off, or name you ask for replaces the one from your sent mail. Words you dictate are sent as you wrote them, with no style read.
+
+Ask in the chat:
+
+```text wrap
+Reply to Sam from my email and say Thursday at 3 works. Open with "Dear Sam" and sign off "Kind regards, Maya".
+```
 
 ### Ask before sending
 

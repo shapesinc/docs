@@ -71,7 +71,18 @@ For example, housemates can compare a table for their shared kitchen. Each perso
 4. Review the purchase card's store, items, total, and way to pay, then approve it. Nothing is ordered until you select **Place order** or approve the payment.
 5. Follow the final order status and receipt in the purchase card. Approval or a submitted checkout alone does not confirm the store placed the order.
 
-To buy something again, say so: "reorder the coffee I bought last month". With your email connected, the shape finds your newest matching order email, picks the same item and variant, and stops at the purchase card. Nothing is charged until you approve. This works for gifts shipped to someone else too. Amazon orders are skipped.
+To buy something again, say so:
+
+```text wrap
+Reorder the coffee I bought last month.
+```
+
+The shape reads the order confirmation emails in your [connected Gmail](/connected-apps#connect-an-app) and finds your newest order that has the item. It tells you which order it is buying again, by store and date, picks the same item and variant at that store, and stops at the purchase card. Nothing is charged until you approve. This works for gifts shipped to someone else too. Amazon orders are skipped.
+
+- **What it needs:** Gmail connected to your account, and the store's order confirmation in that mailbox. It reads your mailbox only, for your own request.
+- **Which order it picks:** the newest one that matches. Name a store, a date, or the item to pick another. It asks which one only when the newest matching order has two items that fit, or two matching orders were placed the same day.
+- **Price:** the email shows what you paid then. The shape checks the current price on the store's page, and the purchase card shows the total.
+- **Without Gmail, or with no matching order email:** the shape uses a purchase it placed for you on shapes.inc before. If there isn't one, it asks what the item was.
 
 A shipping address you type in your request is used for that order.
 

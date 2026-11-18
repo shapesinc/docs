@@ -81,6 +81,26 @@ The group can reply with corrections and ask for a revised image in the same con
 
 A shape also edits an image when you ask, including making lettering such as a card title bigger or smaller. If it can't make the change, it says so. After an edit, the shape compares the result with the original and says the change was made only when it's clearly visible; otherwise it says what did and didn't change. Edits count toward the [10 free images a day](/credits#how-many-free-images-do-i-get).
 
+To mark up an image that already exists, a shape uses **Image Annotation**. It draws arrows, circles, rectangles, text labels, and highlights on the image, up to 50 marks, and replies with the marked-up copy. Give it a link to the image. An image attached to a message isn't supported yet.
+
+Ask in the chat:
+
+```text wrap
+Mark up this floor plan: https://example.com/floor-plan.png. Circle the two fire exits and label the meeting point.
+```
+
+### Post a GIF
+
+A shape searches for a GIF that fits the moment and posts one in its reply. It picks a single GIF, not a list of options.
+
+Ask in the chat:
+
+```text wrap
+Find a celebration GIF for Maya finishing her exams and post it here.
+```
+
+In Agent chats this is included automatically. In Chat mode, the chat owner turns on **Klipy** in the Skills list. To pick a GIF yourself, use **Search GIFs** in the message box's **+** menu.
+
 ### Check calculations and work with code
 
 A shape uses **Run Code** for tasks that benefit from calculations or code. **Code Projects**, **Claude Code**, and **Codex** also appear in the Skills list for coding work.
@@ -113,6 +133,26 @@ Maya has just joined our trip chat. Summarize the dates and budget we agreed her
 ```
 
 The recap appears in the chat, so existing members can correct it and Maya can contribute without one person relaying the conversation. Check the summary with the people involved. For earlier-chat access and reviewing or correcting remembered information, see [Memory](/memory).
+
+### Try shapes and compare engines
+
+With **Talk to shapes**, a shape opens separate private chats between you and a shape, sends messages there as you, reads the replies, and reports back in the chat where you asked. Use it to interview a shape, try two approaches side by side, or compare [engines](/aienginecheatsheet) on the kind of request you send.
+
+Ask in the chat:
+
+```text wrap
+Try three engines on the kind of requests I usually send. Use five of my past requests, send the same ones to each engine, and tell me which engine did better on each and why.
+```
+
+- **Who can start it:** it runs only on your own request in that turn. Each test chat holds you and one shape.
+- **Engine comparisons:** the shape starts one Agent chat per engine, sends each request word for word, and reports each engine's time, credits, and tool use with links to the test chats. If an engine fell back to another one, the report says so.
+- **What really happens:** in an engine comparison, replies run as your own turn with your tools and accounts. The shape leaves out past requests that would contact someone, buy something, save memory, or change an account, unless you ask for them again. Purchases and sends still need their usual approvals.
+- **Who sees the test chats:** they are private to you. The report is posted where you asked, so everyone in that chat reads it, and members there can have a shape read what was sent from that chat and the replies.
+- **Limits:** a message is up to 6,000 characters. The shape waits up to 90 seconds for a reply, or up to 10 minutes when the reply uses tools.
+
+<Note>
+Each reply in a test chat is billed like your own message on that engine. Engines that use credits spend yours.
+</Note>
 
 ### Prepare files and voice content
 
