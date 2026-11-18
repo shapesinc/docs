@@ -20,7 +20,7 @@ Three principles organize the product explanation: earn the group's trust, parti
 - Use-case guides cover everyday decisions, planning and learning, and team projects. Each gives a concrete goal, a shared prompt, and relevant controls.
 - Feature guides remain operational references, including creative features. Their introductions explain how the feature supports a shared activity.
 - `faq.mdx` and `faq/` remain the support path for account, access, replies, privacy, voice, engine, and billing questions. Keep exact UI labels current and retain only screenshots that match the documented interface.
-- The Articles tab is retired (November 2026). Its files stay in `articles/`, and `docs.json` redirects each `/articles/...` route to the closest guide. Don't add articles; put explanations in a guide and marketing on shapes.inc.
+- The Articles tab is retired (November 2026). Its files are deleted, and `docs.json` redirects each `/articles/...` route to the closest guide. Don't add articles; put explanations in a guide and marketing on shapes.inc.
 - `docs.json` owns navigation and site metadata. Existing page paths remain stable, including older entertainment-oriented slugs, so external links continue to work.
 
 ## Writing and maintenance
@@ -235,3 +235,14 @@ Deliberately not documented: Chat-mode ad frequency, generated site-account pass
 ## What's new mirrors the app (November 18, 2026)
 
 The release list in `whats-new.mdx` is generated, word for word, from the app's release files (`content/whats-new/*.md` in shapesinc/shapes-chat) by `scripts/sync-whats-new-from-app-releases.py <path to shapes-chat>`. Don't edit text between the `releases:start` and `releases:end` markers; change the release in shapes-chat and rerun the script. The script only escapes MDX characters, points in-app paths at the app, and appends a **Guides** line per release from its `GUIDES` map, which is where guide links for a new release go. The sections after the marker (old layout, Where everything moved, New for your group) are hand-written and hold only what the releases don't say.
+
+## Layout pass, October page, and retired content (November 17, 2026)
+
+- Every page follows the layout rules in `AGENTS.md`: sentence-case titles, one-sentence descriptions of 160 characters or fewer, a shared feature-page skeleton, copyable example requests, and a Welcome page built as a task chooser.
+- `october-2026-update.mdx` is the single page for the October 2026 transition. `whats-new.mdx` keeps a short "Where everything moved" section because the generated release notes link to that anchor.
+- `ask-a-shape-for-work.mdx` and `write-a-shape.mdx` replace `prompt101.mdx`, `shortguide.mdx`, and the community `promptingguides.mdx`.
+- Deleted with redirects: the retired money pages (`rewards`, `giftcards`, `purchasegiftcards`, `auto-top-up`, `how-to-purchase-credits-for-a-chat`, `premium`), `learninghub`, `groups`, `fandomchat`, `vanityurl`, `development`, two already-redirected FAQ files, and `articles/`. The dated `<Visibility for="humans">` archives and 92 unreferenced images are gone. Earlier sections of this file that describe keeping archives in source are historical.
+- `/ai-engines` now redirects to `/aienginecheatsheet`; the app links to that route.
+- `docs.json` turns on the page menu (copy as Markdown, view as Markdown, open in ChatGPT or Claude) and the last-updated date.
+
+No runtime code or AI calls are added: incremental recurring provider spend is $0/day.

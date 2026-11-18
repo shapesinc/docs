@@ -1,0 +1,163 @@
+---
+title: "Write a shape's personality and instructions"
+sidebarTitle: "Write a shape"
+description: "Describe how a shape behaves, show its voice with examples, and put each instruction where it belongs, for Chat mode and Agent chats."
+keywords: ["shape personality", "shape instructions", "Description", "Response style", "Training", "Knowledge", "group chat behavior"]
+---
+
+A shape follows what you write closely and literally. A short, specific description of how it behaves works better than a long list of rules.
+
+## Where each instruction lives
+
+Owners write a shape's own instructions in the shape editor: **Settings** → **Your shapes**, then select the shape. Other instructions belong to a person or a chat.
+
+| You want to | Write it in |
+| --- | --- |
+| Say who the shape is and how it behaves | **Profile** → **Description** |
+| Set the length and format of replies | **Profile** → **Response style** |
+| Add tone, traits, story, likes, and dislikes | **Profile** → **Personality** |
+| Add goals and sample lines the shape reads every time | **Profile** → **Conversation** |
+| Give the shape facts to draw on | **Knowledge** |
+| Show how it answers a kind of message | **Training** |
+| Set how every shape replies to you | **Settings** → **Personalization** → **Your preset** |
+| Give every shape in one chat the group's goal | The chat's **Settings** → **AI settings** → **Instructions** |
+| Keep a fact that comes up in conversation | [Memory](/memory): say "Remember that Sam is vegetarian." |
+
+These all add together and nothing overrides anything else, so contradictions between them confuse the shape. If **Description** asks for two sentences and **Response style** asks for long replies, the shape gets both.
+
+## Write the personality
+
+The shape reads **Description** before every reply. Put the personality there first, and use the other fields for detail.
+
+- **Open with one role sentence.** Say what the shape does and for whom: "`{shape}` plans trips with a group of friends."
+- **Add 6 to 10 concrete directives** about tone and working style. Each one describes something the shape does.
+- **Describe behavior, not adjectives.** "Teases gently and drops the joke when someone is upset" tells the shape what to do. "Funny" does not.
+- **Say what to do.** "Replies in two to four sentences" works better than "don't write long messages".
+- **Give the reason for a rule.** "Keep replies short, because long messages bury the plan in a busy chat" lets the shape apply the rule sensibly in cases you didn't list.
+- **Put the most important voice traits first.** Agent chats carry a shortened reminder of the shape's voice, built from **Tone** and then **Traits** and cut to 240 characters.
+- **Keep one instruction in one place.** Reply length belongs in **Response style** or in **Description**, not both.
+
+Stay well inside the limits. **Description** holds 3,000 characters, each **Personality** and **Conversation** field holds 3,000, and **Custom** response style **Instructions** hold 8,000. The improved example below uses about 1,100 characters.
+
+**Response style** sets the length and format of every reply. New shapes start on **Short creative**, which writes a line of speech plus a couple of actions. For a shape that helps a group plan or study, choose **Human**, **Balanced**, or **Intelligence**, or choose **Custom** and write your own **Instructions**. **AI Engine** → **Engine preset** edits the same text, so changing one changes the other.
+
+## Rewrite a weak personality
+
+This personality lists adjectives and shouts rules:
+
+```text wrap
+Juno is friendly, smart, funny, helpful, organized and creative. ALWAYS be helpful. NEVER be boring. NEVER write long messages. CRITICAL: do NOT forget anyone's budget. Juno MUST answer every message.
+```
+
+This one describes how the same shape behaves in a group:
+
+```text wrap
+{shape} plans trips with a group of friends and keeps the plan moving until everyone has agreed.
+
+{shape} writes like a well-travelled friend: warm, direct, a little dry. Replies are two to four sentences, because long messages bury the plan in a busy chat.
+{shape} answers the person who asked by name, and names anyone whose budget or dates an option affects.
+When the group is choosing, {shape} posts two or three options with the price per person and the main tradeoff of each, then asks one question that moves the decision forward.
+{shape} checks each option against what people have said about budget, dates and food, and says so when an option breaks one of them.
+{shape} says which details it has checked and which are guesses, so nobody books on a guess.
+When friends are chatting among themselves, {shape} stays out. It speaks when someone asks it, or when it has a fact or an option nobody has raised.
+When people disagree, {shape} lays out what each person wants and suggests a compromise. The group makes the call.
+After a decision, {shape} posts a one-line recap: what was agreed, who is doing what, and what is still open.
+```
+
+Why the second one works:
+
+- Every line is something the shape can do in its next reply, so the voice stays consistent.
+- The rules carry their reasons, so the shape handles situations the text never mentions.
+- It says when to speak and how much in plain sentences, with no capital letters and no "never" list.
+
+## Show the voice with examples
+
+Examples steer tone more reliably than description. The editor has two places for them, and the shape reads them differently.
+
+- **Profile** → **Conversation** → **Example chats** is included in every reply. Use it for two or three short lines that set the voice.
+- **Training** holds pairs: **When someone says…** and what the shape replies. Each side holds 8,000 characters. The shape reads only the pairs closest to the latest message.
+
+Write a few varied pairs for the situations that matter most. One pair for the trip-planning shape:
+
+```text wrap
+When someone says: where should we eat saturday
+{shape} replies: Two that fit everyone, {user}. Taberna Rosa is about 25 each, loud, and a five-minute walk. Mar Azul is about 40 each, quiet, and a 15-minute cab. Which matters more, price or quiet?
+```
+
+**Knowledge** works the same way. The shape doesn't read all of it on every reply. It pulls the entries that match the latest message, the person it is replying to, and a set of common topics such as its personality, likes, relationships, and commands.
+
+- **Write self-contained entries.** Each entry is matched by itself, so name the subject in the entry: "The cabin in Tahoe sleeps six and has no wifi", not "It sleeps six".
+- **Keep one topic per entry.** A focused entry matches the right question.
+- **Add only what the shape needs for its role.** A shape loads at most 100 **Knowledge** entries.
+- **Recall** sets how many come up: **Entries per reply** and **Examples per reply** both start at 30.
+
+The personality is always read in full. When an engine runs short of room, recent messages are trimmed, and **Knowledge**, **Training**, and long-term memories are left out of that reply if they don't fit.
+
+## Write for a group
+
+The shape sees the names of the people in the chat and who sent the latest message. Describe how it uses that.
+
+- **When to speak.** Say what a useful contribution is: answering a question put to it, adding a fact or an option nobody has raised, or recapping a decision.
+- **Who it is talking to.** Ask it to address the person it is answering by name.
+- **How much room it takes.** Ask for short replies and one question at a time, so people keep talking to each other.
+- **How it helps the group decide.** Ask it to weigh what each person has said, lay out the tradeoff, and leave the decision to the group.
+
+The chat's [AI replies](/designing-social-intelligence#the-main-dial-free-will) settings decide when a shape replies without being asked, and an @mention of a shape always gets a reply. In group Agent chats, shapes reply when they can contribute and stay out of ordinary conversation between people.
+
+Put what belongs to one group, such as its goal, budget, and deadline, in that chat's [instructions](/custominstructions-chats). They hold up to 128,000 characters and apply to every shape in the chat. A person's **Your preset** holds 8,000 characters, and a shape reads only the preset of the person it is replying to.
+
+## Use variables
+
+Two placeholders work, and they must be lowercase:
+
+- `{shape}` becomes the shape's **Name**.
+- `{user}` becomes the name of the person the shape is replying to. In a group it changes from reply to reply.
+
+They are replaced everywhere the shape reads instructions: every **Profile** field, **Knowledge**, **Training**, chat instructions, and **Your preset**. In **Your preset**, `{user}` always means you. There are no placeholders for the date, the time, or the chat's name. See [Variables](/variables).
+
+## Set the first message
+
+**Profile** → **Greeting** → **First message** is posted word for word, with variables filled in. No engine rewrites it. The shape posts it when a chat is created, when the shape is added to a chat, when someone opens a DM with it, and after a reset.
+
+The first message then counts as something the shape said, so it sets the voice for the replies that follow. Write it in the voice you described, and keep it short. It holds 3,000 characters. Leave it empty and the shape opens each chat its own way. See [Set an initial message](/initialmessages).
+
+## Chat mode and Agent chats
+
+Everything you write applies in both. **Description**, every **Personality** and **Conversation** field, **Response style**, **Knowledge**, **Training**, memory, and **Language** are read in Chat mode and in Agent chats.
+
+What differs:
+
+| Setting | Chat mode | Agent chats |
+| --- | --- | --- |
+| What the engine reads | Your shape's text and the chat's | shapes.inc's own working instructions for agents come first, then the same text |
+| **Tone** | The tone the shape always responds in | The shape's usual tone, plus the 240-character voice reminder |
+| **AI Engine** | The shape's, unless the chat sets one | The chat's engine or the shapes.inc default. The shape's is not used |
+| **Temperature** | The shape's, unless the chat sets one | 0.7, unless the chat sets one |
+| Date and time | Message timestamps, only when the chat's **Time Awareness** is on | The current date and time, always |
+
+In Agent chats your **Response style** sits among much more text. Keep it short and specific, and test the shape in an Agent chat as well as in Chat mode. See [Chat, Agent, and Auto](/chat-and-agent-modes).
+
+## Habits to drop
+
+- **Capital-letter rules and "CRITICAL".** The shape overreacts to them. Write the rule in a normal sentence.
+- **Blanket "never" lists.** "Never" is read as absolute. Say what to do, or "ask before" doing it.
+- **Repeating a rule.** Saying it three times adds weight you can't control. Say it once, with its reason.
+- **Adjective piles.** "Witty, warm, sarcastic" leaves the behavior to chance. Describe what the shape does.
+- **Very long personalities.** More text means more contradictions and less attention on each line. Cut anything that isn't changing a reply.
+- **Tuning Temperature to fix a voice.** Leave **Advanced parameters** at their defaults and change the wording.
+
+## Test and adjust
+
+1. Add the shape to a chat and send the messages your group sends most.
+2. When a reply is off, select **Regenerate** in the reply's ⋯ menu to see whether it was a one-off. Credits come from whoever regenerates.
+3. Open **Generation details** in the same menu to see which engine wrote the reply.
+4. Change one thing in the editor, select **Save**, and send the same message again.
+
+Add a line only for a problem you have seen, and remove any line that isn't improving replies.
+
+## Related
+
+- [Make a shape](/how-to-make-a-shape): create a shape and find each editor section.
+- [Presets](/presets): choose where reusable instructions apply.
+- [Shape behavior in group chats](/designing-social-intelligence): control when a shape speaks.
+- [Custom chat instructions](/custominstructions-chats): give every shape in a chat the group's goal.
