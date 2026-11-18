@@ -33,9 +33,11 @@
           "introduction",
           "create-a-chat",
           "how-to-talk-to-shapes",
+          "ask-a-shape-for-work",
           "shapes101",
           "shapes-search",
           "make-or-recover-account",
+          "october-2026-update",
           "whats-new"
         ]
       },
@@ -113,6 +115,7 @@
         "group": "Build a shape",
         "pages": [
           "how-to-make-a-shape",
+          "write-a-shape",
           "designing-social-intelligence",
           "shapeschatsguide",
           "initialmessages",
@@ -128,11 +131,8 @@
           "contextwindows",
           "memory",
           "memory-under-the-hood",
-          "prompt101",
-          "shortguide",
           "presets",
-          "variables",
-          "promptingguides"
+          "variables"
         ]
       },
       {
@@ -140,13 +140,7 @@
         "pages": [
           "premium-subscriptions",
           "credits",
-          "credits-guide",
-          "how-to-purchase-credits-for-a-chat",
-          "auto-top-up",
-          "giftcards",
-          "purchasegiftcards",
-          "premium",
-          "rewards"
+          "credits-guide"
         ]
       },
       {
@@ -155,7 +149,6 @@
           "personalization",
           "accessibility",
           "feedback",
-          "learninghub",
           "faq",
           {
             "group": "Getting around",
@@ -392,6 +385,93 @@
       "source": "/faq/why-dont-the-premium-credit-redemption-options-reset-on-the-rewards-page",
       "destination": "/faq/what-happened-to-rewards",
       "permanent": true
+    },
+    {
+      "source": "/rewards",
+      "destination": "/faq/what-happened-to-rewards",
+      "permanent": true
+    },
+    {
+      "source": "/giftcards",
+      "destination": "/october-2026-update#retired",
+      "permanent": true
+    },
+    {
+      "source": "/purchasegiftcards",
+      "destination": "/october-2026-update#retired",
+      "permanent": true
+    },
+    {
+      "source": "/auto-top-up",
+      "destination": "/faq/why-did-i-get-charged-automatically-for-more-credits",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-purchase-credits-for-a-chat",
+      "destination": "/credits#chat-credits",
+      "permanent": true
+    },
+    {
+      "source": "/premium",
+      "destination": "/premium-subscriptions",
+      "permanent": true
+    },
+    {
+      "source": "/promptingguides",
+      "destination": "/write-a-shape",
+      "permanent": true
+    },
+    {
+      "source": "/shortguide",
+      "destination": "/write-a-shape",
+      "permanent": true
+    },
+    {
+      "source": "/prompt101",
+      "destination": "/ask-a-shape-for-work",
+      "permanent": true
+    },
+    {
+      "source": "/learninghub",
+      "destination": "/introduction",
+      "permanent": true
+    },
+    {
+      "source": "/groups",
+      "destination": "/sidebar-organization",
+      "permanent": true
+    },
+    {
+      "source": "/fandomchat",
+      "destination": "/create-a-chat",
+      "permanent": true
+    },
+    {
+      "source": "/vanityurl",
+      "destination": "/faq/how-do-i-change-my-shapes-vanity-url",
+      "permanent": true
+    },
+    {
+      "source": "/development",
+      "destination": "/introduction",
+      "permanent": true
+    },
+    {
+      "source": "/ai-engines",
+      "destination": "/aienginecheatsheet",
+      "permanent": true
     }
-  ]
+  ],
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ],
+    "display": "header"
+  },
+  "metadata": {
+    "timestamp": true
+  }
 }

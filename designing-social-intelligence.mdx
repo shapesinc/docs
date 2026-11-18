@@ -1,6 +1,6 @@
 ---
-title: "Designing a Multiplayer Assistant"
-description: "Control when a Shape speaks in a group chat and what it contributes, with shared instructions, memory, and AI replies."
+title: "Shape behavior in group chats"
+description: "Control when a shape speaks in a group chat and what it contributes, with shared instructions, memory, and AI replies."
 keywords: ["multiplayer assistant", "group trust", "social intelligence AI", "AI replies", "collaborative decisions", "AI configuration"]
 sidebarTitle: "Shape behavior"
 ---
@@ -13,13 +13,13 @@ A shape is useful in a group when it knows what the group values, contributes it
 
 ### Earn the group's trust
 
-Share the group's goal, constraints, and preferences in [Custom Chat Instructions](/custominstructions-chats). Ask the Shape to explain recommendations in terms of those priorities, distinguish facts from assumptions, and acknowledge what it does not know.
+Share the group's goal, constraints, and preferences in [custom chat instructions](/custominstructions-chats). Ask the shape to explain recommendations in terms of those priorities, distinguish facts from assumptions, and acknowledge what it does not know.
 
 When it misses someone's point, correct it in the chat and ask for a revised summary. Trust grows when the group can inspect and improve the work together.
 
 ### Be an equal actor in the group
 
-Give the Shape a clear role and a perspective it can contribute. A researcher can point out missing evidence; a planning assistant can explain why an option fails a shared constraint.
+Give the shape a clear role and a perspective it can contribute. A researcher can point out missing evidence; a planning assistant can explain why an option fails a shared constraint.
 
 Its recommendations should consider everyone in the collaboration. Ask it to explain disagreements respectfully and avoid treating one person's preference as the whole group's decision. The people involved still decide what to do.
 
@@ -27,7 +27,7 @@ Its recommendations should consider everyone in the collaboration. Ask it to exp
 
 A well-timed contribution is a clarifying question, a relevant fact, a comparison, or a recap that reveals an unresolved choice. It succeeds when the group moves forward.
 
-Use the reply triggers below to tune participation. Reply triggers only decide when a Shape speaks: they do not connect calendars, email, or other apps, and they do not guarantee background work. [Skills](/shapeskills) provide built-in capabilities, and [connected apps](/connected-apps) or MCP servers can add more.
+Use the reply triggers below to tune participation. Reply triggers only decide when a shape speaks: they do not connect calendars, email, or other apps, and they do not guarantee background work. [Skills](/shapeskills) provide built-in capabilities, and [connected apps](/connected-apps) or MCP servers can add more.
 
 <span id="the-core-problem-presence-without-spam" />
 
@@ -41,20 +41,20 @@ Start with a clear role and a small set of reply triggers. Watch whether contrib
 
 ## The main dial: AI replies
 
-**AI replies** controls when Shapes join the conversation on their own. Open the chat's **Settings** by selecting its name or avatar at the top of the chat (chat owners can also use **More actions** → **Settings**), then go to **AI settings** → **AI replies**. **AI settings** is available to chat owners and in DMs with a Shape.
+**AI replies** controls when shapes join the conversation on their own. Open the chat's **Settings** by selecting its name or avatar at the top of the chat (chat owners can also use **More actions** → **Settings**), then go to **AI settings** → **AI replies**. **AI settings** is available to chat owners and in DMs with a shape.
 
 In **Agent** chats with two or more people, **Jev (experimental)** is always on: the AI reads the conversation, joins in when it can help, and stays out of ordinary conversation. Most of the individual triggers below don't appear there. See [Chat and Agent modes](/chat-and-agent-modes).
 
-In other chats, choose under **Auto-reply triggers**. The options shown vary with the chat; DMs with a Shape show fewer.
+In other chats, choose under **Auto-reply triggers**. The options shown vary with the chat; DMs with a shape show fewer.
 
 - **Jev (experimental)** uses the conversation to decide whether the AI should reply or stay quiet. Your other controls still apply.
-- **Reply when mentioned**: Shapes respond when someone uses their `@name`.
-- **Keep the convo going**: a Shape continues the exchange after it has replied, without another mention.
-- **React to keywords**: Shapes respond to trigger words. Set keywords for individual Shapes and use **Save**; they only work in that chat.
-- **Always have something to say**: a Shape responds when nobody else replies.
-- **Come back later**: Shapes check back in if the conversation goes quiet. This is conversational follow-up, not a scheduled reminder with a guaranteed time. For reminders, ask a Shape directly and check **Settings** → **Tasks**; see [Tasks](/tasks).
+- **Reply when mentioned**: shapes respond when someone uses their `@name`.
+- **Keep the convo going**: a shape continues the exchange after it has replied, without another mention.
+- **React to keywords**: shapes respond to trigger words. Set keywords for individual shapes and use **Save**; they only work in that chat.
+- **Always have something to say**: a shape responds when nobody else replies.
+- **Come back later**: shapes check back in if the conversation goes quiet. This is conversational follow-up, not a scheduled reminder with a guaranteed time. For reminders, ask a shape directly and check **Settings** → **Tasks**; see [Tasks](/tasks).
 
-Turn on only the triggers the chat needs, and turn them off when the chat gets noisy. **Time Awareness**, under **General Settings** in the same panel, supplies time context to responses; it does not decide when a Shape replies. For extra replies or message splitting, see [Multiple Messages](/multimessages).
+Turn on only the triggers the chat needs, and turn them off when the chat gets noisy. **Time Awareness**, under **General Settings** in the same panel, supplies time context to responses; it does not decide when a shape replies. For extra replies or message splitting, see [Multiple messages](/multimessages).
 
 <span id="recipes-tune-free-will-to-the-room" />
 
@@ -66,16 +66,16 @@ Start with the purpose of the chat and adjust one setting at a time.
 
 <AccordionGroup>
   <Accordion title="Comparing options as a group" icon="scale-balanced">
-    Start with **Reply when mentioned**. Ask the Shape to summarize everyone's criteria and compare the options. Add **Keep the convo going** if follow-up questions help the group work through the choice.
+    Start with **Reply when mentioned**. Ask the shape to summarize everyone's criteria and compare the options. Add **Keep the convo going** if follow-up questions help the group work through the choice.
   </Accordion>
   <Accordion title="A focused project discussion" icon="briefcase">
-    Start with **Reply when mentioned** and concise [chat instructions](/custominstructions-chats). If a Shape has a specific area to cover, try **React to keywords** with a small set of relevant terms.
+    Start with **Reply when mentioned** and concise [chat instructions](/custominstructions-chats). If a shape has a specific area to cover, try **React to keywords** with a small set of relevant terms.
   </Accordion>
   <Accordion title="An ongoing plan with friends or family" icon="users">
     Start with **Reply when mentioned** and optionally **Keep the convo going**. Consider **Come back later** if the group wants conversational follow-ups. Keep confirmed dates and responsibilities in a pinned recap.
   </Accordion>
-  <Accordion title="Too many Shape messages" icon="volume-low">
-    Turn off unwanted automatic triggers one at a time and check the result. Review [Multiple Messages](/multimessages) for the separate Shape personality setting and fast-forward controls.
+  <Accordion title="Too many shape messages" icon="volume-low">
+    Turn off unwanted automatic triggers one at a time and check the result. Review [Multiple messages](/multimessages) for the separate shape personality setting and fast-forward controls.
   </Accordion>
 </AccordionGroup>
 
@@ -83,50 +83,50 @@ Start with the purpose of the chat and adjust one setting at a time.
 
 ## Understanding people's preferences
 
-People often want different things from the same plan. Give the Shape enough context to recognize those differences.
+People often want different things from the same plan. Give the shape enough context to recognize those differences.
 
-- **Each person's priorities** help the Shape compare options fairly. Ask everyone to share the constraints and preferences that matter to them.
-- **[Memory](/memory)** carries continuity across the context available to a Shape. When a preference or decision matters, state it clearly and correct misunderstandings.
+- **Each person's priorities** help the shape compare options fairly. Ask everyone to share the constraints and preferences that matter to them.
+- **[Memory](/memory)** carries continuity across the context available to a shape. When a preference or decision matters, state it clearly and correct misunderstandings.
 - **A shared recap** lets everyone check whether the assistant understood the group. Pin the current plan and revise it when agreement changes.
 
-A Shape does not recall every detail. Bring the relevant information back into the conversation when it matters.
+A shape does not recall every detail. Bring the relevant information back into the conversation when it matters.
 
-## Coordinating multiple Shapes
+## Coordinating multiple shapes
 
-If a chat has multiple Shapes, give each a distinct contribution: one might draft a plan while another checks it against the group's constraints.
+If a chat has multiple shapes, give each a distinct contribution: one might draft a plan while another checks it against the group's constraints.
 
-- **Separate their roles.** Avoid several Shapes repeating the same recommendation.
-- **Use chat-specific keywords where available.** They direct relevant topics to different Shapes; AI replies triggers themselves are chat settings.
+- **Separate their roles.** Avoid several shapes repeating the same recommendation.
+- **Use chat-specific keywords where available.** They direct relevant topics to different shapes; AI replies triggers themselves are chat settings.
 - **Review [reply settings](/shapes101#activating-shapes).** Use **Reply when mentioned** when the group wants to direct each contribution, and turn off automatic triggers that cause unwanted replies.
 
 <span id="voice-in-a-crowd-presets-and-personality" />
 
 ## Presets and personality in a group
 
-A Shape's [preset](/presets) and personality set how it responds. Write its guidance for a group:
+A shape's [preset](/presets) and personality set how it responds. Write its guidance for a group:
 
 - Keep replies short enough for everyone to discuss.
 - Ask it to build on what people have said and ask a focused question when something is missing.
 - Request the reason for a recommendation and the main tradeoff.
 - Ask it to label suggestions separately from confirmed decisions.
 
-More on response style: [When Less Is More](/shortguide), [Prompt 101](/prompt101), and the [Prompting Guides](/promptingguides).
+More on response style: [Write a shape's personality and instructions](/write-a-shape).
 
 <span id="room-level-behavior-instructions-and-guardrails" />
 
 ## Chat-level behavior: instructions and guardrails
 
-Use chat-level controls for expectations that apply to every Shape:
+Use chat-level controls for expectations that apply to every shape:
 
-- **[Custom Chat Instructions](/custominstructions-chats):** the shared goal, decision criteria, constraints, and preferred response format.
-- **[Initial messages and a Welcome Shape](/initialmessages):** context for people joining the chat.
-- **[Moderation](/moderation):** controls such as slow mode, character limits, blocked words, and a moderator Shape.
+- **[Custom chat instructions](/custominstructions-chats):** the shared goal, decision criteria, constraints, and preferred response format.
+- **[Initial messages and a welcome shape](/initialmessages):** context for people joining the chat.
+- **[Moderation](/moderation):** controls such as slow mode, character limits, blocked words, and a moderator shape.
 
 <span id="test-watch-iterate" />
 
 ## Test and adjust
 
-1. Ask the Shape to summarize the group's priorities. Check whether everyone is represented accurately.
+1. Ask the shape to summarize the group's priorities. Check whether everyone is represented accurately.
 2. Ask it to compare options. Look for useful evidence, clear tradeoffs, and acknowledged uncertainty.
 3. Watch when it speaks. Adjust one AI replies trigger or response-length instruction at a time.
 4. If a response misses the point, correct the context or [regenerate](/regeneration) it, then review the result with the group.
@@ -142,13 +142,7 @@ Use chat-level controls for expectations that apply to every Shape:
 - Relevant skills available and any required app or service connected before relying on outside information.
 - A visible recap of confirmed decisions and unresolved questions.
 
-<CardGroup cols={2}>
-  <Card title="Start a chat" icon="comment" href="/how-to-talk-to-shapes">
-    Make a chat, invite your friends, and get things done together.
-  </Card>
-  <Card title="Use an assistant with your team" icon="briefcase" href="/ai-at-work">
-    Compare proposals, draft shared work, and agree on next steps.
-  </Card>
-</CardGroup>
+## Related
 
-[Start a chat on shapes.inc](https://shapes.inc)
+- [Start a chat](/how-to-talk-to-shapes): make a chat, invite your friends, and get things done together.
+- [Use an assistant with your team](/ai-at-work): compare proposals, draft shared work, and agree on next steps.

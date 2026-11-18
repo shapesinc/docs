@@ -1,87 +1,79 @@
 ---
-title: "Shape Credits Guide"
+title: "Shape Credits guide"
 sidebarTitle: "Credits guide"
-description: "What affects how many Shape Credits a premium reply uses, and how to keep usage low."
+description: "See what affects how many Shape Credits a premium reply uses, and how to keep usage low."
 ---
 
 <Tabs>
-  <Tab title="Credit Usage Chart">
+  <Tab title="Credit usage chart">
     Premium replies use credits at different rates. The rate depends on the engine and on how much context is sent with each message.
 
-    The biggest factor is your chosen premium engine, or the engine selected by the Shape creator. Premium engine replies are charged at twice the engine's provider cost, and providers charge different amounts, so some credits stretch farther than others.
+    The biggest factor is your chosen premium engine, or the engine selected by the shape creator. Premium engine replies are charged at twice the engine's provider cost, and providers charge different amounts, so some credits stretch farther than others.
 
-    To see what a reply used, open the ⋯ menu on the Shape's message and select **Generation details**. It shows the engine, why it was picked, and the credits used.
+    To see what a reply used, open the ⋯ menu on the shape's message and select **Generation details**. It shows the engine, why it was picked, and the credits used.
 
-    <Tip>
-      Use [AI Engine Guide](/aienginecheatsheet) for engine family guidance, and check [shapes.inc/engines](https://shapes.inc/engines) for the current live engine list.
-    </Tip>
+    Use [AI engines](/aienginecheatsheet) for engine family guidance, and check [shapes.inc/engines](https://shapes.inc/engines) for the current live engine list.
 
     <Warning>
       Offered premium engines, prices, and credit usage can change over time. If you are trying to control spend, check the chat's engine before sending and review **Generation details** afterward.
     </Warning>
 </Tab>
-  <Tab title="Tips on Credit Usage">
-    ## Understanding Credit Usage
+  <Tab title="Tips on credit usage">
+    ## Understanding credit usage
 
-    Each time your Shape replies, the AI engine reads all the context sent with the message: your messages, the Shape’s settings, and any memories or instructions you’ve enabled.\
+    Each time your shape replies, the AI engine reads all the context sent with the message: your messages, the shape’s settings, and any memories or instructions you’ve enabled.\
     More context means more _tokens_, and more tokens means more credits.
 
-    ### What Counts Toward Input Tokens
+    ### What counts toward input tokens
 
-    Each Shape message includes several inputs that tell the AI engine who the Shape is, what’s happening, and what to say.\
+    Each shape message includes several inputs that tell the AI engine who the shape is, what’s happening, and what to say.\
     These count:
 
-    | Input Source                   | What It Is                                                                                          | Token Impact                                                                                                                   |
+    | Input source                   | What it is                                                                                          | Token impact                                                                                                                   |
     | :----------------------------- | :-------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------- |
     | **Your Message**               | What you just type or say each time you chat.                                                       | **Low** – Short messages barely cost anything; long paragraphs increase cost slightly.                                      |
-    | **Training Samples**           | Example chats you’ve added in the Shape editor's **Training** section.                              | **Low** – Only a few examples are pulled at once (set by **Examples per reply** under **Training** → **Recall**), so cost stays small.                     |
-    | **Knowledge**                  | The Shape’s knowledge entries. Recall is controlled under **Knowledge** → **Recall**.        | **Low** – Only some entries load per message (set by **Entries per reply**). Each one adds input length.                   |
-    | **Long-Term Memory**           | Saved memories from past sessions. Managed in the Shape editor's **Memory** section.                | **Low** – Only some memories are pulled each time (set by **Memories per reply**).                                         |
-    | **Shape Personality & Preset** | The Shape’s description under **Profile** → **Basics**, and traits, story, and conversation examples under **Profile**.            | **Medium** – Brief traits are fine, but long, detailed personalities add up.                                                |
+    | **Training Samples**           | Example chats you’ve added in the shape editor's **Training** section.                              | **Low** – Only a few examples are pulled at once (set by **Examples per reply** under **Training** → **Recall**), so cost stays small.                     |
+    | **Knowledge**                  | The shape’s knowledge entries. Recall is controlled under **Knowledge** → **Recall**.        | **Low** – Only some entries load per message (set by **Entries per reply**). Each one adds input length.                   |
+    | **Long-Term Memory**           | Saved memories from past sessions. Managed in the shape editor's **Memory** section.                | **Low** – Only some memories are pulled each time (set by **Memories per reply**).                                         |
+    | **Shape Personality & Preset** | The shape’s description under **Profile** → **Basics**, and traits, story, and conversation examples under **Profile**.            | **Medium** – Brief traits are fine, but long, detailed personalities add up.                                                |
     | **Response Style Instructions** | The **Instructions** text under **Profile**, when **Response style** is **Custom**.                       | **High** – Costs scale with length. Keep them concise when possible.                                                        |
-    | **Chat Instructions**          | Context that applies to everyone in a chat. Found in the chat’s **Settings** → **AI settings**. | **High** – The longer the instructions, the more each Shape message costs.                                                |
+    | **Chat Instructions**          | Context that applies to everyone in a chat. Found in the chat’s **Settings** → **AI settings**. | **High** – The longer the instructions, the more each shape message costs.                                                |
     | **Your Profile & Preset**      | Your Profile’s **About you** details and your preset, both in **Settings** → **Personalization**.    | **High** – Long Profile details and presets can quickly consume tokens. Your preset is limited to 8,000 characters.         |
-    | **Short-Term Memory**          | The Shape’s recall of recent chat messages. Set by the message-count slider under **AI Engine** → **Short-term memory**. | **Very High** – If set to 200, it re-reads all 200 recent messages each time. Great for remembering details, but expensive. The slider stops at 40 without Premium or account credits. |
+    | **Short-Term Memory**          | The shape’s recall of recent chat messages. Set by the message-count slider under **AI Engine** → **Short-term memory**. | **Very High** – If set to 200, it re-reads all 200 recent messages each time. Great for remembering details, but expensive. The slider stops at 40 without Premium or account credits. |
 
-    ### Settings That Affect Cost
+    ### Settings that affect cost
 
-    These settings in your Shape or chat control how much input each message sends:
+    These settings in your shape or chat control how much input each message sends:
 
-    | Setting                | Effect on Cost                                           | Tips                                                                            |
+    | Setting                | Effect on cost                                           | Tips                                                                            |
     | :--------------------- | :------------------------------------------------------- | :------------------------------------------------------------------------------ |
     | **Engine Choice**      | Different AI Engines have different prices per token.    | Cheaper engines = longer chats for less.                                     |
-    | **Memory Settings**    | Control how much context is re-sent.                     | Try lowering if your Shape doesn’t need full recall.                         |
+    | **Memory Settings**    | Control how much context is re-sent.                     | Try lowering if your shape doesn’t need full recall.                         |
     | **Knowledge Settings** | Enables use of stored data or uploaded text.             | Turn off if not needed for casual chats. Utilize the Engine's built in data. |
     | **Training Recall**    | Controls how many examples are sent to guide tone/style. | Keep it low unless you need better replication.                              |
     | **Reasoning effort**   | Higher effort can take longer and use more credits.      | Use **Default** or **Low** unless the task needs careful thinking.           |
-    | **Instructions & Profile** | Chat Instructions, Shape instructions, your preset and Profile | Keep all of these inputs concise.          |
+    | **Instructions & Profile** | Chat Instructions, shape instructions, your preset and Profile | Keep all of these inputs concise.          |
 
     ---
 
-    ### Example Scenarios
+    ### Example scenarios
 
-    | Example                                          | What’s Happening                                   | Credit Impact   |
+    | Example                                          | What’s happening                                   | Credit impact   |
     | :----------------------------------------------- | :------------------------------------------------- | :-------------- |
     | “Casual chat with a short prompt”                | You send short messages, low memory, no knowledge. | Very low.       |
-    | “Storytelling with detailed Shape personality”   | Long custom prompt + long Shape responses.         | Moderate.       |
-    | “Research Shape with knowledge docs + training”  | Pulls from multiple sources + high memory.         | High.           |
+    | “Storytelling with detailed shape personality”   | Long custom prompt + long shape responses.         | Moderate.       |
+    | “Research shape with knowledge docs + training”  | Pulls from multiple sources + high memory.         | High.           |
     | “High-end engine with high short-term memory ON” | Expensive engine + large input context each turn.  | Very high.      |
 
-    ### Tips to Stretch Your Credits
+    ### Tips to stretch your credits
 
     - **Keep inputs concise.** Every word adds tokens.
     - **Lower memory settings** unless you need deep recall.
     - **Disable unused features** like knowledge or training.
-    - **Switch engines** if you chat often. See the [AI Engine Guide](/aienginecheatsheet).
+    - **Switch engines** if you chat often. See [AI engines](/aienginecheatsheet).
 
     <a id="tldr" />
 
-    ### Summary
-
-    Your Shape’s total token input =\
-    **(Your message) + (Shape settings) + (Memories) + (Instructions) + (Knowledge/Training)**\
-    More context gives richer replies and uses more credits.
+    <span id="summary" />
   </Tab>
 </Tabs>
-
-[Return to App](https://talk.shapes.inc)

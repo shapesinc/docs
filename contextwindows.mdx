@@ -1,38 +1,42 @@
 ---
-title: "Understanding Context Windows"
+title: "Context windows"
 sidebarTitle: "Context windows"
-description: "The context window is everything the AI engine reads to generate a Shape's reply: what goes in it, how its size varies, and what happens when it fills."
+description: "See what an AI engine reads for each reply, how the context window's size varies, and what happens when it fills."
 ---
 
 The context window is the AI's working memory: the space that holds everything the AI engine reads for each reply. Its size depends on the engine, and older content drops out when it fills.
 
-## What's Included in the Context Window?
+<span id="whats-included-in-the-context-window" />
+
+## What the context window includes
 
 shapes.inc combines these inputs into the context window:
 
-**User Input in Personality Fields** – Your Shape's name, backstory, and personality settings are included to maintain consistent tone and character throughout the conversation.
+**User Input in Personality Fields** – Your shape's name, backstory, and personality settings are included to maintain consistent tone and character throughout the conversation.
 
-**Response style** – The Shape's **Response style** (in the Shape editor under **Profile**) establishes its fundamental style and behavioral patterns. Options include **Human**, **Short creative**, and **Long creative**, or choose **Custom** and write your own **Instructions**.
+**Response style** – The shape's **Response style** (in the shape editor under **Profile**) establishes its fundamental style and behavioral patterns. Options include **Human**, **Short creative**, and **Long creative**, or choose **Custom** and write your own **Instructions**.
 
-**Short-Term Memory** – The most recent messages from your chat history. Shape owners control how many recent messages are included under **AI Engine** → **Short-term memory** in the Shape editor. Premium plans allow more recent messages per Shape.
+**Short-Term Memory** – The most recent messages from your chat history. Shape owners control how many recent messages are included under **AI Engine** → **Short-term memory** in the shape editor. Premium plans allow more recent messages per shape.
 
-**Chat History** – In Agent chats, the moments from the whole chat that relate to the current message, with their dates, including messages from before the Shape joined. Only history older than the short-term messages is added, so nothing is included twice. See the [Memory Guide](/memory).
+**Chat History** – In Agent chats, the moments from the whole chat that relate to the current message, with their dates, including messages from before the shape joined. Only history older than the short-term messages is added, so nothing is included twice. See the [Memory](/memory).
 
-**Long-Term Memory** – When enabled, your Shape draws on facts, events, and details from previous conversations, plus notes people asked it to remember. Shape owners manage it under **Memory** → **Long-term memory** in the Shape editor. In a workspace, Agent chats also receive relevant memories from your other chats in that workspace. See the [Memory Guide](/memory).
+**Long-Term Memory** – When enabled, your shape draws on facts, events, and details from previous conversations, plus notes people asked it to remember. Shape owners manage it under **Memory** → **Long-term memory** in the shape editor. In a workspace, Agent chats also receive relevant memories from your other chats in that workspace. See the [Memory](/memory).
 
-**Knowledge & Training** – Custom training, lore, facts, and other knowledge entries you've provided to guide your Shape's responses and expertise.
+**Knowledge & Training** – Custom training, lore, facts, and other knowledge entries you've provided to guide your shape's responses and expertise.
 
 **Your Profile and Preset** – The details in your Profile (such as **About you**) and your personal preset from **Settings** → **Personalization** are sent with your messages. Long Profile details take up space, so keep them focused.
 
-**Chat Instructions** – Anything in the chat's **Instructions** (in the chat's **Settings** → **AI settings**) is also sent to the Shape and included in the context window for each message.
+**Chat Instructions** – Anything in the chat's **Instructions** (in the chat's **Settings** → **AI settings**) is also sent to the shape and included in the context window for each message.
 
 All of it is sent to the AI engine with every message you send.
 
-## How AI Engines Affect Context Windows
+## How AI engines affect context windows
 
 AI engines have different **context window sizes**, measured in tokens (small chunks of text). A larger context window holds more at once: more chat history, personality details, and knowledge entries. With a smaller one, the AI may lose track of older parts of the conversation sooner. Some premium AI Engines offer larger context windows; check the [live engine catalog](https://shapes.inc/engines) for current details.
 
-## What Happens When the Context Window Fills Up?
+<span id="what-happens-when-the-context-window-fills-up" />
+
+## When the context window fills up
 
 When the context window is full, the system drops older content to make space for new information. This can result in:
 
@@ -40,7 +44,7 @@ When the context window is full, the system drops older content to make space fo
 - Loss of important details like names, events, or user preferences
 - Responses that feel disconnected from the broader conversation context
 
-## The Performance Impact of Information Overload
+## The performance impact of information overload
 
 More information is not always better. Too many knowledge entries, overly detailed instructions, or very long conversations can cause the AI to:
 
@@ -48,20 +52,18 @@ More information is not always better. Too many knowledge entries, overly detail
 - Generate shorter or lower-quality responses
 - Hallucinate facts or ignore parts of its instructions
 
-## Best Practices for Optimal Performance
+<span id="best-practices-for-optimal-performance" />
 
-To get the best results from your Shape:
+## Keep the context window focused
+
+To get the best results from your shape:
 
 **Keep it focused** – Write concise, targeted custom instructions and personality fields rather than lengthy descriptions.
 
-**Be selective with knowledge** – Include large amounts of knowledge only when your Shape's purpose needs it.
+**Be selective with knowledge** – Include large amounts of knowledge only when your shape's purpose needs it.
 
 **Manage memory** – Decide whether every past message needs to stay in context, or whether recent conversations are enough.
 
-**Upgrade if necessary** – Some premium AI Engines have larger context windows, and [Premium](/premium-subscriptions) plans let each Shape read more recent messages. If your use case requires a large amount of input, a premium engine may give better results.
+**Upgrade if necessary** – Some premium AI Engines have larger context windows, and [Premium](/premium-subscriptions) plans let each shape read more recent messages. If your use case requires a large amount of input, a premium engine may give better results.
 
-## Key Takeaway
-
-The context window is your Shape's working memory. Keep it clear and focused so your Shape responds accurately, consistently, and with the right level of detail.
-
-[Return to App](https://talk.shapes.inc)
+<span id="key-takeaway" />
