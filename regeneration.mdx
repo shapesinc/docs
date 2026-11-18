@@ -4,7 +4,7 @@ description: "Regenerate a Shape's reply to get a brand-new response. Anyone in 
 keywords: ["regenerate", "regeneration", "new response", "Generation details", "credits"]
 ---
 
-When you regenerate a reply, you're not asking the AI to "reword" what it already said. You're giving it another chance to generate a brand-new response from scratch.
+Regenerating a reply runs the full generation again and produces a new response from scratch. It does not reword what the AI already said.
 
 <Tip>
   To regenerate a reply, open the ⋯ menu on the Shape's message and select **Regenerate**. Anyone in the chat can regenerate a Shape's reply, not only the person it answered, and it works on Agent replies too.
@@ -21,7 +21,7 @@ Every regeneration runs the full pipeline again:
    - Short- and long-term memories (based on your Shape’s memory settings)
    - Training (based on your Shape’s training information)
 2. **Prompt built**\
-   All of the above is combined into a single input for the model.
+   All of the above is combined into a single input for the AI Engine.
 3. **Fresh generation**\
    The AI Engine calculates a new answer token by token, using randomness and probabilities.
 
@@ -33,30 +33,28 @@ To see how a reply was made, open its ⋯ menu and select **Generation details**
 
 ## **Why Responses Differ**
 
-Each run is like rolling a weighted set of dice. The outcome can vary depending on:
+Each run is a new roll of weighted dice. The outcome varies with:
 
 - **Randomness settings**: Higher temperature/top-p means more creative and unexpected responses; lower settings mean more focused, consistent ones.
-- **Prompt wording**: The way you phrase your request guides the model toward different directions.
+- **Prompt wording**: The way you phrase your request guides the AI Engine in different directions.
 - **Context richness**: Adding more detail in your instructions or conversation opens up more possible paths.
 - **Chance**: Even with the same setup, probability can land on a different “branch” of the answer space.
 
 ## **Tips for Maximizing Variety**
 
-If you want regenerations that explore different angles, try:
+To get regenerations that explore different angles:
 
-- Raising **Temperature** or **Top P** to encourage creativity. Shape owners find these in the Shape editor under **AI Engine** → **Advanced sampling**. In a chat you own, **Temperature** is also in the chat's **Settings** → **Engines** → **Engine settings**.
-- Rephrasing your question to push for new perspectives.
-- Providing more context or constraints to steer variety.
-- Changing the [AI Engine](/aienginecheatsheet) or the Shape's instructions if the responses aren't what you're looking for.
+- Raise **Temperature** or **Top P** to encourage creativity. Shape owners find these in the Shape editor under **AI Engine** → **Advanced sampling**. In a chat you own, **Temperature** is also in the chat's **Settings** → **Engines** → **Engine settings**.
+- Rephrase your question to push for new perspectives.
+- Provide more context or constraints to steer variety.
+- Change the [AI Engine](/aienginecheatsheet) or the Shape's instructions if the responses aren't what you're looking for.
 
   <Warning>
-    Use caution when adjusting parameters like temperature and top p: these make a huge impact!
+    Adjust temperature and top p in small steps. They change replies a lot.
   </Warning>
 
 ## **Key Takeaway**
 
-Regeneration isn’t about tweaking an answer, it’s about giving the AI a fresh roll of the dice with the same setup. Sometimes you’ll get a similar answer, sometimes something totally new, and often something in between.
-
-Think of it as exploring multiple “what ifs” with the same starting conditions.
+Regeneration is a fresh generation with the same setup, not an edit of the previous answer. You get a similar answer, something new, or something in between.
 
 [Return to App](https://shapes.inc)

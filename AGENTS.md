@@ -55,6 +55,7 @@ shapes.inc docs read like the docs of a frontier agent product: Claude Code, Cod
 - **Limits are exact:** numbers, units, reset times, who is covered. If you don't know the number, link the page that has it.
 - **Failure is the next state, not an apology.** Say what happened, what was and wasn't done, and the next move. "The payment didn't go through. Nothing was charged. Pick another way to pay on the card."
 - **Flat and certain for steps; precise for limits.** No "might", "should be able to", "feel free". Use "can" for a capability and "may" only for permission.
+- **shapes.inc is a group chat app.** Write "shapes.inc is a group chat app", never "shapes.inc is a group chat". A chat is one conversation inside the app.
 - **Name each thing once and keep the name:** shape, chat, Agent chat, Chat mode, task, routine, watch, connected app, engine, credits. Bold the exact UI label.
 
 ## Words

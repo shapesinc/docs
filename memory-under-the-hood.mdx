@@ -5,7 +5,7 @@ keywords: ["memory", "how memory works", "memory tips", "recall", "chat history"
 sidebarTitle: "Memory under the hood"
 ---
 
-The [Memory Guide](/memory) tells you what a shape remembers. This page tells you how, in enough detail to work with it. Every layer below is retrieved, not read in full, and the thing it is retrieved *for* is almost always your latest message. Once you know that, most of the tips write themselves.
+A shape retrieves memory for each reply; it does not read everything in full. Every layer below is matched, almost always against your latest message, and the tips follow from that. The [Memory Guide](/memory) covers what a shape remembers; this page covers how, in enough detail to work with it.
 
 ## What's different about it
 
@@ -242,7 +242,7 @@ flowchart LR
 
 ## Engines and memory
 
-Recall gets the right history in front of the shape; the AI Engine decides what to do with it. Stronger engines are better at picking the right detail out of several excerpts and worse at echoing the question back. If memory matters in a chat, choose a stronger engine in the chat's **Settings → Engines**, or for a shape you own under **AI Engine**.
+Recall gets the right history in front of the shape; the AI Engine decides what to do with it. Stronger engines are better at picking the right detail out of several excerpts and less likely to echo the question back. If memory matters in a chat, choose a stronger engine in the chat's **Settings → Engines**, or for a shape you own under **AI Engine**.
 
 ## What memory is not
 
