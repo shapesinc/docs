@@ -1,13 +1,13 @@
 ---
 title: "Understanding Context Windows"
-description: "When you chat with a Shape, the AI engine uses a context window to understand your conversation and generate responses."
+description: "The context window is everything the AI engine reads to generate a Shape's reply: what goes in it, how its size varies, and what happens when it fills."
 ---
 
-Think of the context window as the AI's "working memory"—a dedicated space where all relevant information is stored and processed for each reply.
+The context window is the AI's working memory: the space that holds everything the AI engine reads for each reply. Its size depends on the engine, and older content drops out when it fills.
 
 ## What's Included in the Context Window?
 
-shapes.inc combines several key inputs into its context window:
+shapes.inc combines these inputs into the context window:
 
 **User Input in Personality Fields** – Your Shape's name, backstory, and personality settings are included to maintain consistent tone and character throughout the conversation.
 
@@ -17,7 +17,7 @@ shapes.inc combines several key inputs into its context window:
 
 **Chat History** – In Agent chats, the moments from the whole chat that relate to the current message, with their dates, including messages from before the Shape joined. Only history older than the short-term messages is added, so nothing is included twice. See the [Memory Guide](/memory).
 
-**Long-Term Memory** – When enabled, your Shape can access and reference facts, events, and details from previous conversations, plus notes people asked it to remember. Shape owners manage it under **AI Engine** → **Long-term memory** in the Shape editor. In a workspace, Agent chats also receive relevant memories from your other chats in that workspace. See the [Memory Guide](/memory).
+**Long-Term Memory** – When enabled, your Shape draws on facts, events, and details from previous conversations, plus notes people asked it to remember. Shape owners manage it under **AI Engine** → **Long-term memory** in the Shape editor. In a workspace, Agent chats also receive relevant memories from your other chats in that workspace. See the [Memory Guide](/memory).
 
 **Knowledge & Training** – Custom training, lore, facts, and other knowledge entries you've provided to guide your Shape's responses and expertise.
 
@@ -25,15 +25,15 @@ shapes.inc combines several key inputs into its context window:
 
 **Chat Instructions** – Anything in the chat's **Instructions** (in the chat's **Settings** → **AI settings**) is also sent to the Shape and included in the context window for each message.
 
-All of this information is packaged together and sent to the AI engine with every message you send.
+All of it is sent to the AI engine with every message you send.
 
 ## How AI Engines Affect Context Windows
 
-Different AI engines have varying **context window sizes**, measured in tokens (small chunks of text). A larger context window allows the AI to consider more information simultaneously—including more chat history, personality details, and knowledge entries. Conversely, a smaller context window means the AI may lose track of older conversation elements more quickly. Some premium AI Engines offer larger context windows; check the [live engine catalog](https://shapes.inc/engines) for current details.
+AI engines have different **context window sizes**, measured in tokens (small chunks of text). A larger context window holds more at once: more chat history, personality details, and knowledge entries. With a smaller one, the AI may lose track of older parts of the conversation sooner. Some premium AI Engines offer larger context windows; check the [live engine catalog](https://shapes.inc/engines) for current details.
 
 ## What Happens When the Context Window Fills Up?
 
-When the context window reaches capacity, the system must make space for new information by dropping older content. This can result in:
+When the context window is full, the system drops older content to make space for new information. This can result in:
 
 - The AI forgetting earlier parts of the conversation
 - Loss of important details like names, events, or user preferences
@@ -41,7 +41,7 @@ When the context window reaches capacity, the system must make space for new inf
 
 ## The Performance Impact of Information Overload
 
-While it might seem beneficial to include as much information as possible, overwhelming the context window can actually hurt performance. Excessive amounts of knowledge entries, overly detailed instructions, or extremely long conversations can cause the AI to:
+More information is not always better. Too many knowledge entries, overly detailed instructions, or very long conversations can cause the AI to:
 
 - Become confused and mix up details
 - Generate shorter or lower-quality responses
@@ -53,14 +53,14 @@ To get the best results from your Shape:
 
 **Keep it focused** – Write concise, targeted custom instructions and personality fields rather than lengthy descriptions.
 
-**Be selective with knowledge** – Only include large amounts of knowledge when truly necessary for your Shape's purpose.
+**Be selective with knowledge** – Include large amounts of knowledge only when your Shape's purpose needs it.
 
-**Manage memory thoughtfully** – Consider whether you need every past message to remain in context, or if recent conversations are sufficient.
+**Manage memory** – Decide whether every past message needs to stay in context, or whether recent conversations are enough.
 
 **Upgrade if necessary** – Some premium AI Engines have larger context windows, and [Premium](/premium-subscriptions) plans let each Shape read more recent messages. If your use case requires a large amount of input, a premium engine may give better results.
 
 ## Key Takeaway
 
-The context window serves as your Shape's working memory. Keeping it clear, focused, and well-organized helps ensure your Shape responds accurately, consistently, and with the right level of detail for meaningful conversations.
+The context window is your Shape's working memory. Keep it clear and focused so your Shape responds accurately, consistently, and with the right level of detail.
 
 [Return to App](https://shapes.inc)
