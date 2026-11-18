@@ -267,6 +267,12 @@
               "faq/what-happened-to-rewards",
               "faq/why-do-i-see-ads"
             ]
+          },
+          {
+            "group": "About shapes.inc",
+            "pages": [
+              "faq/who-makes-shapes-inc"
+            ]
           }
         ]
       }
