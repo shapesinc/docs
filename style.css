@@ -517,10 +517,13 @@ pre,
   background: hsl(var(--sx-card));
   box-shadow: var(--sx-card-shadow);
   overflow: hidden;
+  /* Mintlify's dividers use border-color: inherit, so the hairline is set here. */
+  border-color: var(--sx-hair) !important;
 }
 
 #content-area details,
 #content-area .accordion {
+  background: hsl(var(--sx-card)) !important;
   border-color: var(--sx-hair) !important;
   border-radius: var(--sx-radius) !important;
 }
