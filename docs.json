@@ -37,6 +37,7 @@
           "shapes101",
           "shapes-search",
           "make-or-recover-account",
+          "apps",
           "october-2026-update",
           "whats-new"
         ]
@@ -161,7 +162,8 @@
               "faq/how-do-i-sort-chats-into-categories",
               "faq/how-do-i-delete-a-chat",
               "faq/how-do-i-lock-a-chat-so-that-other-people-cant-join",
-              "faq/how-does-the-friends-section-work"
+              "faq/how-does-the-friends-section-work",
+              "faq/what-can-i-do-without-an-account"
             ]
           },
           {
@@ -213,7 +215,8 @@
               "faq/how-do-i-change-my-shapes-vanity-url",
               "faq/how-do-i-delete-a-shape",
               "faq/can-i-add-a-shape-to-discord",
-              "faq/what-happened-to-fandoms-and-featured"
+              "faq/what-happened-to-fandoms-and-featured",
+              "faq/what-is-form"
             ]
           },
           {
@@ -260,7 +263,8 @@
               "faq/how-can-i-use-my-premium-features",
               "faq/why-do-i-have-pro-without-subscribing",
               "faq/do-i-keep-my-credits-if-i-cancel-premium",
-              "faq/what-happened-to-rewards"
+              "faq/what-happened-to-rewards",
+              "faq/why-do-i-see-ads"
             ]
           }
         ]

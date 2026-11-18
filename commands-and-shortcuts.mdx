@@ -18,6 +18,7 @@ You need to be signed in, and commands aren't available in DMs between people.
 | `/new` | Start a new chat |
 | `/model` | Choose the AI Engine for this chat |
 | `/memory` | Open the memories for this chat |
+| `/tasks` | See reminders and work shapes are doing for you |
 | `/remember` | Save a note to this chat's memory |
 | `/compact` | Save this chat to memory so shapes keep the gist (also available as `/sleep`) |
 | `/help` | Ask for help or report a problem |
@@ -26,7 +27,7 @@ You need to be signed in, and commands aren't available in DMs between people.
 | `/thread` | Start a thread with your message, for example `/thread @shape hi` |
 | `/btw` | Ask a side question in a thread, for example `/btw is it open late` |
 
-For `/imagine`, `/web`, and `/compact`, you choose which shape handles the request. See [Memory](/memory) for how saved notes and summaries work, and [Feedback and help](/feedback) for what `/help` opens.
+For `/imagine`, `/web`, and `/compact`, you choose which shape handles the request. See [Memory](/memory) for how saved notes and summaries work, [Tasks and reminders](/tasks) for the page `/tasks` opens, and [Feedback and help](/feedback) for what `/help` opens.
 
 See [Threads](/threads) for following replies, keeping shape replies in threads, and what context and access a thread shares with its chat.
 
@@ -48,6 +49,46 @@ These commands show a **chat owner only** label and appear only for chat owners.
 ### Custom commands
 
 The menu also lists **Your custom commands**: reusable instructions you save once and attach with **/**. Select **Manage custom commands →** in the menu to create or edit them. If you haven't saved any yet, the entry reads **Create your first custom command →**.
+
+A custom command is personal. It appears only in your own menu, in every chat.
+
+#### Write a custom command
+
+1. Type **/** in the message box and select **Manage custom commands →**. You can also open **Settings**, select your name or picture at the top, and find **Commands** on the **Edit profile** page.
+2. Select **New command**. With none saved yet, the button reads **Write a command**.
+3. Enter a **Name**. The name becomes the command: "Summarize" becomes `/summarize`.
+4. Add a **Description** if you want one. It shows next to the command in the menu.
+5. Add **Trigger phrases** if you want the command to attach by itself. Separate them with commas. When your message contains one, the command attaches without **/**.
+6. Write the **Instructions**: what the shape does when the command is attached.
+7. Select **Create command**. A confirmation shows the new command, such as **Saved /summarize**.
+
+For example, instructions for a `/summarize` command:
+
+```text wrap
+Summarize the last day of this chat in five bullets. List open questions and who owes what at the end.
+```
+
+#### Use a custom command
+
+1. Type **/** and the first letters of the command.
+2. Select it under **Your custom commands**. It attaches to your message as a chip in the message box.
+3. Type the rest of your message and send it. The shape that replies follows the command's instructions for that message.
+
+To drop a command before sending, select the remove button on its chip. A command attached by a trigger phrase shows **auto** on its chip. Your sent message shows the command as a chip, and other signed-in people in the chat can select **+** on it to save a copy to their own custom commands.
+
+#### Edit or delete a custom command
+
+Open the **Custom commands** list from **Manage custom commands →**. Select the pencil to edit a command, then **Save changes**. Select the trash icon to delete one. Deleting takes effect right away, with no confirmation step.
+
+#### Custom command limits
+
+- **Saved commands:** up to 50. The list shows your count, such as **3/50 saved**.
+- **Per message:** up to 5 attached commands.
+- **Name:** up to 64 characters, with at least one letter or number. Two of your commands can't share a name.
+- **Reserved names:** a name can't match `/activate`, `/deactivate`, `/imagine`, `/purge`, `/reset`, `/sleep`, `/wack`, `/wack-all`, or `/web`. You see "That custom command name is already used by a built-in command."
+- **Description:** up to 180 characters.
+- **Trigger phrases:** up to 10 per command, each up to 64 characters.
+- **Instructions:** required, up to 128,000 characters.
 
 ## Queue a message while a shape is working
 
