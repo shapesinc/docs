@@ -658,3 +658,23 @@ pre,
   }
 }
 
+
+/* ---------- Footer: one slim row ---------- */
+
+/* The footer is a single line: "Powered by" on the left, theme switch on the
+   right. The logo-and-links block and its divider are hidden; the navbar
+   already carries the logo. */
+#footer > div {
+  padding: 14px 32px !important;
+  gap: 0 !important;
+}
+
+#footer > div > div:not(:last-child) {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  #footer > div {
+    padding: 12px 16px !important;
+  }
+}
