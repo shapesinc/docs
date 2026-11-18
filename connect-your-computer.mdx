@@ -1,13 +1,13 @@
 ---
 title: "Connect Your Computer"
-description: "Work with your people on files and code that live on a computer. Install the shapes.inc app for Mac or Windows, choose personal or shared access, ask about the computer itself, and understand local agents, hosted coding, and Code Projects."
-keywords: ["connect your computer", "Computers settings", "Mac app", "Windows app", "desktop app", "shapes.inc for Mac", "shapes.inc for Windows", "Connect this Mac", "Connect this PC", "Agent chats", "Codex", "Claude Code", "Code Projects", "shared computer access", "multiplayer assistant"]
+description: "Work with your people on files and code that live on a computer. Install the shapes.inc app for Mac or Windows, connect it, choose personal or shared access, let shapes see and use your screen, and understand local agents, hosted coding, and Code Projects."
+keywords: ["connect your computer", "Computers settings", "Mac app", "Windows app", "desktop app", "shapes.inc for Mac", "shapes.inc for Windows", "Connect this Mac", "Connect this PC", "Use this Mac", "Use for new private chats", "Use my coding instructions", "Local task account", "Scan code", "Agent chats", "Codex", "Claude Code", "Code Projects", "shared computer access", "multiplayer assistant"]
 sidebarTitle: "Connect Your Computer"
 ---
 
-Some group work depends on files or tools on one person's computer: the budget for a family trip, a class project's code, or the build your friend needs help fixing. Connect that computer to an [Agent chat](/chat-and-agent-modes), then ask a shape to help you work on it together. The chat shows requests, progress, and results while the shape works on the computer you authorize.
+Some group work depends on files or tools on one person's computer: the budget for a family trip, a class project's code, or the build your friend needs help fixing. Connect that computer to an [Agent chat](/chat-and-agent-modes), then ask a shape to help you work on it together. The chat shows requests and results while the shape works on the computer you authorize.
 
-You stay in control. You set your computer up once, allow it one chat at a time, and can remove access whenever you want.
+You stay in control. You set your computer up once, choose which chats can use it, and can remove access whenever you want.
 
 <Warning>
   When you allow a chat, Shapes there can run commands, read and change files, use apps, control the keyboard and mouse, see your screen, and use the network, within the system permissions you give your computer. Results you ask for may be visible to other people in the chat. Only allow chats you trust.
@@ -15,15 +15,21 @@ You stay in control. You set your computer up once, allow it one chat at a time,
 
 ## Choose where the work runs
 
-- **Your connected computer:** use files, apps, and tools on that machine. Local Codex or Claude Code uses the setup and accounts already there. The computer needs to stay online.
+- **Your connected computer:** use files, apps, and tools on that machine. Coding tasks use your own Claude Code or Codex there by default; see [choose the account for local tasks](#choose-the-folder-and-account-for-local-tasks). The computer needs to stay online.
 - **Hosted Claude Code or Codex:** use coding agents run by shapes.inc. They do not use your computer or its local sign-in. See [hosted coding limits](/faq/how-do-free-coding-agent-limits-work) for allowances and billing.
 - **Code Projects:** connect a GitHub repository and its saved environment to coding work in a chat. This is separate from connecting a personal computer. A project starts private and has its own [sharing controls](#code-projects).
 
 Name the computer or project in your request, especially when you have both personal and shared access. For example, “Review the project on Maya's shared computer using her local Codex.” A shape should report an unavailable computer or agent rather than silently moving the task somewhere else.
 
+With your computer connected and online, shapes use it for your own code and data, such as a repository, a local tool, or a project database (read-only), instead of saying they can't check from there. This works on the free engine too.
+
+<a id="use-the-mac-app"></a>
+
 ## Get the desktop app
 
-The shapes.inc app for Mac or Windows connects the computer it runs on. Connecting is optional: you can use the app just for your chats and connect later.
+The shapes.inc app for Mac or Windows connects the computer it runs on. Setup is three steps: download the app, sign in, and select **Connect this Mac** or **Connect this PC**. No Terminal or install command is needed. Connecting is optional: you can use the app just for your chats and connect later.
+
+On the web, the sidebar shows a **shapes.inc for Mac** or **shapes.inc for Windows** card with **Get the app**. **Dismiss for today** hides it until tomorrow. You can also find the downloads under **Settings** → **Download the app**.
 
 ### Install on a Mac
 
@@ -39,35 +45,36 @@ If you open the app straight from the downloaded file, it asks you to **Move sha
 2. Open the downloaded installer and follow the installation steps.
 3. Open shapes.inc from the Start menu.
 
-On Windows, the steps below are the same, with **This PC**, **Connect this PC**, and **Reconnect this PC** in place of the Mac names.
+On Windows, the steps below are the same, with **This PC**, **Connect this PC**, **Use this PC**, and **Reconnect this PC** in place of the Mac names. The app's menus are under **File** and **Help** instead of the **shapes.inc** menu.
 
 ### Sign in through your browser
 
 On first launch, a **Set up shapes.inc** window takes you through setup one step at a time.
 
-1. On **Welcome to shapes.inc**, select **Continue with** your browser. To pick a different one, select **Use another browser**, or choose **Copy sign-in link** and open it in any browser.
-2. In the browser, sign in or create an account if you need to. On **Sign in to shapes.inc for Mac**, select **Continue as** your name. Only continue if you started this sign-in from the app.
+1. On **Welcome to shapes.inc**, select **Continue with** your browser. To pick a different one, select **Use another browser**, or choose **Copy sign-in link** and open it in any browser. On Windows, select **Sign in**.
+2. In the browser, sign in or create an account if you need to. On **Sign in to shapes.inc**, select **Continue as** your name. Only continue if you started this sign-in from the app.
 3. The app comes back on its own, signed in.
 
-If sign-in doesn't finish, select **Try again** in the app. To sign in later, choose **shapes.inc** → **Sign In…** in the menu bar.
+If sign-in doesn't finish, select **Try again** in the app. To sign in later, choose **shapes.inc** → **Sign In…** in the menu bar (**File** → **Sign In…** on Windows). It shows only while you're signed out.
 
 ### Connect this Mac
 
-After you sign in, setup offers **Connect this Mac**. If you chose **Not now**, open it any time from **shapes.inc** → **Computer connection…** in the menu bar, or from **Settings** → **Computers** → **This Mac**.
+After you sign in, setup offers **Connect this Mac**. If you chose **Not now**, open it any time from **shapes.inc** → **Computer connection…** in the menu bar (**File** → **Computer connection…** on Windows), or from **Settings** → **Computers** → **This Mac**.
 
 1. Select **Connect this Mac**. While it's connecting, you can select **Cancel**; quitting the app during setup also cancels it.
 2. On **Turn on permissions**, select **Allow** or **Open Settings** for each permission you want to give: **Keyboard and mouse** and **Screen recording**, plus the optional **Protected files** and **App control**. macOS asks once for each, and the list updates on its own as you allow them.
 3. Select **Continue**, then **Start chatting**.
 
-Connecting doesn't give any chat access to your Mac. [Allow each chat](#allow-a-chat-to-use-it) that should use it, the same as any computer. **Settings** → **Computers** shows it as **This Mac**, with each permission marked **Allowed** or with **Open System Settings**.
+Your new private chats can use this Mac. **Use for new private chats** is on when you connect: new private chats, including private chats in a workspace, use this computer and your last folder. Group chats need separate access: [allow each one](#allow-a-chat-to-use-it). Turn **Use for new private chats** off in **Connect your computer** if you'd rather allow every chat yourself. **Settings** → **Computers** shows the computer as **This Mac**, with each permission marked **Allowed** or with **Open System Settings**.
 
 This Mac **stays connected when you quit shapes.inc**: closing the window or quitting the app keeps it available to the chats you allowed, as long as it's on and online. When you reopen the app, the connection can pause for a moment while it checks your account.
 
-To stop, select **Disconnect this Mac** in **Settings** → **Computers** or in **shapes.inc** → **Computer connection…**. A disconnected Mac stays on your account; select **Reconnect this Mac** to use it again. **Remove computer** removes it from your account and stops access in every chat.
+To stop, select **Disconnect this Mac** in **Settings** → **Computers** or in **Computer connection…**. A disconnected Mac stays on your account; select **Reconnect this Mac** to use it again. **Remove computer** removes it from your account and stops access in every chat.
 
 ### Update the app
 
-Choose **shapes.inc** → **Check for Updates…**. The update installs, the app reopens, and you stay signed in. If your copy of the app doesn't have **Check for Updates…**, download the current version from [shapes.inc/downloads](https://shapes.inc/downloads) once and replace the old one in Applications.
+- **Mac:** choose **shapes.inc** → **Check for Updates…**. The update installs, the app reopens, and you stay signed in. If your copy of the app doesn't have **Check for Updates…**, download the current version from [shapes.inc/downloads](https://shapes.inc/downloads) once and replace the old one in Applications.
+- **Windows:** choose **Help** → **Check for Updates…**, then **Download update**, then **Restart and install**. The app reopens on its own.
 
 ## After you connect
 
@@ -77,9 +84,13 @@ Your computer appears under **Settings** → **Computers** as **Online** or **Of
 
 After setup, you can open the same shapes.inc account on your phone, enter the group's Agent chat, and use **+** → **Connect your computer** to choose your online computer and allow the chat. Ask the shape to read a named file or run a task there, then review its reply on your phone. The work still runs on the connected computer, which must stay on and online. Other chat members can read what the shape shares in the conversation; they do not gain access to your machine just because you are using it from your phone.
 
+### Connect with a code
+
+If your computer shows a setup code or QR code, you can approve it from the iPhone app. In **Settings** → **Computers**, or in a chat's **Connect your computer** dialog, find **Have a code from your computer?** and select **Scan code** or **Enter code**. Check the computer it shows, then approve it. Scanning with the camera has been improved and is still being watched; if it doesn't read the code, use **Enter code**.
+
 ## Allow a chat to use it
 
-1. In an Agent chat, open the composer's **+** menu → **Connect your computer**. You can also select the connect link in a Shape's reply when it asks for your computer.
+1. In an Agent chat, open the composer's **+** menu → **Connect your computer**. In the desktop app, you can also select **Use this Mac** beside the message box. You can also select the connect link in a Shape's reply when it asks for your computer.
 2. Choose a computer.
 3. Select **Allow in this chat**.
 
@@ -89,11 +100,24 @@ Allowing a chat lets your own requests there use your computer. Other members ca
 
 To stop, open **Connect your computer** again and select **Remove chat access**, or **Change computer** to use a different one. **Remove computer** in **Settings** → **Computers** removes it from your account and stops access in every chat.
 
+### When a shape asks for your computer
+
+If you ask for something that needs your own computer, a setup card appears under the shape's reply. It shows once per conversation and depends on where you are:
+
+- **No computer yet, on a Mac or Windows browser:** **shapes.inc for Mac** or **shapes.inc for Windows** with **Download**. If the app is already installed, select **Already installed? Open in app**; after downloading, the button reads **Open this chat in the app**.
+- **No computer yet, on a phone:** **Get shapes.inc on your computer**. Select **Copy download link** and open it on the Mac or PC you want to use.
+- **In the desktop app:** **Connect this Mac** or **Connect this PC**.
+- **A computer is already set up:** **Use your computer** → **Choose computer**.
+
+While you finish setup, the dialog shows **Waiting for your computer…**. When the computer appears, select **Allow and continue** and the shape picks up where it left off.
+
 ## Approve requests in the chat
 
-When a task on your computer needs a permission or an answer, a **Computer task** card in the chat asks you to approve or answer. Nothing is chosen for you, and the task continues only after you respond. Only you can answer for your computer.
+When a task on your computer needs a permission or an answer, the question appears in the chat for you to approve or answer. Nothing is chosen for you, and the task continues only after you respond. Only you can answer for your computer.
 
-The card's status describes the task on your computer. Check the Shape's reply for the result, such as whether a change was made.
+The chat no longer shows a separate **Computer task** card for each task, or a live progress box for Codex or Claude Code. A running task shows **Stop**. Check the Shape's reply for the result, such as whether a change was made.
+
+To stop work in progress, select **Stop** in the message box. It stops the reply and its computer tasks, including local work already running. After a reload, a task that is ending shows **Stopping…**.
 
 ## Ask about the computer itself
 
@@ -105,13 +129,34 @@ Shapes can check your computer directly instead of giving you manual steps: whic
 
 The computer must be online and allowed in that chat. If you've set it up but haven't allowed this chat yet, the shape offers a link to [allow it](#allow-a-chat-to-use-it) rather than guessing. Shapes can check only a connected computer, not your phone's settings.
 
+<a id="see-and-use-your-macs-screen" />
+
+## See and use your Mac's screen
+
+On a Mac running shapes.inc 1.24.11 or later, shapes can look at your screen, click, type, scroll, and drag, then look again to check what happened. This works in chats you've allowed, and for members you've shared with **Can make changes**. **Read-only** shares can't control the screen.
+
+The Mac needs **Keyboard and mouse** and **Screen recording** allowed. If either stays off, see [Screen or keyboard control doesn't work](#screen-or-keyboard-control-doesnt-work).
+
 ## Hand coding work to Codex or Claude Code
 
-Shapes can hand parts of a task to Codex or Claude Code on your computer. These tasks start quickly and show their progress live in the chat. They run with the Codex or Claude Code setup and accounts already on your computer.
+Shapes can hand parts of a task to Codex or Claude Code on your computer. Ask for one by name, or let the shape choose. The result comes back in the shape's reply.
 
 Ask a shape to remember a preference for this chat, then check that it confirms saving it. You can review saved preferences in [Memory](/memory):
 
 > Always use a thread and my local Codex for code changes in this chat.
+
+### Choose the folder and account for local tasks
+
+In the desktop app, select **Use this Mac** (or **Use this PC**) beside the message box in an Agent chat. Then:
+
+- **Folder:** select **Choose** or **Change** to pick where local tasks work. New private chats reuse your last folder.
+- **Local task account:** choose **Use Claude account**, **Use Codex account**, or **Use shapes.inc credits**. Your own Claude or Codex account uses the sign-in already set up in Claude Code or Codex, not shapes.inc credits.
+
+If you haven't chosen, a coding task uses your own signed-in Claude Code first, then Codex, on your own accounts with no shapes.inc credits. If neither is ready, it uses the built-in agent on shapes.inc credits. A **Use shapes.inc credits** choice saved before November 10 now counts as not chosen, so choose it again if you want credits to pay.
+
+### Use my coding instructions
+
+**Use my coding instructions** is on by default in the **Connect your computer** dialog when the chat has your computer. It reads `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md` from that computer, the same files Claude Code and Codex use, so coding tasks follow your repositories and rules. The files are read when a task runs. The dialog lists each file it found with its size and full text. Turn it off anytime.
 
 ## Code Projects
 
@@ -126,6 +171,8 @@ New projects are private: only you can use them. To let the chat use one, open t
 
 Projects keep going after the first step. Shapes can continue in the same repository, keep results from background runs, and push a branch without opening a pull request when you ask. To change an open pull request, paste its link and ask for the follow-up edits; they're pushed to that pull request. This doesn't work for closed pull requests, pull requests from forks, or a branch that has moved on.
 
+Shapes can also read a pull request's CI: its named checks, workflow runs, jobs, and job logs. Ask “why is CI failing on this PR?” with the link.
+
 For a group project, one person can connect the repository and share the Code Project. Another member can ask a shape to investigate a failing test; the group can review the explanation and then request a fix. Ask for the changed files and test result in the chat. If you request publication, check the returned branch or pull-request link in GitHub. Sharing the project permits those actions; it does not mean a task has already run or a change has been published.
 
 ## Share your computer with chat members
@@ -133,14 +180,14 @@ For a group project, one person can connect the repository and share the Code Pr
 You can let specific members use your computer in a chat where you've allowed it.
 
 1. Open **Connect your computer** in that chat.
-2. Under **Shared computer access**, find **Share my computer in this chat** and choose up to 50 members.
+2. Under **Shared computer access**, select **Share with people** and choose up to 50 members.
 3. Choose the permission:
-   - **Read-only**: members can read files and ask Codex or Claude Code for read-only work. Commands, file changes, and opening apps are blocked.
-   - **Can make changes**: members can run commands, change files, open apps, and use Codex or Claude Code to make changes with your local accounts.
-4. Choose when access ends: **1 hour** or **24 hours**.
+   - **Read-only**: members can read files and ask Codex or Claude Code for read-only work. Commands, file changes, screen control, and opening apps are blocked.
+   - **Can make changes**: members can run commands, change files, open apps, use the screen, keyboard, and mouse, and use Codex or Claude Code to make changes with your local accounts.
+4. Choose when access ends: **1 hour**, **24 hours**, or **Until I turn it off**.
 5. Select **Save access**. Saving replaces the computer's current shared access in that chat.
 
-Each share shows its permission, who has it, and when it expires. Select **Revoke** to end it early. Shapes check the current permission before every action, so revoking or expiry applies to the next action; it doesn't undo work already done. Only you can share your computer, and members who leave the chat lose access.
+Each share shows its permission, who has it, and when it expires, or **Until turned off**. Select **Revoke** to end it early. Shapes check the current permission before every action, so revoking or expiry applies to the next action; it doesn't undo work already done. Only you can share your computer, and members who leave the chat lose access.
 
 ## Work together on a connected computer
 
@@ -166,6 +213,13 @@ With **Can make changes** access, Drew can ask the shape to use Maya's named com
 
 Keep the computer online while the job runs. Ask for the changed files, check results, and any unfinished steps in the conversation, then inspect the actual files on that computer. A started job or finished status alone does not prove that the requested fix worked or that a branch was published. Revoking access prevents later actions; do not assume it cancels work already running.
 
+## How it handles a busy or dropped connection
+
+- **Busy computer:** when another chat's command is already running on your computer, the next one waits up to 60 seconds for its turn instead of failing.
+- **Missing folder or file:** the shape says the path is missing, not that your computer is offline.
+- **Dropped connection:** a command that already started isn't run a second time when the connection comes back.
+- **One repository at a time:** a code search stays in the repository the task is about.
+
 ## Troubleshooting
 
 ### Connect your computer isn't in the + menu
@@ -176,12 +230,27 @@ It appears only in Agent chats. Ask a chat owner to switch the chat to **Agent**
 
 Make sure it's on, signed in, and connected to the internet, then select **Check for my computer** in **Settings** → **Computers**. If it still does not reconnect, open shapes.inc on that computer. If **This Mac** or **This PC** shows **Disconnected**, select **Reconnect this Mac** or **Reconnect this PC**.
 
+### My Windows PC refuses every command
+
+Update the app with **Help** → **Check for Updates…**. Versions 1.1.3 and 1.1.4 improved a connected PC getting stuck after one lost command result; this is still being watched. If it keeps happening, select **Disconnect this PC**, then **Reconnect this PC**.
+
 ### Connect this Mac doesn't finish
 
 - Check that the Mac is online, select **Cancel**, and try again.
 - If the app says **Update the app to connect this Mac**, choose **shapes.inc** → **Check for Updates…**, or download the current version from [shapes.inc/downloads](https://shapes.inc/downloads).
 - If setup shows **Open Login Items Settings**, macOS is stopping shapes.inc from running in the background. Select it, allow shapes.inc in **System Settings** → **General** → **Login Items & Extensions**, then connect again.
 - If you're signed out, the step shows **Sign in** instead. Sign in first, then connect.
+
+<a id="screen-or-keyboard-control-doesnt-work" />
+
+### Screen or keyboard control doesn't work
+
+If **Keyboard and mouse** or **Screen recording** stays off after you allow it:
+
+- **Keyboard and mouse:** in **System Settings** → **Privacy & Security** → **Accessibility**, turn on **ComputerConnectionHost**.
+- **Screen recording:** in **Privacy & Security** → **Screen & System Audio Recording**, turn on shapes.inc. If it isn't listed, select **+** and add shapes.inc from Applications. Quit and reopen shapes.inc if macOS asks.
+
+A **Read-only** share can't use the screen, keyboard, or mouse; the computer's owner must save **Can make changes** for that member.
 
 ### I can't share my computer
 

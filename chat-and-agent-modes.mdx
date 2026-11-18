@@ -1,7 +1,7 @@
 ---
 title: "Chat, Agent, and Auto"
 description: "Talk through plans and do things with your friends. Choose Chat, Agent, or Auto, follow or stop a shape's work, and check the result together."
-keywords: ["Agent chats", "Chat mode", "Auto mode", "New chats setting", "multiplayer assistant", "Generation details", "stop a reply", "Formless"]
+keywords: ["Agent chats", "Chat mode", "Auto mode", "DMs", "Tod in DMs", "New chats setting", "multiplayer assistant", "Generation details", "stop a reply", "Formless"]
 sidebarTitle: "Chat, Agent & Auto"
 ---
 
@@ -17,7 +17,17 @@ Do things with your friends: talk through a plan, compare options, and ask a sha
 
 If you set a chat to **Chat** or **Agent** yourself, it stays that way. Only Auto chats switch.
 
-Private one-to-one conversations are called **DMs**. A DM between two people doesn't have this setting.
+Private one-to-one conversations are called **DMs**. A DM between two people is always an Agent chat; see [DMs between people](#dms-between-people).
+
+## DMs between people
+
+Every DM between two people includes Tod and works as an Agent chat. Tod stays quiet while you two talk. Address it when you want help:
+
+> tod, summarize our action items from the call
+
+Tod answers using the DM's history, including transcripts of calls in it. It doesn't send follow-ups on its own, the DM keeps its name, and DMs don't show ads. You can't remove Tod from a DM or turn Agent off for one.
+
+Any shape in a DM between two people acts as a guest. It stays out of greetings and conversation between you, isn't triggered by being talked about, and drops a reply it had started if the other person answers first. Say its name or @mention it to get a reply.
 
 ## Plan an evening together
 
@@ -59,8 +69,10 @@ If you don't see these options, ask a chat owner to switch the chat for you. See
 
 ## What's different in Agent chats
 
-- **Shapes act, not just answer.** They can search the web, run code, use your [connected apps](/connected-apps), set [reminders and scheduled checks](/tasks), find places near you, and, if you allow it, [work on your computer](/connect-your-computer). Built-in skills are included automatically; owners can add **MCP servers** under **AI settings**. See [Shape Skills](/shapeskills).
+- **Shapes act, not just answer.** They can search the web, run code, use your [connected apps](/connected-apps), set [reminders and scheduled checks](/tasks), find places near you, and, if you allow it, [work on your computer](/connect-your-computer). If a request needs your computer and none is connected, the shape shows a setup card for the shapes.inc desktop app, once per conversation. Built-in skills are included automatically; owners can add **MCP servers** under **AI settings**. See [Shape Skills](/shapeskills).
 - **Shapes join in when they can help.** In group Agent chats, Shapes reply when they can contribute and stay out of ordinary conversation between people.
+- **No ads.** Agent chats and DMs don't show ads.
+- **Your engine pick carries over.** The AI Engine you pick in an Agent chat, from the box on Home or in the chat, becomes your default for new Agent chats you start. Pick **shapes.inc default** to clear it. Existing chats keep their engine, and a shape changing the engine for you doesn't count. See the [AI Engine Guide](/aienginecheatsheet).
 - **You can see that work has started.** While a Shape works on your request, it reacts 👍 to your message until the reply lands.
 - **Reply suggestions offer one next step.** Agent chats show one suggested next step; Chat chats show up to three. Turn suggestions off under **Settings** → **Personalization** → **Chats & Shapes** → **Reply suggestions**.
 - **Skip turn is for Chat only.** It isn't available in Agent chats. To have several shapes keep a conversation going in an Agent chat, ask: "let the shapes keep talking". See [Skip turn and fast forward](/multimessages#skip-turn-and-fast-forward).
@@ -85,7 +97,7 @@ The bar appears only in Agent chats. In Chat, you see the shape's picture with t
 
 The person who asked, or the chat owner, can select **Stop** on that reply's row. If a reply seems stuck, **Retry** stops it and asks the same shape again. A reply you stopped shows **Stopped**. Stopping does not undo a message, file change, purchase, or other action already completed; check the previous outcome before repeating a consequential action.
 
-The shape's reply is the result: check it for what was done. Step-by-step tool details, and the raw input and output behind them, aren't shown in chats; the **Working steps** switch in **More preferences** doesn't change this. Hosted coding work can still show a live progress line, and work on your own computer shows a **Computer task** card. A [thread](/threads) has its own bar above its message box.
+The shape's reply is the result: check it for what was done. Step-by-step tool details, and the raw input and output behind them, aren't shown in chats; the **Working steps** switch in **More preferences** doesn't change this. Coding work and work on your own computer show in the same bar while they run; in the chat itself you see only **Stop** for running work and any form that needs your approval or answer. A [thread](/threads) has its own bar above its message box.
 
 Substantial or iterative work can continue in a [thread](/threads) inside the same chat. Follow its replies there and bring any new requirements into that thread.
 
@@ -103,7 +115,7 @@ Anyone in a chat can **Regenerate** a Shape's reply, including Agent replies. Cr
 
 ## Ask a shape to do it in the app
 
-In Agent chats, you can ask a shape to do almost anything you could do yourself with a few taps: rename or set up a chat, change its settings, invite people, start a poll or a call, make or edit a shape, set a reminder, or change your own settings, profiles, and memories. It uses the app's own controls with your permissions, so membership, ownership, blocks, and workspace rules still apply.
+In Agent chats, you can ask a shape to do almost anything you could do yourself with a few taps: rename or set up a chat, change its settings, invite people, start a poll or a call, make or edit a shape, set a reminder, or change your own settings, profiles, and memories. It can also read your chat list and leave, archive, delete, or mark chats read for you ("help me clean out my sidebar"). It uses the app's own controls with your permissions, so membership, ownership, blocks, and workspace rules still apply.
 
 > Rename this chat to "Lisbon in May", invite Maya and Drew, and pin the itinerary.
 
@@ -119,7 +131,14 @@ You can also ask a shape to post in another chat you're in:
 
 > Tell the trip chat we booked the cabin, and send them the confirmation.
 
-The shape posts the message there under its own name, with any files you point it to. A clear ask is enough; you don't need to grant it permission first, and there is no setting for it. If it can't tell which chat you mean or what to say, it asks you once to confirm the message and the chat, and nothing is sent until you do.
+The shape posts the message there under its own name, with any files you point it to, including a file from another chat you're in when you ask for that file. A clear ask is enough; you don't need to grant it permission first, and there is no setting for it. If it can't tell which chat you mean or what to say, it asks you once to confirm the message and the chat, and nothing is sent until you do.
+
+It can also reach a person for you:
+
+- **Message someone in your DM with them.** "Tell Sam I'm running late" posts in your existing DM with Sam and says it's from you.
+- **Ask someone in the chat.** "Ask Maya for her address" sends Maya a card titled with your name and the topic, such as "For Alex: address". Others in the chat see "Tod is waiting for Maya". When she answers, the shape continues your request, on your credits.
+
+Still refused: chats you aren't in, files you didn't ask for, starting a new DM, blocked people, and public or community chats.
 
 A few things always stay with you: shapes can't post as you, change payment or sign-in security settings, or delete your account. In a group, a shape won't change your account because someone else asked. If the app refuses an action, the shape tells you why and that nothing was changed.
 

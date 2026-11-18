@@ -1,6 +1,6 @@
 ---
 title: "Websites, Sign-ins, Purchases, and Travel"
-description: "Use a shape's browser, sign in privately, review purchases and travel bookings, and understand payment, access, and completion limits."
+description: "Use a shape's browser or your own Chrome, sign in privately, review purchases and travel bookings, and understand payment, access, and completion limits."
 sidebarTitle: "Websites & Purchases"
 ---
 
@@ -8,7 +8,7 @@ In Agent chats, shapes can help your group compare options on websites, fill for
 
 > Compare these three options for our trip. Show us the total and cancellation terms before booking.
 
-The shape uses its cloud browser. Browser time uses your shared daily computer allowance, then eligible credits; see [computer and browser usage limits](/faq/how-do-free-coding-agent-limits-work). To work in apps and files on your own machine instead, [connect your computer](/connect-your-computer).
+The shape uses its cloud browser, or [your own Chrome](#connect-your-browser) if you connect it. Cloud browser time uses your shared daily computer allowance, then eligible credits; see [computer and browser usage limits](/faq/how-do-free-coding-agent-limits-work). To work in apps and files on your own machine instead, [connect your computer](/connect-your-computer).
 
 ## Sign in to a website
 
@@ -28,13 +28,34 @@ Manage these under **Settings** → **Connected apps** → **Saved sign-ins**. S
 
 While a shape browses public pages, people in the chat can follow it live: select **Browser** in the chat header. The screen is withheld from other members on sign-in, payment, account, and address pages, when your saved sign-in is in use, and while you have control. Other members see a status note instead. You can still see your own browser.
 
-After sign-in, the shape can read the pages it opens and may include relevant information in its reply. A private browser view does not make that reply private from the chat. Screenshots attached to a reply are separate from the live task-card view; ask explicitly when you want one. After a secure sign-in or payment fill is attempted, screenshots and exports from that browser session are blocked; the requester can still use the private Browser panel.
+After sign-in, the shape can read the pages it opens and may include relevant information in its reply. A private browser view does not make that reply private from the chat.
+
+When a browser task ends on the page you asked for, such as a ticket, a receipt, a booking or order confirmation, or a form it submitted, the reply includes a capture of that page. Sign-in and payment pages are never captured. For any other page, ask for a screenshot. After a secure sign-in or payment fill is attempted, screenshots and exports from that browser session are blocked; the requester can still use the private Browser panel.
 
 ### Take control of the browser
 
 Select **Browser** in the chat header to open the browser panel. In that panel, **Take control** pauses the shape's browser actions while you interact with the website. Choose **Done** when you want the shape to continue. Closing the panel alone does not resume it. **End** ends that browser session; use it when you are finished rather than when you only want to hide the panel.
 
 The **Browser** button in the chat header shows only while the shape's browser is open, on a computer or a phone. If you don't see it, ask the shape to open the page again.
+
+## Connect your browser
+
+Shapes can work in your own Chrome instead of the cloud browser, in tabs signed in to your own accounts. This needs Chrome on a computer. Without it, shapes keep using the cloud browser.
+
+1. In a chat, open the composer's **+** menu → **Connect your browser**.
+2. Select **Install Chrome extension** and add **shapes.inc Browser** from the Chrome Web Store.
+3. Open the extension and select **Continue with shapes.inc**. A shapes.inc page opens and the extension shows a code.
+4. Enter the code shown in your extension, select **Check code**, check that the browser named is yours, and select **Connect browser**. Only approve if the code matches.
+5. Back in the chat, open **+** → **Connect your browser** and select **Allow in this chat**.
+
+Then ask your shape to open a website. Shapes open and use task tabs in your Chrome, made for that chat, and can read pages, click, and type there. Access lasts until you stop it:
+
+- **Stop control** ends the shape's control of your browser.
+- **Remove chat access** stops that chat from using it.
+- **Remove browser** removes the browser from your account.
+- **Manage browser access** opens the page that lists your connected browsers.
+
+Only your own requests can use your browser; other people in the chat can't control it. Page contents are shared with shapes.inc and the AI service, and results or page excerpts posted in a shared chat are visible to everyone in it. If the dialog says the browser uses single-tab access, update the extension and reconnect it to use task tabs.
 
 ## Buy something
 
@@ -46,11 +67,15 @@ For example, housemates can compare a table for their shared kitchen. Each perso
 4. Review the purchase card's store, items, total, and way to pay, then approve it. Nothing is ordered until you select **Place order** or approve the payment.
 5. Follow the final order status and receipt in the purchase card. Approval or a submitted checkout alone does not confirm the store placed the order.
 
+To buy something again, say so: "reorder the coffee I bought last month". With your email connected, the shape finds your newest matching order email, picks the same item and variant, and stops at the purchase card. Nothing is charged until you approve. This works for gifts shipped to someone else too. Amazon orders are skipped.
+
+A shipping address you type in your request is used for that order.
+
 You can also leave the pick to the shape, for example "get Sam a fun birthday gift from Amazon" or "a good USB-C cable". It finds the exact item itself first, within the budget and taste you gave, and says in one line what it picked and why before adding it.
 
 When you finish a step outside the chat, such as signing in to the store or saving a card, the shape picks the order back up by itself. You don't need to come back and say "done".
 
-Before you approve, the shape names the estimated price. If the store may hold a higher amount until the order is placed, it names that too, and the exact total comes once the store places the order. If you gave a budget and the total comes back above it, the shape tells you before asking for a yes. Asking for something else while an order is still waiting counts as a new request, not as an answer to that order.
+Before you approve, the shape names the estimated price. If the store may hold a higher amount until the order is placed, it names that too, and the exact total comes once the store places the order. If you gave a budget and the total comes back above it, the shape tells you before asking for a yes. A budget is read the way you said it: "\$60 per person before tax and tip" is checked against the subtotal, and an all-in or plain budget against the estimated total with tax, tip, and fees. Asking for something else while an order is still waiting counts as a new request, not as an answer to that order.
 
 The person making the request is the payer. Other chat members can see the shared purchase summary and status, but cannot use the payer's private payment controls or card details. Each chat, and each thread, works on one purchase at a time.
 
@@ -65,7 +90,9 @@ Shapes don't ask how you want to pay. They use the first way that works, in this
 3. **A shopping service** that can order from large stores and food delivery for you.
 4. **Your saved card**, at the store's checkout.
 
-Name a way to pay and the shape uses it instead, for example "use my wallet" or "pay on delivery". The only payment question you'll get is for a step only you can take: signing in, connecting your wallet, or adding a card.
+At a store that takes Shop Pay, a card you've already saved pays before a Shop account you'd still need to connect, so you aren't asked to connect a wallet you don't have.
+
+Name a way to pay and the shape uses it instead, for example "use my wallet", "use Shop Pay", or "pay on delivery". The only payment question you'll get is for a step only you can take: signing in, connecting your wallet, or adding a card.
 
 ### Shopping where you are
 
@@ -74,6 +101,8 @@ Shapes shop and pay for the country the person asking is in. They don't assume t
 - With **Let Shapes know your approximate location** on, in **Settings → Personalization → Location**, the shape uses the country you're in when you ask. Stores and prices match it, in your currency, and the shopping service's options that can't reach you are left out. When nothing there delivers to you, the shape moves on to a store's own checkout. The shape doesn't tell the chat your city or region.
 - With it off, the shape doesn't use your network location for shopping. It uses the country of your saved address in [Saved details](/saved-details), or a country you tell it. If it knows neither, it asks where the order ships.
 
+Outside countries that write their own money with \$, a bare amount like "\$15" means US\$15, converted to your currency.
+
 The wallet is for the US and Canada (see below). Elsewhere, the shape uses your account at the store, your saved card, or pay on delivery where the store offers it.
 
 ### Payment options and limits
@@ -81,7 +110,7 @@ The wallet is for the US and Canada (see below). Elsewhere, the shape uses your 
 Manage these in **Settings → Connected apps → Payments**:
 
 - **Wallet:** connect once, then approve each purchase in your wallet app. For payers in the US and Canada, at US and Canadian stores, in US or Canadian dollars.
-- **Saved cards:** save a card once. You approve each payment on your phone within 15 minutes; the purchase card says so and shows **Approve on your phone**. If no card is saved yet, the purchase card shows **Add a card**. Once you save one, the shape carries on with that checkout without being asked.
+- **Saved cards:** save a card once. You approve each payment on your phone within 15 minutes; the purchase card says so and shows **Approve on your phone**. The card pays the store's own checkout total, and the shape tells you that amount; a total shown before the store's payment step is labelled as an estimate. If no card is saved yet, the purchase card shows **Add a card**. Once you save one, the shape carries on with that checkout without being asked.
 - **Shop Pay:** at stores that take it, the purchase card shows a code and **Continue**, which opens Shop's own page to connect. After that, select **Place order**, or **Continue** to review and pay in Shop. To disconnect, remove shapes.inc from your connections in Shop.
 - **Pay on delivery:** available only when the store offers it. It still places an order.
 
@@ -105,7 +134,11 @@ For a family trip, keep the dates, budget, and must-haves in one chat so the peo
 
 Hotel options show the room, cancellation terms, and meals. Taxes and fees paid at the hotel are not in the trip total; the trip card shows them as **Due at the desk**. Flight options name the fare, such as a basic fare with carry-on only, and cancellation deadlines are shown in UTC.
 
+Flight options show each leg's date and year on the **Trip** and **Return** lines, so fares on different days are easy to tell apart. Seat wishes, such as an aisle or window, are kept even if you give them after the trip is created, and after booking the shape says which seats you got and which wishes it couldn't meet. When a hotel is re-priced, a refundable rate you picked stays refundable.
+
 A flight search for a city with several airports covers all of them, so "New York" searches JFK, LaGuardia, and Newark, and each option names its airport. Name one airport if you only want that one. Flight options and trip tickets show times on the 12-hour clock, such as 6:00 AM → 11:35 PM, with **+1** for a next-day arrival.
+
+In a chat that's only yours, the shape can read the airline confirmation code of a flight you paid for, along with your saved last name, so "what's my confirmation number?" or a scheduled check-in works without pasting it. This never happens in shared chats.
 
 Prices and availability can change before booking. Fares aren't held: an option shown earlier is not a reservation. Only the payer can change or cancel the trip or confirm a paid booking's cancellation. Cancellation or refund eligibility depends on the booked fare or supplier's rules; cancelling a draft is different from cancelling a confirmed booking.
 
@@ -119,6 +152,7 @@ Prices and availability can change before booking. Fares aren't held: an option 
   - The store's checkout can't take the saved card yet. Nothing was charged.
   - The result couldn't be read. It may or may not have gone through, so check the store for an order before paying again.
 - **You declined an approval:** nothing is charged. The shape says so and offers what to do next.
+- **Connect your browser doesn't pair:** check that the code on the shapes.inc page matches the one in your extension, then select **Check code** again. You need desktop Chrome.
 - **You don't see the Browser button:** it's there only while the shape's browser is open. Ask the shape to open the page again.
 - **The purchase is pending or only partly complete:** check the existing status and receipt before retrying. Do not treat the shape's intention to buy as confirmation.
 - **You need to change saved information:** update [Saved details](/saved-details), then review the form again. Changes do not rewrite an already-submitted order or booking.
