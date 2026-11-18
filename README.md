@@ -9,7 +9,7 @@ Read [AGENTS.md](AGENTS.md) (terminology, positioning, feature-reference rules) 
 ```
 docs.json                   navigation, metadata, redirects, theme
 *.mdx                       guides (Docs tab)
-faq.mdx, faq/*.mdx          FAQ index and answers (FAQ tab)
+faq.mdx, faq/*.mdx          FAQ index and answers (Help → FAQ in the sidebar)
 articles/*.mdx              retired articles, kept on disk; docs.json redirects every route
 images/                     screenshots and site images, served at /images/...
 images/october-2026/        current signed-in UI captures, dated -YYYYMMDD.jpg
@@ -63,16 +63,11 @@ Every illustrated step also needs written instructions. Replace or retire screen
 
 ## docs.json
 
-`docs.json` follows the Mintlify `docs.json` schema (`"theme": "mint"`). It holds the site name, colors, logo, favicon, Instrument Sans font, navbar (Support link to `talk.shapes.inc/help`, **New chat** button to `talk.shapes.inc`), footer, Open Graph tags, one redirect, and the navigation.
+`docs.json` follows the Mintlify `docs.json` schema (`"theme": "mint"`). It holds the site name, colors, logo, favicon, Instrument Sans font, navbar (FAQ link to `/faq`, Support link to `talk.shapes.inc/help`, **New chat** button to `talk.shapes.inc`), footer, Open Graph tags, one redirect, and the navigation.
 
 `style.css` at the repository root is the site theme; Mintlify loads it on every page. See the design rules in `AGENTS.md` before changing either file.
 
-Navigation is two tabs. Counts as of the last change to this file:
-
-| Tab | Groups | Pages |
-| --- | --- | --- |
-| Docs | Getting Started, Do Things Together, Get Things Done, Chats & Collaboration, Build & Configure Assistants, AI Engines, Prompts & Memory, Credits & Products | 75 |
-| FAQ | FAQ | 52 |
+Navigation is one sidebar with no tabs, ordered the way a reader moves: Get started, Concepts, Do things together, Agent actions, Chats, Messages, People and channels, Build a shape, Engines, prompts and memory, Credits and plans, Help. Help ends with the FAQ index and collapsible FAQ topics (Getting around, Replies and errors, Chat and Agent, Engines, Shapes, Account and settings, Privacy and safety, Credits and billing). Sidebar labels are short, sentence-case `sidebarTitle` values; page titles stay as written. When you add an FAQ, put it in a topic group in `docs.json` and in the matching list on `faq.mdx`.
 
 Every navigation entry must exist on disk; `mint validate` and `mint broken-links` catch missing pages. Keep existing page paths stable, including older slugs, so external links keep working.
 
