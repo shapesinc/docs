@@ -1,15 +1,17 @@
 ---
 title: "Prompt 101"
-description: "So you know the variables, but now how do you write presets for your shape?"
+description: "How to write prompts and presets for your shape: four prompt types and how to keep them clear."
 ---
 
-## **What is a prompt?**
+<span id="what-is-a-prompt" />
 
-A prompt is giving instruction to your shape that helps guide it to generate a desired response. The structure of a prompt in how you write it is also important so your shape can understand and give you the desired output of behavior. A collective of these prompts are then referenced as presets as it is used consistently across multiple interactions. The best way to think about when writing prompts is:
+## **What a prompt is**
 
-1. What do you want to happen/idea
-2. Who is it for? `{shape}` or `{user}` or both?
-3. Will this be an instruction I want to happen every time or sometimes?
+A prompt is an instruction that guides your shape toward the response you want. Structure matters: a clearly written prompt is easier for your shape to follow. A set of prompts used consistently across interactions is a preset. Before you write a prompt, decide:
+
+1. What you want to happen
+2. Who it is for: `{shape}`, `{user}`, or both
+3. Whether it applies every time or only sometimes
 
 Prompts turn into presets when:
 
@@ -17,18 +19,20 @@ Prompts turn into presets when:
 - The instructions prove consistently effective for a particular type of output
 
 <Info>
-  You can use a preset as your own preset (**Settings** → **Personalization** → **Your preset**), in a chat's **Instructions**, or in a Shape's **Response style** instructions. See [Presets](/presets) for where each one applies.
+  A preset works as your own preset (**Settings** → **Personalization** → **Your preset**), in a chat's **Instructions**, or in a Shape's **Response style** instructions. See [Presets](/presets) for where each one applies.
 </Info>
 
-## **What kinds of prompts are there?**
+<span id="what-kinds-of-prompts-are-there" />
 
-There are many other types of prompts that you can write but giving you these main 4 should help you enhance and refine the behavior of your shape.
+## **Prompt types**
+
+These four main types cover most of what you need to refine your shape's behavior. Other types exist.
 
 ### **Declarative**
 
-This type of prompt establishes **what the Shape is, how it should behave, and what it should know**. Such prompts are effective for creating consistent behavior across a wide range of unpredictable interactions, helping establish fundamental characteristics.
+A declarative prompt establishes **what the Shape is, how it should behave, and what it should know**. It creates consistent behavior across unpredictable interactions and sets fundamental characteristics.
 
-Consider using a declarative prompt when defining these key aspects:
+Use a declarative prompt to define:
 
 1. The Shape's identity or persona (who/what it is)
 2. Its knowledge domain and expertise
@@ -40,9 +44,9 @@ Example: `{shape} is Wiggles, a friendly and intelligent opossum created to help
 
 ### **Imperative**
 
-This is a type of instruction given to the Shape that focuses on specific actions, behaviors, and procedures it should follow. **It tells the Shape exactly what to do.** This approach is effective when you want precise control and consistent handling of specific situations.
+An imperative prompt gives the Shape specific actions, behaviors, and procedures to follow. **It tells the Shape exactly what to do.** Use it for precise control and consistent handling of specific situations.
 
-Consider using an imperative prompt when defining these key aspects:
+Use an imperative prompt to define:
 
 1. Direct step-by-step directions or sequences of actions
 2. Guidelines for handling specific scenarios
@@ -53,9 +57,9 @@ Example: `Always greet {user} with enthusiasm and ask about their day before hel
 
 ### **Prohibitive**
 
-This type of prompt provides instructions to a Shape about **what it should not do or say**, establishing clear boundaries and restrictions. Such prompts are useful for setting ethical guidelines, preventing misuse, and ensuring the Shape operates within appropriate boundaries when interacting with users.
+A prohibitive prompt tells a Shape **what it should not do or say**, setting clear boundaries and restrictions. Use it to set ethical guidelines, prevent misuse, and keep the Shape within appropriate boundaries with users.
 
-Consider using prohibitive prompts when establishing:
+Use prohibitive prompts to establish:
 
 1. Limitations using words like 'does not,' 'never,' 'avoid,' 'refrain from'
 2. Clear specifications of forbidden topics, language, or content
@@ -68,9 +72,9 @@ Example: `{shape} must never share personal identity or information about {user}
 
 ### **Obligation**
 
-This type of instruction focuses on the duties, responsibilities, and commitments that a Shape must fulfill. Obligation prompts differ from prohibitive prompts in that they emphasize what the **Shape is required to do in all circumstances**, rather than what it should avoid.
+An obligation prompt sets the duties, responsibilities, and commitments a Shape must fulfill. Unlike a prohibitive prompt, it states what the **Shape is required to do in all circumstances**, not what it should avoid.
 
-Consider using an obligation prompt when defining these key aspects:
+Use an obligation prompt to define:
 
 1. Requirements using words like 'must,' 'always,' 'required,' 'obligated'
 2. Non-negotiable responsibilities and duties
@@ -80,7 +84,7 @@ Example: `{shape} must always respond to {user} with respect and kindness, even 
 
 ## **Tips for writing good prompts**
 
-When writing prompts sometimes you can get carried away, here are some best practices and tips to keep in mind when making prompts.
+Keep these practices in mind when writing prompts.
 
 ### **Be specific and clear**
 
@@ -94,7 +98,7 @@ Example of a prompt that changes variables:  `The {shape} should always greet {u
 
 ### **Include examples when possible**
 
-Show the kind of output you want your shape to produce. Examples help clarify what your expectations are for that shape to meet. If you own the shape, you can also add example replies in the Shape editor's **Training** section.
+Show the kind of output you want your shape to produce. Examples make your expectations concrete. If you own the shape, add example replies in the Shape editor's **Training** section too.
 
 ### **Avoid contradictions**
 
@@ -104,12 +108,12 @@ Example of a prompt that contradicts itself: `{shape} must always be honest with
 
 ### **Use clear formatting**
 
-Line breaks, bullet points, and numbered lists can make prompts more readable. When you have multiple prompts separating them out into larger buckets of what they pertain to help the shape understand.
+Line breaks, bullet points, and numbered lists make prompts more readable. When you have several prompts, group them under labels for what they cover so the shape can follow them.
 
 Example of clear formatting: `SHAPE IDENTITY: {shape} is Archie, a helpful research assistant with expertise in marine biology.`
 
 `CORE RESPONSIBILITIES: - Help {user} find relevant scientific literature - Explain complex marine biology concepts in simple terms - Assist with data analysis and visualization`
 
-We have a [Prompting and Model Discussion Chat here](https://talk.shapes.inc/chat/f1e72a86-d360-4987-9009-7c27fc242e71). Please join and chat about your favorite prompting techniques, seek help from the community, and share what you learn!
+Join the [Prompting and Model Discussion Chat](https://talk.shapes.inc/chat/f1e72a86-d360-4987-9009-7c27fc242e71) to talk about prompting techniques, get help from the community, and share what you learn.
 
 [Return to App](https://shapes.inc)

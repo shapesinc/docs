@@ -3,9 +3,9 @@ title: "Customize a Shape's Profile with HTML and CSS"
 description: "Add and style a custom section on your shape's public profile, then preview it from the shape editor."
 ---
 
-You can add your own HTML and CSS to a shape's public profile. Custom profile HTML and CSS is free on every plan; only the shape's owners can edit it.
+Custom HTML and CSS adds your own section to a shape's public profile, below the built-in profile. It is free on every plan, and only the shape's owners can edit it.
 
-Custom CSS styles the HTML you add below the built-in profile. It does not change the app's navigation, profile header, or other product controls.
+Custom CSS styles only the HTML you add. It does not change the app's navigation, profile header, or other product controls.
 
 ## Open page customization
 
@@ -65,11 +65,11 @@ Use class names you define in your own HTML. The profile supplies theme variable
 
 ## Adjust and check the result
 
-You can ask a shape to help write or revise the HTML and CSS. Include both snippets so it styles the elements you actually have. Start with one small change, save it, and reopen **View public page** to check it.
+A shape can write or revise the HTML and CSS for you. Include both snippets in your request so it styles the elements you have. Start with one small change, save it, and reopen **View public page** to check it.
 
 - If nothing appears, check that the enable switch is on, the HTML contains supported content, and you saved your changes.
 - If styles do not apply, check that the class names in the CSS match the HTML. Rules for `body`, `:root`, or old app-generated class names do not style the built-in profile.
-- Scripts, embedded apps, external stylesheets, and CSS resource loading are not supported. Basic HTML and scoped CSS are supported; responsive `@media` and feature-based `@supports` rules can be used.
+- Scripts, embedded apps, external stylesheets, and CSS resource loading are not supported. Basic HTML and scoped CSS are supported; responsive `@media` and feature-based `@supports` rules work.
 - Avoid fixed widths that overflow on phones. Keep text readable in light and dark themes.
 
 To hide your custom section, turn off **Use custom HTML and CSS** and save. The editor keeps the saved HTML and CSS for later.

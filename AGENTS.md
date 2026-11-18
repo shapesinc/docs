@@ -6,6 +6,7 @@
 - Call each individual a **shape** (plural **shapes**), never an “AI character” or a hyphenated variant.
 - Never use “roleplay,” “role-play,” “role play,” “RP,” or translated equivalents in authored public labels, explanations, or metadata. Preserve features, policies, technical identifiers, literal API values, and existing URLs or compatibility anchors; a copy correction does not authorize changing behavior.
 - Change AI-facing instructions only with explicit user authorization. The approved October 4 terminology cleanup includes the documented preset and direct-instruction examples: use narrated actions and scenes while preserving sentence counts, response constraints, placeholders, and behavior. Keep unrelated system/classifier instructions and saved user content unchanged. Display built-in response-style names as **Short creative**, **Long creative**, and **Skilled creative** where applicable; retain **Creative** as the preset group name.
+- Never write "Chat chats" or "a Chat chat". Say **Chat mode** ("in Chat mode", "Chat mode keeps the full list") and **Agent chats**.
 - Use **chat** or **group chat** for the product conversation. Do not infer public terminology from source variable names, component names, or database fields.
 - Verify navigation labels in the deployed product on talk.shapes.inc. Preserve the labels readers see, such as **New Chat**, **Quick chat**, **Shapes**, **People**, **Instructions**, and **AI replies**. If a control cannot be verified, describe the task without inventing a label.
 - Check screenshots as well as prose and metadata. Retire images that show obsolete UI labels or navigation.
@@ -29,6 +30,46 @@
 - Distinguish shapes in Agent chats, external agent accounts, hosted coding agents, and agents on a connected personal computer. Their capabilities, permissions, and funding are not interchangeable.
 - Maintain `features.mdx`, `docs-for-agents.mdx`, navigation, metadata, and Markdown exports when adding or retiring a feature. Verify old commented examples are absent from both human-rendered pages and agent-readable output.
 - Publication and source merges are different from verified deployment. Record tested source revisions and remaining validation gaps in the PR or architecture handoff; do not present unavailable or unverified capabilities as established behavior.
+
+# Voice: write like frontier agent docs
+
+shapes.inc docs read like the docs of a frontier agent product: Claude Code, Codex, ChatGPT agent. Shapes are agents that act for a group. Say what they do, what you'll see, and where the limits are. This section governs wording only; the terminology and positioning rules above still apply, and facts, labels, limits, routes, and anchors never change in a voice edit.
+
+## How a page is built
+
+- **Open with what it does.** First sentence: what the feature is or does, in present tense, with the shape as the subject. Second sentence: when you'd use it or what it needs. No welcome, no tagline, no "In this guide".
+- **Task-led headings for how-to** ("Connect your computer", "Pause a routine", "Stop a reply"). Noun headings for concepts ("How memory works", "What a shape can see"). No clever headings.
+- **Short paragraphs.** One to three sentences. Put detail in bullets, one clause each.
+- **Steps are numbered, one action each,** and end with what you see when it worked: "The row shows **· Paused**."
+- **Show a real request.** Give the exact thing to say, in quotes, with the success condition or the stop point in it: "Find three flights to Lisbon under 600 for Friday and post them here. Don't book anything."
+- **Decision tables use task-first headers:** "You want to | Use". Keep tables narrow; they must fit a phone.
+- **Callouts are rare.** Use one for something irreversible, something that costs money, or something others can see.
+
+## How sentences sound
+
+- **Second person, present tense.** "You approve the total. The shape places the order."
+- **The shape is the subject of its own verbs:** searches, reads, opens, drafts, sends, books, calls, runs, checks, waits, asks, stops, resumes, posts, saves. Not "can help you with", "is able to", "allows you to".
+- **Describe autonomy as mechanics.** Who can start it, what it does without asking, where it pauses for approval, who sees the result, who pays. "It asks before it pays, books, or deletes."
+- **State the default first,** then how to change it. "On by default. Turn it off in the same dialog."
+- **Pair every capability with its boundary** in the same sentence or the next. "The shape uses your signed-in Chrome tabs until you select **Stop control**. Only your requests can use it."
+- **Limits are exact:** numbers, units, reset times, who is covered. If you don't know the number, link the page that has it.
+- **Failure is the next state, not an apology.** Say what happened, what was and wasn't done, and the next move. "The payment didn't go through. Nothing was charged. Pick another way to pay on the card."
+- **Flat and certain for steps; precise for limits.** No "might", "should be able to", "feel free". Use "can" for a capability and "may" only for permission.
+- **shapes.inc is a group chat app.** Write "shapes.inc is a group chat app", never "shapes.inc is a group chat". A chat is one conversation inside the app.
+- **Name each thing once and keep the name:** shape, chat, Agent chat, Chat mode, task, routine, watch, connected app, engine, credits. Bold the exact UI label.
+
+## Words
+
+- **Use:** agent, task, run, approve, approval, permission, access, connect, schedule, routine, watch, in the background, in parallel, resume, stop, context, memory, action.
+- **Avoid:** chatbot, bot, AI companion, magic, seamless, powerful, simply, just, easily, unlock, supercharge, robust, leverage, delve, "we're excited", "Chat chats".
+- No exclamation marks. No emojis in prose. No rhetorical questions outside FAQ titles. No em-dash asides; split the sentence.
+
+## Before and after
+
+- "Shapes can help you plan a trip together!" → "A shape searches flights and hotels, posts the options in the chat, and books after you approve the total."
+- "You can simply ask the shape to remind you." → "Say when and what: 'Remind us Friday at 6pm to pick a restaurant.' The reminder appears under **Settings** → **Tasks**."
+- "Everyone can use connected apps." → "A shape uses your connected apps for your own requests. Teammates' requests use them only as **Shared access** allows."
+- "Oops, something went wrong." → "The call didn't connect. You weren't charged. Ask again, or check the number."
 
 # Design and styling
 

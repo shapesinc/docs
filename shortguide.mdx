@@ -1,12 +1,12 @@
 ---
 title: "When Less is More"
-description: "A Concise Approach to Creating Shapes"
+description: "When short Shape fields work better than long ones, and how to write each field."
 ---
 
-When crafting Shapes, there's often an impulse to fill every field with detailed descriptions and elaborate backstories. While comprehensive prompting has its place, a minimalist approach can often yield surprisingly rich and natural conversations that feel consistent. This guide explores when and how concise prompting can be your most powerful tool.
+Short, focused Shape fields often produce more natural and consistent conversations than detailed descriptions and long backstories. This guide covers when concise prompting works and how to write each field.
 
 <Tip>
-  For more general prompting information, please check out [Prompt 101 here](/prompt101).
+  For general prompting, see [Prompt 101](/prompt101).
 </Tip>
 
 ## The Philosophy Behind Brevity
@@ -14,9 +14,9 @@ When crafting Shapes, there's often an impulse to fill every field with detailed
 ### Why Less Can Be More
 
 **Clarity over complexity** – Clean, focused prompts reduce contradictions and confusion\
-**Space for emergence** – Shorter descriptions allow characters to develop organically through conversation\
-**Leveraging AI training** – AI Engines already know a lot; sometimes it's better to guide than over-instruct\
-**Token efficiency** – Concise prompts leave more space for dynamic conversation history. This can be especially important in AI Engines with a smaller context window.
+**Space for emergence** – Shorter descriptions let characters develop through conversation\
+**Using what the engine knows** – AI Engines already know a lot; guide them instead of over-instructing\
+**Token efficiency** – Concise prompts leave more space for conversation history. This matters most in AI Engines with a smaller context window.
 
 ### When to Consider This Approach
 
@@ -34,11 +34,11 @@ When you create a Shape, the core fields are under **Basic** and the rest are un
 
   **Name**
 
-  - This is who your Shape is! This will be the display name the Shape uses in chat, and it will also influence the username of the Shape.
+  - The display name the Shape uses in chat. It also influences the Shape's username.
 
   **Description** (**Profile** → **Basics** in the editor)
 
-  - Aim for impactful sentences about what is most important to know about your Shape
+  - Write a few sentences on what matters most about your Shape
   - Establish the essentials, not every detail
   - _Example: "A former royal guard haunted by their failure to protect the kingdom."_
 
@@ -52,18 +52,18 @@ When you create a Shape, the core fields are under **Basic** and the rest are un
 
   **Tone**
 
-  - You can use as little as nothing, even one or two descriptive words
+  - Leave it empty, or use one or two descriptive words
   - _Examples: "melancholic" or "dry, sarcastic"_
 
   **Story**
 
   - Can be longer, but focus on relevance
-  - Establish their current situation, not their entire history unless it is extremely relevant and a Shape that the AI Engine won't know the details of (like an original character)
+  - Establish their current situation. Add full history only when it is relevant and the AI Engine won't know the details, as with an original character
   - _Example: "Once celebrated as a hero, now wanders anonymously, avoiding recognition while seeking some form of redemption."_
 
   **Likes/Dislikes**
 
-  - Simple lists work effectively
+  - Simple lists work
   - No need to explain why they like each thing
   - _Example:_
     - _Likes: morning mist, honest conversation, simple meals_
@@ -72,14 +72,14 @@ When you create a Shape, the core fields are under **Basic** and the rest are un
   **Conversational Goals**
 
   - 2–3 clear objectives maximum
-  - You can try going in without a goal, this works out well for a lot of Shapes
+  - No goal at all works well for many Shapes
   - _Example: "Deflect praise, offer practical wisdom, gradually open up if trust is earned"_
 
   **Conversational Examples**
 
   - Provide 2–3 brief, authentic snippets
   - Show voice, don't tell about it
-  - Alternatively, use the **Training** section to provide more examples if you want to guide the way your Shape responds
+  - To guide how your Shape responds with more examples, use the **Training** section
   - _Example:_
     - _"Heroism? That's just a word people use when they don't know the whole story."_
     - _"I appreciate the kind words, but actions matter more than titles."_
@@ -101,14 +101,14 @@ When you create a Shape, the core fields are under **Basic** and the rest are un
 
   ### The Knowledge Trap
 
-  One of the biggest mistakes is overwhelming the Knowledge field with dozens of entries. This often backfires because:
+  Dozens of entries in the Knowledge field often backfire:
 
   - The AI struggles to recall specific details from large knowledge sets
-    - Shapes might answer that they don't know something or make something up that you've included in the knowledge if the knowledge section is too cluttered
+    - When the knowledge section is cluttered, a Shape can say it doesn't know something you included, or make something up
   - Contradictions become more likely
   - Natural conversation flow suffers
 
-  **Better approach:** For popular characters or settings, trust the AI's existing training data and supplement only with truly unique or essential details.
+  **Better approach:** For popular characters or settings, rely on the AI's existing training data and add only unique or essential details.
 </Expandable>
 
 <span id="ai-engine-preset" />
@@ -120,30 +120,30 @@ In the Shape editor, **Profile** → **Response style** sets the length and form
 - "Maintain character consistency above all"
 - "Let personality emerge through dialogue, not exposition"
 - "Use 2-3 sentences of "speech" and 1 sentence of \*narrated actions\*"
-- More on presets here: [Presets](/presets)
+- More on presets: [Presets](/presets)
 
 ## Case Study: The Genshin Impact Experiment
 
-A creator once built a Shape designed to portray any Genshin Impact character, adding 100+ impressively detailed knowledge entries for each character. The result? Inconsistent performance and poor recall, unfortunately. The Shape was unable to find the relevant knowledge entries to give informed responses.
+A creator built a Shape to portray any Genshin Impact character, with 100+ detailed knowledge entries for each character. Performance was inconsistent and recall was poor: the Shape could not find the relevant knowledge entries to give informed responses.
 
 Compare this to successful multi-character Shapes that rely on:
 
 - Minimal character-specific knowledge
 - Trust in the AI's existing familiarity with popular characters
 
-The lesson: Sometimes the best prompt is the one you don't write.
+The lesson: leave out what the AI already knows.
 
 ## Finding Your Balance
 
 ### When to Go Longer
 
-This minimalist approach isn't universal. Consider more detailed prompting when:
+Short prompts don't fit every Shape. Write more detail when:
 
 - Creating entirely original Shapes or worlds
 - Working with very specific technical or cultural knowledge
 - The Shape requires unique or precise behavioral constraints
 - You're getting generic responses with shorter prompts
-- The conversation doesn't feel quite like your Shape: you might need to add more into tone, personality, etc.
+- The conversation doesn't sound like your Shape: add more to tone, personality, and similar fields
 
 ### Testing and Iteration
 
@@ -162,10 +162,10 @@ For each field, ask yourself:
 - **Am I writing this for the AI or for myself?**
 - **Will adding more text solve an actual problem I'm experiencing?**
 
-Remember: The goal isn't to write the longest or shortest possible prompt, but to write the most effective one. Sometimes that's a single keyword. Sometimes it's several paragraphs. The art is knowing which situation calls for which approach.
+The goal is the most effective prompt, not the longest or shortest. Sometimes that is a single keyword, sometimes several paragraphs.
 
 <Tip>
-  To get more help prompting and to help others with prompting, join our [Prompting and Model Discussions ](https://talk.shapes.inc/join/f1e72a86-d360-4987-9009-7c27fc242e71)Chat.
+  For help with prompting, or to help others, join the [Prompting and Model Discussions ](https://talk.shapes.inc/join/f1e72a86-d360-4987-9009-7c27fc242e71)Chat.
 </Tip>
 
 [Return to App](https://shapes.inc)
