@@ -1,11 +1,11 @@
 ---
-title: "Connected Apps"
-description: "Shapes use Gmail, Google Calendar, Notion, Google Drive, and more for your requests in Agent chats. Connect accounts, make an app read-only, have shapes send email, choose what teammates can use, and control access."
+title: "Connected apps"
+description: "Connect Gmail, Google Calendar, Notion, Google Drive, and more, then control what shapes can do with them for you and your teammates."
 keywords: ["connected apps", "Gmail", "Google Calendar", "Notion", "Google Drive", "multiple accounts", "read-only", "send email", "Shared access", "MCP", "Check before replying", "Agent chats", "multiplayer assistant"]
 sidebarTitle: "Connected apps"
 ---
 
-A Shape works with your connected apps when you ask: the calendar that shows when you're free, the doc with the venue quotes, the email thread with the landlord. It checks, finds, and drafts things for the group, so you don't copy them into the chat.
+A shape works with your connected apps when you ask: the calendar that shows when you're free, the doc with the venue quotes, the email thread with the landlord. It checks, finds, and drafts things for the group, so you don't copy them into the chat.
 
 Personal connections belong to you. Shapes use them for your requests in [Agent chats](/chat-and-agent-modes), including later runs of watches or tasks you authorized. A clear request can authorize an action, such as sending a specific message; the shape asks when important details are missing or a service requires approval.
 
@@ -23,7 +23,7 @@ Both open the same page: a directory of every app you can connect.
 ## Connect an app
 
 1. Search for an app, or browse the sections: **Popular**, then categories such as Email & calendar, Docs & files, Tasks & projects, and Developers. Select **See all** to open a whole section.
-2. Select an app to see what Shapes can do with it. Open **Examples** for sample requests.
+2. Select an app to see what shapes can do with it. Open **Examples** for sample requests.
 3. Select **Connect** followed by the app's name, for example **Connect Gmail**.
 4. Sign in to the app and allow every permission it asks for.
 5. Select **Done**.
@@ -44,9 +44,11 @@ Connect up to 10 accounts per app, for example a personal and a work Gmail.
 
 Shapes use the default account unless you name another one in the chat:
 
-> Use my Work Gmail to find the caterer's last invoice.
+```text wrap
+Use my Work Gmail to find the caterer's last invoice.
+```
 
-When a Shape tells you which account it used, it refers to it by nickname, never by email.
+When a shape tells you which account it used, it refers to it by nickname, never by email.
 
 ## Make an app read-only
 
@@ -142,13 +144,13 @@ To always review first, tell a shape something like "never send an email without
 
 ## Share links and files
 
-Share a public Google Docs, Sheets, Slides, or Drive link in a chat and Shapes can read it, look at its images, and send you the file. Files from connected apps like Notion work the same way.
+Share a public Google Docs, Sheets, Slides, or Drive link in a chat and shapes can read it, look at its images, and send you the file. Files from connected apps like Notion work the same way.
 
 ## Find more apps
 
 - **From marketplaces**, on the Connected apps page, lists apps from public app directories. Select one to see its directory and service, then select **Connect**.
-- In Agent chats, Shapes can find and connect more apps from the public MCP directory and WebMCP. A Connect card appears in the chat, and the task continues after you connect.
-- Chat owners can add an MCP server for a whole chat under the chat's **Settings** → **AI settings** → **MCP servers**. See [Shape Skills](/shapeskills#connect-an-outside-service).
+- In Agent chats, shapes can find and connect more apps from the public MCP directory and WebMCP. A Connect card appears in the chat, and the task continues after you connect.
+- Chat owners can add an MCP server for a whole chat under the chat's **Settings** → **AI settings** → **MCP servers**. See [Shape skills](/shapeskills#connect-an-outside-service).
 
 <a id="check-before-replying" />
 
@@ -164,22 +166,17 @@ The server's row then shows **· Checked before replying**. It's off by default,
 
 <a id="let-a-shape-keep-an-eye-on-gmail-or-github" />
 
-## Let a Shape keep an eye on Gmail, Calendar, or GitHub
+## Let a shape keep an eye on Gmail, Calendar, or GitHub
 
 Ask a shape to watch a specific update in your connected Gmail or GitHub, or upcoming flights on your Google Calendar. Choose the chat where you want its updates; in a shared chat, other members can read what it posts. A broader request to keep an eye out for anything that needs you uses a private chat with the shape and checks all three.
 
-> Keep an eye on my Gmail and tell me only when something needs a reply from me.
+Ask in the chat:
+
+```text wrap
+Keep an eye on my Gmail and tell me only when something needs a reply from me.
+```
 
 After you connect Gmail, Calendar, or GitHub, a shape offers this once. "Watch my inbox" keeps calendar and GitHub on too, unless you say "only my email". Say stop at any time. For what the sweep posts, drafts, and holds back, see [Keep an eye out for anything that needs you](/tasks#keep-an-eye-out).
-
-## Disconnect an app
-
-1. On the Connected apps page, open the app's ⋯ menu, or open the app.
-2. Select **Disconnect** and confirm.
-
-Once disconnection completes, shapes stop using that app's accounts in every chat. Disconnecting removes every account for the app; to remove only one, use **Remove** on that account. To change only where a shared connection is available, use **Manage chats** under **Shared with chats**. For Google apps, the confirmation also links to your Google account permissions so you can remove access there too. Each Google app disconnects on its own: disconnecting Gmail leaves Calendar and Drive connected.
-
-Asking a shape how to disconnect, or what happens if you do, gets an answer; it doesn't disconnect or delete anything. To stop shapes changing things without disconnecting, [make the app read-only](#make-an-app-read-only).
 
 ## Let teammates use your apps
 
@@ -205,12 +202,21 @@ Reading never allows edits, and editing never allows sending. No option covers p
 
 You can also set it by telling a shape, for example "if Drew asks, let him use my Notion", or "don't use my apps for anyone here", which sets that person to **Ask me first**. Your choice is saved for later requests. An app that's [read-only](#make-an-app-read-only) stays read-only whatever you choose here.
 
+## Disconnect an app
+
+1. On the Connected apps page, open the app's ⋯ menu, or open the app.
+2. Select **Disconnect** and confirm.
+
+Once disconnection completes, shapes stop using that app's accounts in every chat. Disconnecting removes every account for the app; to remove only one, use **Remove** on that account. To change only where a shared connection is available, use **Manage chats** under **Shared with chats**. For Google apps, the confirmation also links to your Google account permissions so you can remove access there too. Each Google app disconnects on its own: disconnecting Gmail leaves Calendar and Drive connected.
+
+Asking a shape how to disconnect, or what happens if you do, gets an answer; it doesn't disconnect or delete anything. To stop shapes changing things without disconnecting, [make the app read-only](#make-an-app-read-only).
+
 ## Privacy and trust
 
 - **Personal accounts stay yours.** Your personal connection is used for your requests and authorized scheduled work. Other members don't gain it by joining the chat; routine help for a teammate follows your **Shared access** settings.
 - **Say what action you want.** Examples open as drafts. Specify whether you want a draft or an action completed; an explicit request can authorize the action without a second confirmation. Check the returned result. To review every send first, set an [ask-first rule](#ask-before-sending).
 - **Limit an app to reading.** Turn on [Read-only](#make-an-app-read-only) and nothing in that app is sent, created, changed, or deleted, from any chat or scheduled task.
-- **Account details stay hidden.** Account emails show only when you open **Accounts**, and Shapes refer to accounts by nickname.
+- **Account details stay hidden.** Account emails show only when you open **Accounts**, and shapes refer to accounts by nickname.
 
 ## Troubleshooting
 
@@ -222,7 +228,7 @@ Open the app and select **Reconnect**, then allow every permission the app asks 
 
 App mentions work in Agent chats when you're signed in, but not in threads or DMs between people. Check the chat's mode in [Chat, Agent, and Auto](/chat-and-agent-modes).
 
-### The Shape used the wrong account
+### The shape used the wrong account
 
 Name the account by its nickname in your request, or open the app's **Accounts** and choose **Make default** on the account you use most.
 

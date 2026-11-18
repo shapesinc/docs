@@ -1,6 +1,6 @@
 ---
-title: "Have a Shape Make a Phone Call"
-description: "Ask a shape in an Agent chat to phone a restaurant, store, office, friend, or you, now or at a set time, follow the call live, and read the recap. Call shapes.inc yourself to talk with Tod and get things done by phone."
+title: "Have a shape make a phone call"
+description: "Ask a shape in an Agent chat to phone a restaurant, store, office, friend, or you, follow the call live, and read the recap."
 keywords: ["phone calls", "call a restaurant", "book by phone", "AI phone call", "call card", "call recording", "call transcript", "Agent chat", "call shapes.inc", "call me", "wake-up call", "scheduled call", "phone voice", "Do Not Disturb"]
 sidebarTitle: "Phone calls"
 ---
@@ -10,6 +10,8 @@ In an [Agent chat](/chat-and-agent-modes), a shape makes the phone calls some th
 You can also [call Tod](#call-tod) at the shapes.inc number from your phone, or ask a shape to call you.
 
 To talk with a shape in the app, start a [voice call](/voicecalls) in the chat instead. A phone call is a call to or from a real phone number.
+
+Calls work in Agent chats, for signed-in people. They don't run in Chat mode. The phone line calls US and Canada numbers (+1) only.
 
 ## What people ask for
 
@@ -24,30 +26,25 @@ Ask the way you'd text a friend who's making the call for you:
 
 "If they need anything else from me, ask me during the call" works too: see [answer questions during the call](#answer-questions-during-the-call).
 
-## Schedule a call to you
-
-Ask for a call at a set time, once or on a schedule:
-
-> Call me at 7 tomorrow to wake me up.
-
-> Every weekday at 8:30, call me and go over my calendar.
-
-The shape sets it up like any [reminder](/tasks), and it shows in **Settings** → **Tasks**, where you can pause or cancel it. At that time it rings your own number, the same one "call me" uses. It uses today's [free calling](#cost-and-limits) first, then your account credits. A scheduled call only ever rings the person who set it up; a schedule can't call a business or a friend.
-
 ## Ask for a call
 
 Say who to call, why, and what the shape is allowed to agree to. Give the number if you have it; otherwise the shape uses one it already knows, or finds the business's number on its official website.
 
-> Call Lucia's at +1 415 555 0134 and ask for a table for 6 on Friday at 7:30. Anything between 7 and 8:30 is fine. Book it under my name.
+Ask in the chat:
 
-> Call the hardware store on Main Street and ask if they have the 12-foot extension ladder in stock today.
+```text wrap
+Call Lucia's at +1 415 555 0134 and ask for a table for 6 on Friday at 7:30. Anything between 7 and 8:30 is fine. Book it under my name.
+```
+
+```text wrap
+Call the hardware store on Main Street and ask if they have the 12-foot extension ladder in stock today.
+```
 
 When the request is clear, the shape calls right away. It asks first only if something it needs is missing.
 
-- Calls work in Agent chats, for signed-in people. They don't run in Chat mode. Ask in the chat, [by text](/texting), or on a call with the shape. A schedule can only call you, never anyone else; see [schedule a call to you](#schedule-a-call-to-you).
+- Ask in the chat, [by text](/texting), or on a call with the shape. A schedule can only call you, never anyone else; see [schedule a call to you](#schedule-a-call-to-you).
 - A friend can be called by name or @username when you share a chat with them on shapes.inc and they have a number saved. Their number stays private.
 - Type or say the ask. Choosing an option on a card doesn't start a call.
-- The phone line calls US and Canada numbers (+1) only.
 - It can't call emergency numbers. In an emergency, call them yourself.
 
 ## Follow the call
@@ -91,6 +88,20 @@ The shape posts a short recap. Numbers said on the call, such as a callback numb
 A finished call isn't proof the task is done. Read the recap to see what was actually agreed, such as whether the table is booked or only waitlisted.
 
 The transcript is made from the recording, so it includes what the other side said even when the caller didn't catch it on a bad line. When that happens, the recap says what they said that the caller missed. The transcript is automatic speech recognition and can mishear names, numbers, and times. Play the recording before relying on anything important.
+
+## Schedule a call to you
+
+Ask for a call at a set time, once or on a schedule:
+
+```text wrap
+Call me at 7 tomorrow to wake me up.
+```
+
+```text wrap
+Every weekday at 8:30, call me and go over my calendar.
+```
+
+The shape sets it up like any [reminder](/tasks), and it shows in **Settings** → **Tasks**, where you can pause or cancel it. At that time it rings your own number, the same one "call me" uses. It uses today's [free calling](#cost-and-limits) first, then your account credits. A scheduled call only ever rings the person who set it up; a schedule can't call a business or a friend.
 
 ## Call Tod
 
@@ -165,7 +176,9 @@ Plan together, then let one person ask for the call. For a birthday dinner, ever
 
 The person who asked for the call gets the private cards for missing details and questions during the call, is the only one who can end it, pays for it, and has the booking made under their saved name. A "call me" number is masked on the card, so the group doesn't see it.
 
-## Cost and limits
+<span id="cost-and-limits" />
+
+## Limits
 
 | | Free | Premium |
 |---|---|---|
@@ -180,22 +193,71 @@ The person who asked for the call gets the private cards for missing details and
 - Playing back a recording is free.
 - One call at a time to the same number.
 
-See [Credits](/credits) and [Premium](/premium-subscriptions).
+<span id="when-a-call-doesnt-work" />
 
-## When a call doesn't work
+## Troubleshooting
 
-- **No answer, busy, or voicemail:** the card shows **Call failed** with the reason, or **Call ended**. Ask again later, or ask the shape to try a different number from the business's website. A call to you rings twice before giving up; see [if you don't pick up](#if-you-dont-pick-up).
-- **"Not confirmed whether this call started":** don't ask again right away. Check the card first; the shape won't redial on its own.
-- **"Today's free calling time is used up":** you're on Free, today's free time is gone, and your account credits can't cover the call. A card under the reply offers credits or Premium. After you buy, ask for the call again: the card doesn't place it for you. Or wait until midnight UTC.
-- **"The phone line only reaches US and Canada numbers":** the number is outside +1. No call was placed and nothing was charged.
-- **No recap:** if the shape stays busy, it says so. The recording and transcript are still on the card.
-- **The shape says it can't make phone calls:** the chat is in Chat mode, or you're signed out. Switch the chat to Agent; see [Chat, Agent, and Auto](/chat-and-agent-modes).
-- **The shape asks for your number:** none is saved on your account yet. Send it in the chat: the shape calls it and keeps it in [Saved details](/saved-details), so "call me" works next time without it. Change it there any time.
-- **The shape can't find your friend:** use their exact @username, for example "call @noorie". It only calls people you share a chat with on shapes.inc; if they have no number saved, give it in the chat.
-- **The shape asks you to type the request:** you chose an option on a card. Type the ask, such as "call them".
-- **A scheduled call to you didn't ring:** check **Settings** → **Tasks** that it's there and not **Paused**. Schedules set up before November 5, 2026 can't place calls; ask for it again.
-- **A call to someone's own phone hit call screening or voicemail:** this is common, because the number is new to them. Tell them to expect the call, or ask the shape to leave a short message.
-- **The recap says it's booked, but you're not sure:** play the recording and look for the time, the name, and any confirmation number.
-- **You called shapes.inc and Tod didn't know you:** call from a number on your account, or reply to the text Tod sent you to sign up or sign in.
-- **On a call, the shape says it can't do something you can do in the app:** ask again plainly, for example "look it up" or "check my email". Anything you asked for that didn't get done, it does in the chat after the call.
-- **The recap says the caller missed something:** the other side spoke but the caller didn't hear it on the line. The transcript has what they said; play the recording to check.
+### No answer, busy, or voicemail
+
+The card shows **Call failed** with the reason, or **Call ended**. Ask again later, or ask the shape to try a different number from the business's website. A call to you rings twice before giving up; see [if you don't pick up](#if-you-dont-pick-up).
+
+### "Not confirmed whether this call started"
+
+Don't ask again right away. Check the card first; the shape won't redial on its own.
+
+### "Today's free calling time is used up"
+
+You're on Free, today's free time is gone, and your account credits can't cover the call. A card under the reply offers credits or Premium. After you buy, ask for the call again: the card doesn't place it for you. Or wait until midnight UTC.
+
+### "The phone line only reaches US and Canada numbers"
+
+The number is outside +1. No call was placed and nothing was charged.
+
+### No recap
+
+If the shape stays busy, it says so. The recording and transcript are still on the card.
+
+### The shape says it can't make phone calls
+
+The chat is in Chat mode, or you're signed out. Switch the chat to Agent; see [Chat, Agent, and Auto](/chat-and-agent-modes).
+
+### The shape asks for your number
+
+None is saved on your account yet. Send it in the chat: the shape calls it and keeps it in [Saved details](/saved-details), so "call me" works next time without it. Change it there any time.
+
+### The shape can't find your friend
+
+Use their exact @username, for example "call @noorie". It only calls people you share a chat with on shapes.inc; if they have no number saved, give it in the chat.
+
+### The shape asks you to type the request
+
+You chose an option on a card. Type the ask, such as "call them".
+
+### A scheduled call to you didn't ring
+
+Check **Settings** → **Tasks** that it's there and not **Paused**. Schedules set up before November 5, 2026 can't place calls; ask for it again.
+
+### A call to someone's own phone hit call screening or voicemail
+
+This is common, because the number is new to them. Tell them to expect the call, or ask the shape to leave a short message.
+
+### The recap says it's booked, but you're not sure
+
+Play the recording and look for the time, the name, and any confirmation number.
+
+### You called shapes.inc and Tod didn't know you
+
+Call from a number on your account, or reply to the text Tod sent you to sign up or sign in.
+
+### On a call, the shape says it can't do something you can do in the app
+
+Ask again plainly, for example "look it up" or "check my email". Anything you asked for that didn't get done, it does in the chat after the call.
+
+### The recap says the caller missed something
+
+The other side spoke but the caller didn't hear it on the line. The transcript has what they said; play the recording to check.
+
+## Related
+
+- [Credits](/credits): how account credits work.
+- [Premium](/premium-subscriptions): what the plan includes.

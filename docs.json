@@ -381,5 +381,17 @@
       "destination": "/faq/what-happened-to-rewards",
       "permanent": true
     }
-  ]
+  ],
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ],
+    "display": "header"
+  },
+  "metadata": {
+    "timestamp": true
+  }
 }

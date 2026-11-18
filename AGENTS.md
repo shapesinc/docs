@@ -42,6 +42,7 @@ shapes.inc docs read like the docs of a frontier agent product: Claude Code, Cod
 - **Short paragraphs.** One to three sentences. Put detail in bullets, one clause each.
 - **Steps are numbered, one action each,** and end with what you see when it worked: "The row shows **· Paused**."
 - **Show a real request.** Give the exact thing to say, in quotes, with the success condition or the stop point in it: "Find three flights to Lisbon under 600 for Friday and post them here. Don't book anything."
+- **Example requests are copyable.** See "Example requests" under Layout.
 - **Decision tables use task-first headers:** "You want to | Use". Keep tables narrow; they must fit a phone.
 - **Callouts are rare.** Use one for something irreversible, something that costs money, or something others can see.
 
@@ -71,6 +72,57 @@ shapes.inc docs read like the docs of a frontier agent product: Claude Code, Cod
 - "Everyone can use connected apps." → "A shape uses your connected apps for your own requests. Teammates' requests use them only as **Shared access** allows."
 - "Oops, something went wrong." → "The call didn't connect. You weren't charged. Ask again, or check the number."
 
+# Layout: how every page is put together
+
+Benchmarked in November 2026 against the Claude Help Center and claude.com/docs, the ChatGPT Help Center and learn.chatgpt.com, and the Cursor, Manus, Lovable and Replit docs. This section governs frontmatter, headings and page structure. The voice rules above still apply, and facts, labels, limits, routes and anchors never change in a layout edit.
+
+## Frontmatter
+
+- **`title`** is sentence case, under about 50 characters, with no site name, tagline or dash suffix. How-to pages take a verb-first title ("Start a chat", "Connect your computer", "Have a shape make a phone call"). Concept and reference pages take a noun title ("Memory", "Credits", "Chat, Agent, and Auto"). FAQ pages keep the question the reader would type.
+- **`description`** is one sentence, 160 characters or fewer, that says what the page helps you do. It shows under the title and is the page's entry in `llms.txt`, so it never repeats the title and never lists every section.
+- **`sidebarTitle`** is two to four words, sentence case.
+- Capitalize only the first word, proper nouns (shapes.inc, Tod, Gmail, Slack), and exact UI labels in bold. Write "a shape" and "shapes" in lowercase everywhere, including titles and headings. **Shape Credits** stays capitalized because it is the product's name for the balance.
+
+## Headings
+
+- Sentence case, no bold, no numbering, no end punctuation. Start at `##` and never skip a level.
+- How-to sections are imperative and parallel ("Connect an app", "Make an app read-only", "Disconnect an app"). Concept sections are noun phrases. Troubleshooting entries are the symptom in the reader's words ("A reminder stopped posting").
+- A heading's anchor is its lowercased text. Changing only capitalization or bold keeps the anchor. When the words change, keep the old anchor with `<span id="old-anchor" />` on the line above.
+
+## Feature page skeleton
+
+Use the sections a page needs, in this order, with these names. Don't add an empty section to fill the template.
+
+1. **Lede.** One or two sentences under the title: what the feature does, with the shape as the subject. No heading above it.
+2. **Availability.** One line when access differs by plan, mode or platform: "Available in Agent chats on every plan. Phone calls spend credits."
+3. **Before you begin.** What you need first, as a short list. Skip it when nothing is needed.
+4. **Task sections.** One `##` per task, numbered steps, one action each, ending with what you see when it worked.
+5. **Limits.** Exact numbers, units, reset times and who pays, in one place. Other pages link here instead of repeating them.
+6. **Troubleshooting.** One `###` per symptom, then the fix.
+7. **Related.** Two to four links, each with a colon and a reason: "[Tasks and reminders](/tasks): schedule the follow-up." Not a card grid.
+
+## Example requests
+
+- A request the reader can send as-is goes in its own copyable block, one request per block, introduced by a short line that ends in a colon:
+
+  ````mdx
+  Ask in the chat:
+
+  ```text wrap
+  Find three flights to Lisbon under 600 for Friday and post them here. Don't book anything.
+  ```
+  ````
+
+- Write it in the reader's voice with the constraint or stop point in it. Keep short inline examples in quotes inside the sentence.
+- Never put a request in a `<Tip>`. Preset, prompt and instruction examples written for an AI keep their existing formatting.
+
+## Home, hubs and endings
+
+- The Welcome page is a task chooser: one-sentence definition, three ways to start, requests to copy, then topics. At most six cards in a grid, each titled with what the reader wants to do.
+- Card grids use `<Columns cols={n}>`. Hub pages prefer a short list of links with reasons over cards.
+- FAQ answers open with the answer in the first sentence and end with one plain line pointing to Help Me. No closing `<Tip>`, no "Back to FAQ" link; the breadcrumb does that.
+- No "In this guide", "Overview" or "Introduction" headings, and no summary section that repeats the page.
+
 # Design and styling
 
 The docs wear the shapes.inc app look, benchmarked against the OpenAI and Claude developer docs: calm, neutral, type-led, fast to scan. The theme lives in `style.css` (loaded by Mintlify on every page) and the `colors`, `fonts` and `logo` keys of `docs.json`. The source of truth for tokens is shapes-chat `architecture/design-guide/index.html` and `architecture/brand-guide/index.html` (values from `app/globals.css`).
@@ -83,6 +135,6 @@ The docs wear the shapes.inc app look, benchmarked against the OpenAI and Claude
 - **Navigation.** One sidebar, no tabs. Groups are task-ordered and named in sentence case; every page has a short sentence-case `sidebarTitle` (two to four words). Keep groups to about nine pages; split rather than grow. FAQ lives under Help as collapsible topics, and the navbar carries an **FAQ** link. Retire a page by redirecting it in `docs.json` and dropping it from navigation, not by deleting the file.
 - **Footer.** One slim row: "Powered by" on the left, the theme switch on the right. `style.css` hides Mintlify's logo-and-links block; don't add footer link columns.
 - **Primary CTA.** The navbar **New chat** button is an ink pill (foreground fill, background-colored text), the way frontier docs and the homepage do it.
-- **Components.** Prefer prose, tables and Steps over card grids. When cards are right, keep them to short title + one-line description; icons are monochrome Font Awesome regular. Callouts are a neutral card with a colored icon (tip green, info blue, warning amber, danger red), not tinted boxes.
+- **Components.** Prefer prose, tables and Steps over card grids. Card grids use `<Columns>`, not `<CardGroup>`. When cards are right, keep them to short title + one-line description; icons are monochrome Font Awesome regular. Callouts are a neutral card with a colored icon (tip green, info blue, warning amber, danger red), not tinted boxes.
 - **Overriding Mintlify.** Target stable hooks (`#navbar`, `#sidebar`, `#content-area`, `#table-of-contents`, `#page-title`, `.callout`, `.card`, `[data-component-part=…]`) instead of generated Tailwind classes. Mintlify's own `!` utilities live in a cascade layer and win over unlayered `!important` (for example, callout links stay the text color); work with them rather than fighting them.
 - **Verify visually.** Run `mint dev --no-open`, then check a prose page, a card page, a tabbed page and an FAQ page in light and dark, at desktop (1440px) and phone (390px) widths. Run `mint validate` and `mint broken-links`. Put before/after screenshots in the PR.

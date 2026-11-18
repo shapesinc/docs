@@ -1,6 +1,6 @@
 ---
-title: "Choices, Polls, and Shared Activities"
-description: "Choose together, answer an offer, study, or keep a shared tracker in your chat. Learn how choice cards, polls, quizzes, widgets, games, and forms work."
+title: "Choices, polls, and shared activities"
+description: "Choose together, answer an offer, study, or keep a shared tracker in your chat with choice cards, polls, quizzes, widgets, games, and forms."
 keywords: ["choice cards", "Ask the group", "Settle", "live poll", "group poll", "quiz night", "RSVP form", "shared checklist", "shared widget", "Custom UI", "multiplayer activities", "group decisions", "multiplayer assistant"]
 sidebarTitle: "Shared activities"
 ---
@@ -21,7 +21,11 @@ These activities are available in free and Premium chats. Use [Agent mode](/chat
 
 Describe what the group needs, who's taking part, and any rules. For example:
 
-> **Vote on a restaurant:** Make a poll for Friday dinner with the three places we've mentioned. Show the price and distance for each, mark your recommendation, and show the votes live.
+**Vote on a restaurant:**
+
+```text wrap
+Make a poll for Friday dinner with the three places we've mentioned. Show the price and distance for each, mark your recommendation, and show the votes live.
+```
 
 <Visibility for="humans">
 {/* October 26, 2026: Mintlify exports MDX comments verbatim. This human-only wrapper keeps the archived source out of agent Markdown; the comment keeps it hidden on the page. */}
@@ -31,9 +35,17 @@ promise voter-added options. Preserve the previous documentation example:
 */}
 </Visibility>
 
-> **Quiz night:** Make a 10-question quiz on 90s movies for us to answer in the chat, then show our scores.
+**Quiz night:**
 
-> **RSVP form:** Make an RSVP form for Sam's birthday on the 14th. Ask for name, plus-ones, and dietary needs.
+```text wrap
+Make a 10-question quiz on 90s movies for us to answer in the chat, then show our scores.
+```
+
+**RSVP form:**
+
+```text wrap
+Make an RSVP form for Sam's birthday on the 14th. Ask for name, plus-ones, and dietary needs.
+```
 
 The shape posts the card or page inside its message. You can vote, type, and play without leaving the chat.
 
@@ -41,7 +53,9 @@ The shape posts the card or page inside its message. You can vote, type, and pla
 
 In an Agent chat, give the shape the group's constraints and ask for options people can choose from:
 
-> Compare three parks for our picnic using the travel time, step-free access, and facilities we need. Show the deciding facts, recommend one, and let everyone in this chat vote before I settle the choice.
+```text wrap
+Compare three parks for our picnic using the travel time, step-free access, and facilities we need. Show the deciding facts, recommend one, and let everyone in this chat vote before I settle the choice.
+```
 
 A choice card has **2–6 options**. It can show a **pick** marking the shape's recommendation, short facts, or researched item details such as a photo, source, price, rating, and link. Some comparisons appear as a table. Check the sources and current details before deciding; showing an option does not establish that shapes.inc can buy or book it.
 
@@ -93,7 +107,9 @@ In a group Agent chat, a poll a shape posts for someone's request waits until ev
 
 For a study group, one person uploads the agreed revision material and asks:
 
-> Quiz us on these notes, with a round for each chapter. After we answer, explain the correct answers and show our scores so we can choose what to revise together.
+```text wrap
+Quiz us on these notes, with a round for each chapter. After we answer, explain the correct answers and show our scores so we can choose what to revise together.
+```
 
 The shape posts a quiz card in the chat. Each person selects an answer, sees the correct answer after answering, and moves through the questions. A saved answer cannot be changed. Answers and scores are part of the shared activity, not a private assessment. Ask the shape to show the scoreboard or end the quiz when the group is finished.
 
@@ -111,7 +127,9 @@ If the page includes **Invite**, it shares the chat's invitation link so people 
 
 For a weekend trip, ask the shape to turn the group's agreed packing plan into a common list:
 
-> Make a shared packing checklist for our camping trip. Start with the items we've agreed on; we will add anything missing and check off what we pack.
+```text wrap
+Make a shared packing checklist for our camping trip. Start with the items we've agreed on; we will add anything missing and check off what we pack.
+```
 
 People can add, check off, and remove items on the same checklist. Saved progress survives reopening. Ask the shape to read the current list when you want a recap, and review the remaining unchecked items together before setting off.
 
@@ -127,7 +145,9 @@ Changing a checklist's initial items or a form's fields starts fresh progress or
 
 In an Agent chat, ask for a compact tracker, editor, chart, or interactive explanation inside the reply. For example:
 
-> Make a shared picnic tracker here, with a row for each person to enter what they are bringing and a common list of what we still need. Keep our entries when we reopen the chat. Add a button to ask you for a recap.
+```text wrap
+Make a shared picnic tracker here, with a row for each person to enter what they are bringing and a common list of what we still need. Keep our entries when we reopen the chat. Add a button to ask you for a recap.
+```
 
 The widget appears with the shape's reply. Signed-in chat members can use its controls, see saved changes, and return to the same state after reopening. It is part of the message; it is not a downloadable activity page or a separately published website. To involve people outside the chat, invite them under the chat's access rules or ask for a [shared activity page](#shared-activity-pages).
 
@@ -183,13 +203,19 @@ Anyone with the link can join without signing in, so share it only with people y
 
 You need to be signed in and a member of the chat to share an activity. If you had the activity open when someone shared it, reopen it to keep playing.
 
-## Let the Shape read the results
+## Let the shape read the results
 
 Shapes can read an activity's live results: votes, settled choices, scores, form responses, checklist progress, and saved widget data. Name the activity if the chat has several. Ask in the chat:
 
-> Which restaurant is winning? If it's a tie, suggest a tiebreaker we can all live with.
+```text wrap
+Which restaurant is winning? If it's a tie, suggest a tiebreaker we can all live with.
+```
 
-> Who hasn't filled in the RSVP form yet? Draft a friendly reminder for them.
+Or check who still needs to answer:
+
+```text wrap
+Who hasn't filled in the RSVP form yet? Draft a friendly reminder for them.
+```
 
 ## Delete an activity
 
@@ -221,14 +247,16 @@ Too many people are connected to it right now. Try again later.
 
 ### "This activity is unavailable"
 
-It was deleted, or the link is no longer valid. Ask someone in the chat for a current link, or ask the Shape to build a new one.
+It was deleted, or the link is no longer valid. Ask someone in the chat for a current link, or ask the shape to build a new one.
 
 ### Your connection expired
 
 Reopen the activity to continue. Changes that were already saved stay in place when you reopen it.
 
-## Related guides
+<span id="related-guides" />
+
+## Related
 
 - [Chat, Agent, and Auto](/chat-and-agent-modes): interactive panels and pages in Agent replies.
-- [Everyday Decisions](/fun-and-friends): plan with friends and family.
+- [Everyday decisions](/fun-and-friends): plan with friends and family.
 - [Games](/games): activities in chat and the current availability of call games.
