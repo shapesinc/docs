@@ -153,6 +153,7 @@
         "group": "Help",
         "pages": [
           "personalization",
+          "accessibility",
           "feedback",
           "learninghub",
           "faq",
@@ -235,6 +236,17 @@
               "faq/how-do-i-unsubscribe-from-emails",
               "faq/can-i-export-or-back-up-my-data",
               "faq/how-do-i-delete-my-account"
+            ]
+          },
+          {
+            "group": "Accessibility",
+            "pages": [
+              "faq/how-do-i-turn-off-message-effects-or-animations",
+              "faq/is-there-a-dark-mode-or-contrast-setting",
+              "faq/can-i-zoom-in",
+              "faq/can-i-turn-off-auto-scroll",
+              "faq/can-i-get-text-replies-instead-of-voice",
+              "faq/does-shapes-inc-work-with-screen-readers"
             ]
           },
           {
