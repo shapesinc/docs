@@ -46,6 +46,7 @@
         "group": "Concepts",
         "pages": [
           "what-are-shapes",
+          "user-aligned",
           "ai-group-chats",
           "core-concepts",
           "chat-and-agent-modes",
