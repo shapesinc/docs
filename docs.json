@@ -11,9 +11,9 @@
   "theme": "mint",
   "name": "shapes.inc Docs",
   "colors": {
-    "primary": "#e94db3",
-    "light": "#e94db3",
-    "dark": "#e94db3"
+    "primary": "#006EFF",
+    "light": "#60A5FA",
+    "dark": "#006EFF"
   },
   "background": {
     "color": {
@@ -22,7 +22,7 @@
     }
   },
   "fonts": {
-    "family": "Lexend"
+    "family": "Instrument Sans"
   },
   "favicon": "/favicon.png",
   "navigation": {
@@ -233,8 +233,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/light.png",
-    "dark": "/logo/dark.png"
+    "light": "/logo/shapes-inc-logo-lockup-light.svg",
+    "dark": "/logo/shapes-inc-logo-lockup-dark.svg"
   },
   "navbar": {
     "links": [
