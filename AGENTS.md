@@ -81,7 +81,7 @@ Benchmarked in November 2026 against the Claude Help Center and claude.com/docs,
 - **`title`** is sentence case, under about 50 characters, with no site name, tagline or dash suffix. How-to pages take a verb-first title ("Start a chat", "Connect your computer", "Have a shape make a phone call"). Concept and reference pages take a noun title ("Memory", "Credits", "Chat, Agent, and Auto"). FAQ pages keep the question the reader would type.
 - **`description`** is one sentence, 160 characters or fewer, that says what the page helps you do. It shows under the title and is the page's entry in `llms.txt`, so it never repeats the title and never lists every section.
 - **`sidebarTitle`** is two to four words, sentence case.
-- Capitalize only the first word, proper nouns (shapes.inc, Tod, Gmail, Slack), and exact UI labels in bold. Write "a shape" and "shapes" in lowercase everywhere, including titles and headings. **Shape Credits** stays capitalized because it is the product's name for the balance.
+- Capitalize only the first word, proper nouns (shapes.inc, Tod, Gmail, Slack), and exact UI labels in bold. Write "a shape" and "shapes" in lowercase everywhere, including inside titles and headings. A sentence or heading that starts with the word still takes a capital ("Shapes are the participants"). **Shape Credits** stays capitalized because it is the product's name for the balance.
 
 ## Headings
 
