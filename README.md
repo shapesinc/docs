@@ -10,7 +10,6 @@ Read [AGENTS.md](AGENTS.md) (terminology, positioning, feature-reference rules) 
 docs.json                   navigation, metadata, redirects, theme
 *.mdx                       guides (Docs tab)
 faq.mdx, faq/*.mdx          FAQ index and answers (Help → FAQ in the sidebar)
-articles/*.mdx              retired articles, kept on disk; docs.json redirects every route
 images/                     screenshots and site images, served at /images/...
 images/october-2026/        current signed-in UI captures, dated -YYYYMMDD.jpg
 logo/, favicon.png          site logo (light/dark) and favicon
@@ -47,7 +46,7 @@ Keep the route and existing heading anchors; other pages, the FAQ index, and the
 
 **Remove or retire a page**
 
-Prefer retiring: keep the file, add `noindex: true` and `hidden: true`, remove it from `docs.json`, and replace the body with a pointer to the current guide. Content that must leave the page but stay in source goes inside `<Visibility for="humans">` wrapping a dated MDX comment, which keeps it out of both the rendered page and the agent Markdown export. If a route must move, add an entry to `redirects` in `docs.json` (example: `/completed` -> `/archive`). Fix every internal link to the old path.
+Retire a page by deleting the file, removing it from `docs.json` navigation, and adding a redirect from its route to the closest current page. Move any fact that is still true into that page first and retarget inbound links. Don't keep hidden pages, `<Visibility for="humans">` archives, or unreferenced images; git history is the archive.
 
 **Images**
 

@@ -1,25 +1,26 @@
 ---
-title: "Core Concepts — How a Multiplayer Assistant Works"
-description: "Understand shared chats, Chat and Agent modes, AI assistants, engines, memory, participation, and skills on shapes.inc. Set up the pieces your group needs to make progress together."
+title: "Core concepts"
+description: "Learn the six building blocks of a chat on shapes.inc: group chats, shapes, AI Engines, memory, participation, and skills."
 keywords: ["multiplayer assistant", "shared AI assistant", "group decisions", "Agent chats", "AI memory", "Shape skills", "shapes.inc"]
 sidebarTitle: "Core concepts"
 ---
 
-Six building blocks make up a chat on shapes.inc: group chats, Shapes, AI Engines, memory, participation, and skills. Shapes are group assistants, built to help you all together. See [Features and limits](/features) for the current capabilities and setup guides.
+Six building blocks make up a chat on shapes.inc: group chats, shapes, AI Engines, memory, participation, and skills. Shapes are group assistants, built to help you all together. See [Features and limits](/features) for the current capabilities and setup guides.
 
 The goal is an assistant that earns the group's trust, contributes as its own participant, and proactively does useful work. Configure each block toward that.
 
 <span id="1-group-chats-are-the-room" />
+<span id="1-group-chats-bring-everyone-together" />
 
-## 1. Group chats bring everyone together
+## Group chats bring everyone together
 
-A chat holds the people, Shapes, and conversation for a shared purpose: a family trip, an apartment decision, a study project, or a team plan.
+A chat holds the people, shapes, and conversation for a shared purpose: a family trip, an apartment decision, a study project, or a team plan.
 
 - Invite the people involved so the assistant can work with their different preferences.
 - Put the goal and standing constraints in [chat instructions](/custominstructions-chats).
 - Use the chat's notification, moderation, appearance, and credit settings to suit the group. Select the chat's name at the top to open its **Settings**.
 
-See [AI Group Chats](/ai-group-chats) for an example and [Create a chat](/create-a-chat) for the setup steps.
+See [AI group chats](/ai-group-chats) for an example and [Create a chat](/create-a-chat) for the setup steps.
 
 ### Two kinds of chat
 
@@ -29,78 +30,79 @@ See [AI Group Chats](/ai-group-chats) for an example and [Create a chat](/create
 
 Auto is the default. Change it for chats you start under **Settings** → **General** → **New chats**; chat owners can switch an existing chat under the chat's **Settings** → **AI settings**. Private one-to-one conversations are called **DMs**. Every DM between two people is an Agent chat that includes Tod, which stays quiet until one of you addresses it; see [DMs between people](/chat-and-agent-modes#dms-between-people). See [Chat and Agent](/chat-and-agent-modes).
 
-## 2. Shapes are the participants
+<span id="2-shapes-are-the-participants" />
 
-A **Shape** is a customizable AI assistant with a name, personality, instructions, and a role. One Shape might research options; another might help with writing or learning.
+## Shapes are the participants
 
-Give the Shape a role that serves the group. Ask it to explain its recommendations, notice missing perspectives, and accept corrections from the people involved. Creator permissions control who can edit the Shape; they do not make the creator's opinion the group's answer.
+A **shape** is a customizable AI assistant with a name, personality, instructions, and a role. One shape might research options; another might help with writing or learning.
 
-Start with **New chat**. To use a specific Shape, [choose an existing shape](/how-to-talk-to-shapes) or [make your own](/how-to-make-a-shape); customization is optional. See [What Are Shapes?](/what-are-shapes).
+Give the shape a role that serves the group. Ask it to explain its recommendations, notice missing perspectives, and accept corrections from the people involved. Creator permissions control who can edit the shape; they do not make the creator's opinion the group's answer.
+
+Start with **New chat**. To use a specific shape, [choose an existing shape](/how-to-talk-to-shapes) or [make your own](/how-to-make-a-shape); customization is optional. See [What are shapes?](/what-are-shapes).
 
 <span id="3-models-are-the-engine-underneath" />
+<span id="3-ai-engines-generate-responses" />
 
-## 3. AI Engines generate responses
+## AI Engines generate responses
 
-Each Shape uses an **AI Engine** to generate its responses. Instructions define the role; the AI Engine affects reasoning, writing, supported inputs, and skill use. The AI Engine built by shapes.inc appears as **Formless**.
+Each shape uses an **AI Engine** to generate its responses. Instructions define the role; the AI Engine affects reasoning, writing, supported inputs, and skill use. The AI Engine built by shapes.inc appears as **Formless**.
 
 Choose an AI Engine for the task and check its current cost. Some AI Engines are free; premium AI Engines use [Shape Credits](/credits). Features and availability vary by AI Engine. To switch in a chat, use the composer's **+** menu → **Engine**. To see which AI Engine wrote a reply and what it cost, open **Generation details** from the reply's ⋯ menu.
 
-Use the [AI Engine Guide](/aienginecheatsheet) and the [live engine list](https://shapes.inc/engines). If a response uses credits unexpectedly, check the selected engine, fallback behavior, and [credit settings](/faq/why-is-a-free-engine-costing-credits).
+Use the [AI Engine guide](/aienginecheatsheet) and the [live engine list](https://shapes.inc/engines). If a response uses credits unexpectedly, check the selected engine, fallback behavior, and [credit settings](/faq/why-is-a-free-engine-costing-credits).
 
-## 4. Memory provides continuity
+<span id="4-memory-provides-continuity" />
 
-A Shape can use several kinds of memory:
+## Memory provides continuity
+
+A shape can use several kinds of memory:
 
 - **Short-term memory (STM):** recent messages included in the current context.
-- **Chat history (Agent chats):** the moments from the whole chat that relate to the current message, including what happened before the Shape joined.
-- **Long-term memory (LTM):** summaries Shapes write about a conversation, recalled when relevant. In a group chat, every Shape in it shares the same summaries.
-- **Saved notes:** things people asked a Shape to remember, for themselves, a chat, or a workspace. In Agent chats, a standing preference you state about yourself is saved as a personal note on its own.
+- **Chat history (Agent chats):** the moments from the whole chat that relate to the current message, including what happened before the shape joined.
+- **Long-term memory (LTM):** summaries shapes write about a conversation, recalled when relevant. In a group chat, every shape in it shares the same summaries.
+- **Saved notes:** things people asked a shape to remember, for themselves, a chat, or a workspace. In Agent chats, a standing preference you state about yourself is saved as a personal note on its own.
 - **Workspace memory (Agent chats):** relevant background from the other chats in the same workspace you are in.
 
 Together these keep track of a group's preferences, decisions, and recurring constraints. Memory is selective, and context windows have limits. Save a critical requirement as a note, and review remembered information when plans change.
 
-Open **More actions** → **Manage memories** in a chat, or **Settings** → **Memories** to view, add, edit, and delete personal, chat, and workspace memories. The [Memory Guide](/memory) explains how. [Context Windows](/contextwindows) explains how much information an engine can use at once.
+Open **More actions** → **Manage memories** in a chat, or **Settings** → **Memories** to view, add, edit, and delete personal, chat, and workspace memories. The [memory guide](/memory) explains how. [Context windows](/contextwindows) explains how much information an engine can use at once.
 
-## 5. Participation determines when a Shape contributes
+<span id="5-participation-determines-when-a-shape-contributes" />
 
-**AI replies** settings control when Shapes contribute. Chat owners open the chat's **Settings** → **AI settings** and review **Auto-reply triggers**. Choose triggers that fit the group's purpose and leave people time to respond. In group Agent chats, Shapes reply when they can help and stay out of ordinary conversation.
+## Participation determines when a shape contributes
+
+**AI replies** settings control when shapes contribute. Chat owners open the chat's **Settings** → **AI settings** and review **Auto-reply triggers**. Choose triggers that fit the group's purpose and leave people time to respond. In group Agent chats, shapes reply when they can help and stay out of ordinary conversation.
 
 The AI replies controls include:
 
-- **Reply when mentioned:** respond when someone addresses the Shape.
+- **Reply when mentioned:** respond when someone addresses the shape.
 - **Keep the convo going:** allow follow-up participation.
 - **React to keywords:** respond to configured topics or keywords.
 - **Always have something to say:** respond when nobody else replies.
-- **Come back later:** allow the Shape to return after a quiet period.
+- **Come back later:** allow the shape to return after a quiet period.
 
 Start with a pace that leaves space for people. In the instructions, explain what makes an interruption useful: an overlooked requirement, new information, or a concrete next step. Proactivity should be judged by the value of the contribution.
 
-See [Designing a Multiplayer Assistant](/designing-social-intelligence) for the controls and suggested setups. See [reply settings](/shapes101#activating-shapes) if a Shape is silent or replies too often.
+See [Shape behavior](/designing-social-intelligence) for the controls and suggested setups. See [reply settings](/shapes101#activating-shapes) if a shape is silent or replies too often.
 
-## 6. Skills let Shapes take action
+<span id="6-skills-let-shapes-take-action" />
+
+## Skills let shapes take action
 
 **Shape Skills** give an assistant capabilities beyond a text response. Depending on the kind of chat, the available skill, and the engine, it can generate an image, research a page, run code, or use a connected service. In Agent chats, built-in skills are included automatically.
 
-To let Shapes use apps like Gmail, Google Calendar, or Notion in Agent chats, connect them under **Settings** → **Connected apps**; see [Connected apps](/connected-apps). Shapes can also work on a computer you link; see [Connect your computer](/connect-your-computer). External MCP servers require setup, supported authentication, and access to the outside service. Connecting one service does not give a Shape access to other people's private accounts. Review the skill's permissions and what it can change before using it in a shared chat.
+To let shapes use apps like Gmail, Google Calendar, or Notion in Agent chats, connect them under **Settings** → **Connected apps**; see [Connected apps](/connected-apps). Shapes can also work on a computer you link; see [Connect your computer](/connect-your-computer). External MCP servers require setup, supported authentication, and access to the outside service. Connecting one service does not give a shape access to other people's private accounts. Review the skill's permissions and what it can change before using it in a shared chat.
 
-Follow [Shape Skills](/shapeskills) for setup and troubleshooting. If an action fails, check whether the skill is available, whether the engine supports it, and whether the connection still has the required access.
+Follow [Shape skills](/shapeskills) for setup and troubleshooting. If an action fails, check whether the skill is available, whether the engine supports it, and whether the connection still has the required access.
 
 ## Putting it together
 
-For a family trip, start with **New chat** and invite everyone. Share dates, budgets, and preferences. Ask the Shape to compare possible plans, identify the tradeoffs, and draft an itinerary. Update the shared context as people make decisions.
+For a family trip, start with **New chat** and invite everyone. Share dates, budgets, and preferences. Ask the shape to compare possible plans, identify the tradeoffs, and draft an itinerary. Update the shared context as people make decisions.
 
 The assistant contributes the research and drafts it can support. The group reviews the result and chooses what to do next.
 
-<CardGroup cols={3}>
-  <Card title="Use it at work" icon="briefcase" href="/ai-at-work">
-    Bring an assistant into a team decision or project.
-  </Card>
-  <Card title="Plan and build" icon="rocket" href="/plan-and-build-together">
-    Turn a shared goal into concrete next steps.
-  </Card>
-  <Card title="Troubleshoot" icon="circle-question" href="/faq">
-    Find help with accounts, chats, engines, and credits.
-  </Card>
-</CardGroup>
+## Related
 
-[Start on shapes.inc](https://shapes.inc)
+- [Use it at work](/ai-at-work): bring an assistant into a team decision or project.
+- [Plan and build](/plan-and-build-together): turn a shared goal into concrete next steps.
+- [Troubleshoot](/faq): find help with accounts, chats, engines, and credits.

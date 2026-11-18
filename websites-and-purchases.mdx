@@ -1,12 +1,16 @@
 ---
-title: "Websites, Sign-ins, Purchases, and Travel"
-description: "A shape browses in its cloud browser or your own Chrome, shows private sign-in cards, and buys or books after you approve. Covers payment, access, and completion limits."
+title: "Websites, sign-ins, purchases, and travel"
+description: "A shape browses in its cloud browser or your own Chrome, shows private sign-in cards, and buys or books after you approve."
 sidebarTitle: "Websites and purchases"
 ---
 
 In Agent chats, a shape compares options on websites, fills forms, and buys or books after the person paying approves. Put the requirements in the conversation so everyone can help decide: dates, location, preferences, and budget.
 
-> Compare these three options for our trip. Show us the total and cancellation terms before booking.
+Ask in the chat:
+
+```text wrap
+Compare these three options for our trip. Show us the total and cancellation terms before booking.
+```
 
 The shape uses its cloud browser, or [your own Chrome](#connect-your-browser) if you connect it. Cloud browser time uses your shared daily computer allowance, then eligible credits; see [computer and browser usage limits](/faq/how-do-free-coding-agent-limits-work). To work in apps and files on your own machine instead, [connect your computer](/connect-your-computer).
 
@@ -77,7 +81,7 @@ When you finish a step outside the chat, such as signing in to the store or savi
 
 Before you approve, the shape names the estimated price. If the store may hold a higher amount until the order is placed, it names that too, and the exact total comes once the store places the order. If you gave a budget and the total comes back above it, the shape tells you before asking for a yes. A budget is read the way you said it: "\$60 per person before tax and tip" is checked against the subtotal, and an all-in or plain budget against the estimated total with tax, tip, and fees. Asking for something else while an order is still waiting counts as a new request, not as an answer to that order.
 
-The person making the request is the payer. Other chat members can see the shared purchase summary and status, but cannot use the payer's private payment controls or card details. Each chat, and each thread, works on one purchase at a time.
+The person making the request is the payer. Other chat members can see the shared purchase summary and status, but cannot use the payer's private payment controls or card details.
 
 If you reply to a shape while it's buying something for you, your reply counts as part of your request. You don't need to tag the shape again.
 
@@ -105,7 +109,9 @@ Outside countries that write their own money with \$, a bare amount like "\$15" 
 
 The wallet is for the US and Canada (see below). Elsewhere, the shape uses your account at the store, your saved card, or pay on delivery where the store offers it.
 
-### Payment options and limits
+<span id="payment-options-and-limits" />
+
+### Payment options
 
 Manage these in **Settings → Connected apps → Payments**:
 
@@ -115,8 +121,6 @@ Manage these in **Settings → Connected apps → Payments**:
 - **Pay on delivery:** available only when the store offers it. It still places an order.
 
 On the purchase card, the way to pay shows as **Wallet**, **Card**, **Your … account**, or **Cash on delivery**. If details like your address or phone number are missing, a private **Your details for this form** card asks for them and saves them to [Saved details](/saved-details). A state or ZIP code a store can't use is asked for there too: write a US state or Canadian province as two letters, such as CA. A state already saved as a full name, like California, is sent as its code.
-
-Payment methods are separate from Shape Credits. Credits pay for eligible AI features; they are not your shopping wallet. Connecting a payment method or saving an address does not itself approve a purchase. Availability does not guarantee that a particular store will accept a transaction.
 
 If a total changes, check the updated amount and any renewed approval request. If status is pending or uncertain, ask the shape to check the existing purchase before starting another one. Cancelling an unfinished purchase attempt does not cancel an order the store has already placed.
 
@@ -140,19 +144,54 @@ A flight search for a city with several airports covers all of them, so "New Yor
 
 In a chat that's only yours, the shape can read the airline confirmation code of a flight you paid for, along with your saved last name, so "what's my confirmation number?" or a scheduled check-in works without pasting it. This never happens in shared chats.
 
-Prices and availability can change before booking. Fares aren't held: an option shown earlier is not a reservation. Only the payer can change or cancel the trip or confirm a paid booking's cancellation. Cancellation or refund eligibility depends on the booked fare or supplier's rules; cancelling a draft is different from cancelling a confirmed booking.
+Only the payer can change or cancel the trip or confirm a paid booking's cancellation. Cancellation or refund eligibility depends on the booked fare or supplier's rules; cancelling a draft is different from cancelling a confirmed booking.
 
-## When something doesn't work
+## Limits
 
-- **The website refuses access or asks for a check:** use the private browser controls when prompted. A shape may be unable to finish on that website.
-- **A way to pay doesn't work:** the shape moves on to the next one by itself. If none is ready, it asks you to sign in, connect your wallet, or add a card. Check eligibility in **Settings → Connected apps → Payments**.
-- **A saved-card payment ended without an order:** the purchase card says why, and so does the shape.
-  - No approval came from your phone within 15 minutes, so the payment lapsed. Nothing was charged; ask the shape to try again and approve right away.
-  - The payment was declined, with the reason when there is one. Nothing was charged.
-  - The store's checkout can't take the saved card yet. Nothing was charged.
-  - The result couldn't be read. It may or may not have gone through, so check the store for an order before paying again.
-- **You declined an approval:** nothing is charged. The shape says so and offers what to do next.
-- **Connect your browser doesn't pair:** check that the code on the shapes.inc page matches the one in your extension, then select **Check code** again. You need desktop Chrome.
-- **You don't see the Browser button:** it's there only while the shape's browser is open. Ask the shape to open the page again.
-- **The purchase is pending or only partly complete:** check the existing status and receipt before retrying. Do not treat the shape's intention to buy as confirmation.
-- **You need to change saved information:** update [Saved details](/saved-details), then review the form again. Changes do not rewrite an already-submitted order or booking.
+- Each chat, and each thread, works on one purchase at a time.
+- Payment methods are separate from Shape Credits. Credits pay for eligible AI features; they are not your shopping wallet.
+- Connecting a payment method or saving an address does not itself approve a purchase.
+- Availability does not guarantee that a particular store will accept a transaction.
+- Prices and availability can change before booking. Fares aren't held: an option shown earlier is not a reservation.
+
+<span id="when-something-doesnt-work" />
+
+## Troubleshooting
+
+### The website refuses access or asks for a check
+
+Use the private browser controls when prompted. A shape may be unable to finish on that website.
+
+### A way to pay doesn't work
+
+The shape moves on to the next one by itself. If none is ready, it asks you to sign in, connect your wallet, or add a card. Check eligibility in **Settings → Connected apps → Payments**.
+
+### A saved-card payment ended without an order
+
+The purchase card says why, and so does the shape.
+
+- No approval came from your phone within 15 minutes, so the payment lapsed. Nothing was charged; ask the shape to try again and approve right away.
+- The payment was declined, with the reason when there is one. Nothing was charged.
+
+- The store's checkout can't take the saved card yet. Nothing was charged.
+- The result couldn't be read. It may or may not have gone through, so check the store for an order before paying again.
+
+### You declined an approval
+
+Nothing is charged. The shape says so and offers what to do next.
+
+### Connect your browser doesn't pair
+
+Check that the code on the shapes.inc page matches the one in your extension, then select **Check code** again. You need desktop Chrome.
+
+### You don't see the Browser button
+
+It's there only while the shape's browser is open. Ask the shape to open the page again.
+
+### The purchase is pending or only partly complete
+
+Check the existing status and receipt before retrying. Do not treat the shape's intention to buy as confirmation.
+
+### You need to change saved information
+
+Update [Saved details](/saved-details), then review the form again. Changes do not rewrite an already-submitted order or booking.

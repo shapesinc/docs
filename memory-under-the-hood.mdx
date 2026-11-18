@@ -1,11 +1,11 @@
 ---
-title: "Memory Under the Hood"
-description: "How a shape assembles memory for each reply: what each layer looks at, when it updates, what it is ranked by, and the habits that get you much better recall in a chat, across chats, and in a group."
+title: "Memory under the hood"
+description: "See how a shape retrieves each layer of memory for a reply, and the habits that get you better recall."
 keywords: ["memory", "how memory works", "memory tips", "recall", "chat history", "saved notes", "long-term memory", "workspace memory", "memory settings", "shapes.inc"]
 sidebarTitle: "How memory works"
 ---
 
-A shape retrieves memory for each reply; it does not read everything in full. Every layer below is matched, almost always against your latest message, and the tips follow from that. The [Memory Guide](/memory) covers what a shape remembers; this page covers how, in enough detail to work with it.
+A shape retrieves memory for each reply; it does not read everything in full. Every layer below is matched, almost always against your latest message, and the tips follow from that. [Memory](/memory) covers what a shape remembers; this page covers how, in enough detail to work with it.
 
 ## What's different about it
 
@@ -48,9 +48,7 @@ When you send a message, the shape builds its reply from these pieces, in roughl
 
 Steps 3 to 6 run at the same time, each with its own small time budget, and a layer that doesn't answer in time is left out rather than delaying the reply. Recent messages win when a recalled detail disagrees with them.
 
-<Info>
-  The lookups are ranked against your **latest message**, not the whole conversation. A short "yes" or "what about that one?" pulls in almost nothing. A message that names the thing pulls in the right history.
-</Info>
+The lookups are ranked against your **latest message**, not the whole conversation. A short "yes" or "what about that one?" pulls in almost nothing. A message that names the thing pulls in the right history.
 
 ## Each layer, and how to work with it
 
@@ -178,7 +176,7 @@ flowchart LR
 
 **Tips for shape owners** (**Settings → Your shapes → the shape → Memory**)
 
-- **Instructions that ask for names and decisions.** Memories written as "Alex prefers the window seat; the group chose May 12" retrieve far better than "the group discussed travel preferences". The sample instructions in the [Memory Guide](/memory#shape-memory-settings) are a good start.
+- **Instructions that ask for names and decisions.** Memories written as "Alex prefers the window seat; the group chose May 12" retrieve far better than "the group discussed travel preferences". The sample instructions in the [Memory](/memory#shape-memory-settings) guide are a good start.
 - **Fewer, stricter memories beat many loose ones.** A low **Match strictness** lets the full **Memories per reply** count through on every message, relevant or not, and loose memories dilute the reply. Raise strictness until off-topic memories stop appearing, then stop.
 - **How often is a trade-off.** More frequent summaries capture more detail and cost more; less frequent ones compress more. Busy group chats usually want more frequent.
 - **The memory engine matters less than the instructions.** Any capable engine writes good memories from good instructions. Spend your effort on the instructions.
@@ -249,5 +247,3 @@ Recall gets the right history in front of the shape; the AI Engine decides what 
 - **Not a transcript on demand.** A shape retrieves what matches your message; it doesn't re-read the whole chat each time. Ask it to search when you want certainty.
 - **Not a permission.** Recalling something from another chat never lets a shape act there. A shape recalls from chats you are in, plus workspace group chats you ask it to search. When you leave a chat, even one you created, it's no longer recalled for you.
 - **Not perfect.** More context means occasional misreads. Recent messages win over old ones, so a correction in the chat is the fix.
-
-[Back to the Memory Guide](/memory)

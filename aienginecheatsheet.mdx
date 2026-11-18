@@ -1,17 +1,15 @@
 ---
-title: "AI Engine Guide"
+title: "AI engines"
 sidebarTitle: "AI engines"
-description: "How AI engines work on shapes.inc, how to switch a chat's engine, and where to find the current engine list."
+description: "Switch a chat's AI engine, pick an engine for the task, and read the live engine directory."
 keywords: ["AI engines", "Formless", "Formless v2.1", "switch engine", "Best for", "Quick picks", "Agent engines", "reasoning effort", "engine catalog", "premium engines", "free engines", "fallback engine", "Gemma 4 31B", "Upgrade to unlock", "retired engine", "own API key", "slow replies"]
 ---
 
-An AI engine writes a Shape's replies. The live directory at [shapes.inc/engines](https://shapes.inc/engines) lists the current engines and pricing; the list changes often, so use that page for both.
-
-This guide covers how to switch engines in a chat, how to pick an engine without knowing engine IDs, and how to read the directory.
+An AI engine writes a shape's replies. The live directory at [shapes.inc/engines](https://shapes.inc/engines) lists the current engines and pricing; the list changes often, so use that page for both.
 
 ## Switch engines in a chat
 
-In a DM with a Shape, or in a chat you own, change the engine the chat uses in any of these ways:
+In a DM with a shape, or in a chat you own, change the engine the chat uses in any of these ways:
 
 - In the composer, open **+** → **Engine**. The menu item shows the current engine's name.
 - Type `/model` in the composer.
@@ -19,22 +17,20 @@ In a DM with a Shape, or in a chat you own, change the engine the chat uses in a
 
 **Engines** opens **Choose an AI engine**, with two tabs:
 
-- **Choose engine:** find an engine for the task (see [Find the right engine](#find-the-right-engine)), pick **shapes.inc default** to use each Shape's default engine, and star the engines you use most to keep them in **Favorites**. Ask a Shape to add an engine to your favorites, and it adds it without replacing the rest of your list.
+- **Choose engine:** find an engine for the task (see [Find the right engine](#find-the-right-engine)), pick **shapes.inc default** to use each shape's default engine, and star the engines you use most to keep them in **Favorites**. Ask a shape to add an engine to your favorites, and it adds it without replacing the rest of your list.
 - **Engine settings:** set **Reasoning effort** to **Default**, **Off**, **Low**, **Medium**, or **High**. It applies to everyone in the chat, and only the levels the selected engine supports are available. Higher effort can take longer and use more credits. **Temperature** is here too.
 
 The engine built by shapes.inc is shown as **Formless**. Agent chats can also pick **Formless v2.1**; see [Engines in Agent chats](#engines-in-agent-chats).
 
-If you own a Shape, set its engine in **Settings** → **Your shapes** → choose the Shape → **AI Engine**. A premium engine uses credits. The same section has the Shape's own **Reasoning effort** setting, which appears for supported engines when **Show internal monologue** is on.
+If you own a shape, set its engine in **Settings** → **Your shapes** → choose the shape → **AI Engine**. A premium engine uses credits. The same section has the shape's own **Reasoning effort** setting, which appears for supported engines when **Show internal monologue** is on.
 
 <span id="fallback-engine" />
 
-Shapes no longer have their own **Fallback engine** setting. When a Shape's engine can't reply, for example because its premium engine can't be paid for or the provider fails, the reply comes from the same free engine for every Shape. Free engines don't use credits, and **Generation details** shows why the engine switched. In Agent chats, a premium engine that can't be paid for switches to Formless v2.1 instead; see [Engines in Agent chats](#engines-in-agent-chats).
+Shapes no longer have their own **Fallback engine** setting. When a shape's engine can't reply, for example because its premium engine can't be paid for or the provider fails, the reply comes from the same free engine for every shape. Free engines don't use credits, and **Generation details** shows why the engine switched. In Agent chats, a premium engine that can't be paid for switches to Formless v2.1 instead; see [Engines in Agent chats](#engines-in-agent-chats).
 
-The current chat interface no longer displays the old thinking panel. **Reasoning effort** changes generation effort; it does not make thinking text visible. The Shape's internal monologue toggle does not restore the old panel either. See [Where did the thinking panel go?](/faq/where-did-the-thinking-panel-go)
+The current chat interface no longer displays the old thinking panel. **Reasoning effort** changes generation effort; it does not make thinking text visible. The shape's internal monologue toggle does not restore the old panel either. See [Where did the thinking panel go?](/faq/where-did-the-thinking-panel-go)
 
-<Tip>
-  To see which engine wrote a reply, open the ⋯ menu on the Shape's message and select **Generation details**. It shows the engine, why it was picked, how long the reply took, and the credits it used.
-</Tip>
+To see which engine wrote a reply, open the ⋯ menu on the shape's message and select **Generation details**. It shows the engine, why it was picked, how long the reply took, and the credits it used.
 
 ## Find the right engine
 
@@ -54,11 +50,11 @@ Task ratings come from LMArena's public leaderboard (CC BY 4.0), and **Intellige
 
 Agent chats offer a shorter list of engines, chosen for following loose instructions, multi-step work, and reasoning through vague requests at a sensible cost. Chat mode still offers the full catalog.
 
-- **Formless v2.1** is the free shapes.inc engine for Agent chats. Pick it in the chat's **Settings** → **Engines**, and replies don't use credits, whatever your balance. It is only offered in Agent chats; if the chat switches to Chat mode, the Shape's own engine replies and the pick comes back when the chat returns to Agent.
+- **Formless v2.1** is the free shapes.inc engine for Agent chats. Pick it in the chat's **Settings** → **Engines**, and replies don't use credits, whatever your balance. It is only offered in Agent chats; if the chat switches to Chat mode, the shape's own engine replies and the pick comes back when the chat returns to Agent.
 - **If a saved engine isn't on the Agent list**, the Agent chat replies on a free engine from the list when the saved one was free, or on its default engine when the saved one was premium. The picker shows **shapes.inc default** selected, and **Current AI engine** names the engine that will reply. The saved engine is kept for Chat mode.
 - **Gemma 4 31B isn't on the Agent list.** It's still free in Chat mode, and an Agent chat saved on it replies on MiMo-V2.6-Flash. See [why you can't pick it in an Agent chat](/faq/why-cant-i-pick-gemma-in-an-agent-chat).
 - **If the sender can't pay for the chat's engine**, the reply continues on Formless v2.1 instead of stopping, and isn't charged. Anyone who can pay still gets the chosen engine. **Generation details** shows the switch.
-- **Your pick carries over.** An engine you pick for an Agent chat, from the Home message box or inside the chat, becomes your default for new Agent chats you start. Pick **shapes.inc default** to clear it. Chats that already started keep their engine, and a Shape changing the engine for you doesn't count.
+- **Your pick carries over.** An engine you pick for an Agent chat, from the Home message box or inside the chat, becomes your default for new Agent chats you start. Pick **shapes.inc default** to clear it. Chats that already started keep their engine, and a shape changing the engine for you doesn't count.
 - **With fewer than 100 credits** and no engine picked for the chat, Agent replies start on Formless v2.1. See [When you run out](/credits#when-you-run-out).
 
 Formless v2.1 has a daily limit across shapes.inc. Past it, replies use another free engine, such as **Formless**, and still don't use credits.
@@ -69,7 +65,7 @@ For the full Agent list, which engines on it are free, and the best free pick in
 
 **Auto upgrade**, under **Settings** → **Personalization** → **Credits**, automatically upgrades you to the best engine shapes.inc recommends. Premium engines use credits. To keep a chat from spending your credits, see [stopping new chats from using your credits](/faq/how-do-i-stop-shapes-in-new-chats-from-consuming-my-credits).
 
-## What You See on the Engines Page
+## What you see on the engines page
 
 The top of the page shows totals:
 
@@ -86,7 +82,7 @@ Below that, search for an engine, provider, or capability, or filter by:
 
 Each engine card shows the provider, how new the engine is, the engine name, and badges like **Premium**, **Free on shapes.inc**, **Reasoning**, **Native Vision**, **Actions**, **New**, or **Unstable**.
 
-## What the Badges Mean
+## What the badges mean
 
 - **Free on shapes.inc:** you can use it without Shape Credits.
 - **Premium:** uses Shape Credits unless the chat has sponsored premium access. Premium engine replies are charged at twice the engine's provider cost.
@@ -95,6 +91,37 @@ Each engine card shows the provider, how new the engine is, the engine name, and
 - **Actions:** can use supported skills and actions on shapes.inc.
 - **New:** recently added to the catalog.
 - **Unstable:** failing or temporarily unavailable. Choose another engine until it recovers. See [the Unstable label](/faq/what-does-it-mean-if-an-engine-is-labelled-unstable).
+
+## Choose for the group's task
+
+Start with the work you want the assistant to do. In the chat's **Engines** page, pick that task under **Best for**, or use the live catalog's descriptions and capability badges to narrow your options, then try the same small task with your candidates.
+
+- **Compare options or plan:** ask the shape to explain tradeoffs using everyone's constraints. Check whether it distinguishes facts, preferences, and unanswered questions.
+- **Draft or study together:** provide the group's brief or study material. Check clarity, accuracy, and how well the response follows your instructions.
+- **Use external actions:** look for **Actions** support, then check that the required [skills](/shapeskills) are enabled and configured.
+- **Discuss images:** look for **Native Vision** and verify that the chat supports the image input you need.
+- **Control costs:** use the **Free** filter or review premium credit requirements. Other features, such as image generation, voice, or higher **Reasoning effort**, can have their own costs.
+
+An engine family name alone does not tell you which capabilities a particular engine supports. Availability, pricing, and behavior change, so use the current catalog, not a fixed ranking.
+
+## Quick picks
+
+For a first chat, start from **Quick picks** on the chat's **Engines** page, or choose a stable engine with the capabilities your task requires. Keep the instructions and example task the same when comparing engines so the group can judge the results.
+
+If something goes wrong:
+
+- Check the [Unstable label](/faq/what-does-it-mean-if-an-engine-is-labelled-unstable) if an engine is failing or unavailable.
+- Review [skills setup](/shapeskills) if an expected action does not run.
+- Review [memory](/memory) and [context windows](/contextwindows) if the assistant is missing earlier information.
+- Check [unexpected credit usage](/faq/why-is-a-free-engine-costing-credits) before assuming every feature is free with a free text engine.
+
+## A few naming hints
+
+- **Instruct:** built to follow instructions.
+- **Vision / VL / V:** related to image understanding.
+- **Preview / Latest:** can change more often.
+
+You do not need to memorize these. Open the engine page, read its current description, and try a representative task in your chat.
 
 ## Common engine questions
 
@@ -113,36 +140,3 @@ No. Shapes run on AI Engines from the shapes.inc catalog, and premium engines us
 ### How do I make replies faster?
 
 No setting makes an engine write faster. Higher **Reasoning effort** can take longer, so try **Low** or **Off** in the chat's **Settings** → **Engines** → **Engine settings**. To see text as it's written, turn on **Streaming** in **Settings** → **General** → **More preferences**. **Generation details** shows how long a reply took, so you can compare engines.
-
-## Choose for the group's task
-
-Start with the work you want the assistant to do. In the chat's **Engines** page, pick that task under **Best for**, or use the live catalog's descriptions and capability badges to narrow your options, then try the same small task with your candidates.
-
-- **Compare options or plan:** ask the Shape to explain tradeoffs using everyone's constraints. Check whether it distinguishes facts, preferences, and unanswered questions.
-- **Draft or study together:** provide the group's brief or study material. Check clarity, accuracy, and how well the response follows your instructions.
-- **Use external actions:** look for **Actions** support, then check that the required [skills](/shapeskills) are enabled and configured.
-- **Discuss images:** look for **Native Vision** and verify that the chat supports the image input you need.
-- **Control costs:** use the **Free** filter or review premium credit requirements. Other features, such as image generation, voice, or higher **Reasoning effort**, can have their own costs.
-
-An engine family name alone does not tell you which capabilities a particular engine supports. Availability, pricing, and behavior change, so use the current catalog, not a fixed ranking.
-
-## Quick Picks
-
-For a first chat, start from **Quick picks** on the chat's **Engines** page, or choose a stable engine with the capabilities your task requires. Keep the instructions and example task the same when comparing engines so the group can judge the results.
-
-If something goes wrong:
-
-- Check the [Unstable label](/faq/what-does-it-mean-if-an-engine-is-labelled-unstable) if an engine is failing or unavailable.
-- Review [skills setup](/shapeskills) if an expected action does not run.
-- Review [memory](/memory) and [context windows](/contextwindows) if the assistant is missing earlier information.
-- Check [unexpected credit usage](/faq/why-is-a-free-engine-costing-credits) before assuming every feature is free with a free text engine.
-
-## A Few Naming Hints
-
-- **Instruct:** built to follow instructions.
-- **Vision / VL / V:** related to image understanding.
-- **Preview / Latest:** can change more often.
-
-You do not need to memorize these. Open the engine page, read its current description, and try a representative task in your chat.
-
-[Return to App](https://talk.shapes.inc)
