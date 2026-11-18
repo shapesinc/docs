@@ -27,7 +27,7 @@ flowchart LR
   P --> R["Reply"]
 ```
 
-- **Short-term memory:** the most recent messages in the chat you're in. The shape reads them in full before every reply. How many it reads is set by the shape's owner, up to your plan's limit.
+- **Short-term memory:** the most recent messages in the chat you're in. The shape reads them in full before every reply. How many it reads is set by the shape's owner, up to your plan's limit. See [Chat mode limits by plan](#chat-mode-limits-by-plan).
 - **Chat history (Agent chats):** everything that has happened in this chat. When you send a message, the shape finds the moments in the chat's history that relate to it (names, decisions, promises, running jokes, details) and reads them with the dates they were said. This covers messages that left short-term memory long ago, and messages from before the shape joined the chat. Recent messages win when something has changed since. Behind it, the chat is kept both as text and as linked facts, so a shape knows what's true now and what used to be ([how](/memory-under-the-hood#inside-the-chat-history-engine)). Chat history is per chat: it never looks into other chats.
 - **Long-term memories:** summaries a shape writes about its conversations as they happen, on a schedule its owner sets. Relevant summaries come back in later replies in that chat. In a group chat, the summaries belong to the chat: every shape in it writes to and reads the same set. You can read and edit them on the **Memories** page.
 - **Saved notes:** things people asked a shape to remember, or added on the **Memories** page. A note can be **Personal**, for a **chat**, or for a **workspace**. Notes are the most reliable kind of memory: a saved note comes up whenever it is relevant, and you decide its exact wording.
@@ -43,6 +43,24 @@ Memory is also a record of what was true at the time, not a fresh check. In Agen
 Every layer except short-term memory is retrieved by how well it matches your latest message, not read in full. [Memory under the hood](/memory-under-the-hood) explains how each layer is retrieved and the habits that get you much better recall.
 
 **Chat mode** uses short-term memory, long-term memories, and saved notes. Full chat history recall and workspace memory are part of **Agent** chats. See [Chat, Agent, and Auto](/chat-and-agent-modes).
+
+## Chat mode limits by plan
+
+In Chat mode, your plan sets how much a shape reads before each reply.
+
+| Per reply in Chat mode | Free plan | Premium plan or any account credits |
+| --- | --- | --- |
+| Recent messages | Up to 40, limited to their most recent 14,000 characters | Up to 200, with no character limit |
+| Long-term memories | Up to 4,000 characters | Up to 16,000 characters |
+
+- The latest message is always read in full, however long it is.
+- Whole messages and whole memories are included or left out. Nothing is cut in the middle.
+- A shape's own smaller message window still applies on any plan.
+- You don't need a plan for the larger limits. Any account-credit balance above zero gives you them.
+
+### Chat mode and Agent mode
+
+These limits apply to replies in Chat mode. Agent mode is not affected, and neither are replies on premium AI engines.
 
 ## Full chat history in Agent chats
 
