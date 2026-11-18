@@ -131,9 +131,9 @@ Type these in the composer:
 | `/compact` | Save this chat to memory so shapes keep the gist. `/sleep` does the same. |
 | `/clear` | Clear this chat's short-term memory for every shape. Chat owner only. |
 | `/wack` | Reset a shape's short-term memory. Chat owner only. |
-| `/reset` | Reset a shape's long-term memories from this chat. Chat owner only. |
+| `/reset` | Reset long-term memories from this chat. Chat owner only. |
 
-`/clear` and `/wack` reset the recent messages a shape reads before replying. They don't erase the chat's history, so in Agent chats the shape can still recall earlier details when they're relevant. `/reset` removes the shape's long-term memories of this chat; saved notes stay until you delete them.
+`/clear` and `/wack` reset the recent messages a shape reads before replying. They don't erase the chat's history, so in Agent chats the shape can still recall earlier details when they're relevant. In a group chat, `/reset` removes the chat's long-term memories, whichever shape wrote them. In a one-to-one chat with a shape, it removes that shape's long-term memories of the chat. It erases up to 900 memories at a time; run it again to erase more. Saved notes stay until you delete them.
 
 See [commands and shortcuts](/commands-and-shortcuts) for the full list.
 
@@ -221,4 +221,4 @@ If a shape recalls something wrong from the chat's history, correct it in the ch
 
 For saving a copy outside the app, see [export and backup limitations](/faq/can-i-export-or-back-up-my-data). There is currently no official full memory export or backup tool.
 
-[Return to App](https://shapes.inc)
+[Return to App](https://talk.shapes.inc)

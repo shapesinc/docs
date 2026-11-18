@@ -8,7 +8,7 @@
 - Change AI-facing instructions only with explicit user authorization. The approved October 4 terminology cleanup includes the documented preset and direct-instruction examples: use narrated actions and scenes while preserving sentence counts, response constraints, placeholders, and behavior. Keep unrelated system/classifier instructions and saved user content unchanged. Display built-in response-style names as **Short creative**, **Long creative**, and **Skilled creative** where applicable; retain **Creative** as the preset group name.
 - Never write "Chat chats" or "a Chat chat". Say **Chat mode** ("in Chat mode", "Chat mode keeps the full list") and **Agent chats**.
 - Use **chat** or **group chat** for the product conversation. Do not infer public terminology from source variable names, component names, or database fields.
-- Verify navigation labels in the deployed product on talk.shapes.inc. Preserve the labels readers see, such as **New Chat**, **Quick chat**, **Shapes**, **People**, **Instructions**, and **AI replies**. If a control cannot be verified, describe the task without inventing a label.
+- Verify navigation labels in the deployed product on talk.shapes.inc. Preserve the labels readers see, such as **New chat**, **Quick chat**, **Shapes**, **People**, **Instructions**, and **AI replies**. If a control cannot be verified, describe the task without inventing a label.
 - Check screenshots as well as prose and metadata. Retire images that show obsolete UI labels or navigation.
 - Before finishing documentation changes, check that every use of **Shapes** clearly refers to AI participants; otherwise, change it to **shapes.inc**.
 
