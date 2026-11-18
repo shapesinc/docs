@@ -246,3 +246,11 @@ The release list in `whats-new.mdx` is generated, word for word, from the app's 
 - `docs.json` turns on the page menu (copy as Markdown, view as Markdown, open in ChatGPT or Claude) and the last-updated date.
 
 No runtime code or AI calls are added: incremental recurring provider spend is $0/day.
+
+## Chat mode limits by plan (November 18, 2026)
+
+`memory.mdx` has the canonical section, **Chat mode limits by plan**: on the free plan a shape reads up to 40 recent messages, limited to their most recent 14,000 characters, and 4,000 characters of long-term memories per reply; a Premium plan or any account credits gives 200 messages with no character limit and 16,000 characters. The latest message is always read in full, whole messages and memories are included or left out, and a shape's own smaller message window still applies. Agent mode and replies on premium AI engines are not affected. `premium-subscriptions.mdx` and `contextwindows.mdx` link to that section instead of repeating the table.
+
+Source: shapesinc/app#6221 and its `architecture/SHORT_TERM_MEMORY.md` section "Free Chat context limits". The companion Talk PR states the same figures on the Premium page.
+
+No runtime code or AI calls are added: incremental recurring provider spend is $0/day.
