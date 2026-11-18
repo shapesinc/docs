@@ -42,7 +42,11 @@ A voice message or **Read out loud** costs 1.5 credits per 1,000 bytes of spoken
 
 Generated voice normally uses account credits. If your balance cannot cover the audio, or you have disabled account-credit spending for that chat, you can receive up to **10 free voice generations per UTC day**. The allowance is per person across chats and is shared by shape voice messages and Read out loud. [Calls with a shape](/voicecalls#credits) use account credits only and don't draw on this allowance.
 
-When your credits can cover the audio, ordinary billing applies; the free allowance is a fallback, not the first ten paid replies waived. Failed audio generation or upload returns the free use. Once the allowance is used up, a voice message's text reply still arrives with a notice; Read out loud cannot play new audio without available funding.
+When your credits can cover the audio, ordinary billing applies; the free allowance is a fallback, not the first ten paid replies waived. Failed audio generation or upload returns the free use. Once the allowance is used up and your credits can't cover the audio:
+
+- **Voice a shape adds on its own**, from its **Voice replies** setting, quietly falls back to text. No notice or out-of-credits card appears.
+- **Voice someone asked for**, such as a reply to your voice message, `!voice`, or a regenerated voice reply, still sends its text and shows a card to get more credits, such as **You're out of credits**.
+- **Read out loud** can't play new audio without available funding.
 
 Playing audio that is already saved does not generate a new voice charge. This allowance covers voice generation; any premium AI Engine used to produce the text has separate [credit requirements](/credits).
 
@@ -52,6 +56,6 @@ Playing audio that is already saved does not generate a new voice charge. This a
 - **Want fewer audio replies from a shape you don't own?** Only the shape's owner controls **Voice replies**. Voice messages don't play until you tap them, and in Agent chats a shape replies with voice only when your latest message was a voice message.
 - **Prefer text + audio?** Turn on captions in the Shape's **Voice Engine** settings so you get both formats in replies.
 - **Haven’t set up a custom voice yet?** Your Shape still uses a default voice until you configure one.
-- **Voice didn't play?** Check the notice for credit, daily-allowance, or audio-generation limits. A voice message's text reply can still arrive when its audio is unavailable.
+- **Voice didn't play?** Check the notice for credit, daily-allowance, or audio-generation limits. A voice message's text reply can still arrive when its audio is unavailable. A shape that would have added voice on its own just replies in text once today's free voice is used, without a notice.
 
 [Return to App](https://shapes.inc)

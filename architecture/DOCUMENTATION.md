@@ -223,3 +223,11 @@ The support path is `faq/why-cant-i-connect-reddit.mdx`, linked from `faq.mdx`, 
 `faq/why-do-i-have-pro-without-subscribing.mdx` explains the November 1 entitlement policy: any positive pooled account-credit balance grants Pro benefits without a subscription or payment. Keep Premium, credits, and cancellation answers aligned. Account credits include historical rewards and gifts; chat/shape wallets and daily free allowances do not grant account-wide benefits. An actual charge still requires checking billing records, so the FAQ does not promise that every reader has no charges or subscriptions.
 
 Verified against `app/api/service/premium_plans_v2_entitlements.py` and the backend contract. Support already retrieves these docs; this correction adds no permanent prompt, provider call, or tool permission. Search-index publication follows the normal docs deployment. No support message is sent by this change.
+
+## Shipped Oct 30 – Nov 17 sweep (November 17, 2026)
+
+Every PR merged since 2026-10-30T06:00Z in app (358), shapes-chat (140), shapes-inc-native-apps (43), shapes.inc (31), bridge (20) and docs (16) was classified once as user-facing or left out; the per-PR ledger is posted on the in-app What's new PR (shapesinc/shapes-chat#6097). Guides were updated to the final state of each feature, and `whats-new.mdx` gained a November 17 section.
+
+Native release state used for availability claims (checked Nov 17): macOS 1.24.21 (appcast), Windows 1.1.4 (latest.yml), iOS 1.26 (App Store), Android 1.41 (Play). The Windows "Open this chat in the app" query fix (native#144) was unreleased and is not documented.
+
+Deliberately not documented: Chat-mode ad frequency, generated site-account passwords (held), Help Me report IDs and limits, and the Working steps switch (no effect for non-staff). Fixes that weren't verified live are worded as improvements still being watched. Labels were checked against shapes-chat `origin/main` and backend behavior against app `origin/master`; no live purchase, call, text, browser pairing, or computer permission grant was made for this docs change. Docs only: incremental recurring provider spend is $0/day.

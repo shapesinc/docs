@@ -1,7 +1,7 @@
 ---
 title: "Tasks, Reminders, and Watches"
-description: "Coordinate group reminders, watch for a venue reply, or hand work to another chat. See and cancel your schedules and delegated work in Settings → Tasks."
-keywords: ["reminders", "recurring tasks", "watches", "scheduled checks", "Settings Tasks", "cancel a reminder", "multiplayer assistant", "follow-ups"]
+description: "Coordinate group reminders, set routines on chosen days, watch your inbox and flights, or hand work to another chat. See, pause, and cancel your schedules in Settings → Tasks."
+keywords: ["reminders", "recurring tasks", "routines", "pause a reminder", "watches", "scheduled checks", "flight alerts", "Settings Tasks", "cancel a reminder", "multiplayer assistant", "follow-ups"]
 sidebarTitle: "Tasks & Reminders"
 ---
 
@@ -9,15 +9,24 @@ Group plans come with follow-ups: confirm the booking on Friday, nudge everyone 
 
 ## Ask a Shape for a reminder
 
-Ask in the chat where the reminder should appear. Include what to do, when, your time zone, and whether it repeats.
+Ask in the chat where the reminder should appear. Include what to do, when, and whether it repeats.
 
 > Remind this chat tomorrow at 6 p.m. Pacific time to confirm everyone's travel dates.
 
 > Every Monday at 9 a.m. Eastern, post what's still open on our move-out checklist.
 
+> Every weekday at 7am, send me today's calendar.
+
+- **Time zone:** a time without a zone uses your device's clock. A zone you name, such as "Eastern", wins. The time stays the same local time when clocks change for daylight saving.
+- **Chosen days:** "every weekday" or "Mondays and Thursdays" is one schedule, not one per day.
+- **Another chat:** a schedule can post in another chat you're in: "every Monday, post the numbers in Team."
+- **A call to you:** a schedule can phone you at a set time, for example "call me at 7 to wake me up". See [Phone calls](/phone-calls#schedule-a-call-to-you).
+
 Shapes schedule reminders and checks in [Agent chats](/chat-and-agent-modes). In a chat set to **Chat**, the owner can switch it to **Agent** or **Auto** first.
 
 Check the Shape's reply to confirm it scheduled the reminder. A reply that only suggests a reminder hasn't scheduled anything. Once scheduled, the reminder shows up in **Settings** → **Tasks**.
+
+When a reminder goes off, the people who asked for it are notified, even if their notifications are set to mentions only. See [Notifications](/notifications#reminders).
 
 ### Get everyone's answer before a trip
 
@@ -31,18 +40,22 @@ Check the saved reminder's time in **Tasks**. At the scheduled time, the reminde
 
 Open **Settings** → **Tasks**. The page lists reminders and work Shapes are doing for you, in two groups:
 
-- **Scheduled**: reminders and recurring tasks, with the chat, the next run time, and how often it repeats, such as **Every day**, **Every week**, or **Every month**.
+- **Scheduled**: reminders and recurring tasks, with the chat, the next run time, and how often it repeats, such as **Every day**, **Every week**, or **Every month**. A routine on chosen days shows its days and time, such as **Weekdays 7:00 AM · Next Thu, Nov 5**, and names the schedule's time zone when it differs from yours.
 - **In progress**: work you handed to a Shape in another chat, with the Shape's @username.
 
 Select a chat name to open that chat. Select **Cancel** to stop a task. See also [How do I cancel a reminder?](/faq/how-do-i-cancel-a-reminder)
 
 If no schedules or delegated tasks are active, the page says so. Confirmed reminders and work handed to another chat appear here; replies in progress in the current chat show above its message box instead.
 
+### Pause a routine
+
+A repeating schedule has **Pause** next to **Cancel**. While it's paused, the row shows **· Paused** and nothing runs. Select **Resume** to pick up at the next scheduled time; missed times aren't made up. You can also ask the shape: "pause my morning briefing." Its reminder card then reads **Reminder paused**. Watches can't be paused, only cancelled.
+
 ## Follow work happening in this chat
 
 While a shape researches, browses, or works in an app during a reply, the bar above the message box shows who is working and for how long. Select it to see each reply in progress, who asked for it, and **Stop**. The result arrives in the shape's reply.
 
-Replies in progress are separate from reminders and watches in **Settings** → **Tasks**. Work on your own computer shows a **Computer task** card instead. A **Stopped** reply is not a completed result. See [Follow and stop a reply](/chat-and-agent-modes#see-what-a-shape-did) for controls and recovery.
+Replies in progress are separate from reminders and watches in **Settings** → **Tasks**. Work on your [connected computer](/connect-your-computer) shows up in the shape's reply; while it runs, **Stop** in the message box stops it. A **Stopped** reply is not a completed result. See [Follow and stop a reply](/chat-and-agent-modes#see-what-a-shape-did) for controls and recovery.
 
 ## Hand off work to another chat
 
@@ -66,6 +79,20 @@ For example, the person handling a venue enquiry can use their connected Gmail t
 
 The watch uses the creator's app access; friends do not need that Gmail connection to read the update, and reading it does not give them access to the inbox. Check that the watch was saved, then use the eventual update to decide your next step together. The watch does not send the venue a reply unless that action is separately requested and supported.
 
+<a id="keep-an-eye-out" />
+
+### Keep an eye out for anything that needs you
+
+In a private chat with a shape, ask it to keep an eye out ("watch my inbox", "keep an eye out for anything I need to deal with"). After you connect Gmail, Calendar, or GitHub, a shape offers this once. It checks all three unless you name one to skip or say "only my email".
+
+- **Inbox:** an alert includes only what needs you, and words the next step so one yes is enough. Newsletters, automated mail, and sales outreach are left out, unless they ask you to act by a near deadline, such as an airline time change to accept today or a bank charge to confirm tonight. Minor items are folded into one message.
+- **Drafts, never sends:** it can write a Gmail reply as a draft in the thread for you to check and send yourself.
+- **Flights:** it reads flights from your calendar and from booking emails, and offers check-in when it opens, 24 hours before. Within about 3 hours of departure it posts delays of 15 minutes or more, cancellations, diversions, and gate or terminal changes. In a chat that's yours alone, it can use the airline confirmation code from a flight you paid for, so check-in works without pasting it.
+- **Quiet hours:** at night, or after 2 posts in a day, it posts only real disruption.
+- **What it held:** ask "what did you hold back?" to see the mail it decided not to bring up.
+
+It says it will check again later only when another check is actually scheduled.
+
 - In **Settings** → **Tasks**, watches are marked **Watching for updates**.
 - A check that finds nothing usually finishes quietly. Frequently recurring watches may send a brief still-watching note after about 12 quiet hours. The broader private-chat watch does not send those notes.
 - When a scheduled check has nothing to report yet and plans another look, the chat says "I'll follow up again at …" with the time.
@@ -82,7 +109,10 @@ To confirm a watch was set up, check **Settings** → **Tasks** or ask the shape
 - A new reminder or task must start within the next **30 days**. Recurring work can continue after that first run.
 - Fixed repeat intervals can range from **5 minutes to 30 days**. Checks that use general tools instead of the built-in Gmail/GitHub sources repeat no faster than **15 minutes**.
 - Watches normally check hourly unless you ask for another cadence. Faster fixed-interval checks slow down after two quiet hours; overnight they can slow further. Daily, weekly, and monthly schedules keep their calendar cadence. Watches are periodic checks, not a continuous live feed.
+- Daily, weekly, and chosen-day routines keep the same local time across daylight-saving changes.
 - Future runs still need the creator's chat membership, app access, and any required usage allowance or credits. A task being scheduled does not guarantee that every later run can complete.
+- If a run is blocked because today's free browser time or web searches ran out, it can try once more after the allowance renews at midnight UTC. If that would be overnight for you, it waits until 7 a.m. your time.
+- A schedule set up before November 5, 2026 can't post in another chat or call you. Ask for it again.
 
 ## Archived chats pause watches and checks
 
