@@ -10,7 +10,7 @@ Read [AGENTS.md](AGENTS.md) (terminology, positioning, feature-reference rules) 
 docs.json                   navigation, metadata, redirects, theme
 *.mdx                       guides (Docs tab)
 faq.mdx, faq/*.mdx          FAQ index and answers (FAQ tab)
-articles/*.mdx              longer articles (Articles tab)
+articles/*.mdx              retired articles, kept on disk; docs.json redirects every route
 images/                     screenshots and site images, served at /images/...
 images/october-2026/        current signed-in UI captures, dated -YYYYMMDD.jpg
 logo/, favicon.png          site logo (light/dark) and favicon
@@ -37,7 +37,7 @@ Every page has YAML frontmatter with `title` and `description`. Most also set `k
 
 **Add a page**
 
-1. Create `kebab-case.mdx` in the root, `faq/`, or `articles/` with frontmatter.
+1. Create `kebab-case.mdx` in the root or `faq/` with frontmatter.
 2. Add its path (no extension) to the right group in `docs.json`.
 3. If it documents a feature, link it from `features.mdx` and, where relevant, `docs-for-agents.mdx` and `faq.mdx`.
 
@@ -67,13 +67,12 @@ Every illustrated step also needs written instructions. Replace or retire screen
 
 `style.css` at the repository root is the site theme; Mintlify loads it on every page. See the design rules in `AGENTS.md` before changing either file.
 
-Navigation is three tabs. Counts as of the last change to this file:
+Navigation is two tabs. Counts as of the last change to this file:
 
 | Tab | Groups | Pages |
 | --- | --- | --- |
 | Docs | Getting Started, Do Things Together, Get Things Done, Chats & Collaboration, Build & Configure Assistants, AI Engines, Prompts & Memory, Credits & Products | 75 |
-| FAQ | FAQ | 44 |
-| Articles | Multiplayer Assistants, Practical Guides | 11 |
+| FAQ | FAQ | 52 |
 
 Every navigation entry must exist on disk; `mint validate` and `mint broken-links` catch missing pages. Keep existing page paths stable, including older slugs, so external links keep working.
 

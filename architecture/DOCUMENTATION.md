@@ -20,7 +20,7 @@ Three principles organize the product explanation: earn the group's trust, parti
 - Use-case guides cover everyday decisions, planning and learning, and team projects. Each gives a concrete goal, a shared prompt, and relevant controls.
 - Feature guides remain operational references, including creative features. Their introductions explain how the feature supports a shared activity.
 - `faq.mdx` and `faq/` remain the support path for account, access, replies, privacy, voice, engine, and billing questions. Keep exact UI labels current and retain only screenshots that match the documented interface.
-- Articles explain multiplayer assistance and how to evaluate workflows. Avoid unsupported rankings, competitor claims, and blanket pricing or memory promises.
+- The Articles tab is retired (November 2026). Its files stay in `articles/`, and `docs.json` redirects each `/articles/...` route to the closest guide. Don't add articles; put explanations in a guide and marketing on shapes.inc.
 - `docs.json` owns navigation and site metadata. Existing page paths remain stable, including older entertainment-oriented slugs, so external links continue to work.
 
 ## Writing and maintenance
