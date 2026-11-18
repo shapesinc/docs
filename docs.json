@@ -26,180 +26,236 @@
   },
   "favicon": "/favicon.png",
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Docs",
-        "groups": [
-          {
-            "group": "Getting Started",
-            "pages": [
-              "introduction",
-              "create-a-chat",
-              "features",
-              "get-the-most-out-of-shapes-inc",
-              "docs-for-agents",
-              "whats-new",
-              "ai-group-chats",
-              "what-are-shapes",
-              "shapes101",
-              "core-concepts",
-              "make-or-recover-account",
-              "how-to-talk-to-shapes",
-              "shapes-search",
-              "navigation",
-              "personalization",
-              "learninghub",
-              "feedback"
-            ]
-          },
-          {
-            "group": "Do Things Together",
-            "pages": [
-              "fun-and-friends",
-              "plan-and-build-together",
-              "ai-at-work"
-            ]
-          },
-          {
-            "group": "Get Things Done",
-            "pages": [
-              "chat-and-agent-modes",
-              "shapeskills",
-              "connected-apps",
-              "websites-and-purchases",
-              "phone-calls",
-              "saved-details",
-              "connect-your-computer",
-              "tasks",
-              "multiplayer-activities"
-            ]
-          },
-          {
-            "group": "Chats & Collaboration",
-            "pages": [
-              "chats-101",
-              "files-and-attachments",
-              "voicecalls",
-              "chat-appearance",
-              "games",
-              "markdown",
-              "commands-and-shortcuts",
-              "custominstructions-chats",
-              "multimessages",
-              "threads",
-              "branch-off",
-              "sidebar-organization",
-              "archive",
-              "messageactionsmenu",
-              "notifications",
-              "texting",
-              "moderation",
-              "ai-agents",
-              "slack-and-hooks",
-              "friends"
-            ]
-          },
-          {
-            "group": "Build & Configure Assistants",
-            "pages": [
-              "how-to-make-a-shape",
-              "designing-social-intelligence",
-              "shapeschatsguide",
-              "shortguide",
-              "css",
-              "initialmessages",
-              "how-to-give-your-shape-a-voice",
-              "how-to-receive-voice-messages"
-            ]
-          },
-          {
-            "group": "AI Engines, Prompts & Memory",
-            "pages": [
-              "aienginecheatsheet",
-              "prompt101",
-              "presets",
-              "variables",
-              "promptingguides",
-              "regeneration",
-              "contextwindows",
-              "memory",
-              "memory-under-the-hood"
-            ]
-          },
-          {
-            "group": "Credits & Products",
-            "pages": [
-              "premium",
-              "credits",
-              "credits-guide",
-              "rewards",
-              "giftcards",
-              "how-to-purchase-credits-for-a-chat",
-              "purchasegiftcards",
-              "auto-top-up",
-              "premium-subscriptions"
-            ]
-          }
+        "group": "Get started",
+        "pages": [
+          "introduction",
+          "create-a-chat",
+          "how-to-talk-to-shapes",
+          "shapes101",
+          "shapes-search",
+          "make-or-recover-account",
+          "whats-new"
         ]
       },
       {
-        "tab": "FAQ",
-        "groups": [
+        "group": "Concepts",
+        "pages": [
+          "what-are-shapes",
+          "ai-group-chats",
+          "core-concepts",
+          "chat-and-agent-modes",
+          "features",
+          "docs-for-agents"
+        ]
+      },
+      {
+        "group": "Do things together",
+        "pages": [
+          "fun-and-friends",
+          "plan-and-build-together",
+          "ai-at-work",
+          "multiplayer-activities",
+          "games",
+          "get-the-most-out-of-shapes-inc"
+        ]
+      },
+      {
+        "group": "Agent actions",
+        "pages": [
+          "shapeskills",
+          "connected-apps",
+          "websites-and-purchases",
+          "phone-calls",
+          "tasks",
+          "saved-details",
+          "connect-your-computer"
+        ]
+      },
+      {
+        "group": "Chats",
+        "pages": [
+          "chats-101",
+          "navigation",
+          "custominstructions-chats",
+          "chat-appearance",
+          "sidebar-organization",
+          "archive",
+          "notifications"
+        ]
+      },
+      {
+        "group": "Messages",
+        "pages": [
+          "multimessages",
+          "messageactionsmenu",
+          "regeneration",
+          "threads",
+          "branch-off",
+          "files-and-attachments",
+          "commands-and-shortcuts",
+          "markdown"
+        ]
+      },
+      {
+        "group": "People and channels",
+        "pages": [
+          "friends",
+          "moderation",
+          "ai-agents",
+          "voicecalls",
+          "texting",
+          "slack-and-hooks"
+        ]
+      },
+      {
+        "group": "Build a shape",
+        "pages": [
+          "how-to-make-a-shape",
+          "designing-social-intelligence",
+          "shapeschatsguide",
+          "initialmessages",
+          "how-to-give-your-shape-a-voice",
+          "how-to-receive-voice-messages",
+          "css"
+        ]
+      },
+      {
+        "group": "Engines, prompts and memory",
+        "pages": [
+          "aienginecheatsheet",
+          "contextwindows",
+          "memory",
+          "memory-under-the-hood",
+          "prompt101",
+          "shortguide",
+          "presets",
+          "variables",
+          "promptingguides"
+        ]
+      },
+      {
+        "group": "Credits and plans",
+        "pages": [
+          "premium-subscriptions",
+          "credits",
+          "credits-guide",
+          "how-to-purchase-credits-for-a-chat",
+          "auto-top-up",
+          "giftcards",
+          "purchasegiftcards",
+          "premium",
+          "rewards"
+        ]
+      },
+      {
+        "group": "Help",
+        "pages": [
+          "personalization",
+          "feedback",
+          "learninghub",
+          "faq",
           {
-            "group": "FAQ",
+            "group": "Getting around",
             "pages": [
-              "faq",
-              "faq/where-did-my-chat-go",
-              "faq/how-do-i-edit-my-shapes-profile",
-              "faq/how-do-i-edit-my-shapes-personality",
-              "faq/how-do-i-edit-my-profile",
-              "faq/how-to-make-a-shape",
-              "faq/how-do-i-make-a-shape-private",
               "faq/how-do-i-use-the-app",
               "faq/how-do-i-start-a-new-chat",
-              "faq/how-do-i-switch-between-chat-and-agent",
-              "faq/why-cant-i-edit-a-shapes-reply",
-              "faq/where-did-the-thinking-panel-go",
-              "faq/how-do-i-make-a-group-chat",
+              "faq/where-did-my-chat-go",
               "faq/how-do-i-find-group-chats",
-              "faq/how-do-i-use-voice-messages",
+              "faq/why-did-i-get-invited-to-a-chat",
+              "faq/how-do-i-sort-chats-into-categories",
+              "faq/how-do-i-delete-a-chat",
+              "faq/how-do-i-lock-a-chat-so-that-other-people-cant-join",
+              "faq/how-does-the-friends-section-work"
+            ]
+          },
+          {
+            "group": "Replies and errors",
+            "pages": [
+              "faq/what-do-reply-error-messages-mean",
+              "faq/why-cant-i-edit-a-shapes-reply",
+              "faq/why-did-my-shapes-replies-get-shorter",
+              "faq/where-did-the-thinking-panel-go",
               "faq/how-do-i-use-fast-forward-or-skip-turn",
-              "faq/how-do-i-change-language",
-              "faq/how-do-i-stop-shapes-from-calling-me",
+              "faq/why-doesnt-my-shape-message-me-first",
               "faq/why-did-a-shape-create-a-chat-with-me",
+              "faq/why-doesnt-my-shape-know-the-time",
+              "faq/can-i-remove-tod-from-my-dms",
+              "faq/does-shapes-support-markdown"
+            ]
+          },
+          {
+            "group": "Chat and Agent",
+            "pages": [
+              "faq/how-do-i-switch-between-chat-and-agent",
+              "faq/does-web-search-work-in-chat-mode",
+              "faq/how-do-free-coding-agent-limits-work",
               "faq/how-do-i-cancel-a-reminder",
-              "faq/how-do-i-stop-shapes-in-new-chats-from-consuming-my-credits",
-              "faq/how-do-i-turn-off-typewriter-streaming-text",
+              "faq/can-i-text-a-shape-other-than-tod",
+              "faq/how-do-i-use-voice-messages",
+              "faq/how-do-i-stop-shapes-from-calling-me",
+              "faq/why-cant-i-connect-reddit"
+            ]
+          },
+          {
+            "group": "Engines",
+            "pages": [
+              "faq/why-do-i-see-fewer-engines-in-agent-chats",
+              "faq/why-cant-i-pick-gemma-in-an-agent-chat",
+              "faq/why-did-an-engine-lose-its-reasoning-badge",
+              "faq/what-does-it-mean-if-an-engine-is-labelled-unstable",
+              "faq/what-temperature-should-i-use",
+              "faq/what-does-jailbreak-mean"
+            ]
+          },
+          {
+            "group": "Shapes",
+            "pages": [
+              "faq/how-to-make-a-shape",
+              "faq/how-do-i-edit-my-shapes-profile",
+              "faq/how-do-i-edit-my-shapes-personality",
+              "faq/how-do-i-make-a-shape-private",
+              "faq/how-do-i-change-my-shapes-vanity-url",
               "faq/how-do-i-delete-a-shape",
-              "faq/how-do-i-delete-my-account",
+              "faq/can-i-add-a-shape-to-discord",
+              "faq/what-happened-to-fandoms-and-featured"
+            ]
+          },
+          {
+            "group": "Account and settings",
+            "pages": [
+              "faq/how-do-i-edit-my-profile",
+              "faq/can-i-change-my-account-email",
+              "faq/what-do-i-do-if-my-account-was-hacked",
+              "faq/how-do-i-change-language",
+              "faq/how-do-i-change-font-size",
+              "faq/how-do-i-turn-off-typewriter-streaming-text",
+              "faq/why-are-bubble-styles-premium-but-chat-colors-free",
+              "faq/how-do-i-unsubscribe-from-emails",
               "faq/can-i-export-or-back-up-my-data",
-              "faq/how-can-i-use-my-premium-features",
+              "faq/how-do-i-delete-my-account"
+            ]
+          },
+          {
+            "group": "Privacy and safety",
+            "pages": [
+              "faq/can-the-team-read-my-chats",
+              "faq/are-explicit-images-allowed"
+            ]
+          },
+          {
+            "group": "Credits and billing",
+            "pages": [
+              "faq/why-is-a-free-engine-costing-credits",
+              "faq/how-do-i-stop-shapes-in-new-chats-from-consuming-my-credits",
+              "faq/why-did-i-get-charged-automatically-for-more-credits",
               "faq/can-i-buy-credits-without-a-subscription",
+              "faq/why-do-web-plans-include-more-credits",
+              "faq/how-can-i-use-my-premium-features",
               "faq/why-do-i-have-pro-without-subscribing",
               "faq/do-i-keep-my-credits-if-i-cancel-premium",
-              "faq/why-do-web-plans-include-more-credits",
-              "faq/how-do-free-coding-agent-limits-work",
-              "faq/how-do-i-delete-a-chat",
-              "faq/how-does-the-friends-section-work",
-              "faq/how-do-i-change-font-size",
-              "faq/how-do-i-change-my-shapes-vanity-url",
-              "faq/does-shapes-support-markdown",
-              "faq/how-do-i-lock-a-chat-so-that-other-people-cant-join",
-              "faq/why-did-i-get-charged-automatically-for-more-credits",
-              "faq/how-do-i-unsubscribe-from-emails",
-              "faq/why-is-a-free-engine-costing-credits",
-              "faq/what-does-jailbreak-mean",
-              "faq/what-does-it-mean-if-an-engine-is-labelled-unstable",
-              "faq/why-did-i-get-invited-to-a-chat",
-              "faq/what-happened-to-rewards",
-              "faq/why-dont-the-premium-credit-redemption-options-reset-on-the-rewards-page",
-              "faq/why-cant-i-connect-reddit",
-              "faq/are-explicit-images-allowed",
-              "faq/can-the-team-read-my-chats",
-              "faq/why-cant-i-pick-gemma-in-an-agent-chat",
-              "faq/what-happened-to-fandoms-and-featured",
-              "faq/why-did-my-shapes-replies-get-shorter",
-              "faq/can-i-add-a-shape-to-discord"
+              "faq/what-happened-to-rewards"
             ]
           }
         ]
@@ -212,6 +268,10 @@
   },
   "navbar": {
     "links": [
+      {
+        "label": "FAQ",
+        "href": "/faq"
+      },
       {
         "label": "Support",
         "href": "https://talk.shapes.inc/help"
@@ -309,6 +369,16 @@
     {
       "source": "/articles",
       "destination": "/introduction",
+      "permanent": true
+    },
+    {
+      "source": "/faq/how-do-i-make-a-group-chat",
+      "destination": "/faq/how-do-i-start-a-new-chat",
+      "permanent": true
+    },
+    {
+      "source": "/faq/why-dont-the-premium-credit-redemption-options-reset-on-the-rewards-page",
+      "destination": "/faq/what-happened-to-rewards",
       "permanent": true
     }
   ]

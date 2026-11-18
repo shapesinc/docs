@@ -1,0 +1,48 @@
+---
+title: "What does \"Reply failed because of an internal error\" mean?"
+description: "What each reply error on shapes.inc means, including \"Reply failed because of an internal error\" and \"The request couldn't be processed\", and what to do next."
+keywords: ["Reply failed because of an internal error", "internal error", "The request couldn't be processed", "please check your input", "error message", "shape not replying", "reply failed", "high risk", "rejected", "safety filters", "Sorry, I can't help with that"]
+---
+
+A reply error means the shape's reply didn't finish. The message says what broke and the next step.
+
+## What each message means
+
+- **Reply failed because of an internal error. Try regenerating this message.**
+  The reply failed for a reason that doesn't have its own message. Regenerate. If it fails again, switch engines.
+- **Reply failed because the selected engine is currently unavailable.**
+  The engine didn't respond. Choose another engine, then regenerate.
+- **This AI Engine requires premium access.**
+  The chat's engine is a premium engine. Choose a free engine, or upgrade in [Premium](/premium), then regenerate.
+- **Reply failed because this needs credits to run, and there aren't enough.**
+  An action in the reply needs credits. Add credits in [Premium](/premium), then regenerate.
+- **Reply stopped because you ran out of credits.**
+  Your credits ran out partway through the reply. Add credits, then regenerate.
+- **That reply couldn't be generated because of safety filters.**
+  The engine's safety filter blocked the reply. Say it a different way.
+- **Sorry, I can't help with that.**
+  The engine's safety filter refused the request. This is the shape's answer, not an app error. Say it a different way, or switch engines.
+- **The request couldn't be processed. Please check your input and try again.**
+  The app rejected the request before the shape started. Send the message again. If it repeats in one chat, use **Report a problem**.
+
+Text that isn't in this list, such as a request "rejected because it was considered high risk", isn't a shapes.inc message. Choose another engine, then regenerate.
+
+## Fix a failed reply
+
+1. Open the **⋯** menu on the failed reply and select **Regenerate**.
+2. If it fails again, switch the chat's engine: in the composer, open **+** → **Engine**, or type `/model`. See [Switch engines in a chat](/aienginecheatsheet#switch-engines-in-a-chat).
+3. Regenerate again.
+4. Still failing? Open the reply's **⋯** menu and select **Report a problem**. **Generation details** in the same menu shows which engine wrote the reply.
+
+Anyone in the chat can regenerate a reply, and the credits come from whoever regenerates it. See [Regeneration](/regeneration).
+
+## Recently fixed
+
+- Retrying a failed send could show "The request couldn't be processed. Please check your input and try again."
+- Gemma 4 26B replies could fail when a chat had more than 64 actions available.
+
+<Tip>
+  Need more help? Ask in our [support chat](https://talk.shapes.inc/help).
+</Tip>
+
+[Back to FAQ](/faq)

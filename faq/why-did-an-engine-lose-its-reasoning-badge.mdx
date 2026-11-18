@@ -1,0 +1,46 @@
+---
+title: "Why did an engine lose its Reasoning badge or Reasoning effort?"
+description: "Engine badges and Reasoning effort come from automatic checks that shapes.inc runs on every engine. A missing badge means the latest check didn't confirm it, not that the engine changed."
+keywords: ["Reasoning badge missing", "badges disappeared", "lost reasoning", "Reasoning effort missing", "Reasoning effort greyed out", "This AI Engine does not support reasoning", "Gemma reasoning", "Gemma 4 31B reasoning", "Actions badge", "Native Vision", "engine capabilities", "thinking removed"]
+---
+
+shapes.inc checks every engine automatically for three things: reasoning, understanding images, and taking actions. The badges and the **Reasoning effort** setting show what the latest check confirmed. A badge that disappears means the check didn't confirm it, not that the engine or its provider changed.
+
+## What each check controls
+
+| Check | Where you see it |
+|---|---|
+| Reasoning | **Reasoning** badge, the **Thinks before replying** filter, and **Reasoning effort** |
+| Images | **Native Vision** badge and the **Understands images** filter |
+| Actions | **Actions** badge, the **Can take actions** filter, and a place on the Agent engine list |
+
+## How the checks behave
+
+- An engine shows a badge only after its check passes. An engine with no confirmed result shows no badge.
+- Each result is checked again every 6 hours.
+- When the provider doesn't answer, because it's rate-limited, timed out, or down, the previous result stays for up to 24 hours and the engine is checked again after 1 hour.
+- When the provider answers and the check fails, the badge goes away until a later check passes.
+- An engine that loses its **Actions** result leaves the Agent engine list until the check passes again. See [why Agent chats show fewer engines](/faq/why-do-i-see-fewer-engines-in-agent-chats).
+
+## "This AI Engine does not support reasoning"
+
+**Engine settings** shows this message, with **Reasoning effort** greyed out, when the selected engine has no confirmed reasoning result. Other settings in the panel still work. When the check passes again, **Reasoning effort** comes back with the levels the engine supports.
+
+**Reasoning effort** lists only the levels the engine accepts:
+
+- Most engines offer **Default**, **Off**, and some of **Low**, **Medium**, and **High**.
+- Engines whose reasoning is only on or off offer **Default**, **Off**, and **On**.
+- Engines that always reason show **Minimum** in place of **Off**.
+- A level you saved that the engine doesn't accept shows "This effort is unavailable for the selected AI Engine; its default is used."
+
+Open it from the chat's **Settings** → **Engines** → **Engine settings**. Higher effort can take longer and use more credits. See the [AI Engine Guide](/aienginecheatsheet#what-the-badges-mean).
+
+## Should I switch engines?
+
+The engine is the same; the badge shows the latest check. If you need that capability right now, pick an engine that shows the badge, or wait for the next check. If replies stop arriving, check whether it's [labelled Unstable](/faq/what-does-it-mean-if-an-engine-is-labelled-unstable). To see which engine wrote a reply, open the reply's **⋯** → **Generation details**.
+
+<Tip>
+  Need more help? Ask in our [support chat](https://talk.shapes.inc/help).
+</Tip>
+
+[Back to FAQ](/faq)
