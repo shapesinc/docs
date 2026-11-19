@@ -1,5 +1,13 @@
 # Documentation architecture
 
+## Quiet preparation and image guidance (November 18, 2026)
+
+`tasks.mdx` distinguishes a quietly prepared Gmail draft from an alert or a sent
+reply. `shapeskills.mdx` explains that generated images need no reserved branding
+corner. These guide edits add no controls, account access, AI requests or changes
+to the daily image allowance. The current-week What's new follow-up is prepared
+separately; synchronize its summary only after that release change merges.
+
 ## Reddit promotion removal (October 22, 2026; CIR-5874)
 
 `docs.json` no longer advertises Reddit in the site footer. The footer keeps its
