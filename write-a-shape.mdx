@@ -1,7 +1,7 @@
 ---
 title: "Write a shape's personality and instructions"
 sidebarTitle: "Write a shape"
-description: "Describe how a shape behaves, show its voice with examples, and put each instruction where it belongs, for Chat mode and Agent chats."
+description: "Describe how a shape behaves, show its voice with examples, and put each instruction where it belongs."
 keywords: ["shape personality", "shape instructions", "Description", "Response style", "Training", "Knowledge", "group chat behavior"]
 ---
 
@@ -34,7 +34,7 @@ The shape reads **Description** before every reply. Put the personality there fi
 - **Describe behavior, not adjectives.** "Teases gently and drops the joke when someone is upset" tells the shape what to do. "Funny" does not.
 - **Say what to do.** "Replies in two to four sentences" works better than "don't write long messages".
 - **Give the reason for a rule.** "Keep replies short, because long messages bury the plan in a busy chat" lets the shape apply the rule sensibly in cases you didn't list.
-- **Put the most important voice traits first.** Agent chats carry a shortened reminder of the shape's voice, built from **Tone** and then **Traits** and cut to 240 characters.
+- **Put the most important voice traits first.** Every chat carries a shortened reminder of the shape's voice, built from **Tone** and then **Traits** and cut to 240 characters.
 - **Keep one instruction in one place.** Reply length belongs in **Response style** or in **Description**, not both.
 
 Stay well inside the limits. **Description** holds 3,000 characters, each **Personality** and **Conversation** field holds 3,000, and **Custom** response style **Instructions** hold 8,000. The improved example below uses about 1,100 characters.
@@ -102,7 +102,7 @@ The shape sees the names of the people in the chat and who sent the latest messa
 - **How much room it takes.** Ask for short replies and one question at a time, so people keep talking to each other.
 - **How it helps the group decide.** Ask it to weigh what each person has said, lay out the tradeoff, and leave the decision to the group.
 
-The chat's [AI replies](/designing-social-intelligence#the-main-dial-free-will) settings decide when a shape replies without being asked, and an @mention of a shape always gets a reply. In group Agent chats, shapes reply when they can contribute and stay out of ordinary conversation between people.
+The chat's [AI replies](/designing-social-intelligence#the-main-dial-free-will) settings decide when a shape replies without being asked, and an @mention of a shape always gets a reply. In group chats, shapes reply when they can contribute and stay out of ordinary conversation between people.
 
 Put what belongs to one group, such as its goal, budget, and deadline, in that chat's [instructions](/custominstructions-chats). They hold up to 128,000 characters and apply to every shape in the chat. A person's **Your preset** holds 8,000 characters, and a shape reads only the preset of the person it is replying to.
 
@@ -121,21 +121,21 @@ They are replaced everywhere the shape reads instructions: every **Profile** fie
 
 The first message then counts as something the shape said, so it sets the voice for the replies that follow. Write it in the voice you described, and keep it short. It holds 3,000 characters. Leave it empty and the shape opens each chat its own way. See [Set an initial message](/initialmessages).
 
-## Chat mode and Agent chats
+<a id="chat-mode-and-agent-chats" />
 
-Everything you write applies in both. **Description**, every **Personality** and **Conversation** field, **Response style**, **Knowledge**, **Training**, memory, and **Language** are read in Chat mode and in Agent chats.
+## How a shape reads it in a chat
 
-What differs:
+Everything you write applies in every chat. **Description**, every **Personality** and **Conversation** field, **Response style**, **Knowledge**, **Training**, memory, and **Language** are always read.
 
-| Setting | Chat mode | Agent chats |
-| --- | --- | --- |
-| What the engine reads | Your shape's text and the chat's | shapes.inc's own working instructions for agents come first, then the same text |
-| **Tone** | The tone the shape always responds in | The shape's usual tone, plus the 240-character voice reminder |
-| **AI Engine** | The shape's, unless the chat sets one | The chat's engine or the shapes.inc default. The shape's is not used |
-| **Temperature** | The shape's, unless the chat sets one | 0.7, unless the chat sets one |
-| Date and time | Message timestamps, only when the chat's **Time Awareness** is on | The current date and time, always |
+| Setting | In a chat |
+| --- | --- |
+| What the engine reads | shapes.inc's own working instructions for agents come first, then your shape's text and the chat's |
+| **Tone** | The shape's usual tone, plus the 240-character voice reminder |
+| **AI Engine** | The chat's engine or the shapes.inc default. The shape's own engine is not used |
+| **Temperature** | 0.7, unless the chat sets one |
+| Date and time | The current date and time, always |
 
-In Agent chats your **Response style** sits among much more text. Keep it short and specific, and test the shape in an Agent chat as well as in Chat mode. See [Chat, Agent, and Auto](/chat-and-agent-modes).
+When someone plays a scene with the shape, it answers that message in character, without web search or other actions. Your **Response style** sits among much more text than the shape's own fields, so keep it short and specific, and test the shape both by asking it for help and by playing a scene with it. See [How chats work](/chat-and-agent-modes).
 
 ## Habits to drop
 

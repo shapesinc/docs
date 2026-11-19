@@ -7,7 +7,7 @@ sidebarTitle: "Connected apps"
 
 A shape works with your connected apps when you ask: the calendar that shows when you're free, the doc with the venue quotes, the email thread with the landlord. It checks, finds, and drafts things for the group, so you don't copy them into the chat.
 
-Personal connections belong to you. Shapes use them for your requests in [Agent chats](/chat-and-agent-modes), including later runs of watches or tasks you authorized. A clear request can authorize an action, such as sending a specific message; the shape asks when important details are missing or a service requires approval.
+Personal connections belong to you. Shapes use them for your requests in [your chats](/chat-and-agent-modes), including later runs of watches or tasks you authorized. A clear request can authorize an action, such as sending a specific message; the shape asks when important details are missing or a service requires approval.
 
 ## Open Connected apps
 
@@ -70,11 +70,11 @@ The app then shows **Read-only** next to **Connected**. Shapes can still read, s
 
 Ask in plain words ("Check my calendar for Saturday and suggest two times"), or mention the app directly:
 
-- In an Agent chat, type **@** and pick an app from the **Apps** section, such as Gmail, Google Calendar, Notion, or Google Drive.
+- In a chat, type **@** and pick an app from the **Apps** section, such as Gmail, Google Calendar, Notion, or Google Drive.
 - Each app shows whether it's **Connected**, **Not connected yet**, **Needs reconnecting**, or **Needs permission**.
 - If you mention an app in an empty message box, an example request is filled in. Type over it with your own request.
 
-App mentions are available in Agent chats when you're signed in. They aren't offered in threads or in DMs between people.
+App mentions are available in chats when you're signed in. They aren't offered in threads or in DMs between people.
 
 ### Connect cards
 
@@ -92,7 +92,7 @@ Shared connections appear under **Shared with chats** in Connected apps. The per
 
 ### Share Devin with a chat
 
-In an Agent chat, ask a shape to connect Devin and choose **Connect for this chat**. The sign-in page asks for a Devin API key; use a service-user key for your Devin organization. Everyone in the chat can then ask shapes to start Devin sessions, follow them, and search past ones on that connection. A few things to know before you share it:
+In a chat, ask a shape to connect Devin and choose **Connect for this chat**. The sign-in page asks for a Devin API key; use a service-user key for your Devin organization. Everyone in the chat can then ask shapes to start Devin sessions, follow them, and search past ones on that connection. A few things to know before you share it:
 
 - Sessions run on the Devin plan of the person who shared it, with no separate limit per member or per chat.
 - Members can see and continue any session that key can reach, not only ones started from this chat.
@@ -114,7 +114,7 @@ Ask the shape to put the summary and a link to the updated page in the chat so e
 
 ## Have a shape send email
 
-In an [Agent chat](/chat-and-agent-modes), a shape sends real email from its own address, such as tod@shapesmail.com. You don't need to connect anything.
+In any [chat](/chat-and-agent-modes), a shape sends real email from its own address, such as tod@shapesmail.com. You don't need to connect anything.
 
 - **To an address:** "email the hotel at frontdesk@example.com and ask about late check-in."
 - **To someone on shapes.inc:** "email Maya the itinerary." It goes to the address on their account; the shape never sees it. If they have no account email, the email in their [Saved details](/saved-details) is used, still hidden.
@@ -132,7 +132,7 @@ Ask for a draft ("draft a reply, I want to check it first") and the shape shows 
 
 ### Emails in your voice
 
-When you ask a shape in an Agent chat to write an email as you from your connected Gmail, and you haven't given the words, it first reads a few of your recent sent emails and matches your greeting, sign-off, length, and tone. This covers a reply, a thank-you, or a draft it shows you first.
+When you ask a shape to write an email as you from your connected Gmail, and you haven't given the words, it first reads a few of your recent sent emails and matches your greeting, sign-off, length, and tone. This covers a reply, a thank-you, or a draft it shows you first.
 
 - **What it reads:** mail you sent from your own connected Gmail, to the same recipient when it knows the address. It uses your own words only. Quoted replies, forwarded text, signature blocks, and drafts are left out. It never reads another member's mailbox.
 - **When:** only for a request you make in that turn. Scheduled and proactive runs don't read your sent mail for style, and neither does a request that only reads mail.
@@ -164,7 +164,7 @@ Share a public Google Docs, Sheets, Slides, or Drive link in a chat and shapes c
 ## Find more apps
 
 - **From marketplaces**, on the Connected apps page, lists apps from public app directories. Select one to see its directory and service, then select **Connect**.
-- In Agent chats, shapes can find and connect more apps from the public MCP directory and WebMCP. A Connect card appears in the chat, and the task continues after you connect.
+- In any chat, shapes can find and connect more apps from the public MCP directory and WebMCP. A Connect card appears in the chat, and the task continues after you connect.
 - Chat owners can add an MCP server for a whole chat under the chat's **Settings** → **AI settings** → **MCP servers**. See [Shape skills](/shapeskills#connect-an-outside-service).
 
 <a id="check-before-replying" />
@@ -241,7 +241,7 @@ Open the app and select **Reconnect**, then allow every permission the app asks 
 
 ### I can't mention an app with @
 
-App mentions work in Agent chats when you're signed in, but not in threads or DMs between people. Check the chat's mode in [Chat, Agent, and Auto](/chat-and-agent-modes).
+App mentions work in chats when you're signed in, but not in threads or DMs between people. See [How chats work](/chat-and-agent-modes).
 
 ### The shape used the wrong account
 

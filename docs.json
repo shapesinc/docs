@@ -183,7 +183,7 @@
             ]
           },
           {
-            "group": "Chat and Agent",
+            "group": "Chats and actions",
             "pages": [
               "faq/how-do-i-switch-between-chat-and-agent",
               "faq/does-web-search-work-in-chat-mode",
