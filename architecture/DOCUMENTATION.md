@@ -155,7 +155,8 @@ Screenshots in `images/october-2026/` are actual captures of the signed-in deplo
 
 | Capture | Guide |
 | --- | --- |
-| `create-shape-basic.jpg`, `create-shape-images.jpg` | Shape creation FAQ |
+| `create-shape-basic.jpg`, `create-shape-images.jpg` | Shape creation FAQ until November 2026 (two-step flow; no longer referenced) |
+| `november-2026/create-shape-personality-only.jpg` | Shape creation FAQ (one-step flow: Personality required, everything else optional) |
 | `premium-settings-card.jpg` | Gift cards |
 | `new-chat-mode.jpg` | Chat, Agent, and Auto |
 | `more-preferences.jpg` | Settings and Personalization |
