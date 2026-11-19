@@ -27,7 +27,7 @@ flowchart LR
   P --> R["Reply"]
 ```
 
-- **Short-term memory:** the most recent messages in the chat you're in. The shape reads them in full before every reply. How many it reads is set by the shape's owner, up to your plan's limit. See [Scene reply limits by plan](#scene-reply-limits-by-plan).
+- **Short-term memory:** the most recent messages in the chat you're in. The shape reads them in full before every reply. How many it reads is set by the shape's owner, up to your plan's limit; see [limits by plan](#scene-reply-limits-by-plan).
 - **Chat history:** everything that has happened in this chat. When you send a message, the shape finds the moments in the chat's history that relate to it (names, decisions, promises, running jokes, details) and reads them with the dates they were said. This covers messages that left short-term memory long ago, and messages from before the shape joined the chat. Recent messages win when something has changed since. Behind it, the chat is kept both as text and as linked facts, so a shape knows what's true now and what used to be ([how](/memory-under-the-hood#inside-the-chat-history-engine)). Chat history is per chat: it never looks into other chats.
 - **Long-term memories:** summaries a shape writes about its conversations as they happen, on a schedule its owner sets. Relevant summaries come back in later replies in that chat. In a group chat, the summaries belong to the chat: every shape in it writes to and reads the same set. You can read and edit them on the **Memories** page.
 - **Saved notes:** things people asked a shape to remember, or added on the **Memories** page. A note can be **Personal**, for a **chat**, or for a **workspace**. Notes are the most reliable kind of memory: a saved note comes up whenever it is relevant, and you decide its exact wording.
@@ -195,7 +195,7 @@ The October 2026 update didn't remove memories. If a memory seems missing, check
 - **Chats:** chats you can invite more people and shapes to.
 - **DMs:** private one-to-one conversations with a shape or another person. The **DMs** filter in the sidebar only shows the ones with people. Chats with just you and shapes are under **Private**. Every DM between two people includes Tod, which answers from the DM's history when one of you asks; see [DMs between people](/chat-and-agent-modes#dms-between-people).
 
-Long-term memory can be used in both DMs and chats. Short-term memory follows the current conversation or Agent thread, as described above. Personal notes come up on their own in private chats with shapes, where there are no other people and no workspace; in other chats that aren't public, they're read only when you ask about yourself.
+Long-term memory can be used in both DMs and chats. Short-term memory follows the current conversation or thread, as described above. Personal notes come up on their own in private chats with shapes, where there are no other people and no workspace; in other chats that aren't public, they're read only when you ask about yourself.
 
 ## Shape memory settings
 
