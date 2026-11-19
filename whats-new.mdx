@@ -19,12 +19,19 @@ Each release ends with the guides that explain it. For what moved or was retired
 - The Connect your computer dialog waits for a new computer: it shows "Waiting for your computer. It appears here as soon as you connect it in the app.", selects the computer when it appears, and **Allow and continue** picks the task up where the Shape left off. On Windows, **Open this chat in the app** opens the chat and you choose **Connect this PC** on the card.
 - **Download the app** row in Settings, on the web. It opens the **Desktop app** card under Settings → General, with **Download for macOS** and **Download for Windows**.
 - Ask a watch "what did you hold back?" in your private chat with the Shape to see the mail it read and chose not to alert you about.
+- **Bring a shape to your group.** On a shape's page, **Add to a group** lists your group chats: pick one and the shape joins it and says hi, or choose **New group** at the bottom. Signed in, the page also lists your three latest chats with that shape.
+- While a Shape works in your own Chrome, the working line above the message box says **in your Chrome**. Open it to see the page it's on and **Stop**, which ends browser control in that chat from any device, your phone included.
+- **Live transcript on calls with people.** On a call with at least one other person, select **Transcript** in the call controls to read what's been said so far, by name. A Shape in the chat can read it too, so you can ask it about the call while you're still on it.
+- **Call summary in the chat.** When a call with people ends, a summary of it appears under the call card, with the full text under **Transcript**. Earlier calls that were transcribed show theirs too.
 
 ### Changed
 
+- Chats now open directly at **shapes.inc**.
+- Building on **Connect your browser** from November 15: in your private chats, a Shape uses your connected Chrome without **Allow in this chat**, including when you ask from your phone. The dialog shows **Used automatically in this chat**, and **Don't use in this chat** turns it off for that chat. Shared chats still need **Allow in this chat**.
 - The sidebar's download row is now a card on the web on a Mac or PC: **shapes.inc for Mac** or **shapes.inc for Windows**, the line "Your shapes can use your computer when you ask.", and a download button. The ✕ (**Dismiss for today**) hides it until the next day. If you dismissed the old row, the card shows again.
 - Setting up Connect your computer is now three steps everywhere it's shown: download the app, sign in, and choose **Connect this Mac** or **Connect this PC**. The Terminal install command and **Copy restart command** are gone from the dialog and from Settings → Computers. **Have a code from your computer?** stays for computers that are already set up, and phones get a **Get the desktop app** link. Shapes asked how to connect a computer now give these three steps and point to shapes.inc/downloads, in place of the install steps from November 8. Details: https://docs.shapes.inc/connect-your-computer
 - A command that reaches your computer while another chat's command is still running waits up to 60 seconds for its turn instead of failing within seconds.
+- **Shapes use your Mac apps in the background** (Mac 1.24.41). A Shape using an app on your Mac works in that app's window, even behind your other windows, so your pointer, keyboard, and the app in front stay yours. While it works, it shows its own pointer with its name on it. A look at your whole screen is only a look; to click or type, the Shape works in the app itself. Update from **shapes.inc → Check for Updates…** in the Mac app. Details: https://docs.shapes.inc/connect-your-computer
 - The Windows app's first-run welcome has one button, **Sign in** (Windows 1.1.3).
 - Watch alerts from an inbox sweep include only what needs you. Mail that can wait is left out of the alert, the next step is worded so one "yes" is enough, and a Shape says it will check again later only when a later check is actually scheduled.
 - "Watch my inbox" keeps your other sources (calendar, GitHub) on. A source is skipped only when you name it ("not my calendar") or say "only my email".
@@ -33,9 +40,12 @@ Each release ends with the guides that explain it. For what moved or was retired
 - With a saved "never send without asking" email rule, saying "skip review this time" or approving a draft lets that one email send; the next email asks again. "Send now" on its own doesn't skip review of an email the Shape wrote.
 - Building on last week's budget check on the free Agent engine: when you name what's excluded, as in "\$60 per person before tax and tip", the budget is checked against the subtotal and the Shape names what's excluded.
 - Shapes no longer add unprompted suggestions to invite people in one-person Agent chats. Asking a Shape to invite someone works as before, and the invite strip under the reply is unchanged.
+- On a phone, a shape's page has a back button, and signed in it shows the app's bottom tabs (Home, Chats, New, Settings) with **Chat with** above them.
 
 ### Improved
 
+- Connecting your browser takes one click: the code from the extension is checked by itself, and you choose **Connect browser**. On a phone, **Connect your browser** explains installing the extension in Chrome on your computer and offers **Copy the install link**. **Chrome browser** is also under Settings → Computers.
+- When your Chrome is closed or not connected, a Shape says so and what to do (open Chrome on that computer, or install the extension), instead of asking you to allow it in the chat.
 - Building on **Use my coding instructions**: with the switch on, your CLAUDE.md and AGENTS.md are used on every turn in a chat that has your computer, not only on some.
 - With your computer connected and online, Shapes use it for questions about your own code and data (repositories, local tools, project databases read-only) instead of saying they can't check from here. This includes the free Agent engine.
 - Code questions on your computer search only the repository involved, on its latest default branch, instead of scanning whole folders. One such search had taken 11 minutes and kept the computer busy for other chats.
@@ -53,6 +63,7 @@ Each release ends with the guides that explain it. For what moved or was retired
 
 ### Fixed
 
+- Image uploads on **shapes.inc** work again after the address change.
 - Windows app updates hung on "Downloading update…" at 0 bytes.
 - A missing folder or file on your computer was reported as your computer being offline.
 - A new chat could reply that your computer wasn't connected when its first message arrived during a brief connection gap. It now gets your default computer.
@@ -69,7 +80,7 @@ Each release ends with the guides that explain it. For what moved or was retired
 - With no other chats to search, a Shape could imply it had searched them.
 - The account switcher could briefly show a previous session's accounts after logging out.
 
-Guides: [Connect your computer](/connect-your-computer#when-a-shape-asks-for-your-computer), [Watches](/tasks#keep-an-eye-out), [Purchases](/websites-and-purchases#buy-something), [Free images](/credits#how-many-free-images-do-i-get)
+Guides: [Connect your computer](/connect-your-computer#when-a-shape-asks-for-your-computer), [Your Mac](/connect-your-computer#see-and-use-your-macs-screen), [Watches](/tasks#keep-an-eye-out), [Purchases](/websites-and-purchases#buy-something), [Free images](/credits#how-many-free-images-do-i-get)
 
 </Update>
 
