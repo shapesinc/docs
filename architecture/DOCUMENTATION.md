@@ -255,3 +255,12 @@ No runtime code or AI calls are added: incremental recurring provider spend is $
 Source: shapesinc/app#6221 and its `architecture/SHORT_TERM_MEMORY.md` section "Free Chat context limits". The companion Talk PR states the same figures on the Premium page.
 
 No runtime code or AI calls are added: incremental recurring provider spend is $0/day.
+
+
+## Browser address transition (November 19, 2026)
+
+The notification guide describes automatic navigation from the old home and chat
+URLs without requiring notification setup first. Existing subscriptions and their
+permissions stay at the old origin. Native and installed web apps retain their
+connections. Publish this wording only after the corresponding website behavior
+is released and verified. No provider delivery guarantee is added.
