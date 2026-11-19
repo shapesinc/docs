@@ -164,6 +164,14 @@ Ask a shape to remember a preference for this chat, then check that it confirms 
 Always use a thread and my local Codex for code changes in this chat.
 ```
 
+### Open a shape's coding session
+
+In the Mac app 1.24.43 or later, when a shape uses your own Claude Code or Codex, it works in a session you can open. The session is named for the shape and the task, for example "Tod: Release checklist TODO.md". Select **Open in Claude** or **Open in Codex** in the shape's reply to open it in the Claude or Codex app, where you can follow along or take over. You can also resume it in a terminal with `claude --resume` or `codex resume`.
+
+The shape can send follow-ups to the same session, read it, check whether it's still working, and stop it. While a Claude Code session is open in the Claude app or a terminal, the shape doesn't send to it, so only one of you writes to it at a time.
+
+If Codex is set to an engine your ChatGPT account doesn't offer, the task uses your account's default engine and the shape's reply says so.
+
 ### Choose the folder and account for local tasks
 
 In the desktop app, select **Use this Mac** (or **Use this PC**) beside the message box in an Agent chat. Then:
