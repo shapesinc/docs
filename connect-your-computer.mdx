@@ -122,9 +122,9 @@ While you finish setup, the dialog shows **Waiting for your computer…**. When 
 
 When a task on your computer needs a permission or an answer, the question appears in the chat for you to approve or answer. Nothing is chosen for you, and the task continues only after you respond. Only you can answer for your computer.
 
-The chat no longer shows a separate **Computer task** card for each task, or a live progress box for Codex or Claude Code. A running task shows **Stop**. Check the shape's reply for the result, such as whether a change was made.
+Claude Code keeps your own permission settings, such as the commands you've always allowed and your default permission mode. When it needs your OK, the request shows the exact command or file and its folder, with **Approve once** and **Deny**. Approve once and the same session continues. Deny and it carries on without that step; the result lists what was denied. Claude Code works in a folder outside the task's folder only after you approve it.
 
-To stop work in progress, select **Stop** in the message box. It stops the reply and its computer tasks, including local work already running. After a reload, a task that is ending shows **Stopping…**.
+To stop work in progress, select **Stop** in the message box. It stops the reply and its computer tasks, including local work already running. After a reload, a task that is ending shows **Stopping…**. A task with its own card, such as a coding task, has **Stop** in the card.
 
 ## Ask about the computer itself
 
@@ -158,13 +158,24 @@ The Mac needs **Keyboard and mouse** and **Screen recording** allowed. If either
 
 ## Hand coding work to Codex or Claude Code
 
-Shapes can hand parts of a task to Codex or Claude Code on your computer. Ask for one by name, or let the shape choose. The result comes back in the shape's reply.
+Shapes can hand parts of a task to Codex or Claude Code on your computer. Ask for one by name, or let the shape choose. The result comes back in the task card and the shape's summary.
 
 Ask a shape to remember a preference for this chat, then check that it confirms saving it. You can review saved preferences in [Memory](/memory):
 
 ```text wrap
 Always use a thread and my local Codex for code changes in this chat.
 ```
+
+### Follow a coding task
+
+When a shape uses your own Claude Code or Codex, it replies as soon as the task starts, with a task card. The card shows:
+
+- the session name and **Open in Claude** or **Open in Codex**
+- what the agent is doing now, and how long it has run
+- any request waiting for your approval
+- **Stop**, for you as the computer's owner
+
+When the task ends, the card shows the result and the shape posts a short summary in the chat. A task that finishes its work shows **Done**, even if you denied a step along the way. Select **Details** to see what was denied and the command to resume the session in a terminal.
 
 ### Open a shape's coding session
 
