@@ -122,9 +122,9 @@ While you finish setup, the dialog shows **Waiting for your computer…**. When 
 
 When a task on your computer needs a permission or an answer, the question appears in the chat for you to approve or answer. Nothing is chosen for you, and the task continues only after you respond. Only you can answer for your computer.
 
-Claude Code keeps your own permission settings, such as the commands you've always allowed and your default permission mode. When it needs your OK, the request shows the exact command or file and its folder, with **Approve once** and **Deny**. Approve once and the same session continues. Deny and it carries on without that step; the result lists what was denied. Claude Code works in a folder outside the task's folder only after you approve it.
+In the Mac app 1.24.45 or later and the Windows app 1.1.8 or later, Claude Code uses your own permission settings: your allow, ask and deny rules and your permission mode. It asks in the chat when those settings call for it, for example a command that matches one of your ask rules, or a permission mode that asks before it acts. In auto mode, which it uses when you haven't chosen a mode, Claude Code decides most actions itself without asking, and that can include changing files outside the task's folder. When it does ask, the request shows the exact command or file and its folder, with **Approve once** and **Deny**. Approve once and the same session continues. Deny and it carries on without that step; the result lists what was denied.
 
-To stop work in progress, select **Stop** in the message box. It stops the reply and its computer tasks, including local work already running. After a reload, a task that is ending shows **Stopping…**. A task with its own card, such as a coding task, has **Stop** in the card.
+To stop a coding task, select **Stop** in its task card. A task that is ending shows **Stopping…**. While a shape is still replying, a pill above the message box says so, for example **Tod is working**. Open it and select **Stop** on the reply to stop that reply and the computer tasks it started.
 
 ## Ask about the computer itself
 
@@ -170,12 +170,12 @@ Always use a thread and my local Codex for code changes in this chat.
 
 When a shape uses your own Claude Code or Codex, it replies as soon as the task starts, with a task card. The card shows:
 
-- the session name, and for you, which of your computers runs it
+- the session name
 - what the agent is doing now, and how long it has run
 - any request waiting for your approval
 - **Stop**, for you as the computer's owner
 
-When the task ends, the card shows the result and the shape posts a short summary in the chat. A task that finishes its work shows **Done**, even if you denied a step along the way. Select **Details** to see what was denied and the command to resume the session in a terminal.
+When the task ends, the card shows the result and the shape posts a short summary in the chat. A task that finishes its work shows **Done**, even if you denied a step along the way. Select **Details** to see what was denied.
 
 ### Open a shape's coding session
 
