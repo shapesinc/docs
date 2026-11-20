@@ -27,7 +27,7 @@ flowchart LR
   P --> R["Reply"]
 ```
 
-- **Short-term memory:** the most recent messages in the chat you're in. The shape reads them in full before every reply. How many it reads is set by the shape's owner, up to your plan's limit; see [limits by plan](#scene-reply-limits-by-plan).
+- **Short-term memory:** the most recent messages in the chat you're in. The shape reads them in full before every reply. How many it reads is set by the shape's owner, up to your plan's limit; see [limits by plan](#chatting-reply-limits-by-plan).
 - **Chat history:** everything that has happened in this chat. When you send a message, the shape finds the moments in the chat's history that relate to it (names, decisions, promises, running jokes, details) and reads them with the dates they were said. This covers messages that left short-term memory long ago, and messages from before the shape joined the chat. Recent messages win when something has changed since. Behind it, the chat is kept both as text and as linked facts, so a shape knows what's true now and what used to be ([how](/memory-under-the-hood#inside-the-chat-history-engine)). Chat history is per chat: it never looks into other chats.
 - **Long-term memories:** summaries a shape writes about its conversations as they happen, on a schedule its owner sets. Relevant summaries come back in later replies in that chat. In a group chat, the summaries belong to the chat: every shape in it writes to and reads the same set. You can read and edit them on the **Memories** page.
 - **Saved notes:** things people asked a shape to remember, or added on the **Memories** page. A note can be **Personal**, for a **chat**, or for a **workspace**. Notes are the most reliable kind of memory: a saved note comes up whenever it is relevant, and you decide its exact wording.
@@ -42,15 +42,17 @@ Memory is also a record of what was true at the time, not a fresh check. A shape
 
 Every layer except short-term memory is retrieved by how well it matches your latest message, not read in full. [Memory under the hood](/memory-under-the-hood) explains how each layer is retrieved and the habits that get you much better recall.
 
-When you [play a scene with a shape](/chat-and-agent-modes#play-a-scene-with-a-shape), its replies in the scene use short-term memory, long-term memories, and saved notes. Full chat history recall and workspace memory are part of its other replies. See [How chats work](/chat-and-agent-modes).
+When you're [just chatting with a shape](/chat-and-agent-modes#just-chat-with-a-shape), its replies use short-term memory, long-term memories, and saved notes. Full chat history recall and workspace memory are part of its other replies. See [How chats work](/chat-and-agent-modes).
 
 <a id="chat-mode-limits-by-plan" />
 
-## Scene reply limits by plan
+<a id="scene-reply-limits-by-plan" />
 
-When a shape answers in a scene you're playing with it, your plan sets how much it reads before that reply.
+## Chatting reply limits by plan
 
-| Per scene reply | Free plan | Premium plan or any account credits |
+When you're just chatting with a shape, your plan sets how much it reads before that reply.
+
+| Per chatting reply | Free plan | Premium plan or any account credits |
 | --- | --- | --- |
 | Recent messages | Up to 40, limited to their most recent 14,000 characters | Up to 200, with no character limit |
 | Long-term memories | Up to 4,000 characters | Up to 16,000 characters |
@@ -64,7 +66,7 @@ When a shape answers in a scene you're playing with it, your plan sets how much 
 
 ### Other replies
 
-These limits apply only to scene replies. Other replies aren't affected, and neither are replies on premium AI engines.
+These limits apply only to chatting replies. Other replies aren't affected, and neither are replies on premium AI engines.
 
 <a id="full-chat-history-in-agent-chats" />
 
@@ -75,7 +77,7 @@ In any chat, shapes search the chat's whole history, not only summaries. Ask "wh
 - Deleted messages stop being recalled within a few minutes. Edited and removed messages, and deleted chats, drop out within a day.
 - Messages from people banned from the chat are never recalled.
 - If a shape's owner turns off **Long-term memory** for that shape, it doesn't use this history.
-- A shape's replies inside a scene you're playing with it use short-term memory, long-term memories, and saved notes, not this search.
+- A shape's replies when you're just chatting with it use short-term memory, long-term memories, and saved notes, not this search.
 
 ## What a shape can look up for itself
 

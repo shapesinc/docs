@@ -46,7 +46,7 @@ When you send a message, the shape builds its reply from these pieces, in roughl
 5. **Chat history**: excerpts of the conversation itself that match your message, only from before the short-term window, with the dates they were said.
 6. **Workspace memory** (chats in a workspace): a few summaries from your other chats in the workspace that match your message.
 
-Steps 3 to 6 run at the same time, each with its own small time budget, and a layer that doesn't answer in time is left out rather than delaying the reply. Recent messages win when a recalled detail disagrees with them. A shape's replies inside a scene you're [playing with it](/chat-and-agent-modes#play-a-scene-with-a-shape) use steps 1 to 4 only.
+Steps 3 to 6 run at the same time, each with its own small time budget, and a layer that doesn't answer in time is left out rather than delaying the reply. Recent messages win when a recalled detail disagrees with them. A shape's replies when you're [just chatting with it](/chat-and-agent-modes#just-chat-with-a-shape) use steps 1 to 4 only.
 
 The lookups are ranked against your **latest message**, not the whole conversation. A short "yes" or "what about that one?" pulls in almost nothing. A message that names the thing pulls in the right history.
 
