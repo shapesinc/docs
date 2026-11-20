@@ -7,12 +7,12 @@ sidebarTitle: "Shared activities"
 
 Ask a shape for choices, a poll, a quiz, or a tracker inside the chat, or a shared page with a shortlist, checklist, game, or form, and it posts one where everyone can weigh in at once. Each person takes part directly; the group can see votes, answers, scores, or progress as they change. Chat cards, inline widgets, and shared pages have different controls and access rules.
 
-These activities are available in free and Premium chats. Use [Agent mode](/chat-and-agent-modes) for choice cards and custom widgets. A tap that asks the shape to continue can use [credits or allowances](/credits), just like the person's own request; saving a vote or tracker entry is a separate action.
+These activities are available in free and Premium chats. Choice cards and custom widgets work in [any chat](/chat-and-agent-modes#interactive-answers), but not in a reply when you're just chatting with a shape. A tap that asks the shape to continue can use [credits or allowances](/credits), just like the person's own request; saving a vote or tracker entry is a separate action.
 
 ## Choose the right activity
 
 - **Choose between researched options:** use a choice card, with the shape's recommendation and the details that matter. One person can pick, or the group can vote before the person who asked settles it.
-- **Collect opinions or availability:** use a poll. A single vote doesn't ask the shape to take the next step; in a group Agent chat, the shape follows up once everyone it asked has answered ([details](#when-the-shape-follows-up)).
+- **Collect opinions or availability:** use a poll. A single vote doesn't ask the shape to take the next step; in a group chat, the shape follows up once everyone it asked has answered ([details](#when-the-shape-follows-up)).
 - **Answer questions with correct answers:** use a quiz card.
 - **Keep a tracker, small editor, or interactive explanation in the chat:** ask for a custom widget with shared progress.
 - **Compare or play with people outside the chat:** use a shared activity page and its separate share link.
@@ -43,7 +43,7 @@ The shape posts the card or page inside its message. You can vote, type, and pla
 
 ## Choose between options
 
-In an Agent chat, give the shape the group's constraints and ask for options people can choose from:
+In a chat, give the shape the group's constraints and ask for options people can choose from:
 
 ```text wrap
 Compare three parks for our picnic using the travel time, step-free access, and facilities we need. Show the deciding facts, recommend one, and let everyone in this chat vote before I settle the choice.
@@ -93,7 +93,7 @@ For dinner plans, one person supplies the shortlist, the shape turns it into the
 
 <a id="when-the-shape-follows-up" />
 
-In a group Agent chat, a poll a shape posts for someone's request waits until everyone it asked has answered, by tapping an option or by typing their answer in the chat, or until the poll closes. Then the shape follows up once with the result. You can also ask the shape to summarize the result at any time.
+In a group chat, a poll a shape posts for someone's request waits until everyone it asked has answered, by tapping an option or by typing their answer in the chat, or until the poll closes. Then the shape follows up once with the result. You can also ask the shape to summarize the result at any time.
 
 ## Study or play a quiz together
 
@@ -135,7 +135,7 @@ Changing a checklist's initial items or a form's fields starts fresh progress or
 
 ## Use a custom widget together
 
-In an Agent chat, ask for a compact tracker, editor, chart, or interactive explanation inside the reply. For example:
+In a chat, ask for a compact tracker, editor, chart, or interactive explanation inside the reply. For example:
 
 ```text wrap
 Make a shared picnic tracker here, with a row for each person to enter what they are bringing and a common list of what we still need. Keep our entries when we reopen the chat. Add a button to ask you for a recap.
@@ -227,7 +227,7 @@ If saving fails, read the card's error and check its current state before retryi
 
 Check membership and sign-in, reopen the chat, and read the widget's error. An unavailable widget may show only its title. If another person changed it at the same time, check the current value before trying your edit again. A widget can also reach its saved-data or per-person-entry limit.
 
-If a button asks you to wait, allow five seconds before requesting another shape reply through that widget. If the widget needs a fix, ask its creating shape in the conversation; do not keep repeating a tap whose outcome is uncertain. Choice cards and widgets are available in Agent mode, and a request for text only does not create them.
+If a button asks you to wait, allow five seconds before requesting another shape reply through that widget. If the widget needs a fix, ask its creating shape in the conversation; do not keep repeating a tap whose outcome is uncertain. A request for text only does not create choice cards or widgets.
 
 ### I can't vote in a poll card
 
@@ -249,6 +249,6 @@ Reopen the activity to continue. Changes that were already saved stay in place w
 
 ## Related
 
-- [Chat, Agent, and Auto](/chat-and-agent-modes): interactive panels and pages in Agent replies.
+- [How chats work](/chat-and-agent-modes): interactive panels and pages in shape replies.
 - [Everyday decisions](/fun-and-friends): plan with friends and family.
 - [Games](/games): activities in chat and the current availability of call games.

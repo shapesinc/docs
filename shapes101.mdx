@@ -14,10 +14,10 @@ Shapes are customizable AI assistants. Depending on the engine and available cap
 - Respond to the group's messages and summarize decisions.
 - Generate images and work with images you send.
 - Send [voice responses](/how-to-give-your-shape-a-voice) or respond to voice messages.
-- In [Agent chats](/chat-and-agent-modes), use available [skills](/shapeskills) for research and other actions, including apps you've [connected](/connected-apps).
+- In [any chat](/chat-and-agent-modes), use available [skills](/shapeskills) for research and other actions, including apps you've [connected](/connected-apps).
 - Set up [live polls, games, and forms](/multiplayer-activities) the whole chat can use.
 
-Give the assistant the group's priorities, correct its assumptions, and review its suggestions together. In Agent chats, built-in skills are included automatically. Apps need to be connected first, and external services may require adding and authenticating an MCP server.
+Give the assistant the group's priorities, correct its assumptions, and review its suggestions together. Built-in skills are included automatically. Apps need to be connected first, and external services may require adding and authenticating an MCP server.
 
 <a id="unique-customization" />
 
@@ -36,7 +36,7 @@ Choose the settings that affect your shared work:
 
 Chats bring people and shapes into the same conversation. Select **New chat** in the sidebar, or tap **New** on a phone. The picker opens on **People**. Select people to include, or open **Shapes** to choose **Auto** or an existing shape, then select **Continue**. In **Chat details**, review the name and select **Create Chat**. See the [walkthrough](/faq/how-do-i-start-a-new-chat).
 
-Each chat is either a **Chat**, for talking things through, or an **Agent** chat, where shapes can take actions such as web searches and code. **Auto** chooses for each message. Set your default mode under **Settings** → **General** → **New chats**; this is separate from the **Auto** choice in the shape picker. See [Chat and Agent](/chat-and-agent-modes).
+In every chat, shapes can search the web, run code, use connected apps, and take other actions. When you're just chatting with a shape, it replies in its own voice. There's nothing to pick or switch. See [How chats work](/chat-and-agent-modes).
 
 <span id="adding-shapes" />
 
@@ -54,15 +54,7 @@ Select **Invite** at the top of a group chat to bring in the people whose prefer
 
 ### Choose when shapes reply
 
-Chat owners open the chat's **Settings** → **AI settings**. Under **AI replies**, review **Auto-reply triggers**:
-
-- **Reply when mentioned**
-- **Keep the convo going**
-- **React to keywords**
-- **Always have something to say**
-- **Come back later**
-
-For a task where the group wants to direct each contribution, start with **Reply when mentioned** and mention the shape with `@`. If it stays quiet, check the selected engine and any credit requirement. If the chat is too busy, review the triggers. In group Agent chats, shapes reply when they can help and stay out of ordinary conversation. See [assistant participation](/designing-social-intelligence) for suggested setups.
+In group chats, shapes reply when they can help and stay out of ordinary conversation. To direct a contribution, mention the shape with `@` or say its name. If it stays quiet, check the selected engine and any credit requirement. Chat owners can review **Come back later** under the chat's **Settings** → **AI settings** → **AI replies**. See [assistant participation](/designing-social-intelligence) for suggested setups.
 
 <span id="customizing-chat-aesthetics" />
 
@@ -70,20 +62,21 @@ For a task where the group wants to direct each contribution, start with **Reply
 
 Open the chat's **Settings** → **Chat Appearance** (chat owners, or anyone in a DM). Make related projects easy to recognize and the conversation comfortable to read. See [chat appearance](/chat-appearance).
 
-### Skip turn and fast forward
+<span id="skip-turn-and-fast-forward" />
 
-In **Chat** mode, use [+ → Skip turn](/faq/how-do-i-use-fast-forward-or-skip-turn) to let a shape reply without a new message, including in one-to-one chats. Group chats require the chat owner.
+### Keep the conversation going
+
+**Skip turn** is now **Keep going**, in the **+** menu: the shapes take turns for 5 or 10 messages. See [Keep the conversation going](/multimessages#keep-the-conversation-going).
 
 ### AI configuration
 
 In the chat's **Settings**, owners choose **AI settings** for:
 
-- **Chat mode:** switch the chat between **Auto**, **Chat**, and **Agent**.
 - **Instructions:** record the group's goal, constraints, and working style. Owners can also open **Instructions** directly from **More actions**. See [chat instructions](/custominstructions-chats).
 - **AI replies:** choose **Auto-reply triggers** that fit the task.
-- **Skills:** in Agent chats, built-in skills are included automatically and cannot be disabled. In other chats, each skill can be **Enabled** or **Disabled**.
-- **MCP servers** (Agent chats): select **Add MCP server** to connect an external service and complete its authentication. See [Skills and MCP servers](/shapeskills).
-- **Code Projects** (Agent chats): connect repositories for code tasks in this chat. See [Connect your computer](/connect-your-computer).
+- **Skills:** built-in skills are included automatically and cannot be disabled.
+- **MCP servers:** select **Add MCP server** to connect an external service and complete its authentication. See [Skills and MCP servers](/shapeskills).
+- **Code Projects:** connect repositories for code tasks in this chat. See [Connect your computer](/connect-your-computer).
 
 ### Moderation
 
@@ -170,7 +163,7 @@ Available controls vary by engine. Change one setting at a time and compare resp
 
 #### Timezone
 
-Shapes no longer have their own **Timezone** or **Knows the current date** settings, and the editor has no **Time** card. In Agent chats, shapes use your own time, so "9am tomorrow" means 9am where you are. When a plan involves people in other places, name the time zone and check the shape's reading before acting on a schedule.
+Shapes no longer have their own **Timezone** or **Knows the current date** settings, and the editor has no **Time** card. In chats, shapes use your own time, so "9am tomorrow" means 9am where you are. When a plan involves people in other places, name the time zone and check the shape's reading before acting on a schedule.
 
 #### Short-term memory (STM)
 

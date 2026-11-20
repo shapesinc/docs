@@ -16,8 +16,8 @@ flowchart LR
   M["Your message"] --> Q["Matched against<br/>your latest message"]
   Q --> N["Saved notes"]
   Q --> L["Long-term memories"]
-  Q --> H["Chat history<br/>Agent chats"]
-  Q --> W["Workspace memory<br/>Agent chats"]
+  Q --> H["Chat history"]
+  Q --> W["Workspace memory<br/>in a workspace"]
   I["Instructions"] --> P["What the shape reads"]
   S["Short-term memory<br/>recent messages"] --> P
   N --> P
@@ -27,28 +27,32 @@ flowchart LR
   P --> R["Reply"]
 ```
 
-- **Short-term memory:** the most recent messages in the chat you're in. The shape reads them in full before every reply. How many it reads is set by the shape's owner, up to your plan's limit. See [Chat mode limits by plan](#chat-mode-limits-by-plan).
-- **Chat history (Agent chats):** everything that has happened in this chat. When you send a message, the shape finds the moments in the chat's history that relate to it (names, decisions, promises, running jokes, details) and reads them with the dates they were said. This covers messages that left short-term memory long ago, and messages from before the shape joined the chat. Recent messages win when something has changed since. Behind it, the chat is kept both as text and as linked facts, so a shape knows what's true now and what used to be ([how](/memory-under-the-hood#inside-the-chat-history-engine)). Chat history is per chat: it never looks into other chats.
+- **Short-term memory:** the most recent messages in the chat you're in. The shape reads them in full before every reply. How many it reads is set by the shape's owner, up to your plan's limit; see [limits by plan](#chatting-reply-limits-by-plan).
+- **Chat history:** everything that has happened in this chat. When you send a message, the shape finds the moments in the chat's history that relate to it (names, decisions, promises, running jokes, details) and reads them with the dates they were said. This covers messages that left short-term memory long ago, and messages from before the shape joined the chat. Recent messages win when something has changed since. Behind it, the chat is kept both as text and as linked facts, so a shape knows what's true now and what used to be ([how](/memory-under-the-hood#inside-the-chat-history-engine)). Chat history is per chat: it never looks into other chats.
 - **Long-term memories:** summaries a shape writes about its conversations as they happen, on a schedule its owner sets. Relevant summaries come back in later replies in that chat. In a group chat, the summaries belong to the chat: every shape in it writes to and reads the same set. You can read and edit them on the **Memories** page.
 - **Saved notes:** things people asked a shape to remember, or added on the **Memories** page. A note can be **Personal**, for a **chat**, or for a **workspace**. Notes are the most reliable kind of memory: a saved note comes up whenever it is relevant, and you decide its exact wording.
-- **Workspace memory (Agent chats in a workspace):** relevant summaries from the other chats in the same workspace that you are also in, so a new chat starts with the apps, projects, trackers, and rules your other chats already set up. Each memory names the chat it came from.
-- **Thread memory:** an [Agent thread](/threads) works from its original request, a short summary of the chat up to that point, and the thread's own conversation. Long threads keep a running summary so earlier decisions and finished work stay in view.
+- **Workspace memory (chats in a workspace):** relevant summaries from the other chats in the same workspace that you are also in, so a new chat starts with the apps, projects, trackers, and rules your other chats already set up. Each memory names the chat it came from.
+- **Thread memory:** a [thread](/threads) works from its original request, a short summary of the chat up to that point, and the thread's own conversation. Long threads keep a running summary so earlier decisions and finished work stay in view.
 
 Memory is background for a reply, not permission. Recalling something from another chat never lets a shape change or send anything there. A shape recalls from chats you are in; the one exception is a workspace's group chats, which it can search when you ask ([below](#what-a-shape-can-look-up-for-itself)). Once you leave a chat, even one you created, its memory and messages are no longer recalled for you.
 
 <a id="memories-are-dated" />
 
-Memory is also a record of what was true at the time, not a fresh check. In Agent chats, a shape treats memories and what it reads in other chats as dated: it says where and when something was said ("on Tuesday the trip chat was still waiting on the hotel") instead of repeating it as today's status. When the current state matters, ask it to check again. Summaries of work that was still in progress are kept as unfinished at that point, not as the outcome.
+Memory is also a record of what was true at the time, not a fresh check. A shape treats memories and what it reads in other chats as dated: it says where and when something was said ("on Tuesday the trip chat was still waiting on the hotel") instead of repeating it as today's status. When the current state matters, ask it to check again. Summaries of work that was still in progress are kept as unfinished at that point, not as the outcome.
 
 Every layer except short-term memory is retrieved by how well it matches your latest message, not read in full. [Memory under the hood](/memory-under-the-hood) explains how each layer is retrieved and the habits that get you much better recall.
 
-**Chat mode** uses short-term memory, long-term memories, and saved notes. Full chat history recall and workspace memory are part of **Agent** chats. See [Chat, Agent, and Auto](/chat-and-agent-modes).
+When you're [just chatting with a shape](/chat-and-agent-modes#just-chat-with-a-shape), its replies use short-term memory, long-term memories, and saved notes. Full chat history recall and workspace memory are part of its other replies. See [How chats work](/chat-and-agent-modes).
 
-## Chat mode limits by plan
+<span id="chat-mode-limits-by-plan" />
 
-In Chat mode, your plan sets how much a shape reads before each reply.
+<span id="scene-reply-limits-by-plan" />
 
-| Per reply in Chat mode | Free plan | Premium plan or any account credits |
+## Chatting reply limits by plan
+
+When you're just chatting with a shape, your plan sets how much it reads before that reply.
+
+| Per chatting reply | Free plan | Premium plan or any account credits |
 | --- | --- | --- |
 | Recent messages | Up to 40, limited to their most recent 14,000 characters | Up to 200, with no character limit |
 | Long-term memories | Up to 4,000 characters | Up to 16,000 characters |
@@ -58,25 +62,29 @@ In Chat mode, your plan sets how much a shape reads before each reply.
 - A shape's own smaller message window still applies on any plan.
 - You don't need a plan for the larger limits. Any account-credit balance above zero gives you them.
 
-### Chat mode and Agent mode
+<span id="chat-mode-and-agent-mode" />
 
-These limits apply to replies in Chat mode. Agent mode is not affected, and neither are replies on premium AI engines.
+### Other replies
 
-## Full chat history in Agent chats
+These limits apply only to chatting replies. Other replies aren't affected, and neither are replies on premium AI engines.
 
-In [Agent chats](/chat-and-agent-modes), shapes search the chat's whole history, not only summaries. Ask "what did we decide about the hotel last month?" or "find the address Sam sent" and the shape searches earlier messages by meaning, along with the chat's summaries and saved notes. This covers the most recent 20,000 messages of the chat you're in; it doesn't reach into other chats.
+<span id="full-chat-history-in-agent-chats" />
+
+## Full chat history
+
+In any chat, shapes search the chat's whole history, not only summaries. Ask "what did we decide about the hotel last month?" or "find the address Sam sent" and the shape searches earlier messages by meaning, along with the chat's summaries and saved notes. This covers the most recent 20,000 messages of the chat you're in; it doesn't reach into other chats.
 
 - Deleted messages stop being recalled within a few minutes. Edited and removed messages, and deleted chats, drop out within a day.
 - Messages from people banned from the chat are never recalled.
 - If a shape's owner turns off **Long-term memory** for that shape, it doesn't use this history.
-- In Auto chats, this works on the messages a shape answers in Agent mode. Chat-mode replies use the memory described above.
+- A shape's replies when you're just chatting with it use short-term memory, long-term memories, and saved notes, not this search.
 
 ## What a shape can look up for itself
 
-In Agent chats, a shape also searches for itself. When a question is about the past, it can check:
+A shape also searches for itself. When a question is about the past, it can check:
 
 - **This chat's history**, by meaning or by exact words. Ask "what did we decide about the venue in March?" and it finds that stretch of the conversation, then opens the original messages to confirm names and specifics before answering.
-- **Your other chats.** Ask it to check another chat by name ("what did the trip chat say about dates?") or to look across your chats. It searches the chats you are a member of, most recently active first, by keyword or by meaning, and can read the exact messages it finds. This includes group chats set to **Chat** when you ask; one-to-one chats in Chat mode aren't searched.
+- **Your other chats.** Ask it to check another chat by name ("what did the trip chat say about dates?") or to look across your chats. It searches the chats you are a member of, most recently active first, by keyword or by meaning, and can read the exact messages it finds.
 - **The whole workspace.** In a workspace chat, "check the other chats in this workspace for how we file tickets" searches the chats in that workspace you are in. When you ask, it can also search the workspace's group chats you aren't in.
 - **Its own memories.** It can browse and summarize what it has saved about a chat, and write a fresh summary of the recent conversation on request.
 
@@ -89,7 +97,7 @@ The short version is below. For the mechanics behind each tip, and more of them,
 ### In one chat
 
 - **Refer back naturally.** "Like we said last week" or "the place Sam suggested" is enough; the shape pulls the related history. You don't have to re-explain earlier context.
-- **Ask for the source.** When a detail matters, ask the shape where it saw it. In Agent chats it can find the original message and quote it.
+- **Ask for the source.** When a detail matters, ask the shape where it saw it. It can find the original message and quote it.
 - **Correct it in the chat.** If a shape gets something wrong, say so. Recent messages win over old ones, and the correction becomes part of the history.
 - **Save decisions as notes.** When the group settles something, ask the shape to remember it or type `/remember` followed by the decision. A note is exact and always comes up when relevant; a summary is the shape's own words and may miss a detail.
 - **Save rules as notes, not conversation.** "Always put new tickets in Planned, not Triage" works as a saved note. Said once in passing, it can be missed when the moment comes.
@@ -99,9 +107,9 @@ The short version is below. For the mechanics behind each tip, and more of them,
 ### Across chats
 
 - **Personal notes follow you.** A personal note ("I'm vegetarian", "call me Al") is private to you and comes up on its own in your private chats with shapes: chats with no other people, outside a workspace. To save one from a group chat, say "remember this across my chats". See [personal notes in group chats](#personal-notes-in-group-chats).
-- **A new private Agent chat starts with background.** It gets relevant context from the other Agent chats that everyone in it shares; on your own, that's all your Agent chats. This doesn't happen in chats with more than 25 people, or for shapes whose **Long-term memory** is off.
+- **A new private chat starts with background.** It gets relevant context from the other chats that everyone in it shares; on your own, that's all your chats. This doesn't happen in chats with more than 25 people, or for shapes whose **Long-term memory** is off.
 - **Workspace notes are for the team.** A rule, a convention, or a standing preference that applies to every chat in a workspace belongs in a workspace note. Say "remember this for the workspace" so the shape saves it there rather than in the current chat.
-- **Workspace background arrives on its own.** In a workspace, an Agent chat starts with relevant memories from your other chats in that workspace. Mention the project or tool by name and the right background comes along.
+- **Workspace background arrives on its own.** In a workspace, a chat starts with relevant memories from your other chats in that workspace. Mention the project or tool by name and the right background comes along.
 - **Ask it to check another chat.** Anything that didn't come along on its own, the shape can go and find: "check what the planning chat decided" or "search my chats for the hotel we booked".
 - **Chats you aren't in stay closed, except workspace group chats on request.** Background arrives on its own only from chats where you are a member. In a workspace, you can ask a shape to search the workspace's group chats you aren't in. Anything else, such as a teammate's private chat, stays closed: join it or ask them to post the detail where you are.
 
@@ -110,7 +118,7 @@ The short version is below. For the mechanics behind each tip, and more of them,
 - **A group chat's long-term memories are shared by its shapes.** With two shapes in a group chat, both write to and read the same summaries of that chat, each recording who said what.
 - **Chat notes are shared.** A note saved to a chat is read by every shape in the chat and can be edited by anyone allowed to manage it. Say who or what it is about ("Sam is allergic to peanuts", not "allergic to peanuts").
 - **Shapes remember the group, not just you.** Summaries and chat history record who said what, so a shape can tell apart your preference from someone else's. Speak for yourself and let others speak for themselves.
-- **A shape that joins later can catch up.** In Agent chats, a shape added to a chat today can recall what the group discussed before it arrived. A person who joins later sees only the replies from then on.
+- **A shape that joins later can catch up.** A shape added to a chat today can recall what the group discussed before it arrived. A person who joins later sees only the replies from then on.
 - **Recalled details show up in replies.** Anyone who can read the chat can read a reply that includes a memory, including people invited later. Keep personal details in personal notes or private chats.
 - **Change the note when the plan changes.** Editing a memory doesn't correct an earlier reply or tell everyone that the plan changed. Post the change in the chat too.
 
@@ -120,13 +128,13 @@ Say what you want remembered, for example "Remember that Sam is vegetarian and w
 
 <a id="standing-preferences" />
 
-In Agent chats you don't have to say "remember" for a standing preference about yourself. "I always want aisle seats", "never send an email or spend money without asking me first", or "from now on, keep it short" is saved to your **Personal** notes on its own. A preference you state in a group chat applies in your later private chats; it isn't brought into group chats by itself. A reply mentions a saved preference only when it changed what the shape did. Chat-mode chats save notes only when you ask.
+You don't have to say "remember" for a standing preference about yourself. "I always want aisle seats", "never send an email or spend money without asking me first", or "from now on, keep it short" is saved to your **Personal** notes on its own. A preference you state in a group chat applies in your later private chats; it isn't brought into group chats by itself. A reply mentions a saved preference only when it changed what the shape did.
 
 You can also type `/remember` followed by the note to save it to the chat's memory.
 
-In Agent chats a shape can also manage memories for you when you ask: "forget the note about green tea", or "update the dinner note to Friday". A correction replaces the old note, so you're left with one current note instead of two that disagree.
+A shape can also manage memories for you when you ask: "forget the note about green tea", or "update the dinner note to Friday". A correction replaces the old note, so you're left with one current note instead of two that disagree.
 
-In a private Agent chat, ask "what do you know about me?" and the shape lists your saved notes and preferences. It won't list them in a group chat.
+In a private chat, ask "what do you know about me?" and the shape lists your saved notes and preferences. It won't list them in a group chat.
 
 ### Personal notes in group chats
 
@@ -151,7 +159,7 @@ Type these in the composer:
 | `/wack` | Reset a shape's short-term memory. Chat owner only. |
 | `/reset` | Reset long-term memories from this chat. Chat owner only. |
 
-`/clear` and `/wack` reset the recent messages a shape reads before replying. They don't erase the chat's history, so in Agent chats the shape can still recall earlier details when they're relevant. In a group chat, `/reset` removes the chat's long-term memories, whichever shape wrote them. In a one-to-one chat with a shape, it removes that shape's long-term memories of the chat. It erases up to 900 memories at a time; run it again to erase more. Saved notes stay until you delete them.
+`/clear` and `/wack` reset the recent messages a shape reads before replying. They don't erase the chat's history, so the shape can still recall earlier details when they're relevant. In a group chat, `/reset` removes the chat's long-term memories, whichever shape wrote them. In a one-to-one chat with a shape, it removes that shape's long-term memories of the chat. It erases up to 900 memories at a time; run it again to erase more. Saved notes stay until you delete them.
 
 See [commands and shortcuts](/commands-and-shortcuts) for the full list.
 
@@ -189,7 +197,7 @@ The October 2026 update didn't remove memories. If a memory seems missing, check
 - **Chats:** chats you can invite more people and shapes to.
 - **DMs:** private one-to-one conversations with a shape or another person. The **DMs** filter in the sidebar only shows the ones with people. Chats with just you and shapes are under **Private**. Every DM between two people includes Tod, which answers from the DM's history when one of you asks; see [DMs between people](/chat-and-agent-modes#dms-between-people).
 
-Long-term memory can be used in both DMs and chats. Short-term memory follows the current conversation or Agent thread, as described above. Personal notes come up on their own in private chats with shapes, where there are no other people and no workspace; in other chats that aren't public, they're read only when you ask about yourself.
+Long-term memory can be used in both DMs and chats. Short-term memory follows the current conversation or thread, as described above. Personal notes come up on their own in private chats with shapes, where there are no other people and no workspace; in other chats that aren't public, they're read only when you ask about yourself.
 
 ## Shape memory settings
 
@@ -227,7 +235,7 @@ The **Memory** section also lists the shape's conversation summaries. Use **Save
 
 Long-term memories record what really happened. A shape only remembers buying something when the purchase actually went through; something it offered or considered is remembered as an offer.
 
-These settings control the shape's own long-term memories. Chat history recall and workspace memory in Agent chats work the same for every shape.
+These settings control the shape's own long-term memories. Chat history recall and workspace memory work the same for every shape.
 
 <span id="fixing-a-memory" />
 

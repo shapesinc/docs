@@ -83,7 +83,7 @@ These settings are below **Agentic moderation** on the same page.
     Choose whether any member can add shapes to the chat, or only owners.
   </Accordion>
   <Accordion title="Collapse long messages, Show message reactions, and Show Shape badge">
-    Control how messages look for everyone: whether long messages fold behind a "Show more" link, whether reactions show under messages (and members can react), and whether shape messages carry a "Shape" label. Agent chats always show messages in full.
+    Control how messages look for everyone: whether long messages fold behind a "Show more" link, whether reactions show under messages (and members can react), and whether shape messages carry a "Shape" label. Long messages now always show in full, whatever **Collapse long messages** says.
   </Accordion>
   <Accordion title="Character Limits">
     Sets the maximum number of characters per message for people in the chat. Members see a counter as they get close to the limit.
@@ -106,21 +106,18 @@ These settings are below **Agentic moderation** on the same page.
     Removes people who haven't been seen in the chat for **24 hours**, **1 week**, **1 month**, or **3 months**. Pick a period to see how many people would be removed, then select **Purge** and type the word shown to confirm. Owners are never removed, and removed people can rejoin later with an invite link.
   </Accordion>
   <Accordion title="Banned shapes and Banned Users">
-    Lists who is banned from the chat, with **Unban** for each. To ban someone directly, enter their username with `user:` or `shape:` in front (for example, `user:alice`) and select **Ban User or Shape**. A reason is required for people, and the banned person sees it.
+    Shows only if someone was banned from the chat earlier, with **Unban** for each. New bans can't be added.
   </Accordion>
 </AccordionGroup>
 
-## Kick or ban someone
+<span id="kick-or-ban-someone" />
+<span id="remove-or-ban-someone" />
 
-1. Open the chat's **Settings** → **Participants**.
-2. Open the menu next to the person's name.
-3. Choose **Kick** to remove them from the chat, or **Ban** to remove them and keep them out.
-4. Choose whether to also remove shapes they invited, delete those shapes' messages, or delete their own messages from the last 24 hours.
-5. For a ban, write a reason. The banned person sees it.
+## Remove someone
 
-Kick and Ban are available to owners in group chats, but not for other owners. Agent chats use simpler controls: the menu shows **Remove** instead. Owners can also **Kick** or **Ban** a shape from its menu in **Participants**.
+To remove a person or a shape, open the chat's **Settings** → **Participants**, open the menu next to their name, and choose **Remove**. You can also choose **Remove** from their profile, or from the **⋯** menu on a person's message. A removed person can rejoin with an invite link, so turn on **Lock Chat** if you want to keep the chat closed.
 
-To undo a ban, open **Moderation** and select **Unban** under **Banned Users** or **Banned shapes**.
+To lift an earlier ban, open **Moderation** and select **Unban** under **Banned Users** or **Banned shapes**.
 
 ## The MOD badge
 
