@@ -1,29 +1,19 @@
 ---
-title: "Why do I see fewer engines, and which ones are free?"
-description: "Chats offer a short list of up to 18 engines, some of them free."
-keywords: ["only 17 engines", "only 18 engines", "fewer engines", "engines missing", "where did my engine go", "Agent engines", "Agent engine list", "free engines", "best free engine", "free Agent engine", "Formless v2.1", "MiMo-V2.6-Flash", "Gemma 4 31B", "Chat mode engines", "Agent chats", "400 engines"]
+title: "Which engines are on the Agent list, and which ones are free?"
+description: "The engine picker lists Agent engines first, the ones that score well on a public intelligence benchmark and can use actions, some of them free. Engines that are good at just chatting come below."
+keywords: ["only 17 engines", "only 18 engines", "Gemini 4 Neon in Agent", "new engines in Agent", "fewer engines", "engines missing", "where did my engine go", "Agent engines", "Agent engine list", "free engines", "best free engine", "free Agent engine", "Formless v2.1", "MiMo-V2.6-Flash", "Gemma 4 31B", "Chat mode engines", "400 engines"]
 ---
 
-Every chat offers a short list of engines. Chat mode, which offered the full catalog, has been removed along with Agent and Auto modes; see [How chats work](/chat-and-agent-modes).
+Every chat's engine picker lists the Agent engines first, then engines that are good at just chatting. Chat, Agent and Auto modes are gone; see [How chats work](/chat-and-agent-modes).
 
-The list keeps engines with evidence that they follow loose instructions and finish long, multi-step work at a sensible cost. An engine on the list also has to pass its automatic check for actions, so the count moves between 16 and 18 while an engine waits for that check.
+The Agent list updates on its own. An engine is on it when it scores at least 40% of the best engine on the [Artificial Analysis Intelligence Index](https://artificialanalysis.ai/), a public benchmark, and passes its automatic check for actions. The bar rises as better engines come out, so new engines join without waiting for a manual update, and engines that fall far behind leave. Only the newest version of each engine family is listed; when a newer version passes the same checks, it replaces the older one. **Formless v2.1** is always on the list.
 
 <a id="engines-in-agent-chats" />
 
-## Engines in chats
-
-The list in November 2026:
-
-| Free | Premium |
-|---|---|
-| **Formless v2.1** | Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5, Claude Fable 5.2 |
-| **Formless** | GPT-6 Astra, GPT-6.1 Sol, GPT-6.1 Terra, GPT-6 Luna |
-| **MiMo-V2.6-Flash** | Gemini 4 Argon, Kimi K3.1 Pro, GLM 5.3 |
-| **Ling 3.1 Flash** | DeepSeek V4.1 Flash 1017, MiMo-V2.6-Pro, MiniMax M3.1 Flash |
+In late November 2026 the list has about 30 engines, including Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 and Fable 5.2; GPT-6 Sol, Astra, Terra and Luna; Gemini 4 Neon, Carbon, Hydrogen and Argon; Grok 4.7, Qwen 4 Max, Kimi K3.1 Pro, GLM 5.3, DeepSeek V4.1 Flash, MiniMax M3.1 Flash, MiMo-V2.6-Pro and MiMo-V2.6-Flash, and Ling 3.1 Flash. The engine picker always shows the current list first.
 
 - **Formless v2.1** is the free shapes.inc engine. Replies on it don't use credits, whatever your balance. It has a daily limit across shapes.inc; past it, replies move to another free engine.
-- An engine is free while its provider's price stays under the limit shapes.inc sets, so an engine can move between columns. The **Free** filter in **Choose an AI engine** always shows the current free engines.
-- When a family releases a newer version that passes the same checks, it replaces the older one on the list.
+- An engine is free while its provider's price stays under the limit shapes.inc sets, so an engine can move between free and premium. The **Free** filter in **Choose an AI engine** always shows the current free engines.
 
 ## The best free engine
 
@@ -37,12 +27,12 @@ A shape's own **AI Engine** (under **Settings** → **Your shapes**) isn't used 
 2. The chat owner's pick for new chats, as it was when the chat started.
 3. The shapes.inc default: a premium engine when you have 100 or more credits, **Formless v2.1** below that.
 
-A chat saved on an engine that left the list replies on **MiMo-V2.6-Flash** when the saved engine was free, or on the shapes.inc default when it was premium.
+A chat set to an engine that isn't on the Agent list uses it for scene replies; work replies run on the shapes.inc default.
 
-When you play a scene with a shape, its in-character reply can use the shape's own engine, as Chat mode did.
+When you play a scene with a shape and no engine is picked for the chat, its in-character reply uses the shape's own engine.
 
 ## Use an engine that isn't on the list
 
-Engines outside the list can't be picked for a chat. Switching a chat to Chat mode used to bring back the full catalog; that option is gone with the modes. See [Engines in chats](/aienginecheatsheet#engines-in-agent-chats).
+Engines that are good at just chatting are listed below the Agent engines, and **+** in the picker adds any engine from the full catalog. They answer scene replies; work replies run on the shapes.inc default. See [Engines in chats](/aienginecheatsheet#engines-in-agent-chats).
 
 For anything else, ask Tod in [Help Me](https://talk.shapes.inc/help).
