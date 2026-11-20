@@ -179,11 +179,26 @@ When the task ends, the card shows the result and the shape posts a short summar
 
 ### Open a shape's coding session
 
-In the Mac app 1.24.43 or later, or the Windows app 1.1.7 or later, when a shape uses your own Claude Code or Codex, it works in a session you can open on the computer that runs it. The session is named for the shape and the task, for example "Tod: Release checklist TODO.md".
+When a shape uses your own Claude Code or Codex, it works in a session named for the shape and the task, for example "Tod: Release checklist TODO.md". You can open that session on the computer that runs it.
 
-- **In the shapes.inc app on that computer:** select **Open in Claude** or **Open in Codex** on the task card. The session opens in the Claude app's Code tab or in the Codex app, where you can follow along or take over. A link to a session in a message opens it the same way. If you don't see the button, update the app.
-- **Anywhere else**, such as your phone or another computer, the card shows which of your computers runs the task. Session links in messages show as plain text there, because the session exists only on that computer.
-- **Without the button:** a Codex session is in the Codex app's thread list. For Claude Code, run `claude --resume` in a terminal on that computer and pick the session by its name.
+In the shapes.inc app on that computer (Mac app 1.24.46 or later, Windows app 1.1.9 or later):
+
+- Select **Open in Claude** or **Open in Codex** on the task card.
+- Or select a link to the session in a message.
+- The session opens in the Claude app's Code tab or in the Codex app.
+- From there you can follow along or take over.
+
+If you don't see the button, update the app.
+
+On your phone or another computer, the session exists only on the computer that runs it:
+
+- The card shows which of your computers runs the task.
+- Session links in messages show as plain text.
+
+You can also open the session yourself on that computer:
+
+- **Codex:** find it in the Codex app's thread list.
+- **Claude Code:** run `claude --resume` in a terminal and pick the session by its name.
 
 While a Claude Code session is open in the Claude app or a terminal, the shape doesn't send it follow-ups, so only one of you writes to it at a time. A session you opened from the card counts as open in the Claude app.
 
