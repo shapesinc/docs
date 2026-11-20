@@ -122,9 +122,9 @@ While you finish setup, the dialog shows **Waiting for your computer…**. When 
 
 When a task on your computer needs a permission or an answer, the question appears in the chat for you to approve or answer. Nothing is chosen for you, and the task continues only after you respond. Only you can answer for your computer.
 
-The chat no longer shows a separate **Computer task** card for each task, or a live progress box for Codex or Claude Code. A running task shows **Stop**. Check the shape's reply for the result, such as whether a change was made.
+In the Mac app 1.24.45 or later and the Windows app 1.1.8 or later, Claude Code uses your own permission settings: your allow, ask and deny rules and your permission mode. It asks in the chat when those settings call for it, for example a command that matches one of your ask rules, or a permission mode that asks before it acts. In auto mode, which it uses when you haven't chosen a mode, Claude Code decides most actions itself without asking, and that can include changing files outside the task's folder. When it does ask, the request shows the exact command or file and its folder, with **Approve once** and **Deny**. Approve once and the same session continues. Deny and it carries on without that step; the result lists what was denied.
 
-To stop work in progress, select **Stop** in the message box. It stops the reply and its computer tasks, including local work already running. After a reload, a task that is ending shows **Stopping…**.
+To stop a coding task, select **Stop** in its task card. A task that is ending shows **Stopping…**. While a shape is still replying, a pill above the message box says so, for example **Tod is working**. Open it and select **Stop** on the reply to stop that reply and the computer tasks it started.
 
 ## Ask about the computer itself
 
@@ -158,7 +158,7 @@ The Mac needs **Keyboard and mouse** and **Screen recording** allowed. If either
 
 ## Hand coding work to Codex or Claude Code
 
-Shapes can hand parts of a task to Codex or Claude Code on your computer. Ask for one by name, or let the shape choose. The result comes back in the shape's reply.
+Shapes can hand parts of a task to Codex or Claude Code on your computer. Ask for one by name, or let the shape choose. The result comes back in the task card and the shape's summary.
 
 Ask a shape to remember a preference for this chat, then check that it confirms saving it. You can review saved preferences in [Memory](/memory):
 
@@ -166,9 +166,20 @@ Ask a shape to remember a preference for this chat, then check that it confirms 
 Always use a thread and my local Codex for code changes in this chat.
 ```
 
+### Follow a coding task
+
+When a shape uses your own Claude Code or Codex, it replies as soon as the task starts, with a task card. The card shows:
+
+- the session name
+- what the agent is doing now, and how long it has run
+- any request waiting for your approval
+- **Stop**, for you as the computer's owner
+
+When the task ends, the card shows the result and the shape posts a short summary in the chat. A task that finishes its work shows **Done**, even if you denied a step along the way. Select **Details** to see what was denied.
+
 ### Open a shape's coding session
 
-In the Mac app 1.24.43 or later, or the Windows app 1.1.7 or later, when a shape uses your own Claude Code or Codex, it works in a session you can open. The session is named for the shape and the task, for example "Tod: Release checklist TODO.md". Select **Open in Claude** or **Open in Codex** in the shape's reply to open it in the Claude or Codex app, where you can follow along or take over. You can also resume it in a terminal with `claude --resume` or `codex resume`.
+In the Mac app 1.24.43 or later, or the Windows app 1.1.7 or later, when a shape uses your own Claude Code or Codex, it works in a session you can open on the computer that runs it. The session is named for the shape and the task, for example "Tod: Release checklist TODO.md". A Codex session is in the Codex app's thread list. For Claude Code, run `claude --resume` in a terminal on that computer and pick the session by its name. You can follow along or take over there.
 
 The shape can send follow-ups to the same session, read it, check whether it's still working, and stop it. While a Claude Code session is open in the Claude app or a terminal, the shape doesn't send to it, so only one of you writes to it at a time.
 
