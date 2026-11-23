@@ -1,7 +1,7 @@
 ---
 title: "Connect your computer"
 description: "Install the shapes.inc app for Mac or Windows, connect your computer, and choose which chats and members can have shapes work on it."
-keywords: ["connect your computer", "Computers settings", "Mac app", "Windows app", "desktop app", "shapes.inc for Mac", "shapes.inc for Windows", "Connect this Mac", "Connect this PC", "Use this Mac", "Use for new private chats", "Use my coding instructions", "Local task account", "Scan code", "Agent chats", "Codex", "Claude Code", "Code Projects", "shared computer access", "multiplayer assistant"]
+keywords: ["connect your computer", "Computers settings", "Mac app", "Windows app", "desktop app", "shapes.inc for Mac", "shapes.inc for Windows", "Connect this Mac", "Connect this PC", "Use this Mac", "Use in all my chats", "Use my coding instructions", "Local task account", "Scan code", "Agent chats", "Codex", "Claude Code", "Code Projects", "shared computer access", "multiplayer assistant"]
 sidebarTitle: "Connect your computer"
 ---
 
@@ -72,7 +72,7 @@ After you sign in, setup offers **Connect this Mac**. If you chose **Not now**, 
 2. On **Turn on permissions**, select **Allow** or **Open Settings** for each permission you want to give: **Keyboard and mouse** and **Screen recording**, plus the optional **Protected files** and **App control**. macOS asks once for each, and the list updates on its own as you allow them.
 3. Select **Continue**, then **Start chatting**.
 
-Your new private chats can use this Mac. **Use for new private chats** is on when you connect: new private chats, including private chats in a workspace, use this computer and your last folder. Group chats need separate access: [allow each one](#allow-a-chat-to-use-it). Turn **Use for new private chats** off in **Connect your computer** if you'd rather allow every chat yourself. **Settings** → **Computers** shows the computer as **This Mac**, with each permission marked **Allowed** or with **Open System Settings**.
+All your chats can use this Mac. **Use in all my chats** is on when you connect: every chat you're in uses this computer and your last folder, including chats you already had and group chats. An earlier chat picks the computer up the first time you open it in the Mac or Windows app, or send a message in it. In a group chat it only works for your own requests; to let other members use it, [share it with them](#allow-a-chat-to-use-it). Public chats aren't included, and a chat you disconnected stays disconnected. Turn **Use in all my chats** off in **Connect your computer** if you'd rather allow every chat yourself. **Settings** → **Computers** shows the computer as **This Mac**, with each permission marked **Allowed** or with **Open System Settings**.
 
 This Mac **stays connected when you quit shapes.inc**: closing the window or quitting the app keeps it available to the chats you allowed, as long as it's on and online. When you reopen the app, the connection can pause for a moment while it checks your account.
 
@@ -98,14 +98,15 @@ If your computer shows a setup code or QR code, you can approve it from the iPho
 ## Allow a chat to use it
 
 1. In a chat, open the composer's **+** menu → **Connect your computer**. In the desktop app, you can also select **Use this Mac** beside the message box, or the connect link in a shape's reply when it asks for your computer.
-2. Choose a computer.
-3. Select **Allow in this chat**.
+2. Select **Allow in this chat**.
 
 If you opened the dialog from a shape's reply and the computer is online, the button reads **Allow and continue**. It allows the chat and asks the shape to resume your request, so you don't need to retype it.
 
 Allowing a chat lets your own requests there use your computer. Other members can't use it unless you [share it](#share-your-computer-with-chat-members).
 
-To stop, open **Connect your computer** again and select **Remove chat access**, or **Change computer** to use a different one. **Remove computer** in **Settings** → **Computers** removes it from your account and stops access in every chat.
+To stop, open **Connect your computer** again and select **Remove chat access**. **Remove computer** in **Settings** → **Computers** removes it from your account and stops access in every chat.
+
+An account has one computer. Connecting a new Mac or PC replaces the one you had: the earlier computer is removed and your chats use the new one. Chats you disconnected stay disconnected.
 
 ### When a shape asks for your computer
 
@@ -122,9 +123,9 @@ While you finish setup, the dialog shows **Waiting for your computer…**. When 
 
 When a task on your computer needs a permission or an answer, the question appears in the chat for you to approve or answer. Nothing is chosen for you, and the task continues only after you respond. Only you can answer for your computer.
 
-The chat no longer shows a separate **Computer task** card for each task, or a live progress box for Codex or Claude Code. A running task shows **Stop**. Check the shape's reply for the result, such as whether a change was made.
+In the Mac app 1.24.45 or later and the Windows app 1.1.8 or later, Claude Code uses your own permission settings: your allow, ask and deny rules and your permission mode. It asks in the chat when those settings call for it, for example a command that matches one of your ask rules, or a permission mode that asks before it acts. In auto mode, which it uses when you haven't chosen a mode, Claude Code decides most actions itself without asking, and that can include changing files outside the task's folder. When it does ask, the request shows the exact command or file and its folder, with **Approve once** and **Deny**. Approve once and the same session continues. Deny and it carries on without that step; the result lists what was denied.
 
-To stop work in progress, select **Stop** in the message box. It stops the reply and its computer tasks, including local work already running. After a reload, a task that is ending shows **Stopping…**.
+To stop a coding task, select **Stop** in its task card. A task that is ending shows **Stopping…**. While a shape is still replying, a pill above the message box says so, for example **Tod is working**. Open it and select **Stop** on the reply to stop that reply and the computer tasks it started.
 
 ## Ask about the computer itself
 
@@ -158,7 +159,21 @@ The Mac needs **Keyboard and mouse** and **Screen recording** allowed. If either
 
 ## Hand coding work to Codex or Claude Code
 
-Shapes can hand parts of a task to Codex or Claude Code on your computer. Ask for one by name, or let the shape choose. The result comes back in the shape's reply.
+Shapes can hand parts of a task to Codex or Claude Code on your computer. Ask for one by name, or let the shape choose. The result comes back in the task card and the shape's summary.
+
+The shape starts the task as soon as you ask and gives your agent a brief it can act on by itself: what you asked for, with its meaning and details unchanged, plus what the chat knows that your agent can't see. Small talk around the request is left out. It doesn't read your files first, plan the work for it, or add limits you didn't ask for. Your agent runs the way it runs for you:
+
+- **Your settings:** your Claude Code or Codex sign-in, settings and permission mode. Claude Code asks in the chat only when those settings call for it.
+- **Your folders:** it edits where the task needs, including other folders and repositories on that computer.
+- **Your images:** images you attach to the request go to the agent with it.
+
+To keep it from changing anything, say so in the request:
+
+```text wrap
+Have my Claude Code find why the page goes blank when I scroll on my phone. Don't change anything.
+```
+
+With Mac app 1.24.46 or Windows app 1.1.9 and earlier, your agent edits only inside a Git worktree, so the shape creates one first, and it gets links to your images instead of the images.
 
 Ask a shape to remember a preference for this chat, then check that it confirms saving it. You can review saved preferences in [Memory](/memory):
 
@@ -166,11 +181,43 @@ Ask a shape to remember a preference for this chat, then check that it confirms 
 Always use a thread and my local Codex for code changes in this chat.
 ```
 
+### Follow a coding task
+
+When a shape uses your own Claude Code or Codex, it replies as soon as the task starts, with a task card. The card shows:
+
+- the session name, and for you, **Open in Claude** or **Open in Codex** in the shapes.inc app on the computer that runs it
+- what the agent is doing now, and how long it has run
+- any request waiting for your approval
+- **Stop**, for you as the computer's owner
+
+When the task ends, the card shows the result and the shape posts a short summary in the chat. A task that finishes its work shows **Done**, even if you denied a step along the way. Select **Details** to see what was denied.
+
 ### Open a shape's coding session
 
-In the Mac app 1.24.43 or later, when a shape uses your own Claude Code or Codex, it works in a session you can open. The session is named for the shape and the task, for example "Tod: Release checklist TODO.md". Select **Open in Claude** or **Open in Codex** in the shape's reply to open it in the Claude or Codex app, where you can follow along or take over. You can also resume it in a terminal with `claude --resume` or `codex resume`.
+When a shape uses your own Claude Code or Codex, it works in a session named for the shape and the task, for example "Tod: Release checklist TODO.md". You can open that session on the computer that runs it.
 
-The shape can send follow-ups to the same session, read it, check whether it's still working, and stop it. While a Claude Code session is open in the Claude app or a terminal, the shape doesn't send to it, so only one of you writes to it at a time.
+In the shapes.inc app on that computer (Mac app 1.24.46 or later, Windows app 1.1.9 or later):
+
+- Select **Open in Claude** or **Open in Codex** on the task card.
+- Or select a link to the session in a message.
+- The session opens in the Claude app's Code tab or in the Codex app.
+- From there you can follow along or take over.
+
+If you don't see the button, update the app.
+
+On your phone or another computer, the session exists only on the computer that runs it:
+
+- The card shows that your computer runs the task.
+- Session links in messages show as plain text.
+
+You can also open the session yourself on that computer:
+
+- **Codex:** find it in the Codex app's thread list.
+- **Claude Code:** run `claude --resume` in a terminal and pick the session by its name.
+
+While a Claude Code session is open in the Claude app or a terminal, the shape doesn't send it follow-ups, so only one of you writes to it at a time. A session you opened from the card counts as open in the Claude app.
+
+The shape can send follow-ups to the same session, read it, check whether it's still working, and stop it.
 
 If Codex is set to an engine your ChatGPT account doesn't offer, the task uses your account's default engine and the shape's reply says so.
 
@@ -178,7 +225,7 @@ If Codex is set to an engine your ChatGPT account doesn't offer, the task uses y
 
 In the desktop app, select **Use this Mac** (or **Use this PC**) beside the message box in a chat. Then:
 
-- **Folder:** select **Choose** or **Change** to pick where local tasks work. New private chats reuse your last folder.
+- **Folder:** select **Choose** or **Change** to pick where local tasks work. Your chats reuse your last folder unless you picked another one there.
 - **Local task account:** choose **Use Claude account**, **Use Codex account**, or **Use shapes.inc credits**. Your own Claude or Codex account uses the sign-in already set up in Claude Code or Codex, not shapes.inc credits.
 
 If you haven't chosen, a coding task uses your own signed-in Claude Code first, then Codex, on your own accounts with no shapes.inc credits. If neither is ready, it uses the built-in agent on shapes.inc credits. A **Use shapes.inc credits** choice saved before November 10 now counts as not chosen, so choose it again if you want credits to pay.
