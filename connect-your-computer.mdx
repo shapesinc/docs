@@ -160,6 +160,20 @@ The Mac needs **Keyboard and mouse** and **Screen recording** allowed. If either
 
 Shapes can hand parts of a task to Codex or Claude Code on your computer. Ask for one by name, or let the shape choose. The result comes back in the task card and the shape's summary.
 
+The shape starts the task as soon as you ask and gives your agent your request in your own words. It doesn't read your files first, plan the work for it, or add limits you didn't ask for. Your agent runs the way it runs for you:
+
+- **Your settings:** your Claude Code or Codex sign-in, settings and permission mode. Claude Code asks in the chat only when those settings call for it.
+- **Your folders:** it edits where the task needs, including other folders and repositories on that computer.
+- **Your images:** images you attach to the request go to the agent with it.
+
+To keep it from changing anything, say so in the request:
+
+```text wrap
+Have my Claude Code find why the page goes blank when I scroll on my phone. Don't change anything.
+```
+
+With Mac app 1.24.46 or Windows app 1.1.9 and earlier, your agent edits only inside a Git worktree, so the shape creates one first, and it gets links to your images instead of the images.
+
 Ask a shape to remember a preference for this chat, then check that it confirms saving it. You can review saved preferences in [Memory](/memory):
 
 ```text wrap
