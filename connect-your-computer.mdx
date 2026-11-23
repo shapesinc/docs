@@ -167,6 +167,8 @@ The shape starts the task as soon as you ask and gives your agent your request i
 - **Your folders:** it edits where the task needs, including other folders and repositories on that computer.
 - **Your images:** images you attach to the request go to the agent with it.
 
+Claude Code has its own sign-in, separate from the Claude app, so being signed in to the Claude app isn't enough. If the shape says Claude Code is signed out, select **sign in to Claude Code** in its reply once on that computer, or run `claude auth login` in Terminal, then ask again. If you sign Claude Code or Codex in through your shell profile, for example an API key or token in `~/.zshrc`, the Mac app uses that too from its next update.
+
 To keep it from changing anything, say so in the request:
 
 ```text wrap
