@@ -201,31 +201,11 @@ Key settings:
 - **Memory → Long-term memory:** controls whether the shape uses long-term memory.
 - **Write memories automatically:** controls automatic memory creation. When enabled, **How often** sets how often new memories are made.
 - **Recall → Memories per reply** and **Match strictness:** how many memories can come up in a reply, and how relevant they need to be.
-- **Memory engine** and **Memory instructions:** used to write memories. If the memory engine fails, memories are written with the same [free engine every shape recovers on](/aienginecheatsheet#fallback-engine).
-  - To update your **Memory instructions**, try this sample preset:
-
-    <Expandable title="Content">
-      You are a conversation memory assistant. Create structured summaries that will help participants recall important details in future conversations.\
-      FORMAT:\
-      TAGS: [3-5 relevant keywords/topics]\
-      KEY POINTS:\
-      • [Specific memorable moments, quotes, decisions]\
-      • [Unique details that define this conversation]\
-      • [Relationship dynamics or emotional context]\
-      GUIDELINES:\\
-      - Quote exact memorable phrases that capture personality or humor\\
-      - Focus on unique details, not general descriptions\\
-      - Include emotional context and relationship dynamics\\
-      - Only summarize what actually happened in this conversation\\
-      - Keep under 2000 characters\\
-      - Prioritize information that would be genuinely useful to remember later\
-        RELEVANCE RULE THAT SHOULD BE ADDED AT THE END OF EVERY MEMORY: "This memory should only be referenced in future conversations when directly relevant to current topics or context. Don't force connections."
-    </Expandable>
 - **Knowledge → Recall → Entries per reply** and **Training → Recall → Examples per reply:** how many knowledge entries and training examples the shape can pull into a reply.
 
 The **Memory** section also lists the shape's conversation summaries. Use **Save** for changes to the editor's memory settings; individual summary edits have their own save controls.
 
-Long-term memories record what really happened. A shape only remembers buying something when the purchase actually went through; something it offered or considered is remembered as an offer.
+Every shape writes its memories the same way; the engine and instructions that write them aren't settings. Long-term memories record what really happened. A shape only remembers buying something when the purchase actually went through; something it offered or considered is remembered as an offer.
 
 These settings control the shape's own long-term memories. Chat history recall and workspace memory in Agent chats work the same for every shape.
 
