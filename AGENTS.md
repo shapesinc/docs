@@ -6,7 +6,8 @@
 - Call each individual a **shape** (plural **shapes**), never an “AI character” or a hyphenated variant.
 - Never use “roleplay,” “role-play,” “role play,” “RP,” or translated equivalents in authored public labels, explanations, or metadata. Preserve features, policies, technical identifiers, literal API values, and existing URLs or compatibility anchors; a copy correction does not authorize changing behavior.
 - Change AI-facing instructions only with explicit user authorization. The approved October 4 terminology cleanup includes the documented preset and direct-instruction examples: use narrated actions and scenes while preserving sentence counts, response constraints, placeholders, and behavior. Keep unrelated system/classifier instructions and saved user content unchanged. Display built-in response-style names as **Short creative**, **Long creative**, and **Skilled creative** where applicable; retain **Creative** as the preset group name.
-- Never write "Chat chats" or "a Chat chat". Say **Chat mode** ("in Chat mode", "Chat mode keeps the full list") and **Agent chats**.
+- Chats have no **Chat**, **Agent** or **Auto** modes (removed November 2026). Name the old modes only to say they are gone. When a shape answers in its own voice without actions, call it **just chatting**: "when you're just chatting with a shape, it replies in its own voice". "Just" is fine in that phrase.
+- Never use scene or character-leaning wording for chatting, such as "play a scene", "scene replies", "in character" or narrator examples (Anushk, November 20, 2026). Keep it to just chatting.
 - Use **chat** or **group chat** for the product conversation. Do not infer public terminology from source variable names, component names, or database fields.
 - Verify navigation labels in the deployed product on talk.shapes.inc. Preserve the labels readers see, such as **New chat**, **Quick chat**, **Shapes**, **People**, **Instructions**, and **AI replies**. If a control cannot be verified, describe the task without inventing a label.
 - Check screenshots as well as prose and metadata. Retire images that show obsolete UI labels or navigation.
@@ -27,7 +28,7 @@
 
 - Treat these docs as the shared source for what people and agents can do, how to use each feature, and its limits. Use the current implementation and visible product labels, not old announcements, as evidence.
 - Each feature guide should explain its purpose, setup/use, relevant access and usage limits, completion status, and recovery when something fails. Keep one canonical explanation and link it from overviews instead of copying limits into many pages.
-- Distinguish shapes in Agent chats, external agent accounts, hosted coding agents, and agents on a connected personal computer. Their capabilities, permissions, and funding are not interchangeable.
+- Distinguish shapes in chats, external agent accounts, hosted coding agents, and agents on a connected personal computer. Their capabilities, permissions, and funding are not interchangeable.
 - Maintain `features.mdx`, `docs-for-agents.mdx`, navigation, metadata, and Markdown exports when adding or retiring a feature. Verify old commented examples are absent from both human-rendered pages and agent-readable output.
 - Publication and source merges are different from verified deployment. Record tested source revisions and remaining validation gaps in the PR or architecture handoff; do not present unavailable or unverified capabilities as established behavior.
 
@@ -57,7 +58,7 @@ shapes.inc docs read like the docs of a frontier agent product: Claude Code, Cod
 - **Failure is the next state, not an apology.** Say what happened, what was and wasn't done, and the next move. "The payment didn't go through. Nothing was charged. Pick another way to pay on the card."
 - **Flat and certain for steps; precise for limits.** No "might", "should be able to", "feel free". Use "can" for a capability and "may" only for permission.
 - **shapes.inc is a group chat app.** Write "shapes.inc is a group chat app", never "shapes.inc is a group chat". A chat is one conversation inside the app.
-- **Name each thing once and keep the name:** shape, chat, Agent chat, Chat mode, task, routine, watch, connected app, engine, credits. Bold the exact UI label.
+- **Name each thing once and keep the name:** shape, chat, task, routine, watch, connected app, engine, credits. Bold the exact UI label.
 
 ## Words
 
@@ -84,7 +85,7 @@ Benchmarked in November 2026 against the Claude Help Center and claude.com/docs,
 
 ## Frontmatter
 
-- **`title`** is sentence case, under about 50 characters, with no site name, tagline or dash suffix. How-to pages take a verb-first title ("Start a chat", "Connect your computer", "Have a shape make a phone call"). Concept and reference pages take a noun title ("Memory", "Credits", "Chat, Agent, and Auto"). FAQ pages keep the question the reader would type.
+- **`title`** is sentence case, under about 50 characters, with no site name, tagline or dash suffix. How-to pages take a verb-first title ("Start a chat", "Connect your computer", "Have a shape make a phone call"). Concept and reference pages take a noun title ("Memory", "Credits", "Engines"). FAQ pages keep the question the reader would type.
 - **`description`** is one sentence, 160 characters or fewer, that says what the page helps you do. It shows under the title and is the page's entry in `llms.txt`, so it never repeats the title and never lists every section.
 - **`sidebarTitle`** is two to four words, sentence case.
 - Capitalize only the first word, proper nouns (shapes.inc, Tod, Gmail, Slack), and exact UI labels in bold. Write "a shape" and "shapes" in lowercase everywhere, including inside titles and headings. A sentence or heading that starts with the word still takes a capital ("Shapes are the participants"). **Shape Credits** stays capitalized because it is the product's name for the balance.
@@ -100,7 +101,7 @@ Benchmarked in November 2026 against the Claude Help Center and claude.com/docs,
 Use the sections a page needs, in this order, with these names. Don't add an empty section to fill the template.
 
 1. **Lede.** One or two sentences under the title: what the feature does, with the shape as the subject. No heading above it.
-2. **Availability.** One line when access differs by plan, mode or platform: "Available in Agent chats on every plan. Phone calls spend credits."
+2. **Availability.** One line when access differs by plan, mode or platform: "Available on every plan. Phone calls spend credits."
 3. **Before you begin.** What you need first, as a short list. Skip it when nothing is needed.
 4. **Task sections.** One `##` per task, numbered steps, one action each, ending with what you see when it worked.
 5. **Limits.** Exact numbers, units, reset times and who pays, in one place. Other pages link here instead of repeating them.

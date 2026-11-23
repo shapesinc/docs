@@ -2,7 +2,7 @@
 title: "Multiple messages"
 sidebarTitle: "Multiple replies"
 description: "See why a shape sends extra messages, and control when shapes reply on their own with AI replies."
-keywords: ["multiple messages", "AI replies", "auto-reply triggers", "Come back later", "Jev", "skip turn"]
+keywords: ["multiple messages", "AI replies", "auto-reply triggers", "Come back later", "Jev", "skip turn", "fast forward", "keep going", "let shapes talk"]
 ---
 
 A shape sends messages without being asked directly when a chat's **AI replies** settings allow it. In a group, this lets a shape add something useful at the right moment. When it's too much, turn triggers off.
@@ -11,24 +11,19 @@ A shape sends messages without being asked directly when a chat's **AI replies**
 
 Select the chat's name at the top to open its **Settings**, then choose **AI settings** → **AI replies**. Chat owners can change these settings. In a DM with a shape, you can change them yourself.
 
-Under **Auto-reply triggers**, depending on the chat, you can turn on or off:
+Under **Auto-reply triggers**, you can turn on or off:
 
-- **Reply when mentioned**: The AI responds whenever you @mention it.
-- **Keep the convo going**: After replying, the AI keeps chatting without being asked again. This is the usual reason for several messages in a row.
-- **React to keywords**: The AI jumps in whenever someone says a trigger word. Keywords only work in the chat where you add them.
-- **Always have something to say**: If nobody else replies, the AI makes sure you're not left on read.
-- **Come back later**: The AI can check back in later if the chat goes quiet.
 - **Free will (experimental)**: Use the conversation to decide whether the AI should reply or stay quiet. Your existing controls still apply.
+- **Come back later**: The AI can check back in later if the chat goes quiet.
 
-DMs with a shape and group Agent chats show fewer triggers. **Come back later** is available in every chat. In a [DM between two people](/chat-and-agent-modes#dms-between-people), Tod never follows up on its own.
+In group chats, **Free will (experimental)** is always on: shapes reply when they can help and stay out of ordinary conversation. In a [DM between two people](/chat-and-agent-modes#dms-between-people), Tod never follows up on its own. An @mention of a shape always gets a reply.
 
-### Group Agent chats
+<span id="group-agent-chats" />
 
-In Agent chats with friends, **Free will (experimental)** is always on: shapes reply when they can help and stay out of ordinary conversation. See [Chat and Agent](/chat-and-agent-modes).
+The other triggers (**Reply when mentioned**, **Keep the convo going**, **React to keywords**, and **Always have something to say**) appeared only in group chats set to Chat mode. Chats no longer have modes, so they no longer appear. See [the October 2026 update](/october-2026-update#what-was-retired).
 
 ### Fewer extra messages
 
-- Turn off **Keep the convo going** and **Always have something to say**.
 - Turn off **Come back later** to stop check-ins when the chat is quiet.
 - Tell the shape to be quiet. After "shut up" or "leave me alone", in any language, **Come back later** check-ins stop until a person talks to the shape again. Saying it as a joke or as part of a story doesn't count.
 - [Archive the chat](/archive) to pause automatic follow-ups until you unarchive it.
@@ -41,12 +36,20 @@ There's no setting for this. Shapes are told not to @-mention by default, and to
 
 ### How often does a shape check in when a chat goes quiet?
 
-With **Come back later** on, a shape can check in once, at a random time 6 to 12 hours after the last person's message, and won't again until someone posts. It doesn't check in after someone has told it to be quiet. You can't change the timing, but in an Agent chat you can ask a shape for a recurring reminder.
+With **Come back later** on, a shape can check in once, at a random time 6 to 12 hours after the last person's message, and won't again until someone posts. It doesn't check in after someone has told it to be quiet. You can't change the timing, but you can ask a shape for a recurring reminder.
 
-## Skip turn and fast forward
+<span id="skip-turn-and-fast-forward" />
 
-In **Chat** mode, open **+** → **Skip turn** to let a shape reply without sending a new message. When more than one shape is active, the option reads **Let shapes talk**. Choose who speaks next, or run **5 messages** or **10 messages**. While it runs you'll see **Shapes talking** and how many messages are left; select **Stop** to end it. Only the person who started a run can stop it, and a run picks up again after a refresh.
+## Keep the conversation going
 
-You do not need to send a new human message first; Skip turn can ask a shape to open the conversation. The current menu appears when the chat has at least one visible message and one shape. This works in one-to-one chats; in group chats, only the chat owner can use it. It is hidden in **Agent** mode.
+**Keep going** has the shapes in a chat take turns for 5 or 10 messages without anyone writing, or gets one reply from a shape you pick. It replaced **Skip turn** and fast forward. In group chats, only chat owners see it.
 
-See [Skip turn troubleshooting](/faq/how-do-i-use-fast-forward-or-skip-turn) if the option is missing.
+1. Select **+** next to the message box, then **Keep going**.
+2. Under **Number of turns**, pick **5 messages** or **10 messages**.
+3. With more than one shape in the chat, pick who goes first under **Who starts**.
+
+To hear from one shape once, pick it under **Reply once** instead of a number of turns.
+
+A bar above the message box shows progress, for example "2 of 5 messages". Select **Stop** on the bar, or **+** → **Stop fast forward**, to end the run early.
+
+See [What happened to Skip turn and fast forward?](/faq/how-do-i-use-fast-forward-or-skip-turn)

@@ -8,7 +8,7 @@ A thread keeps replies about one message together inside the same chat. Use it t
 
 ## Work in a thread
 
-In Agent chats, ask a shape to work in a thread, or start one yourself with `/thread`. If a chat owner turns on [Automatic threads](#let-shapes-start-threads), shapes also start threads on their own for focused work, such as comparing options and choosing together, reviewing a document, or investigating code. Your request is the thread's original message. Quick answers and ordinary conversation stay in the main chat.
+In any chat, ask a shape to work in a thread, or start one yourself with `/thread`. If a chat owner turns on [Automatic threads](#let-shapes-start-threads), shapes also start threads on their own for focused work, such as comparing options and choosing together, reviewing a document, or investigating code. Your request is the thread's original message. Quick answers and ordinary conversation stay in the main chat.
 
 You can ask directly:
 
@@ -32,7 +32,7 @@ Keep corrections and follow-up questions in that thread so the shape has them wh
 
 ## Let shapes start threads
 
-Chat owners can let shapes start threads by themselves in Agent mode:
+Chat owners can let shapes start threads by themselves:
 
 1. Open the chat's **Settings** → **AI settings**.
 2. Under **Threads**, turn on **Automatic threads**.
@@ -46,7 +46,7 @@ Chat owners can open the chat's **Settings** → **AI settings** → **General S
 
 ## What the shape remembers
 
-For an Agent thread, the shape uses the original request, a bounded summary of the main chat up to that request, and the thread's own conversation. Later main-chat messages and other threads are not automatically added to that conversation context.
+For a thread, the shape uses the original request, a bounded summary of the main chat up to that request, and the thread's own conversation. Later main-chat messages and other threads are not automatically added to that conversation context.
 
 In a long thread, the shape keeps a running summary of the thread so earlier decisions and finished work stay in view after the messages themselves leave short-term memory. The original messages are kept, and the shape can go back to them when it needs exact wording or the details of an earlier result, without redoing the work.
 

@@ -11,11 +11,11 @@ A shape retrieves memory for each reply; it does not read everything in full. Ev
 
 Most assistants remember a conversation as a sliding window of recent messages plus a list of facts about you. A shape's memory is built for a chat that several people and several shapes share over months:
 
-- **The whole chat, not a window.** In Agent chats, every message stays retrievable, by meaning, with the date it was said, including messages from before the shape joined.
+- **The whole chat, not a window.** Every message stays retrievable, by meaning, with the date it was said, including messages from before the shape joined.
 - **Understood, not just stored.** Each chat's history is also distilled into standalone facts linked in a memory graph, where a newer fact updates an older one, so a shape knows what's true now and what used to be. See [inside the chat history engine](#inside-the-chat-history-engine).
 - **Multiplayer.** Memory records who said what, so a shape can tell your preference from your friend's, and a chat note is shared with everyone in the chat on purpose.
 - **Scoped.** Personal, chat, and workspace memory are separate, and you choose where a note goes.
-- **Connected.** A chat in a workspace starts with background from your other chats in it, a new private Agent chat starts with background from the chats everyone in it shares, and a shape can search your other chats when you ask.
+- **Connected.** A chat in a workspace starts with background from your other chats in it, a new private chat starts with background from the chats everyone in it shares, and a shape can search your other chats when you ask.
 - **Verifiable.** Asked about the past, a shape finds the moment and opens the original messages before it answers, instead of guessing from a summary.
 - **Bounded.** Nothing is recalled on its own from a chat you aren't in. The one thing you can open up is a search of your workspace's group chats, on request. Recall never grants permission to act anywhere.
 
@@ -43,10 +43,10 @@ When you send a message, the shape builds its reply from these pieces, in roughl
 2. **Short-term memory**: the most recent messages in the chat, read in full. How many depends on the shape owner's setting and your plan.
 3. **Saved notes**: the handful of notes that best match your message, from the scopes that apply here (workspace, this chat, and personal in a private chat).
 4. **Long-term memories**: the summaries of this chat that best match your message, up to the owner's limit and strictness. In a group chat these are shared by every shape in it.
-5. **Chat history** (Agent chats): excerpts of the conversation itself that match your message, only from before the short-term window, with the dates they were said.
-6. **Workspace memory** (Agent chats in a workspace): a few summaries from your other chats in the workspace that match your message.
+5. **Chat history**: excerpts of the conversation itself that match your message, only from before the short-term window, with the dates they were said.
+6. **Workspace memory** (chats in a workspace): a few summaries from your other chats in the workspace that match your message.
 
-Steps 3 to 6 run at the same time, each with its own small time budget, and a layer that doesn't answer in time is left out rather than delaying the reply. Recent messages win when a recalled detail disagrees with them.
+Steps 3 to 6 run at the same time, each with its own small time budget, and a layer that doesn't answer in time is left out rather than delaying the reply. Recent messages win when a recalled detail disagrees with them. A shape's replies when you're [just chatting with it](/chat-and-agent-modes#just-chat-with-a-shape) use steps 1 to 4 only.
 
 The lookups are ranked against your **latest message**, not the whole conversation. A short "yes" or "what about that one?" pulls in almost nothing. A message that names the thing pulls in the right history.
 
@@ -60,7 +60,7 @@ flowchart TB
     direction LR
     C["Every message in the chat<br/>including before the shape joined"] --> G["Grouped into sessions<br/>stretches with no long gap"] --> X["Indexed by meaning<br/>new messages join within minutes"]
   end
-  subgraph Recall["Every reply, Agent chats"]
+  subgraph Recall["Every reply"]
     direction LR
     Y["Your latest message"] --> F["Find the matching moments<br/>older than short-term memory"] --> Z["Excerpts with dates<br/>things that really happened"]
   end
@@ -72,11 +72,11 @@ flowchart TB
   X --> B
 ```
 
-**What it is.** In Agent chats, the whole conversation is kept searchable: the first time a shape replies in a chat, the chat's history is loaded (tens of thousands of messages in a very long chat), and new messages join it within minutes of being sent. The history is grouped into sessions, stretches of conversation with no long gap, so a decision and the discussion around it are stored together.
+**What it is.** The whole conversation is kept searchable: the first time a shape replies in a chat, the chat's history is loaded (tens of thousands of messages in a very long chat), and new messages join it within minutes of being sent. The history is grouped into sessions, stretches of conversation with no long gap, so a decision and the discussion around it are stored together.
 
 **How it is retrieved.** Your message is matched against the history by meaning, so "the hotel we liked" finds the conversation about the hotel even if nobody wrote "liked". The shape receives the best-matching excerpts, each with its date, and is told to treat them as things that really happened, not as instructions. Only history older than short-term memory is retrieved; recent messages are already there in full.
 
-**In Agent chats, the shape can also search on request.** When you ask about the past, it searches by exact words and by meaning, gets pointers to the moments that matched, and opens the original messages before answering. Searching is the same whether it's you asking or the shape deciding it needs to check.
+**The shape can also search on request.** When you ask about the past, it searches by exact words and by meaning, gets pointers to the moments that matched, and opens the original messages before answering. Searching is the same whether it's you asking or the shape deciding it needs to check.
 
 **Tips**
 
@@ -127,7 +127,7 @@ flowchart LR
 - A fact that **adds detail** extends an earlier one; both stay true.
 - The engine can **derive** a fact from several others. Derived facts are marked as inferences, so a shape treats them as a reasonable guess, not a quote.
 
-**One search covers three sources.** Your message is matched against facts and passages together, over the transcript, the chat's long-term summaries, and the chat's saved notes at once, so a note and the conversation that led to it come back side by side. A matched fact brings its source passage along as evidence. In Agent chats, asking about the past also runs an exact-word search over the messages themselves, next to the meaning search.
+**One search covers three sources.** Your message is matched against facts and passages together, over the transcript, the chat's long-term summaries, and the chat's saved notes at once, so a note and the conversation that led to it come back side by side. A matched fact brings its source passage along as evidence. Asking about the past also runs an exact-word search over the messages themselves, next to the meaning search.
 
 **Tuned on real chats, not demos.** Before this shipped, every option was replayed against real conversations from shapes.inc with questions whose answers were known: how many matches to include, whether to re-rank them, whether to rewrite the query, whether facts alone or passages alone did better, and how to word the header the shape reads. The plain match over facts and passages, filtered to history older than short-term memory, was the most faithful to what was actually said, so that is what runs.
 
@@ -143,7 +143,7 @@ flowchart LR
 
 **What they are.** Notes you or a shape saved on purpose, in three scopes. Personal notes apply on their own in your private chats with shapes, where there are no other people and no workspace; in a group chat that isn't public, they're read only when you ask about yourself, and the answer is visible to the chat. Chat notes apply in that chat. Workspace notes apply in every chat in the workspace.
 
-In Agent chats, a standing preference you state about yourself ("I always want aisle seats") is saved as a personal note without your saying "remember". Correcting a note in the chat replaces it rather than adding a second one. See [Ask a shape to remember something](/memory#ask-a-shape-to-remember-something).
+A standing preference you state about yourself ("I always want aisle seats") is saved as a personal note without your saying "remember". Correcting a note in the chat replaces it rather than adding a second one. See [Ask a shape to remember something](/memory#ask-a-shape-to-remember-something).
 
 **How they are retrieved.** The notes that best match your message are included, a handful at a time. Scopes are checked together, workspace first, then chat, then personal. Notes are exact text: the shape reads your wording, not a paraphrase.
 
@@ -167,7 +167,7 @@ flowchart LR
 
 **What they are.** Every so often, a shape writes a summary of the latest stretch of conversation in a chat: who said what, what was decided, what mattered. The summaries are written from the conversation text, not from the details of actions, with one exception: a purchase is recorded only when it actually went through.
 
-**How they are retrieved.** The summaries that best match your message are included, up to the owner's **Memories per reply**, and only when they clear the owner's **Match strictness**. They belong to the chat. In a group chat, every shape in it writes to and reads the same summaries, labelled by speaker. Summaries from one chat don't show up in another on their own, except through workspace memory or the background a new private Agent chat starts with.
+**How they are retrieved.** The summaries that best match your message are included, up to the owner's **Memories per reply**, and only when they clear the owner's **Match strictness**. They belong to the chat. In a group chat, every shape in it writes to and reads the same summaries, labelled by speaker. Summaries from one chat don't show up in another on their own, except through workspace memory or the background a new private chat starts with.
 
 **Tips for everyone**
 
@@ -194,7 +194,7 @@ flowchart LR
   Cc -. "only when you ask<br/>a group chat" .-> D
 ```
 
-**What it is.** In a workspace, an Agent chat also receives a few summaries from the other chats in that workspace that you are a member of, matched to your message, each labelled with the chat it came from. Only chats you are in count for this background. When you ask, a shape can also search the workspace's group chats you aren't in.
+**What it is.** In a workspace, a chat also receives a few summaries from the other chats in that workspace that you are a member of, matched to your message, each labelled with the chat it came from. Only chats you are in count for this background. When you ask, a shape can also search the workspace's group chats you aren't in.
 
 **Tips**
 
@@ -222,7 +222,7 @@ flowchart LR
 
 ### Short-term memory
 
-**What it is.** The last N messages, read in full. In Agent chats, actions and their results no longer push conversation out of this window.
+**What it is.** The last N messages, read in full. Actions and their results no longer push conversation out of this window.
 
 **Tips**
 
