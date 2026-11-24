@@ -287,3 +287,10 @@ The notification guide explains reenrollment on return, reusing permission for
 the same web address, and no replay of missed alerts. The weekly release links
 to this recovery section. Native candidates remain in private testing; the
 release entry describes browser availability only.
+
+## Troubleshooting the engine on a specific reply (November 24, 2026)
+
+`aienginecheatsheet.mdx` directs support reports to the affected message's
+Generation details. Current shape defaults and chat settings are not receipts
+for earlier replies. The guide asks for the message link and observed problem,
+without promising that intended behavior proves a user's chat is working.
