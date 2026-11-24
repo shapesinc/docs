@@ -280,3 +280,10 @@ browser notification correction. Existing URLs and compatibility anchors remain.
 No runtime setting, model prompt, new inference call or support-channel post is
 added. Incremental recurring provider spend is $0/day. Source validation and local
 browser preview do not establish publication or a refreshed support search index.
+
+## Notification reconnection (November 23, 2026)
+
+The notification guide explains reenrollment on return, reusing permission for
+the same web address, and no replay of missed alerts. The weekly release links
+to this recovery section. Native candidates remain in private testing; the
+release entry describes browser availability only.
