@@ -264,3 +264,11 @@ URLs without requiring notification setup first. Existing subscriptions and thei
 permissions stay at the old origin. Native and installed web apps retain their
 connections. Publish this wording only after the corresponding website behavior
 is released and verified. No provider delivery guarantee is added.
+
+
+## Notification reconnection (November 23, 2026)
+
+The notification guide explains reenrollment on return, reusing permission for
+the same web address, and no replay of missed alerts. The weekly release links
+to this recovery section. Native candidates remain in private testing; the
+release entry describes browser availability only.
