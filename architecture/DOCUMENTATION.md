@@ -265,6 +265,21 @@ permissions stay at the old origin. Native and installed web apps retain their
 connections. Publish this wording only after the corresponding website behavior
 is released and verified. No provider delivery guarantee is added.
 
+## Manual mode selector explanation (November 24, 2026)
+
+The switching FAQ and How chats work distinguish the removed manual selector
+from the capabilities that remain. A shape can keep chatting in its own voice
+and use search, code or connected apps for requests, subject to existing access,
+approval, engine and credit rules. Conversation context guides replies; each
+message is not described as an isolated reset. Related FAQs and the October
+transition page point at that explanation and date the selector removal to November.
+
+The November 18 release copy is synchronized from the in-app source using the
+existing sync script. This sync also includes the source's already-published
+browser notification correction. Existing URLs and compatibility anchors remain.
+No runtime setting, model prompt, new inference call or support-channel post is
+added. Incremental recurring provider spend is $0/day. Source validation and local
+browser preview do not establish publication or a refreshed support search index.
 
 ## Notification reconnection (November 23, 2026)
 
