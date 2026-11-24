@@ -31,7 +31,7 @@ Each release ends with the guides that explain it. For what moved or was retired
 
 ### Changed
 
-- Chats no longer have Chat, Agent, or Auto modes, and there is nothing to pick: the mode choices are gone from Chat Settings and from **New chats** under Settings → General. Every chat works like an Agent chat, with web search, code execution, and other actions. Replies use the same engines and credits Agent chats did. When you're just chatting with a Shape, it replies in its own voice for that message, the way Chat mode did, and your next message can go back to asking for help.
+- **No manual mode switching.** The old Chat, Agent, and Auto selectors were removed. Shapes still reply in their own voice when you're just chatting, and capabilities such as web search, code, and connected apps remain available when your request needs them. Your message and the conversation guide the reply. Existing access, approvals, engine availability, and credit rules apply. See [How chats work](/chat-and-agent-modes).
 - You can edit a Shape's messages in every chat, including chats that used to be Agent chats.
 - Chats now open directly at **shapes.inc**.
 - Building on **Connect your browser** from November 15: in your private chats, a Shape uses your connected Chrome without **Allow in this chat**, including when you ask from your phone. The dialog shows **Used automatically in this chat**, and **Don't use in this chat** turns it off for that chat. Shared chats still need **Allow in this chat**.
@@ -84,6 +84,7 @@ Each release ends with the guides that explain it. For what moved or was retired
 
 ### Fixed
 
+- Browser notifications resume when you return to **shapes.inc** with notifications allowed. Your existing permission is reused; missed notifications are not sent again. Selecting an alert opens its chat in a new tab.
 - Opening a browser-preloaded home page could leave you on the previous web address.
 - The move to the new web address could stop because a notification check failed, a tab opened in the background, or the message box received focus.
 - Image uploads on **shapes.inc** work again after the address change.
