@@ -62,7 +62,7 @@ Every illustrated step also needs written instructions. Replace or retire screen
 
 ## docs.json
 
-`docs.json` follows the Mintlify `docs.json` schema (`"theme": "mint"`). It holds the site name, colors, logo, favicon, Instrument Sans font, navbar (FAQ link to `/faq`, Support link to `talk.shapes.inc/help`, **New chat** button to `talk.shapes.inc`), footer, Open Graph tags, one redirect, and the navigation.
+`docs.json` follows the Mintlify `docs.json` schema (`"theme": "mint"`). It holds the site name, colors, logo, favicon, Instrument Sans font, navbar (FAQ link to `/faq`, Support link to `shapes.inc/help`, **New chat** button to `shapes.inc`), footer, Open Graph tags, one redirect, and the navigation.
 
 `style.css` at the repository root is the site theme; Mintlify loads it on every page. See the design rules in `AGENTS.md` before changing either file.
 
@@ -107,5 +107,5 @@ A merged PR to `main` publishes the site; the PR itself does not. There is no bu
 ## Contacts
 
 - Site: https://docs.shapes.inc
-- Product support: https://talk.shapes.inc/help or hi@shapes.inc
+- Product support: https://shapes.inc/help or hi@shapes.inc
 - Documentation problems: open an issue or PR in this repository.
