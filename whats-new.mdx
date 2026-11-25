@@ -66,9 +66,11 @@ Every chat on shapes.inc now works the same way: Shapes tell from each message w
 
 ### Fixed
 
+- Very long replies, such as a long story chapter, could fail after a few minutes with "Reply failed because of an internal error" instead of finishing. They now finish.
 - In the Mac app, your own Claude Code or Codex showed as signed out when signed in through your shell profile, such as with an API key. Update the app to fix it.
 - In the Windows app, a Shape's drag could leave your left mouse button held down. Update the app to fix it.
 - In the Mac app, signing out and back in could leave **Connect this Mac** stuck on "Could not verify your account". Update the app to fix it.
+- The Mac app opened in the middle of the screen every time instead of where you left it. Update the app to fix it.
 - Replies could end in "Reply failed because of an internal error" after their actions had run, or on every retry in chats with long thread history.
 - `/wack` and `/sleep` showed "Reply failed because of an internal error" for Shapes whose wack or sleep message is blank, even though the command worked. Now the Shape stays quiet, or greets you again after `/wack` if it has a greeting.
 - Without credits, in a chat set to a premium engine, a failed reply could take 2 to 3 minutes and then say you ran out of credits.
