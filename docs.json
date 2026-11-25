@@ -292,13 +292,13 @@
       },
       {
         "label": "Support",
-        "href": "https://talk.shapes.inc/help"
+        "href": "https://shapes.inc/help"
       }
     ],
     "primary": {
       "type": "button",
       "label": "New chat",
-      "href": "https://talk.shapes.inc"
+      "href": "https://shapes.inc"
     }
   },
   "footer": {
