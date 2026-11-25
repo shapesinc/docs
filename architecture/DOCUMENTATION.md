@@ -1,5 +1,14 @@
 # Documentation architecture
 
+## Duplicate browser push migration (November 24, 2026)
+
+`notifications.mdx` documents retiring a Talk subscription only after a confirmed
+shapes.inc registration in the same browser profile and account. Talk-only users
+and other installations retain delivery. Publish this text after the coordinated
+backend/web change; this documentation PR does not activate the migration.
+Source contracts: app `architecture/DIRECT_NOTIFICATIONS.md` and shapes-chat
+`architecture/WEB_PUSH_MIGRATION.md`. No settings labels or permission flow changed.
+
 ## Reddit promotion removal (October 22, 2026; CIR-5874)
 
 `docs.json` no longer advertises Reddit in the site footer. The footer keeps its
