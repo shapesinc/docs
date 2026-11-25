@@ -4,7 +4,7 @@ description: "Engine badges and Reasoning effort come from automatic checks, so 
 keywords: ["Reasoning badge missing", "badges disappeared", "lost reasoning", "Reasoning effort missing", "Reasoning effort greyed out", "This AI Engine does not support reasoning", "Gemma reasoning", "Gemma 4 31B reasoning", "Actions badge", "Native Vision", "engine capabilities", "thinking removed"]
 ---
 
-A badge that disappears means the latest automatic check didn't confirm it, not that the engine or its provider changed. shapes.inc checks every engine automatically for three things: reasoning, understanding images, and taking actions. The badges and the **Reasoning effort** setting show what the latest check confirmed.
+A badge that disappears means the latest automatic check didn't confirm it, not that the engine or its provider changed. shapes.inc checks every engine automatically for three things: reasoning, understanding images, and taking actions. Taking actions has two parts: a quick check that the engine can use tools at all, and a test on everyday tasks. The badges and the **Reasoning effort** setting show what the latest checks confirmed.
 
 ## What each check controls
 
@@ -12,15 +12,16 @@ A badge that disappears means the latest automatic check didn't confirm it, not 
 |---|---|
 | Reasoning | **Reasoning** badge, the **Thinks before replying** filter, and **Reasoning effort** |
 | Images | **Native Vision** badge and the **Understands images** filter |
-| Actions | **Actions** badge, the **Can take actions** filter, and a place on the engine list chats offer |
+| Tool use | A place on the engine list chats offer |
+| Everyday tasks (needs tool use too) | **Actions** badge and the **Can take actions** filter |
 
 ## How the checks behave
 
 - An engine shows a badge only after its check passes. An engine with no confirmed result shows no badge.
-- Each result is checked again every 6 hours.
+- Each result is checked again every 6 hours. The everyday-task test is the exception: it runs once for each engine, and again when shapes.inc updates the test.
 - When the provider doesn't answer, because it's rate-limited, timed out, or down, the previous result stays for up to 24 hours and the engine is checked again after 1 hour.
 - When the provider answers and the check fails, the badge goes away until a later check passes.
-- An engine that loses its **Actions** result leaves the engine list chats offer until the check passes again. See [why chats show fewer engines](/faq/why-do-i-see-fewer-engines-in-agent-chats).
+- An engine that loses its tool-use result leaves the engine list chats offer until the check passes again. See [why chats show fewer engines](/faq/why-do-i-see-fewer-engines-in-agent-chats).
 
 ## "This AI Engine does not support reasoning"
 
